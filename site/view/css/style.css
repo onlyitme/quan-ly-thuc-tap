@@ -66,9 +66,6 @@ img {
 }
 
 .container_left {
-    padding-left: 160px !important;
-    padding-right: -160px !important;
-    transition: 0.3s;
     margin-left: 540px !important;
     transition: 0.6s;
 }
