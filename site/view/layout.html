@@ -24,12 +24,47 @@
             </a>
             <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
-                    <a href="#" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
                     <a href="#" class="btn btn-primary shadow-none rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo-2.png" class="w-25" alt="">
+                    <button type="button" class="close p-3" data-dismiss="modal">x</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body row ">
+                    <div class="d-none d-lg-inline col-6">
+                        <img src="images/login.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 ">
+                        <!-- <h3>Đăng Nhập</h3> -->
+                        <form action="" class="my-5">
+                            <div class="form-group">
+                                <label for="">Tên đăng nhập</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                <input type="password" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Đăng nhập</button>
+                        </form>
+                        <a href="">Quên mật khẩu ?</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <nav id="nav-togger" class="border shadow-lg">
         <div class="list-group">
             <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang chủ</button>
