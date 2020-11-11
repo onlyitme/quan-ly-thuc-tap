@@ -10,6 +10,7 @@
             e.preventDefault();
             $("#nav-togger").removeClass("nav-togger_left");
             $("#overlay-nav").removeClass("d-block");
+            $(".container").removeClass("container_left");
         });
     });
 })(jQuery);

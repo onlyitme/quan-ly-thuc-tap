@@ -76,8 +76,8 @@ img {
 }
 
 .container_left {
-    margin-left: 540px !important;
-    transition: 0.6s;
+    margin-left: 30% !important;
+    transition: 3s;
 }
 
 .wrap {
