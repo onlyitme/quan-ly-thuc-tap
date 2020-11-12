@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 11, 2020 lúc 04:42 PM
--- Phiên bản máy phục vụ: 10.4.14-MariaDB
--- Phiên bản PHP: 7.4.10
+-- Thời gian đã tạo: Th10 12, 2020 lúc 05:18 AM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -84,10 +84,10 @@ CREATE TABLE `nhom_nganh` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phieu_dk`
+-- Cấu trúc bảng cho bảng `phieu_dk_in`
 --
 
-CREATE TABLE `phieu_dk` (
+CREATE TABLE `phieu_dk_in` (
   `id_phieu` int(11) NOT NULL,
   `id_sv` int(11) NOT NULL,
   `ngay_dk` date NOT NULL,
@@ -99,10 +99,10 @@ CREATE TABLE `phieu_dk` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phieu_dk_`
+-- Cấu trúc bảng cho bảng `phieu_dk_out`
 --
 
-CREATE TABLE `phieu_dk_` (
+CREATE TABLE `phieu_dk_out` (
   `id_phieu_` int(11) NOT NULL,
   `ten_dn` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_sv` int(11) NOT NULL,
@@ -178,17 +178,17 @@ ALTER TABLE `nhom_nganh`
   ADD PRIMARY KEY (`id_nn`);
 
 --
--- Chỉ mục cho bảng `phieu_dk`
+-- Chỉ mục cho bảng `phieu_dk_in`
 --
-ALTER TABLE `phieu_dk`
+ALTER TABLE `phieu_dk_in`
   ADD PRIMARY KEY (`id_phieu`),
   ADD KEY `id_sv` (`id_sv`,`id_dt`),
   ADD KEY `id_dt` (`id_dt`);
 
 --
--- Chỉ mục cho bảng `phieu_dk_`
+-- Chỉ mục cho bảng `phieu_dk_out`
 --
-ALTER TABLE `phieu_dk_`
+ALTER TABLE `phieu_dk_out`
   ADD PRIMARY KEY (`id_phieu_`),
   ADD KEY `id_sv` (`id_sv`);
 
@@ -235,15 +235,15 @@ ALTER TABLE `nhom_nganh`
   MODIFY `id_nn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `phieu_dk`
+-- AUTO_INCREMENT cho bảng `phieu_dk_in`
 --
-ALTER TABLE `phieu_dk`
+ALTER TABLE `phieu_dk_in`
   MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `phieu_dk_`
+-- AUTO_INCREMENT cho bảng `phieu_dk_out`
 --
-ALTER TABLE `phieu_dk_`
+ALTER TABLE `phieu_dk_out`
   MODIFY `id_phieu_` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
@@ -282,17 +282,17 @@ ALTER TABLE `nganh`
   ADD CONSTRAINT `nganh_ibfk_1` FOREIGN KEY (`id_nn`) REFERENCES `nhom_nganh` (`id_nn`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `phieu_dk`
+-- Các ràng buộc cho bảng `phieu_dk_in`
 --
-ALTER TABLE `phieu_dk`
-  ADD CONSTRAINT `phieu_dk_ibfk_1` FOREIGN KEY (`id_phieu`) REFERENCES `sinh_vien` (`id_sv`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phieu_dk_ibfk_2` FOREIGN KEY (`id_dt`) REFERENCES `dang_tuyen` (`id_dt`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `phieu_dk_in`
+  ADD CONSTRAINT `phieu_dk_in_ibfk_1` FOREIGN KEY (`id_phieu`) REFERENCES `sinh_vien` (`id_sv`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `phieu_dk_in_ibfk_2` FOREIGN KEY (`id_dt`) REFERENCES `dang_tuyen` (`id_dt`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `phieu_dk_`
+-- Các ràng buộc cho bảng `phieu_dk_out`
 --
-ALTER TABLE `phieu_dk_`
-  ADD CONSTRAINT `phieu_dk__ibfk_1` FOREIGN KEY (`id_sv`) REFERENCES `sinh_vien` (`id_sv`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `phieu_dk_out`
+  ADD CONSTRAINT `phieu_dk_out_ibfk_1` FOREIGN KEY (`id_sv`) REFERENCES `sinh_vien` (`id_sv`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Các ràng buộc cho bảng `sinh_vien`
