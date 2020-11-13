@@ -1,14 +1,13 @@
 <?php
 require_once "../system/database.php";
-require_once "models/home.php";
+// require_once "model/home.php"; 
   $act = "index";
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
-    case "layout":
-
-          $views = "views/home.php";
-          require_once "layout.php";
+    case "index":
+          $view = "view/home.php";
+          require_once "view/layout.php";
       break;
     
     }
-      ?>
+?>      
