@@ -10,8 +10,8 @@ if(isset($_GET['log_out'])&&$_GET['log_out']){
 }
 
 if(isset($_POST['login'])&&$_POST['login']){
-	$tai_khoan=$_POST['tai_khoan'];
-	$mat_khau=$_POST['mat_khau'];
+	$tai_khoan=$_POST['user'];
+	$mat_khau=$_POST['pass'];
 	
 	$checkkhachhang=checkkhachhang($tai_khoan,$mat_khau);
 	
