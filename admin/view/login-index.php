@@ -1,3 +1,38 @@
+<?php
+ob_start();
+session_start();
+require_once "models/khach_hang.php";
+
+
+if(isset($_GET['log_out'])&&$_GET['log_out']){
+	unset($_SESSION['sid']);
+	header("location: index.php");
+}
+
+if(isset($_POST['login'])&&$_POST['login']){
+	$tai_khoan=$_POST['tai_khoan'];
+	$mat_khau=$_POST['mat_khau'];
+	
+	$checkkhachhang=checkkhachhang($tai_khoan,$mat_khau);
+	
+	if(isset($checkkhachhang) && $checkkhachhang!=''){	
+		if($checkkhachhang['admin']==1){
+			$_SESSION['sid']=$checkkhachhang['idkh'];
+			header("location: index.php");
+		}else{
+			echo "<script type='text/javascript'>alert('Sẽ chuyển đến trang chủ');</script>";
+		}
+
+	}else{
+	
+		echo "<script type='text/javascript'>alert('Mầy là thằng nào mà xâm nhập vô đây');</script>";
+	}
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +47,7 @@
     <section class="section-login">
         <div class="section-login-create flex-betw">
             <h2>LOGIN</h2>
-            <?php
-                if(isset($err) && ($err!="")){
-                    echo ('
-                        <h3>'.$err.'</h3>
-                    ');
-                }
-            ?>
+           
                 <form action="?ctrl=login" method="post">
 
                     <div class="login flex-betw">
