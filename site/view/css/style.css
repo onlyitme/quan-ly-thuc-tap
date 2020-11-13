@@ -3,11 +3,29 @@
 }
 
 body {
-    padding-top: 75px;
+    padding-top: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15pt;
+}
+
+.container {
+    max-width: 1366px;
 }
 
 img {
     width: 100%;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.text-tomato {
+    color: tomato;
 }
 
 #login {
@@ -16,7 +34,7 @@ img {
 
 #banner {
     position: relative;
-    height: 700px;
+    height: 600px;
     overflow: hidden;
 }
 
@@ -38,10 +56,21 @@ img {
 }
 
 .banner-title p {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0px 0px 5px lightgray;
+    text-shadow: 0px 0px 3px lightgray;
+}
+
+.banner-title a {
+    font-size: 1.3em;
+    background-color: dodgerblue;
+    box-shadow: 0 0 1px gray;
+    color: white;
+}
+
+.banner-title a:hover {
+    background-color: dodgerblue;
 }
 
 .banner-img::before {
@@ -79,6 +108,7 @@ img {
 }
 
 #nav-togger button {
+    font-size: 0.8em;
     font-weight: 500;
 }
 
@@ -106,12 +136,73 @@ img {
 }
 
 .container_left {
-    margin-left: 30% !important;
+    margin-left: 20% !important;
     transition: 3s;
 }
 
 .wrap {
     max-width: 1920px;
+}
+
+.home-line {
+    width: 5px;
+    height: 5vh;
+    margin: 30px auto;
+    background-color: black;
+}
+
+.home-note {
+    margin-bottom: 70px;
+}
+
+.home-list-job {
+    margin: 50px 0;
+}
+
+#main .tab {
+    margin-top: 30px;
+}
+
+#main .tab .nav-tabs {
+    border: none;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+#main .nav-tabs li a {
+    padding: 10px 10px;
+    border: 1px solid #ededed;
+    border-top: 2px solid #ededed;
+    border-right: 0px none;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 5px 10px 0px 0;
+    margin-right: 0px;
+    font-weight: 500;
+    transition: all 0.1s ease 0s;
+    font-size: 0.9em;
+}
+
+#main .nav-tabs li a:hover {
+    border-bottom-color: #ededed;
+    border-right: 0px none;
+    background: tomato;
+    color: #fff;
+}
+
+#main .nav-tabs li a.active,
+#main .nav-tabs li a.active:focus,
+#main .nav-tabs li a.active:hover {
+    border-top: 3px solid dodgerblue;
+    border-right: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+    margin-top: -5px;
+    color: #444;
+    padding: 10px 20px;
+    background: white;
+}
+
+.card-body p {
+    margin-bottom: 5px;
 }
 
 
@@ -131,7 +222,7 @@ footer a:hover {
 
 @media (max-width: 768px) {
     body {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     #banner {
         height: 500px;
