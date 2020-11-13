@@ -1,6 +1,6 @@
 <?php
     session_start();
-    define("ARR_CONTROLLER", ['home','login']);
+    define("ARR_CONTROLLER", ['home']);
 
     $ctrl ='home';
     if(isset($_GET['ctrl']) == true) $ctrl=$_GET['ctrl'];

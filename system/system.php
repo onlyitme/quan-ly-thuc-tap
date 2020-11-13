@@ -1,6 +1,6 @@
 <?php
     define("HOST_DB" , "localhost");
-    define("NAME_DB" , "dam_test");
+    define("NAME_DB" , "du_an_1");
     define("USER_DB" , "root");
     define("PASS_DB" , "");
     define("ROOT_URL" , "/complain-management-system");

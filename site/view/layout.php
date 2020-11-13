@@ -45,15 +45,15 @@
                     </div>
                     <div class="col-lg-6 ">
                         <!-- <h3>Đăng Nhập</h3> -->
-                        <form action="" class="my-5">
+                        <form action="index.php?ctrl=home" class="my-5">
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
-                                <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <input type="text" name="user" id="" class="form-control" placeholder="" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">Mật khẩu</label>
-                                <input type="password" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <input type="password" name="pass" id="" class="form-control" placeholder="" aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                             <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
