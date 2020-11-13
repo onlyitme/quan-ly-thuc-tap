@@ -45,7 +45,7 @@
                     </div>
                     <div class="col-lg-6 ">
                         <!-- <h3>Đăng Nhập</h3> -->
-                        <form action="" class="my-5">
+                        <form action="index.php?ctrl=home" class="my-5">
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
                                 <input type="text" name="user" id="" class="form-control" placeholder="" aria-describedby="helpId">
