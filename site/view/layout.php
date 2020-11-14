@@ -82,6 +82,9 @@
     </nav>
     <div id="overlay-nav"></div>
     <!-- NỘI DUNG CHÍNH -->
+    <?php
+        if($view == "view/home.php"){      
+    ?>
     <section id="banner" class="wrap">
         <div class="banner-img">
         </div>
@@ -93,6 +96,7 @@
             </div>
         </div>
     </section>
+    <?php } ?>
     <main id="main">
         <div class="container">
             <?php include $view; ?>

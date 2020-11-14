@@ -1342,7 +1342,7 @@
 
                                 </div>
                             </div>
-                            <div id="menu20" class=" tab-pane fade ">
+                            <div id="menu20" class=" tab-pane fade "> 
                                 <div class="row d-flex flex-wrap justify-content-between">
                                     <div class="col-lg-3 col-md-6 mt-3 ">
                                         <div class="card">
