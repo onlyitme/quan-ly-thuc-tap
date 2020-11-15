@@ -1,6 +1,6 @@
 <?php
-require_once "views/Classes/PHPExcel.php";
-require_once "models/excel.php";
+require_once "view/Classes/PHPExcel.php";
+require_once "model/excel.php";
 
 if(isset($_POST['btn'])){
     $file= $_FILES['file']['tmp_name'];
@@ -40,7 +40,9 @@ if(isset($_POST['btn'])){
     <title>Document</title>
 </head>
 <body>
-
+    <h1>Để upload thành công file excel của bạn phải có dạng như hình dưới đây</h1>
+    <img src="../uploads/Excel.PNG" alt="">
+</br>
     <form method="POST" action="" enctype="multipart/form-data">
     <input type="file" name="file" >
     <button type="submit" name="btn">uploads</button>
