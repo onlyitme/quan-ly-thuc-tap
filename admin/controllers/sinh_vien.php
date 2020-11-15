@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <?php
+    require_once "models/sinh_vien.php"; //nạp model để có các hàm tương tác db
+    $act = "index"; //chức năng mặc định
+    if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
+    switch ($act) {
+        case "index":
+            /* Chức năng hiện trang chủ
+          1. nạp view hiện trên trang chủ */
+            $ds = getAllSinhvien();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "thongbao":
+            session_start();
+            if (isset($_SESSION['thongbao'])) {
+                $thongbao = $_SESSION['thongbao'];
+                unset($_SESSION['thongbao']);
+            } else
+                $thongbao = "Không có gì để thông báo";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
+            break;
+        case "addnew":
+            $view = "views/sinh_vien-add.php";
+            require_once "views/layout.php";
+            break;
+        case "addnew_":
+            $view = "views/docfile.php";
+            require_once "views/layout.php";
+            break;
+        case "insert":
+            $id_user = $_POST['id_user'];
+            settype($id_user, "int");
+            $mssv = trim(strip_tags($_POST["mssv"]));
+            $id_nganh = $_POST['id_nganh'];
+            settype($id_nganh, "int");
+            $ho_ten = trim(strip_tags($_POST["ho_ten"]));
+            $gioi_tinh = $_POST['gioi_tinh'];
+            settype( $gioi_tinh, "int");
+            $sdt = $_POST['sdt'];
+            settype( $sdt, "int");
+            $trang_thai = $_POST['trang_thai'];
+            settype( $trang_thai, "int");
+            $ket_qua = $_POST['ket_qua'];
+            settype($ket_qua, "int");
+            $ghi_chu = trim(strip_tags($_POST["ghi_chu"]));
+            $hinh = $_FILES["hinh"]["name"];
+            move_uploaded_file($_FILES["hinh"]["tmp_name"], "images/$hinh");
+            $thongbao = "";
+            $thanhcong = true;
+            if ($id_nganh == "") {
+                $thongbao .= "Bạn chưa chọn ngành";
+                $thanhcong = false;
+            } 
+            if ($thanhcong == false) {
+                session_start();
+                $_SESSION['thongbao']=$thongbao;
+                header("location:" . ADMIN_URL . "?ctrl=sinh_vien&act=thongbao");
+                exit();
+            }
+            updateUser($id_user);
+            addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
+            $thongbao = "Thêm sinh viên thành công";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
+            break;
+        case "edit":
+            $id_sv = $_GET["id_sv"];
+            settype($id_sv, "int");
+            $row = getSinhvienByID($id_sv);
+            $view = "views/sinh_vien-edit.php";
+            require_once "views/layout.php";
+            break;
+        case "update":
+            $id_sv = $_POST['id_sv'];
+            settype($id_sv, "int");
+            $id_user = $_POST['id_user'];
+            settype($id_user, "int");
+            $mssv = trim(strip_tags($_POST["mssv"]));
+            $id_nganh = $_POST['id_nganh'];
+            settype($id_nganh, "int");
+            $ho_ten = trim(strip_tags($_POST["ho_ten"]));
+            $gioi_tinh = $_POST['gioi_tinh'];
+            $sdt = $_POST['sdt'];
+            $trang_thai = $_POST['trang_thai'];
+            $ket_qua = $_POST['ket_qua'];
+            $ghi_chu = trim(strip_tags($_POST["ghi_chu"]));
+            $hinh = $_FILES["hinh"]["name"];
+            move_uploaded_file($_FILES["hinh"]["tmp_name"], "images/$hinh");
+            updateSinhvien($id_sv, $id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
+            $ds = getAllSinhvien();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "delete":
+            $id_sv = $_GET["id_sv"];
+            settype($id_sv, "int");
+            deleteSinhvien($id_sv);
+            $ds = getAllSinhvien();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "kiemtraid_user":
+            if (isset($_GET['id_user'])){
+             $id_user =  $_GET['id_user']; 
+             settype($id_user, "int");
+            }
+            else $id_user = "";
+            if ($id_user == "") echo "<pan class ='badge badge-danger'>Id user không được trống</pan>";
+            else if (checkID_userTonTai($id_user)==false) echo "<pan class = 'badge badge-danger'>Id user này không tồn tại</pan>";
+            else if (checkID_userTonTaiChuaDung($id_user)) echo "<pan class = 'badge badge-success '>Bạn có thể dùng ID user này</pan>";
+            else echo "<pan class ='badge badge-danger'>ID user này đã có người dùng</pan>";
+            break;
+        case "kiemtramssv":
+            if (isset($_GET['mssv'])) $mssv = trim(strip_tags($_GET['mssv']));
+            else $mssv  = "";
+            if ($mssv  == "") echo "<pan class ='badge badge-danger'>Mã số sinh viên không được rỗng</pan>";
+            else if (checkMssvTonTai($mssv)) echo "<pan class = 'badge badge-danger'>Mã số sinh viên đã có người dùng</pan>";
+            else echo "<pan class ='badge badge-success'>Bạn có thể dùng mã số sinh viên này</pan>";
+            break;
+    }
+    ?>
+</body>
+
+</html>
