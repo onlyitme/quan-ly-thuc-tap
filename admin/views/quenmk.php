@@ -15,7 +15,9 @@
 <body>
     <section class="section-login">
         <div class="section-login-create flex-betw">
+        <div class="row form-group  justify-content-center align-items-center">
             <h2>QUÊN MẬT KHẨU</h2>
+        </div>
             <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=quenmk" method="POST">
                 <div class="login flex-betw">
                     <div class="login-sec flex-betw">

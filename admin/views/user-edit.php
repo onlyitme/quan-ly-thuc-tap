@@ -19,12 +19,15 @@
             <h1>Sửa user</h1>
         </div>
         <div class="form-group">
+        <label for="ten_loai">Username</label>
             <input type="text" class="form-control" name="user" value="<?= $row['user'] ?>">
         </div>
         <div class="form-group">
+        <label for="ten_loai">Password</label>
             <input type="password" class="form-control" name="pass" value="<?= $row['pass'] ?>">
         </div>
         <div class="form-group">
+        <label for="ten_loai">Email</label>
             <input type="text" class="form-control" name="email"  value="<?= $row['email'] ?>">
             <?php if (isset($email_error)) { ?>
                 <span class="badge badge-warning"> <?= $email_error ?> </span>

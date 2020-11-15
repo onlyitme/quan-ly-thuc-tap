@@ -35,7 +35,10 @@
                     </td>
                     <td> <b>Email:</b><?= $row['email'] ?></td>
                     <td>
-                        <b>Chức vụ:</b><?= ($row['chuc_vu'] == 1) ? "Doanh nghiệp" : "Sinh viên"; ?>
+                        <b>Chức vụ:</b><?php if($row['chuc_vu'] == 0) echo "Sinh viên" ;
+                                         elseif($row['chuc_vu'] == 1) echo "Doanh nghiệp";
+                                         else echo "ADMIN";
+                                         ?>
                     </td>
                     <td><a href="?ctrl=user&act=edit&id_user=<?= $row['id_user'] ?>"><i class="fa fa-edit"></i></a>
                     </td>

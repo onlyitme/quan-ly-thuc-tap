@@ -14,7 +14,6 @@
         header.row {
             height: 650px;
         }
-
         nav.row {
             height: 40px;
             line-height: 40px
@@ -41,7 +40,6 @@
         <div class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <a class="navbar-brand" href="/quan-ly-thuc-tap/admin">TRANG CHỦ</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <a href="<?= ADMIN_URL ?>/?ctrl=excel">thêm nhiều sinh viên (để chỗ khác giùm em)</a>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
@@ -56,7 +54,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> <?php echo $_SESSION['admin'];?></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Cài đặt</a>
+                        <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=user&act=taikhoan_">Đổi mật khẩu</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=home&act=logout" >Đăng xuất</a>
                     </div>
@@ -77,59 +75,60 @@
                     </div>
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh">Danh sách nhóm ngành</a></p>
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=addnew">Thêm nhóm ngành</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh">Danh sách nhóm ngành</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=addnew">Thêm nhóm ngành</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion" id="accordionExample">
                 <div class="card bg-dark">
-                    <div class="card-header bg-dark " id="headingOne">
+                    <div class="card-header bg-dark " id="headingTwo">
                         <h2 class="mb-0">
-                            <button class="btn btn-dark btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-dark btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
                                 Quản lí ngành
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
                         <div class="card-body">
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=nganh">Danh sách ngành</a></p>
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=nganh&act=addnew">Thêm ngành</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nganh">Danh sách ngành</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nganh&act=addnew">Thêm ngành</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion" id="accordionExample">
                 <div class="card bg-dark">
-                    <div class="card-header bg-dark " id="headingOne">
+                    <div class="card-header bg-dark " id="headingThree">
                         <h2 class="mb-0">
-                            <button class="btn btn-dark btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-dark btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
                                 Quản lí user
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=user">Danh sách user</a></p>
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=user&act=addnew">Thêm user</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=user">Danh sách user</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=user&act=addnew">Thêm user</a></p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="accordion" id="accordionExample">
                 <div class="card bg-dark">
-                    <div class="card-header bg-dark " id="headingOne">
+                    <div class="card-header bg-dark " id="headingFour">
                         <h2 class="mb-0">
-                            <button class="btn btn-dark btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <button class="btn btn-dark btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
                                 Quản lí sinh viên
                             </button>
                         </h2>
                     </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
                         <div class="card-body">
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh vien</a></p>
-                            <p><a class="btn btn-dark btn-block text-left" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh vien</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh vien</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh vien</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=excel">Thêm sinh vien file</a></p>
                         </div>
                     </div>
                 </div>

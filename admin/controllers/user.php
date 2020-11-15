@@ -24,6 +24,22 @@
             $view = "views/user-add.php";
             require_once "views/layout.php";
             break;
+        case "taikhoan_":
+            $view = "views/doimk.php";
+            require_once "views/layout.php";
+            break;
+        case "doimk":
+            $u = trim(strip_tags($_POST['user']));
+            $p = trim(strip_tags($_POST['pass']));
+            $p1 = trim(strip_tags($_POST['pass_new']));
+            if (checkHople_($u, $p) == true) {
+                updateUser_($u, $p1);
+                $thongbao = "Mật khẩu đã được đổi";
+            } else
+                $thongbao = "Mật khẩu không đúng";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
+            break;
         case "thongbao":
             session_start();
             if (isset($_SESSION['thongbao'])) {
@@ -41,7 +57,7 @@
             $chuc_vu = $_POST['chuc_vu'];
             $thongbao = "";
             $thanhcong = true;
-            if ($user== "") {
+            if ($user == "") {
                 $thongbao .= "Tên user chưa nhập ";
                 $thanhcong = false;
             } else if (strlen($user) < 3) {
@@ -57,13 +73,13 @@
             } else if (filter_var($email, FILTER_VALIDATE_EMAIL) == FALSE) {
                 $thongbao .= "Email không đúng ";
                 $thanhcong = false;
-            } else if (checkEmailTonTai($email)== true) {
+            } else if (checkEmailTonTai($email) == true) {
                 $thongbao .= "Email đã tồn tại ";
                 $thanhcong = false;
             }
             if ($thanhcong == false) {
                 session_start();
-                $_SESSION['thongbao']=$thongbao;
+                $_SESSION['thongbao'] = $thongbao;
                 header("location:" . ADMIN_URL . "?ctrl=user&act=thongbao");
                 exit();
             }

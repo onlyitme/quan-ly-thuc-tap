@@ -10,14 +10,14 @@
 <body>
     <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=update" enctype="multipart/form-data">
         <div class="row justify-content-center align-items-center text-warning">
-            <h1>Thêm sinh viên</h1>
+            <h1>Sửa sinh viên</h1>
         </div>
         <input type="hidden" name="id_sv" value="<?= $row['id_sv'] ?>" >
         <div class="row">
             <div class="form-group col-6">
                 <select name="id_user" class="form-control">
                     <option value="">Chọn user</option>
-                    <?php require_once "models/user.php";
+                    <?php
                     $ds = getAllUser();
                     foreach ($ds as $r) { ?>
                        <?php if ($row['id_user'] == $r['id_user']) { ?>

@@ -9,6 +9,11 @@
 
 <body>
     <?php require_once('../system/database.php');
+    function getAllUser()
+    {
+        $sql = "SELECT * from user";
+        return query($sql);
+    }
     function getAllSinhvien()
     {
         $sql = "SELECT * from sinh_vien";
@@ -41,17 +46,17 @@
         $sql = "DELETE FROM sinh_vien WHERE id_sv='$id_sv'";
         execute($sql);
     }
-    function checkID_userTonTaiChuaDung($id_user)
+    function checkuserTonTaiChuaDung($user)
     {
-        $sql = "SELECT count(*) as sodong FROM user WHERE id_user='$id_user' AND trang_thai='0'";
+        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' AND trang_thai='0'";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    function checkID_userTonTai($id_user)
+    function checkUserTonTai($user)
     {
-        $sql = "SELECT count(*) as sodong FROM user WHERE id_user='$id_user'";
+        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user'";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];

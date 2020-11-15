@@ -14,6 +14,7 @@
         </div>
         <input type="hidden" name="id_nganh" value="<?=$row['id_nganh']?>">
         <div class="form-group">
+        <label for="ten_loai">Tên nhóm ngành</label>
             <select name="id_nn" class="form-control">
                 <?php require_once "models/nhom_nganh.php";
                 $ds = getAllNhomnganh();

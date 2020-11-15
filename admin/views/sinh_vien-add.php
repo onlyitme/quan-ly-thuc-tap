@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert" enctype="multipart/form-data">
         <div class="row justify-content-center align-items-center text-warning">
@@ -13,11 +14,11 @@
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <input type="number" class="form-control" id="id_user" name="id_user" required placeholder="Chọn id user">
-                <?php if (isset($id_user_error)) { ?>
-                <span class="badge badge-warning"> <?= $id_user_error ?> </span>
-            <?php } ?>
-            <span id="kqcheckid_user"></span>
+                <input type="text" class="form-control" id="user" name="user" required placeholder="Tên user">
+                <?php if (isset($user_error)) { ?>
+                    <span class="badge badge-warning"> <?= $user_error ?> </span>
+                <?php } ?>
+                <span id="kqcheckuser"></span>
             </div>
             <div class="form-group col-6">
                 <select name="id_nganh" class="form-control">
@@ -33,10 +34,10 @@
         <div class="row">
             <div class="form-group col-6">
                 <input type="text" class="form-control" id="mssv" name="mssv" required placeholder="Mã số sinh viên">
-                <?php if (isset($mssv_error)) { ?>
-                    <span class="badge badge-warning"> <?= $mssv_error ?> </span>
+                <?php if (isset($user_error)) { ?>
+                    <span class="badge badge-warning"> <?= $user_error ?> </span>
                 <?php } ?>
-                <span id="kqcheckmssv"></span>
+                <span id="kqcheckuser"></span>
             </div>
             <div class="form-group col-6">
                 <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
@@ -95,9 +96,9 @@
     </form>
     <script>
         $(document).ready(function() {
-            $("#id_user").blur(function() {
+            $("#user").blur(function() {
                 u = $(this).val();
-                $("#kqcheckid_user").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtraid_user&id_user=" + u);
+                $("#kqcheckuser").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtrauser&user=" + u);
             });
         });
         $(document).ready(function() {

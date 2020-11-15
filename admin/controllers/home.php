@@ -34,7 +34,7 @@
         case "logout":
             session_start();
             unset($_SESSION['admin']);
-            header('location: index.php');
+            header('location:index.php');
             break;
         case "quenmk":
             $u = trim(strip_tags($_POST['user']));
@@ -45,12 +45,12 @@
                 updateUser($u, $pass, $e);
                 $thongbao = "Mật khẩu mới đã được gửi đến hợp thư";
                 session_start();
-                $_SESSION['thongbao']=$thongbao;
+                $_SESSION['thongbao'] = $thongbao;
                 header("location:" . ADMIN_URL . "?ctrl=home&act=thongbao");
             } else
                 $thongbao = "Tài khoản hoặc email không đúng";
-                session_start();
-                $_SESSION['thongbao']=$thongbao;
+            session_start();
+            $_SESSION['thongbao'] = $thongbao;
             header("location:" . ADMIN_URL . "?ctrl=home&act=thongbao");
             // Gửi mail kích hoạt tài khoản
             require "PHPMailer-master/src/PHPMailer.php";

@@ -35,6 +35,7 @@
             exit();
         }
     }
+    
     function checkUserTonTai($u)
     {
         $sql = "SELECT count(*) as sodong FROM user WHERE user='$u'";

@@ -39,18 +39,17 @@
             require_once "views/layout.php";
             break;
         case "insert":
-            $id_user = $_POST['id_user'];
-            settype($id_user, "int");
+            $user = trim(strip_tags($_POST["user"]));
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
             $ho_ten = trim(strip_tags($_POST["ho_ten"]));
             $gioi_tinh = $_POST['gioi_tinh'];
-            settype( $gioi_tinh, "int");
+            settype($gioi_tinh, "int");
             $sdt = $_POST['sdt'];
-            settype( $sdt, "int");
+            settype($sdt, "int");
             $trang_thai = $_POST['trang_thai'];
-            settype( $trang_thai, "int");
+            settype($trang_thai, "int");
             $ket_qua = $_POST['ket_qua'];
             settype($ket_qua, "int");
             $ghi_chu = trim(strip_tags($_POST["ghi_chu"]));
@@ -61,12 +60,18 @@
             if ($id_nganh == "") {
                 $thongbao .= "Bạn chưa chọn ngành";
                 $thanhcong = false;
-            } 
+            }
             if ($thanhcong == false) {
                 session_start();
-                $_SESSION['thongbao']=$thongbao;
+                $_SESSION['thongbao'] = $thongbao;
                 header("location:" . ADMIN_URL . "?ctrl=sinh_vien&act=thongbao");
                 exit();
+            }
+            $ds = getAllUser();
+            foreach ($ds as $k) {
+                if($user==$k["user"]){
+                    $id_user=$k["id_user"];
+                }
             }
             updateUser($id_user);
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
@@ -110,16 +115,13 @@
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
-        case "kiemtraid_user":
-            if (isset($_GET['id_user'])){
-             $id_user =  $_GET['id_user']; 
-             settype($id_user, "int");
-            }
-            else $id_user = "";
-            if ($id_user == "") echo "<pan class ='badge badge-danger'>Id user không được trống</pan>";
-            else if (checkID_userTonTai($id_user)==false) echo "<pan class = 'badge badge-danger'>Id user này không tồn tại</pan>";
-            else if (checkID_userTonTaiChuaDung($id_user)) echo "<pan class = 'badge badge-success '>Bạn có thể dùng ID user này</pan>";
-            else echo "<pan class ='badge badge-danger'>ID user này đã có người dùng</pan>";
+        case "kiemtrauser":
+            if (isset($_GET['user'])) $user = trim(strip_tags($_GET['user']));
+            else $user = "";
+            if ($user == "") echo "<pan class ='badge badge-danger'>Username không có</pan>";
+            else if (checkUserTonTai($user) == false) echo "<pan class = 'badge badge-danger'>User này không tồn tại</pan>";
+            else if (checkUserTonTaiChuaDung($user)) echo "<pan class = 'badge badge-success '>Bạn có thể dùng User này</pan>";
+            else echo "<pan class ='badge badge-danger'>User này đã có người dùng</pan>";
             break;
         case "kiemtramssv":
             if (isset($_GET['mssv'])) $mssv = trim(strip_tags($_GET['mssv']));

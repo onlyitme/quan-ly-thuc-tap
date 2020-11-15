@@ -56,6 +56,24 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
+    //doi mk
+    function checkHople_($u,$p){
+        $sql = "SELECT count(*) as sodong FROM user where user ='$u' and pass='$p'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount > 0;
+    }
+    function updateUser_($u,$p1)
+    {
+        try {
+            $sql = "UPDATE  user SET pass='$p1' where user ='$u'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
     ?>
 </body>
 
