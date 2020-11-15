@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once "models/user.php"; //nạp model để có các hàm tương tác db
+    require_once "model/user.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
