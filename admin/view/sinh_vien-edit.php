@@ -31,7 +31,7 @@
             <div class="form-group col-6">
                 <select name="id_nganh"class="form-control" required>
                     <option value="">Chọn ngành</option>
-                    <?php require_once "models/nganh.php";
+                    <?php require_once "/nganh.php";
                     $ds = getAllNganh();
                     foreach ($ds as $r) { ?>
                         <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>

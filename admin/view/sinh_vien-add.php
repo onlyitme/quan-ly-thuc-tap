@@ -23,7 +23,7 @@
             <div class="form-group col-6">
                 <select name="id_nganh" class="form-control">
                     <option value="">Chọn ngành</option>
-                    <?php require_once "models/nganh.php";
+                    <?php require_once "/nganh.php";
                     $ds = getAllNganh();
                     foreach ($ds as $row) { ?>
                         <option value="<?= $row['id_nganh'] ?>"> <?= $row['ten_nganh'] ?></option>
