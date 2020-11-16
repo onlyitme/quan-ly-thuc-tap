@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail </title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
+        <div class="wrap d-flex justify-content-between align-items-center">
+            <div id="header-menu" class="col p-0">
+                <button id="sidebarToggle" class="btn btn-light border-right rounded-0 p-4">
+                            <i class="fas fa-bars"></i>
+                            <span class="d-none d-md-inline ml-3">MENU</span>
+                    </button>
+            </div>
+            <a id="header-logo" href="#" class="col text-center">
+                <img src="images/logo-2.png" alt="">
+            </a>
+            <div id="header-login" class="col p-0">
+                <div class="d-none d-lg-flex justify-content-end h-100 ">
+                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Show box login -->
+    <div class="modal fade" id="login">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="images/logo-2.png" class="w-25" alt="">
+                    <button type="button" class="close p-3" data-dismiss="modal">x</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body row ">
+                    <div class="d-none d-lg-inline col-6">
+                        <img src="images/login.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 ">
+                        <!-- <h3>Đăng Nhập</h3> -->
+                        <form action="" class="my-5">
+                            <div class="form-group">
+                                <label for="" class="small">Tên đăng nhập</label>
+                                <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="small">Mật khẩu</label>
+                                <input type="password" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                <small id="helpId" class="text-muted"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                        </form>
+                        <a href="" class="text-primary">Quên mật khẩu ?</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Show menu -->
+    <nav id="nav-togger" class="border shadow-lg">
+        <div class="list-group">
+            <div class="d-flex d-lg-none  list-group-item list-group-item-action p-0 mb-3">
+                <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">SINH VIÊN</a>
+                <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border w-50  py-3" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+            </div>
+            <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang chủ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hỗ trợ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Liên lạc</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Về chúng tôi</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn đăng bài</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứng tuyển</button>
+        </div>
+    </nav>
+    <div id="overlay-nav"></div>
+    <!-- NỘI DUNG CHÍNH -->
+    <main id="main">
+        <div class="container">
+            <div id="list-job">
+                <div class="row pt-3">
+                    <form action="" method="post" class="d-lg-flex col-lg-10">
+                        <div class="form-group col-lg-4 pl-lg-0 ">
+                            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Tên công ty, chức danh">
+                        </div>
+                        <div class="form-group col-lg-4 pl-lg-0">
+                            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Tất cả ngành nghề">
+                        </div>
+                        <div class="form-group col-lg-3 pl-lg-0">
+                            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Tất cả địa điểm">
+                        </div>
+                        <div class="form-group col pl-lg-0">
+                            <button type="submit" class="btn btn-dark form-control"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                    <div class="col-lg-2">
+                        <a href="" class="btn btn-primary form-control ">Ngành của bạn</a>
+                    </div>
+                </div>
+                <div class="row detail-job px-3">
+                    <div class="col-lg-4  p-lg-0">
+                        <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
+                            <h5>10.000 việc làm</h5>
+                            <select name="" id="" class="small text-gray border-0">
+                                <option value="">Cập nhật</option>
+                                <option value="">Mức lương</option>
+                            </select>
+                        </div>
+                        <div class="detail-job_list list-group small">
+                            <button type="button" class="list-group-item list-group-item-action px-0">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0 ">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action px-0 ">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action px-0 ">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action px-0 ">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action px-0 ">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                            <button type="button" class="list-group-item list-group-item-action px-0 ">
+                                <div class="media">
+                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <div class="media-body text-gray text-left">
+                                      <h5 class="text-dark mt-0">Tên công việc</h5>
+                                      <p class="font-weight-bold ">Tên công ty</p>
+                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                                    </div>
+                                  </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-8 detail-job_inf p-0">
+                        <img src="http://placehold.it/900x200" alt="">
+                        <div class="row align-items-center  p-3">
+                            <div class="col-lg-8">
+                                <h4 class="mb-0">Tên Công Việc</h4>
+                                <p class="font-weight-bold text-gray mb-0">Tên công ty</p>
+                            </div>
+                            <div class="col-lg-4 text-right">
+                                <button type="submit" class="btn btn-info ">Nộp đơn ứng tuyển</button>
+                            </div>
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-7">
+                                <div class="mb-3">
+                                    <h5>Phúc lợi</h5>
+                                    <div class="d-flex small">
+                                        <div class="col-4">
+                                            <p>Chế độ bảo hiểm</p>
+                                            <p>Đào tạo</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p>Du lịch</p>
+                                            <p>Tăng lương</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p>Chế độ thưởng</p>
+                                            <p>Nghỉ phép năm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h5>Mô tả công việc</h5>
+                                    <div id="mota">
+                                        <p>Be sure to have your pages set up with </p>
+                                        <p> Put it all together and your pages should look like this:</p>
+                                        <p>the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. </p>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h5>Yêu cầu công việc</h5>
+                                    <div id="yeucau">
+                                        - Tốt nghiệp Cao đẳng, Đại học chuyên ngành Tài chính - Kế toán. Độ tuổi từ 22 - 28 tuổi. - Có ít nhất 1 năm kinh nghiệm trong lĩnh vực liên quan. - Có khả năng tổng hợp và hướng dẫn, xây dựng kế hoạch để thực hiện nhiệm vụ được phân công - Có thể làm
+                                        việc theo nhóm và độc lập. - Sử dụng thành thạo vi tính văn phòng, ERP và phần mềm kế toán - Có khả năng tổ chức công việc, thuyết phục tốt.
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <h5>Quyền lợi</h5>
+                                    <div id="quyenloi">
+                                        <p> - Thu nhập cạnh tranh theo năng lực làm việc. - Thưởng lương tháng 13 và hiệu quả hoạt động kinh doanh của công ty 2-3 tháng lương. - Nghỉ mát/team-building hàng năm. - Chế độ BHXH, BHYT, BHTN theo quy định của
+                                            Pháp luật. - Chế độ ngày nghỉ, lễ tết, được công ty thực hiện theo luật lao động Việt Nam. - Làm việc trong môi trường trẻ năng động, nhiều thử thách và cơ hội phát triển năng lực cá nhân.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="mb-3">
+                                    <h5>Địa điểm</h5>
+                                    <img src="images/map.jpg" alt="">
+                                </div>
+                                <div class="mb-3 p-3 shadow">
+                                    <h5 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Nơi làm việc</p>
+                                        <p class="text-gray">Hồ Chí Minh</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Cấp bậc</p>
+                                        <p class="text-gray">Nhân viên</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Lương</p>
+                                        <p class="text-gray">Cạnh tranh</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Hết hạn nộp</p>
+                                        <p class="text-gray">30/10/2010</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Ngành nghề</p>
+                                        <p class="text-gray">Thiết kế Website</p>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <p class="text-primary">Kinh Nghiệm</p>
+                                        <p class="text-gray">Không</p>
+                                    </div>
+                                </div>
+                                <div class="mb-3 p-3 shadow">
+                                    <h5 class="border-bottom py-3 mb-3">Giới thiệu công ty</h5>
+                                    <div class="">
+                                        <p><i class="fas fa-map-marker-alt"></i> 123 abv, phường 15, q.abv</p>
+                                        <p><i class="fas fa-phone-volume"></i> Máđá áđâsd</p>
+                                        <p><i class="fas fa-people-carry    "></i> 3500 nhân viên</p>
+                                        <p><i class="fas fa-spider-web    "></i> file:///D:/XamPP/htdocs/quan-ly-thuc-tap/site/view/list-job.html</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer " class="wrap bg-dark text-light py-3 ">
+        <div class="container ">
+            <div class="col-3 p-0 ">
+                <img src="images/logo-2.png " alt=" ">
+            </div>
+            <h3>Phòng Quan Hệ Doanh Nghiệp</h3>
+            <div class="row my-5 ">
+                <div class="col-lg-6 mb-3 ">
+                    <h5 class="pb-3 ">Thông tin trường FPT Polytechnic</h5>
+                    <div class="row text-gray ">
+                        <div class="col-lg-5 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Hà Nội</p>
+                            <p class="m-0 ">Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(024) 7300 1955</u></p>
+                        </div>
+                        <div class="col-lg-5 mb-3 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Hồ Chí Minh</p>
+                            <p class="m-0 ">778/B1 Nguyễn Kiệm, P.4, Q. Phú Nhuận, TP. Hồ Chí Minh</p>
+                            <p><i class="fas fa-phone-alt "></i> <u> (028) 62523434</u></p>
+                        </div>
+                        <div class="col-lg-5 mb-3 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Đà Nẵng</p>
+                            <p class="m-0 ">Số 137 Nguyễn Thị Thập, Phường Hòa Minh, Quận Liên Chiểu, TP. Đà Nẵng</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(0236) 3710 999</u></p>
+                        </div>
+                        <div class="col-lg-5 small ">
+                            <p class="font-weight-bold my-1 "><i class="fas fa-location-circle mr-1 "></i> Cơ sở Cần Thơ</p>
+                            <p class="m-0 ">Số 288, Nguyễn Văn Linh, phường An Khánh, quận Ninh Kiều, Tp. Cần Thơ</p>
+                            <p><i class="fas fa-phone-alt "></i> <u>(0292) 7300 468</u></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3 ">
+                    <h5 class="pb-3 ">Dành cho doanh nghiệp</h5>
+                    <div class="nav flex-column ">
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1 </a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3 ">
+                    <h5 class="pb-3 ">Dành cho sinh viên</h5>
+                    <div class="nav flex-column ">
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
+                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-light text-center ">
+                <p class="col mt-5 ">Copyright <i class="fa fa-copyright mx-2 " aria-hidden="true "></i> 2020 Bản quyền thuộc về <b>Group 6</b></p>
+            </div>
+        </div>
+    </footer>
+    <!-- JS Boostrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <!-- My script -->
+    <script src="js/script.js "></script>
+</body>
+
+</html>
