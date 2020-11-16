@@ -1,5 +1,5 @@
 
-            <div class="home">
+            <div id="home">
                 <div class="row">
                     <div class="home-line"></div>
                     <div class="home-note col-12  text-center">

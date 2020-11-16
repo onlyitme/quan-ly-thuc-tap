@@ -5,9 +5,10 @@ require_once "../system/database.php";
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "index":
-          $view = "view/home.php";
+          // $view = "view/home.php";
+          $view = "view/list-job.php";
+
           require_once "view/layout.php";
       break;
-    
     }
 ?>      
