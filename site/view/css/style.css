@@ -221,15 +221,24 @@ a:hover {
     margin-bottom: 50px;
 }
 
+#list-job ::-webkit-scrollbar {
+    width: 5px;
+}
+
+#list-job ::-webkit-scrollbar-thumb {
+    background: lightgray;
+    border-radius: 5px;
+}
+
 .detail-job_list {
     min-height: 150px;
-    max-height: 700px;
+    max-height: 800px;
     overflow-y: auto;
 }
 
 .detail-job_inf {
     min-height: 150px;
-    max-height: 750px;
+    max-height: 850px;
     overflow-y: auto;
     overflow-x: hidden;
 }

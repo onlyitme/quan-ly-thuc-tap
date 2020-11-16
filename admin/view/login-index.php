@@ -26,11 +26,11 @@
                         <label for="pass">Mật khẩu</label>
                         <input type="password" name="pass" id="pass" required>
                     </div>
-                    <div class="row form-group">
+                    <div class=" form-group">
                        <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan">Quên mật khẩu</a>
                     </div>
-                    <div class="row form-group  justify-content-center align-items-center ">
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    <div class=" form-group  justify-content-center align-items-cen ter ">
+                        <button type="submit" class="btn btn-block btn-primary">Đăng nhập</button>
                     </div>
                     
                 </div>
