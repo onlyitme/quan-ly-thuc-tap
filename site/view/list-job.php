@@ -1,29 +1,29 @@
 <div id="list-job">
     <div class="row bg-light shadow-sm  py-3 mb-3">
         <form action="" method="post" class="d-lg-flex col-lg-9">
-            <input type="text" class="form-control mr-3" name="" id="" aria-describedby="helpId" placeholder="Tên công ty, chức danh">
-            <input type="text" class="form-control mr-3" name="" id="" aria-describedby="helpId" placeholder="Tất cả ngành nghề">
-            <input type="text" class="form-control mr-3" name="" id="" aria-describedby="helpId" placeholder="Tất cả địa điểm">
-            <button type="submit" class="btn btn-dark  "><i class="fas fa-search"></i></button>
+            <input type="text" class="form-control mr-2 mb-2" name="" id="" aria-describedby="helpId" placeholder="Tên công ty, chức danh">
+            <input type="text" class="form-control mr-2 mb-2" name="" id="" aria-describedby="helpId" placeholder="Tất cả ngành nghề">
+            <input type="text" class="form-control mr-2 mb-2" name="" id="" aria-describedby="helpId" placeholder="Tất cả địa điểm">
+            <button type="submit" class="btn btn-dark col-lg-1 mb-2"><i class="fas fa-search"></i></button>
         </form>
-        <div class="col-lg-3 d-flex">
-            <a href="" class="btn btn-outline-dark form-control col-6 "><i class="fas fa-filter    "></i> Ngành của bạn</a>
-            <div class="col-6 text-right px-0">
-                <button class="btn btn-outline-dark mr-2"><i class="fas fa-th-large     "></i></button>
-                <button class="btn btn-outline-dark"><i class="fas fa-th-list  text-warning "></i></button>
+        <div class="col-lg-3 d-flex flex-wrap">
+            <a href="" class="btn btn-outline-dark form-control overflow-hidden col mr-3"><i class="fas fa-filter    "></i> Ngành của bạn</a>
+            <div class="text-right px-0">
+                <button id="list-grid" class="btn btn-success mr-2"><i class="fas fa-th-large"></i></button>
+                <button id="list-inf" class="btn btn-warning"><i class="fas fa-th-list  text-light "></i></button>
             </div>
         </div>
     </div>
     <div class="row detail-job shadow-sm ">
-        <div class="col-lg-4  p-lg-0">
+        <div class="col  p-lg-0">
             <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
                 <h5>10.000 việc làm</h5>
                 <select name="" id="" class="small text-gray border-0">
-                                <option value="">Cập nhật</option>
-                                <option value="">Mức lương</option>
-                            </select>
+                    <option value="">Cập nhật</option>
+                    <option value="">Mức lương</option>
+                </select>
             </div>
-            <div class="detail-job_list list-group small">
+            <div class="detail-job_list d-flex flex-wrap small">
                 <button type="button" class="list-group-item list-group-item-action px-0">
                                 <div class="media">
                                     <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
@@ -98,7 +98,7 @@
                             </button>
             </div>
         </div>
-        <div class="col-8 detail-job_inf p-0">
+        <div class="d-none d-md-block col-8 detail-job_inf p-0">
             <img src="http://placehold.it/900x200" alt="">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
@@ -110,7 +110,7 @@
                 </div>
             </div>
             <div class="row p-3">
-                <div class="col-7">
+                <div class="col-lg-7">
                     <div class="mb-3">
                         <h5>Phúc lợi</h5>
                         <div class="d-flex small">
@@ -161,10 +161,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-lg-5">
                     <div class="mb-4">
                         <h5>Địa điểm</h5>
-                        <img src="images/map.jpg" alt="">
+                        <img src="view/images/map.jpg" alt="">
                     </div>
                     <div class="mb-4 p-3 shadow">
                         <h5 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h5>
