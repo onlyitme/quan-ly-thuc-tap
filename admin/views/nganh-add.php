@@ -10,11 +10,11 @@
 <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=nganh&act=insert">
     <div class="row justify-content-center align-items-center text-warning">
         <h1>Thêm ngành</h1>
-    </div> 
+    </div>
         <div class="form-group">
             <select name="id_nn" class="form-control">
                 <option value="">Chọn nhóm ngành</option>
-                <?php require_once "model/nhom_nganh.php";
+                <?php require_once "models/nhom_nganh.php";
                 $ds = getAllNhomnganh();
                 foreach ($ds as $row) { ?>
                     <option value="<?= $row['id_nn'] ?>"> <?= $row['ten_nn'] ?></option>

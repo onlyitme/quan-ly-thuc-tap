@@ -25,6 +25,10 @@
     values('$id_user','$mssv','$id_nganh','$ho_ten')";
         execute($sql);
     }
+    function tim_id_nganh($ten_nganh){
+        $sql = "SELECT * FROM nganh WHERE ten_nganh='$ten_nganh'";
+        return queryOne($sql);
+    }
     ?>
 </body>
 

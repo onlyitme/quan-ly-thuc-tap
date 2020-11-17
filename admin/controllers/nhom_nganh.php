@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once "model/nhom_nganh.php"; //nạp model để có các hàm tương tác db
+    require_once "models/nhom_nganh.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
@@ -17,8 +17,8 @@
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
             $ds = getAllNhomnganh();
-            $view = "view/nn-index.php";
-            require_once "view/layout.php";
+            $view = "views/nn-index.php";
+            require_once "views/layout.php";
             break;
         case "thongbao":
             session_start();
@@ -28,12 +28,12 @@
             } else {
                 $thongbao = "Không có gì để thông báo";
             }
-            $view = "view/thongbao.php";
-            require_once "view/layout.php";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
             break;
         case "addnew":
-            $view = "view/nn-add.php";
-            require_once "view/layout.php";
+            $view = "views/nn-add.php";
+            require_once "views/layout.php";
             break;
         case "insert":
             $ten_nn = trim(strip_tags($_POST['ten_nn']));
@@ -59,8 +59,8 @@
             settype($an_hien, "int");
             addNewNhomnganh($ten_nn, $an_hien);
             $thongbao = "Thêm nhóm ngành thành công";
-            $view = "view/thongbao.php";
-            require_once "view/layout.php";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
             break;
         case "kiemtra_ten_nn":
             if (isset($_GET['ten_nn']))
@@ -74,8 +74,8 @@
             $id_nn = $_GET["id_nn"];
             settype($id_nn, "int");
             $row = getNhomnganhByID($id_nn);
-            $view = "view/nn-edit.php";
-            require_once "view/layout.php";
+            $view = "views/nn-edit.php";
+            require_once "views/layout.php";
             break;
         case "update":
             $id_nn = $_POST["id_nn"];
@@ -84,16 +84,16 @@
             settype($ma_loai, "int");
             updateNhomnganh($id_nn, $ten_nn, $an_hien);
             $ds = getAllNhomnganh();
-            $view = "view/nn-index.php";
-            require_once "view/layout.php";
+            $view = "views/nn-index.php";
+            require_once "views/layout.php";
             break;
         case "delete":
             $id_nn = $_GET["id_nn"];
             settype($id_nn, "int");
             deleteNhomnganh($id_nn);
             $ds = getAllNhomnganh();
-            $view = "view/nn-index.php";
-            require_once "view/layout.php";
+            $view = "views/nn-index.php";
+            require_once "views/layout.php";
             break;
     }
     ?>

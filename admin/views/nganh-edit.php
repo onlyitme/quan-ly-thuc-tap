@@ -16,7 +16,7 @@
         <div class="form-group">
         <label for="ten_loai">Tên nhóm ngành</label>
             <select name="id_nn" class="form-control">
-                <?php require_once "/nhom_nganh.php";
+                <?php require_once "models/nhom_nganh.php";
                 $ds = getAllNhomnganh();
                 foreach ($ds as $nn) { ?>
                     <?php if ($row['id_nn'] == $nn['id_nn']) { ?>

@@ -9,13 +9,13 @@
 
 <body>
     <?php
-    require_once "model/home.php"; //nạp model để có các hàm tương tác db
+    require_once "models/home.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
         case "index":
-            $view = "view/home.php";
-            require_once "view/layout.php";
+            $view = "views/home.php";
+            require_once "views/layout.php";
             break;
         case "dangnhap":
             $user = $_POST['user'];
@@ -25,11 +25,11 @@
                 $_SESSION['admin'] = $user;
                 header('location:index.php');
             }
-            $view = "view/home.php";
-            require_once "view/layout.php";
+            $view = "views/home.php";
+            require_once "views/layout.php";
             break;
         case "taikhoan":
-            require_once "view/quenmk.php";
+            require_once "views/quenmk.php";
             break;
         case "logout":
             session_start();
@@ -88,7 +88,7 @@
             } else {
                 $thongbao = "Không có gì để thông báo";
             }
-            require_once "view/thongbao.php";
+            require_once "views/thongbao.php";
             break;
         case "kiemtrauser":
             if (isset($_GET['user'])) $user = trim(strip_tags($_GET['user']));

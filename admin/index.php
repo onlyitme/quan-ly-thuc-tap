@@ -7,11 +7,11 @@
 </head>
 <body>
 <?php
-  define('ARR_CONTROLLER', ["home","nhom_nganh", "nganh", "sinh_vien","doanh_nghiep","user","excel"]) ;
+  define('ARR_CONTROLLER', ["home","nhom_nganh", "nganh", "sinh_vien","doanh_nghiep","user"]) ;
   $ctrl='home';
   if(isset($_GET['ctrl'])==true) $ctrl=$_GET['ctrl'];    
   if (in_array($ctrl, ARR_CONTROLLER)==false) die("Không tồn tại địa chỉ");
-  $pathFile ="controller/$ctrl.php";  
+  $pathFile ="controllers/$ctrl.php";  
   if (file_exists($pathFile) ==true) require_once $pathFile;
   else echo "Controller $ctrl không tồn tại";
 ?>

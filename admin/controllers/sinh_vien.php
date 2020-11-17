@@ -9,7 +9,7 @@
 
 <body>
     <?php
-    require_once "model/sinh_vien.php"; //nạp model để có các hàm tương tác db
+    require_once "models/sinh_vien.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
@@ -17,8 +17,8 @@
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
             $ds = getAllSinhvien();
-            $view = "view/sinh_vien-index.php";
-            require_once "view/layout.php";
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
             break;
         case "thongbao":
             session_start();
@@ -27,16 +27,16 @@
                 unset($_SESSION['thongbao']);
             } else
                 $thongbao = "Không có gì để thông báo";
-            $view = "view/thongbao.php";
-            require_once "view/layout.php";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
             break;
         case "addnew":
-            $view = "view/sinh_vien-add.php";
-            require_once "view/layout.php";
+            $view = "views/sinh_vien-add.php";
+            require_once "views/layout.php";
             break;
         case "addnew_":
-            $view = "view/docfile.php";
-            require_once "view/layout.php";
+            $view = "views/docfile.php";
+            require_once "views/layout.php";
             break;
         case "insert":
             $user = trim(strip_tags($_POST["user"]));
@@ -76,15 +76,15 @@
             updateUser($id_user);
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
             $thongbao = "Thêm sinh viên thành công";
-            $view = "view/thongbao.php";
-            require_once "view/layout.php";
+            $view = "views/thongbao.php";
+            require_once "views/layout.php";
             break;
         case "edit":
             $id_sv = $_GET["id_sv"];
             settype($id_sv, "int");
             $row = getSinhvienByID($id_sv);
-            $view = "view/sinh_vien-edit.php";
-            require_once "view/layout.php";
+            $view = "views/sinh_vien-edit.php";
+            require_once "views/layout.php";
             break;
         case "update":
             $id_sv = $_POST['id_sv'];
@@ -104,16 +104,16 @@
             move_uploaded_file($_FILES["hinh"]["tmp_name"], "images/$hinh");
             updateSinhvien($id_sv, $id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
             $ds = getAllSinhvien();
-            $view = "view/sinh_vien-index.php";
-            require_once "view/layout.php";
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
             break;
         case "delete":
             $id_sv = $_GET["id_sv"];
             settype($id_sv, "int");
             deleteSinhvien($id_sv);
             $ds = getAllSinhvien();
-            $view = "view/sinh_vien-index.php";
-            require_once "view/layout.php";
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
             break;
         case "kiemtrauser":
             if (isset($_GET['user'])) $user = trim(strip_tags($_GET['user']));

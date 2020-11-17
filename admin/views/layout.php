@@ -33,7 +33,7 @@
 <?php
   session_start();
   if (!isset($_SESSION['admin'])) {
-    header('location:view/login-index.php');
+    header('location:views/login-index.php');
   }
   ?>
     <header>
@@ -128,7 +128,7 @@
                         <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh vien</a></p>
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh vien</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=excel">Thêm sinh vien file</a></p>
+                           
                         </div>
                     </div>
                 </div>
