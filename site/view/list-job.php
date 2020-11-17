@@ -1,5 +1,5 @@
 <div id="list-job">
-    <div class="row bg-light shadow-sm  py-3 mb-3">
+    <div class="row bg-light shadow-sm  py-3 ">
         <form action="" method="post" class="d-lg-flex col-lg-9">
             <input type="text" class="form-control mr-2 mb-2" name="" id="" aria-describedby="helpId" placeholder="Tên công ty, chức danh">
             <input type="text" class="form-control mr-2 mb-2" name="" id="" aria-describedby="helpId" placeholder="Tất cả ngành nghề">
@@ -25,77 +25,102 @@
             </div>
             <div class="detail-job_list d-flex flex-wrap small">
                 <button type="button" class="list-group-item list-group-item-action px-0">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0 ">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
                 <button type="button" class="list-group-item list-group-item-action px-0 ">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
                 <button type="button" class="list-group-item list-group-item-action px-0 ">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
                 <button type="button" class="list-group-item list-group-item-action px-0 ">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
                 <button type="button" class="list-group-item list-group-item-action px-0 ">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
                 <button type="button" class="list-group-item list-group-item-action px-0 ">
-                                <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
-                                    <div class="media-body text-gray text-left">
-                                      <h5 class="text-dark mt-0">Tên công việc</h5>
-                                      <p class="font-weight-bold ">Tên công ty</p>
-                                      <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
-                                      <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
-                                      <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
-                                    </div>
-                                  </div>
-                            </button>
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-0 ">
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
+                <button type="button" class="list-group-item list-group-item-action px-0 ">
+                    <div class="media">
+                        <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                        <div class="media-body text-gray text-left">
+                            <a href=""><h5 class="text-dark mt-0 ">Tên công việc</h5></a>
+                            <p class="font-weight-bold ">Tên công ty</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: 123</p>
+                            <p><i class="fas fa-map-marker-alt    "></i> Hà Nội</p>
+                            <p ><i class="fas fa-calendar-alt "></i> Hạn chót: 25/09/20</p>
+                        </div>
+                        </div>
+                </button>
+                            
             </div>
         </div>
         <div class="d-none d-md-block col-8 detail-job_inf p-0">
