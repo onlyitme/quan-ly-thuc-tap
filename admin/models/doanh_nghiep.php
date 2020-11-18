@@ -36,16 +36,7 @@
         $sql = "SELECT * from doanh_nghiep where id_dn='$id_dn'";
         return queryOne($sql);
     }
-    function updateUser_Trangthai($id_user)
-    {
-        try {
-            $sql = "UPDATE user SET trang_thai='1' WHERE id_user='$id_user'";
-            execute($sql);
-        } catch (Exception  $e) {
-            print_r($e->errorInfo);
-            exit();
-        }
-    }
+   
     function updateUser($id_user, $user, $pass, $email)
     {
         try {
@@ -90,7 +81,7 @@
     }
     function checkuserTonTaiChuaDung($user)
     {
-        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' AND trang_thai='1'";
+        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' ";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];

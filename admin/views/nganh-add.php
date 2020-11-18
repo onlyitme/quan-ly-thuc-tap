@@ -37,13 +37,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Lưu</button>
 </form>
-<form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-5" action="" enctype="multipart/form-data">
-    <h1>Để upload thành công file excel của bạn phải có dạng như hình dưới đây</h1>
-    <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
-</br>
-    <input type="file" name="file" >
-    <button type="submit" name="btn">uploads</button>
-    </form>
+
 
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

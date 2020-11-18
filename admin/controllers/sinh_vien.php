@@ -62,7 +62,7 @@
             settype($trang_thai, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-            updateUser_Trangthai($id_user);
+          
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $thongbao = "Thêm sinh viên thành công";
             $view = "views/thongbao.php";

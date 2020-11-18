@@ -128,7 +128,7 @@
                         <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh viên</a></p>
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh viên</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh viên file</a></p>
+                           
                         </div>
                     </div>
                 </div>
