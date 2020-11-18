@@ -230,13 +230,13 @@ a:hover {
     border-radius: 5px;
 }
 
-.detail-job_list {
+#list-job .detail-job_list {
     min-height: 150px;
     max-height: 800px;
     overflow-y: auto;
 }
 
-.detail-job_inf {
+#list-job .detail-job_inf {
     min-height: 150px;
     max-height: 850px;
     overflow-y: auto;

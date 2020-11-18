@@ -17,6 +17,7 @@
     function query($sql)   {
         $conn = getConnection();
         $result = $conn->query($sql);
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
         return $result;
         }
 
