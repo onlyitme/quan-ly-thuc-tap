@@ -99,6 +99,14 @@
             $view = "views/dt-index.php";
             require_once "views/layout.php";
             break;
+        case "delete_":
+            $id_ut = $_GET["id_ut"];
+            settype($id_ut, "int");
+            deleteUngtuyen($id_dt);
+            $ds = getAllDangtuyen();
+            $view = "views/dt-index.php";
+            require_once "views/layout.php";
+            break;
         case "duyet":
             $id_dt = $_GET["id_dt"];
             settype($id_dt, "int");
@@ -112,6 +120,14 @@
             settype($id_dt, "int");
             $ds = getAllUngtuyen($id_dt);
             $view = "views/ut-index.php";
+            require_once "views/layout.php";
+            break;
+        case "chi_tiet":
+            $id_dt = $_GET["id_dt"];
+            settype($id_dt, "int");
+            $row = getDangtuyenByID($id_dt);
+            $ds = getAllUngtuyen($id_dt);
+            $view = "views/chitiet_dt.php";
             require_once "views/layout.php";
             break;
         case "kiemtrauser":

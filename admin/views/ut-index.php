@@ -47,7 +47,7 @@
                     </td>
                     <td>
                     <b>Nguyện vọng</b><?= $row['nguyen_vong'] ?><br>
-                    <td><a href="?ctrl=doanh_nghiep&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
+                    <td><a href="?ctrl=dang_tuyen&act=delete_&id_ut=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             <?php } ?>

@@ -17,12 +17,8 @@
         <thead>
             <tr class="text-center">
                 <th scope="col">#</th>
-                <th scope="col">Ảnh</th>
-                <th scope="col">Thông tin</th>
-                <th scope="col">Nội dung</th>
-                <th scope="col">Số lượng</th>
-                <th scope="col">Sửa</th>
-                <th scope="col">Xóa</th>
+                <th scope="col">Thông tin chung</th>
+                <th scope="col">Chi tiết</th>
             </tr>
         </thead>
         <tbody>
@@ -30,9 +26,6 @@
             foreach ($ds as $row) { ?>
                 <tr>
                     <td><?=$i++?></td>
-                    <td>
-                        <img src="images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';">
-                    </td>
                     <td>
                     <?php 
                         $ds = getAllDoanhnghiep();
@@ -48,24 +41,10 @@
                                 <b>Ngành tuyển:</b> <?= $r['ten_nganh'] ?><br>
                             <?php } ?>
                         <?php } ?>
-                        <b>Tiêu đề:</b> <?= $row['tieu_de'] ?><br>
-                        <b>Yêu cầu:</b> <?= $row['yeu_cau'] ?><br>
-                        <b>Trạng thái:</b> <?= ($row['trang_thai'] == 0) ? "Chưa duyệt" : "Đã duyệt"; ?><br>
                     </td>
-                    <td>
-                    <b>Nội dung:</b> <?= $row['noi_dung'] ?><br>
-                    </td>
+        
                     <td> 
-                        <b>Số lượng sinh viên cần :</b><?= $row['sl_sv_can'] ?><br>
-                        <b>Số lượng sinh viên đăng ký :</b><?= $row['sl_sv_dk'] ?><br>
-                        <a href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"><b>Xem sinh viên ưng tuyển</b></a><br>
-                    </td>
-                    <td><br>
-                        <a href="?ctrl=dang_tuyen&act=edit&id_dt=<?= $row['id_dt'] ?>"><i class="fa fa-edit"></i></a><br><br>
-                        <a href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=duyet&id_dt=<?= $row['id_dt'] ?>">Duyệt</a>
-                    </td>
-                    <td><br>
-                        <a href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
+                        <a href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=chi_tiet&id_dt=<?= $row['id_dt']?>"><b>Xem chi tiết</b></a><br>
                     </td>
                 </tr>
             <?php } ?>
