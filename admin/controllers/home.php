@@ -47,11 +47,13 @@
                 session_start();
                 $_SESSION['thongbao'] = $thongbao;
                 header("location:" . ADMIN_URL . "?ctrl=home&act=thongbao");
-            } else
+            } else {
                 $thongbao = "Tài khoản hoặc email không đúng";
-            session_start();
-            $_SESSION['thongbao'] = $thongbao;
-            header("location:" . ADMIN_URL . "?ctrl=home&act=thongbao");
+                session_start();
+                $_SESSION['thongbao'] = $thongbao;
+                header("location:" . ADMIN_URL . "?ctrl=home&act=thongbao");
+                exit();
+            }
             // Gửi mail kích hoạt tài khoản
             require "PHPMailer-master/src/PHPMailer.php";
             require "PHPMailer-master/src/SMTP.php";

@@ -39,7 +39,17 @@
             require_once "views/layout.php";
             break;
         case "insert":
-            $user = trim(strip_tags($_POST["user"]));
+            $user = trim(strip_tags($_POST['user']));
+            $email = trim(strip_tags($_POST['email']));
+            $pass = trim(strip_tags($_POST['pass']));
+            $chuc_vu = 0;
+            addNewUser($user, $pass, $email, $chuc_vu);
+            $ds = getAllUser();
+            foreach ($ds as $id) {
+                if ($id['user'] == $user) {
+                    $id_user = $id['id_user'];
+                }
+            }
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
@@ -50,31 +60,10 @@
             settype($sdt, "int");
             $trang_thai = $_POST['trang_thai'];
             settype($trang_thai, "int");
-            $ket_qua = $_POST['ket_qua'];
-            settype($ket_qua, "int");
-            $ghi_chu = trim(strip_tags($_POST["ghi_chu"]));
-            $hinh = $_FILES["hinh"]["name"];
-            move_uploaded_file($_FILES["hinh"]["tmp_name"], "images/$hinh");
-            $thongbao = "";
-            $thanhcong = true;
-            if ($id_nganh == "") {
-                $thongbao .= "Bạn chưa chọn ngành";
-                $thanhcong = false;
-            }
-            if ($thanhcong == false) {
-                session_start();
-                $_SESSION['thongbao'] = $thongbao;
-                header("location:" . ADMIN_URL . "?ctrl=sinh_vien&act=thongbao");
-                exit();
-            }
-            $ds = getAllUser();
-            foreach ($ds as $k) {
-                if($user==$k["user"]){
-                    $id_user=$k["id_user"];
-                }
-            }
-            updateUser($id_user);
-            addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
+            $anh = $_FILES["anh"]["name"];
+            move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
+            updateUser_Trangthai($id_user);
+            addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $thongbao = "Thêm sinh viên thành công";
             $view = "views/thongbao.php";
             require_once "views/layout.php";
@@ -87,30 +76,38 @@
             require_once "views/layout.php";
             break;
         case "update":
-            $id_sv = $_POST['id_sv'];
-            settype($id_sv, "int");
-            $id_user = $_POST['id_user'];
-            settype($id_user, "int");
+            $id_sv = $_POST["id_sv"];
+            $ds = getAllSinhvien();
+            foreach ($ds as $id) {
+                if ($id['id_sv'] == $id_sv) {
+                    $id_user = $id['id_user'];
+                }
+            }
+            $user = trim(strip_tags($_POST["user"]));
+            $pass = trim(strip_tags($_POST["pass"]));
+            $email = trim(strip_tags($_POST["email"]));
+            updateUser($id_user,$user, $pass, $email);
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
             $ho_ten = trim(strip_tags($_POST["ho_ten"]));
             $gioi_tinh = $_POST['gioi_tinh'];
+            settype($gioi_tinh, "int");
             $sdt = $_POST['sdt'];
+            settype($sdt, "int");
             $trang_thai = $_POST['trang_thai'];
-            $ket_qua = $_POST['ket_qua'];
-            $ghi_chu = trim(strip_tags($_POST["ghi_chu"]));
-            $hinh = $_FILES["hinh"]["name"];
-            move_uploaded_file($_FILES["hinh"]["tmp_name"], "images/$hinh");
-            updateSinhvien($id_sv, $id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh);
+            settype($trang_thai, "int");
+            $anh = $_FILES["anh"]["name"];
+            move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
+            updateSinhvien($id_sv,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $ds = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
         case "delete":
-            $id_sv = $_GET["id_sv"];
-            settype($id_sv, "int");
-            deleteSinhvien($id_sv);
+            $id_user = $_GET["id_user"];
+            settype($id_user, "int");
+            deleteUser($id_user);
             $ds = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
@@ -119,9 +116,8 @@
             if (isset($_GET['user'])) $user = trim(strip_tags($_GET['user']));
             else $user = "";
             if ($user == "") echo "<pan class ='badge badge-danger'>Username không có</pan>";
-            else if (checkUserTonTai($user) == false) echo "<pan class = 'badge badge-danger'>User này không tồn tại</pan>";
-            else if (checkUserTonTaiChuaDung($user)) echo "<pan class = 'badge badge-success '>Bạn có thể dùng User này</pan>";
-            else echo "<pan class ='badge badge-danger'>User này đã có người dùng</pan>";
+            else if (checkUserTonTaiChuaDung($user)) echo "<pan class = 'badge badge-danger '>User này đã có người dùng</pan>";
+            else echo "<pan class ='badge badge-success'>Bạn có thể dùng User này</pan>";
             break;
         case "kiemtramssv":
             if (isset($_GET['mssv'])) $mssv = trim(strip_tags($_GET['mssv']));
@@ -129,6 +125,13 @@
             if ($mssv  == "") echo "<pan class ='badge badge-danger'>Mã số sinh viên không được rỗng</pan>";
             else if (checkMssvTonTai($mssv)) echo "<pan class = 'badge badge-danger'>Mã số sinh viên đã có người dùng</pan>";
             else echo "<pan class ='badge badge-success'>Bạn có thể dùng mã số sinh viên này</pan>";
+            break;
+        case "kiemtraemail":
+            if (isset($_GET['email'])) $email = trim(strip_tags($_GET['email']));
+            else $email = "";
+            if ($email == "") echo "<pan class ='badge badge-danger'>Email không có</pan>";
+            else if (checkEmailTonTai($email)) echo "<pan class = 'badge badge-danger'>Email đã có người dùng</pan>";
+            else echo "<pan class ='badge badge-success'>Bạn có thể dùng Email này</pan>";
             break;
     }
     ?>

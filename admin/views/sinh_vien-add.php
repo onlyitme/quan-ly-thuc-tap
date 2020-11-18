@@ -1,37 +1,3 @@
-<?php
-require_once "views/Classes/PHPExcel.php";
-require_once "models/excel.php";
-
-if(isset($_POST['btn'])){
-    $file= $_FILES['file']['tmp_name'];
-    $objReader=PHPExcel_IOFactory::createReaderForFile($file);
-    $objReader -> setLoadSheetsOnly('Sheet1');
-    
-    $objExcel = $objReader->load($file);
-    $sheetData = $objExcel->getActiveSheet()->toArray('null',true,true,true);
-    
-    $highRow=$objExcel->setActiveSheetIndex()->getHighestRow();
-  
-    for($row=2;$row<=$highRow;$row++){
-        $user=$sheetData[$row]['A'];
-        $pass=$sheetData[$row]['B'];
-        $email=$sheetData[$row]['C'];
-        $chuc_vu=0;
-     
-        addNewUser($user,$pass,$email,$chuc_vu);
-    $id_user_full = seach_id_user($email);
-    $id_user =   $id_user_full['id_user'];
-        
-      $mssv=$sheetData[$row]['D'];
-      $ho_ten=$sheetData[$row]['E'];
-      $id_nganh=$sheetData[$row]['F'];
-      $id_nganh=tim_id_nganh($id_nganh);
-      $id_nganh= $id_nganh['id_nganh'];
-      addNewSinhvienforexecl($id_user, $mssv, $id_nganh, $ho_ten);
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,14 +12,27 @@ if(isset($_POST['btn'])){
         <div class="row justify-content-center align-items-center text-warning">
             <h1>Thêm sinh viên</h1>
         </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="user" name="user" required placeholder="Tên tài khoản">
+            <?php if (isset($user_error)) { ?>
+                <span class="badge badge-warning"> <?= $user_error ?> </span>
+            <?php } ?>
+            <span id="kqcheckuser"></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="pass" required placeholder="Mật khẩu">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="user" name="ho_ten" required placeholder="Họ tên sinh viên">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
+            <?php if (isset($email_error)) { ?>
+                <span class="badge badge-warning"> <?= $email_error ?> </span>
+            <?php } ?>
+            <span id="kqcheckemail"></span>
+        </div>
         <div class="row">
-            <div class="form-group col-6">
-                <input type="text" class="form-control" id="user" name="user" required placeholder="Tên user">
-                <?php if (isset($user_error)) { ?>
-                    <span class="badge badge-warning"> <?= $user_error ?> </span>
-                <?php } ?>
-                <span id="kqcheckuser"></span>
-            </div>
             <div class="form-group col-6">
                 <select name="id_nganh" class="form-control">
                     <option value="">Chọn ngành</option>
@@ -64,6 +43,9 @@ if(isset($_POST['btn'])){
                     <?php } ?>
                 </select>
             </div>
+            <div class="form-group col-6">
+                <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
+            </div>
         </div>
         <div class="row">
             <div class="form-group col-6">
@@ -71,22 +53,15 @@ if(isset($_POST['btn'])){
                 <?php if (isset($user_error)) { ?>
                     <span class="badge badge-warning"> <?= $user_error ?> </span>
                 <?php } ?>
-                <span id="kqcheckuser"></span>
+                <span id="kqcheckmssv"></span>
             </div>
             <div class="form-group col-6">
-                <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
+                <input type="file" class="form-control" name="anh" placeholder="Mã số sinh viên">
             </div>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" id="user" name="ho_ten" required placeholder="Họ tên sinh viên">
         </div>
         <div class="row">
             <div class="form-group col-6">
-                <label for="">Hình ảnh:</label>
-                <input type="file" class="form-control" name="hinh">
-            </div>
-            <div class="form-group col-6">
-                <label for=""><br>Giới tính:</label>
+                <label for="">Giới tính:</label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gioi_tinh" id="gioi_tinh1" value="1" checked>
                     <label class="form-check-label"> Nam</label>
@@ -94,19 +69,6 @@ if(isset($_POST['btn'])){
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gioi_tinh" id="gioi_tinh0" value="0">
                     <label class="form-check-label">Nữ</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-6">
-                <label for="">Kết quả:</label><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="ket_qua" id="ket_qua1" value="1">
-                    <label class="form-check-label"> Đậu</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="ket_qua" id="ket_qua0" value="0" checked>
-                    <label class="form-check-label">Rớt</label>
                 </div>
             </div>
             <div class="form-group col-6">
@@ -121,21 +83,9 @@ if(isset($_POST['btn'])){
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <textarea class="form-control" name="ghi_chu" rows="5"></textarea>
-        </div>
         <div class="row form-group  justify-content-center align-items-center ">
             <button type="submit" class="btn btn-primary">Lưu lại</button>
         </div>
-    </form>
-    
-
-    <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-5" action="" enctype="multipart/form-data">
-    <h1>Để upload thành công file excel của bạn phải có dạng như hình dưới đây</h1>
-    <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
-</br>
-    <input type="file" name="file" >
-    <button type="submit" name="btn">uploads</button>
     </form>
     <script>
         $(document).ready(function() {
@@ -148,6 +98,12 @@ if(isset($_POST['btn'])){
             $("#mssv").blur(function() {
                 u = $(this).val();
                 $("#kqcheckmssv").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtramssv&mssv=" + u);
+            });
+        });
+        $(document).ready(function() {
+            $("#email").blur(function() {
+                u = $(this).val();
+                $("#kqcheckemail").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtraemail&email=" + u);
             });
         });
     </script>

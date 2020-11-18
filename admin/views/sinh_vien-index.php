@@ -19,8 +19,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Hình</th>
                 <th scope="col">Thông tin</th>
-                <th scope="col">Trạng thái</th>
-                <th scope="col">Ghi chú</th>
+                <th scope="col">Liên hệ</th>
                 <th scope="col">Sửa</th>
                 <th scope="col">Xóa</th>
             </tr>
@@ -30,29 +29,31 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>
-                        <img src="images/<?= $row['hinh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';">
+                        <img src="images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';">
                     </td>
                     <td>
-                        <b>Mã số SV:</b> <?= $row['mssv'] ?><br>
                         <b>Họ tên:</b> <?= $row['ho_ten'] ?><br>
+                        <b>Giới tính:</b><?= ($row['gioi_tinh'] == 1) ? "Nam" : "Nữ"; ?><br>
+                        <?php require_once "models/nganh.php";
+                        $ds = getAllNganh();
+                        foreach ($ds as $r) { ?>
+                            <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
+                                <b>Tên ngành:</b> <?= $r['ten_nganh'] ?>
+                            <?php } ?>
+                        <?php } ?>
+                    </td>
+                    <td>
                         <b>Số điện thoại:</b><?= $row['sdt'] ?><br>
-                        <b>Giới tính:</b><?= ($row['gioi_tinh'] == 1) ? "Nam" : "Nữ"; ?>
-                    </td>
-                    <td>
+                        <b>Mã số SV:</b> <?= $row['mssv'] ?><br>
                         <b>Trạng thái:</b><?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?> <br>
-                        <b>Kết quả:</b><?= ($row['ket_qua'] == 1) ? "Đậu" : "Rớt"; ?><br>
-                    </td>
-                    <td>
-                        <?= $row['ghi_chu'] ?>
                     </td>
                     <td><a href="?ctrl=sinh_vien&act=edit&id_sv=<?= $row['id_sv'] ?>"><i class="fa fa-edit"></i></a>
                     </td>
-                    <td><a href="?ctrl=sinh_vien&act=delete&id_sv=<?= $row['id_sv'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
+                    <td><a href="?ctrl=sinh_vien&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 </body>
-
 </html>

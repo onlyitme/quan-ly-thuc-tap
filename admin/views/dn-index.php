@@ -10,16 +10,16 @@
 <body>
     <th colspan="7">
         <div class="row justify-content-center align-items-center text-warning">
-            <h1>Danh sách user</h1>
+            <h1>Danh sách doanh nghiệp</h1>
         </div>
     </th>
     <table class="table table-bordered table-hover ">
         <thead>
             <tr class="text-center">
                 <th scope="col">#</th>
+                <th scope="col">Ảnh</th>
                 <th scope="col">Thông tin</th>
-                <th scope="col">Email</th>
-                <th scope="col">Chức vụ</th>
+                <th scope="col">Liên hệ</th>
                 <th scope="col">Sửa</th>
                 <th scope="col">Xóa</th>
             </tr>
@@ -30,19 +30,21 @@
                 <tr>
                     <td><?=$i++?></td>
                     <td>
-                        <b>Username:</b> <?= $row['user'] ?><br>
-                        <b>Password:</b> <?= $row['pass'] ?>
+                        <img src="images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';">
                     </td>
-                    <td> <b>Email:</b><?= $row['email'] ?></td>
                     <td>
-                        <b>Chức vụ:</b><?php if($row['chuc_vu'] == 0) echo "Sinh viên" ;
-                                         elseif($row['chuc_vu'] == 1) echo "Doanh nghiệp";
-                                         else echo "ADMIN";
+                        <b>Tên doanh nghiệp:</b> <?= $row['ten_dn'] ?><br>
+                        <b>Ẩn hiện:</b><?php if($row['an_hien'] == 0) echo "Đang hiện" ;
+                                         elseif($row['an_hien'] == 1) echo "Đang ẩn";
                                          ?>
                     </td>
-                    <td><a href="?ctrl=user&act=edit&id_user=<?= $row['id_user'] ?>"><i class="fa fa-edit"></i></a>
+                    <td> 
+                        <b>Địa chỉ :</b><?= $row['dia_chi'] ?><br>
+                        <b>Số điện thoại :</b><?= $row['sdt'] ?>
                     </td>
-                    <td><a href="?ctrl=user&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
+                    <td><a href="?ctrl=doanh_nghiep&act=edit&id_dn=<?= $row['id_dn'] ?>"><i class="fa fa-edit"></i></a>
+                    </td>
+                    <td><a href="?ctrl=doanh_nghiep&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
                     </td>
                 </tr>
             <?php } ?>

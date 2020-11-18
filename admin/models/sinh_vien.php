@@ -19,21 +19,25 @@
         $sql = "SELECT * from sinh_vien";
         return query($sql);
     }
-    function  addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh)
+    function addNewSinhvien($id_user,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
     {
-        $sql = "INSERT INTO sinh_vien (id_user,mssv,id_nganh,ho_ten,gioi_tinh,sdt,trang_thai,ket_qua,ghi_chu,hinh) 
-    values('$id_user','$mssv','$id_nganh','$ho_ten','$gioi_tinh','$sdt','$trang_thai','$ket_qua','$ghi_chu','$hinh')";
+        $sql = "INSERT INTO sinh_vien (id_user,mssv,id_nganh,ho_ten,gioi_tinh,sdt,trang_thai,anh) 
+    values('$id_user','$mssv','$id_nganh','$ho_ten','$gioi_tinh','$sdt','$trang_thai','$anh')";
         execute($sql);
+    }
+    function searchid_user($user,$email){
+        $sql = "SELECT * from user where user='$user' AND email='$email'";
+        return queryOne($sql);
     }
     function getSinhvienByID($id_sv)
     {
         $sql = "SELECT * from sinh_vien where id_sv='$id_sv'";
         return queryOne($sql);
     }
-    function  updateSinhvien($id_sv, $id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $ket_qua, $ghi_chu, $hinh)
+    function  updateSinhvien($id_sv,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
     {
         try {
-            $sql = "UPDATE sinh_vien SET id_user='$id_user',mssv='$mssv',id_nganh='$id_nganh',ho_ten='$ho_ten',gioi_tinh='$gioi_tinh',sdt='$sdt',trang_thai='$trang_thai',ket_qua='$ket_qua',ghi_chu='$ghi_chu',hinh='$hinh'
+            $sql = "UPDATE sinh_vien SET mssv='$mssv',id_nganh='$id_nganh',ho_ten='$ho_ten',gioi_tinh='$gioi_tinh',sdt='$sdt',trang_thai='$trang_thai',anh='$anh'
              WHERE id_sv='$id_sv'";
             execute($sql);
         } catch (Exception  $e) {
@@ -41,14 +45,9 @@
             exit();
         }
     }
-    function deleteSinhvien($id_sv)
-    {
-        $sql = "DELETE FROM sinh_vien WHERE id_sv='$id_sv'";
-        execute($sql);
-    }
     function checkuserTonTaiChuaDung($user)
     {
-        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' AND trang_thai='0'";
+        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' AND trang_thai='1'";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
@@ -70,7 +69,15 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    function updateUser($id_user)
+    function checkEmailTonTai($email)
+    {
+        $sql = "SELECT count(*) as sodong FROM user WHERE email='$email'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount > 0;
+    }
+    function updateUser_Trangthai($id_user)
     {
         try {
             $sql = "UPDATE user SET trang_thai='1' WHERE id_user='$id_user'";
@@ -80,6 +87,28 @@
             exit();
         }
     }
+    function updateUser($id_user, $user, $pass,$email)
+    {
+        try {
+            $sql = "UPDATE user SET user='$user', pass ='$pass',email='$email' WHERE id_user='$id_user'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function addNewUser($user,$pass,$email,$chuc_vu)
+    {
+        $sql = "INSERT INTO user (user,pass,email,chuc_vu) 
+        values('$user','$pass','$email','$chuc_vu')";
+        execute($sql);
+    }
+    function deleteUser($id_user)
+    {
+        $sql = "DELETE FROM user WHERE id_user='$id_user'";
+        execute($sql);
+    }
+   
     ?>
 </body>
 
