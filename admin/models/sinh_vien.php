@@ -47,7 +47,7 @@
     }
     function checkuserTonTaiChuaDung($user)
     {
-        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user' AND trang_thai='1'";
+        $sql = "SELECT count(*) as sodong FROM user WHERE user='$user'";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];

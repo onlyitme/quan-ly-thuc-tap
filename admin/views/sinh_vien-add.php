@@ -1,3 +1,37 @@
+<?php
+require_once "views/Classes/PHPExcel.php";
+require_once "models/excel.php";
+
+if(isset($_POST['btn'])){
+    $file= $_FILES['file']['tmp_name'];
+    $objReader=PHPExcel_IOFactory::createReaderForFile($file);
+    $objReader -> setLoadSheetsOnly('Sheet1');
+
+    $objExcel = $objReader->load($file);
+    $sheetData = $objExcel->getActiveSheet()->toArray('null',true,true,true);
+
+    $highRow=$objExcel->setActiveSheetIndex()->getHighestRow();
+
+    for($row=2;$row<=$highRow;$row++){
+        $user=$sheetData[$row]['A'];
+        $pass=$sheetData[$row]['B'];
+        $email=$sheetData[$row]['C'];
+        $chuc_vu=0;
+
+        addNewUserE($user,$pass,$email,$chuc_vu);
+    $id_user_full = seach_id_user($email);
+    $id_user =   $id_user_full['id_user'];
+
+      $mssv=$sheetData[$row]['D'];
+      $ho_ten=$sheetData[$row]['E'];
+      $id_nganh=$sheetData[$row]['F'];
+      $id_nganh=tim_id_nganh($id_nganh);
+      $id_nganh= $id_nganh['id_nganh'];
+      addNewSinhvienforexecl($id_user, $mssv, $id_nganh, $ho_ten);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,6 +121,14 @@
             <button type="submit" class="btn btn-primary">Lưu lại</button>
         </div>
     </form>
+    <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-5" action="" enctype="multipart/form-data">
+    <h1>Để upload thành công file excel của bạn phải có dạng như hình dưới đây</h1>
+    <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
+</br>
+    <input type="file" name="file" >
+    <button type="submit" name="btn">uploads</button>
+    </form>
+
     <script>
         $(document).ready(function() {
             $("#user").blur(function() {
