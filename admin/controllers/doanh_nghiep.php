@@ -44,7 +44,6 @@
             settype($an_hien, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-          
             addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien,$anh);
             $thongbao = "Thêm doanh nghiệp thành công";
             $view = "views/thongbao.php";

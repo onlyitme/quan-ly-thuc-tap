@@ -13,7 +13,7 @@
             <h1>Thêm đăng tuyển</h1>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="dn" name="ten_dn" required placeholder="Tên doanh nghiệp">
+            <input type="text" class="form-control" id="ten_dn" name="ten_dn" required placeholder="Tên doanh nghiệp">
             <?php if (isset($dn_error)) { ?>
                 <span class="badge badge-warning"> <?= $dn_error ?> </span>
             <?php } ?>
@@ -84,15 +84,9 @@
     </form>
     <script>
         $(document).ready(function() {
-            $("#dn").blur(function() {
+            $("#ten_dn").blur(function() {
                 u = $(this).val();
-                $("#kqcheckdn").load("<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=kiemtradn&dn=" + u);
-            });
-        });
-        $(document).ready(function() {
-            $("#email").blur(function() {
-                u = $(this).val();
-                $("#kqcheckemail").load("<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=kiemtraemail&email=" + u);
+                $("#kqcheckdn").load("<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=kiemtraten_dn&ten_dn=" + u);
             });
         });
     </script>
