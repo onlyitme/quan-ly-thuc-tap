@@ -78,10 +78,9 @@
             settype($an_hien, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-            updateUser_Trangthai($id_user);
             updateDoanhnghiep($id_dn,$id_user,$ten_dn, $dia_chi, $sdt, $an_hien,$anh);
-            $ds = getAllDangtuyen();
-            $view = "views/dt-index.php";
+            $ds = getAllDoanhnghiep();
+            $view = "views/dn-index.php";
             require_once "views/layout.php";
             break;
         case "delete":

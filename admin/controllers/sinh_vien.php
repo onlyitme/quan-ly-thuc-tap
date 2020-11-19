@@ -53,6 +53,12 @@
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
+            if ($id_nganh=="") {
+                $thongbao = "Thêm thất bại do bạn chưa chọn ngành";
+                $view = "views/thongbao.php";
+                require_once "views/layout.php";
+                exit();
+            }
             $ho_ten = trim(strip_tags($_POST["ho_ten"]));
             $gioi_tinh = $_POST['gioi_tinh'];
             settype($gioi_tinh, "int");
@@ -62,7 +68,6 @@
             settype($trang_thai, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-          
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $thongbao = "Thêm sinh viên thành công";
             $view = "views/thongbao.php";

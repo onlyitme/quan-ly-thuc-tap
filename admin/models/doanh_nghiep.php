@@ -14,6 +14,12 @@
         $sql = "SELECT * from user";
         return query($sql);
     }
+    function getAllDangtuyen()
+    {
+        $sql = "SELECT * from dang_tuyen";
+        return query($sql);
+    }
+   
     function getAllDoanhnghiep()
     {
         $sql = "SELECT * from doanh_nghiep";
@@ -86,6 +92,22 @@
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
         return $rowcount > 0;
+    }
+    function demBaidang($id_dn)
+    {
+        $sql = "SELECT count(*) as sodong FROM dang_tuyen WHERE id_dn='$id_dn'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demSinhvien($id_dt)
+    {
+        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='1' ";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
     }
     ?>
     

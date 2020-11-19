@@ -20,6 +20,13 @@
             $view = "views/dt-index.php";
             require_once "views/layout.php";
             break;
+        case "theodn":
+            $id_dn = $_GET["id_dn"];
+            settype($id_dt, "int");
+            $ds = getAllDangtheodn($id_dn);
+            $view = "views/dt-theo-dn.php";
+            require_once "views/layout.php";
+            break;
         case "addnew":
             $view = "views/dt-add.php";
             require_once "views/layout.php";
@@ -44,6 +51,12 @@
                 if ($d['ten_dn'] == $ten_dn) {
                     $id_dn = $d['id_dn'];
                 }
+            }
+            if (checkTendoanhnghiep($ten_dn) == false) {
+                $thongbao = "Thêm đăng tuyển thất bại sai tên doanh nghiệp";
+                $view = "views/thongbao.php";
+                require_once "views/layout.php";
+                exit();
             }
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
             addNewDangtuyen($id_nganh, $id_dn, $tieu_de, $noi_dung, $yeu_cau, $trang_thai, $sl_sv_can, $sl_sv_dk, $an_hien, $anh);
@@ -99,14 +112,6 @@
             $view = "views/dt-index.php";
             require_once "views/layout.php";
             break;
-        case "delete_":
-            $id_ut = $_GET["id_ut"];
-            settype($id_ut, "int");
-            deleteUngtuyen($id_dt);
-            $ds = getAllDangtuyen();
-            $view = "views/dt-index.php";
-            require_once "views/layout.php";
-            break;
         case "duyet":
             $id_dt = $_GET["id_dt"];
             settype($id_dt, "int");
@@ -116,6 +121,13 @@
             require_once "views/layout.php";
             break;
         case "ung_tuyen":
+            $id_dt = $_GET["id_dt"];
+            settype($id_dt, "int");
+            $ds = getAllUngtuyen($id_dt);
+            $view = "views/ut-index.php";
+            require_once "views/layout.php";
+            break;
+        case "ung_tuyen_":
             $id_dt = $_GET["id_dt"];
             settype($id_dt, "int");
             $ds = getAllUngtuyen($id_dt);

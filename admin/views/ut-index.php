@@ -10,7 +10,7 @@
 <body>
     <th colspan="7">
         <div class="row justify-content-center align-items-center text-warning">
-            <h1>Danh sách ứng tuyển</h1>
+            <h1>Danh sách sinh viên</h1>
         </div>
     </th>
     <table class="table table-bordered table-hover ">
@@ -19,7 +19,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Thông tin chung</th>
                 <th scope="col">Nguyện vọng</th>
-                <th scope="col">Xóa</th>
             </tr>
         </thead>
         <tbody>
@@ -47,8 +46,6 @@
                     </td>
                     <td>
                     <b>Nguyện vọng</b><?= $row['nguyen_vong'] ?><br>
-                    <td><a href="?ctrl=dang_tuyen&act=delete_&id_ut=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
-                    </td>
                 </tr>
             <?php } ?>
         </tbody>

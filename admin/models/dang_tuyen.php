@@ -14,6 +14,11 @@
         $sql = "SELECT * from dang_tuyen";
         return query($sql);
     }
+    function getAllDangtheodn($id_dn)
+    {
+        $sql = "SELECT * from dang_tuyen WHERE id_dn='$id_dn'";
+        return query($sql);
+    }
     function getAllSinhvien()
     {
         $sql = "SELECT * from sinh_vien";
@@ -67,7 +72,18 @@
         $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
         execute($sql);
     }
-   
+   function deleteUngtuyen($id_dt){
+    $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
+    execute($sql);
+   }
+   function checkTendoanhnghiep($ten_dn)
+    {
+        $sql = "SELECT count(*) as sodong FROM doanh_nghiep WHERE ten_dn='$ten_dn'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount > 0;
+    }
     ?>
 
 </body>
