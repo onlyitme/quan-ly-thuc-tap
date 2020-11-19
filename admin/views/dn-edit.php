@@ -14,19 +14,21 @@
         </div>
         <div class="form-group">
         <input type="hidden" name="id_dn" value="<?= $row['id_dn'] ?>">
-            <label for="">Tên user</label>
-            <?php
-            $ds = getAllUser();
-            foreach ($ds as $r) { ?>
-                <?php if ($row['id_user'] == $r['id_user']) { ?>
-                    <input type="text" class="form-control" id="user" name="user" required value="<?= $r['user'] ?>">
+        <div class="form-group">
+                <label for="">Email</label>
+                <?php
+                require_once "models/doanh_nghiep.php";
+                $ds = getAllUser();
+                foreach ($ds as $u) { ?>
+                    <?php if ($row['id_user'] == $u['id_user']) { ?>
+                        <input type="email" class="form-control" required id="email" name="email" value="<?= $u['email'] ?>">
+                    <?php } ?>
                 <?php } ?>
-            <?php } ?>
-            <?php if (isset($user_error)) { ?>
-                <span class="badge badge-warning"> <?= $user_error ?> </span>
-            <?php } ?>
-            <span id="kqcheckuser"></span>
-        </div>
+                <?php if (isset($email_error)) { ?>
+                    <span class="badge badge-warning"> <?= $email_error ?> </span>
+                <?php } ?>
+                <span id="kqcheckemail"></span>
+            </div>
         <div class="form-group">
         <label for="">Mật khẩu</label>
             <?php $ds = getAllUser();
@@ -46,20 +48,9 @@
 
         </div>
         <div class="row">
-            <div class="form-group col-6">
-                <label for="">Email</label>
-                <?php
-                require_once "models/doanh_nghiep.php";
-                $ds = getAllUser();
-                foreach ($ds as $u) { ?>
-                    <?php if ($row['id_user'] == $u['id_user']) { ?>
-                        <input type="email" class="form-control" required id="email" name="email" value="<?= $u['email'] ?>">
-                    <?php } ?>
-                <?php } ?>
-                <?php if (isset($email_error)) { ?>
-                    <span class="badge badge-warning"> <?= $email_error ?> </span>
-                <?php } ?>
-                <span id="kqcheckemail"></span>
+        <div class="form-group col-6">
+            <label for="">Ảnh</label>
+                <input type="file" class="form-control" name="anh" placeholder="Mã số sinh viên">
             </div>
             <div class="form-group col-6">
                 <label for="">Số điện thoại</label>
@@ -67,10 +58,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-6">
-            <label for="">Ảnh</label>
-                <input type="file" class="form-control" name="anh" placeholder="Mã số sinh viên">
-            </div>
+            
             <div class="form-group col-6">
                 <label for="">Ẩn hiện: </label><br>
                 <div class="form-check form-check-inline">

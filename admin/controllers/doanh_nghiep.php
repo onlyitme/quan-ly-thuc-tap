@@ -65,7 +65,7 @@
                     $id_user = $id['id_user'];
                 }
             }
-            $user = trim(strip_tags($_POST["user"]));
+            $user = trim(strip_tags($_POST["email"]));
             $pass = trim(strip_tags($_POST["pass"]));
             $email = trim(strip_tags($_POST["email"]));
             updateUser($id_user, $user, $pass, $email);
