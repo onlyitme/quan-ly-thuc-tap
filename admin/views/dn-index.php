@@ -34,9 +34,6 @@
                     </td>
                     <td>
                         <b>Tên doanh nghiệp:</b> <?= $row['ten_dn'] ?><br>
-                        <b>Ẩn hiện:</b><?php if ($row['an_hien'] == 1) echo "Đang hiện";
-                                        elseif ($row['an_hien'] == 0 ) echo "Đang ẩn";
-                                        ?><br>
                         <?php
                         $id_dn = $row['id_dn'];
                         $soluong = demBaidang($id_dn);
@@ -53,15 +50,24 @@
                             <?php } ?>
                         <?php } ?>
                         <b>Số lượng bài đăng tuyển:<a href="?ctrl=dang_tuyen&act=theodn&id_dn=<?= $row['id_dn'] ?>"><?= $soluong ?></a></b> <br>
+                        <b>Ẩn hiện:</b> <?= ($row['an_hien'] == 0) ? "Đang hiện" : "Đang ẩn"; ?><br>
                     </td>
                     <td>
                         <b>Địa chỉ :</b><?= $row['dia_chi'] ?><br>
                         <b>Số điện thoại :</b><?= $row['sdt'] ?><br>
+                        <?php  
+                        $ds = getAllUser();
+                        foreach ($ds as $u) { ?>
+                            <?php if ($u['id_user'] == $row['id_user']) { ?>
+                            <b>Email:</b>  <?=$u['email'];?>
+                            <?php } ?>
+                        <?php } ?>
                     </td>
                     </td>
                     <td><a href="?ctrl=doanh_nghiep&act=edit&id_dn=<?= $row['id_dn'] ?>"><i class="fa fa-edit"></i></a>
                     </td>
                     <td><a href="?ctrl=doanh_nghiep&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt"></i></a>
+                    
                     </td>
                 </tr>
             <?php } ?>

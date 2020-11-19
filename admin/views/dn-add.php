@@ -13,12 +13,12 @@
             <h1>Thêm doanh nghiệp</h1>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="user" name="user" required placeholder="Tên tài khoản">
-            <?php if (isset($user_error)) { ?>
-                <span class="badge badge-warning"> <?= $user_error ?> </span>
-            <?php } ?>
-            <span id="kqcheckuser"></span>
-        </div>
+                <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
+                <?php if (isset($email_error)) { ?>
+                    <span class="badge badge-warning"> <?= $email_error ?> </span>
+                <?php } ?>
+                <span id="kqcheckemail"></span>
+            </div>
         <div class="form-group">
             <input type="password" class="form-control" name="pass" required placeholder="Mật khẩu">
         </div>
@@ -30,21 +30,15 @@
 
         </div>
         <div class="row">
-            <div class="form-group col-6">
-                <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
-                <?php if (isset($email_error)) { ?>
-                    <span class="badge badge-warning"> <?= $email_error ?> </span>
-                <?php } ?>
-                <span id="kqcheckemail"></span>
+        <div class="form-group col-6">
+                <input type="file" class="form-control" name="anh" placeholder="Mã số sinh viên">
             </div>
             <div class="form-group col-6">
                 <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-6">
-                <input type="file" class="form-control" name="anh" placeholder="Mã số sinh viên">
-            </div>
+            
             <div class="form-group col-6">
                 <label for="">Ẩn hiện: </label>
                 <div class="form-check form-check-inline">

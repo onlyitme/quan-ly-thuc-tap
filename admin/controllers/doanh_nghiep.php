@@ -25,7 +25,7 @@
             require_once "views/layout.php";
             break;
         case "insert":
-            $user = trim(strip_tags($_POST['user']));
+            $user = trim(strip_tags($_POST['email']));
             $email = trim(strip_tags($_POST['email']));
             $pass = trim(strip_tags($_POST['pass']));
             $chuc_vu = 1;

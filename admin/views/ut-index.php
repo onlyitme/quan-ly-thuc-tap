@@ -22,30 +22,30 @@
             </tr>
         </thead>
         <tbody>
-            <?php $i=1;
+            <?php $i = 1;
             foreach ($ds as $row) { ?>
                 <tr>
-                    <td><?=$i++?></td>
+                    <td><?= $i++ ?></td>
                     <td>
                     <?php
-                        $ds = getAllSinhvien();
-                        foreach ($ds as $r) { ?>
-                            <?php if ($row['id_sv'] == $r['id_sv']) { ?>
-                                <b>Tên sinh viên:</b><?= $r['ho_ten'] ?><br>
-                            <?php } ?>
-                        <?php } ?>
-                        <?php
                         $ds = getAllDangtuyen();
                         foreach ($ds as $r) { ?>
                             <?php if ($row['id_dt'] == $r['id_dt']) { ?>
                                 <b>Tên bài đăng tuyển:</b><?= $r['tieu_de'] ?><br>
                             <?php } ?>
                         <?php } ?>
+                        <?php
+                        $ds = getAllSinhvien();
+                        foreach ($ds as $r) { ?>
+                            <?php if ($row['id_sv'] == $r['id_sv']) { ?>
+                                <b>Tên sinh viên:</b><?= $r['ho_ten'] ?><br>
+                            <?php } ?>
+                        <?php } ?>
                         <b>Ngày đăng ký ứng tuyển :</b><?= $row['ngay_dk'] ?><br>
                         <b>Trạng thái:</b> <?= ($row['trang_thai'] == 0) ? "Chưa duyệt" : "Đã duyệt"; ?><br>
                     </td>
                     <td>
-                    <b>Nguyện vọng</b><?= $row['nguyen_vong'] ?><br>
+                        <b>Nguyện vọng</b><?= $row['nguyen_vong'] ?><br>
                 </tr>
             <?php } ?>
         </tbody>

@@ -30,8 +30,8 @@
                     <li class="list-group-item"><b>Yêu cầu:</b> <?= $row['yeu_cau'] ?><br>
                      <li class="list-group-item"> <b>Số lượng cần:</b> <?= $row['sl_sv_can'] ?><br></li>
                      <li class="list-group-item"> <b>Số lượng sinh viên đăng ký:</b> <?= $row['sl_sv_dk'] ?><br></li>
-                    <li class="list-group-item"><button class="btn btn-success"><a href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt']?>"> Chi tiết sinh viên ứng tuyển</a></button>
-                    <button class="btn btn-danger"> <a href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt">Xoá đăng tuyển</i></a></button>
+                    <li class="list-group-item"><button class="btn btn-success"><a class="text-light" href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt']?>"> Chi tiết sinh viên ứng tuyển</a></button>
+                    <button class="btn btn-danger"> <a class="text-light" href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
                     </li>
                 </ul>
             </div>
