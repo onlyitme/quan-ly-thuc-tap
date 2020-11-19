@@ -17,7 +17,6 @@
             </tr>
         </thead>
         <tbody>
-        
             <?php foreach ($ds as $row) { ?>
                 <tr>
                     <th scope="row">1</th>

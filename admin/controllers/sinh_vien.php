@@ -44,7 +44,7 @@
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
-            if ($id_nganh=="") {
+            if ($id_nganh == "") {
                 $thongbao = "Thêm thất bại do bạn chưa chọn ngành";
                 $view = "views/thongbao.php";
                 require_once "views/layout.php";
@@ -71,6 +71,22 @@
             $view = "views/sinh_vien-edit.php";
             require_once "views/layout.php";
             break;
+        case "timkiem":
+            if (!isset($_POST["mssv"])){
+                $view = "views/home.php";
+                require_once "views/layout.php";
+            }
+            $mssv = trim(strip_tags($_POST["mssv"]));
+            $ds = searchSinhvien($mssv);
+            if(checkMssvTonTai($mssv)==false)
+            {
+                $thongbao = "Mã số sinh viên không đúng";
+                $view = "views/thongbao.php";
+                require_once "views/layout.php";
+            }
+            $view = "views/timkiem.php";
+            require_once "views/layout.php";
+            break;
         case "update":
             $id_sv = $_POST["id_sv"];
             $ds = getAllSinhvien();
@@ -82,7 +98,7 @@
             $user = trim(strip_tags($_POST["email"]));
             $pass = trim(strip_tags($_POST["pass"]));
             $email = trim(strip_tags($_POST["email"]));
-            updateUser($id_user,$user, $pass, $email);
+            updateUser($id_user, $user, $pass, $email);
             $mssv = trim(strip_tags($_POST["mssv"]));
             $id_nganh = $_POST['id_nganh'];
             settype($id_nganh, "int");
@@ -95,7 +111,7 @@
             settype($trang_thai, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-            updateSinhvien($id_sv,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
+            updateSinhvien($id_sv, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $ds = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
