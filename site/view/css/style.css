@@ -105,7 +105,6 @@ a:hover {
     width: auto;
 }
 
-
 /* nav */
 
 #nav-togger {
@@ -144,7 +143,6 @@ a:hover {
     z-index: 1;
     display: none;
 }
-
 
 /* main */
 
@@ -197,9 +195,7 @@ a:hover {
     color: #fff;
 }
 
-#home .nav-tabs li a.active,
-#home .nav-tabs li a.active:focus,
-#home .nav-tabs li a.active:hover {
+#home .nav-tabs li a.active, #home .nav-tabs li a.active:focus, #home .nav-tabs li a.active:hover {
     border-top: 3px solid dodgerblue;
     border-right: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
@@ -212,7 +208,6 @@ a:hover {
 .card-body p {
     margin-bottom: 5px;
 }
-
 
 /*---- danh sách việc làm---- */
 
@@ -252,7 +247,6 @@ a:hover {
     margin-bottom: 3px;
 }
 
-
 /* ----------- sv1 ------------ */
 
 .thongtin1 {
@@ -275,21 +269,111 @@ a:hover {
     border: 1px black solid;
 }
 
-
 /* Baokun */
 
+/* Doanh Nghiep - Hoang */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li, a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.h-boxbig {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding: 20px 25px;
+    overflow: hidden;
+}
+
+.h-boxleft {
+    width: 32%;
+    height: 100%; 
+    margin-right: 3%;
+    float: left;
+    background-color: #1a1a1a;
+    padding: 30px;
+}
+
+.h-boxright {
+    width: 65%;
+    height: 100%;
+    float: left;
+    background-color: #D03737;
+    padding: 30px 20px;
+}
+
+.h-avatar {
+    width: 50%;
+    height: 180px;
+    background-color: yellow;
+    margin: 0px auto;
+    border: 2px solid #ccc;
+}
+
+.h-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h-a1 {
+    height: 300px;
+    padding: 5px;
+    border: 1px solid #9c9c9c;
+}
+
+.h-a1 li {
+    margin: 15px;
+}
+
+.h-a1 a {
+    color: #fff;
+    font-size: 13pt;
+    font-weight: 600;
+}
+
+.h-a1 a:hover {
+    color: #D03737;
+}
+
+.h-big-title {
+    width: 100%;
+    color: #fff;
+}
+
+.h-title {
+    width: 70%;
+    float: left;
+}
+
+.h-sort {
+    width: 30%;
+    float: left;
+    text-align: right;
+}
+
+.h-big-box {
+    background: #fff;
+}
+
+/*----- End Doanh Nghiep -----*/
 
 /* ----------- footer ------------ */
 
-.text-gray,
-footer a {
+.text-gray, footer a {
     color: lightgray;
 }
 
 footer a:hover {
     color: white;
 }
-
 
 /* Responsive  */
 

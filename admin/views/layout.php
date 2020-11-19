@@ -63,7 +63,7 @@
         </div>
     </header>
     <div class="row noidung p-0">
-        <aside class="col-3 bg-dark">
+        <aside class="col-2 bg-dark">
             <div class="accordion" id="accordionExample">
                 <div class="card bg-dark">
                     <div class="card-header bg-dark " id="headingOne">
