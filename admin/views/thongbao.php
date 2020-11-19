@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,4 +11,3 @@
     <p><a href="<?=$_SERVER['HTTP_REFERER']?>">Quay lại trang trước</a></p>
     </div>
 </body>
-</html>

@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="/quan-ly-thuc-tap/admin/css/style.css">
-</head>
 
 <body>
     <section class="section-login">
@@ -33,5 +26,3 @@
             </form>
         </div>
     </section>
-</body>
-</html>
