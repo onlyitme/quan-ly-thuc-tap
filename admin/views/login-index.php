@@ -26,7 +26,7 @@
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan" class="btn btn-outline-light text-decoration-none">Quên mật khẩu ?</a>
-                        <button type="submit" class="btn btn-primary w-50">Đăng nhập</button>
+                        <button type="submit" class="btn btn-primary font-weight-bold col ml-3">Đăng nhập</button>
                     </div>
                     
                 </div>
