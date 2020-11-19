@@ -15,18 +15,17 @@
         <input type="hidden" name="id_sv" value="<?= $row['id_sv'] ?>">
         <div class="row">
             <div class="form-group col-6">
-                <label for="">Tên user</label>
-                <?php
-                $ds = getAllUser();
-                foreach ($ds as $r) { ?>
-                    <?php if ($row['id_user'] == $r['id_user']) { ?>
-                        <input type="text" class="form-control" id="user" name="user" required value="<?= $r['user'] ?>">
+            <label for="">Email</label>
+                <?php $ds = getAllUser();
+                foreach ($ds as $u) { ?>
+                    <?php if ($row['id_user'] == $u['id_user']) { ?>
+                        <input type="email" class="form-control" required id="email" name="email" value="<?= $u['email'] ?>">
                     <?php } ?>
                 <?php } ?>
-                <?php if (isset($user_error)) { ?>
-                    <span class="badge badge-warning"> <?= $user_error ?> </span>
+                <?php if (isset($email_error)) { ?>
+                    <span class="badge badge-warning"> <?= $email_error ?> </span>
                 <?php } ?>
-                <span id="kqcheckuser"></span>
+                <span id="kqcheckemail"></span>
             </div>
             <div class="form-group col-6">
                 <label for="">Mật khẩu</label>
@@ -58,17 +57,19 @@
                 <input type="text" class="form-control" id="user" name="ho_ten" required value="<?= $row['ho_ten'] ?>">
             </div>
             <div class="form-group col-6">
-                <label for="">Email</label>
-                <?php $ds = getAllUser();
-                foreach ($ds as $u) { ?>
-                    <?php if ($row['id_user'] == $u['id_user']) { ?>
-                        <input type="email" class="form-control" required id="email" name="email" value="<?= $u['email'] ?>">
+                <label for="">Tên ngành</label>
+                <select name="id_nganh" class="form-control" required>
+                    <option value="">Chọn ngành</option>
+                    <?php require_once "models/nganh.php";
+                    $ds = getAllNganh();
+                    foreach ($ds as $r) { ?>
+                        <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
+                            <option value="<?= $r['id_nganh'] ?>" selected="selected"> <?= $r['ten_nganh'] ?></option>
+                        <?php } else { ?>
+                            <option value="<?= $r['id_nganh'] ?>"> <?= $r['ten_nganh'] ?></option>
+                        <?php } ?>
                     <?php } ?>
-                <?php } ?>
-                <?php if (isset($email_error)) { ?>
-                    <span class="badge badge-warning"> <?= $email_error ?> </span>
-                <?php } ?>
-                <span id="kqcheckemail"></span>
+                </select>
             </div>
         </div>
         <div class="row">
@@ -85,21 +86,7 @@
             </div>
         </div>
         <div class="row">
-        <div class="form-group col-6">
-                <label for="">Tên ngành</label>
-                <select name="id_nganh" class="form-control" required>
-                    <option value="">Chọn ngành</option>
-                    <?php require_once "models/nganh.php";
-                    $ds = getAllNganh();
-                    foreach ($ds as $r) { ?>
-                        <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
-                            <option value="<?= $r['id_nganh'] ?>" selected="selected"> <?= $r['ten_nganh'] ?></option>
-                        <?php } else { ?>
-                            <option value="<?= $r['id_nganh'] ?>"> <?= $r['ten_nganh'] ?></option>
-                        <?php } ?>
-                    <?php } ?>
-                </select>
-            </div>
+        
             <div class="form-group col-6">
                 <label for="">Trạng thái:</label><br>
                 <div class="form-check form-check-inline">

@@ -38,14 +38,21 @@
                         $ds = getAllNganh();
                         foreach ($ds as $r) { ?>
                             <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
-                                <b>Tên ngành:</b> <?= $r['ten_nganh'] ?>
+                                <b>Tên ngành:</b> <?= $r['ten_nganh'] ?><br>
                             <?php } ?>
                         <?php } ?>
+                        <b>Trạng thái:</b><?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?> <br>
                     </td>
                     <td>
                         <b>Số điện thoại:</b><?= $row['sdt'] ?><br>
                         <b>Mã số SV:</b> <?= $row['mssv'] ?><br>
-                        <b>Trạng thái:</b><?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?> <br>
+                        <?php 
+                        $ds = getAllUser();
+                        foreach ($ds as $r) { ?>
+                            <?php if ($row['id_user'] == $r['id_user']) { ?>
+                                <b>Email:</b> <?= $r['email'] ?>
+                            <?php } ?>
+                        <?php } ?>
                     </td>
                     <td><a href="?ctrl=sinh_vien&act=edit&id_sv=<?= $row['id_sv'] ?>"><i class="fa fa-edit"></i></a>
                     </td>
