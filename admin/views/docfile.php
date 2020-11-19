@@ -21,9 +21,9 @@ if(isset($_POST['btn'])){
 }
 ?>
 
-<body>
+s
     <form method="POST" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert" enctype="multipart/form-data">
     <input type="file" name="file" >
     <button type="submit" name="btn">uploads</button>
     </form>
-</body>
+

@@ -1,5 +1,5 @@
 
-<body>
+
     <th colspan="7">
         <div class="row justify-content-center align-items-center text-warning">
             <h1>Danh sách sinh viên</h1>
@@ -54,4 +54,4 @@
             <?php } ?>
         </tbody>
     </table>
-</body>
+

@@ -1,6 +1,6 @@
 
 
-<body>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -30,5 +30,5 @@
             <?php } ?>
         </tbody>
     </table>
-</body>
+
 
