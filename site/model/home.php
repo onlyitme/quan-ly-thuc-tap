@@ -37,8 +37,8 @@ function coutdangtuyen($id_nganh){
     return $rowcount;
 }
 function thongtindangtuyen($id_nganh){
-    if(isset($id_nganh) && $id_nganh !=0){$sql ="select * from dang_tuyen where id_nganh='$id_nganh' order by thoi_gian desc";}else
-    $sql ="select * from dang_tuyen order by thoi_gian desc";
+    if(isset($id_nganh) && $id_nganh !=0){$sql ="select * from dang_tuyen where id_nganh='$id_nganh' order by id_nganh desc";}else
+    $sql ="select * from dang_tuyen order by id desc";
     return query($sql);
 }
 ?>

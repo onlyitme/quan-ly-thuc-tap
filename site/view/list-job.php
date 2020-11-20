@@ -18,7 +18,7 @@
             <button type="submit" class="btn btn-dark col-lg-1 mb-2"><i class="fas fa-search"></i></button>
         </form>
         <div class="col-lg-3 d-flex flex-wrap">
-            <a href="" class="btn btn-outline-dark form-control overflow-hidden col mr-3"><i class="fas fa-filter    "></i> Ngành của bạn</a>
+            <a href="index.php?act=listjob&id_nganh=<?php $idnganhsv=checkkhachhangbyid($_SESSION['sid']); echo $idnganhsv['id_nganh']?>" class="btn btn-outline-dark form-control overflow-hidden col mr-3"><i class="fas fa-filter"></i> Ngành của bạn</a>
             <div class="text-right px-0">
                 <button id="list-grid" class="btn btn-success mr-2"><i class="fas fa-th-large"></i></button>
                 <button id="list-inf" class="btn btn-warning"><i class="fas fa-th-list  text-light "></i></button>
@@ -30,8 +30,8 @@
             <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
                 <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm</h5>
                 <select name="" id="" class="small text-gray border-0">
-                    <option value="">Cập nhật</option>
-                    <option value="">Mức lương</option>
+                    <option value="">Cập Nhập</option>
+                    <option value="">Thời Gian</option>
                 </select>
             </div>
             <div class="detail-job_list d-flex flex-wrap small">
