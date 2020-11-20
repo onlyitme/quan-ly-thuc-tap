@@ -248,7 +248,9 @@ a:hover {
 }
 
 /* ----------- sv1 ------------ */
-<<<<<<< HEAD
+
+
+
 .list-group-item{
     margin-bottom: 1px;
 }
@@ -258,42 +260,32 @@ a:hover {
     
 }
 .thongtin1{
-=======
-
-.thongtin1 {
->>>>>>> 103a864a3a789593b0a486651fbb936047e15ce3
     float: left;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    font-size: 12pt;
+    font-weight: 500;
 }
-
-.thongtin1 a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-}
-<<<<<<< HEAD
 .thongtin1 a:hover{
-    color: dodgerblue;
+    color: rgb(35, 53, 211);
+}
+.ttcn{
+    float: left;
+    width: 100%;
 }
 .btn-white-36 {
     width: 120px;
     color: #363636;
+    border: 1px solid #e0e0e0;
     border: 1px solid #000000;
     font-size: 14px;
-    padding: 0 15px;
+    padding: 5px 15px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    height: 36px;
-    background-color: #ffffff;
-    font-weight: 500;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
+
 }
 .btn.btn-white-36:hover{
-    background-color: rgb(27, 47, 228);
+    background-color: rgb(35, 53, 211);
     color: white;
    
 }
@@ -308,18 +300,64 @@ a:hover {
     
 }
 .tt-rigth{
+    float: right;
+    width: 75%;
+}
+p{
+    font-size: 12pt;
     float: left;
     width: 77%;
-=======
-
-.thongtin1 a:hover {
-    color: red;
+}
+.media-left{
+    width: 100%;
+}
+.col-sm-4{
+    position: fixed;
+}
+.col-sm-12{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border-top:1px rgb(228, 228, 228) solid ;
+    border-left:1px rgb(228, 228, 228) solid ;
+}
+.sv4{
+    border-radius: 5px;
+    border-top:1px rgb(228, 228, 228) solid ;
+    border-left:1px rgb(228, 228, 228) solid ;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+}
+.bg-primary img {
+    width:140px;border: 2px rgb(253, 253, 253) solid;
+}
+.bg-primary img:hover{
+    opacity: 0.5;
+}
+.sv8-12{
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border-top:1px rgb(228, 228, 228) solid ;
+    border-left:1px rgb(228, 228, 228) solid ;
+}
+a {
+    font-size: 12pt;
+    font-weight: 500;
+    
+}
+.boxcapnhat{
+    width: 120px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    font-weight: 500;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+.boxcapnhat:hover{
+    background-color: rgb(255, 30, 30);
+    color: white;
 }
 
-.sv1 {
-    border: 1px black solid;
-}
 
+/* ----------- sv1 ------------ */
 /* Baokun */
 
 /* Doanh Nghiep - Hoang */
@@ -368,7 +406,7 @@ li, a {
     background-color: yellow;
     margin: 0px auto;
     border: 2px solid #ccc;
->>>>>>> 103a864a3a789593b0a486651fbb936047e15ce3
+
 }
 
 .h-avatar img {
@@ -376,53 +414,7 @@ li, a {
     height: 100%;
     object-fit: cover;
 }
-<<<<<<< HEAD
-.col-sm-12{
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
-}
-.sv4{
-    border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-}
 
-.sv8-11{
-    background-color: rgb(197, 197, 197);
-    border-radius: 10px;
-    border: 1px black solid;
-}
-.sv8-12{
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
-}
-.sv8-11 img:hover{
-    opacity: 0.5;
-}
-a {
-    font-size: 12pt;
-    font-weight: 500;
-    
-}
-.boxcapnhat{
-    width: 120px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    font-weight: 500;
-    padding: 5px 0;
-    border-radius: 5px;
-}
-.boxcapnhat:hover{
-    background-color: rgb(255, 30, 30);
-    color: white;
-}
-/* ----------- sv1 ------------ */
-=======
 
 .h-a1 {
     height: 300px;
@@ -484,7 +476,6 @@ a {
 
 /*----- End Doanh Nghiep -----*/
 
->>>>>>> 103a864a3a789593b0a486651fbb936047e15ce3
 /* ----------- footer ------------ */
 
 .text-gray, footer a {
