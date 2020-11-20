@@ -276,6 +276,68 @@ a:hover {
 }
 
 
+/* Nghia  */
+
+.fontp p {
+    font-size: 16px;
+}
+
+.cont {
+    width: 100%;
+}
+
+.bg {
+    padding-top: 5px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.side {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(76, 183, 209);
+}
+
+.tieude {
+    width: 100%;
+    background-color: rgb(76, 183, 209);
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+}
+
+.bg-inf {
+    background-color: rgb(76, 183, 209);
+}
+
+.noidung ul {
+    margin-left: -25px;
+}
+
+.noidung ul li {
+    color: rgb(56, 134, 153);
+}
+
+.noidung {
+    width: 80%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.text-dar {
+    color: rgb(85, 85, 85);
+}
+
+.bg-color {
+    height: 3px;
+    width: 90%;
+    margin-left: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+
 /* Baokun */
 
 
