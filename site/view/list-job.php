@@ -3,7 +3,17 @@
       { 
         var html = document.getElementById(a).value;
 
-       alert(html);
+        $.ajax({
+            type: "post",
+            url: "index.php?act=xemdoanhnghiep",
+            data: {arr: html},
+            success: function(data) {
+              var data =  JSON.parse(data);
+              console.log(data.tieu_de)
+              $("#tieude").html(data.tieu_de)
+              
+            }
+          });
         
       }
       
@@ -69,7 +79,7 @@
             <img src="http://placehold.it/900x200" alt="">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
-                    <h4 class="mb-0">Tên Công Việc</h4>
+                    <h4 class="mb-0" id='tieude'>Tiêu đề</h4>
                     <p class="font-weight-bold text-gray mb-0">Tên công ty</p>
                 </div>
                 <div class="col-lg-4 text-right">
