@@ -105,6 +105,7 @@ a:hover {
     width: auto;
 }
 
+
 /* nav */
 
 #nav-togger {
@@ -143,6 +144,7 @@ a:hover {
     z-index: 1;
     display: none;
 }
+
 
 /* main */
 
@@ -195,7 +197,9 @@ a:hover {
     color: #fff;
 }
 
-#home .nav-tabs li a.active, #home .nav-tabs li a.active:focus, #home .nav-tabs li a.active:hover {
+#home .nav-tabs li a.active,
+#home .nav-tabs li a.active:focus,
+#home .nav-tabs li a.active:hover {
     border-top: 3px solid dodgerblue;
     border-right: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
@@ -208,6 +212,7 @@ a:hover {
 .card-body p {
     margin-bottom: 5px;
 }
+
 
 /*---- danh sách việc làm---- */
 
@@ -247,6 +252,7 @@ a:hover {
     margin-bottom: 3px;
 }
 
+
 /* ----------- sv1 ------------ */
 
 .thongtin1 {
@@ -269,7 +275,9 @@ a:hover {
     border: 1px black solid;
 }
 
+
 /* Baokun */
+
 
 /* Doanh Nghiep - Hoang */
 
@@ -279,7 +287,8 @@ ul {
     margin: 0;
 }
 
-li, a {
+li,
+a {
     text-decoration: none;
     list-style-type: none;
 }
@@ -367,6 +376,8 @@ li, a {
     border-radius: 10px;
     height: 100%;
 }
+
+
 /*--- dnnew.html ---*/
 
 .h-tieude {
@@ -378,22 +389,27 @@ li, a {
     font-weight: 600;
     margin: 15px 0;
 }
-.h-the-a1 a:hover, a:focus {
+
+.h-the-a1 a:hover,
+a:focus {
     color: #D03737;
 }
 
 
 /*----- End Doanh Nghiep -----*/
 
+
 /* ----------- footer ------------ */
 
-.text-gray, footer a {
+.text-gray,
+footer a {
     color: lightgray;
 }
 
 footer a:hover {
     color: white;
 }
+
 
 /* Responsive  */
 
