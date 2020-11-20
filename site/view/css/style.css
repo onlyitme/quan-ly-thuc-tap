@@ -105,6 +105,7 @@ a:hover {
     width: auto;
 }
 
+
 /* nav */
 
 #nav-togger {
@@ -143,6 +144,7 @@ a:hover {
     z-index: 1;
     display: none;
 }
+
 
 /* main */
 
@@ -195,7 +197,9 @@ a:hover {
     color: #fff;
 }
 
-#home .nav-tabs li a.active, #home .nav-tabs li a.active:focus, #home .nav-tabs li a.active:hover {
+#home .nav-tabs li a.active,
+#home .nav-tabs li a.active:focus,
+#home .nav-tabs li a.active:hover {
     border-top: 3px solid dodgerblue;
     border-right: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
@@ -208,6 +212,7 @@ a:hover {
 .card-body p {
     margin-bottom: 5px;
 }
+
 
 /*---- danh sách việc làm---- */
 
@@ -246,6 +251,7 @@ a:hover {
     font-size: 0.9em;
     margin-bottom: 3px;
 }
+
 
 /* ----------- sv1 ------------ */
 
@@ -357,8 +363,75 @@ a {
 }
 
 
+<<<<<<< HEAD
 /* ----------- sv1 ------------ */
+=======
+
+/* Nghia  */
+
+.fontp p {
+    font-size: 16px;
+}
+
+.cont {
+    width: 100%;
+}
+
+.bg {
+    padding-top: 5px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.side {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(76, 183, 209);
+}
+
+.tieude {
+    width: 100%;
+    background-color: rgb(76, 183, 209);
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+}
+
+.bg-inf {
+    background-color: rgb(76, 183, 209);
+}
+
+.noidung ul {
+    margin-left: -25px;
+}
+
+.noidung ul li {
+    color: rgb(56, 134, 153);
+}
+
+.noidung {
+    width: 80%;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.text-dar {
+    color: rgb(85, 85, 85);
+}
+
+.bg-color {
+    height: 3px;
+    width: 90%;
+    margin-left: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+>>>>>>> 617b3507c5164bfb6433c8e2af16aae9f1c47ab8
 /* Baokun */
+
 
 /* Doanh Nghiep - Hoang */
 
@@ -368,7 +441,8 @@ ul {
     margin: 0;
 }
 
-li, a {
+li,
+a {
     text-decoration: none;
     list-style-type: none;
 }
@@ -458,6 +532,8 @@ li, a {
     border-radius: 10px;
     height: 100%;
 }
+
+
 /*--- dnnew.html ---*/
 
 .h-tieude {
@@ -469,22 +545,27 @@ li, a {
     font-weight: 600;
     margin: 15px 0;
 }
-.h-the-a1 a:hover, a:focus {
+
+.h-the-a1 a:hover,
+a:focus {
     color: #D03737;
 }
 
 
 /*----- End Doanh Nghiep -----*/
 
+
 /* ----------- footer ------------ */
 
-.text-gray, footer a {
+.text-gray,
+footer a {
     color: lightgray;
 }
 
 footer a:hover {
     color: white;
 }
+
 
 /* Responsive  */
 

@@ -14,6 +14,12 @@ require_once('model/home.php');
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";
       break;
+      case "xemdoanhnghiep":   
+      if (isset($_POST['arr'])){
+        // print_r(checkdangtuyenbyid($_POST['arr']));
+        print_r(json_encode(checkdangtuyenbyid($_POST['arr'])));
+      }
+    break;
       case "listjob":
         if(isset($_SESSION['sid'])){
           if(isset($_GET['id_nganh'])){
