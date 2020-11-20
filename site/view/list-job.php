@@ -28,7 +28,7 @@
     <div class="row detail-job shadow-sm ">
         <div class="col  p-lg-0">
             <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
-                <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm</h5>
+                <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm <?php echo $tennganh ?></h5>
                 <select name="" id="" class="small text-gray border-0">
                     <option value="">Cập Nhập</option>
                     <option value="">Thời Gian</option>
@@ -53,7 +53,7 @@
                                                                                     $today_time = strtotime($today);
                                                                                     $expire_time = strtotime($expire);
                                                                                     if ($expire_time < $today_time){
-                                                                                        echo 'hết hạn nộp';
+                                                                                        echo '<strong style="color:red">hết hạn nộp</strong>';
                                                                                     }else echo $expire;
                                                                                     ?></p>
                         </div>
