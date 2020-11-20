@@ -18,7 +18,7 @@
                 <th scope="col">Xoá</th>
             </tr>
             <div class="row justify-content-center align-items-center text-warning">
-                <h1>Danh sách nhóm ngành</h1>
+                <h1>Danh sách ngành</h1>
             </div>
         </thead>
         <tbody>

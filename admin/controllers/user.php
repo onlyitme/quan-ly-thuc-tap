@@ -121,7 +121,7 @@
             else $user = "";
             if ($user == "") echo "<pan class ='badge badge-danger'>Username không có</pan>";
             else if (checkUserTonTai($user)) echo "<pan class = 'badge badge-danger'>Username đã có</pan>";
-            else echo "<pan class ='badge badge-success'>Bạn có thể dùng Username này</pan>";
+            else echo "<pan class ='badge badge-success'>Bạn có thể tạo Username này</pan>";
             break;
         case "kiemtraemail":
             if (isset($_GET['email'])) $email = trim(strip_tags($_GET['email']));

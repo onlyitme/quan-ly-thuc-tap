@@ -10,27 +10,23 @@
 
 <body>
     <section class="section-login">
-        <div class="section-login-create flex-betw">
-            <h2>LOGIN</h2>
+        <div class="section-login-create flex-betw text-center">
+            <h2>ĐĂNG NHẬP</h2>
             <?php
             session_start();
             unset($_SESSION['admin']);
             ?>
-            <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST" > 
-                <div class="login flex-betw">
-                    <div class="login-sec flex-betw">
-                        <label for="user">Tên đăng nhập</label>
-                        <input type="text" name="user" id="user" required>
+            <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST"  > 
+                <div class="login flex-betw p-3 ">
+                    <div class=" form-group flex-betw ">
+                        <input type="text" class="form-control border-top border-left border-right py-4" name="user" id="user" placeholder="Nhập tài khoản . . ." required>
                     </div>
-                    <div class="login-sec flex-betw">
-                        <label for="pass">Mật khẩu</label>
-                        <input type="password" name="pass" id="pass" required>
+                    <div class=" form-group flex-betw">
+                        <input type="password" class="form-control border-top border-left border-right py-4" name="pass" id="pass"  placeholder="Nhập mật khẩu . . ."   required>
                     </div>
-                    <div class="row form-group">
-                       <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan">Quên mật khẩu</a>
-                    </div>
-                    <div class="row form-group  justify-content-center align-items-center ">
-                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                    <div class="d-flex justify-content-between mt-3">
+                        <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan" class="btn btn-outline-light text-decoration-none">Quên mật khẩu ?</a>
+                        <button type="submit" class="btn btn-primary font-weight-bold col ml-3">Đăng nhập</button>
                     </div>
                     
                 </div>

@@ -38,7 +38,7 @@
             $ten_nganh = trim(strip_tags($_POST['ten_nganh']));
             $thongbao = "";
             $thanhcong = true;
-            if ($ten_nganh== "") {
+            if ($ten_nganh == "") {
                 $thongbao .= "Tên ngành chưa nhập ";
                 $thanhcong = false;
             } else if (strlen($ten_nganh) < 4) {
@@ -50,14 +50,19 @@
             }
             if ($thanhcong == false) {
                 session_start();
-                $_SESSION['thongbao']=$thongbao;
+                $_SESSION['thongbao'] = $thongbao;
                 header("location:" . ADMIN_URL . "?ctrl=nganh&act=thongbao");
                 exit();
             }
             $an_hien = $_POST['an_hien'];
             settype($an_hien, "int");
-            $id_nn= $_POST['id_nn'];
-            addNewNganh($ten_nganh,$an_hien,$id_nn);
+            $id_nn = $_POST['id_nn'];
+            if ($id_nn=="") {
+                $thongbao = "Thêm ngành thất bại chưa chọn nhóm ngành công";
+                $view = "views/thongbao.php";
+                require_once "views/layout.php";
+            }
+            addNewNganh($ten_nganh, $an_hien, $id_nn);
             $thongbao = "Thêm ngành thành công";
             $view = "views/thongbao.php";
             require_once "views/layout.php";
@@ -74,7 +79,7 @@
             $ten_nganh = trim(strip_tags($_POST["ten_nganh"]));
             $an_hien = $_POST["an_hien"];
             $id_nn = $_POST["id_nn"];
-            updateNganh($id_nn, $ten_nganh, $an_hien,$id_nganh);
+            updateNganh($id_nn, $ten_nganh, $an_hien, $id_nganh);
             $ds = getAllNganh();
             $view = "views/nganh-index.php";
             require_once "views/layout.php";
