@@ -364,8 +364,9 @@ li, a {
 
 .h-big-box {
     background: #fff;
+    border-radius: 10px;
+    height: 100%;
 }
-
 /*--- dnnew.html ---*/
 
 .h-tieude {
