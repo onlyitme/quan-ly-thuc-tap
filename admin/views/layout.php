@@ -133,13 +133,10 @@ if (!isset($_SESSION['admin'])) {
             ?>
         </article>
     </main>
-<<<<<<< Updated upstream
     <footer class=" bg-dark fixed-bottom text-light text-center py-2">
         <h6>Copyright © 2020 --- Thiết kế website bởi Group 6.</h6>
-=======
-    <footer class="row bg-dark mt-1 mb-2 text-warning justify-content-center align-items-center fixed-bottom">
-        <h6>Nhóm 6 pro</h6>
->>>>>>> Stashed changes
+
+    
     </footer>
 
     <!-- JS -->
