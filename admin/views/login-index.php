@@ -1,8 +1,16 @@
 
-    <link rel="stylesheet" href="/quan-ly-thuc-tap/admin/css/style.css">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="../thungrac/style.css">
+</head>
 <body>
-    <section class="section-login">
+    
+<section class="section-login">
         <div class="section-login-create flex-betw text-center">
             <h2>ĐĂNG NHẬP</h2>
             <?php
@@ -26,3 +34,5 @@
             </form>
         </div>
     </section>
+</body>
+</html>

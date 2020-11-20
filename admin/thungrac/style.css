@@ -657,13 +657,6 @@ pre code {
     }
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -0.75rem;
-    margin-left: -0.75rem;
-}
-
 .no-gutters {
     margin-right: 0;
     margin-left: 0;
@@ -10549,17 +10542,4 @@ label {
 
 .login-sec {
     flex-direction: column;
-}
-
-.fontp p {
-    font-size: 16px;
-}
-
-.fontp .fop h5 {
-    margin-bottom: 0;
-}
-
-hr {
-    margin-top: 0;
-    margin-bottom: 0;
 }
