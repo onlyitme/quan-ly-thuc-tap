@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2020 lúc 05:12 AM
+-- Thời gian đã tạo: Th10 20, 2020 lúc 03:02 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -35,6 +35,9 @@ CREATE TABLE `dang_tuyen` (
   `yeu_cau` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
   `sl_sv_can` int(11) NOT NULL,
   `sl_sv_dk` int(11) NOT NULL,
+  `thoi_gian` date DEFAULT NULL,
+  `vi_tri` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `luong` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_dn` int(11) NOT NULL,
   `id_nganh` int(11) NOT NULL,
   `trang_thai` tinyint(4) NOT NULL COMMENT '0 chua duyet 1 da duyet',
@@ -45,16 +48,16 @@ CREATE TABLE `dang_tuyen` (
 -- Đang đổ dữ liệu cho bảng `dang_tuyen`
 --
 
-INSERT INTO `dang_tuyen` (`id_dt`, `anh`, `tieu_de`, `noi_dung`, `yeu_cau`, `sl_sv_can`, `sl_sv_dk`, `id_dn`, `id_nganh`, `trang_thai`, `an_hien`) VALUES
-(18, NULL, 'tuyển sv thực tập cho doanh nghiệp 1', 'sắp có', 'biết chữ việt', 50, 0, 11, 21, 1, 1),
-(19, NULL, 'chua có tiêu đề', 'ko có gì hot', 'ko', 60, 0, 12, 22, 1, 1),
-(20, 'dt1.png', 'tuyen sv tt cho vui', '', '', 50, 0, 12, 30, 1, 1),
-(21, NULL, 'đâsdasdsad', 'da', 'dá', 60, 0, 12, 31, 1, 1),
-(22, 'dt4.jpg', 'hung', '', '', 25, 0, 12, 29, 1, 1),
-(23, NULL, 'ưeb', 'đâsdsadas', '', 60, 0, 11, 21, 1, 1),
-(26, 'dt2.jpg\r\n', 'ko co', 'adsadsad', 'ádsada', 50, 0, 11, 21, 1, 1),
-(27, 'dt3.jpg', 'kđasadsadco', 'adsadsad', 'ádsada', 50, 0, 11, 21, 1, 1),
-(28, 'dt5.jpg', 'đasad', 'đasada', 'đâsd', 60, 0, 12, 21, 1, 1);
+INSERT INTO `dang_tuyen` (`id_dt`, `anh`, `tieu_de`, `noi_dung`, `yeu_cau`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `luong`, `id_dn`, `id_nganh`, `trang_thai`, `an_hien`) VALUES
+(18, NULL, 'tuyển sv thực tập cho doanh nghiệp 1', 'sắp có', 'biết chữ việt', 50, 1, '2020-11-25', 'Hồ Chí Minh', '0', 11, 21, 1, 1),
+(19, NULL, 'chua có tiêu đề', 'ko có gì hot', 'ko', 60, 0, '2020-11-03', 'Hồ Chí Minh', '1000 ~ 2000', 12, 22, 1, 1),
+(20, 'dt1.png', 'tuyen sv tt cho vui', '', '', 50, 0, '2020-11-28', 'Hồ Chí Minh', '100 ~ 200', 12, 30, 1, 1),
+(21, NULL, 'đâsdasdsad', 'da', 'dá', 60, 0, '2020-12-24', 'Hồ Chí Minh', '20 ~ 50', 12, 31, 1, 1),
+(22, 'dt4.jpg', 'hung', '', '', 25, 0, '2021-02-11', 'Hồ Chí Minh', '50 ~ 100', 12, 29, 1, 1),
+(23, NULL, 'ưeb', 'đâsdsadas', '', 60, 0, '2021-05-13', 'Hồ Chí Minh', '100 ~ 150', 11, 21, 1, 1),
+(26, 'dt2.jpg\r\n', 'ko co', 'adsadsad', 'ádsada', 50, 0, '2020-11-04', 'Hồ Chí Minh', '0', 11, 21, 1, 1),
+(27, 'dt3.jpg', 'kđasadsadco', 'adsadsad', 'ádsada', 50, 0, '2020-11-29', 'Hồ Chí Minh', '200 ~ 300', 11, 21, 1, 1),
+(28, 'dt5.jpg', 'đasad', 'đasada', 'đâsd', 60, 0, '2020-11-22', 'Hồ Chí Minh', '300 ~ 400', 12, 21, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -115,8 +118,7 @@ INSERT INTO `nganh` (`id_nganh`, `ten_nganh`, `an_hien`, `id_nn`) VALUES
 (35, 'Điều khiển và tự động hóa', 1, 9),
 (36, 'Điện - Điện tử', 1, 9),
 (37, 'Điện công nghiệp', 1, 9),
-(38, 'cơ khí', 1, 9),
-(39, 'trang phục c hó', 1, 10);
+(38, 'cơ khí', 1, 9);
 
 -- --------------------------------------------------------
 
@@ -153,6 +155,7 @@ CREATE TABLE `phieu_dk_in` (
   `ngay_dk` date NOT NULL,
   `nguyen_vong` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_dt` int(11) NOT NULL,
+  `id_dn` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
   `ket_qua` tinyint(1) NOT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
   `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -162,8 +165,8 @@ CREATE TABLE `phieu_dk_in` (
 -- Đang đổ dữ liệu cho bảng `phieu_dk_in`
 --
 
-INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt`, `trang_thai`, `ket_qua`, `ghi_chu`) VALUES
-(7, 37, '2020-11-17', 'thích thì vô', 18, 0, 0, '');
+INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt`, `id_dn`, `trang_thai`, `ket_qua`, `ghi_chu`) VALUES
+(7, 37, '2020-11-17', 'thích thì vô', 18, 11, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -206,7 +209,13 @@ CREATE TABLE `sinh_vien` (
 
 INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi_tinh`, `anh`, `sdt`, `trang_thai`) VALUES
 (36, 4, 'ps11744', 21, 'Phạm Ngọc Hưng', 1, '', 335884626, 0),
-(37, 28, 'ps12345', 24, 'huỳnh tấn đạt', 1, '', 332554124, 0);
+(37, 28, 'ps12345', 24, 'huỳnh tấn đạt', 1, '', 332554124, 0),
+(39, 33, 'ps11744', 21, 'hung phạm', 1, '', 31125454, 0),
+(40, 34, 'PS1744', 21, 'Phạm Ngọc Hưng', 0, '', 0, 0),
+(41, 35, 'PS08876', 23, 'Nguyễn Thị Ngọc Hân', 0, '', 0, 0),
+(42, 36, 'PS10789', 25, 'Trình Mộc Đức', 0, '', 0, 0),
+(43, 37, 'PS09395', 27, 'Nguyễn Phú Hy', 0, '', 0, 0),
+(44, 38, 'PS13423', 24, 'Võ Văn Thìn', 0, '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -235,7 +244,13 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`) VALUES
 (29, 'doanhnghiep5', 'doanhnghiep', 'cc@gmail.com', 1),
 (30, 'ngochung5', 'hnug', 'caahhhhh@gmail.com', 1),
 (31, 'ngochung5', 'hung', 'caahddhhhh@gmail.com', 1),
-(32, 'adminhung', 'hnug', 'huasd@gmail.com', 1);
+(32, 'adminhung', 'hnug', 'huasd@gmail.com', 1),
+(33, 'hungaaa', 'hung', 'hnug@gmail.com', 0),
+(34, 'hung@gmail.com', '123', 'hung@gmail.com', 0),
+(35, 'han@gmail.com', '123', 'han@gmail.com', 0),
+(36, 'duc@gmail.com', '123', 'duc@gmail.com', 0),
+(37, 'hy@gmail.com', '123', 'hy@gmail.com', 0),
+(38, 'thin@gmail.com', '123', 'thin@gmail.com', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -342,13 +357,13 @@ ALTER TABLE `phieu_dk_out`
 -- AUTO_INCREMENT cho bảng `sinh_vien`
 --
 ALTER TABLE `sinh_vien`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

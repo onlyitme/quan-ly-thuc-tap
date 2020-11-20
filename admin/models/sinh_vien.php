@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <?php require_once('../system/database.php');
     function getAllUser()
     {
@@ -19,13 +10,14 @@
         $sql = "SELECT * from sinh_vien";
         return query($sql);
     }
-    function addNewSinhvien($id_user,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
+    function addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
     {
         $sql = "INSERT INTO sinh_vien (id_user,mssv,id_nganh,ho_ten,gioi_tinh,sdt,trang_thai,anh) 
     values('$id_user','$mssv','$id_nganh','$ho_ten','$gioi_tinh','$sdt','$trang_thai','$anh')";
         execute($sql);
     }
-    function searchid_user($user,$email){
+    function searchid_user($user, $email)
+    {
         $sql = "SELECT * from user where user='$user' AND email='$email'";
         return queryOne($sql);
     }
@@ -34,7 +26,7 @@
         $sql = "SELECT * from sinh_vien where id_sv='$id_sv'";
         return queryOne($sql);
     }
-    function  updateSinhvien($id_sv,$mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
+    function  updateSinhvien($id_sv, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
     {
         try {
             $sql = "UPDATE sinh_vien SET mssv='$mssv',id_nganh='$id_nganh',ho_ten='$ho_ten',gioi_tinh='$gioi_tinh',sdt='$sdt',trang_thai='$trang_thai',anh='$anh'
@@ -87,7 +79,7 @@
             exit();
         }
     }
-    function updateUser($id_user, $user, $pass,$email)
+    function updateUser($id_user, $user, $pass, $email)
     {
         try {
             $sql = "UPDATE user SET user='$user', pass ='$pass',email='$email' WHERE id_user='$id_user'";
@@ -97,7 +89,7 @@
             exit();
         }
     }
-    function addNewUser($user,$pass,$email,$chuc_vu)
+    function addNewUser($user, $pass, $email, $chuc_vu)
     {
         $sql = "INSERT INTO user (user,pass,email,chuc_vu) 
         values('$user','$pass','$email','$chuc_vu')";
@@ -108,8 +100,9 @@
         $sql = "DELETE FROM user WHERE id_user='$id_user'";
         execute($sql);
     }
-   
+    function searchSinhvien($mssv)
+    {
+        $sql = "SELECT * from sinh_vien WHERE mssv='$mssv'";
+        return query($sql);
+    }
     ?>
-</body>
-
-</html>

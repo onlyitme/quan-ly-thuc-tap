@@ -23,12 +23,27 @@
             <a id="header-logo" href="#" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
-            <div id="header-login" class="col p-0">
+            
+           <?php if(isset($_SESSION['sid'])){
+               echo '<ul class="navbar-nav ml-auto ml-md-0 mr-5">
+               <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> '.$_SESSION['sname'].'</a>
+                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home">Kiểm Tra Thông Tin</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home">Lịch Sử Đơn</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home&act=logout">Đăng xuất</a>
+                   </div>
+               </li>
+           </ul>' ; }else {
+               ?>
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
                     <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
                     <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
                 </div>
             </div>
+           <?php } ?>
         </div>
     </header>
     <!-- Show box login -->
@@ -46,7 +61,7 @@
                     </div>
                     <div class="col-lg-6 ">
                         <!-- <h3>Đăng Nhập</h3> -->
-                        <form action="index.php?ctrl=home" class="my-5">
+                        <form action="index.php?ctrl=home&act=login" method="post" class="my-5">
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
                                 <input type="text" name="user" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -159,7 +174,8 @@
             </div>
         </div>
     </footer>
-    <!-- JS Boostrap -->
+    <!-- JS Boostrap --> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>

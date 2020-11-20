@@ -338,26 +338,28 @@ li, a {
 .h-boxbig {
     width: 100%;
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: #f5f5f5;
     padding: 20px 25px;
     overflow: hidden;
 }
 
 .h-boxleft {
     width: 32%;
-    height: 100%; 
+    height: 570px;
     margin-right: 3%;
     float: left;
     background-color: #1a1a1a;
     padding: 30px;
+    border-radius: 25px;
 }
 
 .h-boxright {
     width: 65%;
-    height: 100%;
+    height: 570px;
     float: left;
-    background-color: #D03737;
-    padding: 30px 20px;
+    background-color: teal;
+    padding: 30px;
+    border-radius: 25px;
 }
 
 .h-avatar {
@@ -426,6 +428,7 @@ a {
     height: 300px;
     padding: 5px;
     border: 1px solid #9c9c9c;
+    border-radius: 25px;
 }
 
 .h-a1 li {
@@ -460,7 +463,24 @@ a {
 
 .h-big-box {
     background: #fff;
+    border-radius: 10px;
+    height: 100%;
 }
+/*--- dnnew.html ---*/
+
+.h-tieude {
+    margin-bottom: 0;
+}
+
+.h-the-a1 li {
+    font-size: 13pt;
+    font-weight: 600;
+    margin: 15px 0;
+}
+.h-the-a1 a:hover, a:focus {
+    color: #D03737;
+}
+
 
 /*----- End Doanh Nghiep -----*/
 
