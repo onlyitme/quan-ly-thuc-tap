@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 20, 2020 lúc 03:02 AM
+-- Thời gian đã tạo: Th10 20, 2020 lúc 04:31 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -37,7 +37,7 @@ CREATE TABLE `dang_tuyen` (
   `sl_sv_dk` int(11) NOT NULL,
   `thoi_gian` date DEFAULT NULL,
   `vi_tri` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `luong` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `luong` int(12) NOT NULL,
   `id_dn` int(11) NOT NULL,
   `id_nganh` int(11) NOT NULL,
   `trang_thai` tinyint(4) NOT NULL COMMENT '0 chua duyet 1 da duyet',
@@ -49,15 +49,15 @@ CREATE TABLE `dang_tuyen` (
 --
 
 INSERT INTO `dang_tuyen` (`id_dt`, `anh`, `tieu_de`, `noi_dung`, `yeu_cau`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `luong`, `id_dn`, `id_nganh`, `trang_thai`, `an_hien`) VALUES
-(18, NULL, 'tuyển sv thực tập cho doanh nghiệp 1', 'sắp có', 'biết chữ việt', 50, 1, '2020-11-25', 'Hồ Chí Minh', '0', 11, 21, 1, 1),
-(19, NULL, 'chua có tiêu đề', 'ko có gì hot', 'ko', 60, 0, '2020-11-03', 'Hồ Chí Minh', '1000 ~ 2000', 12, 22, 1, 1),
-(20, 'dt1.png', 'tuyen sv tt cho vui', '', '', 50, 0, '2020-11-28', 'Hồ Chí Minh', '100 ~ 200', 12, 30, 1, 1),
-(21, NULL, 'đâsdasdsad', 'da', 'dá', 60, 0, '2020-12-24', 'Hồ Chí Minh', '20 ~ 50', 12, 31, 1, 1),
-(22, 'dt4.jpg', 'hung', '', '', 25, 0, '2021-02-11', 'Hồ Chí Minh', '50 ~ 100', 12, 29, 1, 1),
-(23, NULL, 'ưeb', 'đâsdsadas', '', 60, 0, '2021-05-13', 'Hồ Chí Minh', '100 ~ 150', 11, 21, 1, 1),
-(26, 'dt2.jpg\r\n', 'ko co', 'adsadsad', 'ádsada', 50, 0, '2020-11-04', 'Hồ Chí Minh', '0', 11, 21, 1, 1),
-(27, 'dt3.jpg', 'kđasadsadco', 'adsadsad', 'ádsada', 50, 0, '2020-11-29', 'Hồ Chí Minh', '200 ~ 300', 11, 21, 1, 1),
-(28, 'dt5.jpg', 'đasad', 'đasada', 'đâsd', 60, 0, '2020-11-22', 'Hồ Chí Minh', '300 ~ 400', 12, 21, 1, 1);
+(18, NULL, 'tuyển sv thực tập cho doanh nghiệp 1', 'sắp có', 'biết chữ việt', 50, 1, '2020-11-25', 'Hồ Chí Minh', 0, 11, 21, 1, 1),
+(19, NULL, 'chua có tiêu đề', 'ko có gì hot', 'ko', 60, 0, '2020-11-03', 'Hồ Chí Minh', 1000, 12, 22, 1, 1),
+(20, 'dt1.png', 'tuyen sv tt cho vui', '', '', 50, 0, '2020-11-28', 'Hồ Chí Minh', 100, 12, 30, 1, 1),
+(21, NULL, 'đâsdasdsad', 'da', 'dá', 60, 0, '2020-12-24', 'Hồ Chí Minh', 20, 12, 31, 1, 1),
+(22, 'dt4.jpg', 'hung', '', '', 25, 0, '2021-02-11', 'Hồ Chí Minh', 50, 12, 29, 1, 1),
+(23, NULL, 'ưeb', 'đâsdsadas', '', 60, 0, '2021-05-13', 'Hồ Chí Minh', 100, 11, 21, 1, 1),
+(26, 'dt2.jpg\r\n', 'ko co', 'adsadsad', 'ádsada', 50, 0, '2020-11-04', 'Hồ Chí Minh', 0, 11, 21, 1, 1),
+(27, 'dt3.jpg', 'kđasadsadco', 'adsadsad', 'ádsada', 50, 0, '2020-11-29', 'Hồ Chí Minh', 200, 11, 21, 1, 1),
+(28, 'dt5.jpg', 'đasad', 'đasada', 'đâsd', 60, 0, '2020-11-22', 'Hồ Chí Minh', 300, 12, 21, 1, 1);
 
 -- --------------------------------------------------------
 
