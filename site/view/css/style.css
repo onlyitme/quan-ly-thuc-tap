@@ -255,29 +255,31 @@ a:hover {
 
 /* ----------- sv1 ------------ */
 
-
-
-.list-group-item{
+.list-group-item {
     margin-bottom: 1px;
 }
-.list-group-item:hover{
+
+.list-group-item:hover {
     border-radius: 5px;
     border: 2px dodgerblue solid;
-    
 }
-.thongtin1{
+
+.thongtin1 {
     float: left;
     width: 100%;
     font-size: 12pt;
     font-weight: 500;
 }
-.thongtin1 a:hover{
+
+.thongtin1 a:hover {
     color: rgb(35, 53, 211);
 }
-.ttcn{
+
+.ttcn {
     float: left;
     width: 100%;
 }
+
 .btn-white-36 {
     width: 120px;
     color: #363636;
@@ -288,68 +290,78 @@ a:hover {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-
 }
-.btn.btn-white-36:hover{
+
+.btn.btn-white-36:hover {
     background-color: rgb(35, 53, 211);
     color: white;
-   
 }
-.ttcn{
+
+.ttcn {
     float: left;
     width: 100%;
-
 }
-.tt-left{
+
+.tt-left {
     float: left;
     width: 20%;
-    
 }
-.tt-rigth{
+
+.tt-rigth {
     float: right;
     width: 75%;
 }
-p{
+
+p {
     font-size: 12pt;
     float: left;
     width: 77%;
 }
-.media-left{
+
+.media-left {
     width: 100%;
 }
-.col-sm-4{
+
+.col-sm-4 {
     position: fixed;
 }
-.col-sm-12{
+
+.col-sm-12 {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
+    border-top: 1px rgb(228, 228, 228) solid;
+    border-left: 1px rgb(228, 228, 228) solid;
 }
-.sv4{
+
+.sv4 {
     border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
+    border-top: 1px rgb(228, 228, 228) solid;
+    border-left: 1px rgb(228, 228, 228) solid;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
+
 .bg-primary img {
-    width:140px;border: 2px rgb(253, 253, 253) solid;
+    width: 140px;
+    border: 2px rgb(253, 253, 253) solid;
 }
-.bg-primary img:hover{
+
+.bg-primary img:hover {
     opacity: 0.5;
 }
-.sv8-12{
+
+.sv8-12 {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    border-top:1px rgb(228, 228, 228) solid ;
-    border-left:1px rgb(228, 228, 228) solid ;
+    border-top: 1px rgb(228, 228, 228) solid;
+    border-left: 1px rgb(228, 228, 228) solid;
 }
+
 a {
     font-size: 12pt;
     font-weight: 500;
-    
 }
-.boxcapnhat{
+
+.boxcapnhat {
     width: 120px;
     background-color: #ffffff;
     border: 1px solid #000000;
@@ -357,15 +369,15 @@ a {
     padding: 5px 0;
     border-radius: 5px;
 }
-.boxcapnhat:hover{
+
+.boxcapnhat:hover {
     background-color: rgb(255, 30, 30);
     color: white;
 }
 
 
-<<<<<<< HEAD
 /* ----------- sv1 ------------ */
-=======
+
 
 /* Nghia  */
 
@@ -421,9 +433,6 @@ a {
     color: rgb(85, 85, 85);
 }
 
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
 .bg-color {
     height: 3px;
     width: 90%;
@@ -432,12 +441,11 @@ a {
 }
 
 
->>>>>>> 617b3507c5164bfb6433c8e2af16aae9f1c47ab8
->>>>>>> 5d4e40a729d381130f60320c1ec7ec2f674da34f
 /* Baokun */
 
 
 /* Doanh Nghiep - Hoang */
+
 .h-the-a1 ul {
     list-style-type: none;
     padding: 0;
@@ -483,7 +491,6 @@ a {
     background-color: yellow;
     margin: 0px auto;
     border: 2px solid #ccc;
-
 }
 
 .h-avatar img {
@@ -491,7 +498,6 @@ a {
     height: 100%;
     object-fit: cover;
 }
-
 
 .h-a1 {
     height: 300px;
@@ -518,21 +524,18 @@ a {
     width: 100%;
     color: #fff;
 }
-=======
+
 
 /* Baokun */
->>>>>>> Stashed changes
 
 
 /* Doanh Nghiep - Hoang */
 
-<<<<<<< Updated upstream
 .h-big-box {
     background: #fff;
     border-radius: 10px;
     height: 100%;
 }
-
 
 .sidebar-container {
     width: 25%;
@@ -541,57 +544,57 @@ a {
     overflow-y: auto;
     background: transparent;
     color: #fff;
-  }
-  
-  .content-container {
+}
+
+.content-container {
     padding-top: 20px;
-  }
-  
-  .sidebar-navigation {
+}
+
+.sidebar-navigation {
     padding: 0;
     margin: 0;
     list-style-type: none;
     position: relative;
-  }
-  
-  .sidebar-navigation li {
+}
+
+.sidebar-navigation li {
     background-color: transparent;
     position: relative;
     display: inline-block;
     width: 100%;
     line-height: 20px;
-  }
-  
-  .sidebar-navigation li a {
+}
+
+.sidebar-navigation li a {
     padding: 10px 15px 10px 30px;
     display: block;
     color: #343a40;
-  }
-  
-  .sidebar-navigation li .fa {
+}
+
+.sidebar-navigation li .fa {
     margin-right: 10px;
-  }
-  
-  .sidebar-navigation li a:active,
-  .sidebar-navigation li a:hover,
-  .sidebar-navigation li a:focus {
+}
+
+.sidebar-navigation li a:active,
+.sidebar-navigation li a:hover,
+.sidebar-navigation li a:focus {
     text-decoration: none;
     outline: none;
     background-color: #d9d9f1;
     color: #343a40;
-  }
+}
 
-  
-  .sidebar-navigation .header {
+.sidebar-navigation .header {
     font-size: 12px;
     text-transform: uppercase;
     background-color: orangered;
     padding: 10px 15px 10px 30px;
-  }
-  
-  .sidebar-navigation .header::before {
+}
+
+.sidebar-navigation .header::before {
     background-color: transparent;
-  }
+}
+
 
 /*--- dnnew.html ---*/
 
@@ -610,8 +613,6 @@ a:focus {
     color: #D03737;
 }
 
-=======
->>>>>>> Stashed changes
 
 /*----- End Doanh Nghiep -----*/
 
