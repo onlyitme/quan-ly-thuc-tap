@@ -3,7 +3,17 @@
       { 
         var html = document.getElementById(a).value;
 
-       alert(html);
+        $.ajax({
+            type: "post",
+            url: "index.php?act=xemdoanhnghiep",
+            data: {arr: html},
+            success: function(data) {
+              var data =  JSON.parse(data);
+              console.log(data.tieu_de)
+              $("#tieude").html(data.tieu_de)
+              
+            }
+          });
         
       }
       
@@ -28,7 +38,7 @@
     <div class="row detail-job shadow-sm ">
         <div class="col  p-lg-0">
             <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
-                <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm</h5>
+                <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm <?php echo $tennganh ?></h5>
                 <select name="" id="" class="small text-gray border-0">
                     <option value="">Cập Nhập</option>
                     <option value="">Thời Gian</option>
@@ -53,7 +63,7 @@
                                                                                     $today_time = strtotime($today);
                                                                                     $expire_time = strtotime($expire);
                                                                                     if ($expire_time < $today_time){
-                                                                                        echo 'hết hạn nộp';
+                                                                                        echo '<strong style="color:red">hết hạn nộp</strong>';
                                                                                     }else echo $expire;
                                                                                     ?></p>
                         </div>
@@ -69,7 +79,7 @@
             <img src="http://placehold.it/900x200" alt="">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
-                    <h4 class="mb-0">Tên Công Việc</h4>
+                    <h4 class="mb-0" id='tieude'>Tiêu đề</h4>
                     <p class="font-weight-bold text-gray mb-0">Tên công ty</p>
                 </div>
                 <div class="col-lg-4 text-right">
