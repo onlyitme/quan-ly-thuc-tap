@@ -105,6 +105,7 @@ a:hover {
     width: auto;
 }
 
+
 /* nav */
 
 #nav-togger {
@@ -143,6 +144,7 @@ a:hover {
     z-index: 1;
     display: none;
 }
+
 
 /* main */
 
@@ -195,7 +197,9 @@ a:hover {
     color: #fff;
 }
 
-#home .nav-tabs li a.active, #home .nav-tabs li a.active:focus, #home .nav-tabs li a.active:hover {
+#home .nav-tabs li a.active,
+#home .nav-tabs li a.active:focus,
+#home .nav-tabs li a.active:hover {
     border-top: 3px solid dodgerblue;
     border-right: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
@@ -208,6 +212,7 @@ a:hover {
 .card-body p {
     margin-bottom: 5px;
 }
+
 
 /*---- danh sách việc làm---- */
 
@@ -247,6 +252,7 @@ a:hover {
     margin-bottom: 3px;
 }
 
+
 /* ----------- sv1 ------------ */
 
 .thongtin1 {
@@ -269,6 +275,7 @@ a:hover {
     border: 1px black solid;
 }
 
+<<<<<<< Updated upstream
 /* Baokun */
 
 /* Doanh Nghiep - Hoang */
@@ -350,18 +357,15 @@ li, a {
     width: 100%;
     color: #fff;
 }
+=======
 
-.h-title {
-    width: 70%;
-    float: left;
-}
+/* Baokun */
+>>>>>>> Stashed changes
 
-.h-sort {
-    width: 30%;
-    float: left;
-    text-align: right;
-}
 
+/* Doanh Nghiep - Hoang */
+
+<<<<<<< Updated upstream
 .h-big-box {
     background: #fff;
     border-radius: 10px;
@@ -382,18 +386,23 @@ li, a {
     color: #D03737;
 }
 
+=======
+>>>>>>> Stashed changes
 
 /*----- End Doanh Nghiep -----*/
 
+
 /* ----------- footer ------------ */
 
-.text-gray, footer a {
+.text-gray,
+footer a {
     color: lightgray;
 }
 
 footer a:hover {
     color: white;
 }
+
 
 /* Responsive  */
 
