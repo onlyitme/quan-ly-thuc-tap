@@ -9,6 +9,7 @@ require_once('model/home.php');
   switch ($act) {
     case "index":
           $view = "view/home.php";   
+          // $view = "view/list-job.php";
           // $view = "view/job-detail.php";
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";
