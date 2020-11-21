@@ -11,7 +11,6 @@
               var data =  JSON.parse(data);
               console.log(data.tieu_de)
               $("#tieude").html(data.tieu_de)
-              
             }
           });
         
@@ -56,7 +55,7 @@
                         <div class="media-body text-gray text-left">
                             <a href=""><h5 class="text-dark mt-0 "><?=$thongtinnganh['ten_nganh']?></h5></a>
                             <p class="font-weight-bold "><?=$thongtindn['ten_dn']?></p>
-                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong']?></p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong']?> $</p>
                             <p><i class="fas fa-map-marker-alt    "></i> <?=$thongtindangtuyen['vi_tri']?></p>
                             <p ><i class="fas fa-calendar-alt "></i> Hạn chót: <?php $today = date("Y-m-d");
                                                                                     $expire = $thongtindangtuyen['thoi_gian'];     
@@ -64,7 +63,7 @@
                                                                                     $expire_time = strtotime($expire);
                                                                                     if ($expire_time < $today_time){
                                                                                         echo '<strong style="color:red">hết hạn nộp</strong>';
-                                                                                    }else echo $expire;
+                                                                                    }else echo  date('d/m/yy',strtotime($expire));
                                                                                     ?></p>
                         </div>
                         </div>
