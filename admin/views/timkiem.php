@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>
-                        <img src="images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';">
+                        <img src="/views/images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='<?= ADMIN_URL ?>/views/images/avt.jpg';">
                     </td>
                     <td>
                         <b>Họ tên:</b> <?= $row['ho_ten'] ?><br>
