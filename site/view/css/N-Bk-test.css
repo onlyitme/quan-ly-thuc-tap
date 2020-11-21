@@ -250,6 +250,7 @@ body {
     font-weight: bold;
     color: white;
     cursor: pointer;
+    outline: none;
 }
 
 .btn-danger2 {
@@ -264,6 +265,7 @@ body {
     font-weight: bold;
     color: white;
     cursor: pointer;
+    outline: none;
 }
 
 .btn-danger11:hover {
@@ -285,6 +287,7 @@ body {
     color: rgb(240, 238, 238);
     cursor: pointer;
     border-radius: 5px;
+    outline: none;
 }
 
 .btn-sucsess11:hover {
