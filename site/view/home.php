@@ -40,9 +40,9 @@
                                             <img class="card-img-top " src="../uploads/<?=$ds_dt['anh']?>" onerror=this.src="../uploads/700x400.png" alt="Card image cap ">
                                             <div class="card-body small">
                                                 <h5 class="card-title "><?=$ds_dt['tieu_de']?></h5>
-                                                <a href="" class="card-text "><?php $thongtindn=checkdoanhnghiepbyid($ds_dt['id_dn']); echo $thongtindn['ten_dn']?></a>
-                                                <p class="card-text text-gray ">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
-                                                <p class="card-text "><i class="fas fa-map-marker-alt    "></i><?=$ds_dt['vi_tri']?></p>
+                                                <a href="" class="card-text text-gray "><?php $thongtindn=checkdoanhnghiepbyid($ds_dt['id_dn']); echo $thongtindn['ten_dn']?></a>
+                                                <p class="card-text text-gray py-2 font-italic">chỗ này thêm mô tả công việc</p>
+                                                <p class="card-text "><i class="fas fa-map-marker-alt    "></i> <?=$ds_dt['vi_tri']?></p>
                                                 <p class="card-text text-info  "><i class="fas fa-coins   text-warning    "></i> Mức lương: <?=$ds_dt['luong']?></p>
                                                 <p class="card-text  text-tomato"><i class="fas fa-calendar-alt   text-primary "></i> Hạn chót: <?=$ds_dt['thoi_gian']?></p>
                                                 <a href="# " class="btn btn-outline-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>

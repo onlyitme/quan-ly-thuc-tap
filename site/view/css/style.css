@@ -208,6 +208,10 @@
         .card-body p {
             margin-bottom: 5px;
         }
+        
+        #home .card-body a {
+            font-size: 0.9em;
+        }
         /*---- danh sách việc làm---- */
         
         #list-job {
@@ -253,7 +257,7 @@
             margin-bottom: 1px;
         }
         
-        #main .list-group-item:hover .list-group-item {
+        .list-group-item:hover .list-group-item {
             margin-bottom: 1px;
         }
         
