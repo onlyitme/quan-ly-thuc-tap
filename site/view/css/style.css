@@ -105,6 +105,7 @@ a:hover {
     width: auto;
 }
 
+
 /* nav */
 
 #nav-togger {
@@ -143,6 +144,7 @@ a:hover {
     z-index: 1;
     display: none;
 }
+
 
 /* main */
 
@@ -195,7 +197,9 @@ a:hover {
     color: #fff;
 }
 
-#home .nav-tabs li a.active, #home .nav-tabs li a.active:focus, #home .nav-tabs li a.active:hover {
+#home .nav-tabs li a.active,
+#home .nav-tabs li a.active:focus,
+#home .nav-tabs li a.active:hover {
     border-top: 3px solid dodgerblue;
     border-right: 1px solid #d3d3d3;
     border-left: 1px solid #d3d3d3;
@@ -208,6 +212,7 @@ a:hover {
 .card-body p {
     margin-bottom: 5px;
 }
+
 
 /*---- danh sách việc làm---- */
 
@@ -246,6 +251,7 @@ a:hover {
     font-size: 0.9em;
     margin-bottom: 3px;
 }
+
 
 /* ----------- sv1 ------------ */
 
@@ -309,6 +315,7 @@ a:hover {
     float: right;
     width: 75%;
 }
+
 
 /* 
 p {
@@ -404,9 +411,12 @@ a {
     color: white;
 }
 
-/* ----------- sv1 ------------ */
 
 /* ----------- sv1 ------------ */
+
+
+/* ----------- sv1 ------------ */
+
 
 /* Nghia  */
 
@@ -469,7 +479,9 @@ a {
     background-color: rgb(255, 255, 255);
 }
 
+
 /* Baokun */
+
 
 /* Doanh Nghiep - Hoang */
 
@@ -484,6 +496,7 @@ a {
     border-radius: 30px;
 }
 
+
 /** SIDE BAR LEFT **/
 
 .h-sidebar-container {
@@ -496,8 +509,9 @@ a {
     border-radius: 20px;
 }
 
-.h-box-left {
-}
+
+/* .h-box-left {
+} */
 
 .h-box-right {
     width: 75%;
@@ -526,11 +540,14 @@ a {
     color: #343a40;
 }
 
-.h-sidebar-navigation li .fa, .fas, .far {
+.h-sidebar-navigation li .fa,
+.fas,
+.far {
     margin-right: 10px;
 }
 
-.h-sidebar-navigation li a:active, .h-sidebar-navigation li a:focus {
+.h-sidebar-navigation li a:active,
+.h-sidebar-navigation li a:focus {
     text-decoration: none;
     outline: none;
     background-color: #22b0e4;
@@ -575,18 +592,21 @@ a {
     width: 100%;
 }
 
+
 /*----- End Doanh Nghiep -----*/
 
 
 /* ----------- footer ------------ */
 
-.text-gray, footer a {
+.text-gray,
+footer a {
     color: lightgray;
 }
 
 footer a:hover {
     color: white;
 }
+
 
 /* Responsive  */
 
