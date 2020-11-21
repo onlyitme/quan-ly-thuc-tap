@@ -11,175 +11,223 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="pb-4">
+<body>
     <div id="overlay-nav"></div>
     <!-- NỘI DUNG CHÍNH -->
     <main id="main">
-        <div id="list-job">
-            <div class="row container border-top border-bottom ml-0 py-3">
-                <div class="h-sidebar-container shadow mr-4">
-                    <div class="h-box-left">
-                        <div class="px-3 py-3">
-                            <img src="images/company-logo.jpg" alt="logofpt" class="h-sidebar-img" width="100%" height="200px" style="object-fit: cover;">
-                            <hr style="width: 50%;">
+        <div class="container">
+            <div id="doanhnghiep">
+                <div class="row  border-top border-bottom ml-0 py-3">
+                    <div class="h-sidebar-container shadow mr-4">
+                        <div class="h-box-left py-3">
+                            <!-- <div class="px-3 py-3">
+                                <img src="images/logofpt.png" alt="logofpt" class="h-sidebar-img" width="100%" height="200px" style="object-fit: cover;">
+                                <hr style="width: 50%;">
+                            </div> -->
+                            <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
+                                <li class="h-header">TÀI KHOẢN</li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-user-tie"></i> Thông tin tài khoản
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-key"></i> Đổi mật khẩu
+                                    </a>
+                                </li>
+                                <li class="h-header">DOANH NGHIỆP</li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-briefcase" aria-hidden="true"></i> Thông tin doanh nghiệp
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-list" aria-hidden="true"></i> Danh sách bài viết
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-id-card-alt" aria-hidden="true"></i> Quản lý hồ sơ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-paste" aria-hidden="true"></i> Quản lý bài viết
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-sign-out-alt" aria-hidden="true"></i> Đăng xuất
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
-                            <li class="h-header">TÀI KHOẢN</li>
-                            <li>
-                                <a href="#">
-                                    <i class="fas fa-user-tie"></i> Thông tin tài khoản
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-key"></i> Đổi mật khẩu
-                                </a>
-                            </li>
-                            <li class="h-header">DOANH NGHIỆP</li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-briefcase" aria-hidden="true"></i> Thông tin doanh nghiệp
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-list" aria-hidden="true"></i> Danh sách bài viết
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-id-card-alt" aria-hidden="true"></i> Quản lý hồ sơ
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-paste" aria-hidden="true"></i> Quản lý bài viết
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="far fa-sign-out-alt" aria-hidden="true"></i> Đăng xuất
-                                </a>
-                            </li>
-                        </ul>
                     </div>
-                </div>
 
 
-                <div class=" detail-job_inf p-3 h-box-right shadow">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <h2 class="font-weight-700 mb-0">Danh sách hồ sơ ứng tuyển</h2>
-                            <span class="font-weight-500 text-secondary"><i class="far fa-folder-open"></i>
-                                300
-                            
-                        </span></div>
-                        <div class="col-lg-4 text-right">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control col-6" placeholder="Tìm kiếm">
-                                <button class="btn btn-outline-dark mr-3" type="button">
-                                    <i class="fas fa-search"></i>
-                                </button>
+                    <div class=" detail-job_inf p-3 h-box-right shadow">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h2 class="font-weight-700 mb-0">Danh sách hồ sơ ứng tuyển</h2>
+                                <span class="font-weight-500 text-secondary"><i class="far fa-folder-open"></i>
+                                    300
+                                
+                            </span></div>
+                            <div class="col-lg-4 text-right">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control col-6" placeholder="Tìm kiếm">
+                                    <button class="btn btn-outline-dark mr-3" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
 
-                                <button class="btn btn-outline-dark" type="button" data-toggle="dropdown">
-                                    Sắp xếp <i class="fas fa-sort"></i></button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Đã duyệt</a>
-                                    <a class="dropdown-item" href="#">Chưa duyệt</a>
-                                    <a class="dropdown-item" href="#">Theo tên</a>
-                                    <a class="dropdown-item" href="#">Theo thời gian</a>
+                                    <button class="btn btn-outline-dark" type="button" data-toggle="dropdown">
+                                        Sắp xếp <i class="fas fa-sort"></i></button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Đã duyệt</a>
+                                        <a class="dropdown-item" href="#">Chưa duyệt</a>
+                                        <a class="dropdown-item" href="#">Theo tên</a>
+                                        <a class="dropdown-item" href="#">Theo thời gian</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="h-big-box mt-4">
-                        <div class="h-box1">
-                            <table class="table table-hover table-striped border-bottom">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col" class="text-center">STT</th>
-                                        <th scope="col">MSSV</th>
-                                        <th scope="col">Họ &amp; tên</th>
-                                        <th scope="col">Thời gian</th>
-                                        <th scope="col">Vị trí ứng tuyển</th>
-                                        <th scope="col">Trạng thái</th>
-                                        <th scope="col" class="text-center">Hồ sơ</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="table-bordered">
+                        <div class=" h-big-box mt-4">
+                            <div class="h-box1">
+                                <table class="table table-hover table-striped border">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col" class="text-center">STT</th>
+                                            <th scope="col">MSSV</th>
+                                            <th scope="col">Họ &amp; tên</th>
+                                            <th scope="col">Thời gian</th>
+                                            <th scope="col">Vị trí ứng tuyển</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col" class="text-center">Hồ sơ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-bordered">
 
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-secondary">Đang chờ..</td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-secondary">Đang chờ..</td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-secondary">Đang chờ..</td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-center">1</th>
-                                        <td>PS13557</td>
-                                        <td>Nguyễn Hồ Khải Hoàng</td>
-                                        <td>19-11-2020</td>
-                                        <td>Web Designer</td>
-                                        <td class="text-secondary">Đang chờ..</td>
-                                        <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-secondary">Đang chờ..</td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-secondary">Đang chờ..</td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-secondary">Đang chờ..</td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row" class="text-center">1</th>
+                                            <td>PS13557</td>
+                                            <td>Nguyễn Hồ Khải Hoàng</td>
+                                            <td>19-11-2020</td>
+                                            <td>Web Designer</td>
+                                            <td class="text-secondary">Đang chờ..</td>
+                                            <td class="text-center"><a href="#"><i class="fas fa-address-card" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

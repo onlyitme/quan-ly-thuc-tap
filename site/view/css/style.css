@@ -453,7 +453,6 @@ p {
         .h-big-box {
             background: #fff;
             border-radius: 10px;
-            height: 100%;
         }
         
         .h-sidebar-img {
@@ -476,6 +475,11 @@ p {
         .h-box-right {
             width: 75%;
             border-radius: 20px;
+        }
+        
+        .h-big-box tbody {
+            max-height: 800px;
+            overflow-y: auto;
         }
         
         .h-sidebar-navigation {
