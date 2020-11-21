@@ -247,13 +247,31 @@ body {
     cursor: pointer;
 }
 
+.btn-danger2 {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80px;
+    background-color: rgb(238, 62, 62);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
 .btn-danger:hover {
+    background-color: rgb(185, 51, 51);
+}
+
+.btn-danger2:hover {
     background-color: rgb(185, 51, 51);
 }
 
 .btn-sucsess {
     position: absolute;
-    right: 10px;
+    right: 103px;
     top: 30px;
     padding: 10px;
     background-color: rgb(59, 180, 59);
