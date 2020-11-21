@@ -8,9 +8,9 @@ require_once('model/home.php');
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "index":
-          // $view = "view/home.php";   
+          $view = "view/home.php";   
           // $view = "view/list-job.php";
-          $view = "view/job-detail.php";
+          // $view = "view/job-detail.php";
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";
       break;
