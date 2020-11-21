@@ -1,5 +1,5 @@
 
-    <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=insert" enctype="multipart/form-data">
+    <form method="POST" class="col-8 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=insert" enctype="multipart/form-data">
         <div class="row justify-content-center align-items-center text-warning">
             <h1>Thêm doanh nghiệp</h1>
         </div>

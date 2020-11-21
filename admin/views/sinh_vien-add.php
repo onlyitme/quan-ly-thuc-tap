@@ -31,11 +31,7 @@ if(isset($_POST['btn'])){
     }
 }
 ?>
-
-
-
-
-    <form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert" enctype="multipart/form-data">
+    <form method="POST" class="col-6 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert" enctype="multipart/form-data">
         <div class="row justify-content-center align-items-center text-warning">
             <h1>Thêm sinh viên</h1>
         </div>
