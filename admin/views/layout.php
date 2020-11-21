@@ -135,8 +135,6 @@
     </main>
     <footer class=" bg-dark fixed-bottom text-light text-center py-2">
         <h6>Copyright © 2020 --- Thiết kế website bởi Group 6.</h6>
-
-
     </footer>
 
     <!-- JS -->

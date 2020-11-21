@@ -7,7 +7,7 @@
         case "index":
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
-            $ds = getAllDoanhnghiep();
+            $dn = getAllDoanhnghiep();
             $view = "views/dn-index.php";
             require_once "views/layout.php";
             break;
@@ -27,15 +27,15 @@
                     $id_user = $id['id_user'];
                 }
             }
-            $ten_dn= trim(strip_tags($_POST["ten_dn"]));
-            $dia_chi= trim(strip_tags($_POST["dia_chi"]));
+            $ten_dn = trim(strip_tags($_POST["ten_dn"]));
+            $dia_chi = trim(strip_tags($_POST["dia_chi"]));
             $sdt = $_POST['sdt'];
             settype($sdt, "int");
             $an_hien = $_POST['an_hien'];
             settype($an_hien, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-            addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien,$anh);
+            addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh);
             $thongbao = "Thêm doanh nghiệp thành công";
             $view = "views/thongbao.php";
             require_once "views/layout.php";
@@ -60,25 +60,40 @@
             $email = trim(strip_tags($_POST["email"]));
             updateUser($id_user, $user, $pass, $email);
             // doanh nghiep
-            $ten_dn= trim(strip_tags($_POST["ten_dn"]));
-            $dia_chi= trim(strip_tags($_POST["dia_chi"]));
+            $ten_dn = trim(strip_tags($_POST["ten_dn"]));
+            $dia_chi = trim(strip_tags($_POST["dia_chi"]));
             $sdt = $_POST['sdt'];
             settype($sdt, "int");
             $an_hien = $_POST['an_hien'];
             settype($an_hien, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-            updateDoanhnghiep($id_dn,$id_user,$ten_dn, $dia_chi, $sdt, $an_hien,$anh);
+            updateDoanhnghiep($id_dn, $id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh);
             $ds = getAllDoanhnghiep();
             $view = "views/dn-index.php";
             require_once "views/layout.php";
             break;
         case "delete":
             $id_user = $_GET["id_user"];
-            settype($id_user,"int");
+            settype($id_user, "int");
             deleteUser($id_user);
-            $ds = getAllDoanhnghiep();
+            $dn = getAllDoanhnghiep();
             $view = "views/dn-index.php";
+            require_once "views/layout.php";
+            break;
+        case "timkiem":
+            if (!isset($_POST["ten_dn"])) {
+                $view = "views/home.php";
+                require_once "views/layout.php";
+            }
+            $ten_dn = trim(strip_tags($_POST["ten_dn"]));
+            $dn = searchDoanhnghiep($ten_dn);
+            if (checkDoanhnghiepTonTai($ten_dn) == false) {
+                $thongbao = "Tên doanh nghiệp không đúng";
+                $view = "views/thongbao.php";
+                require_once "views/layout.php";
+            }
+            $view = "views/timkiem_dn.php";
             require_once "views/layout.php";
             break;
         case "kiemtrauser":
