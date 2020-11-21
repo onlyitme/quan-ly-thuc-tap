@@ -220,6 +220,10 @@ body {
     color: #40b4b8;
 }
 
+.resume .resume_right .resume_hobby {
+    margin-bottom: 30px;
+}
+
 .resume .resume_right .resume_hobby ul li i {
     font-size: 30px;
 }
