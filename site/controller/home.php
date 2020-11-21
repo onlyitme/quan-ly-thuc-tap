@@ -21,7 +21,7 @@ require_once('model/home.php');
       }
     break;
       case "listjob":
-        if(isset($_SESSION['sid'])){
+       
           if(isset($_GET['id_nganh'])){
             $id_nganh=$_GET['id_nganh'];
             $thongtinnganh=checknganhbyid($id_nganh);
@@ -33,13 +33,8 @@ require_once('model/home.php');
           $coutdangtuyen= coutdangtuyen($id_nganh);
           
           $view = "view/list-job.php";
-        require_once "view/layout.php";}
-        else {
-          echo "<script type='text/javascript'>alert('Hãy Đăng Nhập Để Coi Thông Tin Bên Trong');</script>";
-          $view = "view/home.php";   
-          $ds_nn=ds_nn(); 
-          require_once "view/layout.php";
-        }
+        require_once "view/layout.php";
+       
     break;
     case "chitietdangtuyen": 
       if (isset($_GET['iddangtuyen'])){

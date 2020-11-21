@@ -109,7 +109,7 @@
             <div class="container">
                 <p>Thực Chiến</p>
                 <p><span class="d-none d-lg-inline">Tham Gia</span> Ứng Tuyển Ngay</p>
-                <a href="" class="btn btn-primary btn-lg rounded-pill mt-5 px-5">Tìm việc </a>
+                <a href="index.php?ctrl=home&act=listjob" class="btn btn-primary btn-lg rounded-pill mt-5 px-5">Tìm việc </a>
             </div>
         </div>
     </section>
