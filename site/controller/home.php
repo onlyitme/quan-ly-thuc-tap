@@ -8,15 +8,21 @@ require_once('model/home.php');
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "index":
-          $view = "view/home.php";   
+          // $view = "view/home.php";   
           // $view = "view/list-job.php";
-          // $view = "view/job-detail.php";
+          $view = "view/job-detail.php";
           $ds_nn=ds_nn(); 
+          require_once "view/layout.php";
+      break;
+      case "thongtindt":
+        $thongtindt= checkdangtuyenbyid($_GET['id_dt']);
+        $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+        $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+        $view = "view/job-detail.php";
           require_once "view/layout.php";
       break;
       case "xemdoanhnghiep":   
       if (isset($_POST['arr'])){
-        // print_r(checkdangtuyenbyid($_POST['arr']));
         $thongtindt= checkdangtuyenbyid($_POST['arr']);
         $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
         $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
@@ -142,7 +148,6 @@ require_once('model/home.php');
       }
     break;
       case "listjob":
-       
           if(isset($_GET['id_nganh'])){
             $id_nganh=$_GET['id_nganh'];
             $thongtinnganh=checknganhbyid($id_nganh);
@@ -151,11 +156,9 @@ require_once('model/home.php');
             $tennganh='Tất Cả';
           }
           $thongtindangtuyen=thongtindangtuyen($id_nganh);
-          $coutdangtuyen= coutdangtuyen($id_nganh);
-          
+          $coutdangtuyen= coutdangtuyen($id_nganh);      
           $view = "view/list-job.php";
         require_once "view/layout.php";
-       
     break;
     case "chitietdangtuyen": 
       if (isset($_GET['iddangtuyen'])){
