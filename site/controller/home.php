@@ -55,16 +55,12 @@ require_once('model/home.php');
           $_SESSION['sid']=$checkkhachhang['id_user'];
          $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
           $_SESSION['sname']=$seach_kh_byid['ho_ten'];
-          $view = "view/home.php";   
-          $ds_nn=ds_nn(); 
-          require_once "view/layout.php";
+          header("Location: " . $_SERVER["HTTP_REFERER"]);
         }else
           echo "<script type='text/javascript'>alert('Sẽ chuyển đến trang Doanh Nghiệp');</script>";
       }else  {
         echo "<script type='text/javascript'>alert('Tài Khoản và mật khẩu ko hợp lệ');</script>";
-        $view = "view/home.php";   
-        $ds_nn=ds_nn(); 
-  require_once "view/layout.php";}
+        header("Location: " . $_SERVER["HTTP_REFERER"]);}
       break;
       case "logout":
         unset($_SESSION['sid']);
