@@ -23,7 +23,8 @@
             <a id="header-logo" href="#" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
-            
+            <div id="header-login" class="col p-0">
+                <div class="d-none d-lg-flex justify-content-end h-100 ">
            <?php if(isset($_SESSION['sid'])){
                echo '<ul class="navbar-nav ml-auto ml-md-0 mr-5">
                <li class="nav-item dropdown">
