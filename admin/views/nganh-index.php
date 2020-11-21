@@ -35,7 +35,7 @@
     <div class="checkbox">
                 <input type="checkbox" id="checkall" style="margin-left: 12px">
                 <label for="checkall" style="font-weight: bold;">Chọn Tất Cả</label>
-                <input id="xoaall" type="submit" name="xoaall" class="mx-5" value="Xóa Mục Đã Chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các mục đã chọn không ?');">
+                <input id="xoaall" type="submit" name="xoaall" class="mx-5" value="Xóa Mục Đã Chọn">
         </div>
 
         <script>
