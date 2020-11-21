@@ -119,7 +119,7 @@ require_once('model/home.php');
                     <div class="mb-3">
                         <div class="d-flex ">
                             <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
-                            <p class="col-11"> '.$thongtindn['vi_tri'].'</p>
+                            <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
                         </div>
                         <div class="d-flex ">
                             <p class="w-25"><i class="fas fa-phone-alt"></i></p>
