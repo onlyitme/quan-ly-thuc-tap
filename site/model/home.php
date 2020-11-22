@@ -9,7 +9,7 @@ function ds_nganh($id){
    return query($sql);
 }
 function ds_dt($id){
-    $sql ="SELECT * from dang_tuyen where id_nganh=$id order by id_dt desc";
+    $sql ="SELECT * from dang_tuyen where id_nganh=$id and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
     return query($sql);
 }
 function checkkhachhang($user,$pass){
