@@ -255,43 +255,43 @@ a:hover {
 
 
 /* ----------- sinh vien dau ------------ */
-.col-sm-3{
+#sinhvien .col-sm-3{
     background: white;
 }
-.sv4 {
+#sinhvien .sv4 {
     border-radius: 5px;
     border-top: 1px rgb(228, 228, 228) solid;
     border-left: 1px rgb(228, 228, 228) solid;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
-.list-group-item {
+#sinhvien .list-group-item {
     margin-bottom: 1px;
 }
-.list-group-item:hover {
+#sinhvien .list-group-item:hover {
     border-radius: 5px;
     border: 2px dodgerblue solid;
 }
 /* */
-.tt-dau{
+#sinhvien .tt-dau{
     border-top-left-radius: 100px;
     border-bottom-right-radius:100px ;
     color: white;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
-.tt-dau a{
+#sinhvien .tt-dau a{
     color: white;
 }
-.tt-dau a:hover{
+#sinhvien .tt-dau a:hover{
     color:rgb(255, 136, 0);
 }
-.tt-dau img{
+#sinhvien .tt-dau img{
     width: 140px;
     border: 2px rgb(253, 253, 253) solid;
 }
-.tt-dau img:hover{
+#sinhvien .tt-dau img:hover{
     opacity: 0.5;
 }
-.bg-tt {
+#sinhvien .bg-tt {
     background: #022c58!important;
 }
 .thongtin1 {
@@ -300,40 +300,40 @@ a:hover {
     font-size: 12pt;
     font-weight: 500;
 }
-.thongtin1 a:hover {
+#sinhvien .thongtin1 a:hover {
     color: rgb(35, 53, 211);
 }
 /* */
-.sv8-12 {
+#sinhvien .sv8-12 {
     background: white;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     border-top: 1px rgb(228, 228, 228) solid;
     border-left: 1px rgb(228, 228, 228) solid;
 }
-.ttcn {
+#sinhvien .ttcn {
     float: left;
     width: 100%;
 }
-.tt-left {
+#sinhvien .tt-left {
     float: left;
     width: 20%;
 }
-.tt-rigth{
+#sinhvien .tt-rigth{
     float: right;
     width: 60%;
 }
-.btn-white-36 {
+#sinhvien .btn-white-36 {
     width: 120px;
     border: 1px solid #6b6b6b;
     font-weight: 400;
     padding: 5px 0;
     border-radius: 2px;
 }
-.btn-white-36:hover {
+#sinhvien .btn-white-36:hover {
     background-color: #e4e4e4;
 }
-.boxcapnhat {
+#sinhvien .boxcapnhat {
     width: 120px;
     background-color: rgb(35, 53, 211);
     border: 1px solid #6b6b6b;
@@ -342,7 +342,7 @@ a:hover {
     border-radius: 2px;
     color: black;
 }
-.boxcapnhat:hover {
+#sinhvien .boxcapnhat:hover {
     background-color: rgb(2, 0, 141);
     
 }
