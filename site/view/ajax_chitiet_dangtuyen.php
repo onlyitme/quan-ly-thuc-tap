@@ -1,5 +1,5 @@
 <?php
-echo ' <img src="../uploads/'.$thongtindn['anh'].'" onerror=this.src="http://placehold.it/300x200">
+echo ' <img src="../uploads/'.$thongtindn['anh'].'" onerror=this.src="http://placehold.it/900x200">
 <div class="row align-items-center  p-3">
     <div class="col-lg-8">
         <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
