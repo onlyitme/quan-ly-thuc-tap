@@ -1,6 +1,6 @@
 
 
-<form method="POST" class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=insert">
+<form method="POST" class="col-5 mx-auto border border-warning p-2 shadow rounded mt-4" action="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=insert">
     <div class="row justify-content-center align-items-center text-warning">
         <h1>Thêm nhóm ngành</h1>
     </div>

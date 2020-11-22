@@ -20,10 +20,11 @@
                             <span class="d-none d-md-inline ml-3">MENU</span>
                     </button>
             </div>
-            <a id="header-logo" href="#" class="col text-center">
+            <a id="header-logo" href="index.php" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
-            
+            <div id="header-login" class="col p-0">
+                <div class="d-none d-lg-flex justify-content-end h-100 ">
            <?php if(isset($_SESSION['sid'])){
                echo '<ul class="navbar-nav ml-auto ml-md-0 mr-5">
                <li class="nav-item dropdown">
@@ -38,6 +39,7 @@
                </li>
            </ul>' ; }else {
                ?>
+                <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
                     <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
                     <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
@@ -108,7 +110,7 @@
             <div class="container">
                 <p>Thực Chiến</p>
                 <p><span class="d-none d-lg-inline">Tham Gia</span> Ứng Tuyển Ngay</p>
-                <a href="" class="btn btn-primary btn-lg rounded-pill mt-5 px-5">Tìm việc </a>
+                <a href="index.php?ctrl=home&act=listjob" class="btn btn-primary btn-lg rounded-pill mt-5 px-5">Tìm việc </a>
             </div>
         </div>
     </section>

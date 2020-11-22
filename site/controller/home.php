@@ -14,32 +14,41 @@ require_once('model/home.php');
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";
       break;
+      case "thongtindt":
+        $thongtindt= checkdangtuyenbyid($_GET['id_dt']);
+        $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+        $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+        $view = "view/job-detail.php";
+          require_once "view/layout.php";
+      break;
       case "xemdoanhnghiep":   
       if (isset($_POST['arr'])){
-        // print_r(checkdangtuyenbyid($_POST['arr']));
-        print_r(json_encode(checkdangtuyenbyid($_POST['arr'])));
+        $thongtindt= checkdangtuyenbyid($_POST['arr']);
+        $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+        $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+        require_once 'view/ajax_chitiet_dangtuyen.php';
       }
     break;
       case "listjob":
-        if(isset($_SESSION['sid'])){
           if(isset($_GET['id_nganh'])){
             $id_nganh=$_GET['id_nganh'];
             $thongtinnganh=checknganhbyid($id_nganh);
             $tennganh= $thongtinnganh['ten_nganh'];
-          }else {$id_nganh= 0 ;
+          }elseif(isset($_SESSION['sid'])&& isset($_GET['id_nganh_sv'])){
+            $id_nganh=$_GET['id_nganh_sv'];
+            $thongtinnganh=checknganhbyid($id_nganh);
+            $tennganh= $thongtinnganh['ten_nganh'];
+          }elseif(isset($_GET['id_nganh_sv']) && $_GET['id_nganh_sv']==0 ){
+          header("Location: " . $_SERVER["HTTP_REFERER"]);
+          echo "<script type='text/javascript'>alert('Hãy đăng nhập để xem chức năng này ');</script>";
+          }
+          else {$id_nganh= 0 ;
             $tennganh='Tất Cả';
           }
           $thongtindangtuyen=thongtindangtuyen($id_nganh);
-          $coutdangtuyen= coutdangtuyen($id_nganh);
-          
+          $coutdangtuyen= coutdangtuyen($id_nganh);      
           $view = "view/list-job.php";
-        require_once "view/layout.php";}
-        else {
-          echo "<script type='text/javascript'>alert('Hãy Đăng Nhập Để Coi Thông Tin Bên Trong');</script>";
-          $view = "view/home.php";   
-          $ds_nn=ds_nn(); 
-          require_once "view/layout.php";
-        }
+        require_once "view/layout.php";
     break;
     case "chitietdangtuyen": 
       if (isset($_GET['iddangtuyen'])){
@@ -51,20 +60,17 @@ require_once('model/home.php');
       $pass = $_POST['pass'];
       $checkkhachhang=checkkhachhang($user,$pass);
       if(isset($checkkhachhang) && $checkkhachhang!=''){	
-        if($checkkhachhang['user']==0){
+        if($checkkhachhang['chuc_vu']==0){
           $_SESSION['sid']=$checkkhachhang['id_user'];
          $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
           $_SESSION['sname']=$seach_kh_byid['ho_ten'];
-          $view = "view/home.php";   
-          $ds_nn=ds_nn(); 
-          require_once "view/layout.php";
+          header("Location: " . $_SERVER["HTTP_REFERER"]);
         }else
           echo "<script type='text/javascript'>alert('Sẽ chuyển đến trang Doanh Nghiệp');</script>";
+          
       }else  {
         echo "<script type='text/javascript'>alert('Tài Khoản và mật khẩu ko hợp lệ');</script>";
-        $view = "view/home.php";   
-        $ds_nn=ds_nn(); 
-  require_once "view/layout.php";}
+        header("Location: " . $_SERVER["HTTP_REFERER"]);}
       break;
       case "logout":
         unset($_SESSION['sid']);

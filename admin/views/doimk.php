@@ -1,6 +1,6 @@
 
 
-    <form class="col-10 mx-auto border border-warning p-2 shadow rounded mt-4" method="post" action="<?= ADMIN_URL ?>/?ctrl=user&act=doimk">
+    <form class="col-5 mx-auto border border-warning p-2 shadow rounded mt-4" method="post" action="<?= ADMIN_URL ?>/?ctrl=user&act=doimk">
         <div class="form-group">
             <h1 class="row justify-content-center align-items-center text-info">Đổi mật khẩu</h1>
         </div>
@@ -30,8 +30,4 @@
             });
         });
     </script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 

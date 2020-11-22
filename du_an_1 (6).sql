@@ -226,7 +226,7 @@ INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi
 CREATE TABLE `user` (
   `id_user` int(12) NOT NULL,
   `user` varchar(50) NOT NULL,
-  `pass` varchar(30) NOT NULL,
+  `pass` varchar(50) NOT NULL,
   `email` varchar(200) DEFAULT NULL,
   `chuc_vu` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

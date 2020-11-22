@@ -10,7 +10,7 @@
         $sql = "SELECT * from dang_tuyen";
         return query($sql);
     }
-   
+
     function getAllDoanhnghiep()
     {
         $sql = "SELECT * from doanh_nghiep";
@@ -33,7 +33,7 @@
         $sql = "SELECT * from doanh_nghiep where id_dn='$id_dn'";
         return queryOne($sql);
     }
-   
+
     function updateUser($id_user, $user, $pass, $email)
     {
         try {
@@ -44,7 +44,7 @@
             exit();
         }
     }
-    function  updateDoanhnghiep($id_dn,$id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh)
+    function  updateDoanhnghiep($id_dn, $id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh)
     {
         try {
             $sql = "UPDATE doanh_nghiep SET id_user='$id_user', ten_dn ='$ten_dn',dia_chi='$dia_chi',sdt='$sdt',an_hien='$an_hien',anh='$anh'
@@ -99,6 +99,19 @@
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
         return $rowcount;
+    }
+    function searchDoanhnghiep($ten_dn)
+    {
+        $sql = "SELECT * from doanh_nghiep WHERE ten_dn='$ten_dn'";
+        return query($sql);
+    }
+    function checkDoanhnghiepTonTai($ten_dn)
+    {
+        $sql = "SELECT count(*) as sodong FROM doanh_nghiep WHERE ten_dn='$ten_dn'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount > 0;
     }
     ?>
     

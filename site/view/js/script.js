@@ -27,3 +27,20 @@
 
     });
 })(jQuery);
+
+$(document).ready(function() {
+    // Hide div by setting display to none
+    $(".hide-btn").click(function() {
+        $("#myDiv").hide();
+    });
+
+    // Show div by removing inline display none style rule
+    $(".show-btn").click(function() {
+        $("#myDiv").show();
+    });
+
+    // Toggle div display
+    $(".toggle-btn").click(function() {
+        $("#myDiv").toggle();
+    });
+});

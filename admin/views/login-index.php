@@ -1,38 +1,35 @@
+<link rel="stylesheet" href="../css/login.css">
+<?php
+session_start();
+unset($_SESSION['admin']);
+?>
+   <link href='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newscientist.com%2Farticle%2F2244234-the-sun-may-have-formed-because-a-small-galaxy-passed-by-the-milky-way%2F&psig=AOvVaw1exiLbuN7IVfiIhnLqmUCJ&ust=1606070614100000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCKn7illO0CFQAAAAAdAAAAABAD' rel='stylesheet' type='text/css'>
 
+<div class="login">
+  <h2 class="active"> sign in </h2>
+  <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST" >
+   
+    <input type="text" class="text" name="user">
+     <span>username</span>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  <link rel="stylesheet" href="../thungrac/style.css">
-</head>
-<body>
+    <br>
     
-<section class="section-login">
-        <div class="section-login-create flex-betw text-center">
-            <h2>ĐĂNG NHẬP</h2>
-            <?php
-            session_start();
-            unset($_SESSION['admin']);
-            ?>
-            <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST"  > 
-                <div class="login flex-betw p-3 ">
-                    <div class=" form-group flex-betw ">
-                        <input type="text" class="form-control border-top border-left border-right py-4" name="user" id="user" placeholder="Nhập tài khoản . . ." required>
-                    </div>
-                    <div class=" form-group flex-betw">
-                        <input type="password" class="form-control border-top border-left border-right py-4" name="pass" id="pass"  placeholder="Nhập mật khẩu . . ."   required>
-                    </div>
-                    <div class="d-flex justify-content-between mt-3">
-                        <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan" class="btn btn-outline-light text-decoration-none">Quên mật khẩu ?</a>
-                        <button type="submit" class="btn btn-primary font-weight-bold col ml-3">Đăng nhập</button>
-                    </div>
-                    
-                </div>
-            </form>
-        </div>
-    </section>
-</body>
-</html>
+    <br>
+
+    <input type="password" class="text" name="pass">
+    <span>password</span>
+    <br>
+
+    
+    
+    <button type="submit" class="signin">
+      Sign In
+    </button>
+
+
+    <hr>
+
+    <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan">Quên mật khẩu?</a>
+  </form>
+
+</div>

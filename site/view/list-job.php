@@ -2,19 +2,14 @@
       function get_content(a)
       { 
         var html = document.getElementById(a).value;
-
         $.ajax({
             type: "post",
             url: "index.php?act=xemdoanhnghiep",
             data: {arr: html},
             success: function(data) {
-              var data =  JSON.parse(data);
-              console.log(data.tieu_de)
-              $("#tieude").html(data.tieu_de)
-              
+              $("#thongtindt").html(data)
             }
           });
-        
       }
       
        
@@ -28,7 +23,7 @@
             <button type="submit" class="btn btn-dark col-lg-1 mb-2"><i class="fas fa-search"></i></button>
         </form>
         <div class="col-lg-3 d-flex flex-wrap">
-            <a href="index.php?act=listjob&id_nganh=<?php $idnganhsv=checkkhachhangbyid($_SESSION['sid']); echo $idnganhsv['id_nganh']?>" class="btn btn-outline-dark form-control overflow-hidden col mr-3"><i class="fas fa-filter"></i> Ngành của bạn</a>
+            <a href="index.php?act=listjob&id_nganh_sv=<?php if(isset($_SESSION['sid'])) {$idnganhsv=checkkhachhangbyid($_SESSION['sid']); echo $idnganhsv['id_nganh'];} else echo '0'; ?>" class="btn btn-outline-dark form-control overflow-hidden col mr-3"><i class="fas fa-filter"></i> Ngành của bạn</a>
             <div class="text-right px-0">
                 <button id="list-grid" class="btn btn-success mr-2"><i class="fas fa-th-large"></i></button>
                 <button id="list-inf" class="btn btn-warning"><i class="fas fa-th-list  text-light "></i></button>
@@ -54,9 +49,9 @@
                     <div class="media" >
                         <img class="card-img-top col-3" src="../uploads/<?=$thongtindangtuyen['anh']?>" onerror=this.src="http://placehold.it/300x200" alt="Card image cap ">
                         <div class="media-body text-gray text-left">
-                            <a href=""><h5 class="text-dark mt-0 "><?=$thongtinnganh['ten_nganh']?></h5></a>
+                            <a href="index.php?act=thongtindt&id_dt=<?=$thongtindangtuyen['id_dt']?>"><h5 class="text-dark mt-0 d-inline" ><?=$thongtinnganh['ten_nganh']?></h5></a>
                             <p class="font-weight-bold "><?=$thongtindn['ten_dn']?></p>
-                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong']?></p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong']?> $</p>
                             <p><i class="fas fa-map-marker-alt    "></i> <?=$thongtindangtuyen['vi_tri']?></p>
                             <p ><i class="fas fa-calendar-alt "></i> Hạn chót: <?php $today = date("Y-m-d");
                                                                                     $expire = $thongtindangtuyen['thoi_gian'];     
@@ -64,7 +59,7 @@
                                                                                     $expire_time = strtotime($expire);
                                                                                     if ($expire_time < $today_time){
                                                                                         echo '<strong style="color:red">hết hạn nộp</strong>';
-                                                                                    }else echo $expire;
+                                                                                    }else echo  date('d/m/yy',strtotime($expire));
                                                                                     ?></p>
                         </div>
                         </div>
@@ -74,13 +69,16 @@
             </div>
         </div>
                                                                    
-                                                                              
-        <div class="d-none d-md-block col-8 detail-job_inf p-0" >
-            <img src="http://placehold.it/900x200" alt="">
+        <div class="d-none d-md-block col-8 detail-job_inf p-0" id="thongtindt">
+           <?php
+            $thongtindt= checkdangtuyenidnganh($id_nganh);
+            $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+            $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+            echo ' <img src="../uploads/'.$thongtindn['anh'].'" onerror=this.src="http://placehold.it/300x200">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
-                    <h4 class="mb-0" id='tieude'>Tiêu đề</h4>
-                    <p class="font-weight-bold text-gray mb-0">Tên công ty</p>
+                    <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
+                    <p class="font-weight-bold text-gray mb-0">'.$thongtindn['ten_dn'].'</p>
                 </div>
                 <div class="col-lg-4 text-right">
                     <button type="submit" class="btn btn-info ">Nộp đơn ứng tuyển</button>
@@ -89,7 +87,7 @@
             <div class="row p-3">
                 <div class="col-lg-7">
                     <div class="mb-3">
-                        <h5>Phúc lợi</h5>
+                        <h5>Phúc lợi(sẽ thêm sau)</h5>
                         <div class="d-flex small">
                             <div class="col-4">
                                 <p><i class="fas fa-folder-plus  text-primary "></i> Chế độ bảo hiểm</p>
@@ -108,20 +106,17 @@
                     <div class="mb-3">
                         <h5>Mô tả công việc</h5>
                         <div id="mota" class="col-12">
-                            <p>Be sure to have your pages set up with </p>
-                            <p> Put it all together and your pages should look like this:</p>
-                            <p>the latest design and development standards. That means using an HTML5 doctype and including a viewport meta tag for proper responsive behaviors. </p>
+                        '.$thongtindt['noi_dung'].'
                         </div>
                     </div>
                     <div class="mb-3">
                         <h5>Yêu cầu công việc</h5>
                         <div id="yeucau" class="col-12">
-                            - Tốt nghiệp Cao đẳng, Đại học chuyên ngành Tài chính - Kế toán. Độ tuổi từ 22 - 28 tuổi. - Có ít nhất 1 năm kinh nghiệm trong lĩnh vực liên quan. - Có khả năng tổng hợp và hướng dẫn, xây dựng kế hoạch để thực hiện nhiệm vụ được phân công - Có thể làm
-                            việc theo nhóm và độc lập. - Sử dụng thành thạo vi tính văn phòng, ERP và phần mềm kế toán - Có khả năng tổ chức công việc, thuyết phục tốt.
+                        '.$thongtindt['yeu_cau'].'
                         </div>
                     </div>
                     <div class="mb-3">
-                        <h5>Quyền lợi</h5>
+                        <h5>Quyền lợi(sẽ thêm sau)</h5>
                         <div id="quyenloi" class="col-12">
                             <p> - Thu nhập cạnh tranh theo năng lực làm việc. - Thưởng lương tháng 13 và hiệu quả hoạt động kinh doanh của công ty 2-3 tháng lương. - Nghỉ mát/team-building hàng năm. - Chế độ BHXH, BHYT, BHTN theo quy định của Pháp luật.
                                 - Chế độ ngày nghỉ, lễ tết, được công ty thực hiện theo luật lao động Việt Nam. - Làm việc trong môi trường trẻ năng động, nhiều thử thách và cơ hội phát triển năng lực cá nhân.</p>
@@ -132,9 +127,8 @@
                         <div id="quyenloi" class="col-12">
                             <p>Bằng cấp : Không</p>
                             <p>Hình thức: Nhân viên thực tập</p>
-                            <p>Thời gian thử việc: 2 tháng</p>
-                            <p>Độ tuổi : 20-28</p>
-                            <p>Thời gian làm việc: Thứ 2 - Thứ 6</p>
+                            <p>Thời gian thực tập: 2 tháng</p>
+                            <p>Thời gian làm việc: Thứ 2 - Thứ 6 </br>(Chi tiết cụ thể sẽ liên lạc với Sinh Viên)</p>
                         </div>
                     </div>
                 </div>
@@ -159,11 +153,11 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Hết hạn nộp</p>
-                            <p class="text-gray">30/10/2010</p>
+                            <p class="text-gray">'.date('d/m/yy',strtotime($thongtindt['thoi_gian'])).'</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Ngành nghề</p>
-                            <p class="text-gray">Thiết kế Website</p>
+                            <p class="text-gray">'.$thongtinnganh['ten_nganh'].'</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Kinh Nghiệm</p>
@@ -174,21 +168,21 @@
                         <h5 class="border-bottom py-3 mb-3">Giới thiệu công ty</h5>
                         <div class="d-flex mb-3">
                             <img src="http://placehold.it/900x200" class="col-4 p-0" alt="logo">
-                            <p class="font-weight-bold col-8">Tên công ty</p>
+                            <p class="font-weight-bold col-8">'.$thongtindn['ten_dn'].'</p>
                         </div>
                         <div class="mb-3">
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
-                                <p class="col-11"> 123 abv, phường 15, q.abv</p>
+                                <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
                             </div>
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-phone-alt"></i></p>
-                                <p class="col-11"> Máđá áđâsd</p>
+                                <p class="col-11"> '.$thongtindn['sdt'].'</p>
                             </div>
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-people-carry"></i></p>
                                 <p class="col-11"> 3500 nhân viên</p>
-
+    
                             </div>
                             <div class="d-flex">
                                 <p class="w-25"><i class="fab fa-internet-explorer"></i></p>
@@ -197,7 +191,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>';
+           ?>
+        </div>                                                                                                                                            
     </div>
 </div>

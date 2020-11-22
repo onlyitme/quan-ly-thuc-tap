@@ -7,7 +7,27 @@
         case "index":
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
-            $ds = getAllSinhvien();
+          if(isset($_POST['arr'])){
+            var_dump($_POST['arr']);
+            foreach($_POST['arr'] as $id_user){
+                deleteUser($id_user);
+            }
+        }
+            $dm = getAllSinhvien();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "dacott":
+            /* Chức năng hiện trang chủ
+              1. nạp view hiện trên trang chủ */
+            $dm = getAllSinhvien_dacott();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "chuacott":
+            /* Chức năng hiện trang chủ
+                  1. nạp view hiện trên trang chủ */
+            $dm = getAllSinhvien_chuacott();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
@@ -72,19 +92,18 @@
             require_once "views/layout.php";
             break;
         case "timkiem":
-            if (!isset($_POST["mssv"])){
+            if (!isset($_POST["mssv"])) {
                 $view = "views/home.php";
                 require_once "views/layout.php";
             }
             $mssv = trim(strip_tags($_POST["mssv"]));
             $ds = searchSinhvien($mssv);
-            if(checkMssvTonTai($mssv)==false)
-            {
+            if (checkMssvTonTai($mssv) == false) {
                 $thongbao = "Mã số sinh viên không đúng";
                 $view = "views/thongbao.php";
                 require_once "views/layout.php";
             }
-            $view = "views/timkiem.php";
+            $view = "views/timkiem_sv.php";
             require_once "views/layout.php";
             break;
         case "update":
@@ -120,7 +139,7 @@
             $id_user = $_GET["id_user"];
             settype($id_user, "int");
             deleteUser($id_user);
-            $ds = getAllSinhvien();
+            $dm = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
