@@ -253,135 +253,108 @@ a:hover {
 }
 
 
-/* ----------- sv1 ------------ */
-.list-group-item {
-    margin-bottom: 1px;
+/* ----------- sinh vien dau ------------ */
+.col-sm-3{
+    background: white;
 }
-
-.list-group-item:hover {
-    border-radius: 5px;
-    border: 2px dodgerblue solid;
-}
-
-.thongtin1 {
-    float: left;
-    width: 100%;
-    font-size: 12pt;
-    font-weight: 500;
-}
-
-.thongtin1 a:hover {
-    color: rgb(35, 53, 211);
-}
-
-.ttcn {
-    float: left;
-    width: 100%;
-}
-
-.btn-white-36 {
-    width: 120px;
-    color: #363636;
-    border: 1px solid #e0e0e0;
-    border: 1px solid #000000;
-    font-size: 14px;
-    padding: 5px 15px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-.btn.btn-white-36:hover {
-    background-color: rgb(35, 53, 211);
-    color: white;
-}
-
-.ttcn {
-    float: left;
-    width: 100%;
-}
-
-.tt-left {
-    float: left;
-    width: 20%;
-}
-
-.tt-rigth {
-    float: right;
-    width: 75%;
-}
-
-p {
-    font-size: 12pt;
-    float: left;
-    width: 77%;
-}
-
-.media-left {
-    width: 100%;
-}
-
-
-.col-sm-12 {
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    border-top: 1px rgb(228, 228, 228) solid;
-    border-left: 1px rgb(228, 228, 228) solid;
-}
-
 .sv4 {
     border-radius: 5px;
     border-top: 1px rgb(228, 228, 228) solid;
     border-left: 1px rgb(228, 228, 228) solid;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
 }
-.ttdau{
+.list-group-item {
+    margin-bottom: 1px;
+}
+.list-group-item:hover {
+    border-radius: 5px;
+    border: 2px dodgerblue solid;
+}
+/* */
+.tt-dau{
     border-top-left-radius: 100px;
     border-bottom-right-radius:100px ;
     color: white;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-    
 }
-.ttdau a{
+.tt-dau a{
     color: white;
 }
-.ttdau a:hover{
-    color: #000;
+.tt-dau a:hover{
+    color:rgb(255, 136, 0);
 }
-.bg-primary img {
+.tt-dau img{
     width: 140px;
     border: 2px rgb(253, 253, 253) solid;
 }
-
-.bg-primary img:hover {
+.tt-dau img:hover{
     opacity: 0.5;
 }
-
+.bg-tt {
+    background: #022c58!important;
+}
+.thongtin1 {
+    float: left;
+    width: 100%;
+    font-size: 12pt;
+    font-weight: 500;
+}
+.thongtin1 a:hover {
+    color: rgb(35, 53, 211);
+}
+/* */
 .sv8-12 {
+    background: white;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     border-top: 1px rgb(228, 228, 228) solid;
     border-left: 1px rgb(228, 228, 228) solid;
 }
-a {
-    font-size: 12pt;
-    font-weight: 500;
+.ttcn {
+    float: left;
+    width: 100%;
+}
+.tt-left {
+    float: left;
+    width: 20%;
+}
+.tt-rigth {
+    float: right;
+    width: 71%;
+}
+.btn-white-36 {
+    width: 120px;
+    border: 1px solid #6b6b6b;
+    font-weight: 400;
+    padding: 5px 0;
+    border-radius: 2px;
+}
+.btn-white-36:hover {
+    background-color: #e4e4e4;
 }
 .boxcapnhat {
     width: 120px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    font-weight: 500;
+    background-color: rgb(35, 53, 211);
+    border: 1px solid #6b6b6b;
+    font-weight: 400;
     padding: 5px 0;
-    border-radius: 5px;
-}
-
-.boxcapnhat:hover {
-    background-color: rgb(255, 30, 30);
+    border-radius: 2px;
     color: white;
 }
+.boxcapnhat:hover {
+    background-color: rgb(2, 0, 141);
+    
+}
+/* */
+.col-sm-12 {
+    background-color: white;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    border-top: 1px rgb(228, 228, 228) solid;
+    border-left: 1px rgb(228, 228, 228) solid;
+}
 
-/* ----------- sv1 ------------ */
+/* ----------- sinh vien cuoi ------------ */
 
 
 /* Nghia  */
