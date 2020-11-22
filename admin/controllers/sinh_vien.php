@@ -7,6 +7,12 @@
         case "index":
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
+          if(isset($_POST['arr'])){
+            var_dump($_POST['arr']);
+            foreach($_POST['arr'] as $id_user){
+                deleteUser($id_user);
+            }
+        }
             $dm = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
