@@ -20,7 +20,7 @@
                             <span class="d-none d-md-inline ml-3">MENU</span>
                     </button>
             </div>
-            <a id="header-logo" href="#" class="col text-center">
+            <a id="header-logo" href="index.php" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
             <div id="header-login" class="col p-0">

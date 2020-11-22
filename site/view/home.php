@@ -45,7 +45,7 @@
                                                 <p class="card-text "><i class="fas fa-map-marker-alt    "></i> <?=$ds_dt['vi_tri']?></p>
                                                 <p class="card-text text-info  "><i class="fas fa-coins   text-warning    "></i> Mức lương: <?=$ds_dt['luong']?></p>
                                                 <p class="card-text  text-tomato"><i class="fas fa-calendar-alt   text-primary "></i> Hạn chót: <?=$ds_dt['thoi_gian']?></p>
-                                                <a href="# " class="btn btn-outline-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>
+                                                <a href="index.php?act=thongtindt&id_dt=<?=$ds_dt['id_dt']?>" class="btn btn-outline-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>
                                             </div>
                                         </div>
                                     </div>

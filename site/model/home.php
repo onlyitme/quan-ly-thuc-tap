@@ -28,21 +28,26 @@ function checkdangtuyenbyid($id){
     $sql="select * from dang_tuyen where id_dt='$id'";
     return queryOne($sql);
 }
+function checkdangtuyenidnganh($id){
+    if(isset($id_nganh) && $id_nganh !=0) $sql="select * from dang_tuyen where id_nganh='$id' and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
+    else $sql="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
+    return queryOne($sql);
+}
 function checknganhbyid($id){
     $sql="select * from nganh where id_nganh='$id' ";
     return queryOne($sql);
 }
 function coutdangtuyen($id_nganh){
-    if(isset($id_nganh) && $id_nganh !=0){$sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where id_nganh='$id_nganh'";}else
-    $sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen";
+    if(isset($id_nganh) && $id_nganh !=0){$sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where id_nganh='$id_nganh' and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk";}else
+    $sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk";
     $kq = query($sql);
     $row = $kq->fetch();
     $rowcount = $row['tongdangtuyen'];
     return $rowcount;
 }
 function thongtindangtuyen($id_nganh){
-    if(isset($id_nganh) && $id_nganh !=0){$sql ="select * from dang_tuyen where id_nganh='$id_nganh' order by id_dt desc";}else
-    $sql ="select * from dang_tuyen order by id_dt desc";
+    if(isset($id_nganh) && $id_nganh !=0){$sql ="select * from dang_tuyen where id_nganh='$id_nganh' and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";}else
+    $sql ="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
     return query($sql);
 }
 ?>
