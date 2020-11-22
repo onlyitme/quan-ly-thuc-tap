@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="views/css/style.css">
 </head>
-
 <body>
     <?php
     session_start();
@@ -24,7 +23,6 @@
             <a class="navbar-brand font-weight-bold " href="/quan-ly-thuc-tap/admin">
                 <h4>TRANG CHỦ</h4>
             </a>
-
             <form method="POST" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=timkiem">
                 <div class="input-group">
                     <input class="form-control" name="mssv" type="text" placeholder="Nhập mssv cần tìm..." aria-label="Search" aria-describedby="basic-addon2" />

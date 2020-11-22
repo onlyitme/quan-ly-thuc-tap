@@ -52,7 +52,7 @@
                             <div class="form-group col-6">
                                 <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
                             </div>
-                     </div>
+                        </div>
                         <div class="row">
                             <div class="form-group col-6">
                                 <input type="text" class="form-control" id="mssv" name="mssv" required placeholder="Mã số sinh viên">
@@ -98,19 +98,21 @@
             </div>
         </div>
     </div>
-    <div class="dropdown list-group-item-action active">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Chọn
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Tất cả</a>
-            <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=dacott">Đã có nơi thực tập</a>
-            <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=chuacott">Chưa có nơi thực tập</a>
-        </div>
-    </div>
+
     <thead>
         <tr class="text-center">
-        <th scope="col">Check</th>
+            <th scope="col">
+                <div class="dropdown list-group-item-action active">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Lọc sinh viên
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Tất cả</a>
+                        <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=dacott">Đã có nơi thực tập</a>
+                        <a class="dropdown-item" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=chuacott">Chưa có nơi thực tập</a>
+                    </div>
+                </div>
+            </th>
             <th scope="col">#</th>
             <th scope="col">Hình</th>
             <th scope="col">Thông tin</th>
@@ -119,11 +121,14 @@
             <th scope="col">Xóa</th>
         </tr>
     </thead>
-    <?php $i = 1; foreach ($dm as $row) { ?>
+    <?php $i = 1;
+    foreach ($dm as $row) { ?>
         <tr>
-        <td><div class="checkbox">
-            <input type="checkbox" class="checkitem" value ='<?= $row['id_user'] ?>' > </div></td>
-                    <th scope="row"><?= $i++ ?></th>
+            <td>
+                <div class="checkbox">
+                    <input type="checkbox" class="checkitem" value='<?= $row['id_user'] ?>'> </div>
+            </td>
+            <th scope="row"><?= $i++ ?></th>
             <td>
                 <img src="views/images/<?= $row['anh'] ?>" width="150" height="100" onerror="this.src='views/images/avt.jpg';">
             </td>
@@ -158,43 +163,43 @@
     <?php } ?>
 </table>
 <div class="checkbox">
-                <input type="checkbox" id="checkall" style="margin-left: 12px">
-                <label for="checkall" style="font-weight: bold;">Chọn Tất Cả</label>
-                <input id="xoaall" type="submit" name="xoaall" class="mx-5" value="Xóa Mục Đã Chọn" >
-        </div>
+    <input type="checkbox" id="checkall" style="margin-left: 12px">
+    <label for="checkall" style="font-weight: bold;">Chọn Tất Cả</label>
+    <input id="xoaall" type="submit" name="xoaall" class="mx-5" value="Xóa Mục Đã Chọn">
+</div>
 
 <script>
-      $("#checkall").change(function(){
-            $(".checkitem").prop("checked",$(this).prop("checked"))
-        })
-        $(".checkitem").change(function(){
-            if($(this).prop("checked")==false){
-                $("#checkall").prop("checked",false)
+    $("#checkall").change(function() {
+        $(".checkitem").prop("checked", $(this).prop("checked"))
+    })
+    $(".checkitem").change(function() {
+        if ($(this).prop("checked") == false) {
+            $("#checkall").prop("checked", false)
+        }
+        if ($(".checkitem:checked").length == $(".checkitem").length) {
+            $("#checkall").prop("checked", true)
+        }
+    })
+    $("#xoaall").click(function() {
+        let arrcheck = [];
+        $(".checkitem").each(function() {
+            check = $(this).prop("checked");
+            if (check) {
+                arrcheck.push($(this).val());
             }
-            if($(".checkitem:checked").length == $(".checkitem").length){
-                $("#checkall").prop("checked",true)
-            }
-        })
-        $("#xoaall").click(function(){
-          let arrcheck = [];
-          $(".checkitem").each(function(){
-              check = $(this).prop("checked");
-            if(check){
-              arrcheck.push($(this).val());
-            }
-          }); 
-          console.log(arrcheck);
-          $.ajax({
+        });
+        console.log(arrcheck);
+        $.ajax({
             type: "post",
             url: "index.php?ctrl=sinh_vien",
-            data: {arr: arrcheck}, 
+            data: {
+                arr: arrcheck
+            },
             success: function(data) {
-              location.reload();
+                location.reload();
             }
-          });
         });
-
-
+    });
     $(document).ready(function() {
         $("#user").blur(function() {
             u = $(this).val();

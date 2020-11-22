@@ -32,7 +32,7 @@
             $e = trim(strip_tags($_POST['email']));
             $thongbao = "";
             if (checkHople($u, $e) == true) {
-                $pass = md5(rand(0, 9));
+                $pass = substr(md5(time()), 0, 16);
                 updateUser($u, $pass, $e);
                 $thongbao = "Mật khẩu mới đã được gửi đến hợp thư";
                 session_start();

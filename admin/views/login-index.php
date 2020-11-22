@@ -1,35 +1,39 @@
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../thungrac/style.css">
 <?php
 session_start();
 unset($_SESSION['admin']);
 ?>
-   <link href='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.newscientist.com%2Farticle%2F2244234-the-sun-may-have-formed-because-a-small-galaxy-passed-by-the-milky-way%2F&psig=AOvVaw1exiLbuN7IVfiIhnLqmUCJ&ust=1606070614100000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCKn7illO0CFQAAAAAdAAAAABAD' rel='stylesheet' type='text/css'>
+<section class="section-login">
+  <div class="section-login-create flex-betw">
+    <div class="row form-group  justify-content-center align-items-center  text-center">
+      <h2>Đăng nhập</h2>
+    </div>
+    <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST">
+      <div class="login flex-betw p-3 ">
+        <div class=" form-group ">
+          <input type="text" name="user" id="user" class="form-control border-top border-left border-right py-4" required placeholder="Nhập Email">
+          <?php if (isset($user_error)) { ?>
+            <span class="badge badge-warning"> <?= $user_error ?> </span>
+          <?php } ?>
+          <span id="kqcheckuser"></span>
+        </div>
+        <div class="login-sec flex-betw">
+          <input type="password" name="pass" id="pass" class="form-control border-top border-left border-right py-4" required placeholder="Nhập mật khẩu">
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+          <button type="submit" class="btn btn-primary font-weight-bold col ml-3">Đăng nhập</button>
+        </div>
 
-<div class="login">
-  <h2 class="active"> sign in </h2>
-  <form action="/quan-ly-thuc-tap/admin/?ctrl=home&act=dangnhap" method="POST" >
-   
-    <input type="text" class="text" name="user">
-     <span>username</span>
-
-    <br>
-    
-    <br>
-
-    <input type="password" class="text" name="pass">
-    <span>password</span>
-    <br>
-
-    
-    
-    <button type="submit" class="signin">
-      Sign In
-    </button>
-
-
-    <hr>
-
+      </div>
+    </form>
     <a href="/quan-ly-thuc-tap/admin/?ctrl=home&act=taikhoan">Quên mật khẩu?</a>
-  </form>
-
-</div>
+  </div>
+</section>
+<script>
+  $(document).ready(function() {
+    $("#user").blur(function() {
+      u = $(this).val();
+      $("#kqcheckuser").load("<?= ADMIN_URL ?>/?ctrl=home&act=kiemtrauser&user=" + u);
+    });
+  });
+</script>
