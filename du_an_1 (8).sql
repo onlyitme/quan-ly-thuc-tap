@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2020 lúc 03:43 AM
+-- Thời gian đã tạo: Th10 23, 2020 lúc 03:51 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -55,16 +55,17 @@ INSERT INTO `dang_tuyen` (`id_dt`, `anh`, `tieu_de`, `noi_dung`, `yeu_cau`, `sl_
 (32, NULL, 'tuyển tts', 'tuyển 30 thực tập sinh web cho doanh nghiệp thành công', 'biết im lặng và nói đúng lúc', 30, 0, '2020-11-21', 'Hà Nội', 50, 15, 21, 1, 1),
 (33, 'dt4.jpg', 'tuyển 36 tts', 'tuyển 36 thực tập sinh web cho doanh nghiệp thất bại', 'Là con người', 36, 0, '2020-11-25', 'Biên Hòa', 10, 14, 21, 1, 1),
 (34, NULL, 'tuyển tts thiết web Font-end', 'tuyển 60 tts quản lí code chỉnh sửa layout', 'biết giao tiếp bằng tiếng anh', 60, 0, '2021-01-29', 'Quận 1 Hồ Chí Minh', 500, 17, 21, 1, 1),
-(35, 'dt5.jpg', 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', 20, 0, '2021-04-29', 'Quận 1 Hồ Chí Minh', 100, 17, 21, 1, 1),
-(36, '2.jpg', 'tuyển tts ttdh', 'dùng các công cụ để chỉnh sửa ảnh', 'biết tiếng người', 48, 0, '2020-12-09', 'Hồ Chí Minh', 100, 14, 22, 1, 1),
+(35, 'dt4.jpg', 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', 20, 0, '2021-04-29', 'Quận 1 Hồ Chí Minh', 100, 17, 21, 1, 1),
+(36, 'dt2.jpg', 'tuyển tts ttdh', 'dùng các công cụ để chỉnh sửa ảnh', 'biết tiếng người', 48, 0, '2020-12-09', 'Hồ Chí Minh', 100, 14, 22, 1, 1),
 (37, NULL, 'tuyển thiết kế đồ họa', 'tuyển 69 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ', 69, 0, '2021-02-27', 'Quận 1 hcm', 250, 15, 22, 1, 1),
-(38, '3.jpg', 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', 48, 0, '2020-12-09', 'Hồ Chí Minh', 100, 14, 22, 1, 1),
+(38, 'dt3.jpg', 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', 48, 0, '2020-12-09', 'Hồ Chí Minh', 100, 14, 22, 1, 1),
 (39, NULL, 'tuyển thiết kế đồ họa', 'tuyển 29 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ chuyên môn không cần cao', 29, 0, '2021-02-27', 'Quận 1 hcm', 250, 15, 22, 1, 1),
-(40, '5.jpg', 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', 96, 0, '2021-04-22', 'quận 1 hcm', 666, 15, 21, 1, 1),
+(40, 'dt5.jpg', 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', 96, 0, '2021-04-22', 'quận 1 hcm', 666, 15, 21, 1, 1),
 (41, NULL, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', 20, 0, '2021-04-29', 'Quận 1 Hồ Chí Minh', 100, 17, 21, 1, 1),
 (42, NULL, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', 50, 0, '2021-04-29', 'Quận 1 Hồ Chí Minh', 100, 17, 38, 1, 1),
 (43, NULL, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', 20, 0, '2021-04-04', 'Hồ Chí Minh', 100, 15, 38, 1, 1),
-(44, NULL, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', 40, 0, '2021-04-29', 'Hồ Chí Minh', 150, 14, 35, 1, 1);
+(44, NULL, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', 40, 0, '2021-04-29', 'Hồ Chí Minh', 150, 14, 35, 1, 1),
+(45, 'dt1.png', 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', 50, 0, '2021-02-19', 'Hồ Chí Minh', 200, 14, 21, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -309,7 +310,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `dang_tuyen`
 --
 ALTER TABLE `dang_tuyen`
-  MODIFY `id_dt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_dt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `doanh_nghiep`
