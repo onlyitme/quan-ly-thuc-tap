@@ -1059,63 +1059,6 @@ footer a:hover {
             color: #fff;
             /* border-top-right-radius: 20px;
             border-bottom-right-radius: 20px; */
-<<<<<<< Updated upstream
-        }
-        
-        #doanhnghiep .h-sidebar-navigation li a:hover {
-            color: #fff;
-        }
-        
-        #doanhnghiep .h-sidebar-navigation .h-header {
-            font-size: 12pt;
-            text-transform: uppercase;
-            background-color: #2574A9;
-            padding: 10px 15px 10px 20px;
-        }
-        
-        #doanhnghiep .h-sidebar-navigation .h-header::before {
-            background-color: transparent;
-        }
-        
-        #doanhnghiep .h-sidebar-navigation li::before {
-            background-color: #4297d0;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            position: absolute;
-            content: '';
-            height: 100%;
-            left: 0;
-            top: 0;
-            -webkit-transition: width 0.3s ease-in;
-            transition: width 0.3s ease-in;
-            width: 40px;
-            z-index: -1;
-        }
-        
-        #doanhnghiep .h-sidebar-navigation li:hover::before {
-            width: 100%;
-            border-radius: 0;
-        }
-        /*----- End Doanh Nghiep -----*/
-        /* ----------- footer ------------ */
-        
-        .text-gray,
-        footer a {
-            color: lightgray;
-        }
-        
-        footer a:hover {
-            color: white;
-        }
-        /* Responsive  */
-        
-        @media (max-width: 768px) {
-            #banner {
-                font-size: 0.9rem;
-                height: 500px;
-            }
-        }
-=======
 }
 
 #doanhnghiep .h-sidebar-navigation li a:hover {
@@ -1189,24 +1132,6 @@ footer a:hover {
     float: left;
     width: 60%;
     height: 150px;
-    position: relative;
-}
-
-#doanhnghiep .h-tichhop {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-}
-
-#doanhnghiep .h-tichhop .fab, .h-tichhop .fa {
-    font-size: 35px;
-    margin-right: 10px;
-    color: #2574A9;
-}
-
-#doanhnghiep .h-tichhop .fab:hover, .h-tichhop .fa:hover {
-    color: #4297d0;
-    transition: .3s;
 }
 
 #doanhnghiep .h-tt-right {
@@ -1218,10 +1143,37 @@ footer a:hover {
     background: #ffffff;
 }
 
+#doanhnghiep button.h-btn-stt:hover {
+    background-color: #4297d0;
+    border: none;
+}
+
 /* Thong tin Doanh nghiep - Hoang */
+#doanhnghiep .h-box-dn {
+    position: relative;
+}
+
+#doanhnghiep .h-social {
+    position: absolute;
+    left: 7px;
+    bottom: -1px;
+}
+
+#doanhnghiep .h-social .fab, .h-social .fa {
+    font-size: 35px;
+    margin-right: 10px;
+    color: #2574A9;
+}
+
+#doanhnghiep .h-social .fab:hover, .h-social .fa:hover {
+    color: #4297d0;
+    transition: .3s;
+}
+
 #doanhnghiep .h-ttdn-box .form-control[readonly] {
     background: #ffffff;
 }
+
 
 /*----- End Doanh Nghiep -----*/
 
@@ -1243,4 +1195,3 @@ footer a:hover {
         height: 500px;
     }
 }
->>>>>>> Stashed changes
