@@ -56,7 +56,7 @@
                 require_once "views/layout.php";
                 exit();
             }
-            move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
+            move_uploaded_file($_FILES["anh"]["tmp_name"], "../uploads/$anh");
             addNewDangtuyen($id_nganh, $id_dn, $tieu_de, $noi_dung, $yeu_cau, $trang_thai, $sl_sv_can, $sl_sv_dk, $an_hien, $anh);
             $thongbao = "Thêm đăng tuyển thành công";
             $view = "views/thongbao.php";

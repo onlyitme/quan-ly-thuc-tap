@@ -1,6 +1,6 @@
 <h1></b> <?= $row['tieu_de'] ?></h1>
 <div class="row">
-    <div class="col-5"><img src="images/<?= $row['anh'] ?>" width="80%" onerror="this.src='<?= ADMIN_URL ?>/images/avt.jpg';"></div>
+    <div class="col-5"><img src="views/images/<?= $row['anh'] ?>" width="80%" onerror="this.src='views/images/avt.jpg';"></div>
     <div class="col-7">
         <ul class="list-group">
             <li class="list-group-item"><?php

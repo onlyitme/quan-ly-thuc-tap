@@ -986,6 +986,7 @@ footer a:hover {
         #sinhvien .taohoso {
             float: left;
             width: 17%;
+            font-weight: 500;
         }
         #sinhvien .tt-rigth{
             float: right;
@@ -1021,9 +1022,33 @@ footer a:hover {
             padding: 5px 10px;
             border-radius: 2px;
             color: white;
+            
         }
         #sinhvien .boxcapnhat2:hover {
             background-color: rgb(161, 0, 0);
+            color: white;  
+        }
+        #sinhvien .boxcapnhat3 {
+            border: 1.5px solid #a5a5a5;
+            font-weight: 400;
+            padding: 5px 10px;
+            border-radius: 2px;
+            color: black;
+        }
+        #sinhvien .boxcapnhat3:hover {
+            opacity: 0.4;
+            background-color: rgb(95, 95, 95);
+            color: white;  
+        }
+        #sinhvien .themngonngu {
+            border: 1px solid #a5a5a5;
+            font-weight: 400;
+            padding: 5px 10px;
+            border-radius: 2px;
+            color: rgb(0, 0, 0);
+        }
+        #sinhvien .themngonngu:hover {
+            background-color: rgb(2, 0, 141);
             color: white;  
         }
         /* */
@@ -1034,10 +1059,6 @@ footer a:hover {
             border-top: 1px rgb(228, 228, 228) solid;
             border-left: 1px rgb(228, 228, 228) solid;
         }
-        #sinhvien .col-2{
-            text-align: center;
-        }
-        
         /* ----------- sinh vien cuoi ------------ */
 
         /* Nghia onclick */
