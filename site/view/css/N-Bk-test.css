@@ -30,8 +30,10 @@
     width: 800px;
     height: auto;
     display: flex;
-    margin: 50px auto;
+    margin: 0 auto;
     position: relative;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .resume .resume_left {
