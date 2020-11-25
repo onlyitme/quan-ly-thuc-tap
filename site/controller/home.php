@@ -69,8 +69,18 @@ require_once('model/home.php');
           echo "<script type='text/javascript'>alert('Sẽ chuyển đến trang Doanh Nghiệp');</script>";
           
       }else  {
-        echo "<script type='text/javascript'>alert('Tài Khoản và mật khẩu ko hợp lệ');</script>";
-        header("Location: " . $_SERVER["HTTP_REFERER"]);}
+        $link=substr($_SERVER["HTTP_REFERER"],39);
+        echo "<script type='text/javascript'>alert('Tài Khoản Mật Khẩu Không Hợp Lệ');</script>";
+       
+       if($link=='index.php'||$link=='index.php?ctrl=home&act=login' ) {
+          $view = "view/home.php";   
+          $ds_nn=ds_nn(); 
+          require_once "view/layout.php";}
+          else{
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+          }
+       }
+       
       break;
       case "logout":
         unset($_SESSION['sid']);
