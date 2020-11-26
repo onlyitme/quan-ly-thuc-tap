@@ -519,6 +519,38 @@
     }
     /* ----------- sinh vien cuoi ------------ */
     /* Nghia  dt */
+    /* Nghia onclick */
+    
+    .N-box {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 30px 0;
+    }
+    
+    #overflow {
+        margin: 0 auto;
+        width: 815px;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    
+    #overflow::-webkit-scrollbar {
+        width: 10px;
+        background-color: #287375;
+        border-radius: 5px;
+    }
+    
+    #overflow::-webkit-scrollbar-thumb {
+        background-color: #40b4b8;
+        border-radius: 15px;
+    }
     
     .Nghia input[type="text"].N-ninput {
         width: 80%;
