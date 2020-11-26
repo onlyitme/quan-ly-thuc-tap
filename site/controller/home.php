@@ -64,10 +64,10 @@ require_once('model/home.php');
           if($checkkhachhang['chuc_vu']==0){
             $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
             $_SESSION['sname']=$seach_kh_byid['ho_ten'];
-            $_SESSION['schuc_vu'] == 0;
+            $_SESSION['schuc_vu'] = 0;
           }else{
             $_SESSION['sname'] = "Doanh nghiệp";
-            $_SESSION['schuc_vu'] == 1;
+            $_SESSION['schuc_vu'] = 1;
           }
           header("Location: " . $_SERVER["HTTP_REFERER"]);
 
