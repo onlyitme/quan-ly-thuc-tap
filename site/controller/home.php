@@ -65,11 +65,14 @@ require_once('model/home.php');
             $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
             $_SESSION['sname']=$seach_kh_byid['ho_ten'];
             $_SESSION['schuc_vu'] = 0;
-          }else{
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+
+          }elseif($checkkhachhang['chuc_vu']==1){
             $_SESSION['sname'] = "Doanh nghiệp";
             $_SESSION['schuc_vu'] = 1;
+            header("Location: index.php?ctrl=doanh_nghiep");
           }
-          header("Location: " . $_SERVER["HTTP_REFERER"]);
+         
 
       }else  {
         $link=substr($_SERVER["HTTP_REFERER"],39);
