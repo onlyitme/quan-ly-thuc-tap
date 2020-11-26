@@ -98,6 +98,9 @@
             <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứng tuyển</button>
         </div>
     </nav>
+    <div id="dangtuyen">
+        
+    </div>
     <div id="overlay-nav"></div>
     <!-- NỘI DUNG CHÍNH -->
     <?php

@@ -569,7 +569,10 @@
         right: 5px;
         top: 1px;
         z-index: 99999;
-        font-weight: bold
+    }
+    
+    .Nghia textarea {
+        border-color: red;
     }
     /* Nghia  */
     
