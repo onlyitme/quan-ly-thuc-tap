@@ -8,9 +8,9 @@ require_once('model/home.php');
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "ttcn_index":
-        $view = "view/ttcn_index.php";
-      require_once "view/layout_sv.php";
-      break;
+        $view_sv = "view/ttcn_index.php";
+        $view = "view/layout_sv.php";
+    break;
     case "ttcn_edit":
         $view = "view/ttcn_edit.php";
       require_once "view/layout_sv.php";
@@ -29,4 +29,6 @@ require_once('model/home.php');
         
     break;
   }
+  require_once "view/layout.php";
+
 ?>

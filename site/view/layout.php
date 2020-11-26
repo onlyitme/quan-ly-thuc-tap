@@ -32,7 +32,7 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
+                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=sinh_vien"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
                     <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
                     <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
                 </div>
@@ -120,13 +120,13 @@
             <?php include $view; ?>
         </div>
     </main>
-    <footer id="footer " class="wrap bg-dark text-light py-3 ">
+    <footer id="footer " class="wrap bg-dark text-light  ">
         <div class="container ">
             <div class="col-3 p-0 ">
                 <img src="view/images/logo-2.png " alt=" ">
             </div>
             <h3>Phòng Quan Hệ Doanh Nghiệp</h3>
-            <div class="row my-5 ">
+            <div class="row mt-5 ">
                 <div class="col-lg-6 mb-3 ">
                     <h5 class="pb-3 ">Thông tin trường FPT Polytechnic</h5>
                     <div class="row text-gray ">
@@ -154,25 +154,25 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mb-3 ">
                     <h5 class="pb-3 ">Dành cho doanh nghiệp</h5>
-                    <div class="nav flex-column ">
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1 </a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                    <div class="nav flex-column  ">
+                        <a class="nav-item nav-link px-0 text-gray" href="# ">Đăng ký để làm đối tác</a>
+                        <a class="nav-item nav-link px-0 text-gray" href="# ">Hỗ trợ doanh nghiệp</a>
+                        <a class="nav-item nav-link px-0 text-gray" href="# ">Phản hồi của doanh nghiệp</a>
+                        <a class="nav-item nav-link px-0 text-gray" href="# ">Tin tức doanh nghiệp</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-3 ">
                     <h5 class="pb-3 ">Dành cho sinh viên</h5>
                     <div class="nav flex-column ">
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 1</a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 2</a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 3</a>
-                        <a class="nav-item nav-link px-0 " href="# ">Thông tin 4</a>
+                        <a class="nav-item nav-link px-0 text-gray  " href="# ">Đăng ký thực tập sớm</a>
+                        <a class="nav-item nav-link px-0 text-gray " href="# ">Hỗ trợ sinh viên</a>
+                        <a class="nav-item nav-link px-0 text-gray " href="# ">Phản hồi của sinh viên</a>
+                        <a class="nav-item nav-link px-0 text-gray " href="# ">Tin tức sinh viên</a>
                     </div>
                 </div>
             </div>
-            <div class="row text-light text-center ">
-                <p class="col mt-5 ">Copyright <i class="fa fa-copyright mx-2 " aria-hidden="true "></i> 2020 Bản quyền thuộc về <b>Group 6</b></p>
+            <div class="row text-gray text-center ">
+                <p class="col">Copyright <i class="fa fa-copyright mx-2 " aria-hidden="true "></i> 2020 Bản quyền thuộc về <b>Group 6</b></p>
             </div>
         </div>
     </footer>
