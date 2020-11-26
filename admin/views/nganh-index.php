@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="alert alert-primary w-100 p-3" role="alert"">
+    <div class="alert alert-primary w-100 p-3" role="alert">
         <h1 >DANH SÁCH NGÀNH HỌC</h1>
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb bg-transparent p-0">

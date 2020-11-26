@@ -27,6 +27,7 @@
                     $id_user = $id['id_user'];
                 }
             }
+            $website = trim(strip_tags($_POST["website"]));
             $ten_dn = trim(strip_tags($_POST["ten_dn"]));
             $dia_chi = trim(strip_tags($_POST["dia_chi"]));
             $sdt = $_POST['sdt'];
@@ -35,7 +36,7 @@
             settype($an_hien, "int");
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "../uploads/$anh");
-            addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh);
+            addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh,$website);
             $thongbao = "Thêm doanh nghiệp thành công";
             $view = "views/thongbao.php";
             require_once "views/layout.php";

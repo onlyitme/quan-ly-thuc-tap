@@ -42,6 +42,10 @@
                             <input type="text" class="form-control" id="user" name="dia_chi" required placeholder="Địa chỉ">
 
                         </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user" name="website" required placeholder="website">
+
+                        </div>
                         <div class="row">
                             <div class="form-group col-6">
                                 <input type="file" class="form-control overflow-hidden" name="anh" placeholder="Mã số sinh viên">
