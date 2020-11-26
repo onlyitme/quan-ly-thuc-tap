@@ -47,7 +47,7 @@
                 ?>
                 <button type="button" class="list-group-item list-group-item-action px-0" value="<?=$thongtindangtuyen['id_dt']?>" id="<?=$thongtindangtuyen['id_dt']?>"  onclick="get_content(<?=$thongtindangtuyen['id_dt']?>)" >
                     <div class="media" >
-                        <img class="card-img-top col-3" src="../uploads/<?=$thongtindangtuyen['anh']?>" onerror=this.src="http://placehold.it/300x200" alt="Card image cap ">
+                        <img class="card-img-top col-3" src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="http://placehold.it/300x200" alt="Card image cap ">
                         <div class="media-body text-gray text-left">
                             <a href="index.php?act=thongtindt&id_dt=<?=$thongtindangtuyen['id_dt']?>"><h5 class="text-dark mt-0 d-inline" ><?=$thongtinnganh['ten_nganh']?></h5></a>
                             <p class="font-weight-bold "><?=$thongtindn['ten_dn']?></p>
@@ -74,7 +74,23 @@
             $thongtindt= checkdangtuyenidnganh($id_nganh);
             $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
             $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
-            echo ' <img src="../uploads/'.$thongtindn['anh'].'" onerror=this.src="http://placehold.it/300x200">
+            $phuc_loi1='';$phuc_loi2='';$phuc_loi3='';$phuc_loi4='';$phuc_loi5='';$phuc_loi6='';
+            if($thongtindt['che_do_bao_hiem'] == 1) $phuc_loi1= '<p><i class="fas fa-folder-plus  text-primary "></i> Chế độ bảo hiểm</p>';
+            if($thongtindt['dao_tao'] == 1) $phuc_loi2= '<p><i class="fas fa-graduation-cap   text-primary "></i> Đào tạo</p>';
+            if($thongtindt['du_lich'] == 1) $phuc_loi3= '<p><i class="fas fa-plane  text-primary  "></i> Du lịch</p>';
+            if($thongtindt['tang_luong'] == 1) $phuc_loi4= '<p><i class="fas fa-sort-numeric-up  text-primary  "></i> Tăng lương</p>';
+            if($thongtindt['che_do_thuong'] == 1) $phuc_loi5= '<p><i class="fas fa-coins  text-primary  "></i> Chế độ thưởng</p>';
+            if($thongtindt['nghi_phep_nam'] == 1) $phuc_loi6= '<p><i class="fas fa-business-time  text-primary  "></i> Nghỉ phép năm</p>';
+            if($thongtindt['kinh_nghiem'] == 0) $kinh_nghiem='không';else $kinh_nghiem='cần';
+            if($thongtindt['thoi_gian_lam_viec'] == 0) $thoi_gian_lam_viec='Thứ 2 - Thứ 6';
+            elseif ($thongtindt['thoi_gian_lam_viec'] == 1) $thoi_gian_lam_viec='Thứ 2 - Thứ 7';
+            else $thoi_gian_lam_viec='Cả tuần';
+            if($thongtindt['full_part_time'] == 0) $full_part_time='Part Time';else $full_part_time='full Time';
+            if($thongtindt['vi_tri'] == 0) $vi_tri='Nhân viên thực tập';else $vi_tri='Nhân viên chính thức';
+            $noi_lam_viec=$thongtindn['tinh_tp'];
+            $luong=$thongtindt['luong'];
+            
+            echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
                     <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
@@ -87,26 +103,30 @@
             <div class="row p-3">
                 <div class="col-lg-7">
                     <div class="mb-3">
-                        <h5>Phúc lợi(sẽ thêm sau)</h5>
+                        <h5>Phúc lợi</h5>
                         <div class="d-flex small">
                             <div class="col-4">
-                                <p><i class="fas fa-folder-plus  text-primary "></i> Chế độ bảo hiểm</p>
-                                <p><i class="fas fa-graduation-cap   text-primary "></i> Đào tạo</p>
+                                '.$phuc_loi1.'
+                                '.$phuc_loi2.'
                             </div>
                             <div class="col-4">
-                                <p><i class="fas fa-plane  text-primary  "></i> Du lịch</p>
-                                <p><i class="fas fa-sort-numeric-up  text-primary  "></i> Tăng lương</p>
+                            '.$phuc_loi3.'
+                            '.$phuc_loi4.'                                                   
+                                
+                                
                             </div>
                             <div class="col-4">
-                                <p><i class="fas fa-coins  text-primary  "></i> Chế độ thưởng</p>
-                                <p><i class="fas fa-business-time  text-primary  "></i> Nghỉ phép năm</p>
+                            '.$phuc_loi5.'
+                            '.$phuc_loi6.'
+                                
+                                
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <h5>Mô tả công việc</h5>
                         <div id="mota" class="col-12">
-                        '.$thongtindt['noi_dung'].'
+                        '.$thongtindt['mo_ta'].'
                         </div>
                     </div>
                     <div class="mb-3">
@@ -125,10 +145,10 @@
                     <div class="mb-3">
                         <h5>Thông tin khác</h5>
                         <div id="quyenloi" class="col-12">
-                            <p>Bằng cấp : Không</p>
-                            <p>Hình thức: Nhân viên thực tập</p>
-                            <p>Thời gian thực tập: 2 tháng</p>
-                            <p>Thời gian làm việc: Thứ 2 - Thứ 6 </br>(Chi tiết cụ thể sẽ liên lạc với Sinh Viên)</p>
+                      
+                            <p>Hình thức: '.$vi_tri.'</p>
+                            <p>Thời gian thực tập: '.$thongtindt['thoi_gian_tt'].' tháng</p>
+                            <p>Thời gian làm việc: '.$thoi_gian_lam_viec.' ( '.$full_part_time.' ) </br>(Chi tiết cụ thể sẽ liên lạc với Sinh Viên)</p>
                         </div>
                     </div>
                 </div>
@@ -141,7 +161,7 @@
                         <h5 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h5>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Nơi làm việc</p>
-                            <p class="text-gray">Hồ Chí Minh</p>
+                            <p class="text-gray">'.$noi_lam_viec.'</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Cấp bậc</p>
@@ -149,7 +169,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Lương</p>
-                            <p class="text-gray">Cạnh tranh</p>
+                            <p class="text-gray">'.$luong.' $ </p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Hết hạn nộp</p>
@@ -161,7 +181,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Kinh Nghiệm</p>
-                            <p class="text-gray">Không</p>
+                            <p class="text-gray">'.$kinh_nghiem.'</p>
                         </div>
                     </div>
                     <div class="mb-4 p-3 shadow">
@@ -173,7 +193,7 @@
                         <div class="mb-3">
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
-                                <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
+                                <p class="col-11"> '.$thongtindn['dia_chi'].$thongtindn['phuong_xa'].$thongtindn['quan_huyen'].$thongtindn['tinh_tp'].'</p>
                             </div>
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-phone-alt"></i></p>

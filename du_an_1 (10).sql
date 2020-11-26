@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 25, 2020 lúc 10:25 AM
+-- Thời gian đã tạo: Th10 26, 2020 lúc 04:49 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -36,7 +36,7 @@ CREATE TABLE `dang_tuyen` (
   `sl_sv_can` int(11) NOT NULL,
   `sl_sv_dk` int(11) NOT NULL,
   `thoi_gian` date DEFAULT NULL,
-  `vi_tri` tinyint(1) NOT NULL COMMENT '1 nhân viên thực tập',
+  `vi_tri` tinyint(1) NOT NULL COMMENT '0 nhân viên thực tập\r\n1 nhân viên chính thức',
   `kinh_nghiem` tinyint(1) DEFAULT 0 COMMENT '0: không cần\r\n1: cần',
   `luong` int(12) NOT NULL,
   `thoi_gian_tt` int(2) NOT NULL COMMENT 'từ 1-12 giá trị theo tháng',
@@ -58,7 +58,7 @@ CREATE TABLE `dang_tuyen` (
 --
 
 INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `kinh_nghiem`, `luong`, `thoi_gian_tt`, `full_part_time`, `thoi_gian_lam_viec`, `che_do_bao_hiem`, `du_lich`, `che_do_thuong`, `dao_tao`, `tang_luong`, `nghi_phep_nam`, `id_dn`, `id_nganh`, `an_hien`) VALUES
-(29, 'tuyển 50 bạn thực tập Back-end', 'tuyển 50 thực tập sinh cho doanh nghiệp thành công', 'chăm chỉ ham học hỏi quan trọng biết tiếng việt', '', 50, 0, '2020-11-30', 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
+(29, 'tuyển 50 bạn thực tập Back-end', 'tuyển 50 thực tập sinh cho doanh nghiệp thành công', 'chăm chỉ ham học hỏi quan trọng biết tiếng việt', '', 50, 0, '2020-11-30', 0, 0, 500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 21, 1),
 (30, 'tuyển 40 bạn thực tập tự động hóa', 'Cần gấp 40 bạn thực tập sinh về công ti', 'biết ăn biết nói biết đọc và biết viết ( ngôn ngữ Việt Nam )', '', 40, 0, '2020-11-25', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
 (31, 'tuyển tts du lịch ', 'công ti đang cần 45 bạn tts ', 'vui vẻ hòa đồng biết ăn nói', '', 45, 0, '2020-11-30', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 30, 1),
 (32, 'tuyển tts', 'tuyển 30 thực tập sinh web cho doanh nghiệp thành công', 'biết im lặng và nói đúng lúc', '', 30, 0, '2020-11-21', 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
@@ -74,7 +74,7 @@ INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `
 (42, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', '', 50, 0, '2021-04-29', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 38, 1),
 (43, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-04', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 38, 1),
 (44, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', '', 40, 0, '2021-04-29', 0, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
-(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 21, 1);
+(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, 0, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -86,6 +86,7 @@ CREATE TABLE `doanh_nghiep` (
   `id_dn` int(11) NOT NULL,
   `id_user` int(12) NOT NULL,
   `ten_dn` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `banner` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `anh` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dia_chi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phuong_xa` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -107,10 +108,10 @@ CREATE TABLE `doanh_nghiep` (
 -- Đang đổ dữ liệu cho bảng `doanh_nghiep`
 --
 
-INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `anh`, `dia_chi`, `phuong_xa`, `quan_huyen`, `tinh_tp`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
-(14, 44, 'doanh nghiệp thất bại', 'dn1.png', '', '', '', '', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
-(15, 45, 'doanh nghiệp thành công', 'dn2.png', '', '', '', '', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
-(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', '', '', '', '', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
+INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_chi`, `phuong_xa`, `quan_huyen`, `tinh_tp`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
+(14, 44, 'doanh nghiệp thất bại', 'dn1.png', 'dt1.png', '', '', '', '', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
+(15, 45, 'doanh nghiệp thành công', 'dn2.png', 'dt2.jpg', '', '', '', '', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
+(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', 'dt3.jpg', '', '', '', '', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -211,13 +212,13 @@ CREATE TABLE `phieu_dk_out` (
 CREATE TABLE `sinh_vien` (
   `id_sv` int(11) NOT NULL,
   `id_user` int(12) NOT NULL,
-  `mssv` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_nganh` int(11) NOT NULL,
-  `ho_ten` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gioi_tinh` tinyint(1) NOT NULL,
-  `anh` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sdt` int(11) NOT NULL,
-  `trang_thai` tinyint(1) NOT NULL COMMENT '0 chưa có nơi thực tập 1 đã có'
+  `mssv` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_nganh` int(11) DEFAULT NULL,
+  `ho_ten` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gioi_tinh` tinyint(1) DEFAULT NULL,
+  `anh` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sdt` int(11) DEFAULT NULL,
+  `trang_thai` tinyint(1) DEFAULT NULL COMMENT '0 chưa có nơi thực tập 1 đã có'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
