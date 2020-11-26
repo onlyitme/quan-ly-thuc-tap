@@ -41,10 +41,6 @@
         color: gray !important;
     }
     
-    .btn-primary {
-        background-color: dodgerblue !important;
-    }
-    
     #login {
         margin-top: 10vh;
     }
@@ -177,7 +173,7 @@
         border: 1px solid #ededed;
         border-top: 2px solid #ededed;
         border-right: 0px none;
-        background-color: dodgerblue;
+        background-color: #2abcda;
         color: #fff;
         border-radius: 5px 10px 0px 0;
         margin-right: 0px;
@@ -203,6 +199,51 @@
         color: #444;
         padding: 15px 20px;
         background: white;
+    }
+    
+    .home-list-job h3 {
+        border-left: 5px tomato solid;
+        padding: 15px 35px 15px 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        /* background: linear-gradient( rgb(255, 255, 255), transparent), linear-gradient( 90deg, skyblue, transparent), linear-gradient( -90deg, coral, transparent);
+        background-blend-mode: screen; */
+        background: linear-gradient(173deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7595413165266106) 41%, rgba(0, 212, 255, 1) 85%);
+    }
+    
+    .home-list-job .xemthem {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    
+    .home-list-job .card-re {
+        position: relative;
+    }
+    
+    .home-list-job .card-re:hover:before,
+    .home-list-job .card-re:hover .card-ab {
+        display: block;
+    }
+    
+    .home-list-job .card-re::before {
+        display: none;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .8);
+        border-radius: 5px;
+        z-index: 1;
+    }
+    
+    .home-list-job .card-ab {
+        display: none;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: 2;
     }
     
     .card-body p {
