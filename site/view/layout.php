@@ -28,7 +28,7 @@
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
                 <div class="btn-group" role="group">
                 <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user fa-fw"></i> <?=$_SESSION['sname']?>
+                    <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">

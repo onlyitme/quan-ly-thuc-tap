@@ -54,8 +54,8 @@
                                         </div>
                                     </div>
                                     <?php if($dem==4){?>
-                                    <div class=" col-12 text-center mt-4 mb-5">
-                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-5 btn btn-inline-block btn-info font-weight-bold rounded-lg shadow text-white "> <i>XEM THÊM -></i></a>
+                                    <div class=" col-12 text-center my-3">
+                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-2 btn btn-secondary btn-inline-block font-weight-bold font-italic rounded-lg  shadow  mb-5"> Xem thêm -></a>
                                     </div>
                                     <?php } ?>
                                     <?php  $dem++;}?>

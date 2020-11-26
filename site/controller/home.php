@@ -87,5 +87,7 @@ require_once('model/home.php');
         unset($_SESSION['sname']);
         header('location:index.php');
         break;
-    }  
+ 
+    } 
+ 
 ?>      
