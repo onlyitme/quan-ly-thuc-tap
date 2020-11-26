@@ -23,22 +23,22 @@
             <a id="header-logo" href="index.php" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
+        <?php if(isset($_SESSION['sid'])){ ?>
             <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
-           <?php if(isset($_SESSION['sid'])){
-               echo '<ul class="navbar-nav ml-auto ml-md-0 mr-5">
-               <li class="nav-item dropdown">
-                   <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i> '.$_SESSION['sname'].'</a>
-                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home">Kiểm Tra Thông Tin</a>
-                       <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home">Lịch Sử Đơn</a>
-                       <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="'.SITE_URL.'/?ctrl=home&act=logout">Đăng xuất</a>
-                   </div>
-               </li>
-           </ul>' ; }else {
-               ?>
+                <div class="btn-group" role="group">
+                <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-user fa-fw"></i> <?=$_SESSION['sname']?>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
+                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
+                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
+                </div>
+            </div>
+            <?php }else {
+               ?> 
                 <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
                     <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>

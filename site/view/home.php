@@ -1,9 +1,9 @@
           <div id="home">
                 <div class="row">
                     <div class="home-line"></div>
-                    <div class="home-note col-12  text-center">
+                    <div class="home-note col-12 text-center">
                         <h4 class=" m-auto">Tham gia ứng tuyển công việc thực tập</h4>
-                        <p class="mt-2">Sẽ giúp bạn có đầy đủ kỹ năng thực tế để tạo ra những sản phẩm sáng tạo, tinh tế và phù hợp.</p>
+                        <p class="text-gray mt-2">Sẽ giúp bạn có đầy đủ kỹ năng thực tế để tạo ra những sản phẩm sáng tạo, tinh tế và phù hợp.</p>
                     </div>
                 </div>
                 <?php
@@ -11,8 +11,8 @@
                 <div class=" row home-list-job">
                     <div class="col-12">
                         <!-- MENU -->
-                        <h3 class="mb-5"><?=$ds_nn['ten_nn']?></h3>
-                        <ul class=" nav nav-tabs ">
+                        <h3 class=" shadow d-inline-block" ><?=$ds_nn['ten_nn']?></h3>
+                        <ul class=" nav nav-tabs mt-n2">
                             <?php
                              $i=1;
                             foreach($ds_nganh as $ds_nganh){
@@ -38,8 +38,9 @@
                                     if($dem>4) break; 
                                     $thongtindn=checkdoanhnghiepbyid($ds_dt['id_dn']);
                                     ?>
-                                    <div class="col-lg-3 col-md-6 mt-3 float-left">
-                                        <div class="card">
+                                    <div class=" col-lg-3 col-md-6 my-3 border-bottom pb-3  float-left">
+
+                                        <div class="card card-re border-0">
                                             <img class="card-img-top " src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="../uploads/700x400.png" alt="Card image cap ">
                                             <div class="card-body small">
                                                 <h5 class="card-title "><?=$ds_dt['tieu_de']?></h5>
@@ -48,13 +49,13 @@
                                                 <p class="card-text "><i class="fas fa-map-marker-alt    "></i> <?=$ds_dt['vi_tri']?></p>
                                                 <p class="card-text text-info  "><i class="fas fa-coins   text-warning    "></i> Mức lương: <?=$ds_dt['luong']?></p>
                                                 <p class="card-text  text-tomato"><i class="fas fa-calendar-alt   text-primary "></i> Hạn chót: <?=$ds_dt['thoi_gian']?></p>
-                                                <a href="index.php?act=thongtindt&id_dt=<?=$ds_dt['id_dt']?>" class="btn btn-outline-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>
+                                                <a href="index.php?act=thongtindt&id_dt=<?=$ds_dt['id_dt']?>" class="card-ab btn btn-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <?php if($dem==4){?>
-                                 <div class=" col-12 mt-4">
-                                        <p class=" text-center border-top p-3"><a href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class=" text-primary">Xem thêm -></a></p>
+                                    <div class=" col-12 text-center mt-4 mb-5">
+                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-5 btn btn-inline-block btn-info font-weight-bold rounded-lg shadow text-white "> <i>XEM THÊM -></i></a>
                                     </div>
                                     <?php } ?>
                                     <?php  $dem++;}?>
