@@ -81,7 +81,7 @@
                         <img src="view/images/login.jpg" alt="">
                     </div>
                     <div class="col-lg-6 ">
-                        <!-- <h3>Đăng Nhập</h3> -->
+                        <h3>Đăng Nhập</h3>
                         <form action="index.php?ctrl=home&act=login" method="post" class="my-5">
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
