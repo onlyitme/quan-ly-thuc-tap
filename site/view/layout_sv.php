@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Thông báo việc làm</title>
     <link rel="shortcut icon" href="view/images/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="view/css/style.css">
 </head>
 <body>
     <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
@@ -20,7 +22,7 @@
                     </button>
             </div>
             <a id="header-logo" href="#" class="col text-center">
-                <img src="images/logo-2.png" alt="">
+                <img src="view/images/logo-2.png" alt="">
             </a>
             <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
@@ -35,7 +37,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <img src="images/logo-2.png" class="w-25" alt="">
+                    <img src="view/images/logo-2.png" class="w-25" alt="">
                     <button type="button" class="close p-3" data-dismiss="modal">x</button>
                 </div>
                 <!-- Modal body -->
@@ -143,7 +145,7 @@
                                                 <div class="modal-content modal-content1">
                                                     <div class="modal-body">
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="images/logofpt.png" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="view/images/logofpt.png" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY CP FPT</h5>
@@ -170,7 +172,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="images/lgvinamilk.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="view/images/lgvinamilk.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY CP SỮA VIỆT NAM</h5>
@@ -197,7 +199,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="images/lgvinfast.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="view/images/lgvinfast.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3"> CÔNG TY CP VINFAST </h5>
@@ -224,7 +226,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="images/olam.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="view/images/olam.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY TNHH OLAM VIỆT NAM </h5>
@@ -285,7 +287,7 @@
 
                     <div class=" col-sm-9 mt-3 mb-3">
                         <div class="container"> 
-                           
+                        <?php include $view; ?>
                         </div>
 
                     </div>
@@ -299,7 +301,7 @@
     <footer id="footer " class="wrap bg-dark text-light py-3 ">
         <div class="container ">
             <div class="col-3 p-0 ">
-                <img src="images/logo-2.png " alt=" ">
+                <img src="view/images/logo-2.png " alt=" ">
             </div>
             <h3>Phòng Quan Hệ Doanh Nghiệp</h3>
             <div class="row my-5 ">
@@ -357,7 +359,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
     <!-- My script -->
-    <script src="js/script.js "></script>
+    <script src="view/js/script.js "></script>
 </body>
 
 </html>
