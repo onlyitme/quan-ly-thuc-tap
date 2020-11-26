@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 26, 2020 lúc 04:49 AM
+-- Thời gian đã tạo: Th10 26, 2020 lúc 04:43 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -38,7 +38,8 @@ CREATE TABLE `dang_tuyen` (
   `thoi_gian` date DEFAULT NULL,
   `vi_tri` tinyint(1) NOT NULL COMMENT '0 nhân viên thực tập\r\n1 nhân viên chính thức',
   `kinh_nghiem` tinyint(1) DEFAULT 0 COMMENT '0: không cần\r\n1: cần',
-  `luong` int(12) NOT NULL,
+  `luong_khoi_dau` int(12) NOT NULL,
+  `luong_ket_thuc` int(12) DEFAULT NULL,
   `thoi_gian_tt` int(2) NOT NULL COMMENT 'từ 1-12 giá trị theo tháng',
   `full_part_time` tinyint(1) NOT NULL COMMENT '0 part time\r\n1 full time',
   `thoi_gian_lam_viec` tinyint(1) NOT NULL COMMENT '0 làm t2-t6\r\n1 lam thu2-thu7\r\n2 lam thu2-cn',
@@ -57,24 +58,24 @@ CREATE TABLE `dang_tuyen` (
 -- Đang đổ dữ liệu cho bảng `dang_tuyen`
 --
 
-INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `kinh_nghiem`, `luong`, `thoi_gian_tt`, `full_part_time`, `thoi_gian_lam_viec`, `che_do_bao_hiem`, `du_lich`, `che_do_thuong`, `dao_tao`, `tang_luong`, `nghi_phep_nam`, `id_dn`, `id_nganh`, `an_hien`) VALUES
-(29, 'tuyển 50 bạn thực tập Back-end', 'tuyển 50 thực tập sinh cho doanh nghiệp thành công', 'chăm chỉ ham học hỏi quan trọng biết tiếng việt', '', 50, 0, '2020-11-30', 0, 0, 500, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 21, 1),
-(30, 'tuyển 40 bạn thực tập tự động hóa', 'Cần gấp 40 bạn thực tập sinh về công ti', 'biết ăn biết nói biết đọc và biết viết ( ngôn ngữ Việt Nam )', '', 40, 0, '2020-11-25', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
-(31, 'tuyển tts du lịch ', 'công ti đang cần 45 bạn tts ', 'vui vẻ hòa đồng biết ăn nói', '', 45, 0, '2020-11-30', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 30, 1),
-(32, 'tuyển tts', 'tuyển 30 thực tập sinh web cho doanh nghiệp thành công', 'biết im lặng và nói đúng lúc', '', 30, 0, '2020-11-21', 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
-(33, 'tuyển 36 tts', 'tuyển 36 thực tập sinh web cho doanh nghiệp thất bại', 'Là con người', '', 36, 0, '2020-11-25', 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 21, 1),
-(34, 'tuyển tts thiết web Font-end', 'tuyển 60 tts quản lí code chỉnh sửa layout', 'biết giao tiếp bằng tiếng anh', '', 60, 0, '2021-01-29', 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
-(35, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
-(36, 'tuyển tts ttdh', 'dùng các công cụ để chỉnh sửa ảnh', 'biết tiếng người', '', 48, 0, '2020-12-09', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
-(37, 'tuyển thiết kế đồ họa', 'tuyển 69 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ', '', 69, 0, '2021-02-27', 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
-(38, 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', '', 48, 0, '2020-12-09', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
-(39, 'tuyển thiết kế đồ họa', 'tuyển 29 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ chuyên môn không cần cao', '', 29, 0, '2021-02-27', 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
-(40, 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', '', 96, 0, '2021-04-22', 0, 0, 666, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
-(41, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
-(42, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', '', 50, 0, '2021-04-29', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 38, 1),
-(43, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-04', 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 38, 1),
-(44, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', '', 40, 0, '2021-04-29', 0, 0, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
-(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, 0, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
+INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `kinh_nghiem`, `luong_khoi_dau`, `luong_ket_thuc`, `thoi_gian_tt`, `full_part_time`, `thoi_gian_lam_viec`, `che_do_bao_hiem`, `du_lich`, `che_do_thuong`, `dao_tao`, `tang_luong`, `nghi_phep_nam`, `id_dn`, `id_nganh`, `an_hien`) VALUES
+(29, 'tuyển 50 bạn thực tập Back-end', 'tuyển 50 thực tập sinh cho doanh nghiệp thành công', 'chăm chỉ ham học hỏi quan trọng biết tiếng việt', '', 50, 0, '2020-11-30', 0, 0, 500, NULL, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 21, 1),
+(30, 'tuyển 40 bạn thực tập tự động hóa', 'Cần gấp 40 bạn thực tập sinh về công ti', 'biết ăn biết nói biết đọc và biết viết ( ngôn ngữ Việt Nam )', '', 40, 0, '2020-11-25', 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
+(31, 'tuyển tts du lịch ', 'công ti đang cần 45 bạn tts ', 'vui vẻ hòa đồng biết ăn nói', '', 45, 0, '2020-11-30', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 30, 1),
+(32, 'tuyển tts', 'tuyển 30 thực tập sinh web cho doanh nghiệp thành công', 'biết im lặng và nói đúng lúc', '', 30, 0, '2020-11-21', 0, 0, 50, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
+(33, 'tuyển 36 tts', 'tuyển 36 thực tập sinh web cho doanh nghiệp thất bại', 'Là con người', '', 36, 0, '2020-11-25', 0, 0, 10, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 21, 1),
+(34, 'tuyển tts thiết web Font-end', 'tuyển 60 tts quản lí code chỉnh sửa layout', 'biết giao tiếp bằng tiếng anh', '', 60, 0, '2021-01-29', 0, 0, 500, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(35, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(36, 'tuyển tts ttdh', 'dùng các công cụ để chỉnh sửa ảnh', 'biết tiếng người', '', 48, 0, '2020-12-09', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
+(37, 'tuyển thiết kế đồ họa', 'tuyển 69 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ', '', 69, 0, '2021-02-27', 0, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
+(38, 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', '', 48, 0, '2020-12-09', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
+(39, 'tuyển thiết kế đồ họa', 'tuyển 29 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ chuyên môn không cần cao', '', 29, 0, '2021-02-27', 0, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
+(40, 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', '', 96, 0, '2021-04-22', 0, 0, 666, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
+(41, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(42, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', '', 50, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 38, 1),
+(43, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-04', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 38, 1),
+(44, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', '', 40, 0, '2021-04-29', 0, 0, 150, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
+(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, NULL, 0, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -183,6 +184,7 @@ CREATE TABLE `phieu_dk_in` (
   `id_dn` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL,
   `ket_qua` tinyint(1) NOT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
+  `danh_gia` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -218,6 +220,7 @@ CREATE TABLE `sinh_vien` (
   `gioi_tinh` tinyint(1) DEFAULT NULL,
   `anh` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sdt` int(11) DEFAULT NULL,
+  `dia_chi` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `trang_thai` tinyint(1) DEFAULT NULL COMMENT '0 chưa có nơi thực tập 1 đã có'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -225,11 +228,11 @@ CREATE TABLE `sinh_vien` (
 -- Đang đổ dữ liệu cho bảng `sinh_vien`
 --
 
-INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi_tinh`, `anh`, `sdt`, `trang_thai`) VALUES
-(45, 39, 'ps11111', 21, 'nguyễn ngọc bảo', 1, '', 111111111, 0),
-(46, 40, 'ps11112', 21, 'Phan Tấn Khải', 1, '', 3, 0),
-(47, 41, 'ps11744', 21, 'phạm ngọc hưng', 1, '', 9, 0),
-(48, 42, 'ps11113', 24, 'Huỳnh Đạt', 1, '', 312456875, 0);
+INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi_tinh`, `anh`, `sdt`, `dia_chi`, `trang_thai`) VALUES
+(45, 39, 'ps11111', 21, 'nguyễn ngọc bảo', 1, '', 111111111, NULL, 0),
+(46, 40, 'ps11112', 21, 'Phan Tấn Khải', 1, '', 3, NULL, 0),
+(47, 41, 'ps11744', 21, 'phạm ngọc hưng', 1, '', 9, NULL, 0),
+(48, 42, 'ps11113', 24, 'Huỳnh Đạt', 1, '', 312456875, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -364,7 +367,7 @@ ALTER TABLE `phieu_dk_out`
 -- AUTO_INCREMENT cho bảng `sinh_vien`
 --
 ALTER TABLE `sinh_vien`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
