@@ -1,5 +1,4 @@
 
-
     <?php
     require_once "models/dang_tuyen.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định

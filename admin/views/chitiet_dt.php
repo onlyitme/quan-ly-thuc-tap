@@ -18,6 +18,7 @@
                     <?php } ?>
                 <?php } ?></li>
             <li class="list-group-item"><b>Yêu cầu:</b> <?= $row['yeu_cau'] ?><br>
+            <li class="list-group-item"><b>Lương:</b> <?= $row['luong'] ?>$<br>
             <li class="list-group-item"> <b>Số lượng cần:</b> <?= $row['sl_sv_can'] ?><br></li>
             <li class="list-group-item"> <b>Số lượng sinh viên đăng ký:</b> <?= $row['sl_sv_dk'] ?><br></li>
             <li class="list-group-item"><button class="btn btn-success"><a class="text-light" href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh viên ứng tuyển</a></button>
@@ -27,4 +28,4 @@
     </div>
 </div>
 <hr>
-<div><?= $row['noi_dung'] ?></div>
+<div><?= $row['mo_ta'] ?></div>

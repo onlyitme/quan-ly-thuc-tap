@@ -35,5 +35,44 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    
+    function demDoanhnghiep()
+    {
+        $sql = "SELECT count(*) as sodong FROM doanh_nghiep";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demSinhvien()
+    {
+        $sql = "SELECT count(*) as sodong FROM sinh_vien";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demDangtuyen()
+    {
+        $sql = "SELECT count(*) as sodong FROM dang_tuyen";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demSinhvienTT()
+    {
+        $sql = "SELECT count(*) as sodong FROM sinh_vien WHERE trang_thai='1'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demDangtuyentheoDN($id_dn)
+    {
+        $sql = "SELECT count(*) as sodong FROM dang_tuyen WHERE id_dn='$id_dn'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
     ?>

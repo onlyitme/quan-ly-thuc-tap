@@ -16,10 +16,10 @@
         $sql = "SELECT * from doanh_nghiep";
         return query($sql);
     }
-    function  addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh)
+    function  addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh,$website)
     {
-        $sql = "INSERT INTO doanh_nghiep (id_user,ten_dn,dia_chi,sdt,an_hien,anh) 
-    values('$id_user','$ten_dn','$dia_chi','$sdt','$an_hien','$anh')";
+        $sql = "INSERT INTO doanh_nghiep (id_user,ten_dn,dia_chi,sdt,an_hien,anh,website) 
+    values('$id_user','$ten_dn','$dia_chi','$sdt','$an_hien','$anh','$website')";
         execute($sql);
     }
     function addNewUser($user, $pass, $email, $chuc_vu)
