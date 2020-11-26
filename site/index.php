@@ -1,6 +1,6 @@
 <?php
     session_start();
-    define("ARR_CONTROLLER", ['home','sinh_vien']);
+    define("ARR_CONTROLLER", ['home','sinh_vien','doanh_nghiep']);
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $ctrl ='home';
     if(isset($_GET['ctrl']) == true) $ctrl=$_GET['ctrl'];

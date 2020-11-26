@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="view/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/N-Bk-test.css">
     <link rel="stylesheet" href="view/css/style.css">
 </head>
 
@@ -23,32 +25,49 @@
             <a id="header-logo" href="index.php" class="col text-center">
                 <img src="view/images/logo-2.png" alt="">
             </a>
-        <?php if(isset($_SESSION['sid'])){ ?>
+            <?php if(isset($_SESSION['sid'])){ ?>
             <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
-                <div class="btn-group" role="group">
-                <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">
-                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=sinh_vien"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
-                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
-                    <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
-                </div>
+                <?php if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){ ?>
+                    <div class="btn-group" role="group">
+                        <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-light rounded-0  h-100 border-left   p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=sinh_vien"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                <?php } else { ?>
+                    <div class="btn-group" role="group">
+                        <a data-toggle="modal" href="#login" class="btn btn-light rounded-0 h-100 border-left   p-4" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Đăng Tin</a>
+                        <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-primary  text-light rounded-0  h-100 border-left    p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right  " aria-labelledby="btnGroupDrop1">
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=doanh_nghiep"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Danh sách ứng tuyển</a>
+                            <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
+                        </div>
+                    </div>
+                <?php }  ?>    
+                </div>    
             </div>
-            <?php }else {
-               ?> 
-                <div id="header-login" class="col p-0">
+            <?php }else { ?> 
+            <div id="header-login" class="col p-0">
                 <div class="d-none d-lg-flex justify-content-end h-100 ">
-                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left  font-weight-500 p-4" role="button" aria-pressed="true">SINH VIÊN</a>
-                    <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left   font-weight-500 p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-light rounded-0  h-100 border-left   p-4" role="button" aria-pressed="true">SINH VIÊN</a>
+                    <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border-left    p-4" role="button" aria-pressed="true">DOANH NGHIỆP</a>
                 </div>
             </div>
            <?php } ?>
         </div>
     </header>
-    <!-- Show box login -->
+    <!-- Show box login & Box đăng tuyển-->
+    <?php if(isset($_SESSION['sid'])){ ?>
+        <!-- Chỗ đẻ của Nghĩa Ngu -->
+    <?php }else { ?>
     <div class="modal fade" id="login">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -83,6 +102,8 @@
             </div>
         </div>
     </div>
+    <?php } ?>
+    
     <!-- Show menu -->
     <nav id="nav-togger" class="border shadow-lg">
         <div class="list-group">
