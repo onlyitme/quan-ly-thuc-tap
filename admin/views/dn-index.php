@@ -1,10 +1,10 @@
 <div class="row">
     <div class="alert alert-primary w-100 p-3" role="alert">
-        <h1>QUẢN LÝ SINH VIÊN</h1>
+        <h1>QUẢN LÝ DOANH NGHIỆP</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent p-0">
                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Trang chủ</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Danh sách sinh viên</li>
+                <li class="breadcrumb-item active" aria-current="page"> Danh sách doanh nghiệp</li>
             </ol>
         </nav>
     </div>
