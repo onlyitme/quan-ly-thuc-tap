@@ -24,7 +24,7 @@
             url: "index.php?act=login",
             data: {login: arr},
             success: function(data) {
-                alert(data);
+    
                 if(data == 0){
                 location.reload();
                 }else if(data == 1){
