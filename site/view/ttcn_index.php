@@ -26,7 +26,7 @@
                                         <div  class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-2">
                                             <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=user_edit" style="border-radius: 5px;">
                                                 <i style="color: black;" class="fa fa-pencil ml-2"></i>
-                                                <span class=" text-gray-75 font400 ml-2 mr-2"> Chỉnh sửa</span>
+                                                <span class=" text-gray-75 font400 ml-2 mr-2" style="font-size: 14px;"> Chỉnh sửa</span>
                                             </a>
                                         </div>
                                         <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4">
@@ -49,7 +49,7 @@
                                         <div  class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-2">
                                             <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=ttcn_edit" style="border-radius: 5px;">
                                                 <i style="color: black;" class="fa fa-pencil ml-2"></i>
-                                                <span class=" text-gray-75 font400 ml-2 mr-2"> Chỉnh sửa</span>
+                                                <span class=" text-gray-75 font400 ml-2 mr-2" style="font-size: 14px;"> Chỉnh sửa</span>
                                             </a>
                                         </div>
 

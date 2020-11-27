@@ -57,9 +57,11 @@ require_once('model/sinh_vien.php');
         echo 'aa';
       }
     case "login":
-      $user = $_POST['user'];
-      $pass = $_POST['pass'];
-      $checkkhachhang=checkkhachhang($user,$pass);
+      if(isset($_POST['user'])){
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+        $checkkhachhang=checkkhachhang($user,$pass);
+      }
       if(isset($checkkhachhang) && $checkkhachhang!=''){	
           $_SESSION['sid']=$checkkhachhang['id_user'];
           if($checkkhachhang['chuc_vu']==0){
@@ -75,11 +77,18 @@ require_once('model/sinh_vien.php');
             $_SESSION['schuc_vu'] = 1;
             header("Location: index.php?ctrl=doanh_nghiep");
           }
+          elseif($checkkhachhang['chuc_vu']==2){
+            $_SESSION['sname'] = "admin ";
+            $_SESSION['admin'] = $user;
+            $_SESSION['schuc_vu'] = 2;
+            header("Location: ../admin/index.php");
+          }
          
 
-      }else  {
+      }else {
         $link=substr($_SERVER["HTTP_REFERER"],39);
-        echo "<script type='text/javascript'>alert('Tài Khoản Mật Khẩu Không Hợp Lệ');</script>";
+        if(isset($_SESSION['sname'])==false)echo "<script type='text/javascript'>alert('Tài Khoản Mật Khẩu Không Hợp Lệ');</script>";
+        
        
        if($link=='index.php'||$link=='index.php?ctrl=home&act=login' ) {
           $view = "view/home.php";   
