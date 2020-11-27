@@ -13,6 +13,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="view/css/style.css">
 </head>
+<script language="javascript">
+      function getcontent()
+      { 
+        var user = document.getElementById('user').value;
+        var pass = document.getElementById('pass').value;
+        var arr=[user,pass];
+        $.ajax({
+            type: "post",
+            url: "index.php?act=login",
+            data: {login: arr},
+            success: function(data) {
+                alert(data);
+                if(data == 0){
+                location.reload();
+                }else if(data == 1){
+                    window.location="index.php?ctrl=doanh_nghiep";
+                }else if(data == 2){alert("bạn sẽ chuyển tới trang ADmin");
+                    window.location="../admin/index.php";
+                }else{
+                    document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng";
+                }
+            }
+          });
+      }
+      
+       
+    </script>
 
 <body>
     <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
@@ -231,21 +258,22 @@
                     </div>
                     <div class="col-lg-6 ">
                         <h3>Đăng Nhập</h3>
-                        <form action="index.php?ctrl=home&act=login" method="post" class="my-5">
+                        
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
-                                <input type="text" name="user" id="" class="form-control" placeholder=""
+                                <input type="text" name="user" id="user" class="form-control" 
                                     aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                             <div class="form-group">
                                 <label for="">Mật khẩu</label>
-                                <input type="password" name="pass" id="" class="form-control" placeholder=""
+                                <input type="password" name="pass" id="pass" class="form-control" 
                                     aria-describedby="helpId">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
-                        </form>
+                            <div><p id="dangnhapsai" style="color:red"></p></div>
+                            <button  id="login" onclick="getcontent()" class="btn btn-primary btn-block">Đăng nhập</button>
+                      
                         <a href="" class="text-primary">Quên mật khẩu ?</a>
                     </div>
                 </div>
