@@ -8,15 +8,27 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "ttcn_index":
-      
-        $view_sv = "view/ttcn_index.php";
-     
+      $view_sv = "view/ttcn_index.php";
       break;
     case "ttcn_edit":
         $view_sv = "view/ttcn_edit.php";
     break;
     case "user_edit":
       $view_sv = "view/user_edit.php";
+  break;
+  case "user_update":
+        $mat_khau=$_POST['mat_khau'];
+        $xac_nhan_mk=$_POST['xac_nhan_mk'];
+        $pass=$_POST['pass'];
+        $tttk=checktaikhoanbyid($_SESSION['sid']);
+        
+        if($mat_khau!=$xac_nhan_mk && $pass != $tttk['pass']){
+        echo "<script type='text/javascript'>alert('Thông tin điền không chính xác');</script>";
+        }else{
+          updatematkhau($mat_khau);
+          echo "<script type='text/javascript'>alert('Mật Khẩu Đã Được Cập Nhập');</script>";
+        }
+        $view_sv = "view/ttcn_index.php";
   break;
     case "ttcn_update":
         $ho_ten=$_POST['ho_ten'];

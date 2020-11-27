@@ -220,10 +220,10 @@
                 </div> -->
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
                     <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
-                        <button class="btn btn-danger w-50 float-left mb-3"><i class="far fa-plus-circle"></i> Đăng bài</button>
+                        <button class="h-dn-dangbai mb-3"><i class="far fa-plus-circle"></i> Đăng bài</button>
                     </a>
                     <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
-                        <span class="btn text-secondary text-underline float-right">Đăng xuất <i class="far fa-sign-out-alt" aria-hidden="true"></i></span>
+                        <span class="h-dn-dangxuat">Đăng xuất <i class="far fa-sign-out-alt" aria-hidden="true"></i></span>
                     </a>
                     <li class="h-header">TÀI KHOẢN</li>
                     <li>
@@ -262,11 +262,11 @@
                             <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
                         </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#">
                             <i class="far fa-sign-out-alt" aria-hidden="true"></i> Đăng xuất
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
