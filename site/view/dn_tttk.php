@@ -12,7 +12,7 @@
                     <img src="view/images/khaihoang.jpg" alt="avatar">
                 </div>
                 <div class="h-tt-left-text">
-                    <label>Loại tài khoản: <a href="#">Doanh nghiệp</a> </label>
+                    <label>Loại tài khoản: <a href="#" class="text-primary">Doanh nghiệp</a> </label>
                     <label>Mã tài khoản: <span class="text-secondary">#328465</span> </label>
                     <br>
                     <label>Ngày tạo: <span class="text-secondary">20/11/2020</span></label>
@@ -32,7 +32,7 @@
 
         <div class="h-tt-right text-right">
             <div class="form-group row">
-                <label for="" class="col-lg-4 col-form-label px-0">Tên đăng nhập</label>
+                <label for="" class="col-lg-4 col-form-label px-0">Tên đăng nhập:</label>
                 <div class="col-sm-7">
                     <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
@@ -41,21 +41,21 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-lg-4 col-form-label px-0">Mật khẩu</label>
+                <label for="" class="col-lg-4 col-form-label px-0">Mật khẩu:</label>
                 <div class="col-sm-7">
                     <input type="password" value="123456" readonly="readonly"
                         class="form-control">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-lg-4 col-form-label px-0">Email</label>
+                <label for="" class="col-lg-4 col-form-label px-0">Email:</label>
                 <div class="col-sm-7">
                     <input type="email" value="khaihoang@gmail.com" readonly="readonly"
                         class="form-control">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-lg-4 col-form-label px-0">Số điện thoại</label>
+                <label for="" class="col-lg-4 col-form-label px-0">Số điện thoại:</label>
                 <div class="col-sm-7">
                     <input type="text" value="0909123456" readonly="readonly"
                         class="form-control">

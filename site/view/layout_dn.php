@@ -198,7 +198,7 @@
                     </div>
                     <div class="resume_item resume_hobby">
                         <div class="title">
-                            <p class="bold">SỞ thích </p>
+                            <p class="bold">Sở thích </p>
                         </div>
                         <ul>
                             <li><i class="fas fa-book"></i></li>
@@ -219,9 +219,15 @@
                     <hr style="width: 50%;">
                 </div> -->
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
+                    <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
+                        <button class="btn btn-danger w-50 float-left mb-3"><i class="far fa-plus-circle"></i> Đăng bài</button>
+                    </a>
+                    <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
+                        <span class="btn text-secondary text-underline float-right">Đăng xuất <i class="far fa-sign-out-alt" aria-hidden="true"></i></span>
+                    </a>
                     <li class="h-header">TÀI KHOẢN</li>
                     <li>
-                        <a href="<?=SITE_URL?>/?ctrl=doanh_nghiep&act=tttk">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
                             <i class="fas fa-user-tie"></i> Thông tin tài khoản
                         </a>
                     </li>
@@ -232,7 +238,7 @@
                     </li>
                     <li class="h-header">DOANH NGHIỆP</li>
                     <li>
-                        <a href="<?=SITE_URL?>/?ctrl=doanh_nghiep">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep">
                             <i class="far fa-briefcase" aria-hidden="true"></i> Thông tin doanh nghiệp
                         </a>
                     </li>
@@ -242,7 +248,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?=SITE_URL?>/?ctrl=doanh_nghiep&act=dshs">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=dshs">
                             <i class="far fa-paste" aria-hidden="true"></i> Danh sách hồ sơ
                         </a>
                     </li>

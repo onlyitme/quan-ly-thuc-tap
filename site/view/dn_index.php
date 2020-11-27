@@ -6,9 +6,7 @@
 
 <div class="h-box-dn rounded mt-3">
     <div class="mb-2">
-        <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg"
-            class="rounded border shadow-sm" alt="logofpt" width="900px" height="200px"
-            style="object-fit: cover;">
+        <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
     </div>
     <h5>Thông tin chung</h5>
     <span class="font-weight-500 text-success mr-3"><i class="fas fa-toggle-on"></i>
@@ -27,19 +25,15 @@
                 <div class="col-sm-8">
                     <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
-                    <input type="text" value="Công Ty TNHH Digital Marketing"
-                        readonly="readonly" class="form-control">
+                    <input type="text" value="Công Ty TNHH Digital Marketing" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="inputPassword" class="col-lg-3 col-form-label">Mã số thuế:</label>
                 <div class="col-md-3">
-                    <input type="text" value="T- 384632" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="T- 384632" readonly="readonly" class="form-control">
                 </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-lg-3 col-form-label">Mã đơn vị:</label>
+                <label for="inputPassword" class="col-lg-2 col-form-label">Mã đơn vị:</label>
                 <div class="col-md-3">
                     <input type="text" value="DV- 234" readonly="readonly" class="form-control">
                 </div>
@@ -47,40 +41,33 @@
             <div class="form-group row">
                 <label for="" class="col-lg-3 col-form-label">Địa chỉ:</label>
                 <div class="col-sm-8">
-                    <input type="text"
-                        value="101 Innovation, Công viên phần mềm Quang Trung, P.12, Quận 12"
-                        readonly="readonly" class="form-control">
+                    <input type="text" value="101 Innovation, Công viên phần mềm Quang Trung, P.12, Quận 12" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-3 col-form-label">Di động</label>
                 <div class="col-md-3">
-                    <input type="text" value="+84123456789" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="+84123456789" readonly="readonly" class="form-control">
                 </div>
                 <label for="" class="col-lg-2 col-form-label">Điện thoại:</label>
                 <div class="col-md-3">
-                    <input type="text" value="+84123456789" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="+84123456789" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-3 col-form-label">Website:</label>
                 <div class="col-md-3">
-                    <input type="text" value="Đang cập nhật..." readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="Đang cập nhật..." readonly="readonly" class="form-control">
                 </div>
                 <label for="" class="col-lg-2 col-form-label">Fax:</label>
                 <div class="col-md-3">
-                    <input type="text" value="Đang cập nhật..." readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="Đang cập nhật..." readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-3 col-form-label">Email:</label>
                 <div class="col-md-8">
-                    <input type="text" value="congtydigtal@gmail.com" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="congtydigtal@gmail.com" readonly="readonly" class="form-control">
                 </div>
             </div>
 
@@ -106,8 +93,7 @@
                     </div>
                     <div class="form-group col-md-8">
                         <label for="">Địa chỉ</label>
-                        <input type="text" class="form-control"
-                            value="Công viên phần mềm Quang Trung, Quận 12, Tp. Hồ Chí Minh">
+                        <input type="text" class="form-control" value="Công viên phần mềm Quang Trung, Quận 12, Tp. Hồ Chí Minh">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="">Liên lạc</label>
@@ -118,7 +104,10 @@
                             <a href="#"><i class="fab fa-github-square"></i></a>
                         </span>
                     </div>
-
+                </div>
+                <div class="h-thebutton mt-2">
+                    <button class="btn btn-outline-secondary">Chỉnh sửa thông tin</button>
+                    <button class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
                 </div>
             </form>
         </div>
