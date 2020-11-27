@@ -82,99 +82,87 @@
 
         <!-- Chỗ đẻ của Nghĩa dep trai -->
         <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
+            <div class="modal-dialog modal-lg">
                 <d  iv class="modal-content ">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header pb-0">
+                <div class="alert alert-primary w-100">
+                               <h2>Đăng Tuyển   </h2>
+                            </div>                  
                 </div>
                 <div class="modal-body">
                 <div class="container">
-            <div id="doanhnghiep">
-                <div class="row mt-4 m-0 py-3">
-                    <div class="h-box-detail p-3 h-box-right shadow Nghia">
-                        <div class="col-12">
-                            <div class="alert alert-primary" role="alert">
-                                <h2>Đăng Tuyển</h2>
-                            </div>
+               <div id="doanhnghiep">
+                <div class=" row mt-4 m-0 py-3">
+                    <div class="Nghia">
+                        <div class="col-12">                        
                             <input type="text" class="N-ninput form-control" placeholder="Tiêu đề bài đăng*">
                             <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
-                            <input type="text" class="N-ninput form-control" placeholder="Địa chỉ làm việc*">
-                            <hr>
+                            <input type="text" class="N-ninput form-control mb-5" placeholder="Địa chỉ làm việc*">
+                            <hr class="new mt-5 mb-5">
                             <div class="mb-4">
                                 <h4 class="text-primary">Option cho sinh viên</h4>
                             </div>
-
-                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="Lương thấp nhất*">
+                            <div class="row pl-3 mb-1">
+                            <div class="N-input mb-5 mr-4 "><input type="number" class="N-ip form-control" placeholder="Lương thấp nhất*">
                                 <span class="VND">VND</span></div>
-
-
-                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="Lương cao nhất*">
+                            <div class="N-input mb-5 "><input type="number" class="N-ip form-control" placeholder="Lương cao nhất*">
                                 <span class="VND">VND</span></div>
+                                </div>
 
 
-
-                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" placeholder="thời gian thực tập*">
+                         <div class="row pl-3 mb-4">
+                            <div class="N-input mb-4 mr-4"><input type="number" class="N-ip form-control" placeholder="thời gian thực tập*">
                                 <span class="VND">Tháng</span></div>
 
 
-                            <div class="N-input mb-4"><input type="number" class="N-ip form-control" style="width:390px;" placeholder="Số lượng thực tập sinh cần tuyển*">
+                            <div class="N-input mb-4 "><input type="number" class="N-ip form-control"  placeholder="Số lượng cần tuyển*">
                                 <span class="VND"></span></div>
-                        </div>
+                                </div>
+                         </div>
+
 
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-8">
                                     <div class="input-group mb-3">
-
                                         <div class="input-group-prepend">
                                             <label class="input-group-text bg-primary text-white " for="gender3">Hình thức</label>
                                         </div>
-
-                                        <select class="custom-select" style="width:100px;" id="gender3">
+                                        <select class="custom-select"  id="gender3">
                                           <option selected>Thực tập sinh</option>
-                                         
                                         </select>
-
-
-                                        <select class="custom-select" id="gender3">
+                                        <select class="custom-select"   id="gender3">
                                             <option value="1" active >Full-time</option>
                                             <option value="2" >Part-time</option>
                                           </select>
                                     </div>
-
-
-
-
                                 </div>
                             </div>
-                            <hr>
-                            <h4 class="text-primary mb-3">Phúc lợi</h4>
+                            <hr class="new mt-5 mb-5">
+                            <h4 class="text-primary mb-4">Phúc lợi</h4>
                             <div class="row">
                                 <div class="col-4">
                                     <!-- Default inline 3-->
-                                    <div class="custom-control custom-checkbox  mb-2">
+                                    <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input " id="defaultInline3">
                                         <label class="custom-control-label" for="defaultInline3"> <i class="fas fa-award"></i> Chế độ thưởng</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox  mb-2">
+                                    <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input" id="defaultInline4">
                                         <label class="custom-control-label" for="defaultInline4"><i class="	fas fa-atom "></i> Chương trình đào tạo</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox  mb-2">
+                                    <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input" id="defaultInline5">
                                         <label class="custom-control-label" for="defaultInline5"><i class="fa fa-level-up"></i> Tăng lương</label>
                                     </div>
                                 </div>
                                 <div class="col-3">
-                                    <div class="custom-control custom-checkbox  mb-2">
+                                    <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input" id="defaultInline6">
                                         <label class="custom-control-label" for="defaultInline6"><i class="fa fa-laptop"></i> Laptop</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox  mb-2">
+                                    <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input" id="defaultInline2">
                                         <label class="custom-control-label" for="defaultInline2"><i class="fas fa-suitcase"></i> Du lịch</label>
                                     </div>
@@ -184,28 +172,29 @@
                             <!-- Default inline 2-->
                             <!-- Default inline 2-->
                             <!-- Default inline 3-->
-                            <hr>
-                            <h4 class="mb-4 text-primary">Mô tả công việc</h4>
+                            <hr class="new mt-5 mb-4">
+                            <h4 class="mb-4 text-primary mt-4">Mô tả công việc</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
-                            <hr>
-                            <h4 class="mb-3 text-primary">Yêu cầu công việc</h4>
+                            <hr class="new mt-4 mb-4">
+
+                            <h4 class="mb-3 text-primary mt-4">Yêu cầu công việc</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
-                            <hr>
-                            <h5 class="mb-3 text-primary">Các thông tin cơ bản khác</h5>
+                            <hr class="new mt-4 mb-4">
+
+                            <h4 class="mb-3 text-primary mt-4">Các thông tin cơ bản khác</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
-                           <div class="row"> <button class="btn btn-primary mt-5 float-right">Cập nhật</button></div>
                         </div>
-                    </div>
                 </div>
             </div>
+            
         </div>
                     
 
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Cập nhật</button>
                 </div>
                 </div>
             </div>
