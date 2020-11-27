@@ -1,11 +1,12 @@
-<div id="sinhvien">
+
+            <div id="sinhvien">
                 <div class="row">
                     <div class=" col-sm-3 sv4 mb-3 mt-3">
                         <div class="py-3">
                             <ul class="nav h-sidebar-navigation">
                                 <li class="nav-item h-header" style="color: white;">HỒ SƠ CỦA BẠN</li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="file:///C:/Users/ASUS/Documents/GitHub/quan-ly-thuc-tap/site/view/sv1-ttcn.html">
+                                    <a class="nav-link" href="index.php?ctrl=sinh_vien">
                                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                                         </svg>
@@ -57,7 +58,7 @@
                                                 <div class="modal-content modal-content1">
                                                     <div class="modal-body">
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="view/images/logofpt.png" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="images/logofpt.png" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY CP FPT</h5>
@@ -84,7 +85,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="view/images/lgvinamilk.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="images/lgvinamilk.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY CP SỮA VIỆT NAM</h5>
@@ -111,7 +112,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="view/images/lgvinfast.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="images/lgvinfast.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3"> CÔNG TY CP VINFAST </h5>
@@ -138,7 +139,7 @@
                                                             </div>     
                                                         </div>
                                                         <div class="media col-sm-12 sv-12">
-                                                            <img src="view/images/olam.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
+                                                            <img src="images/olam.jpg" alt="John Doe" class="mr-3 mt-3 mb-3 rounded-circle align-self-center" style="width:80px;border: 1px black solid;">
                                                                 <div class="media-body col-sm-11">
                                                                     <a href="#">
                                                                         <h5 class="media-heading mt-3">CÔNG TY TNHH OLAM VIỆT NAM </h5>
@@ -201,8 +202,10 @@
                         <div class="container"> 
                         <?php include $view_sv; ?>
                         </div>
-
                     </div>
 
                 </div>
             </div>
+            
+            
+        

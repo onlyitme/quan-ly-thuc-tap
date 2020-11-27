@@ -31,9 +31,11 @@
                 <?php if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){ ?>
                     <div class="btn-group" role="group">
                         <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn bg-tomato rounded-0  h-100 border-left   p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
+                            <i class="fas fa-user-circle mr-2 "></i> <?php $ttsv=checkkhachhangbyid($_SESSION['sid']); 
+                                                                        $tttk=checktaikhoanbyid($_SESSION['sid']);
+                                                                        echo $ttsv['ho_ten']?>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right w-100 " aria-labelledby="btnGroupDrop1">
+                        <div class="dropdown-menu dropdown-menu-right w-200 " aria-labelledby="btnGroupDrop1">
                             <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=sinh_vien"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a> 
                             <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
                             <a class="dropdown-item" href="<?=SITE_URL?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>

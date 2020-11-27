@@ -2,6 +2,7 @@
 
 require_once "../system/database.php";
 require_once('model/home.php');
+require_once('model/sinh_vien.php');
 // require_once "model/home.php"; 
 
   $act = "index";
@@ -64,7 +65,9 @@ require_once('model/home.php');
           if($checkkhachhang['chuc_vu']==0){
             $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
             $_SESSION['sname']=$seach_kh_byid['ho_ten'];
+            $_SESSION['sid_sv']=$seach_kh_byid['id_sv'];
             $_SESSION['schuc_vu'] = 0;
+            
             header("Location: " . $_SERVER["HTTP_REFERER"]);
 
           }elseif($checkkhachhang['chuc_vu']==1){
