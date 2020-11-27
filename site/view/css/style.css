@@ -534,11 +534,6 @@
         border-left: 1px rgb(228, 228, 228) solid;
     }
     /* ----------- sinh vien cuoi ------------ */
-    
-    <<<<<<< HEAD
-    /* Nghia  dt */
-    
-    =======
     /* Nghia  cv */
     
     .bold {
@@ -783,8 +778,6 @@
         right: 103px;
         top: 30px;
     }
-    
-    >>>>>>>dd7aa1eea4e25164c30f8c322f634a5aca3de669
     /* Nghia onclick */
     
     .N-box {
@@ -878,11 +871,9 @@
         border-color: red;
     }
     
-    <<<<<<< HEAD=======.Nghia hr.new {
+    .Nghia hr.new {
         border-top: 1px dashed red;
     }
-    
-    >>>>>>>dd7aa1eea4e25164c30f8c322f634a5aca3de669
     /* Nghia  */
     
     .fontp p {
@@ -1132,9 +1123,6 @@
         background: #ffffff;
     }
     
-    <<<<<<< HEAD=======
-    /* Button Dang Bai - Hoang */
-    
     #doanhnghiep .h-dn-dangbai {
         /* background-image: linear-gradient(to right, #00c6ff 0%, #0072ff 51%, #00c6ff 100%) */
         background-image: linear-gradient(to right, #2574A9 0%, #00c6ff 51%, #2574A9 100%)
@@ -1174,6 +1162,4 @@
         color: #888;
         text-decoration: underline;
     }
-    
-    >>>>>>>dd7aa1eea4e25164c30f8c322f634a5aca3de669
     /*----- End Doanh Nghiep -----*/
