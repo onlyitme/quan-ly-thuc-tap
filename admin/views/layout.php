@@ -49,28 +49,14 @@
                 <div class="card bg-dark ">
                     <div class="card-header p-0 bg-dark " id="headingOne">
                         <button class="btn btn-dark btn-block text-left    rounded-0 px-3 py-4" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Quản lí nhóm ngành
+                            Ngành và Nhóm Ngành
                         </button>
                     </div>
                     <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh">Danh sách nhóm ngành</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=addnew">Thêm nhóm ngành</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion" id="accordionExample">
-                <div class="card bg-dark">
-                    <div class="card-header p-0 bg-dark " id="headingTwo">
-                        <button class="btn btn-dark btn-block text-left   rounded-0 px-3 py-4" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            Quản lí ngành
-                        </button>
-                    </div>
-                    <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nganh">Danh sách ngành</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=nganh&act=addnew">Thêm ngành</a></p>
+
                         </div>
                     </div>
                 </div>

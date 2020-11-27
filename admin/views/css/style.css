@@ -29,3 +29,11 @@
     footer {
         height: 30px;
     }
+    
+    aside .card .btn {
+        font-size: 0.9rem !important;
+    }
+    
+    aside .card-body {
+        padding: 10px 0;
+    }

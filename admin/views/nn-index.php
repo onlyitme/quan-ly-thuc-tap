@@ -10,31 +10,54 @@
     </div>
 </div>
 <div class="mb-5">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <i class="fas fa-plus"></i> Thêm ngành
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modelId">
+        <i class="fas fa-plus"></i> Thêm Nhóm Ngành
     </button>
-    <input id="xoaall" type="submit" class="btn btn-danger ml-2" name="xoaall" value="Xóa Mục Đã Chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các mục đã chọn không ?');">
-    <form method="POST" id="collapseExample" class="collapse fade col-12 border rounded-lg bg-light py-3 px-4  my-3" action="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=insert">
-            <div class="form-group">
-                <label for="ten_loai" class="font-weight-bold">Tên nhóm ngành</label>
-                <input type="text" class="form-control col-5" id="ten_nn" name="ten_nn">
-                <?php if (isset($nn_error)) { ?>
-                    <span class="badge badge-warning"> <?= $nn_error ?> </span>
-                <?php } ?>      
-                <span id="kqchecknn"></span>
-            </div>
-            <div class="form-group">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="an_hien" id="anhien1" value="1" checked>
-                    <label class="form-check-label" for="anhien1"> Hiện </label>
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-primary">
+                    <h3 class="modal-title">Thêm Nhóm Ngành</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="an_hien" id="anhien0" value="0">
-                    <label class="form-check-label" for="anhien0">Ẩn</label>
+                <div class="modal-body">
+                <form method="POST"  class="col-12 border rounded-lg bg-light py-3 px-4  my-3" action="<?= ADMIN_URL ?>/?ctrl=nhom_nganh&act=insert">
+                    <div class="form-group mb-5">
+                        <label for="ten_loai" class="font-weight-bold">Nhóm ngành:  </label>
+                        <?php if (isset($nn_error)) { ?>
+                            <span class="badge badge-warning"> <?= $nn_error ?> </span>
+                        <?php } ?>      
+                        <span id="kqchecknn"></span>
+                        <input type="text" class="form-control " id="ten_nn" name="ten_nn">
+                        
+                    </div>
+                    <div class="form-group border-bottom">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="an_hien" id="anhien1" value="1" checked>
+                            <label class="form-check-label" for="anhien1"> Hiện </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="an_hien" id="anhien0" value="0">
+                            <label class="form-check-label" for="anhien0">Ẩn</label>
+                        </div>
+                    </div>
+            
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+                </div>
+                </form>
             </div>
-            <button type="submit"  class="btn btn-primary py-2 col-2 ">Lưu</button>
-    </form>
+        </div>
+    </div>
+    
+    <input id="xoaall" type="submit" class="btn btn-danger ml-2" name="xoaall" value="Xóa Mục Đã Chọn" >
+    
 </div>
 
     <table class="table table-hover">
@@ -81,22 +104,26 @@
             }
         })
         $("#xoaall").click(function(){
-          let arrcheck = [];
-          $(".checkitem").each(function(){
-              check = $(this).prop("checked");
-            if(check){
-              arrcheck.push($(this).val());
+            if($(".checkitem:checked").length > 0){
+                var y = confirm("Bạn chắc chắn muốn xóa các mục đã chọn không ?");
+                if(y == true){
+                    let arrcheck = [];
+                    $(".checkitem").each(function(){
+                        check = $(this).prop("checked");
+                    if(check){
+                        arrcheck.push($(this).val());
+                    }
+                    }); 
+                    console.log(arrcheck);
+                    $.ajax({
+                    type: "post",
+                    url: "index.php?ctrl=nhom_nganh",
+                    data: {arr: arrcheck},
+                    success: function(data) {
+                        location.reload();
+                    }
+                    });}
             }
-          }); 
-          console.log(arrcheck);
-          $.ajax({
-            type: "post",
-            url: "index.php?ctrl=nhom_nganh",
-            data: {arr: arrcheck},
-            success: function(data) {
-              location.reload();
-            }
-          });
         });
         $("#ten_nn").blur(function() {
             u = $(this).val();
