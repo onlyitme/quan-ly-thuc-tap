@@ -87,15 +87,16 @@ require_once('model/sinh_vien.php');
 
       }else {
         $link=substr($_SERVER["HTTP_REFERER"],39);
-        if(isset($_SESSION['sname'])==false)echo "<script type='text/javascript'>alert('Tài Khoản Mật Khẩu Không Hợp Lệ');</script>";
-        
-       
+       echo "<script type='text/javascript'>alert('Tài Khoản Mật Khẩu Không Hợp Lệ');</script>";
+      
        if($link=='index.php'||$link=='index.php?ctrl=home&act=login' ) {
           $view = "view/home.php";   
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";}
           else{
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+            $view = "view/home.php";   
+            $ds_nn=ds_nn(); 
+            require_once "view/layout.php";
           }
        }
        

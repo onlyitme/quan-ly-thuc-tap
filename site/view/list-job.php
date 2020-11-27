@@ -51,7 +51,7 @@
                         <div class="media-body text-gray text-left">
                             <a href="index.php?act=thongtindt&id_dt=<?=$thongtindangtuyen['id_dt']?>"><h5 class="text-dark mt-0 d-inline" ><?=$thongtinnganh['ten_nganh']?></h5></a>
                             <p class="font-weight-bold "><?=$thongtindn['ten_dn']?></p>
-                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong']?> $</p>
+                            <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong_khoi_dau']?> ~ <?=$thongtindangtuyen['luong_ket_thuc']?> $</p>
                             <p><i class="fas fa-map-marker-alt    "></i> <?=$thongtindangtuyen['vi_tri']?></p>
                             <p ><i class="fas fa-calendar-alt "></i> Hạn chót: <?php $today = date("Y-m-d");
                                                                                     $expire = $thongtindangtuyen['thoi_gian'];     
@@ -88,7 +88,8 @@
             if($thongtindt['full_part_time'] == 0) $full_part_time='Part Time';else $full_part_time='full Time';
             if($thongtindt['vi_tri'] == 0) $vi_tri='Nhân viên thực tập';else $vi_tri='Nhân viên chính thức';
             $noi_lam_viec=$thongtindn['tinh_tp'];
-            $luong=$thongtindt['luong'];
+            $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
+            $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
             
             echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
             <div class="row align-items-center  p-3">
@@ -169,7 +170,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Lương</p>
-                            <p class="text-gray">'.$luong.' $ </p>
+                            <p class="text-gray">'.$luong_khoi_dau.' ~ '.$luong_ket_thuc.' $ </p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Hết hạn nộp</p>
