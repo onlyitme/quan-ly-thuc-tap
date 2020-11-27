@@ -80,13 +80,12 @@
                 <d  iv class="modal-content ">
                 <div class="modal-header pb-0">
                 <div class="alert alert-primary w-100">
-                               <h2>Đăng Tuyển   </h2>
-
-         
+                               <h2 class="d-inline">Đăng Tuyển   </h2>
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button> 
                             </div>  
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        
 
                 </div>
                 <div class="modal-body">
@@ -348,8 +347,7 @@
             tinycomments_author: 'Author name',
         });
     </script>
-   
-    <!-- My script -->
+        <!-- My script -->
     <script src="view/js/script.js "></script>
 </body>
 
