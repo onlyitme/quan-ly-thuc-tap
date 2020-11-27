@@ -49,7 +49,7 @@
 <table class="table table-hover table-bordered table-striped ">
     <thead >
         <tr>
-            <th scope="col"><input type="checkbox" name="checkall" class="checkall"> #</th>
+            <th scope="col"><input type="checkbox" name="checkall " class="checkall mr-2"> #</th>
             <th scope="col">Tên ngành</th>
             <th scope="col">Ẩn hiện</th>
             <th scope="col">Sửa</th>
@@ -61,9 +61,9 @@
         $i = 1;
             foreach ($ds as $row) { ?>
             <tr>
-                <td>
-                    <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nganh'] ?>' > <div class="font-weight-bold"><?= $i++ ?></div> </div>
-                </td>
+                <th>
+                    <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nganh'] ?>' > <div ><?= $i++ ?></div> </div>
+                </th>
                 <td> <?= $row['ten_nganh'] ?></td>
                 <td><?= ($row['an_hien'] == 1) ? "Đang hiện" : "Đang ẩn"; ?></td>
                 <td><a href="?ctrl=nganh&act=edit&id_nganh=<?= $row['id_nganh'] ?>"><i class="far fa-edit"></i></a>
