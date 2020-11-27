@@ -53,7 +53,7 @@
              foreach ($ds as $row) { ?>
                 <tr>
                     <th>
-                        <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nganh'] ?>' > <div ><?= $i++ ?></div> </div>
+                        <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nn'] ?>' > <div ><?= $i++ ?></div> </div>
                     </th>
                     <td> <?= $row['ten_nn'] ?></td>
                     <td><?= ($row['an_hien'] == 1) ? "Đang hiện" : "Đang ẩn"; ?></td>
@@ -71,7 +71,7 @@
         $(".checkall").change(function(){
             // $(".checkall").prop("checked",$(this).prop("checked"));
             $(".checkitem").prop("checked",$(this).prop("checked"));
-        })
+        })  
         $(".checkitem").change(function(){
             if($(this).prop("checked")==false){
                 $(".checkall").prop("checked",false)

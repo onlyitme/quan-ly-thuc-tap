@@ -25,7 +25,7 @@
                                         <p><strong>Họ và tên</strong></p>   
                                     </div>
                                     <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Nhập tên" name="ho_ten" id="ho_ten"></p>
+                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['ho_ten']?>" name="ho_ten" id="ho_ten"></p>
                                     </div>
 
                                     
@@ -34,7 +34,7 @@
                                         <p><strong>Mã Số Sinh Viên</strong></p>   
                                     </div>
                                     <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Nhập mã số sinh viên" name="mssv" id="mssv"></p>
+                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['mssv']?>" name="mssv" id="mssv"></p>
                                     </div>
 
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
@@ -63,7 +63,7 @@
                                     </div>
                                     <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
                                         <p>
-                                            <input type="number" id="sdt" name="sdt" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự.">                                            
+                                            <input type="number" value="<?=$ttsv['sdt']?>" id="sdt" name="sdt" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự.">                                            
                                         </p>
                                     </div>
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
                                         <p>
-                                            <input type="text" id="dia_chi" name="dia_chi" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự." placeholder="125 Cống Quỳnh, Phường Nguyễn Cư Trinh, Quận 1, Thành phố Hồ Chí Minh 700000, Việt Nam">                                            
+                                            <input type="text" id="dia_chi" name="dia_chi" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự." value="<?=$ttsv['dia_chi']?>">                                            
                                         </p>
                                     </div> 
                                     <div class="col-12 text-center mt-4">
