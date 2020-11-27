@@ -9,12 +9,47 @@
         </nav>
     </div>
 </div>
-
+<div class="mb-5">
+    
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fas fa-plus"></i> Thêm ngành
+  </button>
+<form method="POST" id="collapseExample" class="collapse fade col-12 border rounded-lg bg-light py-3 px-4  my-3" action="<?= ADMIN_URL ?>/?ctrl=nganh&act=insert">
+        <div class="form-group">
+            <label for="ten_nganh" class="font-weight-bold ">Nhóm ngành</label>
+            <select id="ten_nganh" name="id_nn" class="form-control">
+                <option value="">Chọn nhóm ngành</option>
+                <?php require_once "models/nhom_nganh.php";
+                $dsnganh = getAllNhomnganh();
+                foreach ($dsnganh as $row) { ?>
+                    <option value="<?= $row['id_nn'] ?>"> <?= $row['ten_nn'] ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ten_loai" class="font-weight-bold ">Tên ngành</label>
+            <input type="text" class="form-control"  name="ten_nganh">
+        </div>
+        <div class="mt-5">
+            <div class="form-group col">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="an_hien" id="anhien1" value="1" checked>
+                    <label class="form-check-label" for="anhien1"> Hiện </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="an_hien" id="anhien0" value="0">
+                    <label class="form-check-label" for="anhien0">Ẩn</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary py-2 col-3 ">Lưu</button>
+        </div>
+       
+</div>
+</form>
 <table class="table table-hover table-bordered table-striped ">
     <thead >
         <tr>
-            <th scope="col">Check</th>
-            <th scope="col">#</th>
+            <th scope="col" class="text-center">#</th>
             <th scope="col">Tên ngành</th>
             <th scope="col">Ẩn hiện</th>
             <th scope="col">Sửa</th>
@@ -27,8 +62,7 @@
             foreach ($ds as $row) { ?>
             <tr>
             <td><div class="checkbox">
-            <input type="checkbox" class="checkitem" value ='<?= $row['id_nganh'] ?>' > </div></td>
-                <th scope="row"><?= $i++ ?></th>
+            <input type="checkbox" class="checkitem" value ='<?= $row['id_nganh'] ?>' > <?= $i++ ?> </div></td>
                 <td> <?= $row['ten_nganh'] ?></td>
                 <td><?= ($row['an_hien'] == 1) ? "Đang hiện" : "Đang ẩn"; ?></td>
                 <td><a href="?ctrl=nganh&act=edit&id_nganh=<?= $row['id_nganh'] ?>"><i class="far fa-edit"></i></a>
