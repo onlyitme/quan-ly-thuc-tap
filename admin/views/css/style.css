@@ -37,3 +37,39 @@
     aside .card-body {
         padding: 10px 0;
     }
+    /* Nghĩa */
+    
+    .Nghia-admin-tb {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .Nghia-admin-tb thead tr {
+        background-color: #17a98c;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+    }
+    
+    .Nghia-admin-tb th,
+    .Nghia-admin-tb td {
+        padding: 12px 15px;
+        text-align: center;
+    }
+    
+    .Nghia-admin-tb td a {
+        text-decoration: none;
+        font-size: 20pt;
+    }
+    
+    .Nghia-admin-tb tbody tr {
+        border-bottom: 1px solid white;
+    }
+    
+    .Nghia-admin-tb tbody tr:last-of-type {
+        border-bottom: 4px solid #009879;
+    }
