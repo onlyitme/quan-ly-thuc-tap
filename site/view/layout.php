@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="view/css/N-Bk-test.css">
     <link rel="stylesheet" href="view/css/style.css">
 </head>
 
@@ -68,16 +67,10 @@
     </header>
     <!-- Show box login & Box đăng tuyển-->
     <?php if(isset($_SESSION['sid'])){ ?>
-
-
-
-
-
-
         <!-- Chỗ đẻ của Nghĩa dep trai -->
         <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <d  iv class="modal-content ">
+                <div class="modal-content ">
                 <div class="modal-header pb-0">
                 <div class="alert alert-primary w-100">
                                <h2 class="d-inline">Đăng Tuyển   </h2>
@@ -97,30 +90,23 @@
                             <input type="text" class="N-ninput form-control" placeholder="Tiêu đề bài đăng*">
                             <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
                             <input type="text" class="N-ninput form-control mb-5" placeholder="Địa chỉ làm việc*">
-                            <hr class="new mt-5 mb-5">
-                            <div class="mb-4">
-                                <h4 class="text-primary">Option cho sinh viên</h4>
+                            <hr class="new my-3">
+                            <div class="">
+                                <h4 class="text-primary my-4gi">Option cho sinh viên</h4>
                             </div>
                             <div class="row pl-3 mb-1">
                             <div class="N-input mb-5 mr-4 "><input type="number" class="N-ip form-control" placeholder="Lương thấp nhất*">
                                 <span class="VND">VND</span></div>
                             <div class="N-input mb-5 "><input type="number" class="N-ip form-control" placeholder="Lương cao nhất*">
                                 <span class="VND">VND</span></div>
-                                </div>
-
-
+                            </div>
                          <div class="row pl-3 mb-4">
                             <div class="N-input mb-4 mr-4"><input type="number" class="N-ip form-control" placeholder="thời gian thực tập*">
                                 <span class="VND">Tháng</span></div>
-
-
                             <div class="N-input mb-4 "><input type="number" class="N-ip form-control"  placeholder="Số lượng cần tuyển*">
                                 <span class="VND"></span></div>
-                                </div>
+                            </div>
                          </div>
-
-
-
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
@@ -138,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <hr class="new mt-5 mb-5">
+                            <hr class="new my-3">
                             <h4 class="text-primary mb-4">Phúc lợi</h4>
                             <div class="row">
                                 <div class="col-6">
@@ -166,37 +152,30 @@
                                         <label class="custom-control-label" for="defaultInline2"><i class="fas fa-suitcase"></i> Du lịch</label>
                                     </div>
                                 </div>
-
                             </div>
                             <!-- Default inline 2-->
                             <!-- Default inline 2-->
                             <!-- Default inline 3-->
-                            <hr class="new mt-5 mb-4">
+                            <hr class="new my-3">
                             <h4 class="mb-4 text-primary mt-4">Mô tả công việc</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
-                            <hr class="new mt-4 mb-4">
-
+                            <hr class="new my-3">
                             <h4 class="mb-3 text-primary mt-4">Yêu cầu công việc</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
-                            <hr class="new mt-4 mb-4">
-
+                            <hr class="new my-3">
                             <h4 class="mb-3 text-primary mt-4">Các thông tin cơ bản khác</h4>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
                 </div>
             </div>
-            
-        </div>
-                    
-
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger mt-3 px-3" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success mt-3 px-3">Cập nhật</button>
-                </div>
-                </div>
             </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger mt-3 px-3" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success mt-3 px-3">Cập nhật</button>
+            </div>
+            </div>
+        </div>
         </div>
     <?php }else { ?>
     <div class="modal fade" id="login">
