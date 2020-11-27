@@ -1,34 +1,25 @@
  
-                            <div class="media boder p-3 tt-dau bg-tt">                             
-                                <a href="#">
-                                    <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" class="mr-3 mt-3 ml-3 " >
-                                </a>                 
-                                <div class="thongtin1">
-                                    <div class=" media-body ml-4"><br>
-                                        
-                                        <h3><?=$ttsv['ho_ten']?> </h3>
-                                        <p style="width: 100%; "> Thực tập sinh.</p> 
-                                        <hr class="mr-4" style="background: white;width: 98% ;float: left;">     
-                                        <i class="fa fa-phone mr-3" style="font-size: 12pt; transform: scaleX(-1);"></i>
-                                       
-                                        <?=$ttsv['sdt']?>  <br>
-                                        <i class="fa fa-home mt-3 mr-3" style="font-size: 12pt;"></i> 
-                                       
-                                           <?=$ttsv['dia_chi']?> 
-                                        </div>
-                                </div>
-                            </div>
+                            
                          <form action="index.php?ctrl=sinh_vien&act=ttcn_update" method="post" id="capnhapttcn" enctype="multipart/form-data">
                             <div class="media boder p-3 sv8-12 mt3">
                                 <div class="row col-sm-12">
-                                    <div  class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                    <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <h5 style="border-left: 5px rgb(6, 2, 219) solid;padding: 0 5px;">THÔNG TIN CÁ NHÂN</h5>           
                                     </div>
-                                    
-                                    <div  class="col-sm-2 .col-2">
-                                        <p> &nbsp; </p>
+                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="height: 300px;">
+                                    <p><strong>Ảnh đại diện</strong></p>
+                                    <a href="#" class="tep1 ">
+                                    <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
+                                    </a> 
+                                    <div class="tep2">
+                                        <input type="file" name="anh">
                                     </div>
                                     
+                                    </div>
+                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
+                                        
+                                    <p> &nbsp; </p>
+                                    </div>
 
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
                                         <p><strong>Họ và tên</strong></p>   
@@ -37,12 +28,7 @@
                                         <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Nhập tên" name="ho_ten" id="ho_ten"></p>
                                     </div>
 
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Ảnh đại diện</strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <input type="file" name="anh">
-                                    </div>
+                                    
 
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
                                         <p><strong>Mã Số Sinh Viên</strong></p>   

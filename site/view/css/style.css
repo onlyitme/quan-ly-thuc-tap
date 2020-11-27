@@ -422,14 +422,26 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     }
     /* */
-    
+    #sinhvien .tep1{
+        position: absolute;
+        z-index: 1;
+    }
+    #sinhvien .tep2{
+        margin-top: 100px;
+        margin-left: 65px;
+        position: absolute;
+        z-index: 2;
+    }
+    #sinhvien .tep2:hover{
+        display: block;
+    }
     #sinhvien .tt-dau {
-        color: white;
+        color: rgb(0, 0, 0);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
     }
     
     #sinhvien .tt-dau a {
-        color: white;
+        color: rgb(0, 0, 0);
     }
     
     #sinhvien .tt-dau a:hover {
@@ -440,13 +452,19 @@
         width: 140px;
         border: 2px rgb(253, 253, 253) solid;
     }
-    
     #sinhvien .tt-dau img:hover {
         opacity: 0.5;
     }
-    
-    #sinhvien .bg-tt {
-        background: #022c58!important;
+    #sinhvien .bg-ttcn {
+        background-image: url("../images/background-tt.jpg");
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+        border-top: 1px rgb(228, 228, 228) solid;
+        border-left: 1px rgb(228, 228, 228) solid;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+        
     }
     
     .thongtin1 {

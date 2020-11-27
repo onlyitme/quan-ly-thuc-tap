@@ -1,23 +1,5 @@
  
-                            <div class="media boder p-3 tt-dau bg-tt">                             
-                                <a href="#">
-                                    <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" class="mr-3 mt-3 ml-3 " >
-                                </a>                 
-                                <div class="thongtin1">
-                                    <div class=" media-body ml-4"><br>
-                                        
-                                        <h3><?=$ttsv['ho_ten']?> </h3>
-                                        <p style="width: 100%; "> Thực tập sinh.</p> 
-                                        <hr class="mr-4" style="background: white;width: 98% ;float: left;">     
-                                        <i class="fa fa-phone mr-3" style="font-size: 12pt; transform: scaleX(-1);"></i>
-                                       
-                                        <?=$ttsv['sdt']?>  <br>
-                                        <i class="fa fa-home mt-3 mr-3" style="font-size: 12pt;"></i> 
-                                       
-                                           <?=$ttsv['dia_chi']?> 
-                                        </div>
-                                </div>
-                            </div>
+                            
                          <form action="index.php?ctrl=sinh_vien&act=user_update" method="post" id="capnhapuser" enctype="multipart/form-data">
                             <div class="media boder p-3 sv8-12 mt3">
                                 <div class="row col-sm-12">
