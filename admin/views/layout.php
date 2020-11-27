@@ -25,7 +25,7 @@
             </a>
             <form method="POST" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=timkiem">
                 <div class="input-group">
-                    <input class="form-control" name="mssv" type="text" placeholder="Nhập mssv cần tìm..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <input class="form-control" name="mssv" type="text" placeholder="Tìm kiếm ..." aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
@@ -65,29 +65,13 @@
                 <div class="card bg-dark ">
                     <div class="card-header p-0 bg-dark " id="headingThree">
                         <button class="btn btn-dark btn-block text-left   rounded-0 px-3 py-4" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            Quản lí doanh nghiệp
+                            Quản lí đối tượng
                         </button>
                     </div>
-                    <div id="collapseThree" class="collapse " aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep">Danh sách doanh nghiệp</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=addnew">Thêm doanh nghiệp</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion" id="accordionExample">
-                <div class="card bg-dark ">
-                    <div class="card-header p-0 bg-dark " id="headingFour">
-                        <button class="btn btn-dark btn-block text-left    rounded-0 px-3 py-4" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                            Quản lí sinh viên
-                        </button>
-                    </div>
-                    <div id="collapseFour" class="collapse " aria-labelledby="headingFour" data-parent="#accordionExample">
-                        <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh viên</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=addnew">Thêm sinh viên</a></p>
-
                         </div>
                     </div>
                 </div>
@@ -107,6 +91,7 @@
                     </div>
                 </div>
             </div>
+
         </aside>
         <article class="col-10 bg-white h-100 overflow-auto">
             <!-- Nạp view -->
@@ -117,9 +102,8 @@
             ?>
         </article>
     </main>
-    <footer class=" bg-dark fixed-bottom text-light text-center py-2">
-        <h6>Copyright © 2020 --- Thiết kế website bởi Group 6.</h6>
-    </footer>
+    <h6 class="fixed-bottom pl-1">Copyright © 2020 --- Thiết kế website bởi Group 6.</h6>
+
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
