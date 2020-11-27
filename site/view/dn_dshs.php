@@ -17,7 +17,7 @@
             </div>
             <button class="input-group-text" type="button" data-toggle="dropdown">
                 Sắp xếp <i class="far fa-angle-down"></i></button>
-            <div class="dropdown-menu dropdown-menu-right   ">
+            <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" href="#">Đã duyệt</a>
                 <a class="dropdown-item" href="#">Chưa duyệt</a>
                 <a class="dropdown-item" href="#">Theo tên</a>
