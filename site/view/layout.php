@@ -41,7 +41,7 @@
                     </div>
                 <?php } else { ?>
                     <div class="btn-group" role="group">
-                        <a data-toggle="modal" href="#login" class="btn btn-light rounded-0 h-100 border-left   p-4" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Đăng Tin</a>
+                        <a data-toggle="modal" data-target="#exampleModal-Nghia" href="#login" class="btn btn-light rounded-0 h-100 border-left p-4" role="button" aria-pressed="true"><i class="fas fa-edit"></i> Đăng Tin</a>
                         <a  id="btnGroupDrop1" type="button" class="dropdown-toggle btn btn-primary  text-light rounded-0  h-100 border-left    p-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle mr-2 "></i> <?=$_SESSION['sname']?>
                         </a>
@@ -67,6 +67,25 @@
     <!-- Show box login & Box đăng tuyển-->
     <?php if(isset($_SESSION['sid'])){ ?>
         <!-- Chỗ đẻ của Nghĩa Ngu -->
+        <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
     <?php }else { ?>
     <div class="modal fade" id="login">
         <div class="modal-dialog modal-lg">
