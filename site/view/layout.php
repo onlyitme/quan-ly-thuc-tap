@@ -87,13 +87,19 @@
                 <div class="modal-header pb-0">
                 <div class="alert alert-primary w-100">
                                <h2>Đăng Tuyển   </h2>
-                            </div>                  
+
+         
+                            </div>  
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
                 </div>
                 <div class="modal-body">
                 <div class="container">
                <div id="doanhnghiep">
                 <div class=" row mt-4 m-0 py-3">
-                    <div class="Nghia">
+                    <div class="Nghia col-12">
                         <div class="col-12">                        
                             <input type="text" class="N-ninput form-control" placeholder="Tiêu đề bài đăng*">
                             <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
@@ -124,7 +130,7 @@
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <label class="input-group-text bg-primary text-white " for="gender3">Hình thức</label>
@@ -142,7 +148,7 @@
                             <hr class="new mt-5 mb-5">
                             <h4 class="text-primary mb-4">Phúc lợi</h4>
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-6">
                                     <!-- Default inline 3-->
                                     <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input " id="defaultInline3">
@@ -157,7 +163,7 @@
                                         <label class="custom-control-label" for="defaultInline5"><i class="fa fa-level-up"></i> Tăng lương</label>
                                     </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-6">
                                     <div class="custom-control custom-checkbox  mb-3">
                                         <input type="checkbox" class="custom-control-input" id="defaultInline6">
                                         <label class="custom-control-label" for="defaultInline6"><i class="fa fa-laptop"></i> Laptop</label>
@@ -193,8 +199,8 @@
                     
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Cập nhật</button>
+                    <button type="button" class="btn btn-danger mt-3 px-3" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success mt-3 px-3">Cập nhật</button>
                 </div>
                 </div>
             </div>
