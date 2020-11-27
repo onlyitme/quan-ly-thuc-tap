@@ -17,7 +17,7 @@
     <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
         <div class="wrap d-flex justify-content-between align-items-center">
             <div id="header-menu" class="col p-0">
-                <button id="sidebarToggle" class="btn btn-light border-right rounded-0 p-4">
+                <button id="sidebarToggle" class="btn btn-light border-right rounded-0 p-4 ">
                             <i class="fas fa-bars"></i>
                             <span class="d-none d-md-inline ml-3">MENU</span>
                     </button>
