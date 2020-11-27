@@ -22,11 +22,12 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $pass=$_POST['pass'];
         $tttk=checktaikhoanbyid($_SESSION['sid']);
         
-        if($mat_khau!=$xac_nhan_mk && $pass != $tttk['pass']){
-        echo "<script type='text/javascript'>alert('Thông tin điền không chính xác');</script>";
-        }else{
+        if($mat_khau == $xac_nhan_mk && $pass == $tttk['pass']){
           updatematkhau($mat_khau);
           echo "<script type='text/javascript'>alert('Mật Khẩu Đã Được Cập Nhập');</script>";
+        }else{
+          echo "<script type='text/javascript'>alert('Thông tin điền không chính xác');</script>";
+         
         }
         $view_sv = "view/ttcn_index.php";
   break;
