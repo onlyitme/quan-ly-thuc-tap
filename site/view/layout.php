@@ -104,7 +104,7 @@
                             <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
                             <input type="text" class="N-ninput form-control mb-5" placeholder="Địa chỉ làm việc*">
                             <hr class="new my-3">
-                            <div class="">
+                            <div class="mb-4 mt-4">
                                 <h4 class="text-primary my-4gi">Option cho sinh viên</h4>
                             </div>
                             <div class="row pl-3 mb-1">
@@ -180,10 +180,7 @@
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger mt-3 px-3" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success mt-3 px-3">Cập nhật</button>
-                    </div>
+                   
                 </div>
             </div>
             </div>
