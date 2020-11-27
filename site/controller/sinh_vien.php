@@ -8,9 +8,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "ttcn_index":
-      
-      
-     
+      $view_sv = "view/ttcn_index.php";
       break;
     case "ttcn_edit":
         $view_sv = "view/ttcn_edit.php";
