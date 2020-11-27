@@ -21,14 +21,9 @@
                          <form action="index.php?ctrl=sinh_vien&act=ttcn_update" method="post" id="capnhapttcn" enctype="multipart/form-data">
                             <div class="media boder p-3 sv8-12 mt3">
                                 <div class="row col-sm-12">
-                                    <div  class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                                        <h5 style="border-left: 5px rgb(6, 2, 219) solid;padding: 0 5px;">THÔNG TIN CÁ NHÂN</h5>           
-                                    </div>
-                                    
-                                    <div  class="col-sm-2 .col-2">
-                                        <p> &nbsp; </p>
-                                    </div>
-                                    
+                                    <div  class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                                        <h5 style="border-left: 5px rgb(6, 2, 219) solid;padding: 0 5px;">Thay đổi mật khẩu</h5>           
+                                    </div>                                   
 
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
                                         <p><strong>Họ và tên</strong></p>   

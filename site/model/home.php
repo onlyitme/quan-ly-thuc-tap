@@ -20,6 +20,10 @@ function checkkhachhangbyid($id){
     $sql="select * from sinh_vien where id_user='$id' ";
     return queryOne($sql);
 }
+function checktaikhoanbyid($id){
+    $sql="select * from user where id_user='$id' ";
+    return queryOne($sql);
+}
 function checkdoanhnghiepbyid($id){
     $sql="select * from doanh_nghiep where id_dn='$id'";
     return queryOne($sql);
