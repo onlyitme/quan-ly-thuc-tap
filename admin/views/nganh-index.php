@@ -13,6 +13,8 @@
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         <i class="fas fa-plus"></i> Thêm ngành
     </button>
+    <input id="xoaall" type="submit" class="btn btn-danger ml-2" name="xoaall" value="Xóa Mục Đã Chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các mục đã chọn không ?');">
+
     <form method="POST" id="collapseExample" class="collapse fade col-12 border rounded-lg bg-light py-3 px-4  my-3" action="<?= ADMIN_URL ?>/?ctrl=nganh&act=insert">
             <div class="form-group">
                 <label for="ten_nganh" class="font-weight-bold ">Nhóm ngành</label>
@@ -72,14 +74,14 @@
         <?php } ?>
     </tbody>
 </table>
-<div class="checkbox">
-                <input type="checkbox" name="checkall" class="checkall" style="margin-left: 12px">
-                <label for="checkall" style="font-weight: bold;">Chọn Tất Cả</label>
-                <input id="xoaall" type="submit" name="xoaall" class="mx-5" value="Xóa Mục Đã Chọn" onclick="return confirm('Bạn chắc chắn muốn xóa các mục đã chọn không ?');">
-        </div>
+<!-- <div class="checkbox col my-5">
+        <input type="checkbox" name="checkall" class="checkall" >
+        <label for="checkall" style="font-weight: bold;">Chọn Tất Cả</label>
+</div> -->
+
 <script>
         $(".checkall").change(function(){
-            $(".checkall").prop("checked",$(this).prop("checked"));
+            // $(".checkall").prop("checked",$(this).prop("checked"));
             $(".checkitem").prop("checked",$(this).prop("checked"));
         })
         $(".checkitem").change(function(){
