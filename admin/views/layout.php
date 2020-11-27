@@ -70,8 +70,8 @@
                     </div>
                     <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
                         <div class="card-body">
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep">Danh sách doanh nghiệp</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Danh sách sinh viên</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep">Quản lý doanh nghiệp</a></p>
+                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Quản lý sinh viên</a></p>
                         </div>
                     </div>
                 </div>
