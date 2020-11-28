@@ -232,7 +232,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tdmk">
                             <i class="far fa-key"></i> Đổi mật khẩu
                         </a>
                     </li>
@@ -244,17 +244,12 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="far fa-list" aria-hidden="true"></i> Danh sách bài viết
+                            <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
                         </a>
                     </li>
                     <li>
                         <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=dshs">
-                            <i class="far fa-paste" aria-hidden="true"></i> Danh sách hồ sơ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-id-card-alt" aria-hidden="true"></i> Quản lý bài viết
+                            <i class="far fa-address-card" aria-hidden="true"></i> Quản lý hồ sơ
                         </a>
                     </li>
                     <li>

@@ -15,8 +15,9 @@ require_once "model/home.php";
     case "tttk":
         $view_dn = "view/dn_tttk.php";
     break;
+    case "tdmk":
+        $view_dn = "view/dn_tdmk.php";
+    break;
   }
   $view = "view/layout_dn.php";
   require_once "view/layout.php";
-
-?>
