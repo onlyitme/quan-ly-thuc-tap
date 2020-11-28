@@ -10,6 +10,10 @@
     </div>
 </div>
 <div class="row px-3">
+<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#exampleModalLong">
+        Thêm doanh nghiệp <i class="fas fa-plus-square"></i>
+    </button>
+<input id="xoaall" type="submit" name="xoaall" class="btn btn-danger" value="Xóa Mục Đã Chọn">
     <form method="POST" class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0 "
         action="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=timkiem">
         <div class="input-group">
@@ -21,9 +25,7 @@
         </div>
 
     </form>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Thêm doanh nghiệp <i class="fas fa-plus-square"></i>
-    </button>
+    
 </div>
 
 <!-- Button trigger modal -->
@@ -33,12 +35,15 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+            <div class="modal-header alert alert-primary">
+                    <h3 class="modal-title">Thêm doanh nghiệp</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
             <div class="modal-body">
                 <form method="POST" action="<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=insert"
                     enctype="multipart/form-data">
-                    <div class="row justify-content-center align-items-center text-warning">
-                        <h1>Thêm doanh nghiệp</h1>
-                    </div>
                     <div class="form-group">
                         <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
                         <?php if (isset($email_error)) { ?>
@@ -87,17 +92,17 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                        <button type="submit" class="btn btn-primary">Lưu lại</button>
+                        <button type="submit" class="btn btn-primary">Lưu thông tin</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<table class="table table-bordered  table-hover Nghia-admin-tb">
+<table class="table table-bordered  table-hover Nghia-admin-tb mt-2">
     <thead class="bg-primary">
         <tr class="text-center">
-            <th scope="col" rowspan="2" class="py-5">#</th>
+            <th scope="col" rowspan="2" class="py-5"><input type="checkbox" name="checkall " class="checkall mr-2"> #</th>
             <th scope="col" colspan="3">THÔNG TIN DOANH NGHIỆP</th>
             <th scope="col" colspan="3">THÔNG TIN LIÊN LẠC</th>
             <th scope="col" rowspan="2" class="py-5">Ảnh</th>
@@ -117,9 +122,9 @@
         <?php $i = 1;
             foreach ($dn as $row) { ?>
         <tr>
-            <td class="py-5">
-                <?= $i++ ?>
-            </td>
+            <th class="py-5">
+                <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nganh'] ?>' > <div ><?= $i++ ?></div> </div>
+            </th>
 
             <td class="py-5">
                 <?= $row['ten_dn'] ?>
@@ -227,3 +232,41 @@
             <?php } ?>
     </tbody>
 </table>
+
+<script>
+    $(".checkall").change(function(){
+            // $(".checkall").prop("checked",$(this).prop("checked"));
+            $(".checkitem").prop("checked",$(this).prop("checked"));
+        })
+        $(".checkitem").change(function(){
+            if($(this).prop("checked")==false){
+                $(".checkall").prop("checked",false)
+            }
+            if($(".checkitem:checked").length == $(".checkitem").length){
+                $(".checkall").prop("checked",true)
+            }
+        })
+        $("#xoaall").click(function(){
+            if($(".checkitem:checked").length > 0){
+                var y = confirm("Bạn chắc chắn muốn xóa các mục đã chọn không ?");
+                if(y == true){
+                    let arrcheck = [];
+                    $(".checkitem").each(function(){
+                        check = $(this).prop("checked");
+                    if(check){
+                        arrcheck.push($(this).val());
+                    }
+                    }); 
+                    console.log(arrcheck);
+                    $.ajax({
+                    type: "post",
+                    url: "index.php?ctrl=nhom_nganh",
+                    data: {arr: arrcheck},
+                    success: function(data) {
+                        location.reload();
+                    }
+                    });}
+            }
+        });
+      
+    </script>

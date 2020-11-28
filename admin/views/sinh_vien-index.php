@@ -144,7 +144,7 @@
         </div>
     </div>
 </div>
-<table class="table table-bordered table-hover Nghia-admin-tb">
+<table class="table table-bordered table-hover Nghia-admin-tb mt-2">
     <thead class="bg-primary">
         <tr>
             <th scope="col" rowspan="2" class="py-5"><input type="checkbox" id="checkall" class="mr-2">#</th>
