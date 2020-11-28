@@ -1,3 +1,36 @@
+<?php
+require_once "views/Classes/PHPExcel.php";
+require_once "models/excel.php";
+
+if(isset($_POST['btn'])){
+    $file= $_FILES['file']['tmp_name'];
+    $objReader=PHPExcel_IOFactory::createReaderForFile($file);
+    $objReader -> setLoadSheetsOnly('Sheet1');
+
+    $objExcel = $objReader->load($file);
+    $sheetData = $objExcel->getActiveSheet()->toArray('null',true,true,true);
+
+    $highRow=$objExcel->setActiveSheetIndex()->getHighestRow();
+
+    for($row=2;$row<=$highRow;$row++){
+        $user=$sheetData[$row]['A'];
+        $pass=$sheetData[$row]['B'];
+        $email=$sheetData[$row]['C'];
+        $chuc_vu=0;
+
+        addNewUserE($user,$pass,$email,$chuc_vu);
+    $id_user_full = seach_id_user($email);
+    $id_user =   $id_user_full['id_user'];
+
+      $mssv=$sheetData[$row]['D'];
+      $ho_ten=$sheetData[$row]['E'];
+      $id_nganh=$sheetData[$row]['F'];
+      $id_nganh=tim_id_nganh($id_nganh);
+      $id_nganh= $id_nganh['id_nganh'];
+      addNewSinhvienforexecl($id_user, $mssv, $id_nganh, $ho_ten);
+    }
+}
+?>
 <div class="row">
     <div class="alert alert-primary w-100 p-3" role="alert">
         <h1>QUẢN LÝ SINH VIÊN</h1>
@@ -9,14 +42,49 @@
         </nav>
     </div>
 </div>
-<div class="mb-5">
+<div class="mb-3">
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        Thêm sinh viên <i class="fas fa-plus-square"></i>
+    <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
+       <i class="fas fa-plus    "></i> File Exel
     </button>
-    <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger" value="Xóa Mục Đã Chọn">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+        <i class="fas fa-plus"></i> Thêm sinh viên 
+    </button>
+    <!-- Button trigger modal -->
+    <br >
+    
+    <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
 
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-success">
+                    <h5 class="modal-title">Upload file exel</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                        <p>Mẫu file exel</h1>
+                        <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
+                    <form method="POST" class=" shadow rounded mt-5" action="" enctype="multipart/form-data">
+                        
+                        <input type="file" name="file" >
+                        
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-success" >Thêm</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">

@@ -76,9 +76,8 @@
                                 placeholder="Số điện thoại">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="form-group col-6">
-                            <label for="">Ẩn hiện: </label>
+                    <div class="col-12 border-top pt-3">
+                        <div class="form-group ">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="an_hien" id="an_hien1" value="0"
                                     checked>
@@ -234,6 +233,18 @@
 </table>
 
 <script>
+    $(document).ready(function() {
+        $("#user").blur(function() {
+            u = $(this).val();
+            $("#kqcheckuser").load("<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=kiemtrauser&user=" + u);
+        });
+    });
+    $(document).ready(function() {
+        $("#email").blur(function() {
+            u = $(this).val();
+            $("#kqcheckemail").load("<?= ADMIN_URL ?>/?ctrl=doanh_nghiep&act=kiemtraemail&email=" + u);
+        });
+    });
     $(".checkall").change(function(){
             // $(".checkall").prop("checked",$(this).prop("checked"));
             $(".checkitem").prop("checked",$(this).prop("checked"));
@@ -260,7 +271,7 @@
                     console.log(arrcheck);
                     $.ajax({
                     type: "post",
-                    url: "index.php?ctrl=nhom_nganh",
+                    url: "index.php?ctrl=doanh_nghiep",
                     data: {arr: arrcheck},
                     success: function(data) {
                         location.reload();

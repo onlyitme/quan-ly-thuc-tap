@@ -5,6 +5,12 @@
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
         case "index":
+            if(isset($_POST['arr'])){
+                var_dump($_POST['arr']);
+                foreach($_POST['arr'] as $id_user){
+                    deleteUser($id_user);
+                }
+            }
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
             $dn = getAllDoanhnghiep();
