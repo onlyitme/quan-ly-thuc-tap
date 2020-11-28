@@ -46,45 +46,45 @@ if(isset($_POST['btn'])){
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
-       <i class="fas fa-plus    "></i> File Exel
+        <i class="fas fa-plus    "></i> File Exel
     </button>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        <i class="fas fa-plus"></i> Thêm sinh viên 
+        <i class="fas fa-plus"></i> Thêm sinh viên
     </button>
     <!-- Button trigger modal -->
-    <br >
-    
+    <br>
+
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
 
-    
+
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header alert alert-success">
                     <h5 class="modal-title">Upload file exel</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                        <p>Mẫu file exel</h1>
+                    <p>Mẫu file exel</h1>
                         <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
                     <form method="POST" class=" shadow rounded mt-5" action="" enctype="multipart/form-data">
-                        
-                        <input type="file" name="file" >
-                        
-                    
+
+                        <input type="file" name="file">
+
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-success" >Thêm</button>
+                    <button type="submit" class="btn btn-success">Thêm</button>
                 </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
@@ -93,8 +93,8 @@ if(isset($_POST['btn'])){
                 <div class="modal-body">
                     <form method="POST" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert"
                         enctype="multipart/form-data">
-                        <div class="row justify-content-center align-items-center text-warning">
-                            <h1>Thêm sinh viên</h1>
+                        <div class="row justify-content-center align-items-center text-primary">
+                            <h1 class="mb-4">Thêm sinh viên</h1>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" required id="email" name="email"
@@ -137,12 +137,38 @@ if(isset($_POST['btn'])){
                                 <span id="kqcheckmssv"></span>
                             </div>
                             <div class="form-group col-6">
-                                <input type="file" class="form-control overflow-hidden" name="anh">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text bg-primary text-white"
+                                            id="inputGroupFileAddon01">UPLOAD</span>
+                                    </div>
+                                    <div class="custom-file  ">
+                                        <input type="file" class="custom-file-input " id="inputGroupFile01"
+                                            aria-describedby="inputGroupFileAddon01" name="anh">
+                                        <label class="custom-file-label " for="inputGroupFile01">ẢNH</label>
+                                    </div>
+                                </div>
+                                <!-- <input type="file" class="form-control overflow-hidden" name="anh"> -->
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
-                                <label for="">Giới tính:</label><br>
+                                <label for="">Giới tính</label><br>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="gioi_tinh" class="custom-control-input"
+                                        value="1" checked>
+                                    <label class="custom-control-label" for="customRadio1"> Nam</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="gioi_tinh" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio2"> Nữ</label>
+                                </div>
+
+
+
+
+
+                                <!-- <label for="">Giới tính:</label><br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gioi_tinh" id="gioi_tinh1"
                                         value="1" checked>
@@ -152,10 +178,21 @@ if(isset($_POST['btn'])){
                                     <input class="form-check-input" type="radio" name="gioi_tinh" id="gioi_tinh0"
                                         value="0">
                                     <label class="form-check-label">Nữ</label>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="form-group col-6">
-                                <label for="">Trạng thái:</label><br>
+                                <label for="">Trạng thái</label><br>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="trang_thai" class="custom-control-input"
+                                        value="1">
+                                    <label class="custom-control-label" for="customRadio1"> Đã có nơi thực tập</label>
+                                </div>
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio2" name="trang_thai" class="custom-control-input"
+                                        value="0" checked>
+                                    <label class="custom-control-label" for="customRadio2"> Chưa có nơi thực tập</label>
+                                </div>
+                                <!-- <label for="">Trạng thái</label><br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai1"
                                         value="1">
@@ -165,12 +202,12 @@ if(isset($_POST['btn'])){
                                     <input class="form-check-input" type="radio" name="trang_thai" id="trang_thai0"
                                         value="0" checked>
                                     <label class="form-check-label">Chưa có nơi thực tập</label>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                            <button type="submit" class="btn btn-primary">Lưu lại</button>
+                            <button type="button" class="btn btn-danger px-3 mt-3" data-dismiss="modal">Huỷ</button>
+                            <button type="submit" class="btn btn-primary px-3 mt-3">Lưu lại</button>
                         </div>
                     </form>
                 </div>
