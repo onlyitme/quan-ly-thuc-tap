@@ -124,7 +124,6 @@
             <th class="py-5">
                 <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value ='<?= $row['id_nganh'] ?>' > <div ><?= $i++ ?></div> </div>
             </th>
-
             <td class="py-5">
                 <?= $row['ten_dn'] ?>
             </td>
