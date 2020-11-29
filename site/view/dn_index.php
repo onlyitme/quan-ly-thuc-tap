@@ -5,8 +5,12 @@
 </div>
 
 <div class="h-box-dn rounded mt-3">
-    <div class="mb-2">
+    <div class="h-box-dn-img mb-2">
         <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
+        <div class="h-box-dn-txt">
+            <h5>Đổi ảnh bìa doanh nghiệp</h5>
+            <button class="btn btn-outline-light" type="file">Tải lên..</button>
+        </div>
     </div>
     <h5>Thông tin chung</h5>
     <span class="font-weight-500 text-success mr-3"><i class="fas fa-toggle-on"></i>

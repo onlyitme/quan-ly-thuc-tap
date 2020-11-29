@@ -10,6 +10,9 @@
             <div class="h-tt-left-header rounded">
                 <div class="h-tt-left-img">
                     <img src="view/images/khaihoang.jpg" alt="avatar">
+                    <div class="h-tt-left-img-txt">
+                        <h5>Đổi ảnh<button class="btn btn-outline-light" type="file">Tải lên..</button></h5>
+                    </div>
                 </div>
                 <div class="h-tt-left-text">
                     <label>Loại tài khoản: <a href="#" class="text-primary">Doanh nghiệp</a> </label>
@@ -33,19 +36,19 @@
                 <div class="col-sm-6">
                     <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
-                    <input type="password" value="khaihoang" readonly="readonly" class="form-control">
+                    <input type="password" value="123123" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-5 col-form-label px-0">Mật khẩu mới:</label>
                 <div class="col-sm-6">
-                    <input type="password" value="123456" readonly="readonly" class="form-control">
+                    <input type="password" value="123456789" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-5 col-form-label px-0">Xác nhận mật khẩu mới:</label>
                 <div class="col-sm-6">
-                    <input type="password" value="khaihoang@gmail.com" readonly="readonly" class="form-control">
+                    <input type="password" value="123456789" readonly="readonly" class="form-control">
                 </div>
             </div>
 

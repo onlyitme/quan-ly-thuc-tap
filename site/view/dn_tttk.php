@@ -10,12 +10,18 @@
             <div class="h-tt-left-header rounded">
                 <div class="h-tt-left-img">
                     <img src="view/images/khaihoang.jpg" alt="avatar">
+                    <div class="h-tt-left-img-txt">
+                        <h5>Đổi ảnh<button class="btn btn-outline-light" type="file">Tải lên..</button></h5>
+                    </div>
                 </div>
                 <div class="h-tt-left-text">
                     <label>Loại tài khoản: <a href="#" class="text-primary">Doanh nghiệp</a> </label>
                     <label>Mã tài khoản: <span class="text-secondary">#328465</span> </label>
-                    <br>
                     <label>Ngày tạo: <span class="text-secondary">20/11/2020</span></label>
+
+                    <br>
+                    <div class="h-tt-bottom">
+                    </div>
 
                     <!-- <span class="h-social">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -23,8 +29,8 @@
                         <a href="#"><i class="fab fa-twitter-square"></i></a>
                         <a href="#"><i class="fab fa-github-square"></i></a>
                     </span> -->
-                    
-                    <button class="btn btn-outline-secondary h-btn-dx mt-3">Chỉnh sửa thông tin</button>
+
+                    <!-- <button class="btn btn-outline-secondary h-btn-dx mt-3">Chỉnh sửa thông tin</button> -->
 
                 </div>
             </div>
@@ -36,29 +42,25 @@
                 <div class="col-sm-7">
                     <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
-                    <input type="text" value="khaihoang" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="khaihoang" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-4 col-form-label px-0">Mật khẩu:</label>
                 <div class="col-sm-7">
-                    <input type="password" value="123456" readonly="readonly"
-                        class="form-control">
+                    <input type="password" value="123456" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-4 col-form-label px-0">Email:</label>
                 <div class="col-sm-7">
-                    <input type="email" value="khaihoang@gmail.com" readonly="readonly"
-                        class="form-control">
+                    <input type="email" value="khaihoang@gmail.com" readonly="readonly" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-4 col-form-label px-0">Số điện thoại:</label>
                 <div class="col-sm-7">
-                    <input type="text" value="0909123456" readonly="readonly"
-                        class="form-control">
+                    <input type="text" value="+8432132234" readonly="readonly" class="form-control">
                 </div>
             </div>
         </div>
