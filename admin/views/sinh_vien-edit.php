@@ -1,4 +1,4 @@
-<form method="POST" class="col-10 mx-auto border  shadow-lg px-4 py-3 shadow rounded mt-4"
+<form method="POST" class="col-10 mx-auto border  shadow-lg px-4 py-3  rounded mt-4"
     action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=update" enctype="multipart/form-data">
     <div class=" overflow-hidden">
         <div class="alert alert-primary w-100 p-3" role="alert">

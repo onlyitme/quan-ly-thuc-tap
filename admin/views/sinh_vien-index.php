@@ -155,13 +155,13 @@ if(isset($_POST['btn'])){
                             <div class="form-group col-6">
                                 <label for="">Giới tính</label><br>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="gioi_tinh" class="custom-control-input"
+                                    <input type="radio" id="gioitinh0" name="gioi_tinh" class="custom-control-input"
                                         value="1" checked>
-                                    <label class="custom-control-label" for="customRadio1"> Nam</label>
+                                    <label class="custom-control-label" for="gioitinh0"> Nam</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="gioi_tinh" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadio2"> Nữ</label>
+                                    <input type="radio" id="gioitinh1" name="gioi_tinh" class="custom-control-input">
+                                    <label class="custom-control-label" for="gioitinh1"> Nữ</label>
                                 </div>
 
 
@@ -183,14 +183,14 @@ if(isset($_POST['btn'])){
                             <div class="form-group col-6">
                                 <label for="">Trạng thái</label><br>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="trang_thai" class="custom-control-input"
+                                    <input type="radio" id="trang_thai1" name="trang_thai" class="custom-control-input"
                                         value="1">
-                                    <label class="custom-control-label" for="customRadio1"> Đã có nơi thực tập</label>
+                                    <label class="custom-control-label" for="trang_thai1"> Đã có nơi thực tập</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio2" name="trang_thai" class="custom-control-input"
+                                    <input type="radio" id="trang_thai0" name="trang_thai" class="custom-control-input"
                                         value="0" checked>
-                                    <label class="custom-control-label" for="customRadio2"> Chưa có nơi thực tập</label>
+                                    <label class="custom-control-label" for="trang_thai0"> Chưa có nơi thực tập</label>
                                 </div>
                                 <!-- <label for="">Trạng thái</label><br>
                                 <div class="form-check form-check-inline">
