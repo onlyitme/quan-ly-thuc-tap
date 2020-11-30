@@ -10,7 +10,7 @@
         padding: 0;
         box-sizing: border-box;
         list-style: none;
-        /* font-family: "Montserrat", sans-serif; */
+        font-family: "Montserrat", sans-serif;
     }
 
     .semi-bold {
@@ -327,44 +327,36 @@
     /* END BAOKUN       */
 
     /* ----------- sinh vien dau ------------ */
-
-    #sinhvien .spinner-border {
+    #sinhvien .spinner-border{
         width: 20px;
         height: 20px;
     }
-
-    #sinhvien .demo {
+    #sinhvien .demo{
         width: 50px;
         background: tomato;
         transition: 1s;
         transform-origin: auto;
     }
-
-    #sinhvien .nav-item:hover {
+    #sinhvien .nav-item:hover{
         width: 100%;
         background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
         transition: 1s;
         transform-origin: auto;
     }
-
     #sinhvien strong {
         margin-top: -2px;
     }
-
     #sinhvien svg {
         color: white;
         margin-right: 5px;
     }
-
-    #sinhvien .col-sm-12 {
+    #sinhvien .col-sm-12{
         border-radius: 5px;
     }
-
     #sinhvien .col-sm-9 svg {
         color: rgb(0, 0, 0);
         margin-right: 5px;
     }
-
     #sinhvien .col-sm-9 button {
         margin: 0 auto;
         color: white;
@@ -373,8 +365,8 @@
         padding: 7px 12px;
         font-weight: 700;
         border-radius: 5px;
+        
     }
-
     #sinhvien .col-sm-9 button:hover {
         margin: 0 auto;
         color: white;
@@ -383,35 +375,32 @@
         padding: 8px 14px;
         font-weight: 700;
         border-radius: 5px;
-    }
 
-    #sinhvien .btn, .btn-white-36 {
+    }
+    #sinhvien  .btn, .btn-white-36{
         background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
-    }
-
+    } 
     #sinhvien .mr-center {
         margin: 0 auto;
     }
-
     #sinhvien ul li {
         list-style-type: none;
     }
-
+    
     #sinhvien .h-big-box {
         background: #fff;
         border-radius: 10px;
     }
-
+    
     #sinhvien .h-sidebar-img {
         border: 3px solid #d65a29;
         border-radius: 30px;
     }
-
     /** SIDE BAR LEFT **/
-
+    
     #sinhvien .h-sidebar-container {
         border-top: 1px rgb(228, 228, 228) solid;
-        border-left: 1px rgb(228, 228, 228) solid;
+    border-left: 1px rgb(228, 228, 228) solid;
         width: 23%;
         height: 100%;
         overflow-x: hidden;
@@ -420,14 +409,13 @@
         color: #fff;
         border-radius: 10px;
     }
-
     /* .h-box-left {} */
-
+    
     #sinhvien .h-box-right {
         width: 75%;
         border-radius: 10px;
     }
-
+    
     #sinhvien .h-box1 {
         max-height: 500px;
         overflow-y: auto;
@@ -466,7 +454,7 @@
         background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
         color: #fff;
     }
-
+    
     #sinhvien .h-sidebar-navigation li a:hover {
         color: #fff;
     }
@@ -496,12 +484,11 @@
         width: 42px;
         z-index: -1;
     }
-
+    
     #sinhvien .h-sidebar-navigation li:hover::before {
         width: 100%;
         border-radius: 0;
     }
-
     #sinhvien .sv4 {
         height: 450px;
         padding: 10px 20px;
@@ -513,22 +500,18 @@
     }
 
     /* */
-
     #sinhvien .tt-dau {
         color: rgb(255, 255, 255);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         border-top-right-radius: 100px;
         border-top-left-radius: 5px;
     }
-
     #sinhvien .tt-dau a {
         color: rgb(255, 255, 255);
     }
-
     #sinhvien .tt-dau a:hover {
         color: rgb(255, 136, 0);
     }
-
     #sinhvien .tt-dau img {
         width: 140px;
         border: 2px rgb(253, 253, 253) solid;
@@ -550,7 +533,6 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         object-fit: cover;
     }
-
     #sinhvien .bg-ds {
         margin-left: -7px;
         background-image: url("../images/logofpt.png");
@@ -566,7 +548,6 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         object-fit: cover;
     }
-
     #sinhvien .bg-ds1 {
         margin-left: -7px;
         background-image: url("../images/lgvinfast.jpg");
@@ -582,32 +563,26 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         object-fit: cover;
     }
-
     .thongtin1 {
         float: left;
         width: 100%;
         font-size: 12pt;
         font-weight: 500;
     }
-
     #sinhvien .thongtin1 a:hover {
         color: rgb(35, 53, 211);
     }
-
     #sinhvien .form-control {
         border: 1px rgb(54, 54, 54) solid;
     }
-
-    #sinhvien .ds-hva a:hover {
+    #sinhvien .ds-hva a:hover{
         color: tomato;
     }
-
     #sinhvien .taohoso {
         float: left;
         width: 17%;
         font-weight: 500;
     }
-
     #sinhvien .btn-white-36 {
         width: 120px;
         border: 1px solid #6b6b6b;
@@ -615,26 +590,23 @@
         padding: 5px 0;
         border-radius: 2px;
     }
-
     #sinhvien .btn-white-36:hover {
         background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);
         color: rgb(255, 255, 255);
     }
-
     #sinhvien .buttoncapnhat {
         background-color: rgb(35, 53, 211);
         border: 1px rgb(35, 53, 211) solid;
         font-weight: 400;
         padding: 5px 10px;
         border-radius: 2px;
+        
         color: white;
-    }
-
+    } 
     #sinhvien .buttoncapnhat:hover {
         background-color: rgb(5, 24, 192);
         color: white;
     }
-
     #sinhvien .buttonhuy {
         border: 1px rgb(255, 250, 250);
         font-weight: 400;
@@ -642,23 +614,19 @@
         border-radius: 2px;
         color: rgb(255, 255, 255);
     }
-
     #sinhvien .buttonhuy:hover {
         background-color: rgb(182, 183, 189);
         color: white;
     }
-
     #sinhvien .modal-content1 {
         margin-top: 100px;
         margin-left: 100px;
     }
 
     /* */
-
-    #sinhvien.col-sm-3 a img:hover {
+    #sinhvien.col-sm-3 a img:hover{
         opacity: 0.6;
     }
-
     #sinhvien .sv-12 {
         background-image: linear-gradient(-25deg, #d1d1d1 0%, #c1ecfd 100%);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
@@ -666,29 +634,27 @@
         border-top: 1px rgb(228, 228, 228) solid;
         border-left: 1px rgb(228, 228, 228) solid;
     }
-
     #sinhvien .sv8-12 {
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         border-top: 1px rgb(228, 228, 228) solid;
         border-left: 1px rgb(228, 228, 228) solid;
     }
-
-    #sinhvien .item {
+    #sinhvien .item{
         border-radius: 50%;
         color: rgb(0, 0, 0);
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         align-items: center;
     }
-
-    #sinhvien span {
+    #sinhvien span{
         font-weight: bold;
-        font-size: 12pt;
-    }
 
+        font-size: 12pt;
+    } 
     /* ----------- sinh vien cuoi ------------ */
 
     /* Nghia  cv */
@@ -1145,15 +1111,13 @@
 
     #doanhnghiep .h-sidebar-navigation li a {
         font-size: 10pt;
-        padding: 10px 15px 10px 20px;
+        padding: 10px 20px 10px 20px;
         display: block;
-        color: #333;
-        font-weight: 500;
+        color: #343a40;
     }
 
     #doanhnghiep .h-sidebar-navigation li .fa, .h-sidebar-navigation li .fas, .h-sidebar-navigation li .far {
         font-size: 13px;
-        text-align: right;
         color: #fff;
     }
 
@@ -1172,7 +1136,7 @@
         font-size: 12pt;
         text-transform: uppercase;
         background-color: #2574A9;
-        padding: 10px 15px 10px 20px;        
+        padding: 10px 15px 10px 20px;
     }
 
     #doanhnghiep .h-sidebar-navigation .h-header::before {
@@ -1201,11 +1165,6 @@
 
     /* Thong tin tai khoan - Hoang */
 
-    #doanhnghiep .h-not-allowed {
-        cursor: not-allowed;
-        color: #bebebe;
-    }
-
     #doanhnghiep .h-tt-left {
         float: left;
         width: 48%;
@@ -1222,8 +1181,6 @@
         justify-content: space-between;
         align-items: center;
     }
-
-    /* Hover Image - Upload image*/
 
     #doanhnghiep .h-tt-left-img {
         float: left;
@@ -1259,16 +1216,6 @@
         transform: scale(1);
         transition: ease-in-out 0.3s;
     }
-
-    #doanhnghiep .h-custom-file-input {
-       width: 100%;
-       padding: 5px;
-       cursor: pointer;
-       border: 1px solid #ccc;
-    }
-
-
-    /* End Hover Image - Upload image*/
 
     #doanhnghiep .h-tt-left-text {
         float: left;
@@ -1324,9 +1271,9 @@
     #doanhnghiep .h-box-dn-img:hover div.h-box-dn-txt {
         opacity: 1;
         /* transform: translateY(50px); */
-        transition: ease-in-out 0.5s;
+        transition:ease-in-out 0.5s;
     }
-
+        
     #doanhnghiep .h-tt-left-img:hover div.h-tt-left-img-txt {
         opacity: 1;
         transform: scale(1);

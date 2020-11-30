@@ -228,7 +228,7 @@
                     <li class="h-header">TÀI KHOẢN</li>
                     <li>
                         <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
-                            <i class="far fa-user-tie"></i> Thông tin tài khoản
+                            <i class="fas fa-user-tie"></i> Thông tin tài khoản
                         </a>
                     </li>
                     <li>
@@ -244,17 +244,12 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="far fa-users-cog" aria-hidden="true"></i> Quản lý nhân sự
+                            <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
                         </a>
                     </li>
                     <li>
                         <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=dshs">
-                            <i class="far fa-folder" aria-hidden="true"></i> Quản lý hồ sơ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
+                            <i class="far fa-address-card" aria-hidden="true"></i> Quản lý hồ sơ
                         </a>
                     </li>
                     <li>
