@@ -1,20 +1,16 @@
                            <div class="bg-ttcn">
                                 
                            <div class="media boder p-3 tt-dau bg-tt">                             
-                                <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" class="mr-3 mt-3 ml-3">                                       
+                           <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" class="mr-3 mt-3 ml-3 " >
                             <div class="thongtin1">
                                 <div class=" media-body ml-4"><br>
-                                    <h3>Monkey D.Garp </h3>
+                                <h3><?=$ttsv['ho_ten']?> </h3>
                                     <p > Thực tập sinh.</p> 
                                     <hr class="mr-5" style="background: rgb(0, 0, 0);width: 98% ;">     
                                     <i class="fa fa-phone mr-3" style="font-size: 12pt; transform: scaleX(-1);"></i>
-                                    <a href="#">
-                                        0123456789 </a> <a href="#"> <i  class="fa fa-pencil ml-2"></i>
-                                    </a><br>
+                                    <?=$ttsv['sdt']?>  <br>
                                     <i class="fa fa-home mt-3 mr-3" style="font-size: 12pt;"></i> 
-                                    <a href="#">
-                                        //Bé Lê Văn Đạt, Quận Cam, Sài Gòn. </a> <a href="#"> <i  class="fa fa-pencil ml-2"></i>
-                                    </a>
+                                    <?=$ttsv['dia_chi']?> 
                                     </div>
                             </div>
                             </div>

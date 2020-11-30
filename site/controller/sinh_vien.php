@@ -59,6 +59,12 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
         $view_sv = "view/ttcn_index.php";
     break;
+    case "tao_cv":
+      $view = "view/cv_add.php";
+    break;
+    case "cv_add":
+
+    break;
   }
   $view="view/layout_sv.php";
   require_once "view/layout.php";
@@ -68,4 +74,5 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
           $ds_nn=ds_nn(); 
           require_once "view/layout.php";
 }
+
 ?>
