@@ -10,10 +10,152 @@
     </div>
 </div>
 <div class="row m-2">
-    <div class="col-3"><img src="views/images/<?= $row['anh'] ?>" width="80%"
-            onerror="this.src='views/images/avt.jpg';"></div>
-    <div class="col-7">
-        <?php
+    <div class="col-4 ">
+        <div class="col-12 shadow-lg">
+            <img src="https://p-10.nl/wp-content/uploads/2017/12/vnglogo-1024x576.jpg" class="img-fluid"
+                alt="Responsive image">
+            <div class="row py-1">
+                <div class="col-12  ">
+                    Doanh nghiệp đăng tuyển:<b> Nghĩa đẹp trai</b>
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-12">
+                    <i class="fa fa-envelope"></i> Email:<b> Nghiadeptrai@gmail.com</b>
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-12">
+                    <i class="fa fa-phone"></i> Sđt:<b> 0944810751</b>
+                </div>
+            </div>
+            <div class="row py-1">
+                <div class="col-12">
+                    Trạng thái: <b class="text-success">Đang tuyển</b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-7  shadow-lg ml-4 py-4">
+        <table>
+            <tbody>
+                <tr>
+                    <td> Ngành tuyển</td>
+                    <td class="px-5">
+                        <input type=" text" class="form-control" readonly="readonly" value="Thiết kế đồ họa">
+                    </td>
+                </tr>
+                <tr style="height:20px;"></tr>
+                <tr>
+                    <td>Mức lương</td>
+                    <td class="px-5">
+                        <input type=" text" class="form-control" readonly="readonly" value="2Tr ~ 3Tr VND">
+                    </td>
+                </tr>
+                <tr style="height:20px;"></tr>
+                <tr>
+                    <td>Thời gian thực tập</td>
+                    <td class="px-5">
+                        <input type=" text" class="form-control" readonly="readonly" value="3 Tháng">
+                    </td>
+                </tr>
+                <tr style="height:20px;"></tr>
+                <tr>
+                    <td> Số lượng thực tập sinh cần tuyển</td>
+                    <td class="px-5">
+                        <input type=" text" class="form-control" readonly="readonly" value="26">
+                    </td>
+                </tr>
+                <tr style="height:20px;"></tr>
+                <tr>
+                    <td> Hình thức</td>
+                    <td class="px-5">
+                        <div class="form-check-inline w-100">
+                            <input type=" text" class="form-control" readonly="readonly" value="Thực tập sinh">
+                            <input type=" text" class="form-control  ml-3" readonly="readonly" value="Fulltime">
+                        </div>
+                    </td>
+                </tr>
+                <tr style="height:20px;"></tr>
+                <tr>
+                    <td> Doanh nghiệp đăng tuyển</td>
+                    <td class="px-5">
+                        <input type=" text" class="form-control" readonly="readonly" value="Nghĩa đẹp trai">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row mx-1 mt-4">
+            Phúc lợi
+        </div>
+        <div class="row  mx-1 mt-2">
+            <div class="col-6">
+                <div class="custom-control custom-checkbox  mb-2">
+                    <input type="checkbox" class="custom-control-input" onclick="return false;" id="defaultInline3"
+                        checked>
+                    <label class="custom-control-label" for="defaultInline3"> <i class="fas fa-award"></i> Chế độ
+                        thưởng</label>
+                </div>
+                <div class="custom-control custom-checkbox  mb-2">
+                    <input type="checkbox" class="custom-control-input" onclick="return false;" id="defaultInline4">
+                    <label class="custom-control-label" for="defaultInline4"><i class="	fas fa-atom "></i> Chương trình
+                        đào tạo</label>
+                </div>
+                <div class="custom-control custom-checkbox  mb-2">
+                    <input type="checkbox" class="custom-control-input" onclick="return false;" id="defaultInline5"
+                        checked>
+                    <label class="custom-control-label" for="defaultInline5"><i class="fa fa-level-up"></i> Tăng
+                        lương</label>
+                </div>
+
+            </div>
+            <div class="col-6">
+                <div class="custom-control custom-checkbox  mb-2">
+                    <input type="checkbox" class="custom-control-input" onclick="return false;" id="defaultInline6"
+                        checked>
+                    <label class="custom-control-label" for="defaultInline6"><i class="fa fa-laptop"></i> Laptop</label>
+                </div>
+                <div class="custom-control custom-checkbox  mb-2">
+                    <input type="checkbox" class="custom-control-input" onclick="return false;" id="defaultInline2">
+                    <label class="custom-control-label" for="defaultInline2"><i class="fas fa-suitcase"></i> Du
+                        lịch</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-1 mt-4">
+            Mô tả công việc
+        </div>
+        <div class="row mx-1 mt-2">
+            <div class="col-12">
+                <div class="md-form">
+                    <textarea id="form7" class="md-textarea form-control" readonly rows="4"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mx-1 mt-4">
+            Yêu cầu công việc
+        </div>
+        <div class="row mx-1 mt-2">
+            <div class="col-12">
+                <div class="md-form">
+                    <textarea id="form7" class="md-textarea form-control" readonly rows="4"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mx-1 mt-4">
+            thông tin khác
+        </div>
+        <div class="row mx-1 mt-2">
+            <div class="col-12">
+                <div class="md-form">
+                    <textarea id="form7" class="md-textarea form-control" readonly rows="3"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <!-- <?php
                      $ds = getAllDoanhnghiep();
                        foreach ($ds as $r) { ?>
         <?php if ($row['id_dn'] == $r['id_dn']) { ?>
@@ -35,7 +177,6 @@
             <div class="col-4 bg-primary text-white py-3 rounded-left">
                 <b> Ngành tuyển </b>
             </div>
-
             <div class="col-6  py-3 border-top border-right border-bottom rounded-right">
                 <?= $r['ten_nganh'] ?>
             </div>
@@ -73,7 +214,7 @@
             <div class="col-6  py-3 border-top border-right border-bottom rounded-right">
                 <?= $row['sl_sv_dk'] ?>
             </div>
-        </div>
+        </div> -->
         <div class="row  mx-1 mb-1 mt-4">
             <button class="btn btn-success mr-2"><a class="text-light"
                     href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
@@ -82,7 +223,7 @@
                     href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
                     onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
         </div>
-<!-- 
+        <!-- 
         <ul class="list-group">
             <li class="list-group-item"><?php
                                         $ds = getAllDoanhnghiep();
