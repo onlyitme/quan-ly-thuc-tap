@@ -283,17 +283,6 @@
 
                                 </div>   
                             </div>
-                            <div class="row">
-                                    <input type="radio"id="hoso" name="hoso"value="1" style="width: 40px;" class="mt-2">
-                                    <p>Cho phép doanh nghiệp xem hồ sơ của bạn.</p><br>
-                            </div>
-                            <div class="row" style="margin-top: -10px;">
-                                    <input type="radio"id="hoso" name="hoso"value="1" style="width: 40px;" class="mt-2">
-                                    <p>
-                                        <span style="color: rgb(253, 128, 25);">Không</span> cho phép doanh nghiệp xem hồ sơ của bạn.
-                                    </p>
-                                    <br>
-                            </div>
                             
                             <div class="col-12 text-center mt-2 mb-3">
                                 <a href="file:///C:/Users/ASUS/Documents/GitHub/quan-ly-thuc-tap/site/view/sv3-qlhoso.html">
@@ -304,13 +293,6 @@
                                             <path fill-rule="evenodd" d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z"/>
                                           </svg>
                                         Lưu hồ sơ
-                                    </button>
-                                    <button class="buttonhuy ml-2" type="button"> 
-                                        <svg style="color:white;" width="1.3em" height="1.3em" viewBox="0 0 16 16" class="bi bi-x-circle mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                                            <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
-                                        </svg>
-                                        Hủy
                                     </button>
                                 </a>
                                 
