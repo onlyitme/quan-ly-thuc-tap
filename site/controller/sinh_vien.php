@@ -36,17 +36,16 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $mssv=$_POST['mssv'];
         $gioi_tinh=$_POST['gioi_tinh'];
 
+       if(isset($_FILES['anh']['name'])){
         $anh=$_FILES['anh']['name'];
-
         $target_dir = "../uploads/";
         $target_file = $target_dir ."$mssv-".basename($anh);
         move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file);
 
         if(isset($anh)&&$anh!=''){
             $anh=$mssv."-".basename($anh);
-        }
+        }}else $anh='';
        
-        echo "<script type='text/javascript'>alert(' $anh');</script>";
         $day=$_POST['day'];
         $month=$_POST['month'];
         $year=$_POST['year'];
@@ -60,11 +59,73 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $view_sv = "view/ttcn_index.php";
     break;
     case "cv_index":
+      $thongtincv=thongtincv();
       $view_sv = "view/cv_index.php";
     break;
     case "cv_edit":
-      $view_sv = "view/cv_edit.php";
+      if(isset($_GET['trang']))$i=$_GET['trang'];else $i=0;
+      $thongtincv=thongtincv();
+      if($i==1)$view_sv = "view/cv_edit_1.php";
+      elseif($i==2)$view_sv = "view/cv_edit_2.php";
+      elseif($i==3)$view_sv = "view/cv_edit_3.php";
+      else $view_sv = "view/cv_edit.php";
     break;
+    case "cv_update":
+      if(isset($_GET['trang']))$i=$_GET['trang'];else $i=0;
+      if($i==0){
+        $tieu_de=$_POST['tieu_de'];
+        $trinh_do=$_POST['trinh_do'];
+        $noi_lam_viec=$_POST['noi_lam_viec'];
+        $muc_tieu_nghe_nghiep=$_POST['muc_tieu_nghe_nghiep'];
+        $ky_nang_so_truong=$_POST['ky_nang_so_truong'];
+        $so_thich=$_POST['so_thich'];
+        $ky_nang_dac_biet=$_POST['ky_nang_dac_biet'];
+        $word=$_POST['word'];
+        $excel=$_POST['excel'];
+        $power_point=$_POST['power_point'];
+        $outlook=$_POST['outlook'];
+        $ung_dung_khac=$_POST['ung_dung_khac'];
+        $av_nghe=$_POST['av_nghe'];
+        $av_noi=$_POST['av_noi'];
+        $av_doc=$_POST['av_doc'];
+        $av_viet=$_POST['av_viet'];
+        $ngon_ngu_khac=$_POST['ngon_ngu_khac'];
+        $ngay_cap_nhap=date("Y/m/d");
+        updatecv($tieu_de,$trinh_do,$noi_lam_viec,$muc_tieu_nghe_nghiep,$ky_nang_so_truong,$so_thich,$ky_nang_dac_biet,$word,$excel,$power_point,$outlook,$ung_dung_khac,$av_nghe,$av_noi,$av_doc,$av_viet,$ngon_ngu_khac,$ngay_cap_nhap);
+      }elseif($i==1){
+        $tieu_de=$_POST['tieu_de'];
+        $trinh_do=$_POST['trinh_do'];
+        $noi_lam_viec=$_POST['noi_lam_viec'];
+        $muc_tieu_nghe_nghiep=$_POST['muc_tieu_nghe_nghiep'];
+        $ngay_cap_nhap=date("Y/m/d");
+        updatecv_1($tieu_de,$trinh_do,$noi_lam_viec,$muc_tieu_nghe_nghiep,$ngay_cap_nhap);
+      }
+      elseif($i==2){
+        $ky_nang_so_truong=$_POST['ky_nang_so_truong'];
+        $so_thich=$_POST['so_thich'];
+        $ky_nang_dac_biet=$_POST['ky_nang_dac_biet'];
+        $ngay_cap_nhap=date("Y/m/d");
+        updatecv_2($ky_nang_so_truong,$so_thich,$ky_nang_dac_biet,$ngay_cap_nhap);
+      }
+      elseif($i==3){
+        $word=$_POST['word'];
+        $excel=$_POST['excel'];
+        $power_point=$_POST['power_point'];
+        $outlook=$_POST['outlook'];
+        $ung_dung_khac=$_POST['ung_dung_khac'];
+        $av_nghe=$_POST['av_nghe'];
+        $av_noi=$_POST['av_noi'];
+        $av_doc=$_POST['av_doc'];
+        $av_viet=$_POST['av_viet'];
+        $ngon_ngu_khac=$_POST['ngon_ngu_khac'];
+        $ngay_cap_nhap=date("Y/m/d");
+        updatecv_3($word,$excel,$power_point,$outlook,$ung_dung_khac,$av_nghe,$av_noi,$av_doc,$av_viet,$ngon_ngu_khac,$ngay_cap_nhap);
+      }
+      echo "<script type='text/javascript'>alert('Cập Nhập Hồ Sơ Thành Công');</script>";
+      $thongtincv=thongtincv();
+      $view_sv = "view/cv_index.php";
+    break;
+
   }
   $view="view/layout_sv.php";
   require_once "view/layout.php";

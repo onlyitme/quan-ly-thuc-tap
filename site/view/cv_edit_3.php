@@ -1,80 +1,5 @@
-<form action="index.php?ctrl=sinh_vien&act=cv_update" method="POSt">
-                            <div class="media boder p-3 sv8-12 mb-3">
-                                <div class="row col-sm-12" style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
-                                        <h5 style="font-weight: 700;">THÔNG TIN CHUNG</h5>           
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Tiêu đề hồ sơ</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2" value="<?=$thongtincv['tieu_de']?>" placeholder="Tiêu đề" name="tieu_de"></p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Trình độ cao nhất</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                                        <p>
-                                            <select style="width:100%;padding: 6px 0;" name="trinh_do" ><option value="0" <?php if($thongtincv['trinh_do']==0) echo "selected";?>>Tự Học</option><option value="1" <?php if($thongtincv['trinh_do']==1) echo "selected";?>>Trung cấp</option><option value="2" <?php if($thongtincv['trinh_do']==2) echo "selected";?>>Cao đẳng</option><option value="3" <?php if($thongtincv['trinh_do']==3) echo "selected";?>>Đại học</option><option value="4" <?php if($thongtincv['trinh_do']==4) echo "selected";?>>Cao học</option></select>
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Nơi làm việc mong muốn</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                                        <p>
-                                            <select style="width:100%;padding: 6px 0;" name="noi_lam_viec" ><option value="0" <?php if($thongtincv['noi_lam_viec']==0) echo "selected";?>>Chưa xác định</option><option value="1" <?php if($thongtincv['noi_lam_viec']==1) echo "selected";?>>Hà Nội</option><option value="2" <?php if($thongtincv['noi_lam_viec']==2) echo "selected";?>>Đà Nẵng</option><option value="3" <?php if($thongtincv['noi_lam_viec']==3) echo "selected";?>>Tây Nguyên</option><option value="4" <?php if($thongtincv['noi_lam_viec']==4) echo "selected";?>>Tp.HCM</option><option value="5" <?php if($thongtincv['noi_lam_viec']==5) echo "selected";?>>Cần Thơ</option></select>
-                                            
-                                        </p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Mục tiêu nghề nghiệp</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ">
-                                        <textarea style="height: 135px; width: 100%;" id="career_obj" name="muc_tieu_nghe_nghiep"  class="mb-3 input-text  validate[required,minSize[5],maxSize[1000]] font13 input-has-tooltip select_form_ttc inputbox-success" data-errormessage-value-missing="Yêu cầu nhập mục tiêu nghề nghiệp." ><?=$thongtincv['muc_tieu_nghe_nghiep']?></textarea>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>
-
-                            <div class="col-sm-12 ">
-                                <div class="col-sm-2 mr-center">
-                                    <hr style="background: rgb(110, 110, 110);">
-                                </div>     
-                            </div>
-                            <div class="media boder p-3 sv8-12 mt-3 mb-3">
-                                <div class="row col-sm-12"style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
-                                    <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
-                                        <h5 style="font-weight: 700;">KĨ NĂNG & SỞ TRƯỜNG</h5> 
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Kỹ năng làm việc</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                                    <textarea style="height: 100px; width: 100%;" id="career_obj" name="ky_nang_so_truong" class="mb-3 input-text  validate[required,minSize[5],maxSize[1000]] font13 input-has-tooltip select_form_ttc inputbox-success" data-errormessage-value-missing="Yêu cầu nhập mục tiêu nghề nghiệp."><?=$thongtincv['ky_nang_so_truong']?></textarea>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Sở thích</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                                        <textarea style="height: 100px; width: 100%;" id="career_obj" name="so_thich" class="mb-3 input-text  validate[required,minSize[5],maxSize[1000]] font13 input-has-tooltip select_form_ttc inputbox-success" data-errormessage-value-missing="Yêu cầu nhập mục tiêu nghề nghiệp."><?=$thongtincv['so_thich']?></textarea>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mt-3">
-                                        <p><strong>Kỹ năng đặc biệt/tài lẻ</strong> </p>           
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 mt-3">
-                                        <textarea style="height: 100px; width: 100%;" id="career_obj" name="ky_nang_dac_biet" class="mb-3 input-text  validate[required,minSize[5],maxSize[1000]] font13 input-has-tooltip select_form_ttc inputbox-success" data-errormessage-value-missing="Yêu cầu nhập mục tiêu nghề nghiệp." ><?=$thongtincv['ky_nang_dac_biet']?></textarea>
-                                    </div>
-                                </div>   
-                            </div>
-                            <div class="col-sm-12 ">
-                                <div class="col-sm-2 mr-center">
-                                    <hr style="background: rgb(110, 110, 110);">
-                                </div>     
-                            </div>
-                            <div class="media boder p-3 sv8-12 mt-3 mb-3">
+<form action="index.php?ctrl=sinh_vien&act=cv_update&trang=3" method="POSt">                 
+<div class="media boder p-3 sv8-12 mt-3 mb-3">
                                 <div class="row col-sm-12"style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
                                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
                                         <h5 style="font-weight: 700;">TIN HỌC & NGOẠI NGỮ</h5>  
@@ -279,5 +204,4 @@
                                 </a>
                                 
                             </div>
-                            </form>
-                        
+</form>
