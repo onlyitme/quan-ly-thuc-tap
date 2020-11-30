@@ -14,6 +14,7 @@
       
        
     </script>
+   
 <div id="list-job">
     <div class="row bg-light shadow-sm  py-3 ">
         <form action="" method="post" class="d-lg-flex col-lg-9">
@@ -90,7 +91,10 @@
             $noi_lam_viec=$thongtindn['tinh_tp'];
             $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
             $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
-            
+            if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
+                $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển</button>';
+            }
+            else $button_nopdon = "";
             echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
             <div class="row align-items-center  p-3">
                 <div class="col-lg-8">
@@ -98,7 +102,8 @@
                     <p class="font-weight-bold text-gray mb-0">'.$thongtindn['ten_dn'].'</p>
                 </div>
                 <div class="col-lg-4 text-right">
-                    <button type="submit" class="btn btn-info ">Nộp đơn ứng tuyển</button>
+                '.$button_nopdon.'
+                
                 </div>
             </div>
             <div class="row p-3">
