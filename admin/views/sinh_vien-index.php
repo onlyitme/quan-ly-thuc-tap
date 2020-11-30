@@ -113,7 +113,7 @@ if(isset($_POST['btn'])){
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
-                                <select name="id_nganh" class="form-control">
+                                <select name="id_nganh" class="form-control" required>
                                     <option value="">Chọn ngành</option>
                                     <?php require_once "models/nganh.php";
                                     $ds = getAllNganh();

@@ -4,7 +4,7 @@
         <h1>Thêm ngành</h1>
     </div>
         <div class="form-group">
-            <select name="id_nn" class="form-control">
+            <select name="id_nn" class="form-control" required>
                 <option value="">Chọn nhóm ngành</option>
                 <?php require_once "models/nhom_nganh.php";
                 $ds = getAllNhomnganh();
