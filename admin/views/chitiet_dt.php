@@ -257,4 +257,4 @@
 </div>
 <hr>
 <h3>Mô tả</h3>
-<div class="mb-4">- <?= $row['mo_ta'] ?></div>
+<!-- <div class="mb-4">- <?= $row['mo_ta'] ?></div> -->
