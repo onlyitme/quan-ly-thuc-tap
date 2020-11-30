@@ -32,7 +32,7 @@
                 }else if(data == 2){alert("bạn sẽ chuyển tới trang ADmin");
                     window.location="../admin/index.php";
                 }else{
-                    document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng";
+                    document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
                 }
             }
           });
@@ -257,26 +257,29 @@
                         <img src="view/images/login.jpg" alt="">
                     </div>
                     <div class="col-lg-6 ">
-                        <h3>Đăng Nhập</h3>
-                        <form action="javascript:getcontent()">
+                        <h2 class="font-weight-bold">Đăng Nhập</h2>
+                        <form action="javascript:getcontent()" class="mt-4">
+
+                        <div style="min-height: 30px;"> <p id="dangnhapsai" style="color:red"></p></div>
+
                             
                             <div class="form-group">
-                                <label for="">Tên đăng nhập</label>
+                                <!-- <label for="">Tên đăng nhập</label> -->
                                 <input type="text" name="user" id="user" class="form-control" 
-                                    aria-describedby="helpId">
+                                    aria-describedby="helpId" placeholder="Tên tài khoản ...">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                             <div class="form-group">
-                                <label for="">Mật khẩu</label>
+                                <!-- <label for="">Mật khẩu</label> -->
                                 <input type="password" name="pass" id="pass" class="form-control" 
-                                    aria-describedby="helpId">
+                                    aria-describedby="helpId" placeholder="Mật khẩu ...">
                                 <small id="helpId" class="text-muted"></small>
                             </div>
-                            <div><p id="dangnhapsai" style="color:red"></p></div>
-                            <button type="submit" id="login"  class="btn btn-primary btn-block">Đăng nhập</button>
+                            
+                            <button type="submit" id="login"  class="btn btn-primary btn-block mt-4">Đăng nhập</button>
                       
                         </form>
-                        <a href="" class="text-primary">Quên mật khẩu ?</a>
+                        <a href="" class="text-primary mt-3 d-block">Quên mật khẩu ?</a>
                     </div>
                 </div>
 
