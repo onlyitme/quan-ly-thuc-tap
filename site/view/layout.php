@@ -110,26 +110,6 @@
     </header>
     <!-- Show box login & Box đăng tuyển-->
     <?php if(isset($_SESSION['sid'])){ ?>
-    <!-- baokun -->
-    <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Nguyện vọng</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                    </div>
-                    <div class="modal-body">
-                        <textarea name="" id="" class="w-100"  rows="10"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     <!-- Chỗ đẻ của Nghĩa dep trai -->
     <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -278,7 +258,8 @@
                     </div>
                     <div class="col-lg-6 ">
                         <h3>Đăng Nhập</h3>
-                        
+                        <form action="javascript:getcontent()">
+                            
                             <div class="form-group">
                                 <label for="">Tên đăng nhập</label>
                                 <input type="text" name="user" id="user" class="form-control" 
@@ -292,8 +273,9 @@
                                 <small id="helpId" class="text-muted"></small>
                             </div>
                             <div><p id="dangnhapsai" style="color:red"></p></div>
-                            <button type="submit" id="login" onclick="getcontent()" class="btn btn-primary btn-block">Đăng nhập</button>
+                            <button type="submit" id="login"  class="btn btn-primary btn-block">Đăng nhập</button>
                       
+                        </form>
                         <a href="" class="text-primary">Quên mật khẩu ?</a>
                     </div>
                 </div>

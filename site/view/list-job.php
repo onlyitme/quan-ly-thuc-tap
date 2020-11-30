@@ -11,10 +11,35 @@
             }
           });
       }
-      
+      function nopdonungtuyen(id_dt){
+            var nguyen_vong = $("textarea[name=nd-nguyenvong]").val();
+            
+        $.ajax({
+            type: "post",
+            url: "index.php?act=nopdonungtuyen",
+            data: {nguyen_vong: nguyen_vong,id_dt: id_dt},
+            success: function (response) {
+                $("#thongtindt").html(response)
+                $(".modal-backdrop").hide();
+            }
+        });
+      }
+      function xoaphieudk(id_sv,id_dt){
+        var y = confirm("Bạn chắc chắn muốn hủy đơn ứng tuyển của mình chứ ?");
+        if(y == true){
+            $.ajax({
+                type: "post",
+                url: "index.php?act=xoadonungtuyen",
+                data: {id_sv: id_sv, id_dt: id_dt},
+                success: function (response) {
+                    $("#thongtindt").html(response)
+                }
+            });
+        }
+      }
        
     </script>
-   
+
 <div id="list-job">
     <div class="row bg-light shadow-sm  py-3 ">
         <form action="" method="post" class="d-lg-flex col-lg-9">
@@ -91,22 +116,46 @@
             $noi_lam_viec=$thongtindn['tinh_tp'];
             $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
             $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
+            
             if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
-                $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển</button>';
+                if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt'])) ){
+                    $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
+                }
+                else $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
             }
             else $button_nopdon = "";
             echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
-            <div class="row align-items-center  p-3">
+            <div class="row align-items-center bg-light p-3">
                 <div class="col-lg-8">
                     <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
                     <p class="font-weight-bold text-gray mb-0">'.$thongtindn['ten_dn'].'</p>
                 </div>
                 <div class="col-lg-4 text-right">
                 '.$button_nopdon.'
-                
+                    <!-- baokun -->
+                    <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <form action="javascript:nopdonungtuyen('.$thongtindt['id_dt'].')">
+                                    <div class="modal-header  alert  bg-info text-light">
+                                        <h3 class="modal-title font-weight-bold"><i class="fas fa-pen-alt"></i> Nguyện Vọng</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <textarea name="nd-nguyenvong" id="nd_nguyenvong" class="form-control w-100 p-3 border-0 shadow-none"  rows="6" placeholder="Hãy điền nguyện vọng của bạn để được tuyển dụng nào !"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-info px-5">Xác nhận</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>   
                 </div>
             </div>
-            <div class="row p-3">
+            <div class="row p-3 ">
                 <div class="col-lg-7">
                     <div class="mb-3">
                         <h5>Phúc lợi</h5>

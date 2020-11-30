@@ -51,6 +51,31 @@ require_once('model/sinh_vien.php');
           $view = "view/list-job.php";
         require_once "view/layout.php";
     break;
+    case 'nopdonungtuyen':
+      if( isset($_POST['nguyen_vong'])){
+        $thongtindt= checkdangtuyenbyid($_POST['id_dt']);
+        $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+        $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+
+        $nguyen_vong = $_POST['nguyen_vong'];
+        $id_dt = $_POST['id_dt'];
+        $id_sv = $_SESSION['sid_sv'];
+        $ngay_dk = date("d/m/Y");
+        // echo($ngay_dk);
+        // echo "<script type='text/javascript'>alert('$id_sv,$ngay_dk,$nguyen_vong,$id_dt,$thongtindt[id_dn]');</script>";
+        addphieudkin($id_sv,$ngay_dk,$nguyen_vong,$id_dt,$thongtindt['id_dn']);
+        if(isset($_POST['jobdetail'])) require_once  "view/job-detail.php";
+        else require_once 'view/ajax_chitiet_dangtuyen.php';       
+      }
+      break;
+    case 'xoadonungtuyen':
+        xoadonungtuyen($_POST['id_sv'],$_POST['id_dt']);
+        
+        $thongtindt= checkdangtuyenbyid($_POST['id_dt']);
+        $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
+        $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
+        require_once 'view/ajax_chitiet_dangtuyen.php';
+      break;
     case "chitietdangtuyen": 
       if (isset($_GET['iddangtuyen'])){
         echo "<script type='text/javascript'>alert('addaa');</script>";

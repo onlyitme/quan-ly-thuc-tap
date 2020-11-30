@@ -54,4 +54,18 @@ function thongtindangtuyen($id_nganh){
     $sql ="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
     return query($sql);
 }
+//BAOKUN nè.!
+function addphieudkin($id_sv,$ngay_dk,$nguyen_vong,$id_dt,$id_dn){
+    $sql = "INSERT INTO phieu_dk_in (id_sv,ngay_dk,nguyen_vong,id_dt,id_dn)
+            values('$id_sv','$ngay_dk','$nguyen_vong','$id_dt','$id_dn')";
+    execute($sql);
+}
+function xoadonungtuyen($id_sv,$id_dt){
+    $sql = "DELETE FROM phieu_dk_in WHERE id_sv='$id_sv' and id_dt = '$id_dt' ";
+    execute($sql);
+}
+function checkphieudkin($id_sv,$id_dt){
+    $sql = "select * from phieu_dk_in where id_sv = ".$id_sv." and id_dt = ".$id_dt."";
+    return queryOne($sql);
+}
 ?>
