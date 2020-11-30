@@ -1,5 +1,5 @@
-          <div id="home">
-                <div class="row">
+          <div id="home" class="shadow-sm">
+                <div class="row bg-light shadow my-3">
                     <div class="home-line"></div>
                     <div class="home-note col-12 text-center">
                         <h4 class=" m-auto">Tham gia ứng tuyển công việc thực tập</h4>
@@ -32,15 +32,15 @@
                                 $a=$ds_nganh['id_nganh'];
                                 $ds_dt=ds_dt($ds_nganh['id_nganh']);
                                 ?>
-                            <div id="menu<?=$a.$k?>" class="tab-pane <?php if($k==1) echo 'active';?>">
+                            <div id="menu<?=$a.$k?>" class="list-box-home  tab-pane <?php if($k==1) echo 'active';?>">
                                 <div class="row d-flex flex-wrap ">
                                 <?php $dem=1; foreach($ds_dt as $ds_dt){ 
                                     if($dem>4) break; 
                                     $thongtindn=checkdoanhnghiepbyid($ds_dt['id_dn']);
                                     ?>
-                                    <div class=" col-lg-3 col-md-6 my-3 border-bottom pb-3  float-left">
+                                    <div class=" col-lg-3 col-md-6 mt-3  pb-3  float-left">
 
-                                        <div class="card card-re h-100">
+                                        <div class="card card-re h-100 bg-light">
                                             <img class="card-img-top " src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="../uploads/700x400.png" alt="Card image cap ">
                                             <div class="card-body small">
                                                 <h5 class="card-title "><?=$ds_dt['tieu_de']?></h5>
@@ -49,13 +49,16 @@
                                                 <p class="card-text "><i class="fas fa-map-marker-alt    "></i> <?=$ds_dt['vi_tri']?></p>
                                                 <p class="card-text text-info  "><i class="fas fa-coins   text-warning    "></i> Mức lương: <?=$ds_dt['luong_khoi_dau']?> ~ <?=$ds_dt['luong_ket_thuc']?></p>
                                                 <p class="card-text  text-tomato"><i class="fas fa-calendar-alt   text-primary "></i> Hạn chót: <?=$ds_dt['thoi_gian']?></p>
-                                                <a href="index.php?act=thongtindt&id_dt=<?=$ds_dt['id_dt']?>" class="card-ab btn btn-primary font-weight-bold float-right mt-3">Xem chi tiết <i class="fas fa-align-right    "></i></a>
+                                                <a href="index.php?act=thongtindt&id_dt=<?=$ds_dt['id_dt']?>" class="card-ab btn btn-primary  float-right mt-3">Xem chi tiết <i class="fas fa-align-right    ml-2"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                     <?php if($dem==4){?>
-                                    <div class=" col-12 text-center my-3">
-                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-2 btn btn-secondary btn-inline-block font-weight-bold font-italic rounded-lg  shadow  mb-5"> Xem thêm -></a>
+                                    <!-- <div id="loadmore">
+                                    <i class="fas fa-chevron-circle-right    "></i>
+                                    </div> -->
+                                    <div class=" col-12 text-center bg-gray border-bottom border-top my-0 p-3">
+                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-2 btn btn-light border btn-inline-block font-weight-bold rounded-lg  shadow  "><span>Load more</span> <i class="fas fa-chevron-circle-down "></i></a>
                                     </div>
                                     <?php } ?>
                                     <?php  $dem++;}?>
