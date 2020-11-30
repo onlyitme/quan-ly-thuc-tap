@@ -11,13 +11,19 @@
 </div>
 <div class="row m-2">
     <div class="col-4 ">
-        <div class="col-12 shadow-lg">
+        <div class="col-12 shadow-lg py-4 rounded">
             <img src="https://p-10.nl/wp-content/uploads/2017/12/vnglogo-1024x576.jpg" class="img-fluid"
                 alt="Responsive image">
-            <div class="row py-1">
-                <div class="col-12  ">
-                    Doanh nghiệp đăng tuyển:<b> Nghĩa đẹp trai</b>
+            <div class="row py-1 ">
+                <div class="col-12 ">
+                    <?php
+                     $ds = getAllDoanhnghiep();
+                       foreach ($ds as $r) { ?>
+                    <?php if ($row['id_dn'] == $r['id_dn']) { ?>
+                    Doanh nghiệp :<b> <?= $r['ten_dn'] ?></b>
                 </div>
+                <?php } ?>
+                <?php } ?>
             </div>
             <div class="row py-1">
                 <div class="col-12">
@@ -36,20 +42,26 @@
             </div>
         </div>
     </div>
-    <div class="col-7  shadow-lg ml-4 py-4">
+    <div class="col-7  shadow-lg ml-4 py-4  rounded">
         <table>
             <tbody>
                 <tr>
                     <td> Ngành tuyển</td>
                     <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value="Thiết kế đồ họa">
+                        <?php require_once "models/nganh.php";
+                                            $ds = getAllNganh();
+                                            foreach ($ds as $r) { ?>
+                        <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
+                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $r['ten_nganh'] ?>">
+                        <?php } ?>
+                        <?php } ?>
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
                 <tr>
                     <td>Mức lương</td>
                     <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value="2Tr ~ 3Tr VND">
+                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $row['luong'] ?> VND">
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
@@ -63,7 +75,7 @@
                 <tr>
                     <td> Số lượng thực tập sinh cần tuyển</td>
                     <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value="26">
+                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $row['sl_sv_can'] ?>">
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
@@ -77,12 +89,6 @@
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
-                <tr>
-                    <td> Doanh nghiệp đăng tuyển</td>
-                    <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value="Nghĩa đẹp trai">
-                    </td>
-                </tr>
             </tbody>
         </table>
         <div class="row mx-1 mt-4">
@@ -128,7 +134,8 @@
         <div class="row mx-1 mt-2">
             <div class="col-12">
                 <div class="md-form">
-                    <textarea id="form7" class="md-textarea form-control" readonly rows="4"></textarea>
+                    <textarea id="form7" class="md-textarea form-control" readonly
+                        rows="4"> <?= $row['mo_ta'] ?></textarea>
                 </div>
             </div>
 
@@ -139,7 +146,8 @@
         <div class="row mx-1 mt-2">
             <div class="col-12">
                 <div class="md-form">
-                    <textarea id="form7" class="md-textarea form-control" readonly rows="4"></textarea>
+                    <textarea id="form7" class="md-textarea form-control" readonly rows="4"
+                        value=""> <?= $row['yeu_cau'] ?></textarea>
                 </div>
             </div>
 
@@ -215,13 +223,15 @@
                 <?= $row['sl_sv_dk'] ?>
             </div>
         </div> -->
-        <div class="row  mx-1 mb-1 mt-4">
-            <button class="btn btn-success mr-2"><a class="text-light"
-                    href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
-                    viên ứng tuyển</a></button>
-            <button class="btn btn-danger"> <a class="text-light"
-                    href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
-                    onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
+        <div class="row mx-3 mb-1 mt-5">
+            <div class="col-12 px-1">
+                <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
+                        href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
+                        viên ứng tuyển</a></button>
+                <button class="btn btn-danger float-right py-2"> <a class="text-light text-decoration-none"
+                        href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
+                        onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
+            </div>
         </div>
         <!-- 
         <ul class="list-group">
