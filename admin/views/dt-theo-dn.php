@@ -53,9 +53,9 @@
             <td><a href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=chi_tiet&id_dt=<?= $row['id_dt']?>"><b>Xem chi
                         tiết</b></a><br></td>
         </tr>
+        <?php } ?>
 
         
-        <?php } ?>
         <!-- <?php $i=1;
             foreach ($ds as $row) { ?>
         <tr>
