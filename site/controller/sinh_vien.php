@@ -60,7 +60,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $view_sv = "view/ttcn_index.php";
     break;
     case "tao_cv":
-      $view = "view/cv_add.php";
+      $view_sv = "view/cv_add.php";
     break;
     case "cv_add":
 
