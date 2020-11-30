@@ -59,11 +59,11 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
         $view_sv = "view/ttcn_index.php";
     break;
-    case "tao_cv":
-      $view_sv = "view/cv_add.php";
+    case "cv_index":
+      $view_sv = "view/cv_index.php";
     break;
-    case "cv_add":
-
+    case "cv_edit":
+      $view_sv = "view/cv_edit.php";
     break;
   }
   $view="view/layout_sv.php";
