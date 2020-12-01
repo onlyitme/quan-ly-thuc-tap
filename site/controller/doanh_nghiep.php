@@ -38,14 +38,17 @@ switch ($act) {
         break;
     case "tttk":
         $view_dn = "view/dn_tttk.php";
+        $view = "view/layout_dn.php";
+        require_once "view/layout.php";
+
         break;
     case "tdmk":
-        $view_dn = "view/dn_tdmk.php";
+        $view_dn = "view/dn_tdmk.php";    
+        $view = "view/layout_dn.php";
+        require_once "view/layout.php";
     break;
     case 'taodangtuyen':
         # code...
         break;
     
   }
-  $view = "view/layout_dn.php";
-  require_once "view/layout.php";
