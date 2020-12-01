@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 01, 2020 lúc 05:21 AM
+-- Thời gian đã tạo: Th12 01, 2020 lúc 04:12 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -90,9 +90,6 @@ CREATE TABLE `doanh_nghiep` (
   `banner` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `anh` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `dia_chi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phuong_xa` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `quan_huyen` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tinh_tp` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `toa_do` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'lat và lng cách nhau bởi dấu ,',
   `masothue` int(10) NOT NULL,
   `fax` int(10) NOT NULL,
@@ -109,10 +106,10 @@ CREATE TABLE `doanh_nghiep` (
 -- Đang đổ dữ liệu cho bảng `doanh_nghiep`
 --
 
-INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_chi`, `phuong_xa`, `quan_huyen`, `tinh_tp`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
-(14, 44, 'doanh nghiệp thất bại', 'dn1.png', 'dt1.png', '', '', '', '', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
-(15, 45, 'doanh nghiệp thành công', 'dn2.png', 'dt2.jpg', '', '', '', '', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
-(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', 'dt3.jpg', '', '', '', '', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
+INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_chi`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
+(14, 44, 'doanh nghiệp thất bại', 'dn1.png', 'dt1.png', '', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
+(15, 45, 'doanh nghiệp thành công', 'dn2.png', 'dt2.jpg', '', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
+(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', 'dt3.jpg', '', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -218,7 +215,8 @@ CREATE TABLE `phieu_dk_in` (
   `nguyen_vong` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_dt` int(11) NOT NULL,
   `id_dn` int(11) NOT NULL,
-  `trang_thai` tinyint(1) NOT NULL,
+  `trang_thai` tinyint(1) NOT NULL COMMENT '0: sinh viên mới Nộp đơn\r\n1: doanh nghiệp duyệt sv rồi đang đợi sv xác nhận vô\r\n2:doanh nghiệp ko chấp nhận sinh viên ẩn bài viết\r\n3 sau khi doanh nghiệp đồng ý thì sv xác nhận công ti này\r\nđể tt (đặc biệt khi sv xác nhận thì tự hủy những phiếu đăng kí ở Dang_tuyen khác và không cho nộp đơn vào bất kì dang_tuyen nào)\r\n4 sau khi dn đồng ý thì sinh viên đổi ý hủy ko muốn vô nữa\r\n(tự hủy sau 2 ngày nếu sinh viên không chấp nhận)',
+  `thoi_gian_duyet` datetime DEFAULT NULL COMMENT 'sau khi doanh nghiệp đồng ý thì cho sinh viên thêm 1 ngày để xác nhận có vô công ti hay ko\r\n',
   `ket_qua` tinyint(1) NOT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
   `danh_gia` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL
