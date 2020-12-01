@@ -97,18 +97,20 @@
         </div>
     </header>
     <!-- Show box login & Box đăng tuyển-->
-    <?php if (isset($_SESSION['sid'])) { ?>
-        <!-- Chỗ đẻ của Nghĩa dep trai -->
-        <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content ">
-                    <div class="modal-header pb-0">
-                        <div class="alert alert-primary w-100">
-                            <h2 class="d-inline">Đăng Tuyển </h2>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+    <?php if(isset($_SESSION['sid'])){ 
+        if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ) $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
+    ?>
+    <!-- Chỗ đẻ của Nghĩa dep trai -->
+    <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content ">
+                <div class="modal-header alert alert-primary mb-0 py-4 px-4">
+                    <div class=" col-12">
+                        <h2 class="d-inline">Đăng Tuyển </h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <div class="container">
