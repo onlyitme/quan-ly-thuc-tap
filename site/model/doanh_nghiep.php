@@ -113,5 +113,11 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    ?>
     
+    
+    // baokun
+    function checkdoanhnghiep_iduser($id){
+        $sql="select * from doanh_nghiep where id_user='$id'";
+        return queryOne($sql);
+    }
+    ?>

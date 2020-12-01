@@ -3,6 +3,8 @@
 require_once "../system/database.php";
 require_once('model/home.php');
 require_once('model/sinh_vien.php');
+require_once('model/doanh_nghiep.php');
+
 // require_once "model/home.php"; 
 
   $act = "index";
@@ -81,6 +83,11 @@ require_once('model/sinh_vien.php');
         echo "<script type='text/javascript'>alert('addaa');</script>";
         echo 'aa';
       }
+      
+    case 'thongtindoanhnghiep':
+        $view = "view/dn_ttdn.php";
+        require_once "view/layout.php";
+      break;
     case "login":
       if(isset($_POST['login'])){
         $user = $_POST['login'][0];

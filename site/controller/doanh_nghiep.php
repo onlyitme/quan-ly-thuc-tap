@@ -1,7 +1,8 @@
 <?php
 
 require_once "../system/database.php";
-require_once "model/doanh_nghiep.php";
+require_once "model/home.php"; 
+require_once "model/doanh_nghiep.php"; 
 
 $act = "index";
 if (isset($_GET["act"]) == true) $act = $_GET["act"];
@@ -40,5 +41,11 @@ switch ($act) {
         break;
     case "tdmk":
         $view_dn = "view/dn_tdmk.php";
+    break;
+    case 'taodangtuyen':
+        # code...
         break;
-}
+    
+  }
+  $view = "view/layout_dn.php";
+  require_once "view/layout.php";

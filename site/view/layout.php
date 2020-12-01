@@ -109,139 +109,173 @@
         </div>
     </header>
     <!-- Show box login & Box đăng tuyển-->
-    <?php if(isset($_SESSION['sid'])){ ?>
+    <?php if(isset($_SESSION['sid'])){ 
+        $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
+    ?>
     <!-- Chỗ đẻ của Nghĩa dep trai -->
     <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content ">
-                <div class="modal-header pb-0">
-                    <div class="alert alert-primary w-100">
+                <div class="modal-header alert alert-primary mb-0 py-4 px-4">
+                    <div class=" col-12">
                         <h2 class="d-inline">Đăng Tuyển </h2>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                 </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div id="doanhnghiep">
-                            <div class=" row mt-4 m-0 py-3">
-                                <div class="Nghia col-12">
-                                    <div class="col-12">
-                                        <input type="text" class="N-ninput form-control"
-                                            placeholder="Tiêu đề bài đăng*">
-                                        <input type="text" class="N-ninput form-control" placeholder="Vị trí thực tập*">
-                                        <input type="text" class="N-ninput form-control mb-5"
-                                            placeholder="Địa chỉ làm việc*">
-                                        <hr class="new my-3">
-                                        <div class="mb-4 mt-4">
-                                            <h4 class="text-primary my-4gi">Option cho sinh viên</h4>
-                                        </div>
-                                        <div class="row pl-3 mb-1">
-                                            <div class="N-input mb-5 mr-4 "><input type="number"
-                                                    class="N-ip form-control" placeholder="Lương thấp nhất*">
-                                                <span class="VND">VND</span>
+                <form action="?ctrl=doanh_nghiep&act=taodangtuyen" method="post">
+                    <div class="modal-body">
+                        <div class="container">
+                            <div id="doanhnghiep">
+                                <div class=" row mt-4 m-0 py-3">
+                                    <div class="Nghia row">
+                                        <div class="col-12">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend mr-0 " style="width: 15%;">
+                                                    <span class="input-group-text w-100" id="basic-addon1">Vị trí:</span>
+                                                </div>
+                                                <input type="text" name="" class="N-ninput form-control" readonly placeholder="Nhân viên thực tập" aria-label="Nhân viên thực tập" aria-describedby="basic-addon1">
                                             </div>
-                                            <div class="N-input mb-5 "><input type="number" class="N-ip form-control"
-                                                    placeholder="Lương cao nhất*">
-                                                <span class="VND">VND</span>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend mr-0" style="width: 15%;">
+                                                    <span class="input-group-text  w-100" id="basic-addon2">Tiêu đề:</span>
+                                                </div>
+                                                <input type="text" name="tieude" class="N-ninput form-control "
+                                                    placeholder="Tiêu đề bài đăng*" aria-describedby="basic-addon2">
                                             </div>
-                                        </div>
-                                        <div class="row pl-3 mb-4">
-                                            <div class="N-input mb-4 mr-4"><input type="number"
-                                                    class="N-ip form-control" placeholder="thời gian thực tập*">
-                                                <span class="VND">Tháng</span>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend mr-0" style="width: 15%;">
+                                                    <span class="input-group-text  w-100" id="basic-addon3">Địa chỉ:</span>
+                                                </div>
+                                                <input type="text" name="diachi" class="N-ninput form-control"
+                                                    placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
                                             </div>
-                                            <div class="N-input mb-4 "><input type="number" class="N-ip form-control"
-                                                    placeholder="Số lượng cần tuyển*">
-                                                <span class="VND"></span>
+                                            <hr class="new mb-5">
+                                            <div class="row p-3 my-3 bg-light rounded">
+                                                <h4 class="text-primary ">Option cho sinh viên</h4>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <label class="input-group-text bg-primary text-white "
-                                                            for="gender3">Hình thức</label>
+                                            <div class="row pl-3 mb-1">
+                                                    <div class="N-input mb-5 mr-4 "><input type="number" name="luongthapnhat"
+                                                            class="N-ip form-control" placeholder="Lương thấp nhất*">
+                                                        <span class="VND">VND</span>
                                                     </div>
-                                                    <select class="custom-select" id="gender3">
-                                                        <option selected>Thực tập sinh</option>
-                                                    </select>
-                                                    <select class="custom-select" id="gender3">
-                                                        <option value="1" active>Full-time</option>
-                                                        <option value="2">Part-time</option>
-                                                    </select>
+                                                    <div class="N-input mb-5 "><input type="number"  name="luongcaonhat"
+                                                            class="N-ip form-control" placeholder="Lương cao nhất*">
+                                                        <span class="VND">VND</span>
+                                                    </div>
+                                            </div>
+                                            <div class="row pl-3 mb-4">
+                                                <div class="N-input mb-4 mr-4"><input type="number" name="thoigiantt"
+                                                        class="N-ip form-control" placeholder="Thời gian thực tập*">
+                                                    <span class="VND">Tháng</span>
+                                                </div>
+                                                <div class="N-input mb-4 "><input type="number" name="soluongtuyen"
+                                                    class="N-ip form-control" placeholder="Số lượng cần tuyển*">
+                                                    <span class="VND">SV</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <hr class="new my-3">
-                                        <h4 class="text-primary mb-4">Phúc lợi</h4>
-                                        <div class="row">
-                                            <div class="col-6">
+                                        <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <label class="input-group-text bg-primary text-white "
+                                                                    for="gender3">Hình thức</label>
+                                                            </div>
+                                                            <select class="custom-select" id="gender3">
+                                                                <option selected>Thực tập sinh</option>
+                                                            </select>
+                                                            <select class="custom-select" id="gender3" name="hinhthuclamviec">
+                                                                <option value="1" active>Full-time</option>
+                                                                <option value="0">Part-time</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="new mb-5">
+                                                <div class="row p-3 my-3 bg-light rounded">
+                                                    <h4 class="text-primary ">Phúc lợi</h4>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <!-- Default inline 3-->
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input "
+                                                                id="defaultInline3" name="thuong">
+                                                            <label class="custom-control-label" for="defaultInline3"> <i
+                                                                    class="fas fa-award  text-info  ml-2"></i> Chế độ thưởng</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="defaultInline4" name="daotao">
+                                                            <label class="custom-control-label" for="defaultInline4"><i
+                                                                    class="	fas fa-atom   text-info  ml-2"></i> Chương trình đào tạo</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="defaultInline5" name="tangluong">
+                                                            <label class="custom-control-label" for="defaultInline5"><i
+                                                                    class="fa fa-level-up   text-info  ml-2"></i> Tăng lương</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="defaultInline6" name="nghiphep">
+                                                            <label class="custom-control-label" for="defaultInline6">
+                                                                <i class="fas fa-business-time  text-info  ml-2"></i> Nghỉ phép</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="defaultInline2" name="dulich">
+                                                            <label class="custom-control-label" for="defaultInline2">
+                                                                <i class="fas fa-plane  text-info  ml-2"></i> Du lịch</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox  mb-3">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="defaultInline2" name="baohiem">
+                                                            <label class="custom-control-label" for="defaultInline2"><i
+                                                                    class="fas fa-suitcase  text-info  ml-2 "></i> Bảo hiểm</label>
+                                                        </div>
+                                                            
+                                                    </div>
+                                                </div>
+                                                <!-- Default inline 2-->
+                                                <!-- Default inline 2-->
                                                 <!-- Default inline 3-->
-                                                <div class="custom-control custom-checkbox  mb-3">
-                                                    <input type="checkbox" class="custom-control-input "
-                                                        id="defaultInline3">
-                                                    <label class="custom-control-label" for="defaultInline3"> <i
-                                                            class="fas fa-award"></i> Chế độ thưởng</label>
+                                                <hr class="new mb-5">
+                                                <div class="row p-3 my-3 bg-light rounded">
+                                                    <h4 class="text-primary ">Mô tả công việc</h4>
                                                 </div>
-                                                <div class="custom-control custom-checkbox  mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="defaultInline4">
-                                                    <label class="custom-control-label" for="defaultInline4"><i
-                                                            class="	fas fa-atom "></i> Chương trình đào tạo</label>
+                                                <textarea name="mota" id="" class="editor" cols="30" rows="10"></textarea>
+                                                <hr class="new mb-5">
+                                                <div class="row p-3 my-3 bg-light rounded">
+                                                    <h4 class="text-primary ">Yêu cầu công việc</h4>
                                                 </div>
-                                                <div class="custom-control custom-checkbox  mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="defaultInline5">
-                                                    <label class="custom-control-label" for="defaultInline5"><i
-                                                            class="fa fa-level-up"></i> Tăng lương</label>
+                                                <textarea name="yeucau" id="" class="editor" cols="30" rows="10"></textarea>
+                                                <hr class="new mb-5">
+                                                <div class="row p-3 my-3 bg-light rounded">
+                                                    <h4 class="text-primary ">Các thông tin cơ bản khác</h4>
                                                 </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <div class="custom-control custom-checkbox  mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="defaultInline6">
-                                                    <label class="custom-control-label" for="defaultInline6"><i
-                                                            class="fa fa-laptop"></i> Laptop</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox  mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="defaultInline2">
-                                                    <label class="custom-control-label" for="defaultInline2"><i
-                                                            class="fas fa-suitcase"></i> Du lịch</label>
-                                                </div>
-                                            </div>
+                                                <textarea name="cacthongtinkhac" id="" class="editor" cols="30" rows="10"></textarea>
                                         </div>
-                                        <!-- Default inline 2-->
-                                        <!-- Default inline 2-->
-                                        <!-- Default inline 3-->
-                                        <hr class="new my-3">
-                                        <h4 class="mb-4 text-primary mt-4">Mô tả công việc</h4>
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        <hr class="new my-3">
-                                        <h4 class="mb-3 text-primary mt-4">Yêu cầu công việc</h4>
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        <hr class="new my-3">
-                                        <h4 class="mb-3 text-primary mt-4">Các thông tin cơ bản khác</h4>
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger mt-3 px-3" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success mt-3 px-3">Cập nhật</button>
-                </div>
+                    <div class="modal-footer bg-light px-4">
+                        <div class="col-12 text-right">
+                            <button type="button" class="btn btn-danger my-3 py-2 px-4" data-dismiss="modal">Hủy</button>
+                            <button type="submit" class="btn btn-success my-3 py-2 px-4">Đăng bài</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
     </div>
     <?php }else { ?>
     <div class="modal fade" id="login">
@@ -295,15 +329,12 @@
                 <a data-toggle="modal" href="#login" class="btn btn-primary  rounded-0  h-100 border w-50  py-3"
                     role="button" aria-pressed="true">DOANH NGHIỆP</a>
             </div>
-            <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang
-                chủ</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0   py-3 active ">Trang chủ</button>
             <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hỗ trợ</button>
             <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Liên lạc</button>
             <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Về chúng tôi</button>
-            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn đăng
-                bài</button>
-            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứng
-                tuyển</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn đăngbài</button>
+            <button type="button" class="list-group-item list-group-item-action rounded-0  py-3">Hướng dẫn ứngtuyển</button>
         </div>
     </nav>
     <div id="dangtuyen">
@@ -406,7 +437,7 @@
         referrerpolicy="origin"></script>
     <script>
     tinymce.init({
-        selector: '#editor',
+        selector: '.editor',
         plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
         //   toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
         toolbar_mode: 'floating',
