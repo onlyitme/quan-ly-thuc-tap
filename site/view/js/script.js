@@ -15,7 +15,7 @@
     });
     $("#list-grid").on("click", function(e) {
         e.preventDefault();
-        $(".detail-job_list button").addClass("col-lg-6");
+        $(".detail-job_list button").addClass("col-lg-6 ");
         $(".detail-job_list ").removeClass("small");
         $(".detail-job_inf").removeClass("d-md-block");
     });

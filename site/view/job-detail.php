@@ -46,7 +46,7 @@
  $luong=$thongtindt['luong'];
  if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
     if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt'])) ){
-        $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
+        $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';        
     }
     else $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
 }

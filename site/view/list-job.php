@@ -1,6 +1,7 @@
 <script language="javascript">
-      function get_content(a)
-      { 
+      function get_content(a){
+            // alert ($("#thongtindt").hasClass("anboxdetail"));
+        
         var html = document.getElementById(a).value;
         $.ajax({
             type: "post",
@@ -65,7 +66,7 @@
                     <option value="">Thời Gian</option>
                 </select>
             </div>
-            <div class="detail-job_list d-flex flex-wrap small">
+            <div  class="detail-job_list d-flex flex-wrap small">
                 <?php
                 foreach($thongtindangtuyen as $thongtindangtuyen){
                     $thongtindn= checkdoanhnghiepbyid($thongtindangtuyen['id_dn']);
