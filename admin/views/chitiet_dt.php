@@ -42,7 +42,18 @@
             </div>
         </div>
     </div>
-    <div class="col-7  shadow-lg ml-4 py-4  rounded">
+
+    <div class="col-7  shadow-lg ml-4 pb-5 pt-4  rounded">
+        <div class="row mx-5 mb-4 mt-1">
+            <div class="col-12 px-1">
+                <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
+                        href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
+                        viên ứng tuyển</a></button>
+                <button class="btn btn-danger float-right py-2"> <a class="text-light text-decoration-none"
+                        href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
+                        onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
+            </div>
+        </div>
         <table>
             <tbody>
                 <tr>
@@ -223,16 +234,7 @@
                 <?= $row['sl_sv_dk'] ?>
             </div>
         </div> -->
-        <div class="row mx-3 mb-1 mt-5">
-            <div class="col-12 px-1">
-                <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
-                        href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
-                        viên ứng tuyển</a></button>
-                <button class="btn btn-danger float-right py-2"> <a class="text-light text-decoration-none"
-                        href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
-                        onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
-            </div>
-        </div>
+
         <!-- 
         <ul class="list-group">
             <li class="list-group-item"><?php
