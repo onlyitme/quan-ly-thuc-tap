@@ -9,8 +9,7 @@ if (isset($_GET["act"]) == true) $act = $_GET["act"];
 switch ($act) {
     case "index":
         $ds = getAllDoanhnghiep();
-        $view = "view/dn_index.php";
-        require_once "view/layout.php";
+        $view_dn = "view/dn_index.php";
         break;
     case "update":
         $id_dn = $_POST["id_dn"];
@@ -35,8 +34,7 @@ switch ($act) {
         settype($sdt_ban, "int");
         updateDoanhnghiep($id_dn, $id_user, $ten_dn,$masothue,$dia_chi,$website,$fax,$sdt,$sdt_ban);
         $ds = getAllDoanhnghiep();
-        $view = "view/dn_index.php";
-        require_once "view/layout.php";
+        $view_dn = "view/dn_index.php";
         break;
     case "tttk":
         $view_dn = "view/dn_tttk.php";
@@ -45,4 +43,6 @@ switch ($act) {
         $view_dn = "view/dn_tdmk.php";
         break;
 }
+$view ="view/layout_dn.php";
+require_once "view/layout.php";
 ?>

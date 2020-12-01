@@ -266,7 +266,7 @@
             </div>
         </div>
         <div class="h-box-detail p-3 h-box-right shadow">
-            <?php include $view; ?>
+            <?php include $view_dn; ?>
         </div>
     </div>
 </div>

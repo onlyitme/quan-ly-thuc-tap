@@ -98,7 +98,7 @@
     </header>
     <!-- Show box login & Box đăng tuyển-->
     <?php if(isset($_SESSION['sid'])){ 
-        if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ) $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
+        // if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ) $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
     ?>
     <!-- Chỗ đẻ của Nghĩa dep trai -->
     <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -215,7 +215,8 @@
             </div>
         </div>
         </div>
-    <?php } else { ?>
+    
+        <?php } else { ?>
         <div class="modal fade" id="login">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">

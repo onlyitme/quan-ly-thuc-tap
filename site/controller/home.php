@@ -3,7 +3,7 @@
 require_once "../system/database.php";
 require_once('model/home.php');
 require_once('model/sinh_vien.php');
-// require_once "model/home.php"; 
+require_once('model/doanh_nghiep.php');
 
   $act = "index";
   if(isset($_GET["act"])==true) $act=$_GET["act"];
