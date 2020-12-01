@@ -86,7 +86,7 @@
                     <div id="collapseFive" class="collapse " aria-labelledby="headingFive" data-parent="#accordionExample">
                         <div class="card-body">
                             <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen">Danh sách bài đăng tuyển</a></p>
-                            <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=addnew">Thêm bài đăng tuyển</a></p>
+                            <!-- <p><a class="btn btn-dark btn-block text-left mx-3" href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=addnew">Thêm bài đăng tuyển</a></p> -->
                         </div>
                     </div>
                 </div>

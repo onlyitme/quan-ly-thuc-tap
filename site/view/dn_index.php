@@ -39,7 +39,7 @@
                     <div class="form-group row">
                         <label for="inputPassword" class="col-lg-3 col-form-label">Mã số thuế:</label>
                         <div class="col-md-3">
-                            <input type="number" value="<?= $row['masothue'] ?>" name="masothue" class="form-control">
+                            <input type="text" value="<?= $row['masothue'] ?>" name="masothue" class="form-control">
                         </div>
                         <label for="inputPassword" class="col-lg-2 col-form-label">Mã đơn vị:</label>
                         <div class="col-md-3">

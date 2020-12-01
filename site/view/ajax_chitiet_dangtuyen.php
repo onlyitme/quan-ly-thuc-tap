@@ -26,7 +26,7 @@
  <div class="row align-items-center bg-light p-3">
      <div class="col-lg-8">
          <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
-         <p class="font-weight-bold text-gray mb-0">'.$thongtindn['ten_dn'].'</p>
+         <p class="font-weight-bold text-gray mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep">'.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
      '.$button_nopdon.'

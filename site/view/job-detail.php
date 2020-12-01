@@ -27,7 +27,7 @@
         
       }
 </script>
-<div class="d-none d-md-block detail-job_inf p-0 shadow">
+<div class="d-none d-md-block detail-job_inf p-5 my-5 shadow">
  <?php 
  $phuc_loi1='';$phuc_loi2='';$phuc_loi3='';$phuc_loi4='';$phuc_loi5='';$phuc_loi6='';
  if($thongtindt['che_do_bao_hiem'] == 1) $phuc_loi1= '<p><i class="fas fa-folder-plus  text-primary "></i> Chế độ bảo hiểm</p>';
@@ -55,7 +55,7 @@ else $button_nopdon = "";
  <div class="row align-items-center border rounded shadow-sm p-5 bg-light">
      <div class="col-lg-8 ">
          <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
-         <p class="font-weight-bold text-gray mb-0">'.$thongtindn['ten_dn'].'</p>
+         <p class="font-weight-bold text-gray mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep">'.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
      '.$button_nopdon.'

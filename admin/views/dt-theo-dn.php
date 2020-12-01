@@ -15,9 +15,9 @@
     <thead class="bg-primary text-white">
         <tr class="text-center">
             <th scope="col">#</th>
-            <th scope="col">Tên doanh nghiệp</th>
-            <th scope="col">Ngành tuyển</th>
+            <th scope="col">Tên doanh nghiệp</th>      
             <th scope="col">Tiêu đề</th>
+            <th scope="col">Ngành tuyển</th>
             <th scope="col">Chi tiết</th>
         </tr>
     </thead>
@@ -55,7 +55,7 @@
         </tr>
         <?php } ?>
 
-        
+
         <!-- <?php $i=1;
             foreach ($ds as $row) { ?>
         <tr>
