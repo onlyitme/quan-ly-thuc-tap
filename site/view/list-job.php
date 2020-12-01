@@ -114,7 +114,7 @@
             else $thoi_gian_lam_viec='Cả tuần';
             if($thongtindt['full_part_time'] == 0) $full_part_time='Part Time';else $full_part_time='full Time';
             if($thongtindt['vi_tri'] == 0) $vi_tri='Nhân viên thực tập';else $vi_tri='Nhân viên chính thức';
-            $noi_lam_viec=$thongtindn['tinh_tp'];
+            $noi_lam_viec=$thongtindn['dia_chi'];
             $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
             $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
             
@@ -249,7 +249,7 @@
                         <div class="mb-3">
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
-                                <p class="col-11"> '.$thongtindn['dia_chi'].$thongtindn['phuong_xa'].$thongtindn['quan_huyen'].$thongtindn['tinh_tp'].'</p>
+                                <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
                             </div>
                             <div class="d-flex ">
                                 <p class="w-25"><i class="fas fa-phone-alt"></i></p>

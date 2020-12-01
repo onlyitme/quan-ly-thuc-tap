@@ -42,8 +42,9 @@
  else $thoi_gian_lam_viec='Cả tuần';
  if($thongtindt['full_part_time'] == 0) $full_part_time='Part Time';else $full_part_time='full Time';
  if($thongtindt['vi_tri'] == 0) $vi_tri='Nhân viên thực tập';else $vi_tri='Nhân viên chính thức';
- $noi_lam_viec=$thongtindn['tinh_tp'];
- $luong=$thongtindt['luong'];
+ $noi_lam_viec=$thongtindn['dia_chi'];
+ $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
+ $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
  if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
     if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt'])) ){
         $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';        
@@ -118,10 +119,9 @@ else $button_nopdon = "";
              </div>
          </div>
          <div class="mb-3">
-             <h5>Quyền lợi(sẽ thêm sau)</h5>
+             <h5>Quyền lợi</h5>
              <div id="quyenloi" class="col-12">
-                 <p> - Thu nhập cạnh tranh theo năng lực làm việc. - Thưởng lương tháng 13 và hiệu quả hoạt động kinh doanh của công ty 2-3 tháng lương. - Nghỉ mát/team-building hàng năm. - Chế độ BHXH, BHYT, BHTN theo quy định của Pháp luật.
-                     - Chế độ ngày nghỉ, lễ tết, được công ty thực hiện theo luật lao động Việt Nam. - Làm việc trong môi trường trẻ năng động, nhiều thử thách và cơ hội phát triển năng lực cá nhân.</p>
+             '.$thongtindt['quyen_loi'].'
              </div>
          </div>
          <div class="mb-3">
@@ -151,7 +151,7 @@ else $button_nopdon = "";
              </div>
              <div class="d-flex justify-content-between">
                  <p class="text-primary">Lương</p>
-                 <p class="text-gray">'.$luong.' $ </p>
+                 <p class="text-gray">'.$luong_khoi_dau.' ~ '.$luong_ket_thuc.' $ </p>
              </div>
              <div class="d-flex justify-content-between">
                  <p class="text-primary">Hết hạn nộp</p>
@@ -175,7 +175,7 @@ else $button_nopdon = "";
              <div class="mb-3">
                  <div class="d-flex ">
                      <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
-                     <p class="col-11"> '.$thongtindn['dia_chi'].$thongtindn['phuong_xa'].$thongtindn['quan_huyen'].$thongtindn['tinh_tp'].'</p>
+                     <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
                  </div>
                  <div class="d-flex ">
                      <p class="w-25"><i class="fas fa-phone-alt"></i></p>
