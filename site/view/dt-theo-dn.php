@@ -13,7 +13,7 @@
 </th>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-<i class="fas fa-plus"></i> Thêm đăng tuyển
+    <i class="fas fa-plus"></i> Thêm đăng tuyển
 </button>
 
 <!-- Modal -->
@@ -27,7 +27,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="">
+                <form action="<?= SITE_URL ?>/?ctrl=dang_tuyen&act=insert" enctype="multipart/form-data" method="POST">
                     <div class="form-group">
                         <input type="text" class="form-control" name="tieu_de" required placeholder="Tiêu đề...">
                     </div>
@@ -63,19 +63,20 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-6">
-                            <input type="text" class="form-control" id="user" name="sl_sv_can" required placeholder="Quyền lợi">
+                            <input type="text" class="form-control" id="user" name="quyen_loi" required placeholder="Quyền lợi">
                         </div>
                         <div class="form-group col-6">
-                            <input type="number" class="form-control" id="user" name="luong" required placeholder="Thời gian">
+                            <input type="number" class="form-control" id="user" name="thoi_gian" required placeholder="Thời gian">
                         </div>
                     </div>
-                    <textarea name="" id="" cols="60" rows="5" required placeholder="Mô tả"></textarea>
+                    <textarea name="mo_ta" id="" cols="60" rows="5" required placeholder="Mô tả"></textarea>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                        <button type="submit" class="btn btn-primary">Lưu đăng tuyển</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
-                <button type="button" class="btn btn-primary">Lưu đăng tuyển</button>
-            </div>
+
         </div>
     </div>
 </div>

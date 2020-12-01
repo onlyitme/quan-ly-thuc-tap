@@ -272,7 +272,7 @@ if(isset($_POST['btn'])){
     <?php $i = 1;
     foreach ($dm as $row) { ?>
     <tr>
-        <th style="width: 80px;" class="py-5">
+        <th style="width: 80px;">
             <div class="checkbox">
                 <input type="checkbox" class="checkitem mr-1" value='<?= $row['id_user'] ?>'><?= $i++ ?>
             </div>
