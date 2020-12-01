@@ -98,7 +98,8 @@ require_once('model/sinh_vien.php');
             
          
           }elseif($checkkhachhang['chuc_vu']==1){
-            $_SESSION['sname'] = "Doanh nghiệp";
+            $seach_dn_byid =  checkdoanhnghiepbyiduser($_SESSION['sid']);
+            $_SESSION['sname'] = $seach_dn_byid['ten_dn'];
             $_SESSION['schuc_vu'] = 1;
             echo '1';
            
@@ -126,6 +127,4 @@ require_once('model/sinh_vien.php');
         header('location:index.php');
         break;
  
-    } 
- 
-?>      
+    }
