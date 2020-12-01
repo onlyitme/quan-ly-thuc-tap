@@ -121,4 +121,10 @@
         $sql="select * from doanh_nghiep where id_user='$id'";
         return queryOne($sql);
     }
+    function add_dangtuyen($id_nganh,$id_dn,$tieu_de,$luong_khoi_dau,$luong_ket_thuc,$sl_sv_can,$full_part_time,$thoi_gian_lam_viec,$che_do_thuong,$dao_tao,$tang_luong,$nghi_phep_nam,$du_lich,$che_do_bao_hiem,$mo_ta,$yeu_cau,$quyen_loi)
+    {
+        $sql = "INSERT INTO dang_tuyen (id_nganh,id_dn,tieu_de,luong_khoi_dau,luong_ket_thuc,sl_sv_can,full_part_time,thoi_gian_lam_viec,che_do_thuong,dao_tao,tang_luong,nghi_phep_nam,du_lich,che_do_bao_hiem,mo_ta,yeu_cau,quyen_loi)) 
+        values('$id_nganh','$id_dn','$tieu_de','$luong_khoi_dau','$luong_ket_thuc','$sl_sv_can','$full_part_time','$thoi_gian_lam_viec','$che_do_thuong','$dao_tao','$tang_luong','$nghi_phep_nam','$du_lich','$che_do_bao_hiem','$mo_ta','$yeu_cau','$quyen_loi')";
+        execute($sql);
+    }
     ?>

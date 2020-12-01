@@ -98,7 +98,11 @@
     </header>
     <!-- Show box login & Box đăng tuyển-->
     <?php if(isset($_SESSION['sid'])){ 
-        // if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ) $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
+        if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ){
+            $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
+            $nhomnganh = ds_nn();
+            // $nganh = ds_nganh($id);
+        } 
     ?>
     <!-- Chỗ đẻ của Nghĩa dep trai -->
         <div class="modal fade" id="exampleModal-Nghia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -119,25 +123,37 @@
                                 <div class=" row mt-4 m-0 py-3">
                                     <div class="Nghia row">
                                         <div class="col-12">
+                                            <div class="input-group mb-5">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text bg-primary text-white " for="chonnn">Ngành nghề</label>
+                                                </div>
+                                                <select class="custom-select" id="chonnn" name="hinhthuclamviec">
+                                                    <?php foreach ($nhomnganh as $row) { ?>
+                                                        <option value="<?=$row['id_nn']?>" ><?=$row['ten_nn']?></option>
+                                                    <?php }?>
+                                                </select>
+                                                <select class="custom-select" id="chonnganh" name="hinhthuclamviec">
+                                                    <option value="0" active>Part-time</option>
+                                                    <option value="1" >Full-time</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend mr-0" style="width: 15%;">
+                                                    <span class="input-group-text  w-100" id="basic-addon2">Tiêu đề:</span>
+                                                </div>
+                                                <input type="text" name="tieude" class="N-ninput form-control " placeholder="Tiêu đề bài đăng*" aria-describedby="basic-addon2">
+                                            </div> 
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend mr-0 " style="width: 15%;">
                                                     <span class="input-group-text w-100" id="basic-addon1">Vị trí:</span>
                                                 </div>
                                                 <input type="text" name="" class="N-ninput form-control" readonly placeholder="Nhân viên thực tập" aria-label="Nhân viên thực tập" aria-describedby="basic-addon1">
-                                            </div>      
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend mr-0" style="width: 15%;">
-                                                    <span class="input-group-text  w-100" id="basic-addon2">Tiêu đề:</span>
-                                                </div>
-                                                <input type="text" name="tieude" class="N-ninput form-control "
-                                                    placeholder="Tiêu đề bài đăng*" aria-describedby="basic-addon2">
-                                            </div> 
+                                            </div>     
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend mr-0" style="width: 15%;">
                                                     <span class="input-group-text  w-100" id="basic-addon3">Địa chỉ:</span>
                                                 </div>
-                                                <input type="text" name="diachi" class="N-ninput form-control"
-                                                    placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
+                                                <input type="text" name="diachi" class="N-ninput form-control" readonly placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
                                             </div>                                         
                                             <hr class="new mb-5">
                                             <div class="row p-3 my-3 bg-light rounded">
@@ -176,8 +192,22 @@
                                                                 <option selected>Thực tập sinh</option>
                                                             </select>
                                                             <select class="custom-select" id="gender3" name="hinhthuclamviec">
-                                                                <option value="1" active>Full-time</option>
-                                                                <option value="0">Part-time</option>
+                                                                <option value="0" active>Part-time</option>
+                                                                <option value="1" >Full-time</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="input-group mb-3">
+                                                            <div class="input-group-prepend">
+                                                                <label class="input-group-text bg-primary text-white "
+                                                                    for="gender3">Thời gian</label>
+                                                            </div>
+                                                            <select class="custom-select" id="gender3">
+                                                                <option selected>Giờ hành chính</option>
+                                                            </select>
+                                                            <select class="custom-select" id="gender3" name="thoigianlamviec">
+                                                                <option value="0" active>Thứ 2 - Thứ 6</option>
+                                                                <option value="1">Thứ 2 - Thứ 7</option>
+                                                                <option value="2">Thứ 2 - Chủ nhật</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -245,9 +275,10 @@
                                                 <textarea name="yeucau" id="" class="editor" cols="30" rows="10"></textarea>
                                                 <hr class="new mb-5">
                                                 <div class="row p-3 my-3 bg-light rounded">
-                                                    <h4 class="text-primary ">Các thông tin cơ bản khác</h4>
+                                                    <!-- <h4 class="text-primary ">Các thông tin cơ bản khác</h4> -->
+                                                    <h4 class="text-primary ">Quyền lợi</h4>
                                                 </div>
-                                                <textarea name="cacthongtinkhac" id="" class="editor" cols="30" rows="10"></textarea>
+                                                <textarea name="quyenloi" id="" class="editor" cols="30" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -265,7 +296,7 @@
         </div>
     </div>
     
-        <?php } else { ?>
+        <?php  } else { ?>
         <div class="modal fade" id="login">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
