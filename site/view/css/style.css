@@ -1008,7 +1008,7 @@
     .Nghia input[type="text"].N-ninput {
         width: 80%;
         height: 50px;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
         border-top: none;
         border-left: none;
         border-right: none;
@@ -1042,6 +1042,10 @@
         padding-bottom: 10px;
         padding-right: 45px;
         margin-bottom: 20px;
+    }
+    
+    .input-group-text {
+        font-weight: 500 !important;
     }
     
     .N-input {

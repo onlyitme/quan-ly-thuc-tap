@@ -16,6 +16,10 @@ function checkkhachhang($user,$pass){
     $sql="select * from user where user='$user' and pass='$pass'";
     return queryOne($sql);
 }
+function checkdoanhnghiepbyiduser($id){
+    $sql="select * from doanh_nghiep where id_user='$id' ";
+    return queryOne($sql);
+}
 function checkkhachhangbyid($id){
     $sql="select * from sinh_vien where id_user='$id' ";
     return queryOne($sql);
