@@ -119,6 +119,9 @@ require_once('model/sinh_vien.php');
       break;
       case "logout":
         unset($_SESSION['sid']);
+        unset($_SESSION['sid_sv']);
+        unset($_SESSION['suser']);
+        unset($_SESSION['schuc_vu']);
         unset($_SESSION['sname']);
         header('location:index.php');
         break;

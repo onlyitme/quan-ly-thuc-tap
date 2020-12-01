@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 27, 2020 lúc 06:17 PM
+-- Thời gian đã tạo: Th12 01, 2020 lúc 05:21 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -123,25 +123,32 @@ INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_
 CREATE TABLE `ho_so_sv` (
   `id_ho_so` int(11) NOT NULL,
   `id_sv` int(11) NOT NULL,
-  `tieu_de` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `trinh_do` tinyint(1) NOT NULL,
+  `tieu_de` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trinh_do` tinyint(1) DEFAULT NULL,
   `noi_lam_viec` tinyint(1) DEFAULT 0,
-  `muc_tieu_nghe_nghiep` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `muc_tieu_nghe_nghiep` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ky_nang_so_truong` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `so_thich` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ky_nang_dac_biet` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `word` tinyint(1) DEFAULT 0,
-  `excel` tinyint(1) DEFAULT 0,
-  `power_point` tinyint(1) DEFAULT 0,
-  `outlook` tinyint(1) DEFAULT 0,
+  `word` tinyint(1) DEFAULT 1,
+  `excel` tinyint(1) DEFAULT 1,
+  `power_point` tinyint(1) DEFAULT 1,
+  `outlook` tinyint(1) DEFAULT 1,
   `ung_dung_khac` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `av_nghe` tinyint(1) DEFAULT 0,
-  `av_noi` tinyint(1) DEFAULT 0,
-  `av_doc` tinyint(1) DEFAULT 0,
-  `av_viet` tinyint(1) DEFAULT 0 COMMENT '0 : chưa cập nhập \r\n1 kém\r\n2 trung binh\r\n3 khá\r\n4 tốt \r\náp dụng mọi dữ liệu tinyint',
+  `av_nghe` tinyint(1) DEFAULT 1,
+  `av_noi` tinyint(1) DEFAULT 1,
+  `av_doc` tinyint(1) DEFAULT 1,
+  `av_viet` tinyint(1) DEFAULT 1 COMMENT '0 : chưa cập nhập \r\n1 kém\r\n2 trung binh\r\n3 khá\r\n4 tốt \r\náp dụng mọi dữ liệu tinyint',
   `ngon_ngu_khac` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ngay_cap_nhap` datetime DEFAULT NULL
+  `ngay_cap_nhap` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `ho_so_sv`
+--
+
+INSERT INTO `ho_so_sv` (`id_ho_so`, `id_sv`, `tieu_de`, `trinh_do`, `noi_lam_viec`, `muc_tieu_nghe_nghiep`, `ky_nang_so_truong`, `so_thich`, `ky_nang_dac_biet`, `word`, `excel`, `power_point`, `outlook`, `ung_dung_khac`, `av_nghe`, `av_noi`, `av_doc`, `av_viet`, `ngon_ngu_khac`, `ngay_cap_nhap`) VALUES
+(1, 52, 'Thông tin sv', 2, 4, 'aaa', 'nhóm trunogwr', 'aaa', 'aaa', 3, 2, 3, 2, '', 4, 4, 4, 4, '4', '2020-12-01');
 
 -- --------------------------------------------------------
 
@@ -245,7 +252,7 @@ CREATE TABLE `sinh_vien` (
   `id_user` int(12) NOT NULL,
   `mssv` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_nganh` int(11) DEFAULT NULL,
-  `ho_ten` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ho_ten` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT 'Sinh viên',
   `gioi_tinh` tinyint(1) DEFAULT NULL,
   `ngay_sinh` date DEFAULT NULL,
   `anh` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -261,8 +268,9 @@ CREATE TABLE `sinh_vien` (
 INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `anh`, `sdt`, `dia_chi`, `trang_thai`) VALUES
 (45, 39, 'ps11111', 21, 'nguyễn ngọc bảo', 1, NULL, '', '111111111', NULL, 0),
 (46, 40, 'ps11112', 21, 'Phan Tấn Khải', 1, NULL, '', '3', NULL, 0),
-(47, 41, 'ps11744', 21, 'phạm ngọc hưng', 1, '2001-11-18', 'ps11744-man_dem.png', '03', '', 0),
-(48, 42, 'ps11113', 24, 'Huỳnh Đạt', 1, NULL, '', '312456875', NULL, 0);
+(47, 41, 'ps11744', 21, 'phạm ngọc hưng', 1, '2015-11-17', 'ps11744-man_dem.png', '0335884626', 'hồ chí minhaaaaaaaaaa', 0),
+(48, 42, 'ps11113', 24, 'Huỳnh Đạt', 1, NULL, '', '312456875', NULL, 0),
+(52, 48, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -291,7 +299,8 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) 
 (42, 'dat@fpt.edu.vn', 'sinhvien', 'dat@fpt.edu.vn', 0, 0),
 (44, 'doanhnghiep1@gmail.com', 'doanhnghiep', 'doanhnghiep1@gmail.com', 1, 0),
 (45, 'hungngocpham2001@gmail.com', 'doanhnghiep', 'hungngocpham2001@gmail.com', 1, 0),
-(47, 'hungngocpham1995@gmail.com', 'doanhnghiep', 'hungngocpham1995@gmail.com', 1, 0);
+(47, 'hungngocpham1995@gmail.com', 'doanhnghiep', 'hungngocpham1995@gmail.com', 1, 0),
+(48, 'a', 'a', NULL, 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -381,7 +390,7 @@ ALTER TABLE `doanh_nghiep`
 -- AUTO_INCREMENT cho bảng `ho_so_sv`
 --
 ALTER TABLE `ho_so_sv`
-  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `nganh`
@@ -411,13 +420,13 @@ ALTER TABLE `phieu_dk_out`
 -- AUTO_INCREMENT cho bảng `sinh_vien`
 --
 ALTER TABLE `sinh_vien`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -1,6 +1,6 @@
 <script language="javascript">
       function get_content(a){
-            // alert ($("#thongtindt").hasClass("anboxdetail"));
+            // alert ($("#thongtindt").hasClass("anboxdetail")) 
         
         var html = document.getElementById(a).value;
         $.ajax({

@@ -260,21 +260,20 @@
                         <h2 class="font-weight-bold">Đăng Nhập</h2>
                         <form action="javascript:getcontent()" class="mt-4">
 
-                        <div style="min-height: 30px;"> <p id="dangnhapsai" style="color:red"></p></div>
+                        <div style="min-height: 30px;"> <p id="dangnhapsai"  class="text-danger font-italic"></p></div>
 
                             
                             <div class="form-group">
+                                
                                 <!-- <label for="">Tên đăng nhập</label> -->
                                 <input type="text" name="user" id="user" class="form-control" 
                                     aria-describedby="helpId" placeholder="Tên tài khoản ...">
-                                <small id="helpId" class="text-muted"></small>
                             </div>
                             <div class="form-group">
                                 <!-- <label for="">Mật khẩu</label> -->
                                 <input type="password" name="pass" id="pass" class="form-control" 
                                     aria-describedby="helpId" placeholder="Mật khẩu ...">
-                                <small id="helpId" class="text-muted"></small>
-                            </div>
+                                </div>
                             
                             <button type="submit" id="login"  class="btn btn-primary btn-block mt-4">Đăng nhập</button>
                       
