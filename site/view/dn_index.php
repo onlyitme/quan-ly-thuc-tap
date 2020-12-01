@@ -23,62 +23,76 @@
         300
     </span>
     <div class="h-ttdn-box text-right mt-2">
-        <form>
-            <div class="form-group row">
-                <label for="" class="col-lg-3 col-form-label">Tên doanh nghiệp:</label>
-                <div class="col-sm-8">
-                    <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
+        <form method="POST" action="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=update">
+            <?php
+            foreach ($ds as $row) { ?>
+                <?php if ($row['id_user'] == $_SESSION['sid']) { ?>
+                    <div class="form-group row">
+                    <input type="hidden" value="<?= $row['id_dn'] ?>" name="id_dn" class="form-control">
+                        <label for="" class="col-lg-3 col-form-label">Tên doanh nghiệp:</label>
+                        <div class="col-sm-8">
+                            <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
-                    <input type="text" value="Công Ty TNHH Digital Marketing" readonly="readonly" class="form-control">
-                </div>
+                            <input type="text" value="<?= $row['ten_dn'] ?>" name="ten_dn" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-lg-3 col-form-label">Mã số thuế:</label>
+                        <div class="col-md-3">
+                            <input type="number" value="<?= $row['masothue'] ?>" name="masothue" class="form-control">
+                        </div>
+                        <label for="inputPassword" class="col-lg-2 col-form-label">Mã đơn vị:</label>
+                        <div class="col-md-3">
+                            <input type="text" value="DV- 234" readonly="readonly" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-lg-3 col-form-label">Địa chỉ:</label>
+                        <div class="col-sm-8">
+                            <input type="text" value="<?= $row['dia_chi'] ?>" name="dia_chi" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-lg-3 col-form-label">Di động</label>
+                        <div class="col-md-3">
+                            <input type="text" value="<?= $row['sdt'] ?>" name="sdt" class="form-control">
+                        </div>
+                        <label for="" class="col-lg-2 col-form-label">Điện thoại:</label>
+                        <div class="col-md-3">
+                            <input type="text" value="<?= $row['sdt_ban'] ?>" name="sdt_ban" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-lg-3 col-form-label">Website:</label>
+                        <div class="col-md-3">
+                            <input type="text" value="<?= $row['website'] ?>" name="website" class="form-control">
+                        </div>
+                        <label for="" class="col-lg-2 col-form-label">Fax:</label>
+                        <div class="col-md-3">
+                            <input type="text" value="<?= $row['fax'] ?>" name="fax" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-lg-3 col-form-label">Email:</label>
+                        <div class="col-md-8">
+                            <?php
+                            $ds = getAllUser();
+                            foreach ($ds as $u) { ?>
+                                <?php if ($u['id_user'] == $row['id_user']) { ?>
+                                    <input type="email" value="<?= $u['email'] ?>" name="email" class="form-control">
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+            <div class="h-thebutton mt-2">
+                <button type="submit" class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
             </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-lg-3 col-form-label">Mã số thuế:</label>
-                <div class="col-md-3">
-                    <input type="text" value="T- 384632" readonly="readonly" class="form-control">
-                </div>
-                <label for="inputPassword" class="col-lg-2 col-form-label">Mã đơn vị:</label>
-                <div class="col-md-3">
-                    <input type="text" value="DV- 234" readonly="readonly" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="" class="col-lg-3 col-form-label">Địa chỉ:</label>
-                <div class="col-sm-8">
-                    <input type="text" value="101 Innovation, Công viên phần mềm Quang Trung, P.12, Quận 12" readonly="readonly" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="" class="col-lg-3 col-form-label">Di động</label>
-                <div class="col-md-3">
-                    <input type="text" value="+84123456789" readonly="readonly" class="form-control">
-                </div>
-                <label for="" class="col-lg-2 col-form-label">Điện thoại:</label>
-                <div class="col-md-3">
-                    <input type="text" value="+84123456789" readonly="readonly" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="" class="col-lg-3 col-form-label">Website:</label>
-                <div class="col-md-3">
-                    <input type="text" value="Đang cập nhật..." readonly="readonly" class="form-control">
-                </div>
-                <label for="" class="col-lg-2 col-form-label">Fax:</label>
-                <div class="col-md-3">
-                    <input type="text" value="Đang cập nhật..." readonly="readonly" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="" class="col-lg-3 col-form-label">Email:</label>
-                <div class="col-md-8">
-                    <input type="text" value="congtydigtal@gmail.com" readonly="readonly" class="form-control">
-                </div>
-            </div>
-
         </form>
     </div>
 
-    <div class="h-box-dn mt-2 rounded">
+    <!-- <div class="h-box-dn mt-2 rounded">
         <h5>Thông tin người liên hệ</h5>
         <div class="h-ttdn-box text-left">
             <form>
@@ -109,12 +123,9 @@
                         </span>
                     </div>
                 </div>
-                <div class="h-thebutton mt-2">
-                    <button class="btn btn-outline-secondary">Chỉnh sửa thông tin</button>
-                    <button class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
-                </div>
+               
             </form>
         </div>
 
-    </div>
+    </div> -->
 </div>

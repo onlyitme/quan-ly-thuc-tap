@@ -16,7 +16,7 @@
         $sql = "SELECT * from doanh_nghiep";
         return query($sql);
     }
-    function  addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh,$website)
+    function  addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh, $website)
     {
         $sql = "INSERT INTO doanh_nghiep (id_user,ten_dn,dia_chi,sdt,an_hien,anh,website) 
     values('$id_user','$ten_dn','$dia_chi','$sdt','$an_hien','$anh','$website')";
@@ -34,7 +34,7 @@
         return queryOne($sql);
     }
 
-    function updateUser($id_user,$email)
+    function updateUser($id_user, $email)
     {
         try {
             $sql = "UPDATE user SET email='$email' WHERE id_user='$id_user'";
@@ -44,16 +44,17 @@
             exit();
         }
     }
-    function  updateDoanhnghiep($id_dn, $id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh)
+    function  updateDoanhnghiep($id_dn, $id_user, $ten_dn, $masothue, $dia_chi, $website, $fax, $sdt, $sdt_ban)
     {
         try {
-            $sql = "UPDATE doanh_nghiep SET id_user='$id_user', ten_dn ='$ten_dn',dia_chi='$dia_chi',sdt='$sdt',an_hien='$an_hien',anh='$anh'
+            $sql = "UPDATE doanh_nghiep SET id_user='$id_user', ten_dn ='$ten_dn',masothue='$masothue',dia_chi='$dia_chi',website='$website',fax='$fax',sdt='$sdt',sdt_ban='$sdt_ban'
              WHERE id_dn='$id_dn'";
             execute($sql);
         } catch (Exception  $e) {
             print_r($e->errorInfo);
             exit();
         }
+      
     }
     function deleteUser($id_user)
     {

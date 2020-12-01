@@ -23,17 +23,19 @@ switch ($act) {
         updateUser($id_user, $email);
         // doanh nghiep
         $ten_dn = trim(strip_tags($_POST["ten_dn"]));
+        $masothue= $_POST['masothue'];
+        settype($masothue, "int");
         $dia_chi = trim(strip_tags($_POST["dia_chi"]));
+        $website = trim(strip_tags($_POST["website"]));
+        $fax = trim(strip_tags($_POST["fax"]));
         $sdt = $_POST['sdt'];
         settype($sdt, "int");
-        $an_hien = $_POST['an_hien'];
-        settype($an_hien, "int");
-        $anh = $_FILES["anh"]["name"];
-        move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
-        updateDoanhnghiep($id_dn, $id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh);
+        $sdt_ban = $_POST['sdt_ban'];
+        settype($sdt_ban, "int");
+        updateDoanhnghiep($id_dn, $id_user, $ten_dn,$masothue,$dia_chi,$website,$fax,$sdt,$sdt_ban);
         $ds = getAllDoanhnghiep();
-        $view = "views/dn_index.php";
-        require_once "views/layout.php";
+        $view = "view/dn_index.php";
+        require_once "view/layout.php";
         break;
     case "tttk":
         $view_dn = "view/dn_tttk.php";
