@@ -14,32 +14,32 @@
     <link rel="stylesheet" href="view/css/style.css">
 </head>
 <script language="javascript">
-      function getcontent()
-      { 
-        var user = document.getElementById('user').value;
-        var pass = document.getElementById('pass').value;
-        var arr=[user,pass];
-        $.ajax({
-            type: "post",
-            url: "index.php?act=login",
-            data: {login: arr},
-            success: function(data) {
-    
-                if(data == 0){
+function getcontent() {
+    var user = document.getElementById('user').value;
+    var pass = document.getElementById('pass').value;
+    var arr = [user, pass];
+    $.ajax({
+        type: "post",
+        url: "index.php?act=login",
+        data: {
+            login: arr
+        },
+        success: function(data) {
+
+            if (data == 0) {
                 location.reload();
-                }else if(data == 1){
-                    window.location="index.php?ctrl=doanh_nghiep";
-                }else if(data == 2){alert("bạn sẽ chuyển tới trang ADmin");
-                    window.location="../admin/index.php";
-                }else{
-                    document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
-                }
+            } else if (data == 1) {
+                window.location = "index.php?ctrl=doanh_nghiep";
+            } else if (data == 2) {
+                alert("bạn sẽ chuyển tới trang ADmin");
+                window.location = "../admin/index.php";
+            } else {
+                document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
             }
-          });
-      }
-      
-       
-    </script>
+        }
+    });
+}
+</script>
 
 <body>
     <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
@@ -242,7 +242,6 @@
             </div>
         </div>
     </div>
-    </div>
     <?php }else { ?>
     <div class="modal fade" id="login">
         <div class="modal-dialog modal-lg">
@@ -260,23 +259,25 @@
                         <h2 class="font-weight-bold">Đăng Nhập</h2>
                         <form action="javascript:getcontent()" class="mt-4">
 
-                        <div style="min-height: 30px;"> <p id="dangnhapsai"  class="text-danger font-italic"></p></div>
+                            <div style="min-height: 30px;">
+                                <p id="dangnhapsai" class="text-danger font-italic"></p>
+                            </div>
 
-                            
+
                             <div class="form-group">
-                                
+
                                 <!-- <label for="">Tên đăng nhập</label> -->
-                                <input type="text" name="user" id="user" class="form-control" 
-                                    aria-describedby="helpId" placeholder="Tên tài khoản ...">
+                                <input type="text" name="user" id="user" class="form-control" aria-describedby="helpId"
+                                    placeholder="Tên tài khoản ...">
                             </div>
                             <div class="form-group">
                                 <!-- <label for="">Mật khẩu</label> -->
-                                <input type="password" name="pass" id="pass" class="form-control" 
+                                <input type="password" name="pass" id="pass" class="form-control"
                                     aria-describedby="helpId" placeholder="Mật khẩu ...">
-                                </div>
-                            
-                            <button type="submit" id="login"  class="btn btn-primary btn-block mt-4">Đăng nhập</button>
-                      
+                            </div>
+
+                            <button type="submit" id="login" class="btn btn-primary btn-block mt-4">Đăng nhập</button>
+
                         </form>
                         <a href="" class="text-primary mt-3 d-block">Quên mật khẩu ?</a>
                     </div>

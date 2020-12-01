@@ -3,12 +3,12 @@
         <div class="col-12  ">
             <div class="alert alert-primary w-100 p-3 mt-4" role="alert">
                 <h1>QUẢN LÍ ĐĂNG TUYỂN</h1>
-                <!-- <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
                 <ol class="breadcrumb bg-transparent p-0">
                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-home    "></i> Trang chủ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> Danh sách sinh viên</li>
+                    <li class="breadcrumb-item active" aria-current="page"> Quản lí đăng tuyển</li>
                 </ol>
-            </nav> -->
+            </nav>
             </div>
         </div>
     </div>
