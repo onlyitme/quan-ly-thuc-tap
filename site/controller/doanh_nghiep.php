@@ -45,3 +45,4 @@ switch ($act) {
         $view_dn = "view/dn_tdmk.php";
         break;
 }
+?>
