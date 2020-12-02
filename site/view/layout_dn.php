@@ -7,7 +7,8 @@
                 <button class="btn-sucsess11 btn btn-success">Phê Duyệt</button>
                 <div class="resume_left">
                     <div class="resume_profile">
-                        <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
+                        <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1"
+                            alt="profile_pic">
                     </div>
                     <div class="resume_content">
                         <div class="resume_item resume_info">
@@ -136,11 +137,23 @@
                     </div>
                 </div>
                 <div class="resume_right">
+                <div class="resume_item1 resume_about1">
+                        <div class="title">
+                            <p class="bold alert alert-secondary ">Đây là nơi đặt tiêu đề việc làm nè!</p>
+                        </div>
+                        <hr class="N-hr">
+                        <div class="title">
+                        <p class="bold">Nguyện vọng</p>    
+                        </div>
+                        <p>Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola</p>
+                    </div>
                     <div class="resume_item resume_about">
                         <div class="title">
                             <p class="bold">Mục tiêu nghề nghiệp</p>
                         </div>
-                        <p>Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty tăng số lượng khách hàng và mở rộng tập khách
+                        <p>Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một
+                            nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty
+                            tăng số lượng khách hàng và mở rộng tập khách
                             hàng.
                         </p>
                     </div>
@@ -219,11 +232,12 @@
                     <hr style="width: 50%;">
                 </div> -->
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
-                    <a  data-toggle="modal" data-target="#exampleModal-Nghia" >
+                    <a data-toggle="modal" data-target="#exampleModal-Nghia">
                         <button class="h-dn-dangbai mb-3"><i class="far fa-plus-circle"></i> Đăng bài</button>
                     </a>
                     <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
-                        <span class="h-dn-dangxuat">Đăng xuất <i class="far fa-sign-out-alt" aria-hidden="true"></i></span>
+                        <span class="h-dn-dangxuat">Đăng xuất <i class="far fa-sign-out-alt"
+                                aria-hidden="true"></i></span>
                     </a>
                     <li class="h-header">TÀI KHOẢN</li>
                     <li>
