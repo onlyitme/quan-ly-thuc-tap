@@ -51,6 +51,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right  " aria-labelledby="btnGroupDrop1">
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=doanh_nghiep"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a>
+                                    <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=dang_tuyen&act=theodn&id_user=<?= $_SESSION['sid'] ?>"><i class="fas fa-list-alt mr-2"></i> Danh sách đăng tuyển</a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Danh sách ứng tuyển</a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
                                 </div>
@@ -130,13 +131,7 @@
                                                     <span class="input-group-text  w-100" id="basic-addon3">Địa chỉ:</span>
                                                 </div>
                                                 <input type="text" name="diachi" class="N-ninput form-control" readonly placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
-                                            </div>        
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend mr-0" style="width: 15%;">
-                                                    <span class="input-group-text  w-100" id="basic-addon3">Ngày hết hạn:</span>
-                                                </div>
-                                                <input type="date" name="diachi" class="N-ninput form-control" readonly placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
-                                            </div>                                     
+                                            </div>                                         
                                             <hr class="new mb-5">
                                             <div class="row p-3 my-3 bg-light rounded">
                                                 <h4 class="text-primary ">Option cho sinh viên</h4>
@@ -236,7 +231,7 @@
                                                         <div class="custom-control custom-checkbox  mb-3">
                                                             <input type="checkbox" class="custom-control-input"
                                                                 id="defaultInline1" name="baohiem">
-                                                            <label class="custom-control-label" for="defaultInline1"><i
+                                                            <label class="custom-control-label" for="defaultInline1 "><i
                                                                     class="fas fa-suitcase  text-info  ml-2 "></i> Bảo hiểm</label>
                                                         </div>
 

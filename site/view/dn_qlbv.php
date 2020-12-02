@@ -47,7 +47,7 @@
                 <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> Hồ Chí Minh</span>
             </div>
             <div class="h-bv-right-button">
-                <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=chi_tiet_dt&id_dt=<?= $row['id_dt'] ?>">Xem chi tiết</a></button>
+                <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=home&act=thongtindt&id_dt=<?= $row['id_dt'] ?>">Xem chi tiết</a></button>
                 <button class="btn btn-danger">Xóa</button>
                 <button class="btn btn-outline-warning h-bv-text-lock">
                     <i class="far fa-lock"></i></button>
