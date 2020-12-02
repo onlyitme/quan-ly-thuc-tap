@@ -1,10 +1,10 @@
 
             <div id="sinhvien">
                 <div class="row">
-                <div class="h-sidebar-container shadow mr-4">
+                <div class="h-sidebar-container shadow mt-3">
                         <div class="h-box-left py-3">
                             <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
-                                <li class="h-header">HỒ SƠ CỦA BẠN</li>
+                                <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header">HỒ SƠ CỦA BẠN</li>
                                 <li>
                                     <a href="index.php?ctrl=sinh_vien">
                                         <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@
                                         Quản lý hồ sơ
                                     </a>
                                 </li>
-                                <li class="h-header">VIỆC LÀM &amp; HỖ TRỢ</li>
+                                <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header">VIỆC LÀM &amp; HỖ TRỢ</li>
                                 <li>
                                     <a href="#">
                                         <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-file-earmark-richtext" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

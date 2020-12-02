@@ -1,97 +1,111 @@
-                             <form action="index.php?ctrl=sinh_vien&act=ttcn_update" method="post" id="capnhapttcn" enctype="multipart/form-data">
+                        <form action="index.php?ctrl=sinh_vien&act=ttcn_update" method="post" id="capnhapttcn" enctype="multipart/form-data">  
                             <div class="media boder p-3 sv8-12 mt3" style="border-radius: 5px;background-image: linear-gradient(-25deg, #d1d1d1 0%, #c1ecfd 100%);">
-                                <div class="row col-sm-12 " style="background-image: linear-gradient(-25deg, #ffffff 0%, #ffffff 100%);margin:auto;">
+                            <div class="row col-sm-12 " >
                                     <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                         <h5 style="padding: 10px 5px;font-weight: 600;">THÔNG TIN CÁ NHÂN</h5>           
                                     </div>
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mb-4" >
-                                    <p><strong>Ảnh đại diện</strong></p>
-                                    <a href="#">
-                                    <img  style="border:1px #bbbbbb solid;border-radius:50%;margin-bottom:30px;" src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
-                                    </a>  
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2 mb-4" style="margin-top:140px;">
+                                        <p><strong>Ảnh đại diện</strong></p>
                                         
-                                    <input type="file" name="profile-avatar" id="profileAvatarPicker" class="inputfile" accept=".png, .jpg, .jpeg" >
+                                        <img  style="border:1px #bbbbbb solid;border-radius:50%;margin-bottom:30px;width:80%;" src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
+                                        
+                                        <div class="h-box-dn-txt">
+                                            <label for="file-upload" class="h-custom-file-upload">
+                                                <i class="far fa-camera"></i>
+                                                <p>Thay đổi ảnh bìa doanh nghiệp</p>
+                                            </label>
+                                            <input id="file-upload" type="file">
+                                        </div>                                                                                           
                                     </div>
 
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Họ và tên<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['ho_ten']?>" name="ho_ten" id="ho_ten"></p>
-                                    </div>
+                                     <!-- -->
+                                     <div class="giua-tt1 ">
+                                            <div class="item-tt1">
+                                               
+                                            </div>
+                                        </div>
+                                        <!-- -->
+                                    <div class="row col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9  mb-4" >
+                                        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Họ và tên<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
+                                                <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['ho_ten']?>" name="ho_ten" id="ho_ten"></p>
+                                            </div>
 
-                                    
-
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Mã số sinh viên<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['mssv']?>" name="mssv" id="mssv"></p>
-                                    </div>
-
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Giới tính<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p style="margin-top: -5px;">
-                                            <input type="radio" id="male" name="gioi_tinh" value="1" checked>                                   
-                                            <label style="margin-right: 10px;" for="male">Nam</label>
-                                            <input type="radio" id="male" name="gioi_tinh" value="0">                                   
-                                            <label for="male">Nữ</label>
-                                        </p> 
-                                    </div>
-
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Ngày sinh<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p style="margin-top: -5px; width: 100%;">
-                                            <select name="day">
-                                            <?php for($i=1;$i<=31;$i++){ ?>
-                                               <option value="<?=$i?>" <?php if($i== date('d',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
-                                            <?php } ?>
-                                           </select>
-                                           
-                                            <select name="month">
-                                            <?php for($i=1;$i<=12;$i++){ ?>
-                                               <option value="<?=$i?>" <?php if($i== date('m',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
-                                            <?php } ?>
-                                            </select>
                                             
-                                            <select name="year">
-                                            <?php for($i=1995;$i<=2020;$i++){ ?>
-                                               <option value="<?=$i?>" <?php if($i== date('Y',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
-                                            <?php } ?>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Email<span style="color:tomato;">*</span></strong> </p>               
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p> 
-                                            <input type="email" class="form-control mb-2 " placeholder="Nhập email" id="email"> 
 
-                                        </p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Số Điện Thoại<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p>
-                                            <input type="number" value="<?=$ttsv['sdt']?>" id="sdt" name="sdt" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự.">                                            
-                                        </p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                                        <p><strong>Địa Chỉ<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p>
-                                            <input type="text" id="dia_chi" name="dia_chi" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự." value="<?=$ttsv['dia_chi']?>">                                            
-                                        </p>
-                                    </div> 
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Mã số sinh viên<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 " >
+                                                <p><input type="text" class="form-control mb-2 mr-sm-2"  value="<?=$ttsv['mssv']?>" name="mssv" id="mssv"></p>
+                                            </div>
+
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Giới tính<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
+                                                <p style="margin-top: -5px;">
+                                                    <input type="radio" id="male" name="gioi_tinh" value="1" checked>                                   
+                                                    <label style="margin-right: 10px;" for="male">Nam</label>
+                                                    <input type="radio" id="male" name="gioi_tinh" value="0">                                   
+                                                    <label for="male">Nữ</label>
+                                                </p> 
+                                            </div>
+
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Ngày sinh<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
+                                                <p >
+                                                    <select name="day"style="padding:3px 10px;">
+                                                    <?php for($i=1;$i<=31;$i++){ ?>
+                                                    <option value="<?=$i?>" <?php if($i== date('d',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
+                                                    <?php } ?>
+                                                </select>
+                                                
+                                                    <select name="month"style="padding:3px 10px;">
+                                                    <?php for($i=1;$i<=12;$i++){ ?>
+                                                    <option value="<?=$i?>" <?php if($i== date('m',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
+                                                    <?php } ?>
+                                                    </select>
+                                                    
+                                                    <select name="year"style="padding:3px 10px;">
+                                                    <?php for($i=1995;$i<=2020;$i++){ ?>
+                                                    <option value="<?=$i?>" <?php if($i== date('Y',strtotime($ttsv['ngay_sinh']))) echo 'selected'?>><?=$i?></option>';
+                                                    <?php } ?>
+                                                    </select>
+                                                </p>
+                                            </div>
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Email<span style="color:tomato;">*</span></strong> </p>               
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                                <p> 
+                                                    <input type="email" class="form-control mb-2 " placeholder="Nhập email" id="email"> 
+
+                                                </p>
+                                            </div>
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Số Điện Thoại<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                                <p>
+                                                    <input type="number" value="<?=$ttsv['sdt']?>" id="sdt" name="sdt" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự.">                                            
+                                                </p>
+                                            </div>
+                                            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                                                <p><strong>Địa Chỉ<span style="color:tomato;">*</span></strong></p>   
+                                            </div>
+                                            <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
+                                                <p>
+                                                    <input type="text" id="dia_chi" name="dia_chi" class="form-control mb-2 mr-sm-2 frm_profile w315 validate[required,minSize[5]] inputbox-success" data-errormessage-value-missing="Yêu cầu nhập chỗ ở hiện tại." data-errormessage-range-underflow="Chỗ ở hiện tại phải lớn hơn hoặc bằng 5 ký tự." value="<?=$ttsv['dia_chi']?>">                                            
+                                                </p>
+                                            </div> 
+                                     </div>
+
+                        
                                     <div class="col-12 text-center mt-4 mb-3">
                                        
                                     <button class="buttoncapnhat ml-4" type="submit" >
@@ -111,9 +125,13 @@
                                         </button>
                                         
                                     </div>                                    
-                                </div>    
-                            </div>
-                            </form>
+                                </div>   
+
+
+
+
+                                
+                        </form>
   
     
                        

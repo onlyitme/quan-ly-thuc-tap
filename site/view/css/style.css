@@ -336,47 +336,58 @@
 
     /* ----------- sinh vien dau ------------ */
 
+    #sinhvien p{
+        padding: 5px 0;
+    }
     /* upl anh*/
-
-    #sinhvien .h-tt-left-img {
-        float: left;
-        width: 150px;
-        height: 150px;
-        position: relative;
-        overflow: hidden;
+    /* #sinhvien .avt img:hover{
+        opacity: 0.6;
+    } */
+    #sinhvien input[type="file"] {
+        display: none;
     }
-
-    #sinhvien .h-tt-left-img img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        box-shadow: 0px 3px 8px #c9c9c9;
+    #sinhvien .custom-file-upload {
+        padding: 14px 20px;
+        top: 20px;
+        display: inline-block;
+        cursor: pointer;
     }
-
-    #sinhvien .h-tt-left-img-txt {
-        width: 100%;
-        height: 100%;
+    #sinhvien .h-box-dn-txt {
+        width: 295px;
+        margin-top: 90px;
+        margin-left: -50px;
+        height: 295px;
         background-color: rgba(0, 0, 0, 0.82);
         position: absolute;
         bottom: 0px;
         text-align: center;
         color: #fff;
-        padding: 30px;
-        border-radius: 50%;
+        padding: 50px;
         box-sizing: border-box;
         opacity: 0;
     }
 
-    #sinhvien .h-tt-left-img:hover div.h-tt-left-img-txt {
+    #sinhvien .h-box-dn-img:hover div.h-box-dn-txt {
         opacity: 1;
-        transform: scale(1);
-        transition: ease-in-out 0.3s;
+        /* transform: translateY(50px); */
+        transition: ease-in-out 0.5s;
+    }
+    #sinhvien .h-custom-file-upload {
+        width: 159px;
+        margin-left: -100px;
+        border-radius: 50%;
+        height: 157px;
+        margin-top: -80px;
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
     }
 
-    #sinhvien .h-tt-left-img:hover div.h-tt-left-img-txt {
-        opacity: 1;
-        transform: scale(1);
-        transition: ease-in-out 0.3s;
+    #sinhvien .h-custom-file-upload .far {
+        font-size: 50px;
+    }
+    #sinhvien .h-custom-file-upload:hover{
+        display: block;
     }
 
     #sinhvien .spinner-border {
@@ -401,12 +412,51 @@
     #sinhvien strong {
         margin-top: -2px;
     }
-
     #sinhvien svg {
         color: white;
         margin-right: 5px;
     }
-
+    
+    #sinhvien .item-tt {
+        margin-left: -19px;
+        margin-top: -5px;
+        padding: 10px 22px;
+        border-radius: 50%;
+        color: white;
+        background-image: linear-gradient(-25deg,  #c1ecfd 0%,#acacac 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #sinhvien .giua-tt{
+        width: 5px;
+        height: 230px;
+        border-bottom-left-radius: 35%;
+        border-bottom-right-radius: 35%;
+        background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
+    }
+    #sinhvien .item-tt1 {
+        margin-left: -7.4px;
+        margin-top: -1px;
+        padding: 10px 10px;
+        border-radius: 50%;
+        color: white;
+        background-image: linear-gradient(-25deg,#1b1b1b    0%,#6e6d6e 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #sinhvien .giua-tt1{
+        margin-left:-20px;
+        margin-right:20px;
+        width: 5px;
+        height: 350px;
+        border-bottom-left-radius: 35%;
+        border-bottom-right-radius: 35%;
+        background-image: linear-gradient(-25deg,  #6e6d6e 0%,#1b1b1b  100%);
+    }
     #sinhvien .col-sm-12 {
         border-radius: 5px;
     }
@@ -434,10 +484,6 @@
         padding: 8px 14px;
         font-weight: 700;
         border-radius: 5px;
-    }
-
-    #sinhvien .btn, .btn-white-36 {
-        background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
     }
 
     #sinhvien .mr-center {
@@ -568,7 +614,7 @@
     #sinhvien .tt-dau {
         color: rgb(255, 255, 255);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
-        border-top-right-radius: 100px;
+        border-top-right-radius: 5px;
         border-top-left-radius: 5px;
     }
 
@@ -592,7 +638,7 @@
     #sinhvien .bg-ttcn {
         background-image: linear-gradient(-25deg, #616161 0%, #96B7C4 100%);
         background-position: center;
-        border-top-right-radius: 100px;
+        border-top-right-radius: 5px;
         border-top-left-radius: 5px;
         background-position: center;
         background-size: cover;
@@ -633,24 +679,23 @@
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         object-fit: cover;
     }
-
-    .thongtin1 {
+    #sinhvien .thongtin0{
         float: left;
-        width: 100%;
+        width: 40%;
+        margin-top:-16px;
+    }
+    #sinhvien .thongtin1 {
+        width: 60%;
         font-size: 12pt;
         font-weight: 500;
     }
 
     #sinhvien .thongtin1 a:hover {
-        color: rgb(35, 53, 211);
+        color:rgb(238, 96, 14) ;
     }
 
     #sinhvien .form-control {
         border: 1px rgb(54, 54, 54) solid;
-    }
-
-    #sinhvien .ds-hva a:hover {
-        color: tomato;
     }
 
     #sinhvien .taohoso {
@@ -658,9 +703,9 @@
         width: 17%;
         font-weight: 500;
     }
-
     #sinhvien .btn-white-36 {
         width: 120px;
+        background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
         border: 1px solid #6b6b6b;
         font-weight: 400;
         padding: 5px 0;
@@ -668,7 +713,7 @@
     }
 
     #sinhvien .btn-white-36:hover {
-        background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);
+        /* background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%); */
         color: rgb(255, 255, 255);
     }
 
@@ -705,12 +750,7 @@
     }
 
     /* */
-
-    #sinhvien.col-sm-3 a img:hover {
-        opacity: 0.6;
-    }
-
-    #sinhvien .sv-12 {
+z    #sinhvien .sv-12 {
         background-image: linear-gradient(-25deg, #d1d1d1 0%, #c1ecfd 100%);
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
@@ -719,6 +759,7 @@
     }
 
     #sinhvien .sv8-12 {
+        
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         border-radius: 5px;
         border-top: 1px rgb(228, 228, 228) solid;
@@ -739,7 +780,7 @@
         font-weight: bold;
         font-size: 12pt;
     }
-
+    
     /* ----------- sinh vien cuoi ------------ */
 
     /* Nghia  cv */
