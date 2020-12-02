@@ -99,6 +99,14 @@ switch ($act) {
     case "tdmk":
         $view_dn = "view/dn_tdmk.php";
         break;
+    case "chi_tiet_dt":
+        $id_dt = $_GET["id_dt"];
+        settype($id_dt, "int");
+        $row = getDangtuyenByID($id_dt);
+        $ds = getAllUngtuyen($id_dt);
+        $ut = getAllDangtuyen($id_dt);
+        $view_dn = "view/chitiet_dt.php";
+        break;
 }
 $view = "view/layout_dn.php";
 require_once "view/layout.php";

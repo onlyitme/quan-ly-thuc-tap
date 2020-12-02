@@ -15,6 +15,16 @@
         $sql = "SELECT * from nganh";
         return query($sql);
     }
+    function getAllUngtuyen($id_dt)
+    {
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt'";
+        return query($sql);
+    }
+    function getDangtuyenByID($id_dt)
+    {
+        $sql = "SELECT * from dang_tuyen where id_dt='$id_dt'";
+        return queryOne($sql);
+    }
     function getAllDangtheodn($id_dn)
     {
         $sql = "SELECT * from dang_tuyen WHERE id_dn='$id_dn'";
