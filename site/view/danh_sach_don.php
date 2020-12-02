@@ -69,9 +69,11 @@
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
                                             
                                 </script>
-                                <?php } elseif($row['trang_thai']==1){?>
-                                <script>
-                                        var fuT =new Date("Dec 4,2020 00:00:00:00").getTime()
+                                <?php } elseif($row['trang_thai']==1){ 
+                                   
+                                    ?>
+                                <script> <?php $a = date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days'));?>
+                                        var fuT =new Date("<?=$a?>").getTime()
                                         setInterval(function(){
                                         var noW = new Date().getTime()
                                         var D = fuT -noW
@@ -105,8 +107,17 @@
                                             document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
                                             document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
                                         }else{
-
-                                                doi_tt_dt(<?php $row['id_phieu'] ?>);
+                                            <?php 
+                                            $now = time();
+                                            $time = $row['thoi_gian_duyet'];
+                                            $time = date_parse_from_format('Y-m-d H:i:s', $time);
+                                            $time_stamp = mktime($time['hour'],$time['minute'],$time['second'],$time['month'],$time['day'],$time['year']);
+                                            if(($now - $time_stamp) > 3*24*60*60){
+                                                doi_tt_dt($row['id_phieu']);
+                                                }
+                                            
+                                            ?>
+                                             
                                                 var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
                                             +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
                                                 +'<div style="color: rgb(0, 155, 13);">'
@@ -156,7 +167,7 @@
                        <?php } ?>
                        <script>
                                 function xac_thuc(id){
-                                    alert(id);
+                                 
                                    $.ajax({
                                        type: "post",
                                        url: "index.php?ctrl=sinh_vien&act=xac_thuc_sv",
