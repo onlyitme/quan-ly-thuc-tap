@@ -72,9 +72,10 @@
                                 <?php } elseif($row['trang_thai']==1){ 
                                    
                                     ?>
-                                <script> <?php $a = date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days'));?>
-                                        var fuT =new Date("<?=$a?>").getTime()
-                                        setInterval(function(){
+                                <script> 
+                                        
+                                        setInterval( function(){
+                                            var fuT =new Date("<?php echo date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days'));?>").getTime()
                                         var noW = new Date().getTime()
                                         var D = fuT -noW
                                         var days = Math.floor(D/(1000*60*60*24))
@@ -85,7 +86,7 @@
                                         hours %=24
                                         minutes %=60
                                         seconds %=60
-                                        if(seconds>0){document.getElementById("days<?=$row['id_dt']?>").innerText = days
+                                        if(seconds>=0){document.getElementById("days<?=$row['id_dt']?>").innerText = days
                                         document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
                                         document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
                                         document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
@@ -102,12 +103,30 @@
                                             +'</div>'
                                        +'</div>'
                                             document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
-                                            document.getElementById("days<?=$row['id_dt']?>").innerText = days
-                                            document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
-                                            document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
-                                            document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
+                                        
                                         }else{
-                                            <?php 
+                                            
+                                             
+                                                var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
+                                            +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
+                                                +'<div style="color: rgb(0, 155, 13);">'
+                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Hết hạn.</strong>'
+                                               +'</div>'
+                                           +'</div>'
+                                         
+{
+                                            if( window.localStorage )
+                                            {
+                                                if( !localStorage.getItem('firstLoad') )
+                                                {
+                                                localStorage['firstLoad'] = true;
+                                                window.location.reload();
+                                                }  
+                                                else
+                                                localStorage.removeItem('firstLoad');
+                                            }
+                                            };
+                                           <?php 
                                             $now = time();
                                             $time = $row['thoi_gian_duyet'];
                                             $time = date_parse_from_format('Y-m-d H:i:s', $time);
@@ -117,13 +136,6 @@
                                                 }
                                             
                                             ?>
-                                             
-                                                var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
-                                            +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
-                                                +'<div style="color: rgb(0, 155, 13);">'
-                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Hết hạn.</strong>'
-                                               +'</div>'
-                                           +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
                                             }
                                         
