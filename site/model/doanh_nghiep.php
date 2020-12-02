@@ -15,9 +15,14 @@
         $sql = "SELECT * from nganh";
         return query($sql);
     }
+    function getAllSinhvien()
+    {
+        $sql = "SELECT * from sinh_vien";
+        return query($sql);
+    }
     function getAllUngtuyen($id_dt)
     {
-        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt'";
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='0'";
         return query($sql);
     }
     function getDangtuyenByID($id_dt)
@@ -113,7 +118,7 @@
     }
     function demSinhvien($id_dt)
     {
-        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='1' ";
+        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='0' ";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
@@ -148,4 +153,10 @@
                             '$che_do_thuong','$dao_tao','$tang_luong','$nghi_phep_nam','$du_lich','$che_do_bao_hiem','$mo_ta','$yeu_cau','$quyen_loi','$thoi_gian')";
         execute($sql);
     }
+    function deleteDangtuyen($id_dt)
+    {
+        $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
+        execute($sql);
+    }
+    
     ?>

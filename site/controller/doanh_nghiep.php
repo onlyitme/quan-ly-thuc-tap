@@ -65,7 +65,7 @@ switch ($act) {
             $mo_ta = $_POST['mota'];
             $yeu_cau = $_POST['yeucau'];
             $quyen_loi = $_POST['quyenloi'];
-            add_dangtuyen($id_nganh, $id_dn, $tieu_de, $luong_khoi_dau, $luong_ket_thuc, $thoi_gian_tt, $sl_sv_can, $full_part_time, $thoi_gian_lam_viec, $che_do_thuong, $dao_tao, $tang_luong, $nghi_phep_nam, $du_lich, $che_do_bao_hiem, $mo_ta, $yeu_cau, $quyen_loi,$thoi_gian);
+            add_dangtuyen($id_nganh, $id_dn, $tieu_de, $luong_khoi_dau, $luong_ket_thuc, $thoi_gian_tt, $sl_sv_can, $full_part_time, $thoi_gian_lam_viec, $che_do_thuong, $dao_tao, $tang_luong, $nghi_phep_nam, $du_lich, $che_do_bao_hiem, $mo_ta, $yeu_cau, $quyen_loi, $thoi_gian);
         }
         $view_dn = "view/dn_qlbv.php";
 
@@ -95,18 +95,34 @@ switch ($act) {
         $view_dn = "view/dn_tttk.php";
         break;
     case "dshs":
+        $dn = getAllDoanhnghiep();
+        foreach ($dn as $d) {
+            if ($d['id_user'] == $_SESSION['sid'])
+                $id_dn = $d['id_dn'];
+        }
+        $dt = getAllDangtuyen();
+        foreach($dt as $t) {
+            if ($t['id_dn'] == $id_dn)
+            $id_dt = $t['id_dt'];
+        }
+        $ds = getAllUngtuyen($id_dt);
+        $dem = demSinhvien($id_dt);
         $view_dn = "view/dn_dshs.php";
         break;
     case "tdmk":
         $view_dn = "view/dn_tdmk.php";
         break;
-    case "chi_tiet_dt":
+    case "delete_dt":
         $id_dt = $_GET["id_dt"];
         settype($id_dt, "int");
-        $row = getDangtuyenByID($id_dt);
-        $ds = getAllUngtuyen($id_dt);
-        $ut = getAllDangtuyen($id_dt);
-        $view_dn = "view/chitiet_dt.php";
+        deleteDangtuyen($id_dt);
+        $dn = getAllDoanhnghiep();
+        foreach ($dn as $d) {
+            if ($d['id_user'] == $_SESSION['sid'])
+                $id_dn = $d['id_dn'];
+        }
+        $ds = getAllDangtheodn($id_dn);
+        $view_dn = "view/dn_qlbv.php";
         break;
 }
 $view = "view/layout_dn.php";

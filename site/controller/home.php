@@ -90,8 +90,10 @@ require_once('model/doanh_nghiep.php');
         $user = $_POST['login'][0];
         $pass = $_POST['login'][1];
         $checkkhachhang=checkkhachhang($user,$pass);
+        
       }
       if(isset($checkkhachhang) && $checkkhachhang!=''){	
+        $_SESSION['user']=$user;
           $_SESSION['sid']=$checkkhachhang['id_user'];
           if($checkkhachhang['chuc_vu']==0){
             $seach_kh_byid =  checkkhachhangbyid($_SESSION['sid']);
