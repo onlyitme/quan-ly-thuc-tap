@@ -549,7 +549,6 @@
     #sinhvien .h-sidebar-navigation li i {
         width: 20px;
         margin-right: 5px;
-        color: #343a40 !important;
     }
     
     #sinhvien .h-sidebar-navigation li a:hover {
@@ -1237,8 +1236,8 @@
     }
     
     #doanhnghiep .h-sidebar-navigation li .fa,
-    .h-sidebar-navigation li .fas,
-    .h-sidebar-navigation li .far {
+    #doanhnghiep .h-sidebar-navigation li .fas,
+    #doanhnghiep .h-sidebar-navigation li .far {
         font-size: 13px;
         color: #fff;
     }

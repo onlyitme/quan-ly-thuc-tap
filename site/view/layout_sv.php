@@ -56,8 +56,8 @@
             </div>
         </div>
 
-        <div class=" col-sm-9  mb-3 rounded shadow">
-            <div class="container mt-3" > 
+        <div class=" col-sm-9  mb-3 p-0 rounded shadow">
+            <div class="container " > 
             <?php include $view_sv; ?>
             </div>
         </div>
