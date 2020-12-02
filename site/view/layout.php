@@ -131,7 +131,17 @@
                                                     <span class="input-group-text  w-100" id="basic-addon3">Địa chỉ:</span>
                                                 </div>
                                                 <input type="text" name="diachi" class="N-ninput form-control" readonly placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
+<<<<<<< HEAD
                                             </div>                                         
+=======
+                                            </div>        
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend mr-0" style="width: 15%;">
+                                                    <span class="input-group-text  w-100" id="basic-addon3">Ngày hết hạn:</span>
+                                                </div>
+                                                <input type="date" name="thoi_gian" class="N-ninput form-control"  placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
+                                            </div>                                     
+>>>>>>> b1eed96d8680b8b78a8f4bd5e851bf95fb26b3bd
                                             <hr class="new mb-5">
                                             <div class="row p-3 my-3 bg-light rounded">
                                                 <h4 class="text-primary ">Option cho sinh viên</h4>
