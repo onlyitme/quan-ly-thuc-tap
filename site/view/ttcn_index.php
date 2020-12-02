@@ -2,13 +2,13 @@
                                 
                                 <div class="media boder p-3 tt-dau bg-tt">  
                                          <div class="thongtin0">
-                                             <div class="col-sm-9 anhnen"style="margin-0 auto;">
-                                                 <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.PNG" alt="John Doe" class="center" style="width:80%;margin-left:20px;margin-top:10px; border-radius: 50%;">                                       
+                                             <div class="col-sm-9 "style="margin-0 auto;">
+                                                 <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.PNG" alt="John Doe" class="center" style="width:90%;margin-left:60px;margin-top:7px; border-radius: 50%;">                                       
                                              </div>
                                            
                                          </div>                      
                                           <div class="thongtin1">
-                                            <div class=" media-body ml-4" style="margin-top:-20px;"><br>
+                                            <div class="media-body ml-4" style="margin-top:-20px;"><br>
                                             <h3><?=$ttsv['ho_ten']?> </h3>
                                                 <p > Thực tập sinh.</p> 
                                                 <hr class="mr-5" style="background: white;width: 98% ;">     
@@ -22,37 +22,37 @@
                                 </div>
                                 
                                     <div class="media boder p-3 sv8-12">
-                                        <div class="row tt-5 col-sm-5">
-                                            <div  class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mb-2">
+                                        <div class="row tt-5 col-sm-6">
+                                            <div  class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 mb-2">
                                                 <h5 style="padding: 5px 0px;font-weight: 600;">THÔNG TIN TÀI KHOẢN</h5>           
                                             </div>
-                                            <div  class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-2 ">
-                                                
+                                            <div  class="col-sm-5 col-md-5 col-lg-5 col-xl-5 col-5 ">
+                                                 <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=user_edit" style="border-radius: 5px;">
+                                                    <i style="color: black;" class="fa fa-pencil ml-2"></i>
+                                                    <span class=" text-gray-75 font400 ml-2 mr-2 " style="font-size: 14px;"> Chỉnh sửa</span>
+                                                </a> 
                                   
                                             </div>
-                                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5  ml-4"style="text-align: right;">
+                                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4  ml-4">
                                                 <p style="font-weight: 600;">Tên đăng nhập </p>           
                                             </div>
-                                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6  ">
+                                            <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7  ">
                                                 <p>: <?=$tttk['user']?> </p>
                                             </div>
-                                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5  ml-4"style="text-align: right;">
+                                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4   ml-4">
                                                 <p style="font-weight: 600;">Mật khẩu</p>           
                                             </div>
-                                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6  ">
+                                            <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7  ">
                                                 <p>: <?=$tttk['pass']?> </p>
                                             </div>
-                                            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 ml-4"style="text-align: right;">
+                                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4  ml-4">
                                                 <p style="font-weight: 600;">Email</p>           
                                             </div>
-                                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6  ">
+                                            <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7  ">
                                                 <p>: <?=$tttk['email']?> </p>
                                             </div>
                                             <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                                                <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=user_edit" style="border-radius: 5px;margin-top:50px;">
-                                                    <i style="color: black;" class="fa fa-pencil ml-2"></i>
-                                                    <span class=" text-gray-75 font400 ml-2 mr-2 " style="font-size: 14px;"> Chỉnh sửa</span>
-                                                </a>          
+                                                <!--          -->
                                             </div>
                                         </div>
                                         <!-- -->
@@ -66,44 +66,44 @@
                                             </div>
                                         </div>
                                         <!-- -->
-                                        <div class="tt-7 row col-sm-7 ml-2">
+                                        <div class="tt-7 row col-sm-6 ml-2">
                                             <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 mb-2">
                                                     <h5 style="padding: 5px 0px;font-weight: 600;">THÔNG TIN CÁ NHÂN</h5>           
                                                 </div>
     
                                                 <div  class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-2 mb-2 ">
-                                                    <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=ttcn_edit" style="border-radius: 5px;margin-left: 10px;">
+                                                    <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=ttcn_edit " style="border-radius: 5px;margin-left: 10px;">
                                                         <i style="color: black;" class="fa fa-pencil ml-2"></i>
                                                         <span class=" text-gray-75 font400 ml-2 mr-2" style="font-size: 14px;"> Chỉnh sửa</span>
                                                     </a>
                                                 </div>
     
                                                 
-                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4"style="text-align: right;">
+                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4">
                                                     <p style="font-weight: 600;">Họ và tên </p>           
                                                 </div>
                                                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8  ">
                                                     <p>: <?=$ttsv['ho_ten']?> </p>
                                                 </div>
-                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4"style="text-align: right;">
+                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4">
                                                     <p style="font-weight: 600;">Giới tính</p>           
                                                 </div>
                                                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ">
                                                     <p>: <?php if($ttsv['gioi_tinh']==1)echo 'Nam';else echo 'Nữ';?> </p>
                                                 </div>
-                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4"style="text-align: right;">
+                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
                                                     <p style="font-weight: 600;">Ngày sinh</p>           
                                                 </div>
                                                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8  ">
                                                     <p>: <?=date('d/m/Y',strtotime($ttsv['ngay_sinh'])) ?> </p>
                                                 </div>
-                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4"style="text-align: right;">
+                                                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4  ml-4">
                                                     <p style="font-weight: 600;">Nơi thực tập</p>           
                                                 </div>
-                                                <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8  ">
-                                                    <p>: <?php if($ttsv['trang_thai']==0)echo 'chưa có nơi thực tập' ?></p>
+                                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7  ">
+                                                    <p style="margin-left:-37px;">: <?php if($ttsv['trang_thai']==0)echo 'chưa có nơi thực tập' ?></p>
                                                 </div>
-                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4"style="text-align: right;">
+                                                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3  ml-4">
                                                     <p style="font-weight: 600;">Địa chỉ</p>           
                                                 </div>
                                                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8  ">

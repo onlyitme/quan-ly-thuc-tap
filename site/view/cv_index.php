@@ -5,7 +5,7 @@
                                         <h5 style="border-left: 5px rgb(6, 2, 219) solid;padding: 0 5px;">THÔNG TIN CHUNG</h5>           
                                     </div>
                                     <div  class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
-                                        <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=cv_edit&trang=1">
+                                        <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=cv_edit&trang=2" style="border-radius: 5px;">
                                             <i style="color: black;" class="fa fa-pencil ml-2"></i>
                                             <span class=" text-gray-75 font400 ml-2 mr-2"> Chỉnh sửa</span>
                                         </a>

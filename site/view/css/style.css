@@ -350,10 +350,6 @@
     }
     
     #sinhvien .h-box-dn-txt {
-        width: 295px;
-        margin-top: 90px;
-        margin-left: -50px;
-        height: 295px;
         background-color: rgba(0, 0, 0, 0.82);
         position: absolute;
         bottom: 0px;
@@ -369,9 +365,9 @@
         /* transform: translateY(50px); */
         transition: ease-in-out 0.5s;
     }
-    
-    #sinhvien .h-custom-file-upload {
+    #sinhvien .h-custom-file-upload{
         width: 159px;
+        margin-left: 100px;
         margin-left: -100px;
         border-radius: 50%;
         height: 157px;
@@ -432,7 +428,7 @@
     
     #sinhvien .giua-tt {
         width: 5px;
-        height: 230px;
+        height: 280px;
         border-bottom-left-radius: 35%;
         border-bottom-right-radius: 35%;
         background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
@@ -690,11 +686,12 @@
     
     #sinhvien .thongtin0 {
         float: left;
-        width: 40%;
+        width: 30%;
+        
     }
     
     #sinhvien .thongtin1 {
-        width: 60%;
+        width: 70%;
         font-size: 12pt;
         font-weight: 500;
     }
