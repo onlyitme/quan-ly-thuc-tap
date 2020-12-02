@@ -139,7 +139,7 @@
                 <div class="resume_right">
                 <div class="resume_item1 resume_about1">
                         <div class="title">
-                            <p class="bold alert alert-primary text-primary">Đây là nơi đặt tiêu đề việc làm nè!</p>
+                            <p class="bold alert alert-secondary ">Đây là nơi đặt tiêu đề việc làm nè!</p>
                         </div>
                         <hr class="N-hr">
                         <div class="title">
