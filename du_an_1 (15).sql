@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 01, 2020 lúc 04:12 PM
+-- Thời gian đã tạo: Th12 01, 2020 lúc 05:59 PM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -71,11 +71,11 @@ INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `
 (38, 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', '', 48, 0, '2020-12-09', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
 (39, 'tuyển thiết kế đồ họa', 'tuyển 29 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ chuyên môn không cần cao', '', 29, 0, '2021-02-27', 0, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
 (40, 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', '', 96, 0, '2021-04-22', 0, 0, 666, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
-(41, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(41, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-30', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
 (42, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', '', 50, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 38, 1),
 (43, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-04', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 38, 1),
 (44, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', '', 40, 0, '2021-04-29', 0, 0, 150, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
-(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, NULL, 0, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
+(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, 500, 3, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -107,9 +107,9 @@ CREATE TABLE `doanh_nghiep` (
 --
 
 INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_chi`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
-(14, 44, 'doanh nghiệp thất bại', 'dn1.png', 'dt1.png', '', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
-(15, 45, 'doanh nghiệp thành công', 'dn2.png', 'dt2.jpg', '', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
-(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', 'dt3.jpg', '', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
+(14, 44, 'doanh nghiệp thất bại', 'dn1.png', 'dt1.png', 'a', '', 0, 0, '2147483647', '0123545687', '', 'https://www.youtube.com/', NULL, 0, 0),
+(15, 45, 'doanh nghiệp thành công', 'dn2.png', 'dt2.jpg', 'b', '', 0, 0, '2147483647', '0', '', '', NULL, 0, 0),
+(17, 47, 'doanh nghiệp đào tạo', 'dn3.png', 'dt3.jpg', 'bv', '', 0, 0, '656465264', '0', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -145,7 +145,7 @@ CREATE TABLE `ho_so_sv` (
 --
 
 INSERT INTO `ho_so_sv` (`id_ho_so`, `id_sv`, `tieu_de`, `trinh_do`, `noi_lam_viec`, `muc_tieu_nghe_nghiep`, `ky_nang_so_truong`, `so_thich`, `ky_nang_dac_biet`, `word`, `excel`, `power_point`, `outlook`, `ung_dung_khac`, `av_nghe`, `av_noi`, `av_doc`, `av_viet`, `ngon_ngu_khac`, `ngay_cap_nhap`) VALUES
-(1, 52, 'Thông tin sv', 2, 4, 'aaa', 'nhóm trunogwr', 'aaa', 'aaa', 3, 2, 3, 2, '', 4, 4, 4, 4, '4', '2020-12-01');
+(1, 47, 'Thông tin sv', 2, 4, 'aaad', 'nhóm trunogwr', 'aaaá', 'aaa', 3, 2, 2, 3, 'photoshop', 3, 2, 2, 3, '3', '2020-12-01');
 
 -- --------------------------------------------------------
 
@@ -214,13 +214,20 @@ CREATE TABLE `phieu_dk_in` (
   `ngay_dk` date NOT NULL,
   `nguyen_vong` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_dt` int(11) NOT NULL,
-  `id_dn` int(11) NOT NULL,
   `trang_thai` tinyint(1) NOT NULL COMMENT '0: sinh viên mới Nộp đơn\r\n1: doanh nghiệp duyệt sv rồi đang đợi sv xác nhận vô\r\n2:doanh nghiệp ko chấp nhận sinh viên ẩn bài viết\r\n3 sau khi doanh nghiệp đồng ý thì sv xác nhận công ti này\r\nđể tt (đặc biệt khi sv xác nhận thì tự hủy những phiếu đăng kí ở Dang_tuyen khác và không cho nộp đơn vào bất kì dang_tuyen nào)\r\n4 sau khi dn đồng ý thì sinh viên đổi ý hủy ko muốn vô nữa\r\n(tự hủy sau 2 ngày nếu sinh viên không chấp nhận)',
   `thoi_gian_duyet` datetime DEFAULT NULL COMMENT 'sau khi doanh nghiệp đồng ý thì cho sinh viên thêm 1 ngày để xác nhận có vô công ti hay ko\r\n',
-  `ket_qua` tinyint(1) NOT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
+  `ket_qua` tinyint(1) DEFAULT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
   `danh_gia` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL
+  `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phieu_dk_in`
+--
+
+INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt`, `trang_thai`, `thoi_gian_duyet`, `ket_qua`, `danh_gia`, `ghi_chu`) VALUES
+(8, 47, '0000-00-00', 'vô cho vui', 45, 0, '2020-12-01 23:07:47', 0, '', ''),
+(9, 47, '2020-11-30', 'thich vô cho vui ', 41, 0, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -406,7 +413,7 @@ ALTER TABLE `nhom_nganh`
 -- AUTO_INCREMENT cho bảng `phieu_dk_in`
 --
 ALTER TABLE `phieu_dk_in`
-  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `phieu_dk_out`

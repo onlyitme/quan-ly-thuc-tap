@@ -58,6 +58,10 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
         $view_sv = "view/ttcn_index.php";
     break;
+    case "danh_sach_don":
+      $phieu_dk_all=thongtindkallbyid();
+      $view_sv = "view/danh_sach_don.php";
+    break;
     case "cv_index":
       $thongtincv=thongtincv();
       $view_sv = "view/cv_index.php";
