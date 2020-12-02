@@ -107,12 +107,7 @@
                                         }else{
                                             
                                              
-                                                var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
-                                            +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
-                                                +'<div style="color: rgb(0, 155, 13);">'
-                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Hết hạn.</strong>'
-                                               +'</div>'
-                                           +'</div>'
+                                                
                                          
 {
                                             if( window.localStorage )
@@ -136,7 +131,7 @@
                                                 }
                                             
                                             ?>
-                                                document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                               
                                             }
                                         
 
@@ -170,6 +165,17 @@
                                             +'<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-2">'
                                                 +'<div style="color: rgb(0, 155, 13);">'
                                                     +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Đã từ chối xác thực .</strong>'
+                                               +'</div>'
+                                           +'</div>'
+                                                document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                            
+                                </script>
+                            <?php } elseif($row['trang_thai']==5){ ?>
+                                <script>
+                                    var kq='<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>'
+                                            +'<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-2">'
+                                                +'<div style="color: rgb(0, 155, 13);">'
+                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i>Đã hủy do không chấp thuận.</strong>'
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
