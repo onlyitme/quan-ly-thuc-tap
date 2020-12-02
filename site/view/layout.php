@@ -135,7 +135,7 @@
                                                 <div class="input-group-prepend mr-0" style="width: 15%;">
                                                     <span class="input-group-text  w-100" id="basic-addon3">Ngày hết hạn:</span>
                                                 </div>
-                                                <input type="date" name="diachi" class="N-ninput form-control" readonly placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
+                                                <input type="date" name="thoi_gian" class="N-ninput form-control"  placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
                                             </div>                                     
                                             <hr class="new mb-5">
                                             <div class="row p-3 my-3 bg-light rounded">
