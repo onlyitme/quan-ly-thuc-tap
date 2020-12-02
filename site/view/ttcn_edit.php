@@ -10,7 +10,7 @@
                                     <img  style="border:1px #bbbbbb solid;border-radius:50%;margin-bottom:30px;" src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
                                     </a>  
                                     </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2 mb-4" style=";margin-top:140px;">
+                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2 mb-4" style="margin-top:140px;">
                                         
                                     <input type="file" name="profile-avatar" id="profileAvatarPicker" class="inputfile" accept=".png, .jpg, .jpeg" >
                                     </div>

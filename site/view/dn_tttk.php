@@ -11,7 +11,10 @@
                 <div class="h-tt-left-img">
                     <img src="view/images/khaihoang.jpg" alt="avatar">
                     <div class="h-tt-left-img-txt">
-                        <h5>Đổi ảnh<button class="btn btn-outline-light" type="file">Tải lên..</button></h5>
+                        <label for="file-upload" class="h-custom-file-upload">
+                            <i class="far fa-camera"></i>
+                        </label>
+                        <input id="file-upload" type="file" />
                     </div>
                 </div>
                 <div class="h-tt-left-text">

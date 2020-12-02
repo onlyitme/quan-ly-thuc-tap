@@ -8,8 +8,11 @@
     <div class="h-box-dn-img mb-2">
         <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
         <div class="h-box-dn-txt">
-            <h5>Đổi ảnh bìa doanh nghiệp</h5>
-            <button class="btn btn-outline-light" type="file">Tải lên..</button>
+            <label for="file-upload" class="h-custom-file-upload">
+                <i class="far fa-camera"></i>
+                <p>Thay đổi ảnh bìa doanh nghiệp</p>
+            </label>
+            <input id="file-upload" type="file" />
         </div>
     </div>
     <h5>Thông tin chung</h5>
@@ -28,7 +31,7 @@
             foreach ($ds as $row) { ?>
                 <?php if ($row['id_user'] == $_SESSION['sid']) { ?>
                     <div class="form-group row">
-                    <input type="hidden" value="<?= $row['id_dn'] ?>" name="id_dn" class="form-control">
+                        <input type="hidden" value="<?= $row['id_dn'] ?>" name="id_dn" class="form-control">
                         <label for="" class="col-lg-3 col-form-label">Tên doanh nghiệp:</label>
                         <div class="col-sm-8">
                             <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
