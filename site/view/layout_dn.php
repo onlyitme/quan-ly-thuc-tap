@@ -248,7 +248,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlbv">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlbv&id_user=<?= $_SESSION['sid']?>">
                             <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
                         </a>
                     </li>

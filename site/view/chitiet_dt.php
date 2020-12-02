@@ -16,8 +16,8 @@
             <div class="row py-1 ">
                 <div class="col-12 ">
                     <?php
-                    $ds = getAllDoanhnghiep();
-                    foreach ($ds as $r) { ?>
+                    $dn = getAllDoanhnghiep();
+                    foreach ($dn as $r) { ?>
                         <?php if ($row['id_dn'] == $r['id_dn']) { ?>
                             Doanh nghiệp :<b> <?= $r['ten_dn'] ?></b>
                 </div>
