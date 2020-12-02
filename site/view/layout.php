@@ -14,33 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="view/css/style.css">
 </head>
-<script language="javascript">
-    function getcontent() {
-        var user = document.getElementById('user').value;
-        var pass = document.getElementById('pass').value;
-        var arr = [user, pass];
-        $.ajax({
-            type: "post",
-            url: "index.php?act=login",
-            data: {
-                login: arr
-            },
-            success: function(data) {
-
-                if (data == 0) {
-                    location.reload();
-                } else if (data == 1) {
-                    window.location = "index.php?ctrl=doanh_nghiep";
-                } else if (data == 2) {
-                    alert("bạn sẽ chuyển tới trang ADmin");
-                    window.location = "../admin/index.php";
-                } else {
-                    document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
-                }
-            }
-        });
-    }
-</script>
 
 <body>
     <header id="header" class="fixed-top shadow-sm border-bottom bg-light">
@@ -101,7 +74,7 @@
         if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu'] == 1) ){
             $thongtin_dn =  checkdoanhnghiep_iduser($_SESSION['sid']);
             $nhomnganh = ds_nn();
-            // $nganh = ds_nganh($id);
+            $nganh = ds_nganh(6);
         } 
     ?>
     <!-- Chỗ đẻ của Nghĩa dep trai -->
@@ -127,14 +100,18 @@
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text bg-primary text-white " for="chonnn">Ngành nghề</label>
                                                 </div>
-                                                <select class="custom-select" id="chonnn" name="hinhthuclamviec">
+                                                <select class="custom-select" id="chon_nn" name="hinhthuclamviec">
                                                     <?php foreach ($nhomnganh as $row) { ?>
                                                         <option value="<?=$row['id_nn']?>" ><?=$row['ten_nn']?></option>
                                                     <?php }?>
                                                 </select>
-                                                <select class="custom-select" id="chonnganh" name="hinhthuclamviec">
-                                                    <option value="0" active>Part-time</option>
-                                                    <option value="1" >Full-time</option>
+                                                
+                                                <select class="custom-select" id="nhomnganh" name="nganh_dt">
+                                                    <?php
+                                                        foreach ($nganh as $row){
+                                                            echo(' <option value="'.$row['id_nganh'].'">'.$row['ten_nganh'].'</option>');
+                                                        }
+                                                    ?>
                                                 </select>
                                             </div>
                                             <div class="input-group mb-3">
@@ -279,6 +256,7 @@
                                                     <h4 class="text-primary ">Quyền lợi</h4>
                                                 </div>
                                                 <textarea name="quyenloi" id="" class="editor" cols="30" rows="10"></textarea>
+                                                <input type="hidden" name="id_dn" value="<?=$_SESSION['sid_dn']?>">
                                         </div>
                                     </div>
                                 </div>

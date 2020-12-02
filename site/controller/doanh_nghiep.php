@@ -38,6 +38,8 @@ switch ($act) {
         break;
     case 'taodangtuyen':
         if(isset($_POST['submit'])){
+            $id_nganh = $_POST['nganh_dt'];
+            $id_dn = $_POST['id_dn'];
             $tieu_de = $_POST['tieude'];
             $luong_khoi_dau = $_POST['luongthapnhat'];
             $luong_ket_thuc = $_POST['luongcaonhat'];
@@ -61,11 +63,23 @@ switch ($act) {
             $mo_ta = $_POST['mota'];
             $yeu_cau = $_POST['yeucau'];
             $quyen_loi = $_POST['quyenloi'];
-
             add_dangtuyen($id_nganh,$id_dn,$tieu_de,$luong_khoi_dau,$luong_ket_thuc,$sl_sv_can,$full_part_time,$thoi_gian_lam_viec,$che_do_thuong,$dao_tao,$tang_luong,$nghi_phep_nam,$du_lich,$che_do_bao_hiem,$mo_ta,$yeu_cau,$quyen_loi);
 
-
         }
+        $view_dn = "view/dn_qlbv.php";
+
+        break;
+        case 'chonnganh':
+            if(isset($_POST['id_nn'])){
+                $nganh = ds_nganh_all($_POST['id_nn']);
+                foreach($nganh as $nganh){
+                    echo "<option value='".$nganh['id_nganh']."'>".$nganh['ten_nganh']."</option>";
+                }
+                exit();
+            }
+            break;
+    case 'qlbv':
+        $view_dn = "view/dn_qlbv.php";
         break;
     case "tttk":
         $view_dn = "view/dn_tttk.php";

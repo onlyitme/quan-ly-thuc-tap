@@ -8,6 +8,10 @@ function ds_nganh($id){
     $sql ="SELECT * FROM nganh where id_nn=$id";
    return query($sql);
 }
+function ds_nganh_all($id){
+    $sql ="SELECT * FROM nganh where id_nn=$id";
+   return queryAll($sql);
+}
 function ds_dt($id){
     $sql ="SELECT * from dang_tuyen where id_nganh=$id and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
     return query($sql);

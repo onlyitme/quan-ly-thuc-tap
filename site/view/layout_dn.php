@@ -248,7 +248,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlbv">
                             <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
                         </a>
                     </li>

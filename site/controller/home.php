@@ -104,6 +104,7 @@ require_once('model/doanh_nghiep.php');
           }elseif($checkkhachhang['chuc_vu']==1){
             $seach_dn_byid =  checkdoanhnghiepbyiduser($_SESSION['sid']);
             $_SESSION['sname'] = $seach_dn_byid['ten_dn'];
+            $_SESSION['sid_dn'] = $seach_dn_byid['id_dn'];
             $_SESSION['schuc_vu'] = 1;
             echo '1';
            
@@ -125,9 +126,10 @@ require_once('model/doanh_nghiep.php');
       case "logout":
         unset($_SESSION['sid']);
         unset($_SESSION['sid_sv']);
-        unset($_SESSION['suser']);
+        unset($_SESSION['sid_dn']);
         unset($_SESSION['schuc_vu']);
         unset($_SESSION['sname']);
+        unset($_SESSION['admin']);
         header('location:index.php');
         break;
  
