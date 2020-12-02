@@ -43,8 +43,8 @@
         </div>
     </div>
 
-    <div class="col-7  shadow-lg ml-4 pb-5 pt-4  rounded">
-        <div class="row mx-5 mb-4 mt-1">
+    <div class="col-7  shadow-lg ml-4 pb-5 pt-4    rounded">
+        <div class="row mx-5 mb-4 mt-1  ">
             <div class="col-12 px-1">
                 <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
                         href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
@@ -54,7 +54,7 @@
                         onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
             </div>
         </div>
-        <table>
+        <table class="ml-4">
             <tbody>
                 <tr>
                     <td> Ngành tuyển</td>
@@ -102,7 +102,7 @@
                 <tr style="height:20px;"></tr>
             </tbody>
         </table>
-        <div class="row mx-1 mt-4">
+        <div class="row mx-3 mt-4 ">
             Phúc lợi
         </div>
         <div class="row  mx-1 mt-2">

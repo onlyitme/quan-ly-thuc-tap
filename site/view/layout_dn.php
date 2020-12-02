@@ -244,6 +244,11 @@
                     </li>
                     <li>
                         <a href="#">
+                            <i class="far fa-user-alt" aria-hidden="true"></i> Quản lý nhân sự
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                             <i class="far fa-list-ul" aria-hidden="true"></i> Quản lý bài viết
                         </a>
                     </li>

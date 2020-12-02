@@ -36,4 +36,8 @@ function thongtincv(){
     $sql="SELECT * From ho_so_sv where id_sv='$_SESSION[sid_sv]'";
    return queryOne($sql);
 }
+function thongtindkallbyid(){
+    $sql="SELECT * from phieu_dk_in where id_sv='$_SESSION[sid_sv]'";
+   return queryAll($sql);
+}
 ?>

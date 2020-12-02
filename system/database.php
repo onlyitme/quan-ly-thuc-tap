@@ -20,6 +20,12 @@
         // $result = $result->fetchAll(PDO::FETCH_ASSOC);
         return $result;
         }
+    function queryAll($sql)   {
+            $conn = getConnection();
+            $result = $conn->query($sql);
+            $result = $result->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+            }
 
     //Lấy Array 1row
     function queryOne($sql) {

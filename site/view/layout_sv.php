@@ -1,7 +1,7 @@
 
             <div id="sinhvien">
                 <div class="row">
-                <div class="h-sidebar-container shadow mt-3">
+                <div class="h-sidebar-container shadow mr-4 mt-3">
                         <div class="h-box-left py-3">
                             <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
                                 <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header">HỒ SƠ CỦA BẠN</li>
@@ -14,7 +14,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="index.php?ctrl=sinh_vien&act=danh_sach_don">
                                         <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-card-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
                                             <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"></path>
@@ -75,7 +75,7 @@
                     </div>
 
                     <div class=" col-sm-9 mt-3 mb-3">
-                        <div class="container"> 
+                        <div class="container mt-3" > 
                         <?php include $view_sv; ?>
                         </div>
                     </div>
