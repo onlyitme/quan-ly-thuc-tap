@@ -10,6 +10,11 @@
         $sql = "SELECT * from dang_tuyen";
         return query($sql);
     }
+    function getAllNganh()
+    {
+        $sql = "SELECT * from nganh";
+        return query($sql);
+    }
     function getAllDangtheodn($id_dn)
     {
         $sql = "SELECT * from dang_tuyen WHERE id_dn='$id_dn'";

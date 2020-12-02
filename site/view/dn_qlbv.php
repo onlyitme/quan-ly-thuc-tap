@@ -1,9 +1,78 @@
+
 <div class="row align-items-center">
     <div class="col-lg-12">
         <h2 class="font-weight-600 mb-0">Quản lý bài viết</h2>
         <span class="text-secondary px-1"><i class="far fa-file"></i>
             299
         </span>
+    </div>
+</div>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+    <i class="fas fa-plus"></i> Thêm đăng tuyển
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Thêm đăng tuyển</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= SITE_URL ?>/?ctrl=dang_tuyen&act=insert" enctype="multipart/form-data" method="POST">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="tieu_de" required placeholder="Tiêu đề...">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user" name="yeu_cau" required placeholder="Yêu cầu">
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <select name="id_nganh" class="form-control">
+                                <option value="">Chọn ngành</option>
+                                <?php
+                                $nganh = getAllNganh();
+                                foreach ($nganh as $n) { ?>
+                                    <option value="<?= $n['id_nganh'] ?>"> <?= $n['ten_nganh'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-6">
+                            <div class="custom-file ">
+                                <input type="file" class="custom-file-input " id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="anh">
+                                <label class="custom-file-label " for="inputGroupFile01">ẢNH</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <input type="number" class="form-control" id="user" name="sl_sv_can" required placeholder="Số lượng sinh viên cần">
+                        </div>
+                        <div class="form-group col-6">
+                            <input type="number" class="form-control" id="user" name="luong" required placeholder="Lương">
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-6">
+                            <input type="text" class="form-control" id="user" name="quyen_loi" required placeholder="Quyền lợi">
+                        </div>
+                        <div class="form-group col-6">
+                            <input type="number" class="form-control" id="user" name="thoi_gian" required placeholder="Thời gian">
+                        </div>
+                    </div>
+                    <textarea name="mo_ta" id="" cols="60" rows="5" required placeholder="Mô tả"></textarea>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Huỷ</button>
+                        <button type="submit" class="btn btn-primary">Lưu đăng tuyển</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 </div>
 <?php foreach ($ds as $row) { ?>
