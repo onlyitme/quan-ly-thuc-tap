@@ -6,16 +6,16 @@
                                     </div>
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mb-4" >
                                         <p><strong>Ảnh đại diện</strong></p>
-                                        
-                                        <img  style="border:1px #bbbbbb solid;border-radius:50%;margin-bottom:30px;width:80%;" src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
-                                        
+                                        <a href="#">
+                                            <img  style="border:1px #bbbbbb solid;border-radius:50%;margin-bottom:30px;width:80%;" src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" >
                                         <div class="h-box-dn-txt">
                                             <label for="file-upload" class="h-custom-file-upload">
                                                 <i class="far fa-camera"></i>
                                                 <p>Thay đổi ảnh bìa doanh nghiệp</p>
                                             </label>
                                             <input id="file-upload" type="file">
-                                        </div>                                                                                           
+                                        </div>    
+                                        </a>                                                                                       
                                     </div>
 
                                      <!-- -->

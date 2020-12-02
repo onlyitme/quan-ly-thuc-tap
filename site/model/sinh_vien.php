@@ -40,4 +40,12 @@ function thongtindkallbyid(){
     $sql="SELECT * from phieu_dk_in where id_sv='$_SESSION[sid_sv]'";
    return queryAll($sql);
 }
+function doi_tt_dt($id_phieu){
+    $sql = "UPDATE phieu_dk_in SET trang_thai='4' where id_phieu= '$id_phieu'";
+    execute($sql);
+}
+function xacthuc_tt_dt($id){
+    $sql = "UPDATE phieu_dk_in SET trang_thai='3' where id_phieu= '$id'";
+    execute($sql);
+}
 ?>

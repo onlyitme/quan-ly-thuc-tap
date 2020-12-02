@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 02, 2020 lúc 04:51 PM
--- Phiên bản máy phục vụ: 10.4.16-MariaDB
--- Phiên bản PHP: 7.4.12
+-- Thời gian đã tạo: Th12 02, 2020 lúc 06:32 PM
+-- Phiên bản máy phục vụ: 10.4.13-MariaDB
+-- Phiên bản PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,15 +33,15 @@ CREATE TABLE `dang_tuyen` (
   `mo_ta` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `yeu_cau` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `quyen_loi` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sl_sv_can` int(11) DEFAULT NULL,
-  `sl_sv_dk` int(11) DEFAULT NULL,
+  `sl_sv_can` int(11) DEFAULT 1,
+  `sl_sv_dk` int(11) DEFAULT 0,
   `thoi_gian` date DEFAULT NULL,
-  `vi_tri` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 nhân viên thực tập\r\n1 nhân viên chính thức',
+  `vi_tri` tinyint(1) DEFAULT NULL COMMENT '0 nhân viên thực tập\r\n1 nhân viên chính thức',
   `kinh_nghiem` tinyint(1) DEFAULT 0 COMMENT '0: không cần\r\n1: cần',
-  `luong_khoi_dau` int(12) DEFAULT NULL,
+  `luong_khoi_dau` int(12) DEFAULT 0,
   `luong_ket_thuc` int(12) DEFAULT NULL,
-  `thoi_gian_tt` int(2) DEFAULT NULL COMMENT 'từ 1-12 giá trị theo tháng',
-  `full_part_time` tinyint(1) DEFAULT NULL COMMENT '0 part time\r\n1 full time',
+  `thoi_gian_tt` int(2) NOT NULL COMMENT 'từ 1-12 giá trị theo tháng',
+  `full_part_time` tinyint(1) DEFAULT 0 COMMENT '0 part time\r\n1 full time',
   `thoi_gian_lam_viec` tinyint(1) DEFAULT 0 COMMENT '0 làm t2-t6\r\n1 lam thu2-thu7\r\n2 lam thu2-cn',
   `che_do_bao_hiem` tinyint(1) DEFAULT 0,
   `du_lich` tinyint(1) DEFAULT 0,
@@ -51,7 +51,7 @@ CREATE TABLE `dang_tuyen` (
   `nghi_phep_nam` tinyint(1) DEFAULT 0,
   `id_dn` int(11) NOT NULL,
   `id_nganh` int(11) NOT NULL,
-  `an_hien` tinyint(1) NOT NULL DEFAULT 1
+  `an_hien` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -59,10 +59,23 @@ CREATE TABLE `dang_tuyen` (
 --
 
 INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `sl_sv_can`, `sl_sv_dk`, `thoi_gian`, `vi_tri`, `kinh_nghiem`, `luong_khoi_dau`, `luong_ket_thuc`, `thoi_gian_tt`, `full_part_time`, `thoi_gian_lam_viec`, `che_do_bao_hiem`, `du_lich`, `che_do_thuong`, `dao_tao`, `tang_luong`, `nghi_phep_nam`, `id_dn`, `id_nganh`, `an_hien`) VALUES
-(47, 'Tester / Nhân Viên Kiểm Thử Phần Mềm', '- Đọc hiểu các tài liệu đặc tả hệ thống, yêu cầu nghiệp vụ, tài liệu thiết kế liên quan.\r\n- Lập kế hoạch test và thiết kế testcase.\r\n- Thực hiện test sản phẩm dựa trên testcase.\r\n- Quản lý và phân tích kết quả test.\r\n- Viết báo cáo test, viết quy trình, hướng dẫn.\r\n- Thực hiện tốt các công việc khác khi được giao từ cấp trên.', '- Tốt nghiệp đại học chuyên ngành CNTT hoặc chuyên ngành tương đương.\r\n- Đã có kinh nghiệm ở vị trí Tester.\r\n- Ưu tiên có kinh nghiệm làm các sản phẩm website.\r\n- Có khả năng lập kế hoạch test và viết testcase.\r\n- Trách nhiệm, cân thận, tỉ mỉ và nhanh nhẹn.\r\n- Chủ động, thích nghi nhanh công việc.', '- Nhiều cơ hội thăng tiến và học hỏi, được đào tạo để nâng cao năng lực chuyên môn\r\n- Thu nhập xứng đáng với khả năng.\r\n- Được hưởng các chế độ phúc lợi: BHXH, BHYT, BHTN theo luật định\r\n- Môi trường làm việc năng động, sáng tạo, thân thiện\r\n- Nghỉ lễ, tết Theo Quy định của Luật Lao Động và Quy định của Nhà nước', 30, 0, NULL, 0, 0, 100, 200, 5, 0, 0, 0, 0, 0, 0, 0, 0, 21, 23, 1),
-(48, 'Nhân Viên Thiết Kế 2D Animation (Chế Độ Tốt)', '	\r\n- Dựng phim và diễn hoạt animation như trong video.\r\n- Thực hiện Animation dựa trên các ý tưởng đề xuất và có sẵn.', '- Khả năng thực hiện animation bằng bất kỳ phần mềm nào, miễn là đẹp và chất lượng.\r\n- Kỹ năng tư duy chuyển động tốt.\r\n- Sử dụng tốt phần mềm MOHO\r\n- Ưu tiên ứng viên có kinh nghiệm làm game animator.\r\n- Yêu thích chơi game.', '- Lương từ 8 -15 triệu : Lương Cơ Bản + Thưởng doanh thu, thu nhập cao theo năng lực\r\n- Được xét tăng lương 6 tháng/1 lần.\r\n- Thưởng theo năng lực.\r\n- Lương tháng thứ 13\r\n- Được nghỉ các ngày quốc lễ có lương.\r\n- Môi trường năng động, thân thiện, dễ dàng phát triển khả năng sáng tạo của bản thân.', 30, NULL, '2020-12-18', 0, 0, 200, 300, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 21, 22, 1),
-(49, 'Nhân Viên Lập Trình Winform Erp - Đi Làm Ngay', '· Tham gia xây dựng Form nhập liệu, Form phân tích thống kê theo yêu cầu.\r\n· Tham gia xây dựng biểu mẫu, báo cáo theo yêu cầu.\r\n· Tham gia bảo trì hệ thống: Xử lý lỗi, Ưu hóa truy xuất CSDL, Ưu hóa các chức năng của hệ thống.\r\n· Phối hợp với Đội Dự án để triển khai hệ thống.\r\n\r\n• Thời gian làm việc: Thứ 2-7 (08:00 ~ 17:00)\r\n• Địa chỉ làm việc:\r\n\r\nCTY TNHH PHẦN MỀM ERP KHOÁNG TRIỂN\r\nHCM: 268 Tô Hiến Thành, P.15, Q. 10, TP.HCM\r\nHà Nội: Tòa nhà Việt Á, Số 9 Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, TP. Hà Nội', '• Yêu từ 22 tuổi đến 30 tuổi\r\n• Tốt nghiệp CAO ĐẲNG trở lên chuyên ngành CNTT, Tự động hóa, Toán - Tin học hoặc các ngành liên quan…\r\n• Yêu thích công việc lập trình và có tư duy logic trong toán học.\r\n• Giao tiếp tốt, trình bày vấn đề rõ ràng, dễ hiểu.\r\n• Ưu tiên ứng viên có hiểu biết về SQL Server / Database.\r\n\r\n✅✅✅ QUY TRÌNH PHỎNG VẤN:\r\nBước 1: Sau khi nhận CV, chúng tôi gửi File thông tin theo mẫu để ứng viên điền thông tin (Ứng viên gửi kèm bằng cấp, bảng điểm và các chứng chỉ liên quan).\r\nBước 2: Sau khi được duyệt File thông tin, ứng viên nhận đề tài khảo hạch lập trình.\r\nBước 3: Ứng viên đạt yêu cầu khảo hạch, chúng tôi gửi lịch hẹn ngày phỏng vấn trực tiếp.\r\nBước 4: Đánh giá kết quả phỏng vấn, hẹn ngày đến nhận việc.', '· Sinh viên mới ra trường, lương thử việc: 5.000.000 - 6.000.000 / tháng.\r\n· Lương chính thức: Từ 7.000.000 - 12.000.000\r\n· Môi trường làm việc hiện đại, chuyên nghiệp, có cơ hội thăng tiến và ổn định lâu dài.\r\n· Được đào tạo về:\r\n- Lập trình cơ sở dữ liệu và lập trình hướng đối tượng.\r\n- Nghiệp vụ và quy trình làm việc của hệ thống ERP.\r\n- Làm việc và triển khai dự án cho các doanh nghiệp lớn.\r\n· Có cơ hội phát triển vào các vị trí quản lý của các chi nhánh công ty ở nước ngoài (Trung Quốc, Đài Loan, Myanmar,…).\r\n· Xét tăng lương 2 lần/năm theo năng lực và hiệu quả công việc.\r\n· Chế độ thưởng theo dự án, thưởng theo tình hình sản xuất kinh doanh cuối năm.\r\n· Hưởng các chế độ, phúc lợi: Lương tháng 13; Thưởng lễ tết; 12 ngày phép năm; tham gia đầy đủ BHXH, BHYT, BHTN,…\r\n· Các khoản phụ cấp khác: Phụ cấp ăn trưa, chi phí xăng xe, điện thoại,…\r\n· Môi trường có văn hóa \"Mở\", mọi người đều được thoải mái feedback, đưa ra ý kiến đóng góp.\r\n· Được tư vấn và chia sẻ về phát triển năng lực và ', 100, NULL, '2021-01-21', 0, 0, 50, 100, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 18, 24, 1),
-(57, 'Lập Trình Viên', '- Lập trình thành thạo C#,VB, ASP.NET, SQL server,...\r\n- Cài đặt chương trình trên máy các đơn vị khi có yêu cầu\r\n- Cấp user, cấp quyền trong chương trình khi có yêu cầu của các đơn vị\r\n- Kiểm tra backup dữ liệu các chương trình trên server thường xuyên\r\n- Quản lý và duy trì các chương trình được giao\r\n- Khảo sát yêu cầu các đơn vị để thực hiện hiệu chỉnh hoặc viết mới đúng yêu cầu công việc.\r\n- Hướng dẫn rõ ràng, chính xác, hỗ trợ kịp thời khi đơn vị có yêu', '-Tốt nghiệp Đại Học, chuyên ngành công nghệ thông tin\r\n-Ưu tiên ứng viên có kinh nghiệm\r\n-Sử dụng vi tính văn phòng ( word, excel)\r\n- Tiếng Anh chuyên ngành\r\n- Lập trình thành thạo C#,VB, ASP.NET, SQL server,...\r\n- Có khả năng làm việc độc lập và khả năng làm việc theo nhóm.\r\n- Năng động, sáng tạo, tinh thần làm việc nhóm cao\r\n- Có trách nhiệm, chịu được áp lực cao trong công việc\r\n- Đã từng làm việc trong nhóm phát triển phần mềm là một lợi thế', '	\r\n- Được hưởng các chế độ và quyển lợi theo quy định.\r\n- Lương thỏa thuận từ 7 - 10 triệu', 70, NULL, '2020-12-18', 0, 0, 50, 300, 4, 0, 0, 0, 0, 0, 0, 0, 0, 23, 21, 1);
+(29, 'tuyển 50 bạn thực tập Back-end', 'tuyển 50 thực tập sinh cho doanh nghiệp thành công', 'chăm chỉ ham học hỏi quan trọng biết tiếng việt', '', 50, 0, '2020-11-30', 0, 0, 500, NULL, 0, 0, 0, 1, 0, 0, 0, 0, 0, 15, 21, 1),
+(30, 'tuyển 40 bạn thực tập tự động hóa', 'Cần gấp 40 bạn thực tập sinh về công ti', 'biết ăn biết nói biết đọc và biết viết ( ngôn ngữ Việt Nam )', '', 40, 0, '2020-11-25', 0, 0, 0, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
+(31, 'tuyển tts du lịch ', 'công ti đang cần 45 bạn tts ', 'vui vẻ hòa đồng biết ăn nói', '', 45, 0, '2020-11-30', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 30, 1),
+(32, 'tuyển tts', 'tuyển 30 thực tập sinh web cho doanh nghiệp thành công', 'biết im lặng và nói đúng lúc', '', 30, 0, '2020-11-21', 0, 0, 50, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
+(33, 'tuyển 36 tts', 'tuyển 36 thực tập sinh web cho doanh nghiệp thất bại', 'Là con người', '', 36, 0, '2020-11-25', 0, 0, 10, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 21, 1),
+(34, 'tuyển tts thiết web Font-end', 'tuyển 60 tts quản lí code chỉnh sửa layout', 'biết giao tiếp bằng tiếng anh', '', 60, 0, '2021-01-29', 0, 0, 500, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(35, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(36, 'tuyển tts ttdh', 'dùng các công cụ để chỉnh sửa ảnh', 'biết tiếng người', '', 48, 0, '2020-12-09', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
+(37, 'tuyển thiết kế đồ họa', 'tuyển 69 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ', '', 69, 0, '2021-02-27', 0, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
+(38, 'tuyển tts ttdh', 'chỉnh sửa ảnh', 'biết tiếng anh', '', 48, 0, '2020-12-09', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 22, 1),
+(39, 'tuyển thiết kế đồ họa', 'tuyển 29 bạn tts đồ họa cho công ti thành công ', 'biết tiếp thu cần cù chăm chỉ chuyên môn không cần cao', '', 29, 0, '2021-02-27', 0, 0, 250, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 22, 1),
+(40, 'tuyển tkw cho công ti thành công', 'tuyển 96 bạn thực tập fullstack cho công ti', 'thành thạo các ngôn ngữ cơ bản biết giao tiếp tiếng anh', '', 96, 0, '2021-04-22', 0, 0, 666, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 21, 1),
+(41, 'tuyển 20 tts thiết web Back-end', 'tuyển 20 tts chỉnh sửa layout', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-30', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
+(42, 'tuyển 50 tts cơ khí', 'tuyển 50 tts cơ khí về công ti', 'biết giao tiếp bằng tiếng anh', '', 50, 0, '2021-04-29', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 38, 1),
+(43, 'tuyển 20 tts cơ khí', 'tuyển 20 tts cơ khí', 'biết giao tiếp bằng tiếng người', '', 20, 0, '2021-04-04', 0, 0, 100, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 38, 1),
+(44, 'tuyển 40 tts tự động hóa', 'tuyển 40 sv ngành tự động hóa', 'biết giao tiếp bằng tiếng anh', '', 40, 0, '2021-04-29', 0, 0, 150, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 35, 1),
+(45, 'tuyển tts font-end', 'tuyển 50 bạn tts font-end ', 'biết tiếng việt', '', 50, 0, '2021-02-19', 0, 0, 200, 500, 3, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1);
 
 -- --------------------------------------------------------
 
@@ -76,17 +89,17 @@ CREATE TABLE `doanh_nghiep` (
   `ten_dn` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `banner` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `anh` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `dia_chi` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `toa_do` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'lat và lng cách nhau bởi dấu ,',
-  `masothue` int(10) DEFAULT NULL,
-  `fax` int(10) DEFAULT NULL,
-  `sdt` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sdt_ban` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `facebook` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `website` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dia_chi` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `toa_do` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'lat và lng cách nhau bởi dấu ,',
+  `masothue` int(10) NOT NULL,
+  `fax` int(10) NOT NULL,
+  `sdt` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdt_ban` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `facebook` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngay_cap_nhap` date DEFAULT NULL,
   `an_hien` tinyint(1) DEFAULT 1,
-  `stt` int(3) DEFAULT NULL
+  `stt` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -94,10 +107,9 @@ CREATE TABLE `doanh_nghiep` (
 --
 
 INSERT INTO `doanh_nghiep` (`id_dn`, `id_user`, `ten_dn`, `banner`, `anh`, `dia_chi`, `toa_do`, `masothue`, `fax`, `sdt`, `sdt_ban`, `facebook`, `website`, `ngay_cap_nhap`, `an_hien`, `stt`) VALUES
-(18, 44, 'Siêu Việt Group', 'dn1.png', 'dt1.png', '23 Trần Cao Vân, Phường Đa Kao, Quận 1, TP HCM', NULL, NULL, NULL, NULL, NULL, 'https://www.facebook.com/baokun.97s/', 'https://www.facebook.com/baokun.97s/', NULL, 1, NULL),
-(19, 47, 'CÔNG TY TNHH GIẢI PHÁP MẠNG EDT', 'dn2.png', 'dt2.png', '268 Tô Hiến Thành, Phường 15, Quận 10, Thành phố Hồ Chí Minh, Việt Nam', NULL, NULL, NULL, NULL, NULL, 'https://www.facebook.com/baokun.97s/', 'https://www.facebook.com/baokun.97s/', NULL, 1, NULL),
-(21, 45, 'CÔNG TY CP WEMO MEDIA', 'dn3.png', 'dt3.png', '30 Nguyễn Thị Bảy, Phường Thanh Khê Tây, Quận Thanh Khê, Thành phố Đà Nẵng, Việt Nam', NULL, NULL, NULL, NULL, NULL, 'https://www.facebook.com/baokun.97s/', 'https://www.facebook.com/baokun.97s/', NULL, 1, NULL),
-(23, 48, 'CÔNG TY TNHH BÌNH TIÊN ĐỒNG NAI', 'dn2.png', 'dt2.png', '1/1, đường Phạm Văn Thuận - Phường Tam Hiệp - Thành phố Biên Hoà - Đồng Nai', NULL, NULL, NULL, NULL, NULL, 'https://www.facebook.com/baokun.97s/', 'https://www.facebook.com/baokun.97s/', NULL, 1, NULL);
+(14, 44, 'Công ty thiết kế web Vinalink', 'web1.png', 'web11.jpg', 'Số 85 Vương Thừa Vũ - Thanh Xuân - Hà Nội.', '', 0, 0, '0439726746', '0138212345', '', 'https://www.youtube.com/', NULL, 0, 0),
+(15, 45, 'Công ty thiết kế web Sapo', 'web2.jpg', 'web22.jpg', 'Tầng 6 - Tòa nhà Ladeco - 266 Đội Cấn - Phường Liễu Gia - Quận Ba Đình - Tp Hà Nội.', '', 0, 0, '1800 6750', '0138212345', '', '', NULL, 0, 0),
+(17, 47, 'Công ty thiết kế website Haravan', 'web3.png', 'web33.png', 'Tầng 1, Tòa nhà GP Invest, 170 Đê La Thành, Ô Chợ Dừa, Đống Đa, Hà Nội.', '', 0, 0, '1900.2297', '0138212345', '', '', NULL, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -133,7 +145,7 @@ CREATE TABLE `ho_so_sv` (
 --
 
 INSERT INTO `ho_so_sv` (`id_ho_so`, `id_sv`, `tieu_de`, `trinh_do`, `noi_lam_viec`, `muc_tieu_nghe_nghiep`, `ky_nang_so_truong`, `so_thich`, `ky_nang_dac_biet`, `word`, `excel`, `power_point`, `outlook`, `ung_dung_khac`, `av_nghe`, `av_noi`, `av_doc`, `av_viet`, `ngon_ngu_khac`, `ngay_cap_nhap`) VALUES
-(1, 52, 'Thông tin sv', 2, 4, 'aaa', 'nhóm trunogwr', 'aaa', 'aaa', 3, 2, 3, 2, '', 4, 4, 4, 4, '4', '2020-12-01');
+(1, 47, 'Thông tin sv', 2, 4, 'aaad', 'nhóm trunogwr', 'aaaá', 'aaa', 3, 2, 2, 3, 'photoshop', 3, 2, 2, 3, '3', '2020-12-01');
 
 -- --------------------------------------------------------
 
@@ -165,10 +177,7 @@ INSERT INTO `nganh` (`id_nganh`, `ten_nganh`, `an_hien`, `id_nn`) VALUES
 (31, 'Quản trị nhà hàng', 1, 8),
 (32, 'Quản trị khách sạn', 1, 8),
 (35, 'Điều khiển và tự động hóa', 1, 9),
-(38, 'Cơ khí', 1, 9),
-(42, 'Điện, Điện Tử', NULL, 9),
-(43, 'Điện công nghiệp', NULL, 9),
-(44, 'Quản trị lữ hành', NULL, 8);
+(38, 'cơ khí', 1, 9);
 
 -- --------------------------------------------------------
 
@@ -204,13 +213,21 @@ CREATE TABLE `phieu_dk_in` (
   `ngay_dk` date NOT NULL,
   `nguyen_vong` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_dt` int(11) NOT NULL,
-  `id_dn` int(11) NOT NULL,
+  `id_dn` int(11) DEFAULT NULL,
   `trang_thai` tinyint(1) NOT NULL COMMENT '0: sinh viên mới Nộp đơn\r\n1: doanh nghiệp duyệt sv rồi đang đợi sv xác nhận vô\r\n2:doanh nghiệp ko chấp nhận sinh viên ẩn bài viết\r\n3 sau khi doanh nghiệp đồng ý thì sv xác nhận công ti này\r\nđể tt (đặc biệt khi sv xác nhận thì tự hủy những phiếu đăng kí ở Dang_tuyen khác và không cho nộp đơn vào bất kì dang_tuyen nào)\r\n4 sau khi dn đồng ý thì sinh viên đổi ý hủy ko muốn vô nữa\r\n(tự hủy sau 2 ngày nếu sinh viên không chấp nhận)',
   `thoi_gian_duyet` datetime DEFAULT NULL COMMENT 'sau khi doanh nghiệp đồng ý thì cho sinh viên thêm 1 ngày để xác nhận có vô công ti hay ko\r\n',
-  `ket_qua` tinyint(1) NOT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
+  `ket_qua` tinyint(1) DEFAULT NULL COMMENT '0 chưa có \r\n1 rớt \r\n2 đạt',
   `danh_gia` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL
+  `ghi_chu` varchar(2000) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `phieu_dk_in`
+--
+
+INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt`, `id_dn`, `trang_thai`, `thoi_gian_duyet`, `ket_qua`, `danh_gia`, `ghi_chu`) VALUES
+(8, 47, '0000-00-00', 'vô cho vui', 45, NULL, 0, '2020-12-01 23:07:47', 0, '', ''),
+(9, 47, '2020-11-30', 'thich vô cho vui ', 41, NULL, 1, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -281,14 +298,14 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) VALUES
 (1, 'admin', 'admin', NULL, 2, 0),
-(39, 'sinhvien1@gmail.com', 'sinhvien', 'sinhvien1@gmail.com', 0, 0),
-(40, 'sinhvien2@gmail.com', 'sinhvien', 'sinhvien2@gmail.com', 0, 0),
-(41, 'sinhvien3@gmail.com', 'sinhvien', 'sinhvien3@gmail.com', 0, 0),
-(42, 'sinhvien4@gmail.com', 'sinhvien', 'sinhvien4@gmail.com', 0, 0),
+(39, 'bao@fpt.edu.vn', 'sinhvien', 'bao@fpt.edu.vn', 0, 0),
+(40, 'khai@fpt.edu.vn', 'sinhvien', 'khai@fpt.edu.vn', 0, 0),
+(41, 'hung@fpt.edu.vn', 'z', 'hung@fpt.edu.vn', 0, 0),
+(42, 'dat@fpt.edu.vn', 'sinhvien', 'dat@fpt.edu.vn', 0, 0),
 (44, 'doanhnghiep1@gmail.com', 'doanhnghiep', 'doanhnghiep1@gmail.com', 1, 0),
-(45, 'doanhnghiep2@gmail.com', 'doanhnghiep', 'doanhnghiep2@gmail.com', 1, 0),
-(47, 'doanhnghiep3@gmail.com', 'doanhnghiep', 'doanhnghiep3@gmail.com', 1, 0),
-(48, 'doanhnghiep4@gmail.com', 'doanhnghiep', 'doanhnghiep4@gmail.com', 0, 0);
+(45, 'hungngocpham2001@gmail.com', 'doanhnghiep', 'hungngocpham2001@gmail.com', 1, 0),
+(47, 'hungngocpham1995@gmail.com', 'doanhnghiep', 'hungngocpham1995@gmail.com', 1, 0),
+(48, 'a', 'a', NULL, 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -335,7 +352,8 @@ ALTER TABLE `nhom_nganh`
 ALTER TABLE `phieu_dk_in`
   ADD PRIMARY KEY (`id_phieu`),
   ADD KEY `id_sv` (`id_sv`,`id_dt`),
-  ADD KEY `id_dt` (`id_dt`);
+  ADD KEY `id_dt` (`id_dt`),
+  ADD KEY `id_dn` (`id_dn`);
 
 --
 -- Chỉ mục cho bảng `phieu_dk_out`
@@ -366,13 +384,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `dang_tuyen`
 --
 ALTER TABLE `dang_tuyen`
-  MODIFY `id_dt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id_dt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT cho bảng `doanh_nghiep`
 --
 ALTER TABLE `doanh_nghiep`
-  MODIFY `id_dn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_dn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `ho_so_sv`
@@ -384,7 +402,7 @@ ALTER TABLE `ho_so_sv`
 -- AUTO_INCREMENT cho bảng `nganh`
 --
 ALTER TABLE `nganh`
-  MODIFY `id_nganh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id_nganh` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `nhom_nganh`
@@ -396,7 +414,7 @@ ALTER TABLE `nhom_nganh`
 -- AUTO_INCREMENT cho bảng `phieu_dk_in`
 --
 ALTER TABLE `phieu_dk_in`
-  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `phieu_dk_out`
@@ -449,6 +467,7 @@ ALTER TABLE `nganh`
 -- Các ràng buộc cho bảng `phieu_dk_in`
 --
 ALTER TABLE `phieu_dk_in`
+  ADD CONSTRAINT `id_dn` FOREIGN KEY (`id_dn`) REFERENCES `doanh_nghiep` (`id_dn`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `phieu_dk_in_ibfk_1` FOREIGN KEY (`id_sv`) REFERENCES `sinh_vien` (`id_sv`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `phieu_dk_in_ibfk_2` FOREIGN KEY (`id_dt`) REFERENCES `dang_tuyen` (`id_dt`) ON DELETE CASCADE ON UPDATE CASCADE;
 
