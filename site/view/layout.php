@@ -95,7 +95,7 @@
                                 <div class=" row mt-4 m-0 py-3">
                                     <div class="Nghia row">
                                         <div class="col-12">
-                                            <div class="input-group mb-5">
+                                            <div class="input-group mb-2">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text bg-primary text-white " for="chonnn">Ngành nghề</label>
                                                 </div>
@@ -113,6 +113,12 @@
                                                     ?>
                                                 </select>
                                             </div>
+                                            <div class="input-group mb-5">
+                                                <div class="input-group-prepend mr-0" style="width: 25%;">
+                                                    <span class="input-group-text bg-primary text-white  w-100" id="basic-addon3">Ngày hết hạn:</span>
+                                                </div>
+                                                <input type="date" name="thoi_gian" class="N-ninput form-control"  placeholder="Địa chỉ làm việc*" aria-describedby="basic-addon3" value="<?=$thongtin_dn['dia_chi']?>">
+                                            </div>       
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend mr-0" style="width: 15%;">
                                                     <span class="input-group-text  w-100" id="basic-addon2">Tiêu đề:</span>
