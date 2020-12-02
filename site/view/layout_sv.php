@@ -1,8 +1,8 @@
 
             <div id="sinhvien">
                 <div class="row">
-                <div class="h-sidebar-container shadow mr-4 mt-3">
-                        <div class="h-box-left py-3">
+                <div class="h-sidebar-container shadow mr-4  "style="margin-top:30px;">
+                        <div class="h-box-left py-3 ">
                             <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
                                 <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header">HỒ SƠ CỦA BẠN</li>
                                 <li>
