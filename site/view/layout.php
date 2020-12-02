@@ -442,6 +442,44 @@
     </script>
     <!-- My script -->
     <script src="view/js/script.js "></script>
+    <script>   
+        function getcontent() {
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            var arr = [user, pass];
+            $.ajax({
+                type: "post",
+                url: "index.php?act=login",
+                data: {
+                    login: arr
+                },
+                success: function(data) {
+
+                    if (data == 0) {
+                        location.reload();
+                    } else if (data == 1) {
+                        window.location = "index.php?ctrl=doanh_nghiep";
+                    } else if (data == 2) {
+                        alert("bạn sẽ chuyển tới trang ADmin");
+                        window.location = "../admin/index.php";
+                    } else {
+                        document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
+                    }
+                }
+            });
+        }                
+        $('#chon_nn').on('change', function() {
+            var id_nn = $(this).val();
+            $.ajax({
+                type: "post",
+                url: "?ctrl=doanh_nghiep&act=chonnganh",
+                data: { id_nn: id_nn },
+                success: function(response) {
+                    $("#nhomnganh").html(response);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
