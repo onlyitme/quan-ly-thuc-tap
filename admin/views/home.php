@@ -23,11 +23,6 @@
 <div class="row">
     <div class="col-12 alert alert-primary">
         <h2 class="my-3">DashBoard</h2>
-          <nav aria-label="breadcrumb">
-                <ol class="breadcrumb bg-transparent p-0">
-                    <li class="breadcrumb-item"><a href="#"><i class="fas fa-home    "></i> Trang chủ</a></li>
-                </ol>
-            </nav>
     </div>
 </div>
 <div class="row mt-4">
