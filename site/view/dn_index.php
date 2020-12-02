@@ -87,11 +87,12 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <div class="h-ttdn-thebutton mt-2">
+                        <button type="submit" class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
+                    </div>
                 <?php } ?>
             <?php } ?>
-            <div class="h-thebutton mt-2">
-                <button type="submit" class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
-            </div>
+
         </form>
     </div>
 

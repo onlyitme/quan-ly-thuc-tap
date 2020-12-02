@@ -1410,6 +1410,12 @@
         background: #ffffff;
     }
 
+        
+    #doanhnghiep .h-ttdn-thebutton {
+        float: right;
+        margin-right: 80px;
+    }
+
     #doanhnghiep .h-dn-dangbai {
         /* background-image: linear-gradient(to right, #00c6ff 0%, #0072ff 51%, #00c6ff 100%) */
         background-image: linear-gradient(to right, #2574A9 0%, #00c6ff 51%, #2574A9 100%)
@@ -1578,8 +1584,8 @@
         height: 100%;
         padding: 5px;
         background-color: #fff;
-        border-right: 1px solid #f1f1f1;
-        border-radius: 5px;
+        border-right: 1px solid #ededed;
+        border-radius: 0px;
         overflow: hidden;
     }
 
