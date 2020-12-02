@@ -51,7 +51,6 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right  " aria-labelledby="btnGroupDrop1">
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=doanh_nghiep"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a>
-                                    <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=dang_tuyen&act=theodn&id_user=<?= $_SESSION['sid'] ?>"><i class="fas fa-list-alt mr-2"></i> Danh sách đăng tuyển</a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Danh sách ứng tuyển</a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>
                                 </div>
