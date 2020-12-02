@@ -823,9 +823,22 @@
         border-bottom: 2px solid #b1eaff;
     }
     
-    .resume .resume_about {
-        margin-top: 50px;
+    .resume .resume_item1 {
+        padding: 25px 0;
+        border-bottom: 2px solid #b1eaff;
+    }
+    
+    hr.N-hr {
         border-top: 2px solid #b1eaff;
+    }
+    
+    .resume .resume_about {
+        border-top: 2px solid #b1eaff;
+    }
+    
+    .resume .resume_about1 {
+        margin-top: 50px;
+        border-bottom: none;
     }
     
     .resume .resume_left .resume_item:last-child,

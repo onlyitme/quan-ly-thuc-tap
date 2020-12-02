@@ -72,7 +72,7 @@
                 <tr>
                     <td>Mức lương</td>
                     <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $row['luong'] ?> VND">
+                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $row['luong_khoi_dau'] ?>~<?= $row['luong_ket_thuc'] ?> VND">
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
