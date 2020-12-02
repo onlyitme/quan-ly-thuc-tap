@@ -43,6 +43,7 @@ switch ($act) {
             $tieu_de = $_POST['tieude'];
             $luong_khoi_dau = $_POST['luongthapnhat'];
             $luong_ket_thuc = $_POST['luongcaonhat'];
+            $thoi_gian_tt = $_POST['thoigiantt'];
             $sl_sv_can = $_POST['soluongtuyen'];
             $full_part_time = $_POST['hinhthuclamviec'];
             $thoi_gian_lam_viec = $_POST['thoigianlamviec'];
@@ -63,8 +64,7 @@ switch ($act) {
             $mo_ta = $_POST['mota'];
             $yeu_cau = $_POST['yeucau'];
             $quyen_loi = $_POST['quyenloi'];
-            add_dangtuyen($id_nganh,$id_dn,$tieu_de,$luong_khoi_dau,$luong_ket_thuc,$sl_sv_can,$full_part_time,$thoi_gian_lam_viec,$che_do_thuong,$dao_tao,$tang_luong,$nghi_phep_nam,$du_lich,$che_do_bao_hiem,$mo_ta,$yeu_cau,$quyen_loi);
-
+            add_dangtuyen($id_nganh,$id_dn,$tieu_de,$luong_khoi_dau,$luong_ket_thuc,$thoi_gian_tt,$sl_sv_can,$full_part_time,$thoi_gian_lam_viec,$che_do_thuong,$dao_tao,$tang_luong,$nghi_phep_nam,$du_lich,$che_do_bao_hiem,$mo_ta,$yeu_cau,$quyen_loi);
         }
         $view_dn = "view/dn_qlbv.php";
 

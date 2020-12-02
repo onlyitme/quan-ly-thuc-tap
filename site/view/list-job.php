@@ -60,7 +60,7 @@
     <div class="row detail-job shadow-sm ">
         <div class="col  p-lg-0">
             <div class="d-flex justify-content-between  border-bottom border-top py-2 px-3">
-                <h5>Hiện Có <?php echo $coutdangtuyen; ?> Việc Làm <?php echo $tennganh ?></h5>
+                <h5><?php echo $coutdangtuyen; ?> Việc Làm</h5>
                 <select name="" id="" class="small text-gray border-0">
                     <option value="">Cập Nhập</option>
                     <option value="">Thời Gian</option>
@@ -128,8 +128,8 @@
             echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
             <div class="row align-items-center bg-light p-3">
                 <div class="col-lg-8">
-                    <h4 class="mb-0">'.$thongtindt['tieu_de'].'</h4>
-                    <p class="font-weight-bold text-gray mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep">'.$thongtindn['ten_dn'].'</a></p>
+                    <h4 class="mb-2">'.$thongtindt['tieu_de'].'</h4>
+                    <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3">'.$thongtindn['ten_dn'].'</a></p>
                 </div>
                 <div class="col-lg-4 text-right">
                 '.$button_nopdon.'

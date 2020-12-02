@@ -230,8 +230,8 @@
                                                         </div>
                                                         <div class="custom-control custom-checkbox  mb-3">
                                                             <input type="checkbox" class="custom-control-input"
-                                                                id="defaultInline2" name="baohiem">
-                                                            <label class="custom-control-label" for="defaultInline2"><i
+                                                                id="defaultInline1" name="baohiem">
+                                                            <label class="custom-control-label" for="defaultInline1"><i
                                                                     class="fas fa-suitcase  text-info  ml-2 "></i> Bảo hiểm</label>
                                                         </div>
 
@@ -266,7 +266,7 @@
                     <div class="modal-footer bg-light px-4">
                         <div class="col-12 text-right">
                             <button type="button" class="btn btn-danger my-3 py-2 px-4" data-dismiss="modal">Hủy</button>
-                            <button type="submit" class="btn btn-success my-3 py-2 px-4">Đăng bài</button>
+                            <button type="submit" name="submit" class="btn btn-success my-3 py-2 px-4">Đăng bài</button>
                         </div>
                     </div>
                 </form>
