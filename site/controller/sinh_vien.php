@@ -54,6 +54,9 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $sdt=$_POST['sdt'];
         $dia_chi=$_POST['dia_chi'];
 
+        if(isset($_POST['email'])){
+          updateemail($_POST['email']);
+        }
         
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
    suatrangthai();

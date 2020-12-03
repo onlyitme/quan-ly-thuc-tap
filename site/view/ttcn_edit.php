@@ -12,7 +12,7 @@
                                                 <label for="file-upload" class="h-custom-file-upload">
                                                     <i class="far fa-camera"></i>
                                                 </label>
-                                                <input id="file-upload" type="file" />
+                                                <input id="file-upload" type="file" name="anh">
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
                                             <p>
-                                                <input type="email" class="form-control mb-2 " value="<?= $tttk['email'] ?>" placeholder="Nhập email" id="email">
+                                                <input type="email" class="form-control mb-2 " value="<?= $tttk['email'] ?>" placeholder="Nhập email" name='email' id="email">
                                             </p>
                                         </div>
 

@@ -56,4 +56,8 @@ function huy_dk_dt(){
     $sql = "UPDATE phieu_dk_in SET trang_thai='4' where trang_thai= '1' or trang_thai= '0' ";
     execute($sql);
 }
+function updateemail($email){
+    $sql = "UPDATE user SET email='$email' where id_user= '$_SESSION[sid]' ";
+    execute($sql);
+}
 ?>
