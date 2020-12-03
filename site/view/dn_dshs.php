@@ -3,7 +3,7 @@
         <div class="resume ">
             <button class="btn-danger11  btn btn-danger hide-btn">Đóng</button>
             <button class="btn-danger2 btn btn-danger hide-btn">Đóng</button>
-            <button class="btn-sucsess11 btn btn-success"><a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu=<?=$t['id_phieu']?>">Phê Duyệt</a> </button>
+            <button class="btn-sucsess11 btn btn-success"><a href="" id="nutpheduyet">Phê Duyệt</a> </button>
             <div class="resume_left">
                 <div class="resume_profile">
                     <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
@@ -287,7 +287,7 @@
                                             elseif ($t['trang_thai']==2)echo'Đã từ chối';
                                             elseif ($t['trang_thai']==3)echo'Sinh viên đã xác nhận';
                                             ?></td>
-                                            <td class="text-center"><a href="javascript:truyen_id(<?=$t['id_phieu']?>"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                            <td class="text-center"><a  onclick="truyen_id(<?=$t['id_phieu']?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
                                         </tr>
                                     <?php } ?>
                                 <?php } ?>
@@ -299,3 +299,8 @@
         </table>
     </div>
 </div>
+<script>
+    function truyen_id(id_phieu){
+        $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu='+id_phieu);
+    }
+</script>
