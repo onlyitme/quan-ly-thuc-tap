@@ -836,6 +836,7 @@
     .resume .resume_item1 {
         padding: 25px 0;
         border-bottom: 2px solid #b1eaff;
+        border-top: 2px solid #b1eaff;
     }
     
     hr.N-hr {

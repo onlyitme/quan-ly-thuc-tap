@@ -22,7 +22,7 @@
     }
     function getAllUngtuyen($id_dt)
     {
-        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='0'";
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' and trang_thai='0'";
         return query($sql);
     }
     function getDangtuyenByID($id_dt)
@@ -38,6 +38,11 @@
     function getAllDoanhnghiep()
     {
         $sql = "SELECT * from doanh_nghiep";
+        return query($sql);
+    }
+    function getAllDoanhnghiepID($id_user)
+    {
+        $sql = "SELECT * from doanh_nghiep WHERE id_user='$id_user'";
         return query($sql);
     }
     function  addNewDoanhnghiep($id_user, $ten_dn, $dia_chi, $sdt, $an_hien, $anh, $website)
