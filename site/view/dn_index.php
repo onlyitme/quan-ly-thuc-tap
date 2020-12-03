@@ -86,8 +86,15 @@
                                 <?php } ?>
                             <?php } ?>
                         </div>
+                        <label for="" class="col-md-3 mt-2 col-form-label">Liên lạc:</label>
+                        <span class="h-social">
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-reddit-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square"></i></a>
+                            <a href="#"><i class="fab fa-github-square"></i></a>
+                        </span>
                     </div>
-                    <div class="h-ttdn-thebutton mt-2">
+                    <div class="h-ttdn-thebutton">
                         <button type="submit" class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
                     </div>
                 <?php } ?>

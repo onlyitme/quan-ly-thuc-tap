@@ -219,7 +219,7 @@
                     <hr style="width: 50%;">
                 </div> -->
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3">
-                    <a  data-toggle="modal" data-target="#exampleModal-Nghia" >
+                    <a data-toggle="modal" data-target="#exampleModal-Nghia">
                         <button class="h-dn-dangbai mb-3"><i class="far fa-plus-circle"></i> Đăng bài</button>
                     </a>
                     <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tttk">
@@ -244,7 +244,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="far fa-user-alt" aria-hidden="true"></i> Quản lý nhân sự
+                            <i class="far fa-users" aria-hidden="true"></i> Quản lý nhân sự
                         </a>
                     </li>
                     <li>

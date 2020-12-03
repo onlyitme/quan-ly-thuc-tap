@@ -29,7 +29,7 @@
 
 <div class=" h-big-box mt-4">
     <div class="h-box1">
-        <table class="table table-hover table-striped border">
+        <table class="table table-hover table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col" class="text-center">STT</th>

@@ -39,23 +39,23 @@
                 <div class="col-sm-6">
                     <!-- <label for="" class="form-control col-form-label">Chèn thông tin</label> 
                         Nếu ko sử dụng input thì sẽ sử dụng lable-->
-                    <input type="password" value="123123" readonly="readonly" class="form-control">
+                    <input type="password" value="" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-5 col-form-label px-0">Mật khẩu mới:</label>
                 <div class="col-sm-6">
-                    <input type="password" value="123456789" readonly="readonly" class="form-control">
+                    <input type="password" value="" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="" class="col-lg-5 col-form-label px-0">Xác nhận mật khẩu mới:</label>
                 <div class="col-sm-6">
-                    <input type="password" value="123456789" readonly="readonly" class="form-control">
+                    <input type="password" value="" class="form-control">
                 </div>
             </div>
 
-            <button class="btn btn-outline-secondary">Làm lại <i class="far fa-redo-alt "></i></button>
+            <button type="reset" class="btn btn-outline-secondary">Làm lại <i class="far fa-redo-alt "></i></button>
             <button class="btn btn-success mr-5">Xác nhận <i class="far fa-check"></i></button>
         </div>
     </form>

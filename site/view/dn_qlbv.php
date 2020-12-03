@@ -1,6 +1,6 @@
 <div class="row align-items-center">
     <div class="col-lg-12">
-        <h2 class="font-weight-600 mb-0">Quản lý bài viết</h2>
+        <h2 class="font-weight-700 mb-0">Quản lý bài viết</h2>
         <span class="text-secondary px-1"><i class="far fa-file"></i>
             299
         </span>
@@ -22,9 +22,9 @@
             <span class="text-secondary">
                 <span class="text-success"><i class="fas fa-toggle-on"></i>
                     <span>Hoạt động</span>
-            </span>
-            <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
-            <i class="far fa-eye"></i> <span>299</span>
+                </span>
+                <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
+                <i class="far fa-eye"></i> <span>299</span>
 
             </span>
         </div>
@@ -61,11 +61,11 @@
         </div>
         <div class="h-bv-right-span">
             <span class="text-secondary">
-                <span class="text-success"><i class="fas fa-toggle-on"></i>
-                    <span>Hoạt động</span>
-            </span>
-            <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
-            <i class="far fa-eye"></i> <span>299</span>
+                <span class="text-danger"><i class="fas fa-toggle-off"></i>
+                    <span>Tạm ngưng</span>
+                </span>
+                <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
+                <i class="far fa-eye"></i> <span>299</span>
 
             </span>
         </div>
@@ -104,10 +104,9 @@
             <span class="text-secondary">
                 <span class="text-success"><i class="fas fa-toggle-on"></i>
                     <span>Hoạt động</span>
-            </span>
-            <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
-            <i class="far fa-eye"></i> <span>299</span>
-
+                </span>
+                <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
+                <i class="far fa-eye"></i> <span>299</span>
             </span>
         </div>
         <hr class="h-bv-hr">
