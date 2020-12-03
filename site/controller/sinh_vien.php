@@ -56,6 +56,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
 
         
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
+   suatrangthai();
         $view_sv = "view/ttcn_index.php";
     break;
     case "danh_sach_don":

@@ -108,6 +108,8 @@ require_once('model/doanh_nghiep.php');
             $_SESSION['sname']=$seach_kh_byid['ho_ten'];
             $_SESSION['sid_sv']=$seach_kh_byid['id_sv'];
             $_SESSION['schuc_vu'] = 0;
+            $kt_dn_landau= checktaikhoanbyid($_SESSION['sid']);
+            if($kt_dn_landau['kich_hoat']==0) echo '10';else
             echo '0';
             
          

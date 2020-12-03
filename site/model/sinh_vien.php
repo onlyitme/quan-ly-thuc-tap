@@ -19,6 +19,10 @@ function updatecv($tieu_de,$trinh_do,$noi_lam_viec,$muc_tieu_nghe_nghiep,$ky_nan
     av_doc='$av_doc', av_viet='$av_viet', ngon_ngu_khac='$ngon_ngu_khac', ngay_cap_nhap='$ngay_cap_nhap'  where id_sv= '$_SESSION[sid_sv]'";
     execute($sql);
 }
+function suatrangthai(){
+    $sql = "UPDATE user SET kich_hoat='1' where id_user= '$_SESSION[sid]'";
+    execute($sql);
+}
 function updatecv_1($tieu_de,$trinh_do,$noi_lam_viec,$muc_tieu_nghe_nghiep,$ngay_cap_nhap){
     $sql = "UPDATE ho_so_sv SET tieu_de='$tieu_de', trinh_do='$trinh_do', noi_lam_viec='$noi_lam_viec', muc_tieu_nghe_nghiep='$muc_tieu_nghe_nghiep', ngay_cap_nhap='$ngay_cap_nhap'  where id_sv= '$_SESSION[sid_sv]'";
     execute($sql);
