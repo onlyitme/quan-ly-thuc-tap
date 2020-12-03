@@ -7,7 +7,6 @@
                     </div>
                 </div>
                 <div class=" row home-list-job">
-
                 <?php
                 foreach($ds_nn as $ds_nn){ $ds_nganh=ds_nganh($ds_nn['id_nn']); ?>    
                     <div class="col-12 py-5">
