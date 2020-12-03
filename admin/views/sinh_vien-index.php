@@ -15,12 +15,15 @@ if(isset($_POST['bttn'])){
     for($row=2;$row<=$highRow;$row++){
         $user=$sheetData[$row]['A'];
         $pass=$sheetData[$row]['B'];
+        $ho_ten=$sheetData[$row]['C'];
+        $mssv=$sheetData[$row]['D'];
+        $email=$user;
         $chuc_vu=0;
 
-        addNewUserE($user,$pass,$chuc_vu);
+        addNewUserE($user,$pass,$email,$chuc_vu);
         $user_full = seach_id_user($user);
         $id_user=$user_full['id_user'];
-        addNewSinhvienforexecl($id_user);
+        addNewSinhvienforexecl($id_user,$ho_ten,$mssv);
         $sv_full = seach_id_sv($id_user);
         $id_sv=$sv_full['id_sv'];
         addNewhosoforexecl($id_sv);

@@ -29,9 +29,9 @@
                                         <a style="font-size: 10pt;" href="#"><?=$thong_tin_dn['sdt']?> </a>– <a style="font-size: 10pt;" href="#"><?=$thong_tin_dn['sdt_ban']?></a>
                                     </p>
                                 </div>         
-                                <div  class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 "style="padding: 5px 15px;">
+                                <div  class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 "style="padding: 5px 15px;" >
                                     <div class="row" >
-                                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mb-5 ml-5" style="padding: 5px 10px; display: flex; ">
+                                        <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mb-5 ml-5" style="padding: 5px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
                                             <div class="item mr-2">
                                                 <p style="color:tomato;">Ngày</p>
                                                 <span style="margin-top: -10px;" id="days<?=$row['id_dt']?>">00</span>
@@ -71,6 +71,7 @@
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
                                             
                                 </script>
                                 <?php } elseif($row['trang_thai']==1){ 
@@ -90,7 +91,7 @@
                                         hours %=24
                                         minutes %=60
                                         seconds %=60
-                                        if(seconds>0){
+                                        if(seconds>=0){
                                             document.getElementById("days<?=$row['id_dt']?>").innerText = days
                                             document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
                                             document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
@@ -131,6 +132,7 @@
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
                                             }
                                         
 
@@ -145,6 +147,7 @@
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
                                             
                                 </script>
                             <?php } elseif($row['trang_thai']==3){ ?>
@@ -156,6 +159,7 @@
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
                                             
                                 </script>
                             <?php } elseif($row['trang_thai']==4){ ?>
@@ -167,6 +171,19 @@
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
+                                            
+                                </script>
+                            <?php } elseif($row['trang_thai']==5){ ?>
+                                <script>
+                                    var kq='<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>'
+                                            +'<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-2">'
+                                                +'<div style="color: rgb(0, 155, 13);">'
+                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Từ chối xác thực do hết thời gian .</strong>'
+                                               +'</div>'
+                                           +'</div>'
+                                                document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                                document.getElementById("thoi_gian<?=$row['id_dt']?>").innerHTML = ''
                                             
                                 </script>
                             <?php } ?>
