@@ -1,10 +1,7 @@
 <div class="N-box" id="myDiv">
     <div id="overflow">
         <div class="resume ">
-            <button class="btn-danger11  btn btn-danger hide-btn">Đóng</button>
-            <button class="btn-danger2 btn btn-danger hide-btn">Đóng</button>
-            <button class="btn-sucsess11 btn btn-success"><a href="" id="nutpheduyet">Phê Duyệt</a> </button>
-            <button class="btn-sucsess11 btn btn-danger"><a href="" id="nuttuchoi">Từ chối</a> </button>
+                <button class="btn-danger2 btn btn-outline-light text-dark hide-btn">X</button>
             <div class="resume_left">
                 <div class="resume_profile">
                     <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
@@ -138,13 +135,18 @@
             <div class="resume_right">
                 <div class="resume_item1 resume_about1">
                     <div class="title">
-                        <p class="bold alert alert-secondary ">Tiêu đề đây nè</p>
+                        <p class="bold h4">Tuyển Thực Tập Sinh</p>
+                        <p class="font-weight-bold text-gray">NGUYỆN VỌNG:  <span class="font-weight-normal">
+                            Mong được tham gia cùng doanh nghiệp để phát kỹ năng và học tập nhiều hơn.!
+                        </span></p>
+
                     </div>
-                    <hr class="N-hr">
-                    <div class="title">
-                        <p class="bold">Nguyện vọng</p>
-                    </div>
-                    <p>Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola Có cuộc sống đơn giản như Cường Đola</p>
+                    
+                <div class="pt-3 text-right">
+                            <a class=" btn btn-success" href="" id="nutpheduyet">Phê Duyệt</a>
+                            <a class=" btn btn-danger" href="" id="nuttuchoi">Từ chối</a> 
+                                
+                </div>
                 </div>
                 <div class="resume_item resume_about">
                     <div class="title">
@@ -284,12 +286,13 @@
                                             <td><?= $s['ho_ten'] ?></td>
                                             <td><?= $t['ngay_dk'] ?></td>
                                             <td>Thực tập sinh</td>
-                                            <td class="text-success"><?php if ($t['trang_thai'] == 0) echo 'Chờ duyệt';
-                                                                        elseif ($t['trang_thai'] == 1) echo 'Đã duyệt';
-                                                                        elseif ($t['trang_thai'] == 2) echo 'Đã từ chối';
-                                                                        elseif ($t['trang_thai'] == 3) echo 'Sinh viên đã xác nhận';
+                                            <td class="font-weight-bold"><?php if ($t['trang_thai'] == 0) echo '<span class="text-warning">Đang chờ ...</span>';
+                                                                        elseif ($t['trang_thai'] == 1) echo '<span class="text-success"><i class="fas fa-check-circle    "></i> Chờ xác nhận</span>';
+                                                                        elseif ($t['trang_thai'] == 2) echo '<span class="text-danger"><i class="fas fa-window-close    "></i> Từ chối</span>';
+                                                                        elseif ($t['trang_thai'] == 3) echo '<span class="text-gray">Đã xác nhận</span>';
                                                                         ?></td>
-                                            <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                            <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu']?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                          
                                         </tr>
                                     <?php } ?>
                                 <?php } ?>
@@ -305,5 +308,6 @@
     function truyen_id(id_phieu) {
         $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' + id_phieu);
         $("#nuttuchoi").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' + id_phieu);
+       
     }
 </script>

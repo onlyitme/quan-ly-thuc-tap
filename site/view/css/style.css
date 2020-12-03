@@ -340,8 +340,8 @@
     }
     /* END BAOKUN       */
     /* ----------- sinh vien dau ------------ */
-    
     /* hover image*/
+    
     #sinhvien .h-tt-left-img {
         float: left;
         width: 150px;
@@ -377,14 +377,14 @@
         transform: scale(1);
         transition: ease-in-out 0.3s;
     }
-
+    
     #sinhvien .h-tt-left-img:hover div.h-tt-left-img-txt {
         opacity: 1;
         transform: scale(1);
         transition: ease-in-out 0.3s;
     }
     /* end hover-image sv */
-
+    
     #sinhvien .avt-sv {
         width: 100%;
         height: 100%;
@@ -447,7 +447,6 @@
         display: inline-block;
         cursor: pointer;
         position: absolute; */
-
         padding: 14px 20px;
         top: 20px;
         display: inline-block;
@@ -855,7 +854,6 @@
     
     .bold {
         font-weight: 700;
-        font-size: 12pt;
         text-transform: uppercase;
     }
     
@@ -1101,12 +1099,6 @@
     .btn-danger2 {
         position: absolute;
         right: 20px;
-        top: 30px;
-    }
-    
-    .btn-sucsess11 {
-        position: absolute;
-        right: 103px;
         top: 30px;
     }
     /* Nghia onclick */
