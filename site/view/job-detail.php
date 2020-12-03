@@ -70,8 +70,8 @@ else $button_nopdon = "";
  echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
  <div class="row align-items-center border rounded shadow-sm p-5 bg-light">
      <div class="col-lg-8 ">
-        <h4 class="mb-2 text-justif">'.$thongtindt['tieu_de'].'</h4>
-        <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3">'.$thongtindn['ten_dn'].'</a></p>
+        <h4 class="mb-2 font-weight-bold text-justif">'.$thongtindt['tieu_de'].'</h4>
+        <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
      '.$button_nopdon.'

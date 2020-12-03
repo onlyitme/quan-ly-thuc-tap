@@ -278,6 +278,11 @@
         height: 300px;
         object-fit: cover;
     }
+    
+    #avt-cart-home {
+        height: 150px;
+        object-fit: cover;
+    }
     /*---- danh sách việc làm---- */
     
     #list-job {

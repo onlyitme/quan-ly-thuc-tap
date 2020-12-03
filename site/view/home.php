@@ -42,7 +42,7 @@
                                     <div class=" col-lg-3 col-md-6 mt-3  pb-3  float-left">
 
                                         <div class="card card-re h-100 bg-light">
-                                            <img class="card-img-top " src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="../uploads/700x400.png" alt="Card image cap ">
+                                            <img class="card-img-top " id="avt-cart-home" src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="../uploads/700x400.png" alt="Card image cap ">
                                             <div class="card-body small">
                                                 <h5 class="card-title "><?=$ds_dt['tieu_de']?></h5>
                                                 <a href="" class="card-text text-gray "><?=$thongtindn['ten_dn']?></a>
