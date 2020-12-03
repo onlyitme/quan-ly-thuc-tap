@@ -1,36 +1,25 @@
-<div class="bg-ttcn">
-                                
-<div class="media boder tt-dau bg-tt">  
-    <div class="thongtin0">
-        <div class="col-sm-9 "style="margin-0 auto;">
-            <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.PNG" alt="John Doe" class="center" style="width:90%;margin-left:60px;margin-top:7px; border-radius: 50%;">                                       
+<div class="media mb-2 sv8-12 py-3">  
+        <div class="thongtin0">
+            <div class="col-sm-9 "style="margin-0 auto;">
+                <img  src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/avt1.PNG" alt="John Doe" class="center" style="width:90%;margin-left:60px;margin-top:7px; border-radius: 50%;">                                       
+            </div>
+        </div>                      
+        <div class="thongtin1">
+            <div class="media-body ml-4" style="margin-top:-20px;"><br>
+            <h3><?=$ttsv['ho_ten']?> </h3>
+                <p > Thực tập sinh.</p> 
+                <hr class="mr-5" style="width: 98% ;">     
+                <i class="fa fa-phone mr-3" style="font-size: 13pt; transform: scaleX(-1);"></i>
+                <a href="#"><?=$ttsv['sdt']?></a>   <br>
+                <i class="fa fa-home mt-3 mr-3" style="font-size: 13pt;"></i> 
+                <a href="#"><?=$ttsv['dia_chi']?></a>    
+            </div>
         </div>
-    </div>                      
-    <div class="thongtin1">
-        <div class="media-body ml-4" style="margin-top:-20px;"><br>
-        <h3><?=$ttsv['ho_ten']?> </h3>
-            <p > Thực tập sinh.</p> 
-            <hr class="mr-5" style="background: white;width: 98% ;">     
-            <i class="fa fa-phone mr-3" style="font-size: 13pt; transform: scaleX(-1);"></i>
-            <a href="#"><?=$ttsv['sdt']?></a>   <br>
-            <i class="fa fa-home mt-3 mr-3" style="font-size: 13pt;"></i> 
-            <a href="#"><?=$ttsv['dia_chi']?></a>    
-        </div>
-    </div>
-</div> 
-</div>
-
-<div class="media boder p-3 sv8-12">
+    </div> 
+<div class="media boder p-3 ">
 <div class="row tt-5 col-sm-6">
-    <div  class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 mb-2">
+    <div  class="col-12  mb-2">
         <h5 style="padding: 5px 0px;font-weight: 600;">THÔNG TIN TÀI KHOẢN</h5>           
-    </div>
-    <div  class="col-sm-5 col-md-5 col-lg-5 col-xl-5 col-5 ">
-            <a class=" btn btn-white-36 " href="index.php?ctrl=sinh_vien&act=user_edit" style="border-radius: 5px;">
-            <i style="color: black;" class="fa fa-pencil ml-2"></i>
-            <span class=" text-gray-75 font400 ml-2 mr-2 " style="font-size: 14px;"> Chỉnh sửa</span>
-        </a> 
-
     </div>
     <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4  ml-4">
         <p style="font-weight: 600;">Tên đăng nhập </p>           
