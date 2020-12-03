@@ -95,7 +95,7 @@
                         </span>
                     </div>
                     <div class="h-ttdn-thebutton">
-                        <button type="submit" class="btn btn-outline-success">Cập nhật <i class="far fa-check"></i></button>
+                        <button type="submit" class="btn btn-outline-success">Cập nhật</button>
                     </div>
                 <?php } ?>
             <?php } ?>

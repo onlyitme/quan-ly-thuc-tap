@@ -1232,6 +1232,7 @@
     #doanhnghiep .h-box1 {
         max-height: 500px;
         overflow-y: auto;
+        overflow-x: hidden;
     }
     
     #doanhnghiep .h-sidebar-navigation {
@@ -1442,9 +1443,7 @@
     }
     
     #doanhnghiep .h-social {
-        position: absolute;
-        left: 7px;
-        bottom: -1px;
+        padding: 10px 15px;
     }
     
     #doanhnghiep .h-social .fab,
@@ -1614,7 +1613,6 @@
         border-radius: 10px;
         background: white;
         box-shadow: 0 1px 10px 0 rgba(29, 31, 89, .1);
-        transition: .5s;
         /* box-shadow: 0 1px 5px #dedede; */
         overflow: hidden;
     }

@@ -307,9 +307,7 @@
                                     <p id="dangnhapsai" class="text-danger font-italic"></p>
                                 </div>
 
-
                                 <div class="form-group">
-
                                     <!-- <label for="">Tên đăng nhập</label> -->
                                     <input type="text" name="user" id="user" class="form-control" aria-describedby="helpId" placeholder="Tên tài khoản">
                                 </div>
