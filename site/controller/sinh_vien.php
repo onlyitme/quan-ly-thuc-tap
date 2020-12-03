@@ -63,14 +63,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       $view_sv = "view/danh_sach_don.php";
     break;
     case "xac_thuc_sv":
-      xacthuc_tt_dt($_POST['id']); 
-      $tt_phieu_dk= checkphieudkinbyid($_POST['id']);
-
-      $tt_dang_tuyen= checkdangtuyenbyid($tt_phieu_dk['id_dt']);
-      $dem =  $tt_dang_tuyen['sl_sv_dk'];
-      $dem++;
-      $id_dt =  $tt_dang_tuyen['id_dt'];
-      them_sl_sv_dk($dem,$id_dt);
+      xacthuc_tt_dt($_POST['id']);
       huy_dk_dt();
    exit();
     break;
