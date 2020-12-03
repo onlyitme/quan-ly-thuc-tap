@@ -44,14 +44,20 @@
     </div>
 
     <div class="col-7  shadow-lg ml-4 pb-5 pt-4    rounded">
-        <div class="row mx-5 mb-4 mt-1  ">
-            <div class="col-12 px-1">
-                <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
+        <div class="row mx-0 mb-5 mt-1  ">
+            <div class="col-12 d-inline">
+                <!-- <button class="btn btn-success float-right ml-2 py-2"><a class="text-light text-decoration-none"
                         href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> Chi tiết sinh
-                        viên ứng tuyển</a></button>
-                <button class="btn btn-danger float-right py-2"> <a class="text-light text-decoration-none"
-                        href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
-                        onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
+                        viên ứng tuyển</a></button> -->
+                <div class="col-12 "><a class="text-decoration-none d-inline" style="font-size:14pt;"
+                        href="<?= ADMIN_URL ?>/?ctrl=dang_tuyen&act=ung_tuyen&id_dt=<?= $row['id_dt'] ?>"> <i
+                            class="fa fa-info-circle"></i> Chi tiết sinh
+                        viên ứng tuyển</a>
+                    <button class="btn btn-danger float-right py-2 "> <a class="text-light text-decoration-none"
+                            href="?ctrl=dang_tuyen&act=delete&id_dt=<?= $row['id_dt'] ?>"
+                            onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
+                </div>
+
             </div>
         </div>
         <table class="ml-4">
@@ -72,7 +78,8 @@
                 <tr>
                     <td>Mức lương</td>
                     <td class="px-5">
-                        <input type=" text" class="form-control" readonly="readonly" value=" <?= $row['luong_khoi_dau'] ?>~<?= $row['luong_ket_thuc'] ?> VND">
+                        <input type=" text" class="form-control" readonly="readonly"
+                            value=" <?= $row['luong_khoi_dau'] ?>~<?= $row['luong_ket_thuc'] ?> VND">
                     </td>
                 </tr>
                 <tr style="height:20px;"></tr>
