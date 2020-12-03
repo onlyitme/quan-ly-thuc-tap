@@ -272,6 +272,12 @@
     .card-body p {
         margin-bottom: 5px;
     }
+    
+    #banner-company {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
     /*---- danh sách việc làm---- */
     
     #list-job {

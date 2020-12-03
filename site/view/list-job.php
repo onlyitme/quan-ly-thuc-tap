@@ -115,6 +115,16 @@
             if($thongtindt['full_part_time'] == 0) $full_part_time='Part Time';else $full_part_time='full Time';
             if($thongtindt['vi_tri'] == 0) $vi_tri='Nhân viên thực tập';else $vi_tri='Nhân viên chính thức';
             $noi_lam_viec=$thongtindn['dia_chi'];
+            //tách tp 
+                $arr_nlv = explode(',', $noi_lam_viec);
+                $numItems = count($arr_nlv);
+                $z = 0;
+                    foreach($arr_nlv as $key=>$value) {
+                    if(++$z === $numItems) {
+                        $tp_lamviec = $value;
+                    }
+                } 
+                //end tp
             $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
             $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
             
@@ -131,10 +141,10 @@
                 else $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
             }
             else $button_nopdon = "";
-            echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200">
-            <div class="row align-items-center bg-light p-3">
+            echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
+            <div class="row align-items-center bg-light shadow-sm p-3">
                 <div class="col-lg-8">
-                    <h4 class="mb-2">'.$thongtindt['tieu_de'].'</h4>
+                    <h4 class="mb-2 text-justify">'.$thongtindt['tieu_de'].'</h4>
                     <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3">'.$thongtindn['ten_dn'].'</a></p>
                 </div>
                 <div class="col-lg-4 text-right">
@@ -223,7 +233,7 @@
                         <h5 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h5>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Nơi làm việc</p>
-                            <p class="text-gray">'.$noi_lam_viec.'</p>
+                            <p class="text-gray">'.$tp_lamviec.'</p>
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-primary">Cấp bậc</p>
