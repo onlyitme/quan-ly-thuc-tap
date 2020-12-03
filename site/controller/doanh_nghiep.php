@@ -95,18 +95,8 @@ switch ($act) {
         $view_dn = "view/dn_tttk.php";
         break;
     case "dshs":
-        $dn = getAllDoanhnghiep();
-        foreach ($dn as $d) {
-            if ($d['id_user'] == $_SESSION['sid'])
-                $id_dn = $d['id_dn'];
-        }
-        $dt = getAllDangtuyen();
-        foreach($dt as $t) {
-            if ($t['id_dn'] == $id_dn)
-            $id_dt = $t['id_dt'];
-        }
-        $ds = getAllUngtuyen($id_dt);
-        $dem = demSinhvien($id_dt);
+        $id_user=$_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";
         break;
     case "tdmk":

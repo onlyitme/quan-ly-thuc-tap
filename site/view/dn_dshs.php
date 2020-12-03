@@ -3,7 +3,7 @@
         <h2 class="font-weight-700 mb-0">Danh sách hồ sơ ứng tuyển</h2>
         <span class="font-weight-500 text-secondary"><i class="far fa-folder-open"></i>
 
-            <?= $dem ?>
+            dem
         </span>
     </div>
     <div class="col-lg-4">
@@ -46,31 +46,24 @@
                 <?php foreach ($ds as $row) { ?>
                     <tr>
                         <th scope="row" class="text-center">1</th>
-                        <td><?php $sv = getAllSinhvien();
-                            foreach ($sv as $r) { ?>
-                                <?php if ($row['id_sv'] == $r['id_sv']) { ?>
-                                    <?= $r['mssv'] ?><br>
-                                <?php } ?>
-                            <?php } ?></td>
-                        <td><?php $sv = getAllSinhvien();
-                            foreach ($sv as $r) { ?>
-                                <?php if ($row['id_sv'] == $r['id_sv']) { ?>
-                                    <?= $r['ho_ten'] ?><br>
-                                <?php } ?>
-                            <?php } ?></td>
-                        <td><?= $row['ngay_dk'] ?></td>
-                        <td><?php $dang = getAllDangtuyen();
-                            foreach ($dang as $t) { ?>
-                                <?php if ($row['id_dt'] == $t['id_dt']) { ?>
-                                    <?php $id_nganh = $t['id_nganh']; ?>
-                                    <?php $ng = getAllNganh();
-                                    foreach ($ng as $n) { ?>
-                                        <?php if ($id_nganh == $n['id_nganh']) { ?>
-                                            <?= $n['ten_nganh'] ?>
+                        <td>
+                            <?php
+                            $dt = getAllDangtuyen();
+                            foreach ($dt as $t) { ?>
+                                <?php if ($t['id_dn'] == $row['id_dn']) { ?>
+                                    <?php $id_dt = $t['id_dt']; ?>
+                                    <?php $ut = getAllUngtuyen($id_dt); ?>
+                                    <?php foreach ($ut as $t) { ?>
+                                        <?php $sv = getAllSinhvien(); ?>
+                                        <?php foreach ($sv as $s) { ?>
+                                            <?php if ($s['id_sv'] == $t['id_sv']) { ?>
+                                                <?=$s['mssv']?>
+                                            <?php } ?>
                                         <?php } ?>
                                     <?php } ?>
                                 <?php } ?>
-                            <?php } ?></td>
+                            <?php } ?>
+                        </td>
                         <td class="text-success">Đã duyệt <i class="fas fa-check"></i></td>
                         <td class="text-center"><a href="#"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
                     </tr>
