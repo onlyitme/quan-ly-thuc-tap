@@ -296,8 +296,8 @@
                     <!-- Modal body -->
                     <div class="modal-body row ">
                         <div class="d-none d-lg-inline col-6 rounded">
-                            <!-- <img src="view/images/login.jpg" alt=""> -->
-                            <img src="view/images/img_login.png" alt="login_page" class="h-img-login">
+                            <img src="view/images/login.jpg" alt="">
+                            <!-- <img src="view/images/img_login.png" alt="login_page" class="h-img-login"> -->
                         </div>
                         <div class="col-lg-6 ">
                             <h2 class="font-weight-bold">Đăng Nhập</h2>
