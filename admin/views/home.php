@@ -88,7 +88,7 @@
                 Số lượng sinh viên thực tập
             </div>
             <div class="card-body" style="height:300px;" >
-                <canvas id="myChart" style="height:100% ;"></canvas>
+                <canvas id="myChart" style="max-height:100% ;"></canvas>
             </div>
         </div>
     </div>
