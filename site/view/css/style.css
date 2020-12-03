@@ -358,10 +358,6 @@
     }
 
     #sinhvien .h-box-dn-txt {
-        width: 295px;
-        margin-top: 90px;
-        margin-left: -50px;
-        height: 295px;
         background-color: rgba(0, 0, 0, 0.82);
         position: absolute;
         bottom: 0px;
@@ -380,6 +376,7 @@
 
     #sinhvien .h-custom-file-upload {
         width: 159px;
+        margin-left: 100px;
         margin-left: -100px;
         border-radius: 50%;
         height: 157px;
@@ -419,12 +416,7 @@
     #sinhvien strong {
         margin-top: -2px;
     }
-
-    #sinhvien svg {
-        color: tomato;
-        margin-right: 5px;
-    }
-
+    
     #sinhvien .item-tt {
         margin-left: -19px;
         margin-top: -5px;
@@ -440,7 +432,7 @@
 
     #sinhvien .giua-tt {
         width: 5px;
-        height: 230px;
+        height: 280px;
         border-bottom-left-radius: 35%;
         border-bottom-right-radius: 35%;
         background-image: linear-gradient(-25deg, #acacac 0%, #c1ecfd 100%);
@@ -563,27 +555,16 @@
         display: block;
         color: #343a40;
     }
-
-    #sinhvien .h-sidebar-navigation li .fa, .h-sidebar-navigation li .fas, .h-sidebar-navigation li .far {
-        margin-right: 13px;
-        color: #fff;
-    }
-
-    #sinhvien .h-sidebar-navigation li a:active, #sinhvien .h-sidebar-navigation li a:focus {
-        text-decoration: none;
-        outline: none;
-        background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
-        color: #fff;
+    
+    #sinhvien .h-sidebar-navigation li i {
+        width: 20px;
+        margin-right: 5px;
     }
 
     #sinhvien .h-sidebar-navigation li a:hover {
         color: #fff;
     }
-
-    #sinhvien .h-sidebar-navigation li a:hover svg {
-        color: white;
-    }
-
+    
     #sinhvien .h-sidebar-navigation .h-header {
         font-size: 12pt;
         text-transform: uppercase;
@@ -698,11 +679,11 @@
 
     #sinhvien .thongtin0 {
         float: left;
-        width: 40%;
+        width: 30%;
     }
 
     #sinhvien .thongtin1 {
-        width: 60%;
+        width: 70%;
         font-size: 12pt;
         font-weight: 500;
     }
@@ -854,13 +835,27 @@
         padding: 25px 0;
         border-bottom: 2px solid #b1eaff;
     }
-
-    .resume .resume_about {
-        margin-top: 50px;
+    
+    .resume .resume_item1 {
+        padding: 25px 0;
+        border-bottom: 2px solid #b1eaff;
+    }
+    
+    hr.N-hr {
         border-top: 2px solid #b1eaff;
     }
-
-    .resume .resume_left .resume_item:last-child, .resume .resume_right .resume_item:last-child {
+    
+    .resume .resume_about {
+        border-top: 2px solid #b1eaff;
+    }
+    
+    .resume .resume_about1 {
+        margin-top: 50px;
+        border-bottom: none;
+    }
+    
+    .resume .resume_left .resume_item:last-child,
+    .resume .resume_right .resume_item:last-child {
         border-bottom: 0px;
     }
 
@@ -1267,8 +1262,10 @@
         display: block;
         color: #343a40;
     }
-
-    #doanhnghiep .h-sidebar-navigation li .fa, .h-sidebar-navigation li .fas, .h-sidebar-navigation li .far {
+    
+    #doanhnghiep .h-sidebar-navigation li .fa,
+    #doanhnghiep .h-sidebar-navigation li .fas,
+    #doanhnghiep .h-sidebar-navigation li .far {
         font-size: 13px;
         color: #fff;
     }
@@ -1578,6 +1575,10 @@
 
     #doanhnghiep .h-bg-button {
         background-color: #2574A9;
+        color: #fff;
+    }
+
+    #doanhnghiep .h-bg-button a{
         color: #fff;
     }
 

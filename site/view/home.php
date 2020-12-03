@@ -6,10 +6,11 @@
                         <p class="text-gray mt-2">Sẽ giúp bạn có đầy đủ kỹ năng thực tế để tạo ra những sản phẩm sáng tạo, tinh tế và phù hợp.</p>
                     </div>
                 </div>
+                <div class=" row home-list-job">
+
                 <?php
                 foreach($ds_nn as $ds_nn){ $ds_nganh=ds_nganh($ds_nn['id_nn']); ?>    
-                <div class=" row home-list-job">
-                    <div class="col-12">
+                    <div class="col-12 py-5">
                         <!-- MENU -->
                         <h3 class=" shadow d-inline-block" ><?=$ds_nn['ten_nn']?></h3>
                         <ul class=" nav nav-tabs mt-n2">
@@ -66,5 +67,6 @@
                                 </div>
                     <?php 
                   $k++;  } ?>                                          
-            </div></div>                  
+            </div>
+        </div>                  
                 <?php } ?>                           

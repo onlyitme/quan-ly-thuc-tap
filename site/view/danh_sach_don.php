@@ -56,6 +56,8 @@
                                     <hr style="background: rgb(110, 110, 110);">
                                 </div>     
                             </div> 
+                            
+
                             <?php if($row['trang_thai']==0){ ?>
                                 <script>
                                     var kq='<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>'
@@ -67,10 +69,13 @@
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
                                             
                                 </script>
-                                <?php } elseif($row['trang_thai']==1){?>
-                                <script>
-                                        var fuT =new Date("Dec 3,2020 00:00:00:00").getTime()
+                                <?php } elseif($row['trang_thai']==1){ 
+                                   
+                                    ?>
+                                <script> 
+                                        
                                         setInterval(function(){
+                                        var fuT =new Date("<?php echo date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days')); ?>").getTime()
                                         var noW = new Date().getTime()
                                         var D = fuT -noW
                                         var days = Math.floor(D/(1000*60*60*24))
@@ -81,13 +86,14 @@
                                         hours %=24
                                         minutes %=60
                                         seconds %=60
-                                        if(seconds>0){document.getElementById("days<?=$row['id_dt']?>").innerText = days
-                                        document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
-                                        document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
-                                        document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
+                                        if(seconds>0){
+                                            document.getElementById("days<?=$row['id_dt']?>").innerText = days
+                                            document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
+                                            document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
+                                            document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
 
                                             var kq= '<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" >'
-                                          +' <button class="buttoncn" style="width: 100%;" > chấp nhận </button> </div>'
+                                          +' <button class="buttoncn" onclick="xac_thuc(<?=$row['id_phieu']?>)" style="width: 100%;" > chấp nhận </button> </div>'
                                           +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
                                           +' <div style="color: rgb(0, 155, 13);">'
                                           +'<strong style="margin-left: -10px;">'
@@ -97,7 +103,23 @@
                                                 +'</strong>'
                                             +'</div>'
                                        +'</div>'
-                                            document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq}else{
+                                            document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
+                                            document.getElementById("days<?=$row['id_dt']?>").innerText = days
+                                            document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
+                                            document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
+                                            document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
+                                        }else{
+                                            <?php 
+                                            $now = time();
+                                            $time = $row['thoi_gian_duyet'];
+                                            $time = date_parse_from_format('Y-m-d H:i:s', $time);
+                                            $time_stamp = mktime($time['hour'],$time['minute'],$time['second'],$time['month'],$time['day'],$time['year']);
+                                            if(($now - $time_stamp) > 3*24*60*60){
+                                                doi_tt_dt($row['id_phieu']);
+                                                }
+                                            
+                                            ?>
+                                             
                                                 var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
                                             +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
                                                 +'<div style="color: rgb(0, 155, 13);">'
@@ -145,6 +167,21 @@
                                 </script>
                             <?php } ?>
                        <?php } ?>
+                       <script>
+                                function xac_thuc(id){
+                                 
+                                   $.ajax({
+                                       type: "post",
+                                       url: "index.php?ctrl=sinh_vien&act=xac_thuc_sv",
+                                       data: {id},
+                                       success: function (response) {
+                                        location.reload();
+                                       }
+                                   });
+                                    
+                                }
+                            </script>
+
 
                            
 

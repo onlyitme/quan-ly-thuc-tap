@@ -10,7 +10,31 @@
         $sql = "SELECT * from dang_tuyen";
         return query($sql);
     }
-
+    function getAllNganh()
+    {
+        $sql = "SELECT * from nganh";
+        return query($sql);
+    }
+    function getAllSinhvien()
+    {
+        $sql = "SELECT * from sinh_vien";
+        return query($sql);
+    }
+    function getAllUngtuyen($id_dt)
+    {
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='0'";
+        return query($sql);
+    }
+    function getDangtuyenByID($id_dt)
+    {
+        $sql = "SELECT * from dang_tuyen where id_dt='$id_dt'";
+        return queryOne($sql);
+    }
+    function getAllDangtheodn($id_dn)
+    {
+        $sql = "SELECT * from dang_tuyen WHERE id_dn='$id_dn'";
+        return query($sql);
+    }
     function getAllDoanhnghiep()
     {
         $sql = "SELECT * from doanh_nghiep";
@@ -54,7 +78,6 @@
             print_r($e->errorInfo);
             exit();
         }
-      
     }
     function deleteUser($id_user)
     {
@@ -95,7 +118,7 @@
     }
     function demSinhvien($id_dt)
     {
-        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='1' ";
+        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='0' ";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
@@ -114,19 +137,26 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    
-    
+
+
     // baokun
-    function checkdoanhnghiep_iduser($id){
-        $sql="select * from doanh_nghiep where id_user='$id'";
+    function checkdoanhnghiep_iduser($id)
+    {
+        $sql = "select * from doanh_nghiep where id_user='$id'";
         return queryOne($sql);
     }
-    function add_dangtuyen($id_nganh,$id_dn,$tieu_de,$luong_khoi_dau,$luong_ket_thuc,$thoi_gian_tt,$sl_sv_can,$full_part_time,$thoi_gian_lam_viec,$che_do_thuong,$dao_tao,$tang_luong,$nghi_phep_nam,$du_lich,$che_do_bao_hiem,$mo_ta,$yeu_cau,$quyen_loi)
+    function add_dangtuyen($id_nganh, $id_dn, $tieu_de, $luong_khoi_dau, $luong_ket_thuc, $thoi_gian_tt, $sl_sv_can, $full_part_time, $thoi_gian_lam_viec, $che_do_thuong, $dao_tao, $tang_luong, $nghi_phep_nam, $du_lich, $che_do_bao_hiem, $mo_ta, $yeu_cau, $quyen_loi, $thoi_gian)
     {
         $sql = "INSERT INTO dang_tuyen (id_nganh,id_dn,tieu_de,luong_khoi_dau,luong_ket_thuc,thoi_gian_tt,sl_sv_can,full_part_time,thoi_gian_lam_viec,
-                                                    che_do_thuong,dao_tao,tang_luong,nghi_phep_nam,du_lich,che_do_bao_hiem,mo_ta,yeu_cau,quyen_loi) 
+                                                    che_do_thuong,dao_tao,tang_luong,nghi_phep_nam,du_lich,che_do_bao_hiem,mo_ta,yeu_cau,quyen_loi,thoi_gian) 
         values('$id_nganh','$id_dn','$tieu_de','$luong_khoi_dau','$luong_ket_thuc','$thoi_gian_tt','$sl_sv_can','$full_part_time','$thoi_gian_lam_viec',
-                            '$che_do_thuong','$dao_tao','$tang_luong','$nghi_phep_nam','$du_lich','$che_do_bao_hiem','$mo_ta','$yeu_cau','$quyen_loi')";
+                            '$che_do_thuong','$dao_tao','$tang_luong','$nghi_phep_nam','$du_lich','$che_do_bao_hiem','$mo_ta','$yeu_cau','$quyen_loi','$thoi_gian')";
         execute($sql);
     }
+    function deleteDangtuyen($id_dt)
+    {
+        $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
+        execute($sql);
+    }
+    
     ?>

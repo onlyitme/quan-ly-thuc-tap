@@ -62,6 +62,11 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       $phieu_dk_all=thongtindkallbyid();
       $view_sv = "view/danh_sach_don.php";
     break;
+    case "xac_thuc_sv":
+      xacthuc_tt_dt($_POST['id']);
+      huy_dk_dt();
+   exit();
+    break;
     case "cv_index":
       $thongtincv=thongtincv();
       $view_sv = "view/cv_index.php";
