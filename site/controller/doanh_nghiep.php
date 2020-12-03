@@ -100,6 +100,18 @@ switch ($act) {
         $view_dn = "view/dn_dshs.php";
         break;
     case "pheduyet":
+        $id_phieu = $_GET["id_phieu"];
+        settype($id_phieu, "int");
+        $thoi_gian_duyet = date('Y-m-d H:i:s');
+        updatePhieu($id_phieu, $thoi_gian_duyet);
+        $id_user = $_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_dshs.php";
+        break;
+    case "tuchoi":
+        $id_phieu = $_GET["id_phieu"];
+        settype($id_phieu, "int");
+        updatePhieu_($id_phieu);
         $id_user = $_SESSION['sid'];
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";

@@ -22,7 +22,7 @@
     }
     function getAllUngtuyen($id_dt)
     {
-        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt'";
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' ORDER BY trang_thai asc";
         return query($sql);
     }
     function getDangtuyenByID($id_dt)
@@ -67,6 +67,26 @@
     {
         try {
             $sql = "UPDATE user SET email='$email' WHERE id_user='$id_user'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function updatePhieu($id_phieu,$thoi_gian_duyet)
+    {
+        try {
+            $sql = "UPDATE phieu_dk_in SET trang_thai='1',thoi_gian_duyet='$thoi_gian_duyet' WHERE id_phieu='$id_phieu'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function updatePhieu_($id_phieu)
+    {
+        try {
+            $sql = "UPDATE phieu_dk_in SET trang_thai='2' WHERE id_phieu='$id_phieu'";
             execute($sql);
         } catch (Exception  $e) {
             print_r($e->errorInfo);

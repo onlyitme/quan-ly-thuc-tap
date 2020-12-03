@@ -4,6 +4,7 @@
             <button class="btn-danger11  btn btn-danger hide-btn">Đóng</button>
             <button class="btn-danger2 btn btn-danger hide-btn">Đóng</button>
             <button class="btn-sucsess11 btn btn-success"><a href="" id="nutpheduyet">Phê Duyệt</a> </button>
+            <button class="btn-sucsess11 btn btn-danger"><a href="" id="nuttuchoi">Từ chối</a> </button>
             <div class="resume_left">
                 <div class="resume_profile">
                     <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
@@ -137,7 +138,7 @@
             <div class="resume_right">
                 <div class="resume_item1 resume_about1">
                     <div class="title">
-                        <p class="bold alert alert-secondary ">Đây là nơi đặt tiêu đề việc làm nè!</p>
+                        <p class="bold alert alert-secondary ">Tiêu đề đây nè</p>
                     </div>
                     <hr class="N-hr">
                     <div class="title">
@@ -225,9 +226,7 @@
 <div class="row align-items-center">
     <div class="col-lg-8">
         <h2 class="font-weight-700 mb-0">Danh sách hồ sơ ứng tuyển</h2>
-        <span class="font-weight-500 text-secondary"><i class="far fa-folder-open"></i>
-            dem
-        </span>
+
     </div>
     <div class="col-lg-4">
         <div class="input-group mb-3">
@@ -266,28 +265,31 @@
                 </tr>
             </thead>
             <tbody class="table-bordered">
-                <?php foreach ($ds as $row) { ?>
+                <?php $i = 1;
+                foreach ($ds as $row) { ?>
                     <?php $dt = getAllDangtuyen();
                     foreach ($dt as $t) { ?>
+                        <?php $tieude = $t['tieu_de']; ?>
                         <?php if ($t['id_dn'] == $row['id_dn']) { ?>
                             <?php $id_dt = $t['id_dt']; ?>
                             <?php $ut = getAllUngtuyen($id_dt); ?>
                             <?php foreach ($ut as $t) { ?>
                                 <?php $sv = getAllSinhvien(); ?>
                                 <?php foreach ($sv as $s) { ?>
+
                                     <?php if ($s['id_sv'] == $t['id_sv']) { ?>
                                         <tr>
-                                            <th scope="row" class="text-center">1</th>
+                                            <th scope="row" class="text-center"><?= $i++ ?></th>
                                             <td><?= $s['mssv'] ?></td>
                                             <td><?= $s['ho_ten'] ?></td>
                                             <td><?= $t['ngay_dk'] ?></td>
                                             <td>Thực tập sinh</td>
-                                            <td class="text-success"><?php if($t['trang_thai']==0)echo'Chờ duyệt';
-                                            elseif ($t['trang_thai']==1)echo'Đã duyệt';
-                                            elseif ($t['trang_thai']==2)echo'Đã từ chối';
-                                            elseif ($t['trang_thai']==3)echo'Sinh viên đã xác nhận';
-                                            ?></td>
-                                            <td class="text-center"><a  onclick="truyen_id(<?=$t['id_phieu']?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
+                                            <td class="text-success"><?php if ($t['trang_thai'] == 0) echo 'Chờ duyệt';
+                                                                        elseif ($t['trang_thai'] == 1) echo 'Đã duyệt';
+                                                                        elseif ($t['trang_thai'] == 2) echo 'Đã từ chối';
+                                                                        elseif ($t['trang_thai'] == 3) echo 'Sinh viên đã xác nhận';
+                                                                        ?></td>
+                                            <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a></td>
                                         </tr>
                                     <?php } ?>
                                 <?php } ?>
@@ -300,7 +302,8 @@
     </div>
 </div>
 <script>
-    function truyen_id(id_phieu){
-        $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu='+id_phieu);
+    function truyen_id(id_phieu) {
+        $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' + id_phieu);
+        $("#nuttuchoi").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' + id_phieu);
     }
 </script>
