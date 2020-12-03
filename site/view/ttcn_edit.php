@@ -6,16 +6,15 @@
                                     </div>
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mb-4">
                                         <p><strong>Ảnh đại diện</strong></p>
-                                        <a href="#">
+                                        <div class="h-tt-left-img">
                                             <img class="" style="margin-bottom: 30px;width: 100%;" src="../uploads/<?= $ttsv['anh'] ?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe">
-                                            <div class="h-box-dn-txt">
+                                            <div class="h-tt-left-img-txt">
                                                 <label for="file-upload" class="h-custom-file-upload">
                                                     <i class="far fa-camera"></i>
-                                                    <p>Thay đổi ảnh bìa doanh nghiệp</p>
                                                 </label>
-                                                <input id="file-upload" type="file">
+                                                <input id="file-upload" type="file" />
                                             </div>
-                                        </a>
+                                        </div>
                                     </div>
 
                                     <!-- -->
@@ -88,7 +87,7 @@
                                                 <input type="email" class="form-control mb-2 " value="<?= $tttk['email'] ?>" placeholder="Nhập email" id="email">
                                             </p>
                                         </div>
-                                        
+
                                         <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
                                             <p><strong>Số Điện Thoại<span style="color:tomato;">*</span></strong></p>
                                         </div>
