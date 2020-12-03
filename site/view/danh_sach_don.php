@@ -72,7 +72,7 @@
                                 <?php } elseif($row['trang_thai']==1){ 
                                    
                                     ?>
-                                <script> 
+                                <script>
                                         
                                         setInterval(function(){
                                         var fuT =new Date("<?php echo date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days')); ?>").getTime()

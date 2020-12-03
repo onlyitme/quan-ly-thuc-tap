@@ -37,7 +37,7 @@ function thongtincv(){
    return queryOne($sql);
 }
 function thongtindkallbyid(){ 
-    $sql="SELECT * from phieu_dk_in where id_sv='$_SESSION[sid_sv]' order by trang_thai asc";
+    $sql="SELECT * from phieu_dk_in where id_sv='$_SESSION[sid_sv]'";
    return queryAll($sql);
 }
 function doi_tt_dt($id_phieu){
@@ -50,6 +50,10 @@ function xacthuc_tt_dt($id){
 }
 function huy_dk_dt(){
     $sql = "UPDATE phieu_dk_in SET trang_thai='4' where trang_thai= '1' or trang_thai= '0' ";
+    execute($sql);
+}
+function them_sl_sv_dk($dem,$id){
+    $sql = "UPDATE dang_tuyen SET sl_sv_dk='$dem' where id_dt= '$id' ";
     execute($sql);
 }
 ?>
