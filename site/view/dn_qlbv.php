@@ -18,7 +18,7 @@
         </div>
         <div class="h-box-bv-right">
             <div class="h-bv-right-title">
-                <h4 class="">Nhân viên văn phòng ngồi máy lạnh, lướt shopee</h4>
+                <h4 class=""><?=$row['tieu_de']?></h4>
             </div>
             <div class="h-bv-right-span">
                 <span class="text-secondary">

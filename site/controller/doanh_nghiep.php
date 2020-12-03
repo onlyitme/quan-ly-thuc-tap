@@ -67,8 +67,8 @@ switch ($act) {
             $quyen_loi = $_POST['quyenloi'];
             add_dangtuyen($id_nganh, $id_dn, $tieu_de, $luong_khoi_dau, $luong_ket_thuc, $thoi_gian_tt, $sl_sv_can, $full_part_time, $thoi_gian_lam_viec, $che_do_thuong, $dao_tao, $tang_luong, $nghi_phep_nam, $du_lich, $che_do_bao_hiem, $mo_ta, $yeu_cau, $quyen_loi, $thoi_gian);
         }
+        $ds = getAllDangtuyen();
         $view_dn = "view/dn_qlbv.php";
-
         break;
     case 'chonnganh':
         if (isset($_POST['id_nn'])) {
