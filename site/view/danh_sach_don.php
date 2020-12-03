@@ -1,9 +1,13 @@
-<h5 class="mb-3" style="border-left: 5px rgb(98, 0, 255) solid;padding: 0 5px;font-weight: 600;">DANH SÁCH ĐƠN XIN THỰC TẬP</h5>
+<div class="border rounded shadow-sm p-3">
+    <div class="alert" role="alert">
+        <strong>
+<h4 class=" " style="border-left: 5px tomato solid;padding: 0 10px;font-weight: 600 ;  ">DANH SÁCH ĐƠN XIN THỰC TẬP</h4></strong>
+    </div>
                             <?php foreach($phieu_dk_all as $row){
                                 $thong_tin_dt= checkdangtuyenbyid($row['id_dt']);
                                 $thong_tin_dn= checkdoanhnghiepbyid($thong_tin_dt['id_dn']);
                                 ?>
-                                <div class="media col-sm-12 sv-12">
+                                <div class="media col-sm-12 shadow sv-12">
                                 <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
                                     <div class="bg-ds mt-3">
                                         
@@ -192,3 +196,4 @@
                             
 
 
+</div>
