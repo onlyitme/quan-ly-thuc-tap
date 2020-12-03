@@ -107,14 +107,14 @@
         <div class="form-group col-6">
             <label for="">Trạng thái:</label><br>
             <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio1" name="trang_thai" class="custom-control-input" value="1"
+                <input type="radio" id="trang_thai1" name="trang_thai" class="custom-control-input" value="1"
                     <?= ($row['trang_thai'] == 1) ? "checked" : ""; ?>>
-                <label class="custom-control-label" for="customRadio1"> Đã có nơi thực tập</label>
+                <label class="custom-control-label" for="trang_thai1"> Đã có nơi thực tập</label>
             </div>
             <div class="custom-control custom-radio">
-                <input type="radio" id="customRadio2" name="trang_thai" class="custom-control-input" value="0"
+                <input type="radio" id="trang_thai0" name="trang_thai" class="custom-control-input" value="0"
                     <?= ($row['trang_thai'] == 0) ? "checked" : ""; ?>>
-                <label class="custom-control-label" for="customRadio2"> Chưa có nơi thực tập</label>
+                <label class="custom-control-label" for="trang_thai0"> Chưa có nơi thực tập</label>
             </div>
         </div>
         <!-- <div class="form-group col-6">

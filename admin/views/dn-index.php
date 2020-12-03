@@ -82,12 +82,12 @@
                         <div class="form-group form-check-inline">
 
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="customRadio1" name="an_hien" class="custom-control-input" value="0" checked>
-                                <label class="custom-control-label" for="customRadio1">Hiện</label>
+                                <input type="radio" id="an_hien1" name="an_hien" class="custom-control-input" value="0" checked>
+                                <label class="custom-control-label" for="an_hien1">Hiện</label>
                             </div>
                             <div class="custom-control custom-radio ml-3">
-                                <input type="radio" id="customRadio2" name="an_hien" class="custom-control-input" value="1">
-                                <label class="custom-control-label" for="customRadio2">Ẩn</label>
+                                <input type="radio" id="an_hien2" name="an_hien" class="custom-control-input" value="1">
+                                <label class="custom-control-label" for="an_hien2">Ẩn</label>
                             </div>
                             <!-- <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="an_hien" id="an_hien1" value="0"

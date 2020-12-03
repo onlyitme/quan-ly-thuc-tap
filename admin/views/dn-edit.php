@@ -71,14 +71,14 @@
             <div class="form-group col-6">
                 <label for="">Trạng thái:</label><br>
                 <div class="custom-control custom-radio form-check-inline">
-                    <input type="radio" id="customRadio1" name="an_hien" class="custom-control-input" value="o"
+                    <input type="radio" id="anhien1" name="an_hien" class="custom-control-input" value="o"
                         <?= ($row['an_hien'] == 1) ? "checked" : ""; ?>>
-                    <label class="custom-control-label" for="customRadio1"> Hiện</label>
+                    <label class="custom-control-label" for="anhien1"> Hiện</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" id="customRadio2" name="an_hien" class="custom-control-input" value="1"
+                    <input type="radio" id="anhien0" name="an_hien" class="custom-control-input" value="1"
                         <?= ($row['an_hien'] == 0) ? "checked" : ""; ?>>
-                    <label class="custom-control-label" for="customRadio2"> Ẩn </label>
+                    <label class="custom-control-label" for="anhien0"> Ẩn </label>
                 </div>
                 <!-- <label for="">Ẩn hiện: </label><br>
                 <div class="form-check form-check-inline">
