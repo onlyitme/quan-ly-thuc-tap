@@ -74,8 +74,8 @@
                                     ?>
                                 <script> 
                                         
-                                        setInterval( function(){
-                                            var fuT =new Date("<?php echo date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days'));?>").getTime()
+                                        setInterval(function(){
+                                        var fuT =new Date("<?php echo date('Y,m,d H:i:s',strtotime($row['thoi_gian_duyet'].'+3 days')); ?>").getTime()
                                         var noW = new Date().getTime()
                                         var D = fuT -noW
                                         var days = Math.floor(D/(1000*60*60*24))
@@ -86,10 +86,11 @@
                                         hours %=24
                                         minutes %=60
                                         seconds %=60
-                                        if(seconds>=0){document.getElementById("days<?=$row['id_dt']?>").innerText = days
-                                        document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
-                                        document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
-                                        document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
+                                        if(seconds>0){
+                                            document.getElementById("days<?=$row['id_dt']?>").innerText = days
+                                            document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
+                                            document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
+                                            document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
 
                                             var kq= '<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" >'
                                           +' <button class="buttoncn" onclick="xac_thuc(<?=$row['id_phieu']?>)" style="width: 100%;" > chấp nhận </button> </div>'
@@ -103,25 +104,12 @@
                                             +'</div>'
                                        +'</div>'
                                             document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
-                                        
+                                            document.getElementById("days<?=$row['id_dt']?>").innerText = days
+                                            document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
+                                            document.getElementById("minutes<?=$row['id_dt']?>").innerText = minutes
+                                            document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
                                         }else{
-                                            
-                                             
-                                                
-                                         
-{
-                                            if( window.localStorage )
-                                            {
-                                                if( !localStorage.getItem('firstLoad') )
-                                                {
-                                                localStorage['firstLoad'] = true;
-                                                window.location.reload();
-                                                }  
-                                                else
-                                                localStorage.removeItem('firstLoad');
-                                            }
-                                            };
-                                           <?php 
+                                            <?php 
                                             $now = time();
                                             $time = $row['thoi_gian_duyet'];
                                             $time = date_parse_from_format('Y-m-d H:i:s', $time);
@@ -131,7 +119,14 @@
                                                 }
                                             
                                             ?>
-                                               
+                                             
+                                                var kq='<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center" ></div>'
+                                            +'<div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 mt-2">'
+                                                +'<div style="color: rgb(0, 155, 13);">'
+                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Hết hạn.</strong>'
+                                               +'</div>'
+                                           +'</div>'
+                                                document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
                                             }
                                         
 
@@ -165,17 +160,6 @@
                                             +'<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-2">'
                                                 +'<div style="color: rgb(0, 155, 13);">'
                                                     +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i> Đã từ chối xác thực .</strong>'
-                                               +'</div>'
-                                           +'</div>'
-                                                document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
-                                            
-                                </script>
-                            <?php } elseif($row['trang_thai']==5){ ?>
-                                <script>
-                                    var kq='<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>'
-                                            +'<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-2">'
-                                                +'<div style="color: rgb(0, 155, 13);">'
-                                                    +'<strong style="margin-left: -10px;color: red;"><i class="fa fa-clock-o"style="color:tomato;"></i>Đã hủy do không chấp thuận.</strong>'
                                                +'</div>'
                                            +'</div>'
                                                 document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
