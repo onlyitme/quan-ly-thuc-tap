@@ -1,6 +1,7 @@
 
     <?php
-    require_once "models/sinh_vien.php"; //nạp model để có các hàm tương tác db
+    require_once "models/sinh_vien.php";
+    require_once "models/excel.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
     if (isset($_GET["act"]) == true) $act = $_GET["act"]; //tiếp nhận chức năng user request
     switch ($act) {
@@ -80,6 +81,9 @@
             $anh = $_FILES["anh"]["name"];
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
+            $sv_full = seach_id_sv($id_user);
+            $id_sv=$sv_full['id_sv'];
+            addNewhosoforexecl($id_sv);
             $thongbao = "Thêm sinh viên thành công";
             $view = "views/thongbao.php";
             require_once "views/layout.php";

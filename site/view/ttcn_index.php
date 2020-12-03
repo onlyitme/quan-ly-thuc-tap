@@ -1,7 +1,7 @@
 <div class="media mb-2 sv8-12 p-3">
     <div class="thongtin0">
         <div class="avt-sv">
-            <img src="../uploads/<?= $ttsv['anh'] ?>" onerror=this.src="view/images/avt1.PNG" alt="John Doe" class="center">
+            <img src="../uploads/<?= $ttsv['anh'] ?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe" class="center">
         </div>
     </div>
     <div class="thongtin1 ml-4">

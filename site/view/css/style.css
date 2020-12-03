@@ -279,7 +279,7 @@
         object-fit: cover;
     }
     
-    #avt-cart-home {
+    .avt-cart-home {
         height: 150px;
         object-fit: cover;
     }
@@ -341,6 +341,50 @@
     /* END BAOKUN       */
     /* ----------- sinh vien dau ------------ */
     
+    /* hover image*/
+    #sinhvien .h-tt-left-img {
+        float: left;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #sinhvien .h-tt-left-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        box-shadow: 0px 3px 8px #c9c9c9;
+    }
+    
+    #sinhvien .h-tt-left-img-txt {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.82);
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+        color: #fff;
+        padding: 30px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        opacity: 0;
+    }
+    
+    #sinhvien .h-tt-left-img:hover div.h-tt-left-img-txt {
+        opacity: 1;
+        transform: scale(1);
+        transition: ease-in-out 0.3s;
+    }
+
+    #sinhvien .h-tt-left-img:hover div.h-tt-left-img-txt {
+        opacity: 1;
+        transform: scale(1);
+        transition: ease-in-out 0.3s;
+    }
+    /* end hover-image sv */
+
     #sinhvien .avt-sv {
         width: 100%;
         height: 100%;
@@ -349,14 +393,14 @@
         border-right: 1px solid #ddd;
         box-shadow: 0 2px 5px #ccc;
     }
-
+    
     #sinhvien .avt-sv img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 5px;
     }
-
+    
     #sinhvien p {
         padding: 5px 0;
     }
@@ -394,7 +438,7 @@
     }
     
     #sinhvien .h-custom-file-upload {
-        width: 159px;
+        /* width: 159px;
         margin-left: 100px;
         margin-left: -100px;
         border-radius: 50%;
@@ -402,7 +446,12 @@
         margin-top: -80px;
         display: inline-block;
         cursor: pointer;
-        position: absolute;
+        position: absolute; */
+
+        padding: 14px 20px;
+        top: 20px;
+        display: inline-block;
+        cursor: pointer;
     }
     
     #sinhvien .h-custom-file-upload .far {
@@ -777,7 +826,7 @@
     
     #sinhvien .sv8-12 {
         /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); */
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)!important;
         border-radius: 5px;
         border-top: 1px rgb(228, 228, 228) solid;
         border-left: 1px rgb(228, 228, 228) solid;
@@ -797,7 +846,7 @@
         font-weight: bold;
         font-size: 12pt;
     }
-
+    
     #sinhvien .hr-right {
         border-left: 2px solid #eee;
     }

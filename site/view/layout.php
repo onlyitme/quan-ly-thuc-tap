@@ -467,7 +467,12 @@
 
                     if (data == 0) {
                         location.reload();
-                    } else if (data == 1) {
+                    } else if (data == 10) {
+                     
+                        window.location = "index.php?ctrl=sinh_vien&act=ttcn_edit";
+                        alert('Vui lòng nhập Thông tin cá nhân do lần đầu đăng nhập');
+                    } 
+                    else if (data == 1) {
                         window.location = "index.php?ctrl=doanh_nghiep";
                     } else if (data == 2) {
                         alert("bạn sẽ chuyển tới trang ADmin");

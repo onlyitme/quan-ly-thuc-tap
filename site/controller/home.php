@@ -61,9 +61,9 @@ require_once('model/doanh_nghiep.php');
         $nguyen_vong = $_POST['nguyen_vong'];
         $id_dt = $_POST['id_dt'];
         $id_sv = $_SESSION['sid_sv'];
-        $ngay_dk = date("d/m/Y");
+        $ngay_dk = date("Y/m/d");
         // echo($ngay_dk);
-        // echo "<script type='text/javascript'>alert('$id_sv,$ngay_dk,$nguyen_vong,$id_dt,$thongtindt[id_dn]');</script>";
+        // echo "<script type='text/javascript'>alert('$ngay_dk');</script>";
         addphieudkin($id_sv,$ngay_dk,$nguyen_vong,$id_dt,$thongtindt['id_dn']);
         if(isset($_POST['jobdetail'])) require_once  "view/job-detail.php";
         else require_once 'view/ajax_chitiet_dangtuyen.php';       
@@ -108,6 +108,8 @@ require_once('model/doanh_nghiep.php');
             $_SESSION['sname']=$seach_kh_byid['ho_ten'];
             $_SESSION['sid_sv']=$seach_kh_byid['id_sv'];
             $_SESSION['schuc_vu'] = 0;
+            $kt_dn_landau= checktaikhoanbyid($_SESSION['sid']);
+            if($kt_dn_landau['kich_hoat']==0) echo '10';else
             echo '0';
             
          
