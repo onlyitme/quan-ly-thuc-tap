@@ -2,7 +2,7 @@
 require_once "views/Classes/PHPExcel.php";
 require_once "models/excel.php";
 
-if(isset($_POST['btn'])){
+if(isset($_POST['bttn'])){
     $file= $_FILES['file']['tmp_name'];
     $objReader=PHPExcel_IOFactory::createReaderForFile($file);
     $objReader -> setLoadSheetsOnly('Sheet1');
@@ -15,20 +15,18 @@ if(isset($_POST['btn'])){
     for($row=2;$row<=$highRow;$row++){
         $user=$sheetData[$row]['A'];
         $pass=$sheetData[$row]['B'];
-        $email=$sheetData[$row]['C'];
         $chuc_vu=0;
 
-        addNewUserE($user,$pass,$email,$chuc_vu);
-    $id_user_full = seach_id_user($email);
-    $id_user =   $id_user_full['id_user'];
+        addNewUserE($user,$pass,$chuc_vu);
+        $user_full = seach_id_user($user);
+        $id_user=$user_full['id_user'];
+        addNewSinhvienforexecl($id_user);
+        $sv_full = seach_id_sv($id_user);
+        $id_sv=$sv_full['id_sv'];
+        addNewhosoforexecl($id_sv);
 
-      $mssv=$sheetData[$row]['D'];
-      $ho_ten=$sheetData[$row]['E'];
-      $id_nganh=$sheetData[$row]['F'];
-      $id_nganh=tim_id_nganh($id_nganh);
-      $id_nganh= $id_nganh['id_nganh'];
-      addNewSinhvienforexecl($id_user, $mssv, $id_nganh, $ho_ten);
     }
+    echo "<script type='text/javascript'>alert('đã thêm thành công');</script>";
 }
 ?>
 <div class="row">
@@ -70,17 +68,17 @@ if(isset($_POST['btn'])){
                 <div class="modal-body">
                     <p>Mẫu file exel</h1>
                         <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
-                    <form method="POST" class=" shadow rounded mt-5" action="" enctype="multipart/form-data">
+            <form method="POST" class=" shadow rounded mt-5" action="index.php?ctrl=sinh_vien" enctype="multipart/form-data">
 
                         <input type="file" name="file">
 
 
-                </div>
-                <div class="modal-footer">
+                        </div>
+                    <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-                    <button type="submit" class="btn btn-success">Thêm</button>
+                    <button type="submit" class="btn btn-success" name="bttn">Thêm</button>
                 </div>
-                </form>
+            </form>
             </div>
         </div>
     </div>
