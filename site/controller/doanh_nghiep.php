@@ -95,7 +95,12 @@ switch ($act) {
         $view_dn = "view/dn_tttk.php";
         break;
     case "dshs":
-        $id_user=$_SESSION['sid'];
+        $id_user = $_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_dshs.php";
+        break;
+    case "pheduyet":
+        $id_user = $_SESSION['sid'];
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";
         break;

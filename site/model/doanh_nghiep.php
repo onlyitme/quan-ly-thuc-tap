@@ -22,7 +22,7 @@
     }
     function getAllUngtuyen($id_dt)
     {
-        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' and trang_thai='0'";
+        $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt'";
         return query($sql);
     }
     function getDangtuyenByID($id_dt)
