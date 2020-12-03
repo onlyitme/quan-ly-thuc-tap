@@ -47,9 +47,9 @@
                                             </div>
                                             <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
                                                 <p style="margin-top: -5px;">
-                                                    <input type="radio" id="male" name="gioi_tinh" value="1" checked>                                   
+                                                    <input type="radio" id="male" name="gioi_tinh" value="1"<?php if($ttsv['mssv']==1) echo 'checked'?>>                                   
                                                     <label style="margin-right: 10px;" for="male">Nam</label>
-                                                    <input type="radio" id="male" name="gioi_tinh" value="0">                                   
+                                                    <input type="radio" id="male" name="gioi_tinh" value="0" <?php if($ttsv['mssv']==0) echo 'checked'?>>                                   
                                                     <label for="male">Nữ</label>
                                                 </p> 
                                             </div>
@@ -83,7 +83,7 @@
                                             </div>
                                             <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9">
                                                 <p> 
-                                                    <input type="email" class="form-control mb-2 " placeholder="Nhập email" id="email"> 
+                                                    <input type="email" class="form-control mb-2 " value="<?=$tttk['email']?>" placeholder="Nhập email" id="email"> 
 
                                                 </p>
                                             </div>

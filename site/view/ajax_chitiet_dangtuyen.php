@@ -25,18 +25,25 @@
     //end tp
  $luong_khoi_dau=$thongtindt['luong_khoi_dau'];
  $luong_ket_thuc=$thongtindt['luong_ket_thuc'];
-    if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
-        if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt'])) ){
-            $checkphieudkin=checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']);
-            if($checkphieudkin['trang_thai']==0) $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
-            elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check"></i> Doanh nghiệp đã duyệt bấm để lựa chọn</button></a>';
-            elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã bị từ chối</button>';
-            elseif($checkphieudkin['trang_thai']==3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
-            else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do không chấp thuận</button>';
-                    }
-        else $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
+ if(isset($_SESSION['schuc_vu']) && ($_SESSION['schuc_vu']) == 0){
+    $i =0;
+    $phieu_dk_all = thongtindkallbyid();
+    foreach($phieu_dk_all as $row){
+        if($row['trang_thai'] == 3) $i++;
     }
-    else $button_nopdon = "";
+    if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']))){
+        $checkphieudkin=checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']);
+        if($checkphieudkin['trang_thai']==0) $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
+        elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check"></i> Doanh nghiệp đã duyệt bấm để lựa chọn</button></a>';
+        elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã bị từ chối</button>';
+        elseif($checkphieudkin['trang_thai']==3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
+        else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do không chấp thuận</button>';
+        
+    }
+    elseif($i == 0) $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
+    else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã có nơi thực tập</button>';
+}
+else $button_nopdon = "";
  echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
  <div class="row align-items-center shadow-sm bg-light p-3">
      <div class="col-lg-8">

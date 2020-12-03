@@ -52,11 +52,12 @@ require_once('model/doanh_nghiep.php');
         require_once "view/layout.php";
     break;
     case 'nopdonungtuyen':
+     $kiemtratontaicv = thongtincv();
+     if(isset($kiemtratontaicv['ngay_cap_nhap'])){
       if( isset($_POST['nguyen_vong'])){
         $thongtindt= checkdangtuyenbyid($_POST['id_dt']);
         $thongtindn=checkdoanhnghiepbyid($thongtindt['id_dn']);
         $thongtinnganh=checknganhbyid($thongtindt['id_nganh']);
-
         $nguyen_vong = $_POST['nguyen_vong'];
         $id_dt = $_POST['id_dt'];
         $id_sv = $_SESSION['sid_sv'];
@@ -67,6 +68,13 @@ require_once('model/doanh_nghiep.php');
         if(isset($_POST['jobdetail'])) require_once  "view/job-detail.php";
         else require_once 'view/ajax_chitiet_dangtuyen.php';       
       }
+     } else {
+  
+      echo "<script type='text/javascript'> window.location='index.php?ctrl=sinh_vien&act=cv_edit';</script>";
+      echo "<script type='text/javascript'>alert('Hãy nhập thông tin của CV để đủ điều kiện ứng tuyển');</script>";
+      exit();
+     }
+      
       break;
     case 'xoadonungtuyen':
         xoadonungtuyen($_POST['id_sv'],$_POST['id_dt']);

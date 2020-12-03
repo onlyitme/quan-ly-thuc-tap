@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<div class="row mt-5">
+<div class="row mt-5" >
     <div class="col-12">
         <h3 class="text-center"></h3>
     </div>
@@ -87,8 +87,8 @@
                 <i class="fas fa-chart-area mr-1"></i>
                 Số lượng sinh viên thực tập
             </div>
-            <div class="card-body">
-                <canvas id="myChart" height="105"></canvas>
+            <div class="card-body" style="height:300px;" >
+                <canvas id="myChart" style="max-height:100% ;"></canvas>
             </div>
         </div>
     </div>
@@ -98,8 +98,8 @@
                 <i class="fas fa-chart-bar mr-1"></i>
                 Số lượng sinh viên thực tập
             </div>
-            <div class="card-body">
-                <div id="columnchart_values" width="100%" height="40"></div>
+            <div class="card-body "  style="height:300px">
+                <div id="columnchart_values" style="height:100%" ></div>
             </div>
         </div>
     </div>
