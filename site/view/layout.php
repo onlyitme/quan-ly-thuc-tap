@@ -295,8 +295,9 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body row ">
-                        <div class="d-none d-lg-inline col-6">
-                            <img src="view/images/login.jpg" alt="">
+                        <div class="d-none d-lg-inline col-6 rounded">
+                            <!-- <img src="view/images/login.jpg" alt=""> -->
+                            <img src="view/images/img_login.png" alt="login_page" class="h-img-login">
                         </div>
                         <div class="col-lg-6 ">
                             <h2 class="font-weight-bold">Đăng Nhập</h2>
@@ -310,11 +311,11 @@
                                 <div class="form-group">
 
                                     <!-- <label for="">Tên đăng nhập</label> -->
-                                    <input type="text" name="user" id="user" class="form-control" aria-describedby="helpId" placeholder="Tên tài khoản ...">
+                                    <input type="text" name="user" id="user" class="form-control" aria-describedby="helpId" placeholder="Tên tài khoản">
                                 </div>
                                 <div class="form-group">
                                     <!-- <label for="">Mật khẩu</label> -->
-                                    <input type="password" name="pass" id="pass" class="form-control" aria-describedby="helpId" placeholder="Mật khẩu ...">
+                                    <input type="password" name="pass" id="pass" class="form-control" aria-describedby="helpId" placeholder="Mật khẩu">
                                 </div>
 
                                 <button type="submit" id="login" class="btn btn-primary btn-block mt-4">Đăng nhập</button>

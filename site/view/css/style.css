@@ -416,7 +416,7 @@
     #sinhvien strong {
         margin-top: -2px;
     }
-    
+
     #sinhvien .item-tt {
         margin-left: -19px;
         margin-top: -5px;
@@ -555,7 +555,7 @@
         display: block;
         color: #343a40;
     }
-    
+
     #sinhvien .h-sidebar-navigation li i {
         width: 20px;
         margin-right: 5px;
@@ -564,7 +564,7 @@
     #sinhvien .h-sidebar-navigation li a:hover {
         color: #fff;
     }
-    
+
     #sinhvien .h-sidebar-navigation .h-header {
         font-size: 12pt;
         text-transform: uppercase;
@@ -835,27 +835,26 @@
         padding: 25px 0;
         border-bottom: 2px solid #b1eaff;
     }
-    
+
     .resume .resume_item1 {
         padding: 25px 0;
         border-bottom: 2px solid #b1eaff;
     }
-    
+
     hr.N-hr {
         border-top: 2px solid #b1eaff;
     }
-    
+
     .resume .resume_about {
         border-top: 2px solid #b1eaff;
     }
-    
+
     .resume .resume_about1 {
         margin-top: 50px;
         border-bottom: none;
     }
-    
-    .resume .resume_left .resume_item:last-child,
-    .resume .resume_right .resume_item:last-child {
+
+    .resume .resume_left .resume_item:last-child, .resume .resume_right .resume_item:last-child {
         border-bottom: 0px;
     }
 
@@ -1197,6 +1196,15 @@
         background-color: rgb(255, 255, 255);
     }
 
+    /* image login - form site */
+
+    .h-img-login {
+        object-fit: cover;
+        border-radius: 7px;
+        height: 350px;
+        transform: scaleX(1); /*Flip = -1*/
+    }
+
     /* Doanh Nghiep - Hoang */
 
     #doanhnghiep ul li {
@@ -1226,7 +1234,7 @@
         border-radius: 10px;
     }
 
-    /* .h-box-left {} */
+    /*#doanhnghiep .h-box-left {} */
 
     #doanhnghiep .h-box-right {
         float: left;
@@ -1262,10 +1270,10 @@
         display: block;
         color: #343a40;
     }
-    
-    #doanhnghiep .h-sidebar-navigation li .fa,
-    #doanhnghiep .h-sidebar-navigation li .fas,
-    #doanhnghiep .h-sidebar-navigation li .far {
+
+    #doanhnghiep .h-sidebar-navigation li .fa, #doanhnghiep .h-sidebar-navigation li .fas, #doanhnghiep .h-sidebar-navigation li .far {
+        width: 10px;
+        margin-right: 15px;
         font-size: 13px;
         color: #fff;
     }
@@ -1447,7 +1455,6 @@
     }
 
     #doanhnghiep .h-social {
-        
         padding: 10px 15px;
         float: right;
     }
@@ -1578,7 +1585,7 @@
         color: #fff;
     }
 
-    #doanhnghiep .h-bg-button a{
+    #doanhnghiep .h-bg-button a {
         color: #fff;
     }
 
@@ -1698,5 +1705,5 @@
     }
 
     /* Quan ly nhan su - Hoang */
-    
+
     /*----- End Doanh Nghiep -----*/
