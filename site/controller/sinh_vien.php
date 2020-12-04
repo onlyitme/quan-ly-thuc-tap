@@ -31,7 +31,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         }
         $view_sv = "view/ttcn_index.php";
   break;
-    case "ttcn_update":
+      case "ttcn_update":
         $ho_ten=$_POST['ho_ten'];
         $mssv=$_POST['mssv'];
         $gioi_tinh=$_POST['gioi_tinh'];
@@ -138,7 +138,10 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       $thongtincv=thongtincv();
       $view_sv = "view/cv_index.php";
     break;
+    case "hoang":
+      $view_sv = "view/hoang.php";
 
+    break;
   }
   $view="view/layout_sv.php";
   require_once "view/layout.php";

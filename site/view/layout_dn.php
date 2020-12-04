@@ -33,7 +33,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlns">
                             <i class="far fa-users" aria-hidden="true"></i> Quản lý nhân sự
                         </a>
                     </li>

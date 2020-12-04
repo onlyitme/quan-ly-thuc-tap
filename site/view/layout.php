@@ -81,7 +81,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content ">
                     <div class="modal-header alert alert-primary mb-0 py-4 px-4">
-                        <div class=" col-12">
+                        <div class="col-12">
                             <h2 class="d-inline">Đăng Tuyển </h2>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>

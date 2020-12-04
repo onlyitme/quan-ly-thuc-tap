@@ -42,7 +42,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="index.php?ctrl=sinh_vien&act=hoang">
                             <i class="far fa-engine-warning    "></i>
                             Hướng dẫn thao tác
                         </a>

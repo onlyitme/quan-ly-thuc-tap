@@ -119,6 +119,9 @@ switch ($act) {
     case "tdmk":
         $view_dn = "view/dn_tdmk.php";
         break;
+    case "qlns":
+        $view_dn = "view/dn_qlns.php";
+        break;
     case "delete_dt":
         $id_dt = $_GET["id_dt"];
         settype($id_dt, "int");
