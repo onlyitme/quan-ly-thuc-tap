@@ -60,4 +60,8 @@ function updateemail($email){
     $sql = "UPDATE user SET email='$email' where id_user= '$_SESSION[sid]' ";
     execute($sql);
 }
+function them_sl_sv_dk($dem,$id){
+    $sql = "UPDATE dang_tuyen SET sl_sv_dk='$dem' where id_dt= '$id' ";
+    execute($sql);
+}
 ?>

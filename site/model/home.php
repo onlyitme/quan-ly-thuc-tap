@@ -62,6 +62,10 @@ function thongtindangtuyen($id_nganh){
     $sql ="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
     return query($sql);
 }
+function checkphieudkinbyid($id){
+    $sql = "select * from phieu_dk_in where id_phieu = '$id'";
+    return queryOne($sql);
+}
 //BAOKUN nè.!
 function addphieudkin($id_sv,$ngay_dk,$nguyen_vong,$id_dt,$id_dn){
     $sql = "INSERT INTO phieu_dk_in (id_sv,ngay_dk,nguyen_vong,id_dt,id_dn)
