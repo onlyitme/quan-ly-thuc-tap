@@ -8,7 +8,6 @@
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
           if(isset($_POST['arr'])){
-            var_dump($_POST['arr']);
             foreach($_POST['arr'] as $id_nganh){
                 deleteNganh($id_nganh);
             }

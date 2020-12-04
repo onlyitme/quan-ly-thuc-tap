@@ -134,7 +134,7 @@
         foreach ($dn as $row) { ?>
             <tr>
                 <th class="py-5">
-                    <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value='<?= $row['id_nganh'] ?>'>
+                    <div class="checkbox d-flex align-items-center"><input type="checkbox" class="checkitem mr-2" value='<?= $row['id_user'] ?>'>
                         <div><?= $i++ ?></div>
                     </div>
                 </th>

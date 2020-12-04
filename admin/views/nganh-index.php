@@ -125,7 +125,7 @@
                     console.log(arrcheck);
                     $.ajax({
                     type: "post",
-                    url: "index.php?ctrl=nhom_nganh",
+                    url: "index.php?ctrl=nganh",
                     data: {arr: arrcheck},
                     success: function(data) {
                         location.reload();

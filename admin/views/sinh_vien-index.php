@@ -356,7 +356,7 @@ $("#xoaall").click(function() {
             console.log(arrcheck);
             $.ajax({
                 type: "post",
-                url: "index.php?ctrl=nhom_nganh",
+                url: "index.php?ctrl=sinh_vien",
                 data: {
                     arr: arrcheck
                 },
