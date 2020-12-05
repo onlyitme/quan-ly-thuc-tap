@@ -1,9 +1,7 @@
 <div class="border rounded shadow-sm p-3">
-    <div class="alert  alert-primary" role="alert">
-        <strong>
-            <h4 class=" " style="border-left: 5px tomato solid;padding: 0 10px;font-weight: 600 ;  ">DANH SÁCH ĐƠN XIN
-                THỰC TẬP</h4>
-        </strong>
+    <div class="alert  alert-secondary" role="alert">
+        <h3 class="">DANH SÁCH ĐƠN XIN
+            THỰC TẬP</h3>
     </div>
     <?php foreach($phieu_dk_all as $row){
                                 $thong_tin_dt= checkdangtuyenbyid($row['id_dt']);
