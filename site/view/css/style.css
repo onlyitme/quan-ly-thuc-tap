@@ -26,6 +26,7 @@
     }
     
     #clockdiv>div {
+        margin: 2px;
         padding: 5px;
         border-radius: 3px;
         background: #00BF96;
@@ -63,6 +64,10 @@
         font-size: 12pt;
     }
     /*Mặc định của p là margin: 0 - Đừng sửa gì hết!*/
+    
+    .NdmH {
+        min-height: 200px;
+    }
     
     p {
         margin: 0;

@@ -1,15 +1,13 @@
 <div class="border rounded shadow-sm p-3">
-    <div class="alert  alert-primary" role="alert">
-        <strong>
-            <h4 class=" " style="border-left: 5px tomato solid;padding: 0 10px;font-weight: 600 ;  ">DANH SÁCH ĐƠN XIN
-                THỰC TẬP</h4>
-        </strong>
+    <div class="alert " role="alert">
+        <h3 class="">DANH SÁCH ĐƠN XIN
+            THỰC TẬP</h3>
     </div>
     <?php foreach($phieu_dk_all as $row){
                                 $thong_tin_dt= checkdangtuyenbyid($row['id_dt']);
                                 $thong_tin_dn= checkdoanhnghiepbyid($thong_tin_dt['id_dn']);
                                 ?>
-    <div class="media col-sm-12 shadow sv-12">
+    <div class="media col-sm-12 shadow sv-12 NdmH" style="min">
         <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
             <div class="bg-ds mt-3">
                 <img src="../uploads/<?=$thong_tin_dn['anh']?>" onerror="http://placehold.it/300x200">
@@ -201,7 +199,7 @@
     </script>
     <?php } elseif($row['trang_thai']==5){ ?>
     <script>
-    var kq = '<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>' +
+    var kq = '<div class="col-2 py-3" ></div>' +
         '<div class="col-12  ml-5 mt-5">' +
         '<div class="">' +
         '<p class="text-danger font-weight-bold"><i class="fa fa-clock-o"style="color:tomato;"></i> Thời gian hết hạn </p>' +

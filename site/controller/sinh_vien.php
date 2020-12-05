@@ -88,6 +88,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       $dem++;
       $id_dt =  $tt_dang_tuyen['id_dt'];
       them_sl_sv_dk($dem,$id_dt);
+      capnhaptrangthaisv();
       huy_dk_dt();
    exit();
     break;
