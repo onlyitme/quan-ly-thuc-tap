@@ -145,9 +145,13 @@ switch ($act) {
         $view_dn = "view/dn_qlbv.php";
         break;
     case "show_cv":
-        $thong_tin= checkphieudkinbyid($_POST['id_phieu']);
-            $id_sv = $thong_tin['id_sv'];
-            $thong_tin_sv= checksinhvienbyid($id_sv);
+        $thong_tin = checkphieudkinbyid($_POST['id_phieu']);
+        $id_sv = $thong_tin['id_sv'];
+        $thong_tin_sv = checksinhvienbyid($id_sv);
+        $nganh = checkNganhByID($thong_tin_sv['id_nganh']);
+        $email=checktaikhoanbyid($thong_tin_sv['id_user']);
+        $kynang=checkHosoByID($thong_tin_sv['id_sv']);
+        $dangtuyen=checkdangtuyenbyid($thong_tin['id_dt']);
         echo '  
                 <div class="resume_left">
                     <div class="resume_profile">
@@ -156,8 +160,8 @@ switch ($act) {
                     <div class="resume_content">
                         <div class="resume_item resume_info">
                             <div class="title">
-                                <p class="bold">'.$thong_tin_sv['ho_ten'].'</p>
-                                <p class="regular">Web Designer</p>
+                                <p class="bold">' . $thong_tin_sv['ho_ten'] . '</p>
+                                <p class="regular">' . $nganh['ten_nganh'] . '</p>
                             </div>
                             <ul>
                                 <li>
@@ -165,7 +169,7 @@ switch ($act) {
                                         <i class="fas fa-map-marker"></i>
                                     </div>
                                     <div class="data">
-                                        Quận Thủ Đức <br /> Hồ Chí Minh city
+                                    ' . $thong_tin_sv['dia_chi'] . '
                                     </div>
                                 </li>
                                 <li>
@@ -173,7 +177,7 @@ switch ($act) {
                                         <i class="fas fa-mobile-alt"></i>
                                     </div>
                                     <div class="data">
-                                        +84 944810751
+                                    ' . $thong_tin_sv['sdt'] . '
                                     </div>
                                 </li>
                                 <li>
@@ -181,7 +185,7 @@ switch ($act) {
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="data">
-                                        Nghiai@gmail.com
+                                    ' . $email['email']. '
                                     </div>
                                 </li>
                                 <li>
@@ -196,7 +200,7 @@ switch ($act) {
                         </div>
                         <div class="resume_item resume_skills">
                             <div class="title">
-                                <p class="bold">Kỹ năng</p>
+                                <p class="bold"> '.$kynang['ky_nang_so_truong'].'</p>
                             </div>
                             <ul>
                                 <li>
@@ -282,18 +286,20 @@ switch ($act) {
                 <div class="resume_right">
                     <div class="resume_item1 resume_about1 border-top-0">
                         <div class="title">
-                            <h4 class="bold">TIÊU ĐỀ ĐĂNG TUYỂN</h4>
+                            <h4 class="bold">'.$dangtuyen['tieu_de'].'</h4>
+                            <p>
+                            </p>
                             <p class="text-gray">
-                                <span class="font-weight-bold ">NGUYỆN VỌNG:</span> 
+                                <span class="font-weight-bold ">Nguyện vọng</span> 
                                 <span >
-                                    Mong được tham gia cùng doanh nghiệp để phát kỹ năng và học tập nhiều hơn.!
+                                '. $thong_tin['nguyen_vong'].'
                                 </span>
                             </p>
                         </div>
                         <div class="pt-3 text-right">
 
-                            <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu='.$_POST['id_phieu'].'" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
-                            <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu='.$_POST['id_phieu'].'" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
+                            <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
+                            <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
 
                         </div>
                     </div>
@@ -301,10 +307,7 @@ switch ($act) {
                         <div class="title">
                             <p class="bold">Mục tiêu nghề nghiệp</p>
                         </div>
-                        <p>Áp dụng những kinh nghiệm về kỹ năng bán hàng và sự hiểu biết về thị trường để trở thành một
-                            nhân viên bán hàng chuyên nghiệp, mang đến nhiều giá trị cho khách hàng. Từ đó giúp Công ty
-                            tăng số lượng khách hàng và mở rộng tập khách
-                            hàng.
+                        <p>'.$kynang['muc_tieu_nghe_nghiep'].'
                         </p>
                     </div>
                     <div class="resume_item resume_work">
