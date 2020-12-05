@@ -1,4 +1,4 @@
-          <div id="home" class="shadow-sm">
+          <div id="home" class="">
                 <div class="row bg-light shadow my-3">
                     <div class="home-line"></div>
                     <div class="home-note col-12 text-center">
@@ -9,7 +9,7 @@
                 <div class=" row home-list-job">
                 <?php
                 foreach($ds_nn as $ds_nn){ $ds_nganh=ds_nganh($ds_nn['id_nn']); ?>    
-                    <div class="col-12 py-5">
+                    <div class="col-12 py-5 my-3 "  style="box-shadow: 0 6px 24px -6px lightgray;">
                         <!-- MENU -->
                         <h3 class=" shadow d-inline-block" ><?=$ds_nn['ten_nn']?></h3>
                         <ul class=" nav nav-tabs mt-n2">

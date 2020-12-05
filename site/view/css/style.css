@@ -1,6 +1,10 @@
     #header {
         max-height: 80px;
     }
+    
+    .fixed-top {
+        z-index: 30 !important;
+    }
     /* nghia */
     
     @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
@@ -333,7 +337,7 @@
     }
     
     .avt-cart-home {
-        border-bottom: 5px solid white;
+        border-bottom: 1px solid lightgray;
         height: 150px;
         object-fit: cover;
     }
@@ -928,7 +932,7 @@
         height: 100%;
     }
     
-    .resume .resume_left .resume_content {
+    .resume .resume_content {
         padding: 0 25px;
     }
     
@@ -1046,7 +1050,7 @@
     .resume .resume_right {
         width: 520px;
         background: #fff;
-        padding: 25px;
+        padding: 0 25px;
     }
     
     .resume .resume_right .bold {
@@ -1136,23 +1140,17 @@
         display: none;
     }
     
-    .btn-danger11 {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-    }
-    
     .btn-danger2 {
         position: absolute;
-        right: 20px;
-        top: 30px;
+        right: 5px;
+        top: 5px;
     }
     /* Nghia onclick */
     
     .N-box {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
