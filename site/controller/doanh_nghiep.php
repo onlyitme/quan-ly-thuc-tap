@@ -178,6 +178,8 @@ switch ($act) {
                 <label for="message-text" class="col-form-label">Nhận xét:</label>
                 <textarea class="form-control" cols="30" rows="7" id="message-text" name="danh_gia"></textarea>
             </div>
+            <input type="submit" value="ccc">    
+            </form>
        
     </div>
     <div class="modal-footer">
@@ -185,7 +187,7 @@ switch ($act) {
         <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
         <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
         <button type="submit" class="btn btn-success" data-dismiss="">Cập nhật </button>
-        </form>
+        
     </div>';
         exit();
     case "show_cv":
