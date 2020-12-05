@@ -34,45 +34,46 @@
     if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']))){
         $checkphieudkin=checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']);
         if($checkphieudkin['trang_thai']==0) $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
-        elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check"></i> Doanh nghiệp đã duyệt bấm để lựa chọn</button></a>';
-        elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã bị từ chối</button>';
+        elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check-circle"></i> Kiểm tra ứng tuyển</button></a>';
+        elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Đã bị từ chối</button>';
         elseif($checkphieudkin['trang_thai']==3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
-        else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do không chấp thuận</button>';
-        
+        else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Không chấp thuận</button>'; 
     }
     elseif($i == 0) $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
     else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã có nơi thực tập</button>';
 }
 else $button_nopdon = "";
- echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
- <div class="row align-items-center shadow-sm bg-light p-3">
+echo ' 
+    <!-- modal nguyện vọng -->
+    <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="javascript:nopdonungtuyen('.$thongtindt['id_dt'].')">
+                    <div class="modal-header  alert  bg-info text-light">
+                        <h3 class="modal-title font-weight-bold"><i class="fas fa-pen-alt"></i> Nguyện Vọng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <textarea name="nd-nguyenvong" id="nd_nguyenvong" class="form-control w-100 p-3 border-0 shadow-none"  rows="6" placeholder="Hãy điền nguyện vọng của bạn để được tuyển dụng nào !"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-info px-5">Xác nhận</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+    <!-- end modal nguyện vọng -->
+ <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company-list">
+ <div class="row align-items-center shadow-sm bg-light p-3" id="head-listjob">
      <div class="col-lg-8">
         <h4 class="mb-2 font-weight-bold text-justif">'.$thongtindt['tieu_de'].'</h4>
         <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
-     '.$button_nopdon.'
-         <!-- baokun -->
-         <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-             <div class="modal-dialog" role="document">
-                 <div class="modal-content">
-                     <form action="javascript:nopdonungtuyen('.$thongtindt['id_dt'].')">
-                         <div class="modal-header  alert  bg-info text-light">
-                             <h3 class="modal-title font-weight-bold"><i class="fas fa-pen-alt"></i> Nguyện Vọng</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                         </div>
-                         <div class="modal-body p-0">
-                             <textarea name="nd-nguyenvong" id="nd_nguyenvong" class="form-control w-100 p-3 border-0 shadow-none"  rows="6" placeholder="Hãy điền nguyện vọng của bạn để được tuyển dụng nào !"></textarea>
-                         </div>
-                         <div class="modal-footer">
-                             <button type="submit" class="btn btn-info px-5">Xác nhận</button>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>   
+     '.$button_nopdon.'  
      </div>
  </div>
  <div class="row p-3">

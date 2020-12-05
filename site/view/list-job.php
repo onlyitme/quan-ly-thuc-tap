@@ -138,25 +138,18 @@
                 if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']))){
                     $checkphieudkin=checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']);
                     if($checkphieudkin['trang_thai']==0) $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
-                    elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check"></i> Doanh nghiệp đã duyệt bấm để lựa chọn</button></a>';
-                    elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã bị từ chối</button>';
+                    elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check-circle"></i> Kiểm tra ứng tuyển</button></a>';
+                    elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Đã bị từ chối</button>';
                     elseif($checkphieudkin['trang_thai']==3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
-                    else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do không chấp thuận</button>';
-                    
+                    else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Không chấp thuận</button>'; 
+           
                 }
                 elseif($i == 0) $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
                 else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã có nơi thực tập</button>';
             }
             else $button_nopdon = "";
-            echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
-            <div class="row align-items-center bg-light shadow-sm p-3">
-                <div class="col-lg-8">
-                    <h4 class="mb-2 font-weight-bold text-justify">'.$thongtindt['tieu_de'].'</h4>
-                    <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
-                </div>
-                <div class="col-lg-4 text-right">
-                '.$button_nopdon.'
-                    <!-- baokun -->
+            echo '
+            <!-- modal nguyện vọng -->
                     <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -176,12 +169,23 @@
                                 </form>
                             </div>
                         </div>
-                    </div>   
+                    </div> 
+            <!-- end modal nguyện vọng -->
+
+            <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company-list">
+            <div class="row align-items-center bg-light shadow-sm p-3" id="head-listjob">
+                <div class="col-lg-8">
+                    <h4 class="mb-2 font-weight-bold text-justify">'.$thongtindt['tieu_de'].'</h4>
+                    <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
+                </div>
+                <div class="col-lg-4 text-right">
+                '.$button_nopdon.'
+                      
                 </div>
             </div>
             <div class="row p-3 ">
                 <div class="col-lg-7">
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <h5>Phúc lợi</h5>
                         <div class="d-flex small">
                             <div class="col-4">
@@ -202,26 +206,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <h5>Mô tả công việc</h5>
                         <div id="mota" class="col-12">
                         '.$thongtindt['mo_ta'].'
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <h5>Yêu cầu công việc</h5>
                         <div id="yeucau" class="col-12">
                         '.$thongtindt['yeu_cau'].'
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <h5>Quyền lợi(sẽ thêm sau)</h5>
                         <div id="quyenloi" class="col-12">
                             <p> - Thu nhập cạnh tranh theo năng lực làm việc. - Thưởng lương tháng 13 và hiệu quả hoạt động kinh doanh của công ty 2-3 tháng lương. - Nghỉ mát/team-building hàng năm. - Chế độ BHXH, BHYT, BHTN theo quy định của Pháp luật.
                                 - Chế độ ngày nghỉ, lễ tết, được công ty thực hiện theo luật lao động Việt Nam. - Làm việc trong môi trường trẻ năng động, nhiều thử thách và cơ hội phát triển năng lực cá nhân.</p>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-5">
                         <h5>Thông tin khác</h5>
                         <div id="quyenloi" class="col-12">
                       

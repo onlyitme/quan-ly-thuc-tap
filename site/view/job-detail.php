@@ -27,7 +27,7 @@
         
       }
 </script>
-<div class="d-none d-md-block detail-job_inf  my-3 shadow">
+<div class="d-none d-md-block detail-job_inf my-3 mb-3 shadow">
  <?php 
  $phuc_loi1='';$phuc_loi2='';$phuc_loi3='';$phuc_loi4='';$phuc_loi5='';$phuc_loi6='';
  if($thongtindt['che_do_bao_hiem'] == 1) $phuc_loi1= '<p><i class="fas fa-folder-plus  text-primary "></i> Chế độ bảo hiểm</p>';
@@ -64,51 +64,56 @@
     if(is_array(checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']))){
         $checkphieudkin=checkphieudkin($_SESSION['sid_sv'],$thongtindt['id_dt']);
         if($checkphieudkin['trang_thai']==0) $button_nopdon = '<button type="button" onclick="xoaphieudk('.$_SESSION['sid_sv'].','.$thongtindt['id_dt'].')" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Huỷ đơn đăng ký</button>';
-        elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check"></i> Doanh nghiệp đã duyệt bấm để lựa chọn</button></a>';
-        elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã bị từ chối</button>';
+        elseif($checkphieudkin['trang_thai']==1) $button_nopdon = '<a href="index.php?ctrl=sinh_vien&act=danh_sach_don"><button type="button"  class="btn btn-success"> <i class="fas fa-check-circle"></i> Kiểm tra ứng tuyển</button></a>';
+        elseif($checkphieudkin['trang_thai']==2) $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Đã bị từ chối</button>';
         elseif($checkphieudkin['trang_thai']==3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
-        else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do không chấp thuận</button>';
-        
+        else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Không chấp thuận</button>'; 
+    
     }
     elseif($i == 0) $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
     else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã có nơi thực tập</button>';
 }
 else $button_nopdon = "";
- echo ' <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
- <div class="row align-items-center border rounded shadow-sm p-5 bg-light">
+ echo ' 
+ <!-- modal nguyện vọng -->
+ <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <form action="javascript:nopdonungtuyen('.$thongtindt['id_dt'].')">
+                 <div class="modal-header  alert  bg-info text-light">
+                     <h3 class="modal-title font-weight-bold"><i class="fas fa-pen-alt"></i> Nguyện Vọng</h5>
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                             <span aria-hidden="true">&times;</span>
+                         </button>
+                 </div>
+                 <div class="modal-body p-0">
+                     <textarea name="nd-nguyenvong" id="nd_nguyenvong" class="form-control w-100 p-3 border-0 shadow-none"  rows="6" placeholder="Hãy điền nguyện vọng của bạn để được tuyển dụng nào !"></textarea>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="submit" class="btn btn-info px-5">Xác nhận</button>
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div> 
+<!-- end modal nguyện vọng -->
+
+    <div class="row">
+        <img src="../uploads/'.$thongtindn['banner'].'" onerror=this.src="http://placehold.it/300x200" id="banner-company">
+    </div>
+ <div class="row align-items-center border rounded shadow px-5 py-3 bg-light" id="head-job">
      <div class="col-lg-8 ">
         <h4 class="mb-2 font-weight-bold text-justif">'.$thongtindt['tieu_de'].'</h4>
         <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
-     '.$button_nopdon.'
-         <!-- baokun -->
-         <div class="modal fade" id="nguyenvong" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-             <div class="modal-dialog" role="document">
-                 <div class="modal-content">
-                     <form action="javascript:nopdonungtuyen('.$thongtindt['id_dt'].')">
-                         <div class="modal-header  alert  bg-info text-light">
-                             <h3 class="modal-title font-weight-bold"><i class="fas fa-pen-alt"></i> Nguyện Vọng</h5>
-                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                 </button>
-                         </div>
-                         <div class="modal-body p-0">
-                             <textarea name="nd-nguyenvong" id="nd_nguyenvong" class="form-control w-100 p-3 border-0 shadow-none"  rows="6" placeholder="Hãy điền nguyện vọng của bạn để được tuyển dụng nào !"></textarea>
-                         </div>
-                         <div class="modal-footer">
-                             <button type="submit" class="btn btn-info px-5">Xác nhận</button>
-                         </div>
-                     </form>
-                 </div>
-             </div>
-         </div>   
-     </div>
+     '.$button_nopdon.' 
+    </div>
  </div>
  <div class="row p-5">
      <div class="col-lg-7">
-         <div class="mb-3">
-             <h5>Phúc lợi</h5>
+         <div class="mb-5">
+             <h4>Phúc lợi</h4>
              <div class="d-flex small">
                  <div class="col-4">
                      '.$phuc_loi1.'
@@ -128,26 +133,26 @@ else $button_nopdon = "";
                  </div>
              </div>
          </div>
-         <div class="mb-3">
-             <h5>Mô tả công việc</h5>
+         <div class="mb-5">
+             <h4>Mô tả công việc</h4>
              <div id="mota" class="col-12">
              '.$thongtindt['mo_ta'].'
              </div>
          </div>
-         <div class="mb-3">
-             <h5>Yêu cầu công việc</h5>
+         <div class="mb-5">
+             <h4>Yêu cầu công việc</h4>
              <div id="yeucau" class="col-12">
              '.$thongtindt['yeu_cau'].'
              </div>
          </div>
-         <div class="mb-3">
-             <h5>Quyền lợi</h5>
+         <div class="mb-5">
+             <h4>Quyền lợi</h4>
              <div id="quyenloi" class="col-12">
              '.$thongtindt['quyen_loi'].'
              </div>
          </div>
-         <div class="mb-3">
-             <h5>Thông tin khác</h5>
+         <div class="mb-5">
+             <h4>Thông tin khác</h4>
              <div id="quyenloi" class="col-12">
            
                  <p>Hình thức: '.$vi_tri.'</p>
@@ -158,57 +163,55 @@ else $button_nopdon = "";
      </div>
      <div class="col-lg-5">
          <div class="mb-4">
-             <h5>Địa điểm</h5>
+             <h4>Địa điểm</h4>
              <img src="view/images/map.jpg" alt="">
          </div>
          <div class="mb-4 p-3 shadow">
-             <h5 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h5>
-             <div class="d-flex justify-content-between">
+             <h4 class="border-bottom py-3 mb-3">Thông tin tuyển dụng</h4>
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Nơi làm việc</p>
                  <p class="text-gray">'.$tp_lamviec.'</p>
              </div>
-             <div class="d-flex justify-content-between">
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Cấp bậc</p>
                  <p class="text-gray">Nhân viên</p>
              </div>
-             <div class="d-flex justify-content-between">
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Lương</p>
                  <p class="text-gray">'.$luong_khoi_dau.' ~ '.$luong_ket_thuc.' $ </p>
              </div>
-             <div class="d-flex justify-content-between">
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Hết hạn nộp</p>
                  <p class="text-gray">'.date('d/m/yy',strtotime($thongtindt['thoi_gian'])).'</p>
              </div>
-             <div class="d-flex justify-content-between">
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Ngành nghề</p>
                  <p class="text-gray">'.$thongtinnganh['ten_nganh'].'</p>
              </div>
-             <div class="d-flex justify-content-between">
+             <div class="d-flex justify-content-between mb-2">
                  <p class="text-primary">Kinh Nghiệm</p>
                  <p class="text-gray">'.$kinh_nghiem.'</p>
              </div>
          </div>
          <div class="mb-4 p-3 shadow">
-             <h5 class="border-bottom py-3 mb-3">Giới thiệu công ty</h5>
+             <h4 class="border-bottom py-3 mb-3">Giới thiệu công ty</h4>
              <div class="d-flex mb-3">
-                 <img src="http://placehold.it/900x200" class="col-4 p-0" alt="logo">
-                 <p class="font-weight-bold col-8">'.$thongtindn['ten_dn'].'</p>
+                 <img src="../uploads/'.$thongtindn['anh'].'" onerror=this.src="http://placehold.it/900x200" class="col-4 p-0 shadow-sm" alt="logo">
+                 <div class="col-8">
+                    <p class="font-weight-bold ">'.$thongtindn['ten_dn'].'</p>
+                    <div class="mt-3">
+                        <p class="mb-1"><i class="fas fa-people-carry"></i> : 3500 nhân viên</p>
+                        <p><i class="fas fa-phone-alt"></i> : '.$thongtindn['sdt'].'</p>
+                    </div>
+                 </div>
+                 
              </div>
              <div class="mb-3">
-                 <div class="d-flex ">
+                 <div class="d-flex  mb-2">
                      <p class="w-25"><i class="fas fa-map-marker-alt"></i></p>
                      <p class="col-11"> '.$thongtindn['dia_chi'].'</p>
                  </div>
-                 <div class="d-flex ">
-                     <p class="w-25"><i class="fas fa-phone-alt"></i></p>
-                     <p class="col-11"> '.$thongtindn['sdt'].'</p>
-                 </div>
-                 <div class="d-flex ">
-                     <p class="w-25"><i class="fas fa-people-carry"></i></p>
-                     <p class="col-11"> 3500 nhân viên</p>
-
-                 </div>
-                 <div class="d-flex">
+                 <div class="d-flex  mb-2">
                      <p class="w-25"><i class="fab fa-internet-explorer"></i></p>
                      <p class="col-11"> <a href="">file:///D:/XamPP/htdocs/quan-ly-thuc-tap/site/view/list-job.html</a></p>
                  </div>
