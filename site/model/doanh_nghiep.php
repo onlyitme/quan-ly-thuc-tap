@@ -20,6 +20,11 @@
         $sql = "SELECT * from sinh_vien";
         return query($sql);
     }
+    function getAllSinhvien_()
+    {
+        $sql = "SELECT * from sinh_vien WHERE trang_thai='1'";
+        return query($sql);
+    }
     function getAllUngtuyen($id_dt)
     {
         $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' ORDER BY trang_thai asc";
@@ -84,6 +89,16 @@
         }
     }
     function updatePhieu_($id_phieu)
+    {
+        try {
+            $sql = "UPDATE phieu_dk_in SET trang_thai='2' WHERE id_phieu='$id_phieu'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function updateDanhgia($id_phieu)
     {
         try {
             $sql = "UPDATE phieu_dk_in SET trang_thai='2' WHERE id_phieu='$id_phieu'";

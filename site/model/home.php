@@ -80,4 +80,8 @@ function checkphieudkin($id_sv,$id_dt){
     $sql = "select * from phieu_dk_in where id_sv = ".$id_sv." and id_dt = ".$id_dt."";
     return queryOne($sql);
 }
+function checksinhvienbyid($id_sv){
+    $sql = "select * from sinh_vien where id_sv = ".$id_sv."";
+    return queryOne($sql);
+}
 ?>
