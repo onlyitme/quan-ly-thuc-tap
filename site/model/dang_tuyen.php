@@ -80,10 +80,7 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-    function danh_gia_tu_dn($ket_qua,$danh_gia,$id_phieu){
-        $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
-    execute($sql);
-    }
+    
 
     ?>
 

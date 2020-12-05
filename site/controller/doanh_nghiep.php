@@ -148,8 +148,11 @@ switch ($act) {
         $ket_qua=$_POST['h-danhgia'];
         $danh_gia=$_POST['danh_gia'];
         $id_phieu=$_GET['id_phieu'];
-        echo "<script type='text/javascript'>alert('a');</script>";
+
         danh_gia_tu_dn($ket_qua,$danh_gia,$id_phieu);
+        $id_user = $_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_qlns.php";
         break;
     case "danh_gia":
         echo '<div class="modal-header alert alert-info">
@@ -158,9 +161,9 @@ switch ($act) {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-    </div>
+    </div><form method="post" action="index.php?ctrl=doanh_nghiep&act=dn_danh_gia&id_phieu='.$_POST['id_phieu'].'">
     <div class="modal-body">
-        <form method="post" action="index.php?ctrl=doanh_nghiep&act=dn_danh_gia&id_phieu='.$_POST['id_phieu'].'">
+        
             <div class="form-group">
                 
                 <label for="recipient-name" class="col-form-label">
@@ -178,8 +181,7 @@ switch ($act) {
                 <label for="message-text" class="col-form-label">Nhận xét:</label>
                 <textarea class="form-control" cols="30" rows="7" id="message-text" name="danh_gia"></textarea>
             </div>
-            <input type="submit" value="ccc">    
-            </form>
+            
        
     </div>
     <div class="modal-footer">
@@ -187,7 +189,8 @@ switch ($act) {
         <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
         <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
         <button type="submit" class="btn btn-success" data-dismiss="">Cập nhật </button>
-        
+    
+            </form>
     </div>';
         exit();
     case "show_cv":
