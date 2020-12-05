@@ -793,6 +793,7 @@
         border: none;
         color: white;
         outline: none;
+        font-weight: bold;
     }
     
     #sinhvien .buttoncapnhat:hover {
@@ -801,17 +802,18 @@
     }
     
     #sinhvien .buttonhuy {
-        background: #d6d6d6;
+        background: #df0d0d;
         font-weight: 400;
         padding: 8px 14px;
         border-radius: 5px;
         border: none;
         outline: none;
         color: #fff;
+        font-weight: bold;
     }
     
     #sinhvien .buttonhuy:hover {
-        background-color: rgb(182, 183, 189);
+        background-color: rgb(181, 21, 21);
         color: #fff;
     }
     
