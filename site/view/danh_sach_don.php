@@ -40,9 +40,26 @@
         </div>
         <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 " style="padding: 5px 15px;">
             <div class="row">
-                <div class="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 mb-4 ml-5"
-                    style="padding: 5px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
-                    <div class="item mr-2">
+                <div class="col-12 ml-4" style="padding: 1px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
+                    <div id="clockdiv" class="my-3">
+                        <div>
+                            <span class="days" id="days<?=$row['id_dt']?>">00</span>
+                            <div class="smalltext">Ngày</div>
+                        </div>
+                        <div>
+                            <span class="hours" id="hours<?=$row['id_dt']?>">00</span>
+                            <div class="smalltext">Giờ</div>
+                        </div>
+                        <div>
+                            <span class="minutes" id="minutes<?=$row['id_dt']?>">00</span>
+                            <div class="smalltext">Phút</div>
+                        </div>
+                        <div>
+                            <span class="seconds" id="seconds<?=$row['id_dt']?>">00</span>
+                            <div class="smalltext">Giây</div>
+                        </div>
+                    </div>
+                    <!-- <div class="item mr-2">
                         <p style="color:tomato;">Ngày</p>
                         <span style="margin-top: -10px;" id="days<?=$row['id_dt']?>">00</span>
                     </div> <span style="margin-top: 29px;margin-right: 2px;">:</span>
@@ -57,7 +74,7 @@
                     <div class="item mr-2">
                         <p style="color:tomato;">Giây</p>
                         <span style="margin-top: -10px;" id="seconds<?=$row['id_dt']?>">00</span>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-3"></div>
                 <div id="kq_trangthai<?=$row['id_dt']?>" class="col-12"></div>
