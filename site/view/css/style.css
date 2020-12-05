@@ -61,6 +61,10 @@
     }
     /*Mặc định của p là margin: 0 - Đừng sửa gì hết!*/
     
+    .NdmH {
+        min-height: 200px;
+    }
+    
     p {
         margin: 0;
     }
