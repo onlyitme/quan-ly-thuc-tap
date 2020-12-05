@@ -1,44 +1,8 @@
   <!-- Modal Nhận xét - Đánh giá - QLNS -->
   <div class="modal fade" id="exampleModal_Hoang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header alert alert-info">
-                  <h5 class="modal-title" id="exampleModalLabel">Đánh giá -
-                      Quản lý nhân sự</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form>
-                      <div class="form-group">
-                          <!-- <label for="recipient-name" class="col-form-label">
-                                            <i class="far fa-clock-o" aria-hidden="true"></i> Thời gian:
-                                            <span class="px-2"> <input type="date"></span>
-                                        </label> <br> -->
-                          <label for="recipient-name" class="col-form-label">
-                              <i class="far fa-trophy-alt"></i> Đánh giá:
-                              <span class="text-success px-2">
-                                  <input type="radio" name="h-danhgia" id="h-dat"> Đạt <i class="fa fa-check"></i>
-                              </span>
-                              <span class=text-danger>
-                                  <input type="radio" name="h-danhgia" id="h-chuadat"> Chưa đạt <i class="fas fa-close"></i>
-                              </span>
-                          </label>
-                      </div>
-
-                      <div class="form-group">
-                          <label for="message-text" class="col-form-label">Nhận xét:</label>
-                          <textarea class="form-control" cols="30" rows="7" id="message-text"></textarea>
-                      </div>
-                  </form>
-              </div>
-              <div class="modal-footer">
-                  <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button> -->
-                  <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
-                  <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
-                  <button type="button" class="btn btn-success" data-dismiss="">Cập nhật </button>
-              </div>
+          <div class="modal-content" id="cc">
+              a
           </div>
       </div>
   </div>
@@ -111,7 +75,7 @@
                                               </td>
                                               <td class="text-center">
                                                   <div class="h-md-qlns">
-                                                      <a onclick="truyen_id(<?= $t['id_phieu'] ?>)"class="text-dark show-btn" data-toggle="modal" data-target="#exampleModal_Hoang">
+                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark show-btn" data-toggle="modal" data-target="#exampleModal_Hoang">
                                                           <i class="far fa-book-open show-btn" style="font-size: 30px; color: #2574A9;"></i>
                                                       </a>
                                                       <!-- <button type="button" class="btn text-dark" data-toggle="modal"
@@ -131,52 +95,19 @@
           </table>
       </div>
   </div>
-  <!-- Modal Nhận xét - Đánh giá - QLNS -->
-  <div class="modal fade" id="exampleModal_Hoang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Đánh giá -
-                      Quản lý nhân sự</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">
-                              <i class="far fa-clock-o" aria-hidden="true"></i> Thời gian:
-                              <span class="px-2"> <input type="date"></span>
-                          </label> <br>
-                          <label for="recipient-name" class="col-form-label">
-                              <i class="far fa-trophy-alt"></i> Đánh giá:
-                              <span class="text-success px-2">
-                                  <input class="form-check-input" type="radio" name="ket_qua" id="ket_qua2" value="2"> Đạt <i class="fa fa-check"></i>
-                              </span>
-                              <span class=text-danger>
-                                  <input class="form-check-input" type="radio" name="ket_qua" id="ket_qua1" value="1" checked> Chưa đạt <i class="fas fa-close"></i>
-                              </span>
-                          </label>
-                      </div>
-                      <div class="form-group">
-                          <label for="message-text" class="col-form-label">Nhận xét:</label>
-                          <textarea class="form-control" name="nghi_chu" cols="30" rows="7" id="message-text"></textarea>
-                      </div>
-                      <div class="modal-footer">
-                          <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button> -->
-                          <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
-                          <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
-                          <button type="submit" class="btn btn-success"data-dismiss=""><a href=""id="nutpheduyet">Cập nhật</a> </button>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!-- End Modal -->
+
   <script>
       function truyen_id(id_phieu) {
-          $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' + id_phieu);
+        $.ajax({
+              type: "post",
+              url: "index.php?ctrl=doanh_nghiep&act=danh_gia",
+              data: {id_phieu},
+           
+              success: function (response) {
+                document.getElementById('cc').innerHTML=response
+              }
+          });
+         
       }
+
   </script>

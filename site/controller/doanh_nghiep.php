@@ -144,6 +144,50 @@ switch ($act) {
         $ds = getAllDangtheodn($id_dn);
         $view_dn = "view/dn_qlbv.php";
         break;
+    case "dn_danh_gia":
+        $ket_qua=$_POST['h-danhgia'];
+        $danh_gia=$_POST['danh_gia'];
+        $id_phieu=$_GET['id_phieu'];
+        echo "<script type='text/javascript'>alert('a');</script>";
+        danh_gia_tu_dn($ket_qua,$danh_gia,$id_phieu);
+        break;
+    case "danh_gia":
+        echo '<div class="modal-header alert alert-info">
+        <h5 class="modal-title" id="exampleModalLabel">Đánh giá -
+            Quản lý nhân sự</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form method="post" action="index.php?ctrl=doanh_nghiep&act=dn_danh_gia&id_phieu='.$_POST['id_phieu'].'">
+            <div class="form-group">
+                
+                <label for="recipient-name" class="col-form-label">
+                    <i class="far fa-trophy-alt"></i> Đánh giá:
+                    <span class="text-success px-2">
+                        <input type="radio" name="h-danhgia" id="h-dat" value="2"> Đạt <i class="fa fa-check"></i>
+                    </span>
+                    <span class=text-danger>
+                        <input type="radio" name="h-danhgia" id="h-chuadat" value="1"> Chưa đạt <i class="fas fa-close"></i>
+                    </span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label for="message-text" class="col-form-label">Nhận xét:</label>
+                <textarea class="form-control" cols="30" rows="7" id="message-text" name="danh_gia"></textarea>
+            </div>
+       
+    </div>
+    <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button> -->
+        <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
+        <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
+        <button type="submit" class="btn btn-success" data-dismiss="">Cập nhật </button>
+        </form>
+    </div>';
+        exit();
     case "show_cv":
         $thong_tin = checkphieudkinbyid($_POST['id_phieu']);
         $id_sv = $thong_tin['id_sv'];
