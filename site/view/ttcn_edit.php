@@ -6,9 +6,9 @@
                                     </div>
                                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mb-4">
                                         <p><strong>Ảnh đại diện</strong></p>
-                                        <div class="h-tt-left-img">
+                                        <div class="h-tt-left-img2">
                                             <img class="" style="margin-bottom: 30px;width: 100%;" src="../uploads/<?= $ttsv['anh'] ?>" onerror=this.src="view/images/avt1.jpg" alt="John Doe">
-                                            <div class="h-tt-left-img-txt">
+                                            <div class="h-tt-left-img-txt2">
                                                 <label for="file-upload" class="h-custom-file-upload">
                                                     <i class="far fa-camera"></i>
                                                 </label>
@@ -108,7 +108,7 @@
 
                                     <div class="col-12 text-center mt-4 mb-3">
 
-                                        <button class="buttoncapnhat float-right" type="submit">
+                                        <button class="btn buttoncapnhat float-right" type="submit">
                                             <!-- <svg style="color: white;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-bookmark mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
                                                 <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
@@ -116,7 +116,7 @@
                                             </svg> -->
                                             Cập nhật
                                         </button>
-                                        <button class="buttonhuy mr-2 float-right" type="button">
+                                        <button class="btn buttonhuy mr-2 float-right" type="button">
                                             <!-- <svg style="color:white;" width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-x-circle mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                                                 <path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>

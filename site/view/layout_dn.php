@@ -1,7 +1,7 @@
 <div id="doanhnghiep">
     
     <div class="row mt-4 m-0 py-3">
-        <div class="h-sidebar-container shadow mr-4">
+        <div class="h-sidebar-container h-menu-sticky shadow mr-4">
             <div class="h-box-left py-3">
                 <!-- <div class="px-3 py-3">
                     <img src="images/logofpt.png" alt="logofpt" class="h-sidebar-img" width="100%" height="200px" style="object-fit: cover;">
