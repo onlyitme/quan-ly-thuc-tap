@@ -149,9 +149,9 @@ switch ($act) {
         $id_sv = $thong_tin['id_sv'];
         $thong_tin_sv = checksinhvienbyid($id_sv);
         $nganh = checkNganhByID($thong_tin_sv['id_nganh']);
-        $email=checktaikhoanbyid($thong_tin_sv['id_user']);
-        $kynang=checkHosoByID($thong_tin_sv['id_sv']);
-        $dangtuyen=checkdangtuyenbyid($thong_tin['id_dt']);
+        $email = checktaikhoanbyid($thong_tin_sv['id_user']);
+        $kynang = checkHosoByID($thong_tin_sv['id_sv']);
+        $dangtuyen = checkdangtuyenbyid($thong_tin['id_dt']);
         echo '  
                 <div class="resume_left">
                     <div class="resume_profile">
@@ -185,7 +185,7 @@ switch ($act) {
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div class="data">
-                                    ' . $email['email']. '
+                                    ' . $email['email'] . '
                                     </div>
                                 </li>
                                 <li>
@@ -200,7 +200,7 @@ switch ($act) {
                         </div>
                         <div class="resume_item resume_skills">
                             <div class="title">
-                                <p class="bold"> '.$kynang['ky_nang_so_truong'].'</p>
+                                <p class="bold"> ' . $kynang['ky_nang_so_truong'] . '</p>
                             </div>
                             <ul>
                                 <li>
@@ -286,13 +286,13 @@ switch ($act) {
                 <div class="resume_right">
                     <div class="resume_item1 resume_about1 border-top-0">
                         <div class="title">
-                            <h4 class="bold">'.$dangtuyen['tieu_de'].'</h4>
+                            <h4 class="bold">' . $dangtuyen['tieu_de'] . '</h4>
                             <p>
                             </p>
                             <p class="text-gray">
                                 <span class="font-weight-bold ">Nguyện vọng</span> 
                                 <span >
-                                '. $thong_tin['nguyen_vong'].'
+                                ' . $thong_tin['nguyen_vong'] . '
                                 </span>
                             </p>
                         </div>
@@ -307,7 +307,7 @@ switch ($act) {
                         <div class="title">
                             <p class="bold">Mục tiêu nghề nghiệp</p>
                         </div>
-                        <p>'.$kynang['muc_tieu_nghe_nghiep'].'
+                        <p>' . $kynang['muc_tieu_nghe_nghiep'] . '
                         </p>
                     </div>
                     <div class="resume_item resume_work">

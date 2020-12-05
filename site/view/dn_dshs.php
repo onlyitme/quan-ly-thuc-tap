@@ -63,21 +63,23 @@
                                 <?php $sv = getAllSinhvien(); ?>
                                 <?php foreach ($sv as $s) { ?>
                                     <?php if ($s['id_sv'] == $t['id_sv']) { ?>
-                                        <tr>
-                                            <th scope="row" class="text-center"><?= $i++ ?></th>
-                                            <td><?= $s['mssv'] ?></td>
-                                            <td><?= $s['ho_ten'] ?></td>
-                                            <td><?= $t['ngay_dk'] ?></td>
-                                            <td>Thực tập sinh</td>
-                                            <td class="font-weight-bold"><?php if ($t['trang_thai'] == 0) echo '<span class="text-warning">Đang chờ ...</span>';
-                                                                            elseif ($t['trang_thai'] == 1) echo '<span class="text-success"><i class="fas fa-check-circle    "></i> Chờ xác nhận</span>';
-                                                                            elseif ($t['trang_thai'] == 2) echo '<span class="text-danger"><i class="fas fa-window-close    "></i> Từ chối</span>';
-                                                                            elseif ($t['trang_thai'] == 3) echo '<span class="text-gray">Đã xác nhận</span>';
-                                                                            ?></td>
-                                            <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
-                                            </td>
+                                        <?php if ($t['trang_thai'] < 2) { ?>
+                                            <tr>
+                                                <th scope="row" class="text-center"><?= $i++ ?></th>
+                                                <td><?= $s['mssv'] ?></td>
+                                                <td><?= $s['ho_ten'] ?></td>
+                                                <td><?= $t['ngay_dk'] ?></td>
+                                                <td>Thực tập sinh</td>
+                                                <td class="font-weight-bold"><?php if ($t['trang_thai'] == 0) echo '<span class="text-warning">Đang chờ ...</span>';
+                                                                                elseif ($t['trang_thai'] == 1) echo '<span class="text-success"><i class="fas fa-check-circle    "></i> Chờ xác nhận</span>';
+                                                                                elseif ($t['trang_thai'] == 2) echo '<span class="text-danger"><i class="fas fa-window-close    "></i> Từ chối</span>';
+                                                                                elseif ($t['trang_thai'] == 3) echo '<span class="text-gray">Đã xác nhận</span>';
+                                                                                ?></td>
+                                                <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
+                                                </td>
 
-                                        </tr>
+                                            </tr>
+                                        <?php } ?>
                                     <?php } ?>
                                 <?php } ?>
                             <?php } ?>
