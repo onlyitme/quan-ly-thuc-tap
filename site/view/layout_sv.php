@@ -3,7 +3,7 @@
         <div class="col-3 px-3">
             <div class="sinhvien-menu shadow py-3">
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
-                    <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header rounded">HỒ SƠ CỦA BẠN</li>
+                    <li  class="h-header rounded">HỒ SƠ CỦA BẠN</li>
                     <li>
                         <a href="index.php?ctrl=sinh_vien">
                             <i class="far fa-user"></i>
@@ -22,7 +22,7 @@
                             Đổi mật khẩu
                         </a>
                     </li>
-                    <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header rounded">VIỆC LÀM &amp; HỖ TRỢ</li>
+                    <li  class="h-header rounded">VIỆC LÀM &amp; HỖ TRỢ</li>
                     <li>
                         <a href="index.php?ctrl=sinh_vien&act=danh_sach_don">
                             <i class="far fa-clipboard-list    "></i>

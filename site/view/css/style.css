@@ -595,7 +595,7 @@
         position: relative;
         display: inline-block;
         width: 100%;
-        line-height: 20px;
+        line-height: 25px;
     }
     
     #sinhvien .h-sidebar-navigation li a {
@@ -618,18 +618,15 @@
     #sinhvien .h-sidebar-navigation .h-header {
         font-size: 12pt;
         text-transform: uppercase;
-        background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
+        background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
         padding: 10px 15px 10px 20px;
-    }
-    
-    #sinhvien .h-sidebar-navigation .h-header::before {
-        background-color: transparent;
+        background-color: white;
+        font-weight: 500;
+        color: white;
     }
     
     #sinhvien .h-sidebar-navigation li::before {
-        background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
-        /* border-top-right-radius: 20px; */
-        /* border-bottom-right-radius: 20px; */
+        background-color: #f5b56c;
         position: absolute;
         content: '';
         height: 100%;
@@ -642,6 +639,7 @@
     }
     
     #sinhvien .h-sidebar-navigation li:hover::before {
+        background-image: linear-gradient(-25deg, #f5b56c 0%, #fa8c42 100%);
         width: 100%;
         border-radius: 0;
     }
