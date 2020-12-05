@@ -2,10 +2,21 @@
   <div class="modal fade" id="exampleModal_Hoang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content" id="cc">
-              a
+              
           </div>
       </div>
   </div>
+  <div class="N-box" id="myDiv">
+    <div id="overflow">
+
+        <div class="resume ">
+            <button class="btn-danger2 btn btn-info  hide-btn">X</button>
+            <div id="show-cv" class="d-flex"></div>
+        </div>
+
+    </div>
+
+</div>
   <!-- End Modal -->
   <div class="row align-items-center">
       <div class="col-lg-8">
@@ -71,7 +82,7 @@
                                                       <td><?= $n['ten_nganh'] ?></td>
                                                   <?php } ?>
                                               <?php } ?>
-                                              <td class="text-center"><a onclick="truyen_id(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
+                                              <td class="text-center"><a onclick="truyen_tt(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
                                               </td>
                                               <td class="text-center">
                                                   <div class="h-md-qlns">
@@ -109,5 +120,18 @@
           });
          
       }
+      function truyen_tt(id_phieu) {
+        $.ajax({
+            type: "post",
+            url: "index.php?ctrl=doanh_nghiep&act=show_cv",
+            data: {
+                id_phieu
+            },
+
+            success: function(response) {
+                document.getElementById('show-cv').innerHTML = response
+            }
+        });
+    }
 
   </script>
