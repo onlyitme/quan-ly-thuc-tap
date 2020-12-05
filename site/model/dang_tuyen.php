@@ -80,5 +80,7 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
+    
+
     ?>
 

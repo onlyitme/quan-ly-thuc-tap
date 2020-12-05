@@ -32,6 +32,10 @@ function checktaikhoanbyid($id){
     $sql="select * from user where id_user='$id' ";
     return queryOne($sql);
 }
+function checkHosoByID($id){
+    $sql="select * from ho_so_sv where id_sv='$id'";
+    return queryOne($sql);
+}
 function checkdoanhnghiepbyid($id){
     $sql="select * from doanh_nghiep where id_dn='$id'";
     return queryOne($sql);
@@ -78,6 +82,10 @@ function xoadonungtuyen($id_sv,$id_dt){
 }
 function checkphieudkin($id_sv,$id_dt){
     $sql = "select * from phieu_dk_in where id_sv = ".$id_sv." and id_dt = ".$id_dt."";
+    return queryOne($sql);
+}
+function checksinhvienbyid($id_sv){
+    $sql = "select * from sinh_vien where id_sv = ".$id_sv."";
     return queryOne($sql);
 }
 ?>

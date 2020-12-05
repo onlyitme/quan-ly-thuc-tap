@@ -8,7 +8,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
   if(isset($_GET["act"])==true) $act=$_GET["act"];
   switch ($act) {
     case "ttcn_index":
-      $view_sv = "view/ttcn_index.php";
+      $view_sv = "view/ttcn_index1.php";
       break;
     case "ttcn_edit":
         $view_sv = "view/ttcn_edit.php";
@@ -75,6 +75,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       $dem++;
       $id_dt =  $tt_dang_tuyen['id_dt'];
       them_sl_sv_dk($dem,$id_dt);
+      capnhaptrangthaisv();
       huy_dk_dt();
    exit();
     break;
