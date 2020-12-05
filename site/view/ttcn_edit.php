@@ -30,7 +30,7 @@
                                             <p><strong>Họ và tên<span style="color:tomato;">*</span></strong></p>
                                         </div>
                                         <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
-                                            <p><input type="text" class="form-control mb-2 mr-sm-2" value="<?= $ttsv['ho_ten'] ?>" name="ho_ten" id="ho_ten"></p>
+                                            <p><input type="text" class="form-control mb-2 mr-sm-2" readonly value="<?= $ttsv['ho_ten'] ?>" name="ho_ten" id="ho_ten"></p>
                                         </div>
 
 
@@ -39,7 +39,7 @@
                                             <p><strong>Mã số sinh viên<span style="color:tomato;">*</span></strong></p>
                                         </div>
                                         <div class="col-9 col-sm-9 col-md-9 col-lg-9 col-xl-9 ">
-                                            <p><input type="text" class="form-control mb-2 mr-sm-2" value="<?= $ttsv['mssv'] ?>" name="mssv" id="mssv"></p>
+                                            <p><input type="text" class="form-control mb-2 mr-sm-2" readonly value="<?= $ttsv['mssv'] ?>" name="mssv" id="mssv"></p>
                                         </div>
 
                                         <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">

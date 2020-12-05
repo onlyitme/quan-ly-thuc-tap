@@ -1,7 +1,7 @@
 <div id="sinhvien">
     <div class="row mt-4 m-0 py-3">
-        <div class="h-sidebar-container shadow mr-4">
-            <div class="h-box-left py-3">
+        <div class="col-3 px-3">
+            <div class="sinhvien-menu shadow py-3">
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
                     <li style="background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);" class="h-header rounded">HỒ SƠ CỦA BẠN</li>
                     <li>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class=" col-sm-9  mb-3 p-0 rounded ">
+        <div class=" col-9 mb-3 px-3 ">
             <?php include $view_sv; ?>
         </div>
 

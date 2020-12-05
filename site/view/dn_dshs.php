@@ -135,16 +135,16 @@
             <div class="resume_right">
                 <div class="resume_item1 resume_about1">
                     <div class="title">
-                        <p class="bold h4">Tuyển Thực Tập Sinh</p>
-                        <p class="font-weight-bold text-gray">NGUYỆN VỌNG:  <span class="font-weight-normal">
+                        <p class="bold">NGUYỆN VỌNG:  <span class="font-weight-normal text-gray">
                             Mong được tham gia cùng doanh nghiệp để phát kỹ năng và học tập nhiều hơn.!
                         </span></p>
 
                     </div>
                     
-                <div class="pt-3 text-right">
-                            <a class=" btn btn-success" href="" id="nutpheduyet">Phê Duyệt</a>
-                            <a class=" btn btn-danger" href="" id="nuttuchoi">Từ chối</a> 
+                <div class="pt-3 text-left">
+
+                           <button class="btn btn-success bg-white " style="width:230px;margin-right:5px;margin-left:0px"> <a class="text-success  " href="" id="nutpheduyet">Phê Duyệt</a></button>
+                           <button class=" btn btn-danger bg-white" style="width:230px;"> <a  href="" class="text-danger" id="nuttuchoi">Từ chối</a> </button>
                                 
                 </div>
                 </div>
