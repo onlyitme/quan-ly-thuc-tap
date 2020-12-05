@@ -52,6 +52,10 @@ function xacthuc_tt_dt($id){
     $sql = "UPDATE phieu_dk_in SET trang_thai='3' where id_phieu= '$id'";
     execute($sql);
 }
+function  capnhaptrangthaisv(){
+    $sql = "UPDATE sinh_vien SET trang_thai='1' where id_sv='$_SESSION[sid_sv]'";
+    execute($sql);
+}
 function huy_dk_dt(){
     $sql = "UPDATE phieu_dk_in SET trang_thai='4' where trang_thai= '1' or trang_thai= '0' ";
     execute($sql);
