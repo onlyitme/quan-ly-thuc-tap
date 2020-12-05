@@ -201,6 +201,11 @@ switch ($act) {
         $email = checktaikhoanbyid($thong_tin_sv['id_user']);
         $kynang = checkHosoByID($thong_tin_sv['id_sv']);
         $dangtuyen = checkdangtuyenbyid($thong_tin['id_dt']);
+        $phe_duyet='';
+        if($thong_tin['trang_thai'] != '3') $phe_duyet='
+        <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
+        <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>';
+
         echo '  
                 <div class="resume_left">
                     <div class="resume_profile">
@@ -344,14 +349,9 @@ switch ($act) {
                                 ' . $thong_tin['nguyen_vong'] . '
                                 </span>
                             </p>
-                        </div>
-                        <div class="pt-3 text-right">
-
-                            <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
-                            <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
-
-                        </div>
-                    </div>
+                        </div>  <div class="pt-3 text-right">
+                        '.$phe_duyet.'
+                    </div> </div>
                     <div class="resume_item resume_about">
                         <div class="title">
                             <p class="bold">Mục tiêu nghề nghiệp</p>
@@ -361,7 +361,7 @@ switch ($act) {
                     </div>
                     <div class="resume_item resume_work">
                         <div class="title">
-                            <p class="bold">Kinh nghiệm làm việc</p>
+                            <p class="bold">Dự án đã làm</p>
                         </div>
                         <ul>
                             <li>
