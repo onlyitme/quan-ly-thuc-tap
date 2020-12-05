@@ -144,8 +144,16 @@ switch ($act) {
         $ds = getAllDangtheodn($id_dn);
         $view_dn = "view/dn_qlbv.php";
         break;
+<<<<<<< Updated upstream
     case "show_cv":
         echo '  
+=======
+        case "show_cv":
+            $thong_tin= checkphieudkinbyid($_POST['id_phieu']);
+            $id_sv = $thong_tin['id_sv'];
+            $thong_tin_sv= checksinhvienbyid($id_sv);
+           echo '
+>>>>>>> Stashed changes
                 <div class="resume_left">
                     <div class="resume_profile">
                         <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
@@ -153,7 +161,7 @@ switch ($act) {
                     <div class="resume_content">
                         <div class="resume_item resume_info">
                             <div class="title">
-                                <p class="bold">Trần Trọng Nghĩa</p>
+                                <p class="bold">'.$thong_tin_sv['ho_ten'].'</p>
                                 <p class="regular">Web Designer</p>
                             </div>
                             <ul>
@@ -289,8 +297,8 @@ switch ($act) {
                         </div>
                         <div class="pt-3 text-right">
 
-                            <a class="btn btn-outline-success " href="" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
-                            <a class="btn btn-outline-danger " href="" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
+                            <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu='.$_POST['id_phieu'].'" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
+                            <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu='.$_POST['id_phieu'].'" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
 
                         </div>
                     </div>
