@@ -489,7 +489,30 @@
                 }
             });
         });
+        
+    $(document).ready(function() {
+        $("#file-upload").on("change", function() {
+            files = $('#file-upload')[0].files;
+            if(files.length > 0 ){
+                data = new FormData();
+                data.append('file',files[0]);
+
+                $.ajax({
+                    type:'POST',
+                    url: "?ctrl=sinh_vien&act=ttcn_upload_anh",
+                    data: data,
+                    enctype: 'multipart/form-data',
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,  
+                    success:function(response){
+                        $("#avt-sv").attr("src",response)
+                    }
+                });
+            }
+        });
+    });
     </script>
+    
 </body>
 
 </html>

@@ -31,6 +31,19 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         }
         $view_sv = "view/ttcn_index.php";
   break;
+    case 'ttcn_upload_anh':
+      if(isset($_FILES['file']['name'])){
+        $mssv = $_SESSION['sid_sv'];
+        $anh=$_FILES['file']['name'];
+        $target_dir = "../uploads/";
+        $target_file = $target_dir .$mssv.".png";
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)){
+            update_avtsv($target_file);
+            echo($target_file);
+        }
+      }else $anh='';
+      exit();
+      break;
       case "ttcn_update":
         $ho_ten=$_POST['ho_ten'];
         $mssv=$_POST['mssv'];

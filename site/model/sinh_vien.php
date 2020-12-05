@@ -64,4 +64,9 @@ function them_sl_sv_dk($dem,$id){
     $sql = "UPDATE dang_tuyen SET sl_sv_dk='$dem' where id_dt= '$id' ";
     execute($sql);
 }
+//baokun
+function update_avtsv($anh){
+    $sql ="UPDATE sinh_vien SET anh='$anh' where id_user = '$_SESSION[sid]'";
+    execute($sql);
+}
 ?>
