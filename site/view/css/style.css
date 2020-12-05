@@ -298,6 +298,7 @@
     }
     
     .avt-cart-home {
+        border-bottom: 5px solid white;
         height: 150px;
         object-fit: cover;
     }
@@ -328,6 +329,10 @@
         max-height: 850px;
         overflow-y: auto;
         overflow-x: hidden;
+    }
+    
+    #list-job .detail-job_inf a:hover {
+        color: #007bff !important;
     }
     
     .media-body h5 {
