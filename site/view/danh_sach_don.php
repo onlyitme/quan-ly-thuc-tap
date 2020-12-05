@@ -1,5 +1,5 @@
 <div class="border rounded shadow-sm p-3">
-    <div class="alert  alert-secondary" role="alert">
+    <div class="alert " role="alert">
         <h3 class="">DANH SÁCH ĐƠN XIN
             THỰC TẬP</h3>
     </div>
