@@ -120,6 +120,16 @@ switch ($act) {
         $view_dn = "view/dn_tdmk.php";
         break;
     case "qlns":
+        $id_user = $_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_qlns.php";
+        break;
+    case "danhgia":
+        $id_phieu = $_GET["id_phieu"];
+        settype($id_phieu, "int");
+        updateDanhgia($id_phieu);
+        $id_user = $_SESSION['sid'];
+        $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_qlns.php";
         break;
     case "delete_dt":
@@ -134,8 +144,8 @@ switch ($act) {
         $ds = getAllDangtheodn($id_dn);
         $view_dn = "view/dn_qlbv.php";
         break;
-        case "show_cv":
-           echo '  
+    case "show_cv":
+        echo '  
                 <div class="resume_left">
                     <div class="resume_profile">
                         <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
@@ -359,7 +369,7 @@ switch ($act) {
                     </div>
                 </div>
            ';
-            exit;
+        exit;
 }
 $view = "view/layout_dn.php";
 require_once "view/layout.php";
