@@ -1,7 +1,7 @@
 <div id="sinhvien">
     <div class="row mt-4 m-0 py-3">
         <div class="col-3 px-3">
-            <div class="sinhvien-menu shadow py-3">
+            <div class="sinhvien-menu shadow py-3 rounded">
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
                     <li  class="h-header rounded">HỒ SƠ CỦA BẠN</li>
                     <li>
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class=" col-9 mb-3 px-3 ">
+        <div class="h-box-detail p-3 h-box-right shadow">
             <?php include $view_sv; ?>
         </div>
 
