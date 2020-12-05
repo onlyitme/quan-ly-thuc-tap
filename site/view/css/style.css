@@ -712,18 +712,22 @@
     
     #sinhvien .bg-ds {
         margin-left: -7px;
-        background-image: url("../images/logofpt.png");
         width: 140px;
         height: 140px;
         margin-bottom: 20px;
-        background-position: center;
         border-top: 1px rgb(228, 228, 228) solid;
         border-left: 1px rgb(228, 228, 228) solid;
         border-radius: 50%;
-        background-size: cover;
-        background-repeat: no-repeat;
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.25);
         object-fit: cover;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #sinhvien .bg-ds img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     #sinhvien .bg-ds1 {

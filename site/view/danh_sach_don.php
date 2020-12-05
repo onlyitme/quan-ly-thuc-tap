@@ -12,7 +12,7 @@
     <div class="media col-sm-12 shadow sv-12">
         <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
             <div class="bg-ds mt-3">
-
+                <img src="../uploads/<?=$thong_tin_dn['anh']?>" onerror="http://placehold.it/300x200">
             </div>
         </div>
         <div style="margin-right: 6px;" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ds-hva">
