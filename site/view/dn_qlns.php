@@ -87,8 +87,8 @@
                                               </td>
                                               <td class="text-center">
                                                   <div class="h-md-qlns">
-                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark show-btn" data-toggle="modal" data-target="#exampleModal_Hoang">
-                                                          <i class="far fa-book-open show-btn" style="font-size: 30px; color: #2574A9;"></i>
+                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark" data-toggle="modal" data-target="#exampleModal_Hoang">
+                                                          <i class="far fa-book-open " style="font-size: 30px; color: #2574A9;"></i>
                                                       </a>
                                                       <!-- <button type="button" class="btn text-dark" data-toggle="modal"
                                                         data-target="#exampleModal_Hoang">
