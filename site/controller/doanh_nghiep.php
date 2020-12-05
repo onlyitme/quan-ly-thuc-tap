@@ -144,16 +144,11 @@ switch ($act) {
         $ds = getAllDangtheodn($id_dn);
         $view_dn = "view/dn_qlbv.php";
         break;
-<<<<<<< Updated upstream
     case "show_cv":
-        echo '  
-=======
-        case "show_cv":
-            $thong_tin= checkphieudkinbyid($_POST['id_phieu']);
+        $thong_tin= checkphieudkinbyid($_POST['id_phieu']);
             $id_sv = $thong_tin['id_sv'];
             $thong_tin_sv= checksinhvienbyid($id_sv);
-           echo '
->>>>>>> Stashed changes
+        echo '  
                 <div class="resume_left">
                     <div class="resume_profile">
                         <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
