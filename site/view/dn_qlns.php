@@ -111,7 +111,7 @@
                                               </td>
                                               <td class="text-center">
                                                   <div class="h-md-qlns">
-                                                      <a onclick="truyen_id(<?= $t['id_phieu'] ?>)" class="text-dark show-btn" data-toggle="modal" data-target="#exampleModal_Hoang">
+                                                      <a onclick="truyen_id(<?= $t['id_phieu'] ?>)"class="text-dark show-btn" data-toggle="modal" data-target="#exampleModal_Hoang">
                                                           <i class="far fa-book-open show-btn" style="font-size: 30px; color: #2574A9;"></i>
                                                       </a>
                                                       <!-- <button type="button" class="btn text-dark" data-toggle="modal"
@@ -167,7 +167,7 @@
                           <!-- <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button> -->
                           <!-- <button type="button" class="btn btn-outline-success">Cập nhật</button> -->
                           <!-- <button type="button" class="btn btn-danger" data-dismiss="">Chưa đạt <i class="far fa-close" aria-hidden="true"></i></button> -->
-                          <button type="button" class="btn btn-success" id="nutcapnhat" data-dismiss="">Cập nhật </button>
+                          <button type="submit" class="btn btn-success"data-dismiss=""><a href=""id="nutpheduyet">Cập nhật</a> </button>
                       </div>
                   </form>
               </div>
@@ -177,15 +177,6 @@
   <!-- End Modal -->
   <script>
       function truyen_id(id_phieu) {
-          $.ajax({
-              type: "post",
-              url: "index.php?ctrl=doanh_nghiep&act=danhgia",
-              data: {
-                  id_phieu
-              },
-              success: function(response) {
-                  document.getElementById('show-cv').innerHTML = response
-              }
-          });
+          $("#nutpheduyet").attr('href', '<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' + id_phieu);
       }
   </script>

@@ -62,7 +62,6 @@
                             <?php foreach ($ut as $t) { ?>
                                 <?php $sv = getAllSinhvien(); ?>
                                 <?php foreach ($sv as $s) { ?>
-
                                     <?php if ($s['id_sv'] == $t['id_sv']) { ?>
                                         <tr>
                                             <th scope="row" class="text-center"><?= $i++ ?></th>
