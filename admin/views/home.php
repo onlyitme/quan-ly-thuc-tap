@@ -151,10 +151,10 @@ function drawChart() {
         ["Element", "Density", {
             role: "style"
         }],
-        ["Doanh nghiệp thất bại", <?=demDangtuyentheoDN($id_dn=14)?>, "#1abc9c"],
+        ["Doanh thời trang Thái Tuấn", <?=demDangtuyentheoDN($id_dn=13)?>, "#1abc9c"],
         ["Doanh nghiệp thành công", <?=demDangtuyentheoDN($id_dn=15)?>, "#f1c40f"],
         ["Doanh nghiệp đào tạo", <?=demDangtuyentheoDN($id_dn=17)?>, "#3498db"],
-        ["Doanh nghiệp nasa", 21, "#e67e22"]
+        ["Doanh nghiệp Vinalink", <?=demDangtuyentheoDN($id_dn=14)?>, "#e67e22"]
     ]);
     var view = new google.visualization.DataView(data);
     view.setColumns([0, 1,
