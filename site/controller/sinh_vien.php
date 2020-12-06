@@ -27,9 +27,9 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
           echo "<script type='text/javascript'>alert('Mật Khẩu Đã Được Cập Nhập');</script>";
         }else{
           echo "<script type='text/javascript'>alert('Thông tin điền không chính xác');</script>";
-         
+
         }
-        $view_sv = "view/ttcn_index.php";
+        $view_sv = "view/user_edit.php";
   break;
     case 'ttcn_upload_anh':
       if(isset($_FILES['file']['name'])){
@@ -76,10 +76,10 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$sdt,$dia_chi);
    suatrangthai();
-
    $kiemtratontaicv = thongtincv();
    if(isset($kiemtratontaicv['ngay_cap_nhap'])){
      $view_sv = "view/ttcn_index.php";
+     
    }
    else{
      echo "<script type='text/javascript'>alert('Hãy cập nhập CV ');</script>";
