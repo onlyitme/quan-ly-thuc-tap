@@ -27,10 +27,9 @@
             <button class="input-group-text" type="button" data-toggle="dropdown">
                 Sắp xếp <i class="far fa-angle-down"></i></button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Đã duyệt</a>
-                <a class="dropdown-item" href="#">Chưa duyệt</a>
-                <a class="dropdown-item" href="#">Theo tên</a>
-                <a class="dropdown-item" href="#">Theo thời gian</a>
+                <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=dshs">Chưa duyệt</a>
+                <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=daduyet">Đã duyệt</a>
+                <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=tuchoi_">Từ chối</a>
             </div>
         </div>
     </div>
@@ -58,7 +57,7 @@
                         <?php $tieude = $t['tieu_de']; ?>
                         <?php if ($t['id_dn'] == $row['id_dn']) { ?>
                             <?php $id_dt = $t['id_dt']; ?>
-                            <?php $ut = getAllUngtuyen($id_dt); ?>
+                            <?php $ut = getAllUngtuyen_($id_dt,$trang_thai); ?>
                             <?php foreach ($ut as $t) { ?>
                                 <?php $sv = getAllSinhvien(); ?>
                                 <?php foreach ($sv as $s) { ?>

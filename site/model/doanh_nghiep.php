@@ -30,6 +30,11 @@
         $sql = "SELECT * from phieu_dk_in WHERE id_dt='$id_dt' ORDER BY trang_thai asc";
         return query($sql);
     }
+    function getAllUngtuyen_($id_dt, $trang_thai)
+    {
+        $sql = "SELECT * from phieu_dk_in WHERE trang_thai = '$trang_thai' AND id_dt='$id_dt' ORDER BY trang_thai asc";
+        return query($sql);
+    }
     function getDangtuyenByID($id_dt)
     {
         $sql = "SELECT * from dang_tuyen where id_dt='$id_dt'";
@@ -78,7 +83,7 @@
             exit();
         }
     }
-    function updatePhieu($id_phieu,$thoi_gian_duyet)
+    function updatePhieu($id_phieu, $thoi_gian_duyet)
     {
         try {
             $sql = "UPDATE phieu_dk_in SET trang_thai='1',thoi_gian_duyet='$thoi_gian_duyet' WHERE id_phieu='$id_phieu'";
@@ -198,8 +203,9 @@
         $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
         execute($sql);
     }
-    function danh_gia_tu_dn($ket_qua,$danh_gia,$id_phieu){
+    function danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu)
+    {
         $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
-    execute($sql);
+        execute($sql);
     }
     ?>

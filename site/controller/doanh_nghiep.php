@@ -96,10 +96,24 @@ switch ($act) {
         break;
     case "dshs":
         $id_user = $_SESSION['sid'];
+        $trang_thai = 0;
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_dshs.php";
+        break;
+    case "daduyet":
+        $id_user = $_SESSION['sid'];
+        $trang_thai = 1;
+        $ds = getAllDoanhnghiepID($id_user);
+        $view_dn = "view/dn_dshs.php";
+        break;
+    case "tuchoi_":
+        $id_user = $_SESSION['sid'];
+        $trang_thai = 2;
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";
         break;
     case "pheduyet":
+        $trang_thai = 0;
         $id_phieu = $_GET["id_phieu"];
         settype($id_phieu, "int");
         $thoi_gian_duyet = date('Y-m-d H:i:s');
@@ -109,6 +123,7 @@ switch ($act) {
         $view_dn = "view/dn_dshs.php";
         break;
     case "tuchoi":
+        $trang_thai = 1;
         $id_phieu = $_GET["id_phieu"];
         settype($id_phieu, "int");
         updatePhieu_($id_phieu);
