@@ -446,72 +446,8 @@
         });
     </script>
     <!-- My script -->
-    <script src="view/js/script.js "></script>
-    <script>   
-        function getcontent() {
-            var user = document.getElementById('user').value;
-            var pass = document.getElementById('pass').value;
-            var arr = [user, pass];
-            $.ajax({
-                type: "post",
-                url: "index.php?act=login",
-                data: {
-                    login: arr
-                },
-                success: function(data) {
-
-                    if (data == 0) {
-                        location.reload();
-                    } else if (data == 10) {
-                     
-                        window.location = "index.php?ctrl=sinh_vien&act=ttcn_edit";
-                        alert('Vui lòng nhập Thông tin cá nhân do lần đầu đăng nhập');
-                    } 
-                    else if (data == 1) {
-                        window.location = "index.php?ctrl=doanh_nghiep";
-                    } else if (data == 2) {
-                        alert("bạn sẽ chuyển tới trang ADmin");
-                        window.location = "../admin/index.php";
-                    } else {
-                        document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
-                    }
-                }
-            });
-        }                
-        $('#chon_nn').on('change', function() {
-            var id_nn = $(this).val();
-            $.ajax({
-                type: "post",
-                url: "?ctrl=doanh_nghiep&act=chonnganh",
-                data: { id_nn: id_nn },
-                success: function(response) {
-                    $("#nhomnganh").html(response);
-                }
-            });
-        });
-        
-    $(document).ready(function() {
-        $("#file-upload").on("change", function() {
-            files = $('#file-upload')[0].files;
-            if(files.length > 0 ){
-                data = new FormData();
-                data.append('file',files[0]);
-
-                $.ajax({
-                    type:'POST',
-                    url: "?ctrl=sinh_vien&act=ttcn_upload_anh",
-                    data: data,
-                    enctype: 'multipart/form-data',
-                    processData: false,  // tell jQuery not to process the data
-                    contentType: false,  
-                    success:function(response){
-                        $("#avt-sv").attr("src",response)
-                    }
-                });
-            }
-        });
-    });
-    </script>
+    <script type="text/javascript" src="view/js/script.js "></script>
+  
     
 </body>
 
