@@ -101,13 +101,15 @@
     }
     
     .Nghia-shape {
-        width: 210px;
+        padding-left: 20px;
+        width: 220px;
         height: 70px;
         transform: skew(20deg);
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -10px;
+        right: -10px;
         border-radius: 12px;
+        
     }
     /* .NdmH::after {
         content : "";

@@ -1,8 +1,8 @@
- 
+      
+                         <form  action="index.php?ctrl=sinh_vien&act=user_update" method="post" class="h-100 Ng" id="capnhapuser" enctype="multipart/form-data">
+                         <div class="bgr "></div>
+                            <div class="media boder p-3 sv8-12 "style="border-radius: 5px;">
                             
-                         <form  action="index.php?ctrl=sinh_vien&act=user_update" method="post" id="capnhapuser" enctype="multipart/form-data">
-                            <div class="media boder p-3 sv8-12 Ng"style="border-radius: 5px;">
-                            <div class="bgr"></div>
                                 <div class="row col-sm-12">
                                     <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
                                     <h5 class="mb-3" style="padding: 0 5px;font-weight: 600;">THAY ĐỔI MẬT KHẨU </h5>         

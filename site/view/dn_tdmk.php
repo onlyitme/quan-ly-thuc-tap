@@ -22,7 +22,6 @@
                     <label>Mã tài khoản: <span class="text-secondary">#328465</span> </label>
                     <br>
                     <label>Ngày tạo: <span class="text-secondary">20/11/2020</span></label>
-
                     <!-- <span class="h-social">
                         <a href="#"><i class="fab fa-facebook-square"></i></a>
                         <a href="#"><i class="fab fa-reddit-square"></i></a>
