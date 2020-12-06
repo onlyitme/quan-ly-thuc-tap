@@ -1,12 +1,8 @@
-<div class="row align-items-center">
-    <div class="col-lg-8">
-        <h2 class="font-weight-700 mb-0">Thông tin doanh nghiệp</h2>
-    </div>
-</div>
+
 
 <div class="h-box-dn rounded mt-3">
     <div class="h-box-dn-img mb-2">
-        <img id="banner-dn" src="../uploads/<?=$dn['banner']?>" onerror=this.src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
+        <img id="banner-dn" src="../uploads/<?=$dn['banner']?>" onerror=this.src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="250px" style="object-fit: cover;">
         <div class="h-box-dn-txt">
             <label for="file-upload-banner" class="h-custom-file-upload">
                 <i class="far fa-camera"></i>
@@ -15,7 +11,10 @@
             <input id="file-upload-banner" type="file" />
         </div>
     </div>
+    <div class="col-12 p-0 d-flex justify-content-between">
     <h5>Thông tin chung</h5>
+    <a href="?ctrl=home&act=thongtindoanhnghiep-dn" class="mr-2"><i class="fas fa-engine-warning mr-1"></i> Thông tin hiển thị !</a>
+    </div>
     <span class="font-weight-500 text-success mr-3"><i class="fas fa-toggle-on"></i>
         Hoạt động
     </span>
@@ -94,7 +93,7 @@
                             <a href="#"><i class="fab fa-github-square"></i></a>
                         </span>
                     </div>
-                    <div class="h-ttdn-thebutton">
+                    <div class="h-ttdn-thebutton ">
                         <button type="submit" class="btn btn-outline-success">Cập nhật</button>
                     </div>
                 <?php } ?>

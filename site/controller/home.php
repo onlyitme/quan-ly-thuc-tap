@@ -93,6 +93,12 @@ require_once('model/doanh_nghiep.php');
       $view = "view/dn_ttdn.php";
       require_once "view/layout.php";
       break;
+    case 'thongtindoanhnghiep-dn':
+      $doanhnghiep = checkdoanhnghiepbyid($_SESSION['sid_dn']);
+      $dt=getAllDangtuyen();
+      $view = "view/dn_ttdn.php";
+      require_once "view/layout.php";
+    break;
     case "chitietdangtuyen": 
       if (isset($_GET['iddangtuyen'])){
         echo "<script type='text/javascript'>alert('addaa');</script>";
