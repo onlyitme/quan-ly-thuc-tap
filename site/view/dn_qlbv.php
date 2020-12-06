@@ -51,9 +51,29 @@
                 <button class="btn btn-danger"> <a class="text-light text-decoration-none"
                         href="?ctrl=doanh_nghiep&act=delete_dt&id_dt=<?= $row['id_dt'] ?>"
                         onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
-                <button class="btn btn-outline-warning h-bv-text-lock">
-                    <i class="far fa-lock"></i></button>
+                <button class="btn btn-outline-warning h-bv-text-lock" onclick="an_hien_dt(<?= $row['id_dt'] ?>)">
+                            <?php 
+                            if($row['an_hien'] == 0) echo ' <i class="far fa-lock"></i>';
+                            else echo ' <i class="fas fa-lock-open"></i>';
+                            ?>
+               
+                   </button>
             </div>
         </div>
     </div>
 <?php } ?>
+<script language="javascript">
+    function an_hien_dt(id_dt) {
+        $.ajax({
+            type: "post",
+            url: "index.php?ctrl=doanh_nghiep&act=an_hien_dt",
+            data: {          
+                id_dt: id_dt,
+            },
+            success: function(response) {
+                
+                location.reload(); 
+            }
+        })}
+    
+</script>
