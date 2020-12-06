@@ -2018,9 +2018,13 @@
     }
 
     #sinhvien .h-ttcn-center {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         background: #fff;
+    }
+
+    #sinhvien .h-ttcn-center .input-group-text{
+        /* background: #fff; */
     }
 
     #sinhvien .h-box-ttsv, #sinhvien .h-ttcn .form-control[readonly] {

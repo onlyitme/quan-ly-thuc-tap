@@ -78,7 +78,7 @@
                         <label class="sr-only" for=""></label>
                         <div class="input-group mb-2 mr-sm-2">
                             <div class="input-group-prepend h-ttcn-input">
-                                <div class="input-group-text">Họ &amp; tên:</div>
+                                <div class="input-group-text"> <span> Họ &amp; tên: </span></div>
                             </div>
                             <input type="text" class="form-control" id="" readonly="readonly" value="<?= $ttsv['ho_ten'] ?>">
                         </div>
