@@ -8,6 +8,7 @@
                                 $thong_tin_dn= checkdoanhnghiepbyid($thong_tin_dt['id_dn']);
                                 ?>
     <div class="media col-sm-12 shadow sv-12 NdmH" style="min">
+    <div class="opac"></div>
         <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
             <div class="bg-ds mt-3">
                 <img src="../uploads/<?=$thong_tin_dn['anh']?>" onerror="http://placehold.it/300x200">
@@ -182,7 +183,7 @@
     var kq = '<div class="col-2 py-3" ></div>' +
         '<div class="col-12  mt-5">' +
         '<div class="">' +
-        '<p class="text-success text-right"><i class="fa fa-check"></i> Đã đồng ý thực tập </p>' +
+        '<p class="font-weight-bold text-success text-right"><i class="fa fa-check"></i> Đã đồng ý thực tập </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -193,7 +194,7 @@
     var kq = '<div class="col-2 py-3" ></div>' +
         '<div class="col-12  mt-5">' +
         '<div class="">' +
-        '<p class="text-danger text-right"><i class="fa fa-close"></i> Từ chối xác thực </p>' +
+        '<p class="font-weight-bold text-danger text-right"><i class="fa fa-close"></i> Từ chối xác thực </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
