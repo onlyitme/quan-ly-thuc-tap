@@ -202,4 +202,12 @@
         $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
     execute($sql);
     }
+    function upload_logo($anh){
+        $sql ="UPDATE doanh_nghiep SET anh='$anh' where id_dn = '$_SESSION[sid]'";
+        execute($sql);
+    }
+    function upload_banner($banner){
+        $sql ="UPDATE doanh_nghiep SET banner='$banner' where id_dn = '$_SESSION[sid]'";
+        execute($sql);
+    }
     ?>
