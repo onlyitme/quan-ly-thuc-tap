@@ -79,6 +79,19 @@
     .NdmH {
         min-height: 200px;
         position: relative;
+        overflow: hidden;
+    }
+    .N-sha{
+        position: relative;
+    }
+    .Nghia-shape{
+        width: 210px;
+        height: 70px;
+        transform: skew(20deg);
+        position: absolute;
+        top:0;
+        left: 0;
+        border-radius: 12px;
     }
     /* .NdmH::after {
         content : "";

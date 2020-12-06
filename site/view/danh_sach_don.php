@@ -40,7 +40,8 @@
         <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 " style="padding: 5px 15px;">
             <div class="row">
                 <div class="col-4"></div>
-                <div class="col-8" style="padding: 1px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
+                <div class="col-8 N-sha" style="padding: 1px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
+                <div class=" Nghia-shape shadow"></div>
                     <!-- <div id="clockdiv" class="my-3">
                         <div>
                             <span class="days" id="days<?=$row['id_dt']?>">00</span>
