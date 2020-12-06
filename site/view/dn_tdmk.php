@@ -5,7 +5,6 @@
 </div>
 
 <div class="h-big-box mt-3">
-<<<<<<< Updated upstream
     <form>
         <div class="h-tt-left rounded">
             <div class="h-tt-left-header rounded">
@@ -17,17 +16,6 @@
                         </label>
                         <input id="file-upload" type="file" />
                     </div>
-=======
-    <div class="h-tt-left rounded">
-        <div class="h-tt-left-header rounded">
-            <div class="h-tt-left-img">
-                <img src="view/images/khaihoang.jpg" alt="avatar">
-                <div class="h-tt-left-img-txt">
-                    <label for="file-upload" class="h-custom-file-upload">
-                        <i class="far fa-camera"></i>
-                    </label>
-                    <input id="file-upload" type="file" />
->>>>>>> Stashed changes
                 </div>
             </div>
             <div class="h-tt-left-text">
