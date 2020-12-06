@@ -35,8 +35,10 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       if(isset($_FILES['file']['name'])){
         $mssv = $_SESSION['sid_sv'];
         $anh=$_FILES['file']['name'];
-        $target_dir = "../uploads/";
-        $target_file = $target_dir .$mssv.".png";
+        $target_dir = "../uploads/avt-sv/";
+        $target_file = $target_dir .$mssv.".".pathinfo(basename($anh),PATHINFO_EXTENSION);
+        //check ảnh sv
+        if(checkkhachhangbyid($_SESSION['sid'])['anh'] == $target_file) $target_file = $target_dir .$mssv."-1.".pathinfo(basename($anh),PATHINFO_EXTENSION);
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)){
             update_avtsv($target_file);
             echo($target_file);
