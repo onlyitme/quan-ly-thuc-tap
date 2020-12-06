@@ -9,13 +9,12 @@
         <div class="h-tt-left rounded shadow-sm">
             <div class="h-tt-left-header rounded">
                 <div class="h-tt-left-img">
-                    <img src="<?php if ($ttsv['anh'] != "") echo $ttsv['anh'];
-                                else echo ("view/images/student.png"); ?>" class="avt-ttsv" id="avt-sv" alt="avatar">
+                    <img src="../uploads/<?=$ttsv['anh']?>" onerror=this.src="view/images/student.png" class="avt-ttsv" id="avt-sv" alt="avatar">
                     <div class="h-tt-left-img-txt">
-                        <label for="file-upload" class="h-custom-file-upload">
+                        <label for="file-upload-SV" class="h-custom-file-upload">
                             <i class="far fa-camera"></i>
                         </label>
-                        <input id="file-upload" type="file" name="file">
+                        <input id="file-upload-SV" type="file" name="file">
                     </div>
                 </div>
                 <div class="h-tt-left-text">

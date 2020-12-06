@@ -9,7 +9,7 @@
         <div class="h-tt-left rounded">
             <div class="h-tt-left-header rounded">
                 <div class="h-tt-left-img">
-                    <img src="view/images/khaihoang.jpg" alt="avatar">
+                    <img src="../uploads/<?=$dn['anh']?>" onerror=this.src="view/images/khaihoang.jpg" id="logo-dn" alt="avatar">
                     <div class="h-tt-left-img-txt">
                         <label for="file-upload-logo" class="h-custom-file-upload">
                             <i class="far fa-camera"></i>

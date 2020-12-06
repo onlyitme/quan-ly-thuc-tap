@@ -35,12 +35,13 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
       if(isset($_FILES['file']['name'])){
         $mssv = $_SESSION['sid_sv'];
         $anh=$_FILES['file']['name'];
-        $target_dir = "../uploads/avt-sv/";
-        $target_file = $target_dir .$mssv.".".pathinfo(basename($anh),PATHINFO_EXTENSION);
+        $target_dir = "../uploads/";
+        $anh = "avt-sv/".$mssv.".".pathinfo(basename($anh),PATHINFO_EXTENSION);
         //check ảnh sv
-        if(checkkhachhangbyid($_SESSION['sid'])['anh'] == $target_file) $target_file = $target_dir .$mssv."-1.".pathinfo(basename($anh),PATHINFO_EXTENSION);
+        if(checkkhachhangbyid($_SESSION['sid'])['anh'] == $anh) $anh = "avt-sv/".$mssv."-1.".pathinfo(basename($anh),PATHINFO_EXTENSION);
+        $target_file = $target_dir.$anh;
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)){
-            update_avtsv($target_file);
+            update_avtsv($anh);
             echo($target_file);
         }
       }else $anh='';
@@ -51,15 +52,15 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         $mssv=$_POST['mssv'];
         $gioi_tinh=$_POST['gioi_tinh'];
 
-       if(isset($_FILES['anh']['name'])){
-        $anh=$_FILES['anh']['name'];
-        $target_dir = "../uploads/";
-        $target_file = $target_dir ."$mssv-".basename($anh);
-        move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file);
+      //  if(isset($_FILES['anh']['name'])){
+      //   $anh=$_FILES['anh']['name'];
+      //   $target_dir = "../uploads/";
+      //   $target_file = $target_dir ."$mssv-".basename($anh);
+      //   move_uploaded_file($_FILES["anh"]["tmp_name"], $target_file);
 
-        if(isset($anh)&&$anh!=''){
-            $anh=$mssv."-".basename($anh);
-        }}else $anh='';
+      //   if(isset($anh)&&$anh!=''){
+      //       $anh=$mssv."-".basename($anh);
+      //   }}else $anh='';
        
         $day=$_POST['day'];
         $month=$_POST['month'];
@@ -73,7 +74,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
           updateemail($_POST['email']);
         }
         
-   updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$anh,$sdt,$dia_chi);
+   updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$sdt,$dia_chi);
    suatrangthai();
         $view_sv = "view/ttcn_index.php";
     break;

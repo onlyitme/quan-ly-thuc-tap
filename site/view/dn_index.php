@@ -6,7 +6,7 @@
 
 <div class="h-box-dn rounded mt-3">
     <div class="h-box-dn-img mb-2">
-        <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
+        <img id="banner-dn" src="../uploads/<?=$dn['banner']?>" onerror=this.src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="200px" style="object-fit: cover;">
         <div class="h-box-dn-txt">
             <label for="file-upload-banner" class="h-custom-file-upload">
                 <i class="far fa-camera"></i>

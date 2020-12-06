@@ -1,37 +1,3 @@
-// đăng nhâp
-function getcontent() {
-    var user = document.getElementById('user').value;
-    var pass = document.getElementById('pass').value;
-    var arr = [user, pass];
-    $.ajax({
-        type: "post",
-        url: "index.php?act=login",
-        data: {
-            login: arr
-        },
-        success: function(data) {
-
-            if (data == 0) {
-                location.reload();
-            } else if (data == 10) {
-
-                window.location = "index.php?ctrl=sinh_vien&act=ttcn_edit";
-                alert('Vui lòng nhập Thông tin cá nhân do lần đầu đăng nhập');
-            } else if (data == 1) {
-                window.location = "index.php?ctrl=doanh_nghiep";
-            } else if (data == 2) {
-                alert("bạn sẽ chuyển tới trang ADmin");
-                window.location = "../admin/index.php";
-            } else {
-                document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
-            }
-        }
-    });
-}
-
-
-
-
 (function($) {
 
     // Toggle the side navigation
@@ -85,41 +51,41 @@ function getcontent() {
             }
         });
         //upload ảnh dn
-        $("#file-upload-SV").on("change", function() {
-            files = $('#file-upload-SV')[0].files;
+        $("#file-upload-logo").on("change", function() {
+            files = $('#file-upload-logo')[0].files;
             if (files.length > 0) {
                 data = new FormData();
                 data.append('file', files[0]);
 
                 $.ajax({
                     type: 'POST',
-                    url: "?ctrl=sinh_vien&act=ttcn_upload_anh",
+                    url: "?ctrl=doanh_nghiep&act=dn_upload_logo",
                     data: data,
                     enctype: 'multipart/form-data',
                     processData: false, // tell jQuery not to process the data
                     contentType: false,
                     success: function(response) {
-                        $("#avt-sv").attr("src", response)
+                        $("#logo-dn").attr("src", response)
                     }
                 });
             }
         });
         //upload ảnh banner doanh nghiep
-        $("#file-upload-SV").on("change", function() {
-            files = $('#file-upload-SV')[0].files;
+        $("#file-upload-banner").on("change", function() {
+            files = $('#file-upload-banner')[0].files;
             if (files.length > 0) {
                 data = new FormData();
                 data.append('file', files[0]);
 
                 $.ajax({
                     type: 'POST',
-                    url: "?ctrl=sinh_vien&act=ttcn_upload_anh",
+                    url: "?ctrl=doanh_nghiep&act=dn_upload_banner",
                     data: data,
                     enctype: 'multipart/form-data',
                     processData: false, // tell jQuery not to process the data
                     contentType: false,
                     success: function(response) {
-                        $("#avt-sv").attr("src", response)
+                        $("#banner-dn").attr("src", response)
                     }
                 });
             }

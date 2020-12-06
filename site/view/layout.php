@@ -447,8 +447,40 @@
     </script>
     <!-- My script -->
     <script type="text/javascript" src="view/js/script.js "></script>
-  
-    
+    <script>
+        // đăng nhâp
+function getcontent() {
+    var user = document.getElementById('user').value;
+    var pass = document.getElementById('pass').value;
+    var arr = [user, pass];
+    $.ajax({
+        type: "post",
+        url: "index.php?act=login",
+        data: {
+            login: arr
+        },
+        success: function(data) {
+
+            if (data == 0) {
+                location.reload();
+            } else if (data == 10) {
+
+                window.location = "index.php?ctrl=sinh_vien&act=ttcn_edit";
+                alert('Vui lòng nhập Thông tin cá nhân do lần đầu đăng nhập');
+            } else if (data == 1) {
+                window.location = "index.php?ctrl=doanh_nghiep";
+            } else if (data == 2) {
+                alert("bạn sẽ chuyển tới trang ADmin");
+                window.location = "../admin/index.php";
+            } else {
+                document.getElementById("dangnhapsai").innerHTML = "Tài khoản hoặc mật khẩu không đúng !";
+            }
+        }
+    });
+}
+
+
+    </script>
 </body>
 
 </html>
