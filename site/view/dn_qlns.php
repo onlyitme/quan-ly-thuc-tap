@@ -88,13 +88,15 @@
                                               </td>
                                               <td class="text-center">
                                                   <div class="h-md-qlns">
-                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark" data-toggle="modal" data-target="#exampleModal_Hoang">
-                                                          <?php 
-                                                            if($t['ket_qua']!= 0 ){ echo '<i class="fad fa-check-square" style="font-size: 35px; color: #2574A9;"></i>';}
-                                                            else echo' <i class="far fa-book-open " style="font-size: 30px; color: #2574A9;"></i>'
-                                                          ?>
+                                                      <?php if($t['ket_qua']!= 0 ){ ?>
+                                                      <i class="fas fa-check-circle    text-success"></i>
+
+                                                      <?php } else { ?>
+                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark"  data-toggle="modal" data-target="#exampleModal_Hoang"><i class="far fa-book-open " style="font-size: 30px; color: #2574A9;"></i></a>
+                                                          
+                                                      <?php }   ?>
                                                            
-                                                      </a>
+                                                      
                                                       <!-- <button type="button" class="btn text-dark" data-toggle="modal"
                                                         data-target="#exampleModal_Hoang">
                                                         <i class="far fa-edit"></i>
