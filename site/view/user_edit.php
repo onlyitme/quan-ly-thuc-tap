@@ -1,45 +1,39 @@
-      
-                         <form  action="index.php?ctrl=sinh_vien&act=user_update" method="post" class="Ng" id="capnhapuser" enctype="multipart/form-data">
-                         <div class="bgr rounded shadow "></div>
-                            <div class="media boder p-3 sv8-12 "style="border-radius: 5px;">
-                            
-                                <div class="row col-sm-12">
-                                    <div  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
-                                    <h3 class="mb-3" style="padding: 0 5px;font-weight: 600;">THAY ĐỔI MẬT KHẨU </h3>         
-                                    </div>                                   
+      <form action="index.php?ctrl=sinh_vien&act=user_update" method="post" class="Ng" id="capnhapuser" enctype="multipart/form-data">
+          <div class="bgr rounded shadow "></div>
+          <div class="media boder p-3 sv8-12 " style="border-radius: 5px;">
 
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4"style="text-align: right;">
-                                        <p><strong>Nhập Mật Khẩu Cũ<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Nhập Mật Khẩu Cũ" name="pass" id="ho_ten"></p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4"style="text-align: right;">
-                                        <p><strong>Mật Khẩu Mới<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Mật Khẩu Mới" name="mat_khau" id="ho_ten"></p>
-                                    </div>
-                                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4"style="text-align: right;">
-                                        <p><strong>Nhập Lại Mật Khẩu<span style="color:tomato;">*</span></strong></p>   
-                                    </div>
-                                    <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                                        <p><input type="text" class="form-control mb-2 mr-sm-2"  placeholder="Nhập Lại Mật Khẩu" name="xac_nhan_mk" id="ho_ten"></p>
-                                    </div>
+              <div class="row col-sm-12">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
+                      <h3 class="mb-3" style="padding: 0 5px;font-weight: 600;">THAY ĐỔI MẬT KHẨU </h3>
+                  </div>
 
-                                    <div class="col-12 text-center mt-4">
-                                       
-                                            <button class="buttoncapnhat ml-4" type="submit" >
-                                            Cập nhật
-                                        </button>
-                                        <button class="btn btn-secondary 2 ml-2" type="button" > 
-                                            Hủy
-                                        </button>
-                                        
-                                    </div>                                    
-                                </div>    
-                            </div>
-                            </form>
-  
-    
-                       
+                  <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="text-align: right;">
+                      <p><strong>Nhập Mật Khẩu Cũ<span style="color:tomato;">*</span></strong></p>
+                  </div>
+                  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
+                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nhập Mật Khẩu Cũ" name="pass" id="ho_ten"></p>
+                  </div>
+                  <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="text-align: right;">
+                      <p><strong>Mật Khẩu Mới<span style="color:tomato;">*</span></strong></p>
+                  </div>
+                  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
+                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Mật Khẩu Mới" name="mat_khau" id="ho_ten"></p>
+                  </div>
+                  <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="text-align: right;">
+                      <p><strong>Nhập Lại Mật Khẩu<span style="color:tomato;">*</span></strong></p>
+                  </div>
+                  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
+                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nhập Lại Mật Khẩu" name="xac_nhan_mk" id="ho_ten"></p>
+                  </div>
+
+                  <div class="col-12 text-center mt-4">
+                      <button class="btn buttoncapnhat ml-4" type="submit">
+                          Cập nhật
+                      </button>
+                      <button class="btn buttonhuy ml-2" type="button">
+                          Hủy
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </form>

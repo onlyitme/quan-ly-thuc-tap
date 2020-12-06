@@ -1935,7 +1935,7 @@
         box-shadow: 10px 8px 4px rgba(0, 0, 0, .15);
         border-bottom: 10px groove #00c693;
         border-radius: 0 0 50px 50px;
-        background: #454545;
+        background-image: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
         position: absolute;
         right: 20px;
         top: -5px;
@@ -1952,7 +1952,7 @@
         width: 100%;
         height: auto;
         font-size: 40px;
-        color: #f19a36;
+        color: #fff;
     }
 
     #sinhvien .h-tt-text-con .far {

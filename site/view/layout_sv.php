@@ -42,9 +42,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="index.php?ctrl=sinh_vien&act=hoang">
-                            <i class="far fa-engine-warning    "></i>
-                            Hướng dẫn thao tác
+                        <a href="?ctrl=home&act=logout">
+                            <i class="far fa-sign-out-alt "></i>
+                            Đăng xuất
                         </a>
                     </li>
                     <!-- <li>

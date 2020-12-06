@@ -23,7 +23,6 @@
                         <span class="text-dark">Thực tập sinh - </span>
                         <span class="text-dark font-weight-lighter font-italic"> &lpar; Đang thực tập &rpar; <i class="fa fa-circle text-success"></i></span>
                         <hr class="h-bv-hr">
-                        <hr class="h-bv-hr">
 
                         <div class="h-ttcn text-left">
                             <form action="">
