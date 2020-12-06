@@ -35,7 +35,7 @@
 
     }
 </script>
-<div class="d-none d-md-block detail-job_inf my-3 mb-3 shadow">
+<div class="d-none d-md-block detail-job_inf my-3 mb-3 shadow " id="thongtindt">
     <?php
     $phuc_loi1 = '';
     $phuc_loi2 = '';
