@@ -85,6 +85,8 @@ require_once('model/doanh_nghiep.php');
         require_once 'view/ajax_chitiet_dangtuyen.php';
       break;
     case 'thongtindoanhnghiep':
+      $dangtuyen= checkdangtuyenbyid($_GET['id_dt']);
+      $doanhnghiep=checkdoanhnghiepbyid($dangtuyen['id_dn']);
       $view = "view/dn_ttdn.php";
       require_once "view/layout.php";
       break;
@@ -145,6 +147,4 @@ require_once('model/doanh_nghiep.php');
         header('location:index.php');
         break;
  
-    } 
- 
-?>      
+    }
