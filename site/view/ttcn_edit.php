@@ -95,7 +95,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="">Email&ast; :</label>
-                            <input type="text" class="form-control" id="" name="" value="<?= $tttk['email'] ?>">
+                            <input type="text" class="form-control" id="email" name="email" value="<?= $tttk['email'] ?>">
                         </div>
 
                         <div class="form-group col-md-6">
@@ -111,19 +111,11 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="inputZip">Zip</label>
-                            <input type="text" class="form-control" id="zip" readonly="readonly" value="70000">
+                            <input type="text" class="form-control" id="zip" name="zip" readonly="readonly" value="70000">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <!-- <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
-                        </div> -->
-                    </div>
                     <div class="form-row ttsv-edit-button float-right">
-                        <button type="submit" class="btn buttonhuy mr-2"><a href="<?SITE?>index.php?ctrl=sinhvien"> Hủy </a></button>
+                        <button type="submit" class="btn buttonhuy mr-2"><a href=""> Hủy </a></button>
                         <button type="submit" class="btn buttoncapnhat"><a href=""> Cập nhật </a></button>
                     </div>
                 </form>
