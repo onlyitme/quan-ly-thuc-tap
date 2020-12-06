@@ -856,6 +856,26 @@
     #sinhvien .hr-right {
         border-left: 2px solid #eee;
     }
+    
+    .loader {
+        border: 6px solid #f3f3f3;
+        /* Light grey */
+        border-top: 6px solid #3cac36;
+        /* Blue */
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     /* ----------- sinh vien cuoi ------------ */
     /* Nghia  cv */
     

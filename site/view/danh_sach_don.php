@@ -38,8 +38,9 @@
         </div>
         <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 " style="padding: 5px 15px;">
             <div class="row">
-                <div class="col-12 ml-4" style="padding: 1px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
-                    <div id="clockdiv" class="my-3">
+                <div class="col-4"></div>
+                <div class="col-8" style="padding: 1px 10px; display: flex; " id="thoi_gian<?=$row['id_dt']?>">
+                    <!-- <div id="clockdiv" class="my-3">
                         <div>
                             <span class="days" id="days<?=$row['id_dt']?>">00</span>
                             <div class="smalltext">Ngày</div>
@@ -56,8 +57,8 @@
                             <span class="seconds" id="seconds<?=$row['id_dt']?>">00</span>
                             <div class="smalltext">Giây</div>
                         </div>
-                    </div>
-                    <!-- <div class="item mr-2">
+                    </div> -->
+                    <div class="item mr-2">
                         <p style="color:tomato;">Ngày</p>
                         <span style="margin-top: -10px;" id="days<?=$row['id_dt']?>">00</span>
                     </div> <span style="margin-top: 29px;margin-right: 2px;">:</span>
@@ -72,7 +73,7 @@
                     <div class="item mr-2">
                         <p style="color:tomato;">Giây</p>
                         <span style="margin-top: -10px;" id="seconds<?=$row['id_dt']?>">00</span>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="col-3"></div>
                 <div id="kq_trangthai<?=$row['id_dt']?>" class="col-12"></div>
@@ -90,10 +91,11 @@
 
     <?php if($row['trang_thai']==0){ ?>
     <script>
-    var kq = '<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>' +
-        '<div class="col-12 mt-5 ml-5">' +
-        '<div  class=" " >' +
-        '<strong class=" text-warning">Đang chờ xác nhận.</strong>' +
+    var kq = '<div class="col-2 py-3" ></div>' +
+        '<div class="col-12 mt-5">' +
+        '<div  class="col-12 " >' 
+        +
+        '<div class="col-12 ml-4"> <div class="loader float-left"></div> <p class="text-right text-success"> Đang chờ xác nhận </p></div>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -123,17 +125,17 @@
             document.getElementById("seconds<?=$row['id_dt']?>").innerText = seconds
 
             var kq =
-                '<div class="row px-3 my-2 mx-4">' +
+                '<div class="col-12 mt-5  px-4">' +
                 ' <div style="color: rgb(0, 155, 13);">' +
-                '<strong style="margin-left: -10px;">' +
+                '<p class=" text-right">' +
                 '<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
                 '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>' +
                 '</svg>Đã phê duyệt' +
-                '</strong>' +
+                '</p>' +
                 '</div>' +
                 '</div>' +
-                '<div class="row px-1" >' +
-                '<button class="mx-5 btn btn-success" onclick="xac_thuc(<?=$row['id_phieu']?>)" style="width: 100%;" > chấp nhận </button> </div>'
+                '<div class="col-12 mt-2" >' +
+                '<button class="float-right px-4 btn btn-success" onclick="xac_thuc(<?=$row['id_phieu']?>)"> chấp nhận </button> </div>'
             document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
             document.getElementById("days<?=$row['id_dt']?>").innerText = days
             document.getElementById("hours<?=$row['id_dt']?>").innerText = hours
@@ -166,10 +168,10 @@
     </script>
     <?php }  elseif($row['trang_thai']==2){?>
     <script>
-    var kq = '<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>' +
-        '<div class="col-12 mt-5 ml-5">' +
-        '<div>' +
-        '<strong class="text-danger">Không được phê duyệt.</strong>' +
+    var kq = '<div class="col-2 py-3" ></div>' +
+        '<div class="col-12  mt-5">' +
+        '<div class="">' +
+        '<p class="text-danger text-right"><i class="fa fa-warning"style="color:tomato;"></i> Không được xét duyệt </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -177,10 +179,10 @@
     </script>
     <?php } elseif($row['trang_thai']==3){ ?>
     <script>
-    var kq = '<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>' +
-        '<div class="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 mt-5 ml-5">' +
-        '<div style="color: rgb(0, 155, 13);">' +
-        '<strong class="mt-4">Đã đồng ý thực tập.</strong>' +
+    var kq = '<div class="col-2 py-3" ></div>' +
+        '<div class="col-12  mt-5">' +
+        '<div class="">' +
+        '<p class="text-success text-right"><i class="fa fa-check"></i> Đã đồng ý thực tập </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -188,10 +190,10 @@
     </script>
     <?php } elseif($row['trang_thai']==4){ ?>
     <script>
-    var kq = '<div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-center" ></div>' +
-        '<div class="col-12 mt-5 ml-5">' +
-        '<div >' +
-        '<strong class="text-danger"> <i class="fa fa-clock-o"style="color:tomato;"></i> Đã từ chối xác thực</strong>' +
+    var kq = '<div class="col-2 py-3" ></div>' +
+        '<div class="col-12  mt-5">' +
+        '<div class="">' +
+        '<p class="text-danger text-right"><i class="fa fa-close"></i> Từ chối xác thực </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -200,9 +202,9 @@
     <?php } elseif($row['trang_thai']==5){ ?>
     <script>
     var kq = '<div class="col-2 py-3" ></div>' +
-        '<div class="col-12  ml-5 mt-5">' +
+        '<div class="col-12  mt-5">' +
         '<div class="">' +
-        '<p class="text-danger font-weight-bold"><i class="fa fa-clock-o"style="color:tomato;"></i> Thời gian hết hạn </p>' +
+        '<p class="text-danger text-right"><i class="fa fa-clock-o"style="color:tomato;"></i> Thời gian hết hạn </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
