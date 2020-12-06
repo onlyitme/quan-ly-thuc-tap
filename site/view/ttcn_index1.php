@@ -19,7 +19,7 @@
                 </div>
                 <div class="h-tt-left-text">
                     <span class="text-uppercase">
-                        <h3> <?= $ttsv['ho_ten'] ?> </h3>
+                        <h2> <?= $ttsv['ho_ten'] ?> </h2>
                     </span>
                     <span class="text-secondary font-weight-light">Thực tập sinh</span>
                     <hr class="h-bv-hr">
@@ -47,23 +47,23 @@
                 <h3 class="text-left">Thông tin tài khoản</h3>
                 <div class="h-ttcn text-left py-3">
                     <form action="">
-                        <div class="form-group row">
-                            <label for="" class="col-sm-5 text-left">Tên đăng nhập:</label>
-                            <div class="col-sm-7">
-                                <input type="text" for="" class="h-text-label" style="border: none;" value="<?= $ttsv['ho_ten'] ?>">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">Tên đăng nhập:</span>
                             </div>
+                            <input type="text" class="form-control" value="<?= $ttsv['ho_ten'] ?>">
                         </div>
-                        <div class="form-group row">
-                            <label for="" class="col-sm-5 text-left">Mật khẩu:</label>
-                            <div class="col-sm-7">
-                                <input type="password" for="" class="h-text-label" style="border: none;" value="<?= $tttk['pass'] ?>">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">Mật khẩu:</span>
                             </div>
+                            <input type="text" class="form-control" value="<?= $tttk['pass'] ?>">
                         </div>
-                        <div class="row">
-                            <label for="" class="col-sm-5 text-left">Email:</label>
-                            <div class="col-sm-7 mb-0">
-                                <input type="email" for="" class="h-text-label" style="border: none;" value="<?= $tttk['email'] ?>">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="">Email:</span>
                             </div>
+                            <input type="text" class="form-control" value="<?= $tttk['email'] ?>">
                         </div>
                     </form>
                 </div>

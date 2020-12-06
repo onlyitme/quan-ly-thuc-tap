@@ -1739,7 +1739,6 @@
         float: left;
         width: 73%;
         margin-left: 2%;
-        position: relative;
     }
     
     #doanhnghiep .h-bv-right-title {
@@ -1764,10 +1763,11 @@
     
     #doanhnghiep .h-bv-right-button {
         width: 100%;
-        position: absolute;
-        bottom: -50px;
+        margin-top: 10px;
     }
-    /* #doanhnghiep .h-bv-right-button button {} */
+    #doanhnghiep .h-bv-right-button button {
+        margin-right: 5px;
+    }
     
     #doanhnghiep .h-bv-text-lock {
         float: right;
@@ -1923,7 +1923,7 @@
     
     #sinhvien .h-sv-ttcn-edit {
         position: absolute;
-        bottom: 70px;
+        bottom: 0px;
         left: 0;
         background: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
         padding: 8px 14px;
