@@ -68,7 +68,15 @@ switch ($act) {
             $quyen_loi = $_POST['quyenloi'];
             add_dangtuyen($id_nganh, $id_dn, $tieu_de, $luong_khoi_dau, $luong_ket_thuc, $thoi_gian_tt, $sl_sv_can, $full_part_time, $thoi_gian_lam_viec, $che_do_thuong, $dao_tao, $tang_luong, $nghi_phep_nam, $du_lich, $che_do_bao_hiem, $mo_ta, $yeu_cau, $quyen_loi, $thoi_gian);
         }
-        $ds = getAllDangtuyen();
+        $id_user = $_SESSION['sid'];
+        settype($id_user, "int");
+        $ds = getAllDoanhnghiep();
+        foreach ($ds as $row) {
+            if ($row['id_user'] == $id_user) {
+                $id_dn = $row['id_dn'];
+            }
+        }
+        $ds = getAllDangtheodn($id_dn);
         $view_dn = "view/dn_qlbv.php";
         break;
     case 'chonnganh':
@@ -81,39 +89,39 @@ switch ($act) {
         }
         break;
     case 'dn_upload_logo':
-      if(isset($_FILES['file']['name'])){
-        $id_dn = $_SESSION['sid_dn'];
-        $anh=$_FILES['file']['name'];
-        $target_dir = "../uploads/";
-        $anh = "logo-dn/logo-dn".$id_dn.".".pathinfo(basename($anh),PATHINFO_EXTENSION);
-        //check ảnh sv
-        if(checkdoanhnghiepbyiduser($_SESSION['sid'])['anh'] == $anh) $anh = $target_dir ."logo-dn/logo-dn".$id_dn."-1.".pathinfo(basename($anh),PATHINFO_EXTENSION);
-        $target_file = $target_dir .$anh;
+        if (isset($_FILES['file']['name'])) {
+            $id_dn = $_SESSION['sid_dn'];
+            $anh = $_FILES['file']['name'];
+            $target_dir = "../uploads/";
+            $anh = "logo-dn/logo-dn" . $id_dn . "." . pathinfo(basename($anh), PATHINFO_EXTENSION);
+            //check ảnh sv
+            if (checkdoanhnghiepbyiduser($_SESSION['sid'])['anh'] == $anh) $anh = $target_dir . "logo-dn/logo-dn" . $id_dn . "-1." . pathinfo(basename($anh), PATHINFO_EXTENSION);
+            $target_file = $target_dir . $anh;
 
-        if(move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)){
-            upload_logo($anh);
-            echo($target_file);
-        }
-      }else $anh='';
-      exit();
-      break;    
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                upload_logo($anh);
+                echo ($target_file);
+            }
+        } else $anh = '';
+        exit();
+        break;
     case 'dn_upload_banner':
-      if(isset($_FILES['file']['name'])){
-        $id_dn = $_SESSION['sid_dn'];
-        $anh=$_FILES['file']['name'];
-        $target_dir = "../uploads/";
-        $anh = "banner-dn/banner-dn".$id_dn.".".pathinfo(basename($anh),PATHINFO_EXTENSION);
-        //check ảnh sv
-        if(checkdoanhnghiepbyiduser($_SESSION['sid'])['banner'] == $anh) $anh = $target_dir ."banner-dn/banner-dn".$id_dn."-1.".pathinfo(basename($anh),PATHINFO_EXTENSION);
-        $target_file = $target_dir .$anh;
+        if (isset($_FILES['file']['name'])) {
+            $id_dn = $_SESSION['sid_dn'];
+            $anh = $_FILES['file']['name'];
+            $target_dir = "../uploads/";
+            $anh = "banner-dn/banner-dn" . $id_dn . "." . pathinfo(basename($anh), PATHINFO_EXTENSION);
+            //check ảnh sv
+            if (checkdoanhnghiepbyiduser($_SESSION['sid'])['banner'] == $anh) $anh = $target_dir . "banner-dn/banner-dn" . $id_dn . "-1." . pathinfo(basename($anh), PATHINFO_EXTENSION);
+            $target_file = $target_dir . $anh;
 
-        if(move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)){
-            upload_banner($anh);
-            echo($target_file);
-        }
-      }else $anh='';
-      exit();
-      break;
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+                upload_banner($anh);
+                echo ($target_file);
+            }
+        } else $anh = '';
+        exit();
+        break;
     case 'qlbv':
         $id_user = $_GET["id_user"];
         settype($id_user, "int");
