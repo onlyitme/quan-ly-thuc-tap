@@ -77,7 +77,7 @@
                     <div class="media" >
                         <img class="card-img-top col-3" src="../uploads/<?=$thongtindn['anh']?>" onerror=this.src="http://placehold.it/300x200" alt="Card image cap ">
                         <div class="media-body text-gray text-left">
-                            <a href="index.php?act=thongtindt&id_dt=<?=$thongtindangtuyen['id_dt']?>"><h5 class="text-dark mt-0 d-inline" ><?=$thongtinnganh['ten_nganh']?></h5></a>
+                            <a href="index.php?act=thongtindt&id_dt=<?=$thongtindangtuyen['id_dt']?>"><h5 class="text-dark mt-0 d-inline" ><?=$thongtindangtuyen['tieu_de']?></h5></a>
                             <p class="font-weight-bold "><?=$thongtindn['ten_dn']?></p>
                             <p class="text-info"><i class="fas fa-coins    "></i> Lương: <?=$thongtindangtuyen['luong_khoi_dau']?> ~ <?=$thongtindangtuyen['luong_ket_thuc']?> $</p>
                             <p><i class="fas fa-map-marker-alt    "></i> <?=$thongtindangtuyen['vi_tri']?></p>

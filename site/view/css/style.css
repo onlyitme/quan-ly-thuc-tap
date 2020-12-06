@@ -1642,7 +1642,7 @@
     }
     
     #doanhnghiep .h-title-h4 {
-        margin-top: 30px;
+        margin-top: 50px;
     }
     
     #doanhnghiep .h-box-tq-img {
@@ -1690,6 +1690,7 @@
         font-weight: 600;
         text-transform: uppercase;
         color: #444;
+        margin-top: 20px;
     }
     
     #doanhnghiep .h-tq-about-content {
@@ -1705,8 +1706,6 @@
     }
     
     #doanhnghiep .h-about-slider1 img {
-        float: left;
-        width: 300px;
         height: 200px;
         object-fit: cover;
     }
