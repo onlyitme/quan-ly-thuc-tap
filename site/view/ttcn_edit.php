@@ -50,7 +50,7 @@
             </div> -->
             <!-- -->
             <div class="h-ttsv-edit rounded mt-3 mb-5">
-                <form>
+                <form action="?ctrl=sinh_vien&act=ttcn_update" method="post">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="">Họ &amp; tên&ast; :</label>
@@ -115,8 +115,8 @@
                         </div>
                     </div>
                     <div class="form-row ttsv-edit-button float-right">
-                        <button type="submit" class="btn buttonhuy mr-2"><a href=""> Hủy </a></button>
-                        <button type="submit" class="btn buttoncapnhat"><a href=""> Cập nhật </a></button>
+                        <button href="?ctrl=sinh_vien" class="btn buttonhuy mr-2"> Hủy </button>
+                        <button type="submit" class="btn buttoncapnhat"> Cập nhật </button>
                     </div>
                 </form>
             </div>
