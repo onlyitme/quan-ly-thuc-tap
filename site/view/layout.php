@@ -41,7 +41,7 @@
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=sinh_vien"><i class="fas fa-list-alt mr-2"></i> Kiểm Tra Thông Tin </a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home"><i class="fas fa-history    mr-2"></i> Lịch Sử Đơn</a>
                                     <a class="dropdown-item" href="index.php?ctrl=sinh_vien&act=user_edit">
-                                        <i class="far fa-key"></i>
+                                        <i class="far fa-key  mr-2"></i>
                                         Đổi mật khẩu
                                     </a>
                                     <a class="dropdown-item" href="<?= SITE_URL ?>/?ctrl=home&act=logout"><i class="fas fa-sign-out-alt   mr-2 "></i> Đăng xuất</a>

@@ -177,6 +177,7 @@ switch ($act) {
         break;
     case "tdmk":
         $view_dn = "view/dn_tdmk.php";
+        $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
         break;
     case "qlns":
         $id_user = $_SESSION['sid'];
