@@ -51,7 +51,9 @@
                     </h5>
                 </div>
                 <?php foreach ($dt as $t) { ?>
-                    <?php if ($t['id_dn'] == $doanhnghiep['id_dn']) { ?>
+                    <?php if ($t['id_dn'] == $doanhnghiep['id_dn']) {
+                        if($t['an_hien']==1){
+                        ?>
                         <div class="col-lg-6 p-3">
                             <button type="button" class="list-group-item list-group-item-action px-0">
                                 <div class="media">
@@ -67,7 +69,7 @@
                             </button>
                         </div>
           
-        <?php } ?>
+        <?php } } ?>
     <?php } ?>
     <div class="h-box-tq-about">
         <h4 class="h-title-h4">Giới thiệu về công ty</h4>
