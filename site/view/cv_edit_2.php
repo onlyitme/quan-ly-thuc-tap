@@ -1,7 +1,7 @@
 <form action="index.php?ctrl=sinh_vien&act=cv_update&trang=2" method="POSt">
     <div class="media boder p-3 sv8-12 mt-3 mb-3">
-        <div class="row col-sm-12"
-            style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
+        <div class="row col-sm-12 Ng"  style=";margin:auto;">
+        <div class="bgr"></div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
                 <h5 style="font-weight: 700;">KĨ NĂNG & SỞ TRƯỜNG</h5>
             </div>
