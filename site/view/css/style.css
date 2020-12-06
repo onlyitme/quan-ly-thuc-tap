@@ -1968,7 +1968,7 @@
 
     #sinhvien .h-tt-social {
         position: absolute;
-        right: 0;
+        right: 5px;
         bottom: 12px;
     }
 
@@ -2012,9 +2012,15 @@
 
     #sinhvien .h-ttcn {
         float: left;
-        width: 100%;
-        font-weight: 600;
+        width: 85%;
+        font-weight: 500;
         display: block;
+    }
+
+    #sinhvien .h-ttcn-center {
+        width: 80%;
+        margin: 0 auto;
+        background: #fff;
     }
 
     #sinhvien .h-box-ttsv, #sinhvien .h-ttcn .form-control[readonly] {
@@ -2097,8 +2103,12 @@
     }
 
     #sinhvien .h-ttcn-input {
-        width: 23%;
+        width: 18%;
         margin-right: 2%;
+    }
+
+    #sinhvien .h-ttcn-center .form-control[readonly] {
+        background: #fff;
     }
 
     #sinhvien .input-group-prepend, #sinhvien .input-group-append {
@@ -2139,7 +2149,7 @@
     }
 
     #sinhvien .buttonhuy {
-        background: #3cac36;
+        background: #343a40;
         font-weight: 400;
         padding: 8px 14px;
         border-radius: 5px;

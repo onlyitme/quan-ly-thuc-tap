@@ -27,12 +27,8 @@
                   </div>
 
                   <div class="col-12 text-center mt-4">
-                      <button class="btn buttoncapnhat ml-4" type="submit">
-                          Cập nhật
-                      </button>
-                      <button class="btn buttonhuy ml-2" type="button">
-                          Hủy
-                      </button>
+                          <button href="?ctrl=sinh_vien" class="btn btn-outline-dark mr-2"> Hủy </button>
+                          <button type="submit" class="btn buttoncapnhat"> Cập nhật </button>
                   </div>
               </div>
           </div>

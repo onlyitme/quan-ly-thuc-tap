@@ -74,7 +74,7 @@
                         </a>
                     </h3>
 
-                    <div class="h-ttcn text-left py-3">
+                    <div class="h-ttcn-center text-left py-3">
                         <label class="sr-only" for=""></label>
                         <div class="input-group mb-2 mr-sm-2">
                             <div class="input-group-prepend h-ttcn-input">
