@@ -66,8 +66,15 @@
     /*Mặc định của p là margin: 0 - Đừng sửa gì hết!*/
     
     .NdmH {
+        width: 100%;
         min-height: 200px;
+        background-image: url(../images/banner-dt-sv.png);
+        background-repeat: repeat-x;
+        background-size: 160% 100%;
+        background-position: ;
+
     }
+       
     
     p {
         margin: 0;

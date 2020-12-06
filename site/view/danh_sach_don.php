@@ -127,7 +127,7 @@
             var kq =
                 '<div class="col-12 mt-5  px-4">' +
                 ' <div style="color: rgb(0, 155, 13);">' +
-                '<p class=" text-right">' +
+                '<p class="font-weight-bold text-right">' +
                 '<svg width="1.4em" height="1.4em" viewBox="0 0 16 16" class="bi bi-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
                 '<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>' +
                 '</svg>Đã phê duyệt' +
@@ -171,7 +171,7 @@
     var kq = '<div class="col-2 py-3" ></div>' +
         '<div class="col-12  mt-5">' +
         '<div class="">' +
-        '<p class="text-danger text-right"><i class="fa fa-warning"style="color:tomato;"></i> Không được xét duyệt </p>' +
+        '<p class="font-weight-bold text-danger text-right"><i class="fa fa-warning"style="color:tomato;"></i> Không được xét duyệt </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
@@ -204,7 +204,7 @@
     var kq = '<div class="col-2 py-3" ></div>' +
         '<div class="col-12  mt-5">' +
         '<div class="">' +
-        '<p class="text-danger text-right"><i class="fa fa-clock-o"style="color:tomato;"></i> Thời gian hết hạn </p>' +
+        '<p class="font-weight-bold text-danger text-right"><i class="fa fa-clock-o"style="color:tomato;"></i> Thời gian hết hạn </p>' +
         '</div>' +
         '</div>'
     document.getElementById("kq_trangthai<?=$row['id_dt']?>").innerHTML = kq
