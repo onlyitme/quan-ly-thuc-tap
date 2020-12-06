@@ -15,12 +15,14 @@
                     </div>
                     <div class="h-tt-left-text">
                         <div class="h-tttk-trangthai">
-                            <p class="text-success"> <i class="fas fa-check-circle    "></i> </p>
+                            <p> <i class="fas fa-medal"></i> </p>
                         </div>
                         <span class="text-uppercase ">
                             <h2> <?= $ttsv['ho_ten'] ?> </h2>
                         </span>
-                        <span class="text-dark font-weight-light">Thực tập sinh <i class="fa fa-circle text-success"></i></span>
+                        <span class="text-dark">Thực tập sinh - </span>
+                        <span class="text-dark font-weight-lighter font-italic"> &lpar; Đang thực tập &rpar; <i class="fa fa-circle text-success"></i></span>
+                        <hr class="h-bv-hr">
                         <hr class="h-bv-hr">
 
                         <div class="h-ttcn text-left">
