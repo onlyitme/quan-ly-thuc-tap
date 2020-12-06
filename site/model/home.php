@@ -55,7 +55,7 @@ function checknganhbyid($id){
 }
 function coutdangtuyen($id_nganh){
     if(isset($id_nganh) && $id_nganh !=0){$sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where id_nganh='$id_nganh' and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk";}else
-    $sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk";
+    $sql= "SELECT COUNT(*) as tongdangtuyen FROM dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk and an_hien=1 ";
     $kq = query($sql);
     $row = $kq->fetch();
     $rowcount = $row['tongdangtuyen'];
@@ -63,7 +63,7 @@ function coutdangtuyen($id_nganh){
 }
 function thongtindangtuyen($id_nganh){
     if(isset($id_nganh) && $id_nganh !=0){$sql ="select * from dang_tuyen where id_nganh='$id_nganh' and curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";}else
-    $sql ="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk order by id_dt desc";
+    $sql ="select * from dang_tuyen where curdate() <= thoi_gian and sl_sv_can > sl_sv_dk and an_hien=1 order by id_dt desc";
     return query($sql);
 }
 function checkphieudkinbyid($id){
