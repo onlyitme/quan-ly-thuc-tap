@@ -182,7 +182,24 @@
         $rowcount = $row['sodong'];
         return $rowcount > 0;
     }
-
+    function checkHople_($id_user, $p)
+    {
+        $sql = "SELECT count(*) as sodong FROM user where id_user ='$id_user' and pass='$p'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount > 0;
+    }
+    function updateUser_($id_user, $p1)
+    {
+        try {
+            $sql = "UPDATE  user SET pass='$p1' where id_user ='$id_user'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
 
     // baokun
     function checkdoanhnghiep_iduser($id)
@@ -208,20 +225,23 @@
         $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
         execute($sql);
     }
-    function upload_logo($anh){
-        $sql ="UPDATE doanh_nghiep SET anh='$anh' where id_dn = '$_SESSION[sid_dn]'";
+    function upload_logo($anh)
+    {
+        $sql = "UPDATE doanh_nghiep SET anh='$anh' where id_dn = '$_SESSION[sid_dn]'";
         execute($sql);
     }
-    function upload_banner($banner){
-        $sql ="UPDATE doanh_nghiep SET banner='$banner' where id_dn = '$_SESSION[sid_dn]'";
+    function upload_banner($banner)
+    {
+        $sql = "UPDATE doanh_nghiep SET banner='$banner' where id_dn = '$_SESSION[sid_dn]'";
         execute($sql);
     }
-    function sua_tt_dt($trang_thai,$id_dt){
-        if($trang_thai ==  1){
-            $sql ="UPDATE dang_tuyen SET an_hien= '0' where id_dt = '$id_dt'";
+    function sua_tt_dt($trang_thai, $id_dt)
+    {
+        if ($trang_thai ==  1) {
+            $sql = "UPDATE dang_tuyen SET an_hien= '0' where id_dt = '$id_dt'";
             execute($sql);
-        }else{
-            $sql ="UPDATE dang_tuyen SET an_hien= '1' where id_dt = '$id_dt'";
+        } else {
+            $sql = "UPDATE dang_tuyen SET an_hien= '1' where id_dt = '$id_dt'";
             execute($sql);
         }
     }

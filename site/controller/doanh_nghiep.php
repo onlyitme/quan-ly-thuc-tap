@@ -179,6 +179,20 @@ switch ($act) {
         $view_dn = "view/dn_tdmk.php";
         $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
         break;
+    case "doimk_":
+        $id_user = $_SESSION['sid'];
+        $p = trim(strip_tags($_POST['passcu']));
+        $p1 = trim(strip_tags($_POST['passmoi']));
+        $p2 = trim(strip_tags($_POST['passmoi1']));
+        if ($p1 != $p2) {
+            $thongbao = "Mật khẩu nhập lại không đúng";
+        } elseif (checkHople_($id_user, $p) == true) {
+            updateUser_($id_user, $p1);
+            $thongbao = "Mật khẩu đã được đổi";
+        } else
+            $thongbao = "Mật khẩu không đúng";
+        $view_dn = "view/thongbao.php";
+        break;
     case "qlns":
         $id_user = $_SESSION['sid'];
         $ds = getAllDoanhnghiepID($id_user);
@@ -229,11 +243,11 @@ switch ($act) {
         $phe_duyet = '';
         require_once "view/ajax_tt_sv.php";
         exit;
-        case "an_hien_dt":
-           $tt_dt = getDangtuyenByID($_POST['id_dt']);
-            sua_tt_dt($tt_dt['an_hien'],$tt_dt['id_dt']);
-          break;
-          exit();
+    case "an_hien_dt":
+        $tt_dt = getDangtuyenByID($_POST['id_dt']);
+        sua_tt_dt($tt_dt['an_hien'], $tt_dt['id_dt']);
+        break;
+        exit();
 }
 $view = "view/layout_dn.php";
 require_once "view/layout.php";
