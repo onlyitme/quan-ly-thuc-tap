@@ -76,7 +76,17 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         
    updatettcn($ho_ten,$mssv,$gioi_tinh,$ngay_sinh,$sdt,$dia_chi);
    suatrangthai();
-        $view_sv = "view/ttcn_index.php";
+
+   $kiemtratontaicv = thongtincv();
+   if(isset($kiemtratontaicv['ngay_cap_nhap'])){
+     $view_sv = "view/ttcn_index.php";
+   }
+   else{
+     echo "<script type='text/javascript'>alert('Hãy cập nhập CV ');</script>";
+     $thongtincv=thongtincv();
+     $view_sv = "view/cv_edit.php";
+   }
+
     break;
     case "danh_sach_don":
       $phieu_dk_all=thongtindkallbyid();
