@@ -64,34 +64,52 @@
         font-size: 12pt;
     }
     /*Mặc định của p là margin: 0 - Đừng sửa gì hết!*/
+    
     .opac {
         width: 100%;
         height: 100%;
         position: absolute;
-        top:0;
+        top: 0;
         left: 0;
         background-image: url(../images/aa.jpg);
         background-repeat: no-repeat;
         background-size: 80% 180%;
         opacity: 0.1;
-       
+    }
+    .Ng {
+        position: relative;
+    }
+    .bgr {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-image: url(../images/a2.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 240%;
+        opacity: 0.4;
     }
     .NdmH {
         min-height: 200px;
         position: relative;
         overflow: hidden;
     }
-    .N-sha{
+    
+    .N-sha {
         position: relative;
     }
-    .Nghia-shape{
-        width: 210px;
+    
+    .Nghia-shape {
+        padding-left: 20px;
+        width: 220px;
         height: 70px;
         transform: skew(20deg);
         position: absolute;
-        top:0;
-        left: 0;
+        top: -10px;
+        right: -10px;
         border-radius: 12px;
+        
     }
     /* .NdmH::after {
         content : "";
@@ -105,8 +123,6 @@
         opacity : 0.1;
         z-index: -1;
     } */
-
-       
     
     p {
         margin: 0;
@@ -821,38 +837,6 @@
     
     #sinhvien .btn-white-36:hover {
         /* background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%); */
-        color: #fff;
-    }
-    
-    #sinhvien .buttoncapnhat {
-        background: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
-        font-weight: 400;
-        padding: 8px 14px;
-        border-radius: 5px;
-        border: none;
-        color: white;
-        outline: none;
-        font-weight: bold;
-    }
-    
-    #sinhvien .buttoncapnhat:hover {
-        background: linear-gradient(-25deg, #f19a36 90%, #fa4e42 100%);
-        color: white;
-    }
-    
-    #sinhvien .buttonhuy {
-        background: #df0d0d;
-        font-weight: 400;
-        padding: 8px 14px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        color: #fff;
-        font-weight: bold;
-    }
-    
-    #sinhvien .buttonhuy:hover {
-        background-color: rgb(181, 21, 21);
         color: #fff;
     }
     
@@ -1822,10 +1806,12 @@
     
     #doanhnghiep .h-bv-right-button {
         width: 100%;
-        position: absolute;
-        bottom: -50px;
+        margin-top: 10px;
     }
-    /* #doanhnghiep .h-bv-right-button button {} */
+    
+    #doanhnghiep .h-bv-right-button button {
+        margin-right: 5px;
+    }
     
     #doanhnghiep .h-bv-text-lock {
         float: right;
@@ -1853,25 +1839,29 @@
         /*200px*/
         padding: 10px;
         border: 1px solid #d9d9d9;
-        /* display: flex;
-        justify-content: space-between;
-        align-items: center; */
+        position: relative;
+        background-image: url('https://image.freepik.com/free-vector/abstract-yellow-watercolor-background_1055-8919.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: 100%;
     }
     
     #sinhvien .h-tt-left-img {
         float: left;
-        width: 20%;
-        height: 100%;
+        width: 23%;
+        height: 200px;
         border-radius: 10px;
         position: relative;
         overflow: hidden;
+        background-color: #f1f1f1;
+        padding: 8px;
     }
     
     #sinhvien .h-tt-left-img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        /* border-radius: 50%; */
+        border-radius: 10px;
         box-shadow: 0px 3px 8px #c9c9c9;
     }
     
@@ -1881,9 +1871,10 @@
         background-color: rgba(0, 0, 0, 0.82);
         position: absolute;
         bottom: 0;
+        left: 0;
         text-align: center;
         color: #fff;
-        padding: 30% 0;
+        padding: 25% 0;
         /* border-radius: 50%; */
         box-sizing: border-box;
         opacity: 0;
@@ -1903,10 +1894,34 @@
     
     #sinhvien .h-tt-left-text {
         float: left;
-        width: 78%;
+        width: 75%;
         height: 100%;
         margin-left: 2%;
         overflow: hidden;
+    }
+    
+    #sinhvien .h-tttk-trangthai {
+        width: 100px;
+        height: 100px;
+        box-shadow: inset 0 0 8px #ddd;
+        border-radius: 0 0 0 100%;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-weight: 500;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    #sinhvien .h-tttk-trangthai p {
+        margin: 0 auto;
+        margin-left: 40%;
+        width: 35px;
+        height: 100%;
     }
     
     #sinhvien .h-tt-text-con .far {
@@ -1915,14 +1930,15 @@
     }
     
     #sinhvien hr.h-bv-hr {
-        width: 95%;
+        width: 100%;
         margin: 10px 0;
         border-top: 1px solid #dedede;
     }
     
     #sinhvien .h-tt-social {
-        float: left;
-        margin: 10px 0;
+        position: absolute;
+        right: 0;
+        bottom: 12px;
     }
     
     #sinhvien .h-social {
@@ -1944,6 +1960,7 @@
     #sinhvien .h-box-ttsv {
         float: left;
         width: 100%;
+        height: 370px;
         display: block;
         position: relative;
     }
@@ -1951,6 +1968,7 @@
     #sinhvien .h-ttsv-left {
         float: left;
         width: 37%;
+        height: 100%;
         margin-right: 3%;
         text-align: center;
     }
@@ -1958,6 +1976,8 @@
     #sinhvien .h-ttsv-right {
         float: left;
         width: 60%;
+        height: 100%;
+        position: relative;
     }
     
     #sinhvien .h-ttcn {
@@ -1967,8 +1987,10 @@
         display: block;
     }
     
-    #sinhvien .h-box-ttsv .form-control[readonly] {
-        background: #fff;
+    #sinhvien .h-box-ttsv,
+    #sinhvien .h-ttcn .form-control[readonly] {
+        background: transparent;
+        cursor: default;
     }
     
     #sinhvien .form-control {
@@ -1980,11 +2002,9 @@
     }
     
     #sinhvien .h-sv-ttcn-edit {
-        position: absolute;
-        bottom: 70px;
-        left: 0;
+        margin-left: 3px;
         background: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
-        padding: 8px 14px;
+        padding: 6px 12px;
         color: #fff;
         outline: none;
         border: none;
@@ -2040,5 +2060,68 @@
         opacity: 1;
         transform: scale(1);
         transition: ease-in-out 0.3s;
+    }
+    
+    #sinhvien .h-tttk-input {
+        width: 18%;
+        margin-right: 2%;
+    }
+    
+    #sinhvien .h-ttcn-input {
+        width: 23%;
+        margin-right: 2%;
+    }
+    
+    #sinhvien .input-group-prepend,
+    #sinhvien .input-group-append {
+        display: block;
+    }
+    /* BOX EDIT TTSV */
+    
+    #sinhvien .h-ttsv-edit {
+        margin: 0 auto;
+        width: 100%;
+        border: 1px solid #d9d9d9;
+        padding: 15px;
+    }
+    
+    #sinhvien .h-ttsv-edit label {
+        font-weight: 500;
+    }
+    
+    #sinhvien .ttsv-edit-button a {
+        color: #fff;
+    }
+    
+    #sinhvien .buttoncapnhat {
+        background: linear-gradient(-25deg, #f19a36 0%, #fa4e42 100%);
+        font-weight: 400;
+        padding: 8px 14px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        outline: none;
+        font-weight: bold;
+    }
+    
+    #sinhvien .buttoncapnhat:hover {
+        background: linear-gradient(-25deg, #f19a36 100%, #fa4e42 100%);
+        color: white;
+    }
+    
+    #sinhvien .buttonhuy {
+        background: #3cac36;
+        font-weight: 400;
+        padding: 8px 14px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    #sinhvien .buttonhuy:hover {
+        background-color: rgb(181, 21, 21);
+        color: #fff;
     }
     /*----- END LAYOUT SINHVIEN -----*/

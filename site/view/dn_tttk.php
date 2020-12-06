@@ -11,10 +11,10 @@
                 <div class="h-tt-left-img">
                     <img src="view/images/khaihoang.jpg" alt="avatar">
                     <div class="h-tt-left-img-txt">
-                        <label for="file-upload" class="h-custom-file-upload">
+                        <label for="file-upload-logo" class="h-custom-file-upload">
                             <i class="far fa-camera"></i>
                         </label>
-                        <input id="file-upload" type="file" />
+                        <input id="file-upload-logo" type="file" />
                     </div>
                 </div>
                 <div class="h-tt-left-text">
