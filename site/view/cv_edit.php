@@ -9,7 +9,7 @@
                 <p><strong>Tiêu đề hồ sơ</strong> </p>
             </div>
             <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                <p><input type="text" class="form-control mb-2 mr-sm-2" value="<?=$thongtincv['tieu_de']?>"
+                <p><input type="text" class="form-control mb-2 mr-sm-2" value="Hồ sơ thực tập" readonly
                         placeholder="Tiêu đề" name="tieu_de"></p>
             </div>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">

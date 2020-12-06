@@ -2,7 +2,7 @@
     <div class=" col-12 my-5 ">
         <div class="h-box-ttdn shadow p-5">
             <div class="row mb-5">
-                <img src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg" class="rounded border shadow-sm " alt="logofpt" width="900px" height="300px" style="object-fit: cover;">
+                <img src="../uploads/<?=$doanhnghiep['banner']?>" class="rounded border shadow-sm " alt="logofpt" width="900px" height="300px" style="object-fit: cover;" onerror=this.src="https://simplienglish.com/wp-content/uploads/2019/10/banner.jpg">
             </div>
             <h4 class="h-title-h4">Tổng quan công ty</h4>
             <div class="h-box-tq">
@@ -11,7 +11,7 @@
                 </div>
                 <div class="h-box-tq-biginfo">
                     <div class="h-box-tq-img mr-3">
-                        <img src="https://venngage-wordpress.s3.amazonaws.com/uploads/2019/04/Travel-Tour-Business-Logo.png" class="border shadow-sm " alt="logofpt" width="100%" height="100%" style="object-fit: cover;">
+                        <img src="../uploads/<?=$doanhnghiep['anh']?>"  class="border shadow-sm " alt="logofpt" width="100%" height="100%" style="object-fit: cover;" onerror=this.src="view/images/img_login.png   "  >
                     </div>
                     <div class="h-box-tq-info">
                         <strong>Địa chỉ: </strong><span><?= $doanhnghiep['dia_chi'] ?></span>
@@ -51,11 +51,13 @@
                     </h5>
                 </div>
                 <?php foreach ($dt as $t) { ?>
-                    <?php if ($t['id_dn'] == $doanhnghiep['id_dn']) { ?>
+                    <?php if ($t['id_dn'] == $doanhnghiep['id_dn']) {
+                        if($t['an_hien']==1){
+                        ?>
                         <div class="col-lg-6 p-3">
                             <button type="button" class="list-group-item list-group-item-action px-0">
                                 <div class="media">
-                                    <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
+                                    <img class="card-img-top col-3" src="../uploads/<?=$doanhnghiep['anh']?>" alt="Card image cap" onerror=this.src="view/images/img_login.png">
                                     <div class="media-body text-gray text-left">
                                         <a href="">
                                             <h5 class="text-dark mt-0 d-inline"><a href="index.php?act=thongtindt&id_dt=<?= $t['id_dt'] ?>"> <?= $t['tieu_de'] ?></a></h5>
@@ -67,7 +69,7 @@
                             </button>
                         </div>
           
-        <?php } ?>
+        <?php } } ?>
     <?php } ?>
     <div class="h-box-tq-about">
         <h4 class="h-title-h4">Giới thiệu về công ty</h4>
@@ -109,19 +111,20 @@
         </div>
         <h4 class="h-title-h4">Hình ảnh công ty</h4>
         <div class="h-tq-slider1 mt-3">
-            <div class="h-about-slider1">
-                <img src="https://img.youtube.com/vi/YgAQJPjCZyE/0.jpg" alt="">
-            </div>
-            <div class="h-about-slider1">
-                <img src="https://images.careerbuilder.vn/employer_photo/173118/mg_6609_1537872415.jpg" alt="">
-            </div>
-            <div class="h-about-slider1">
-                <img src="https://images.careerbuilder.vn/employer_photo/173118/444-1_1537872423.jpg" alt="">
-            </div>
-            <div class="h-about-slider1">
-                <img src="https://images.careerbuilder.vn/employer_photo/173118/222_1537872575.png" alt="">
-            </div>
-        </div>
+                        <div class=" col-3 p-3 h-about-slider1">
+                            <img src="https://img.youtube.com/vi/YgAQJPjCZyE/0.jpg" alt="">
+                        </div>
+
+                    <div class="col-3 p-3 h-about-slider1">
+                        <img src="https://images.careerbuilder.vn/employer_photo/173118/mg_6609_1537872415.jpg" alt="">
+                    </div>
+                    <div class="col-3 p-3 h-about-slider1">
+                        <img src="https://images.careerbuilder.vn/employer_photo/173118/444-1_1537872423.jpg" alt="">
+                    </div>
+                    <div class="col-3 p-3 h-about-slider1">
+                        <img src="https://images.careerbuilder.vn/employer_photo/173118/222_1537872575.png" alt="">
+                    </div>
+                </div>
     </div>
         </div>
     </div>

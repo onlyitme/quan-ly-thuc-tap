@@ -2,22 +2,22 @@
   <div class="modal fade" id="exampleModal_Hoang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content" id="cc">
-              
+
           </div>
       </div>
   </div>
-  
+
   <div class="N-box" id="myDiv">
-    <div id="overflow">
+      <div id="overflow">
 
-        <div class="resume ">
-            <button class="btn-danger2 btn btn-info  hide-btn">X</button>
-            <div id="show-cv" class="d-flex"></div>
-        </div>
+          <div class="resume ">
+              <button class="btn-danger2 btn btn-info  hide-btn">X</button>
+              <div id="show-cv" class="d-flex"></div>
+          </div>
 
-    </div>
+      </div>
 
-</div>
+  </div>
 
   <!-- End Modal -->
   <div class="row align-items-center">
@@ -71,37 +71,39 @@
                               <?php $id_dt = $t['id_dt']; ?>
                               <?php $ut = getAllUngtuyen($id_dt); ?>
                               <?php foreach ($ut as $t) { ?>
-                                  <?php $sv = getAllSinhvien_(); ?>
-                                  <?php foreach ($sv as $s) { ?>
-                                      <?php if ($s['id_sv'] == $t['id_sv']) { ?>
-                                          <tr>
-                                              <th scope="row" class="text-center"><?= $i++ ?></th>
-                                              <td><?= $s['mssv'] ?></td>
-                                              <td><?= $s['ho_ten'] ?></td>
-                                              <?php $nganh = getAllNganh();
-                                                foreach ($nganh as $n) { ?>
-                                                  <?php if ($n['id_nganh'] == $s['id_nganh']) { ?>
-                                                      <td><?= $n['ten_nganh'] ?></td>
+                                  <?php if ($t['trang_thai'] == 3) { ?>
+                                      <?php $sv = getAllSinhvien(); ?>
+                                      <?php foreach ($sv as $s) { ?>
+                                          <?php if ($s['id_sv'] == $t['id_sv']) { ?>
+                                              <tr>
+                                                  <th scope="row" class="text-center"><?= $i++ ?></th>
+                                                  <td><?= $s['mssv'] ?></td>
+                                                  <td><?= $s['ho_ten'] ?></td>
+                                                  <?php $nganh = getAllNganh();
+                                                    foreach ($nganh as $n) { ?>
+                                                      <?php if ($n['id_nganh'] == $s['id_nganh']) { ?>
+                                                          <td><?= $n['ten_nganh'] ?></td>
+                                                      <?php } ?>
                                                   <?php } ?>
-                                              <?php } ?>
-                                              <td class="text-center"><a onclick="truyen_tt(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
-                                              </td>
-                                              <td class="text-center">
-                                                  <div class="h-md-qlns">
-                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark" data-toggle="modal" data-target="#exampleModal_Hoang">
-                                                          <?php 
-                                                            if($t['ket_qua']!= 0 ){ echo '<i class="fad fa-check-square" style="font-size: 35px; color: #2574A9;"></i>';}
-                                                            else echo' <i class="far fa-book-open " style="font-size: 30px; color: #2574A9;"></i>'
-                                                          ?>
-                                                           
-                                                      </a>
-                                                      <!-- <button type="button" class="btn text-dark" data-toggle="modal"
+                                                  <td class="text-center"><a onclick="truyen_tt(<?= $t['id_phieu'] ?>)"><i class="fas fa-address-card show-btn" style="font-size: 30px; color: #2574A9;"></i></a>
+                                                  </td>
+                                                  <td class="text-center">
+                                                      <div class="h-md-qlns">
+                                                      <?php if($t['ket_qua']!= 0 ){ ?>
+                                                      <i class="fas fa-check-circle    text-success"></i>
+
+                                                      <?php } else { ?>
+                                                      <a onclick="truyen_id(<?=$t['id_phieu'] ?>)"class="text-dark"  data-toggle="modal" data-target="#exampleModal_Hoang"><i class="far fa-book-open " style="font-size: 30px; color: #2574A9;"></i></a>
+                                                          
+                                                      <?php }   ?>
+                                                          <!-- <button type="button" class="btn text-dark" data-toggle="modal"
                                                         data-target="#exampleModal_Hoang">
                                                         <i class="far fa-edit"></i>
                                                          </button> -->
-                                                  </div>
-                                              </td>
-                                          </tr>
+                                                      </div>
+                                                  </td>
+                                              </tr>
+                                          <?php } ?>
                                       <?php } ?>
                                   <?php } ?>
                               <?php } ?>
@@ -115,29 +117,31 @@
 
   <script>
       function truyen_id(id_phieu) {
-        $.ajax({
+          $.ajax({
               type: "post",
               url: "index.php?ctrl=doanh_nghiep&act=danh_gia",
-              data: {id_phieu},
-           
-              success: function (response) {
-                document.getElementById('cc').innerHTML=response
+              data: {
+                  id_phieu
+              },
+
+              success: function(response) {
+                  document.getElementById('cc').innerHTML = response
               }
           });
-         
+
       }
+
       function truyen_tt(id_phieu) {
-        $.ajax({
-            type: "post",
-            url: "index.php?ctrl=doanh_nghiep&act=show_cv",
-            data: {
-                id_phieu
-            },
+          $.ajax({
+              type: "post",
+              url: "index.php?ctrl=doanh_nghiep&act=show_cv",
+              data: {
+                  id_phieu
+              },
 
-            success: function(response) {
-                document.getElementById('show-cv').innerHTML = response
-            }
-        });
-    }
-
+              success: function(response) {
+                  document.getElementById('show-cv').innerHTML = response
+              }
+          });
+      }
   </script>

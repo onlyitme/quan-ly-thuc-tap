@@ -165,7 +165,7 @@
                     elseif ($checkphieudkin['trang_thai'] == 3) $button_nopdon = '<button type="button"  class="btn btn-success"> <i class="fas fa-check"></i>Ứng tuyển thành công</button>';
                     else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle mr-2"></i> Không chấp thuận</button>';
                 } elseif ($i == 0) $button_nopdon = '<button class="btn btn-info" data-toggle="modal" data-target="#nguyenvong"">Nộp đơn ứng tuyển <i class="fas fa-hand-rock ml-3"></i></button>';
-                else $button_nopdon = '<button type="button"  class="btn btn-danger"><i class="fas fa-times-circle"></i> Không thể nộp đơn do đã có nơi thực tập</button>';
+                else $button_nopdon = '<button type="button"  class="btn btn-secondary disabled"><i class="fas fa-times-circle"></i> Đã có nơi thực tập</button>';
             } else $button_nopdon = "";
             echo '
             <!-- modal nguyện vọng -->

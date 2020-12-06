@@ -2,32 +2,31 @@
 require_once "views/Classes/PHPExcel.php";
 require_once "models/excel.php";
 
-if(isset($_POST['bttn'])){
-    $file= $_FILES['file']['tmp_name'];
-    $objReader=PHPExcel_IOFactory::createReaderForFile($file);
-    $objReader -> setLoadSheetsOnly('Sheet1');
+if (isset($_POST['bttn'])) {
+    $file = $_FILES['file']['tmp_name'];
+    $objReader = PHPExcel_IOFactory::createReaderForFile($file);
+    $objReader->setLoadSheetsOnly('Sheet1');
 
     $objExcel = $objReader->load($file);
-    $sheetData = $objExcel->getActiveSheet()->toArray('null',true,true,true);
+    $sheetData = $objExcel->getActiveSheet()->toArray('null', true, true, true);
 
-    $highRow=$objExcel->setActiveSheetIndex()->getHighestRow();
+    $highRow = $objExcel->setActiveSheetIndex()->getHighestRow();
 
-    for($row=2;$row<=$highRow;$row++){
-        $user=$sheetData[$row]['A'];
-        $pass=$sheetData[$row]['B'];
-        $ho_ten=$sheetData[$row]['C'];
-        $mssv=$sheetData[$row]['D'];
-        $email=$user;
-        $chuc_vu=0;
+    for ($row = 2; $row <= $highRow; $row++) {
+        $user = $sheetData[$row]['A'];
+        $pass = $sheetData[$row]['B'];
+        $ho_ten = $sheetData[$row]['C'];
+        $mssv = $sheetData[$row]['D'];
+        $email = $user;
+        $chuc_vu = 0;
 
-        addNewUserE($user,$pass,$email,$chuc_vu);
+        addNewUserE($user, $pass, $email, $chuc_vu);
         $user_full = seach_id_user($user);
-        $id_user=$user_full['id_user'];
-        addNewSinhvienforexecl($id_user,$ho_ten,$mssv);
+        $id_user = $user_full['id_user'];
+        addNewSinhvienforexecl($id_user, $ho_ten, $mssv);
         $sv_full = seach_id_sv($id_user);
-        $id_sv=$sv_full['id_sv'];
+        $id_sv = $sv_full['id_sv'];
         addNewhosoforexecl($id_sv);
-
     }
     echo "<script type='text/javascript'>alert('đã thêm thành công');</script>";
 }
@@ -71,37 +70,34 @@ if(isset($_POST['bttn'])){
                 <div class="modal-body">
                     <p>Mẫu file exel</h1>
                         <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
-            <form method="POST" class=" shadow rounded mt-5" action="index.php?ctrl=sinh_vien" enctype="multipart/form-data">
+                        <form method="POST" class=" shadow rounded mt-5" action="index.php?ctrl=sinh_vien" enctype="multipart/form-data">
 
-                        <input type="file" name="file">
+                            <input type="file" name="file">
 
 
-                        </div>
-                    <div class="modal-footer">
+                </div>
+                <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                     <button type="submit" class="btn btn-success" name="bttn">Thêm</button>
                 </div>
-            </form>
+                </form>
             </div>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form method="POST" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=insert" enctype="multipart/form-data">
                         <div class="row justify-content-center align-items-center text-primary">
                             <h1 class="mb-4">Thêm sinh viên</h1>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" required id="email" name="email"
-                                placeholder="Email">
+                            <input type="email" class="form-control" required id="email" name="email" placeholder="Email">
                             <?php if (isset($email_error)) { ?>
-                            <span class="badge badge-warning"> <?= $email_error ?> </span>
+                                <span class="badge badge-warning"> <?= $email_error ?> </span>
                             <?php } ?>
                             <span id="kqcheckemail"></span>
                         </div>
@@ -109,8 +105,7 @@ if(isset($_POST['bttn'])){
                             <input type="password" class="form-control" name="pass" required placeholder="Mật khẩu">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="user" name="ho_ten" required
-                                placeholder="Họ tên sinh viên">
+                            <input type="text" class="form-control" id="user" name="ho_ten" required placeholder="Họ tên sinh viên">
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
@@ -119,33 +114,29 @@ if(isset($_POST['bttn'])){
                                     <?php require_once "models/nganh.php";
                                     $ds = getAllNganh();
                                     foreach ($ds as $row) { ?>
-                                    <option value="<?= $row['id_nganh'] ?>"> <?= $row['ten_nganh'] ?></option>
+                                        <option value="<?= $row['id_nganh'] ?>"> <?= $row['ten_nganh'] ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                             <div class="form-group col-6">
-                                <input type="number" class="form-control" id="sdt" name="sdt" required
-                                    placeholder="Số điện thoại">
+                                <input type="number" class="form-control" id="sdt" name="sdt" required placeholder="Số điện thoại">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
-                                <input type="text" class="form-control" id="mssv" name="mssv" required
-                                    placeholder="Mã số sinh viên">
+                                <input type="text" class="form-control" id="mssv" name="mssv" required placeholder="Mã số sinh viên">
                                 <?php if (isset($user_error)) { ?>
-                                <span class="badge badge-warning"> <?= $user_error ?> </span>
+                                    <span class="badge badge-warning"> <?= $user_error ?> </span>
                                 <?php } ?>
                                 <span id="kqcheckmssv"></span>
                             </div>
                             <div class="form-group col-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <span class="input-group-text bg-primary text-white"
-                                            id="inputGroupFileAddon01">UPLOAD</span>
+                                        <span class="input-group-text bg-primary text-white" id="inputGroupFileAddon01">UPLOAD</span>
                                     </div>
                                     <div class="custom-file  ">
-                                        <input type="file" class="custom-file-input " id="inputGroupFile01"
-                                            aria-describedby="inputGroupFileAddon01" name="anh">
+                                        <input type="file" class="custom-file-input " id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="anh">
                                         <label class="custom-file-label " for="inputGroupFile01">ẢNH</label>
                                     </div>
                                 </div>
@@ -156,8 +147,7 @@ if(isset($_POST['bttn'])){
                             <div class="form-group col-6">
                                 <label for="">Giới tính</label><br>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="gioitinh0" name="gioi_tinh" class="custom-control-input"
-                                        value="1" checked>
+                                    <input type="radio" id="gioitinh0" name="gioi_tinh" class="custom-control-input" value="1" checked>
                                     <label class="custom-control-label" for="gioitinh0"> Nam</label>
                                 </div>
                                 <div class="custom-control custom-radio">
@@ -184,13 +174,11 @@ if(isset($_POST['bttn'])){
                             <div class="form-group col-6">
                                 <label for="">Trạng thái</label><br>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="trang_thai1" name="trang_thai" class="custom-control-input"
-                                        value="1">
+                                    <input type="radio" id="trang_thai1" name="trang_thai" class="custom-control-input" value="1">
                                     <label class="custom-control-label" for="trang_thai1"> Đã có nơi thực tập</label>
                                 </div>
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="trang_thai0" name="trang_thai" class="custom-control-input"
-                                        value="0" checked>
+                                    <input type="radio" id="trang_thai0" name="trang_thai" class="custom-control-input" value="0" checked>
                                     <label class="custom-control-label" for="trang_thai0"> Chưa có nơi thực tập</label>
                                 </div>
                                 <!-- <label for="">Trạng thái</label><br>
@@ -225,16 +213,14 @@ if(isset($_POST['bttn'])){
         <div class="boxtimkiem d-flex">
             <form method="POST" class="" action="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=timkiem">
                 <div class="input-group">
-                    <input class="form-control" name="mssv" type="text" placeholder="Nhập mssv cần tìm..."
-                        aria-label="Search" aria-describedby="basic-addon2" />
+                    <input class="form-control" name="mssv" type="text" placeholder="Nhập mssv cần tìm..." aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
             <div class="dropdown ml-3">
-                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><i
-                        class="fas fa-filter    "></i>
+                <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter    "></i>
                     <span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-menu-right bg-secondary pb-3 pt-0">
                     <div class="alert alert-light rounded-0" role="alert">
@@ -272,117 +258,115 @@ if(isset($_POST['bttn'])){
     </thead>
     <?php $i = 1;
     foreach ($dm as $row) { ?>
-    <tr>
-        <th style="width: 80px;">
-            <div class="checkbox">
-                <input type="checkbox" class="checkitem mr-1" value='<?= $row['id_user'] ?>'><?= $i++ ?>
-            </div>
-        </th>
-        <td class="py-5">
-            <?= $row['ho_ten'] ?>
-        </td>
+        <tr>
+            <th style="width: 80px;">
+                <div class="checkbox">
+                    <input type="checkbox" class="checkitem mr-1" value='<?= $row['id_user'] ?>'><?= $i++ ?>
+                </div>
+            </th>
+            <td class="py-5">
+                <?= $row['ho_ten'] ?>
+            </td>
 
-        <td class="py-5">
-            <?= ($row['gioi_tinh'] == 1) ? "Nam" : "Nữ"; ?>
-        </td>
-        <td class="py-5">
-            <?= $row['sdt'] ?>
+            <td class="py-5">
+                <?= ($row['gioi_tinh'] == 1) ? "Nam" : "Nữ"; ?>
+            </td>
+            <td class="py-5">
+                <?= $row['sdt'] ?>
 
-        </td>
-        <td class="py-5">
-            <?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?>
-        </td>
-        <td class="py-5">
-            <?= $row['mssv'] ?>
-        </td>
-        <td class="py-5">
-            <?php
+            </td>
+            <td class="py-5">
+                <?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?>
+            </td>
+            <td class="py-5">
+                <?= $row['mssv'] ?>
+            </td>
+            <td class="py-5">
+                <?php
                 $ds = getAllUser();
                 foreach ($ds as $r) { ?>
-            <?php if ($row['id_user'] == $r['id_user']) { ?>
-            <?= $r['email'] ?>
-            <?php } ?>
-            <?php } ?>
-        </td>
-        <td class="py-5">
-            <?php
-              
+                    <?php if ($row['id_user'] == $r['id_user']) { ?>
+                        <?= $r['email'] ?>
+                    <?php } ?>
+                <?php } ?>
+            </td>
+            <td class="py-5">
+                <?php
+
                 $ds = getAllNganh();
                 foreach ($ds as $r) { ?>
-            <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
-            <?= $r['ten_nganh'] ?>
-            <?php } ?>
-            <?php } ?>
+                    <?php if ($row['id_nganh'] == $r['id_nganh']) { ?>
+                        <?= $r['ten_nganh'] ?>
+                    <?php } ?>
+                <?php } ?>
 
-        </td>
-        <td style="width: 150px;">
-            <img src="views/images/<?= $row['anh'] ?>" width="100" height="70"
-                onerror="this.src='views/images/avt.jpg';">
-        </td>
-        <td class="py-5">
-            <a href="?ctrl=sinh_vien&act=edit&id_sv=<?= $row['id_sv'] ?>"><i class="fa fa-edit"></i></a>
-        </td>
-        <td class="py-5">
-            <a href="?ctrl=sinh_vien&act=delete&id_user=<?= $row['id_user'] ?>"
-                onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt text-danger"></i></a>
-        </td>
-    </tr>
+            </td>
+            <td style="width: 150px;">
+                <img src="views/images/<?= $row['anh'] ?>" width="100" height="70" onerror="this.src='views/images/avt.jpg';">
+            </td>
+            <td class="py-5">
+                <a href="?ctrl=sinh_vien&act=edit&id_sv=<?= $row['id_sv'] ?>"><i class="fa fa-edit"></i></a>
+            </td>
+            <td class="py-5">
+                <a href="?ctrl=sinh_vien&act=delete&id_user=<?= $row['id_user'] ?>" onclick="return confirm('Bạn chắc chắn muốn xóa?');"><i class="fas fa-trash-alt text-danger"></i></a>
+            </td>
+        </tr>
     <?php } ?>
 </table>
 
 <script>
-$("#checkall").change(function() {
-    $(".checkitem").prop("checked", $(this).prop("checked"))
-})
-$(".checkitem").change(function() {
-    if ($(this).prop("checked") == false) {
-        $("#checkall").prop("checked", false)
-    }
-    if ($(".checkitem:checked").length == $(".checkitem").length) {
-        $("#checkall").prop("checked", true)
-    }
-})
-$("#xoaall").click(function() {
-    if ($(".checkitem:checked").length > 0) {
-        var y = confirm("Bạn chắc chắn muốn xóa các mục đã chọn không ?");
-        if (y == true) {
-            let arrcheck = [];
-            $(".checkitem").each(function() {
-                check = $(this).prop("checked");
-                if (check) {
-                    arrcheck.push($(this).val());
-                }
-            });
-            console.log(arrcheck);
-            $.ajax({
-                type: "post",
-                url: "index.php?ctrl=sinh_vien",
-                data: {
-                    arr: arrcheck
-                },
-                success: function(data) {
-                    location.reload();
-                }
-            });
+    $("#checkall").change(function() {
+        $(".checkitem").prop("checked", $(this).prop("checked"))
+    })
+    $(".checkitem").change(function() {
+        if ($(this).prop("checked") == false) {
+            $("#checkall").prop("checked", false)
         }
-    }
-});
-$(document).ready(function() {
-    $("#user").blur(function() {
-        u = $(this).val();
-        $("#kqcheckuser").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtrauser&user=" + u);
+        if ($(".checkitem:checked").length == $(".checkitem").length) {
+            $("#checkall").prop("checked", true)
+        }
+    })
+    $("#xoaall").click(function() {
+        if ($(".checkitem:checked").length > 0) {
+            var y = confirm("Bạn chắc chắn muốn xóa các mục đã chọn không ?");
+            if (y == true) {
+                let arrcheck = [];
+                $(".checkitem").each(function() {
+                    check = $(this).prop("checked");
+                    if (check) {
+                        arrcheck.push($(this).val());
+                    }
+                });
+                console.log(arrcheck);
+                $.ajax({
+                    type: "post",
+                    url: "index.php?ctrl=sinh_vien",
+                    data: {
+                        arr: arrcheck
+                    },
+                    success: function(data) {
+                        location.reload();
+                    }
+                });
+            }
+        }
     });
-});
-$(document).ready(function() {
-    $("#mssv").blur(function() {
-        u = $(this).val();
-        $("#kqcheckmssv").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtramssv&mssv=" + u);
+    $(document).ready(function() {
+        $("#user").blur(function() {
+            u = $(this).val();
+            $("#kqcheckuser").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtrauser&user=" + u);
+        });
     });
-});
-$(document).ready(function() {
-    $("#email").blur(function() {
-        u = $(this).val();
-        $("#kqcheckemail").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtraemail&email=" + u);
+    $(document).ready(function() {
+        $("#mssv").blur(function() {
+            u = $(this).val();
+            $("#kqcheckmssv").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtramssv&mssv=" + u);
+        });
     });
-});
+    $(document).ready(function() {
+        $("#email").blur(function() {
+            u = $(this).val();
+            $("#kqcheckemail").load("<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=kiemtraemail&email=" + u);
+        });
+    });
 </script>
