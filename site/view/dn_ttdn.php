@@ -58,7 +58,7 @@
                                     <img class="card-img-top col-3" src="http://placehold.it/300x200" alt="Card image cap ">
                                     <div class="media-body text-gray text-left">
                                         <a href="">
-                                            <h5 class="text-dark mt-0 d-inline"><a href="index.php?act=thongtindt&id_dt=<?=$t['id_dt']?>"> <?= $t['tieu_de'] ?></a></h5>
+                                            <h5 class="text-dark mt-0 d-inline"><a href="index.php?act=thongtindt&id_dt=<?= $t['id_dt'] ?>"> <?= $t['tieu_de'] ?></a></h5>
                                         </a>
                                         <p><i class="fas fa-calendar-alt "></i>
                                             Hạn chót: 25/9/1997
@@ -66,7 +66,7 @@
                                 </div>
                             </button>
                         </div>
-            </div>
+          
         <?php } ?>
     <?php } ?>
     <div class="h-box-tq-about">
