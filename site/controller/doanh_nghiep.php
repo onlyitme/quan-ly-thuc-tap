@@ -340,9 +340,7 @@ switch ($act) {
                 <div class="resume_right">
                     <div class="resume_item1 resume_about1 border-top-0">
                         <div class="title">
-                            <h4 class="bold">' . $dangtuyen['tieu_de'] . '</h4>
-                            <p>
-                            </p>
+                            <h5 class="text-gray font-weight-bold border-bottom pb-3">' . $dangtuyen['tieu_de'] . '</h5>
                             <p class="text-gray">
                                 <span class="font-weight-bold ">Nguyện vọng</span> 
                                 <span >
@@ -350,6 +348,7 @@ switch ($act) {
                                 </span>
                             </p>
                         </div>  <div class="pt-3 text-right">
+                        <span class="mr-3 text-gray font-italic">Duyệt đơn ứng tuyển: </span>
                         '.$phe_duyet.'
                     </div> </div>
                     <div class="resume_item resume_about">
