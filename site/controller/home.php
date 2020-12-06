@@ -65,11 +65,13 @@ require_once('model/doanh_nghiep.php');
         // echo($ngay_dk);
         // echo "<script type='text/javascript'>alert('$ngay_dk');</script>";
         addphieudkin($id_sv,$ngay_dk,$nguyen_vong,$id_dt,$thongtindt['id_dn']);
-        if(isset($_POST['jobdetail'])) require_once  "view/job-detail.php";
-        else require_once 'view/ajax_chitiet_dangtuyen.php';       
+        if(isset($_POST['jobdetail'])) {
+          require_once  "view/job-detail.php";
+          }
+        else require_once 'view/ajax_chitiet_dangtuyen.php'; 
+
       }
      } else {
-  
       echo "<script type='text/javascript'> window.location='index.php?ctrl=sinh_vien&act=cv_edit';</script>";
       echo "<script type='text/javascript'>alert('Hãy nhập thông tin của CV để đủ điều kiện ứng tuyển');</script>";
       exit();

@@ -159,7 +159,6 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
         updatecv_3($word,$excel,$power_point,$outlook,$ung_dung_khac,$av_nghe,$av_noi,$av_doc,$av_viet,$ngon_ngu_khac,$ngay_cap_nhap);
       }
       echo "<script type='text/javascript'>alert('Cập Nhập Hồ Sơ Thành Công');</script>";
-      
       $thongtincv=thongtincv();
       $view_sv = "view/cv_index.php";
     break;

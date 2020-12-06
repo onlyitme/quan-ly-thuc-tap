@@ -12,7 +12,7 @@
             },
             success: function(response) {
                 $("#thongtindt").html(response)
-                location.reload();
+                location.reload(); 
             }
         });
     }

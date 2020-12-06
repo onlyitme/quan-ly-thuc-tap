@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="h-box-detail p-3 h-box-right shadow">
+        <div class="h-box-detail h-box-right">
             <?php include $view_sv; ?>
         </div>
 
