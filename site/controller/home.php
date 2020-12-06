@@ -87,6 +87,7 @@ require_once('model/doanh_nghiep.php');
     case 'thongtindoanhnghiep':
       $dangtuyen= checkdangtuyenbyid($_GET['id_dt']);
       $doanhnghiep=checkdoanhnghiepbyid($dangtuyen['id_dn']);
+      $dt=getAllDangtuyen();
       $view = "view/dn_ttdn.php";
       require_once "view/layout.php";
       break;

@@ -70,7 +70,7 @@ echo '
  <div class="row align-items-center shadow-sm bg-light p-3" id="head-listjob">
      <div class="col-lg-8">
         <h4 class="mb-2 font-weight-bold text-justif">'.$thongtindt['tieu_de'].'</h4>
-        <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
+        <p class="font-weight-bold  mb-0"><a href="?ctrl=home&act=thongtindoanhnghiep&id_dt='.$thongtindt['id_dt'].'" class="text-gray pl-3"># '.$thongtindn['ten_dn'].'</a></p>
      </div>
      <div class="col-lg-4 text-right">
      '.$button_nopdon.'  

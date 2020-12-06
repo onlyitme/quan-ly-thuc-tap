@@ -145,11 +145,11 @@ switch ($act) {
         $view_dn = "view/dn_qlbv.php";
         break;
     case "dn_danh_gia":
-        $ket_qua=$_POST['h-danhgia'];
-        $danh_gia=$_POST['danh_gia'];
-        $id_phieu=$_GET['id_phieu'];
+        $ket_qua = $_POST['h-danhgia'];
+        $danh_gia = $_POST['danh_gia'];
+        $id_phieu = $_GET['id_phieu'];
 
-        danh_gia_tu_dn($ket_qua,$danh_gia,$id_phieu);
+        danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu);
         $id_user = $_SESSION['sid'];
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_qlns.php";
@@ -161,7 +161,7 @@ switch ($act) {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
-    </div><form method="post" action="index.php?ctrl=doanh_nghiep&act=dn_danh_gia&id_phieu='.$_POST['id_phieu'].'">
+    </div><form method="post" action="index.php?ctrl=doanh_nghiep&act=dn_danh_gia&id_phieu=' . $_POST['id_phieu'] . '">
     <div class="modal-body">
         
             <div class="form-group">
@@ -201,8 +201,8 @@ switch ($act) {
         $email = checktaikhoanbyid($thong_tin_sv['id_user']);
         $kynang = checkHosoByID($thong_tin_sv['id_sv']);
         $dangtuyen = checkdangtuyenbyid($thong_tin['id_dt']);
-        $phe_duyet='';
-        if($thong_tin['trang_thai'] != '3') $phe_duyet='
+        $phe_duyet = '';
+        if ($thong_tin['trang_thai'] != '3') $phe_duyet = '
         <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
         <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>';
 
@@ -349,7 +349,7 @@ switch ($act) {
                             </p>
                         </div>  <div class="pt-3 text-right">
                         <span class="mr-3 text-gray font-italic">Duyệt đơn ứng tuyển: </span>
-                        '.$phe_duyet.'
+                        ' . $phe_duyet . '
                     </div> </div>
                     <div class="resume_item resume_about">
                         <div class="title">
