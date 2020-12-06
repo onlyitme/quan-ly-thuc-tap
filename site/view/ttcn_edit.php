@@ -69,7 +69,7 @@
                     <h3 class=" mb-0">Chỉnh sửa thông tin</h3>
                 </div>
                 <div class="h-ttsv-edit rounded mt-3 mb-5">
-                    <form>
+   
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="">Họ &amp; tên&ast; :</label>
