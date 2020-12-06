@@ -100,7 +100,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="">Số điện thoại&ast; : </label>
-                            <input type="text" class="form-control" id="" name="" placeholder="0912 345 6789" value="<?= $ttsv['sdt'] ?>">
+                            <input type="text" class="form-control" id="sdt" name="sdt" placeholder="0912 345 6789" value="<?= $ttsv['sdt'] ?>">
                         </div>
                     </div>
 
