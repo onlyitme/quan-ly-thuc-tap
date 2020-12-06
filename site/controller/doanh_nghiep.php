@@ -228,6 +228,11 @@ switch ($act) {
         $phe_duyet = '';
         require_once "view/ajax_tt_sv.php";
         exit;
+        case "an_hien_dt":
+           $tt_dt = getDangtuyenByID($_POST['id_dt']);
+            sua_tt_dt($tt_dt['an_hien'],$tt_dt['id_dt']);
+          break;
+          exit();
 }
 $view = "view/layout_dn.php";
 require_once "view/layout.php";

@@ -216,4 +216,13 @@
         $sql ="UPDATE doanh_nghiep SET banner='$banner' where id_dn = '$_SESSION[sid_dn]'";
         execute($sql);
     }
+    function sua_tt_dt($trang_thai,$id_dt){
+        if($trang_thai ==  1){
+            $sql ="UPDATE dang_tuyen SET an_hien= '0' where id_dt = '$id_dt'";
+            execute($sql);
+        }else{
+            $sql ="UPDATE dang_tuyen SET an_hien= '1' where id_dt = '$id_dt'";
+            execute($sql);
+        }
+    }
     ?>
