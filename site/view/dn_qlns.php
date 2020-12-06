@@ -7,6 +7,17 @@
       </div>
   </div>
   
+  <div class="N-box" id="myDiv">
+    <div id="overflow">
+
+        <div class="resume ">
+            <button class="btn-danger2 btn btn-info  hide-btn">X</button>
+            <div id="show-cv" class="d-flex"></div>
+        </div>
+
+    </div>
+
+</div>
 
   <!-- End Modal -->
   <div class="row align-items-center">
