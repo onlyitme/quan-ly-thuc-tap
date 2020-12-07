@@ -25,6 +25,9 @@
         case "logout":
             session_start();
             unset($_SESSION['admin']);
+            unset( $_SESSION['schuc_vu']);
+            unset( $_SESSION['sname']);
+            unset($_SESSION['sid']);
             header('location:index.php');
             break;
         case "quenmk":
