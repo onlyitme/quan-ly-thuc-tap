@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 06, 2020 lúc 05:21 PM
--- Phiên bản máy phục vụ: 10.4.16-MariaDB
--- Phiên bản PHP: 7.4.12
+-- Thời gian đã tạo: Th12 08, 2020 lúc 05:54 PM
+-- Phiên bản máy phục vụ: 10.4.14-MariaDB
+-- Phiên bản PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -250,7 +250,7 @@ INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt
 (13, 47, '0000-00-00', 'c', 42, 14, 3, NULL, 2, 'th này ngon nè', NULL),
 (15, 46, '2020-12-09', 'ĐÂSDAS', 42, 14, 3, '2020-12-06 03:11:50', 1, 'ngu như con bò', NULL),
 (16, 83, '2020-12-04', '', 53, 13, 3, '2020-12-04 03:21:23', NULL, NULL, NULL),
-(17, 45, '2020-12-06', 'abc', 60, 14, 0, NULL, 0, NULL, NULL);
+(17, 45, '2020-12-06', 'abc', 60, 14, 1, '2020-12-07 01:22:22', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -308,6 +308,21 @@ INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `thong_bao`
+--
+
+CREATE TABLE `thong_bao` (
+  `id` int(11) NOT NULL,
+  `noi_dung` varchar(500) NOT NULL,
+  `id_nguoi_gui` int(11) NOT NULL,
+  `id_nguoi_nhan` int(11) NOT NULL,
+  `trang_thai` tinyint(1) NOT NULL,
+  `ngay_tao` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `user`
 --
 
@@ -326,10 +341,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) VALUES
 (1, 'admin', 'admin', NULL, 2, 0),
-(39, 'bao@fpt.edu.vn', 'sinhvien', 'bao@fpt.edu.vn', 0, 1),
+(39, 'bao@fpt.edu.vn', '123456', 'bao@fpt.edu.vn', 0, 1),
 (40, 'khai@fpt.edu.vn', 'sinhvien', 'khai@fpt.edu.vn', 0, 0),
 (41, 'hung@fpt.edu.vn', 'sinhvien', 'hung@fpt.edu.vn', 0, 0),
-(44, 'doanhnghiep1@gmail.com', 'doanhnghiep', 'doanhnghiep1@gmail.com', 1, 0),
+(44, 'doanhnghiep1@gmail.com', '2', 'doanhnghiep1@gmail.com', 1, 0),
 (49, 'b', 'z', NULL, 1, 0),
 (51, 'd', 'z', NULL, 1, 0),
 (52, 'e', 'z', NULL, 1, 0),
@@ -409,6 +424,12 @@ ALTER TABLE `sinh_vien`
   ADD PRIMARY KEY (`id_sv`),
   ADD KEY `id_nganh` (`id_nganh`),
   ADD KEY `id_user1` (`id_user`);
+
+--
+-- Chỉ mục cho bảng `thong_bao`
+--
+ALTER TABLE `thong_bao`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `user`
