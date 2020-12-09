@@ -13,10 +13,14 @@
         $sql = "SELECT id_sv FROM sinh_vien WHERE id_user='$id_user'";
         return queryOne($sql);
     }
-    function  addNewSinhvienforexecl($id_user,$ho_ten,$mssv)
+    function tim_id_nganh($ten_nganh){
+        $sql = "SELECT * FROM nganh WHERE ten_nganh='$ten_nganh'";
+        return queryOne($sql);
+    }
+    function  addNewSinhvienforexecl($id_user,$ho_ten,$mssv,$id_nganh)
     {
-        $sql = "INSERT INTO sinh_vien (id_user,ho_ten,mssv) 
-    values('$id_user','$ho_ten','$mssv')";
+        $sql = "INSERT INTO sinh_vien (id_user,ho_ten,mssv,id_nganh) 
+    values('$id_user','$ho_ten','$mssv','$id_nganh')";
         execute($sql);
     }
     function  addNewhosoforexecl($id_sv)
