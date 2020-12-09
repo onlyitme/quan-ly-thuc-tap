@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=thongbao">
                             <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
                         </a>
                     </li>

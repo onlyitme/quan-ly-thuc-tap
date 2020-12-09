@@ -11,19 +11,19 @@
                       <p><strong>Nhập Mật Khẩu Cũ<span style="color:tomato;">*</span></strong></p>
                   </div>
                   <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nhập Mật Khẩu Cũ" name="pass" id="ho_ten"></p>
+                      <p><input type="password" class="form-control mb-2 mr-sm-2" placeholder="Nhập Mật Khẩu Cũ" name="pass" id="ho_ten"></p>
                   </div>
                   <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="text-align: right;">
                       <p><strong>Mật Khẩu Mới<span style="color:tomato;">*</span></strong></p>
                   </div>
                   <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Mật Khẩu Mới" name="mat_khau" id="ho_ten"></p>
+                      <p><input type="password" class="form-control mb-2 mr-sm-2" placeholder="Mật Khẩu Mới" name="mat_khau" id="ho_ten"></p>
                   </div>
                   <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4" style="text-align: right;">
                       <p><strong>Nhập Lại Mật Khẩu<span style="color:tomato;">*</span></strong></p>
                   </div>
                   <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 ml-2">
-                      <p><input type="text" class="form-control mb-2 mr-sm-2" placeholder="Nhập Lại Mật Khẩu" name="xac_nhan_mk" id="ho_ten"></p>
+                      <p><input type="password" class="form-control mb-2 mr-sm-2" placeholder="Nhập Lại Mật Khẩu" name="xac_nhan_mk" id="ho_ten"></p>
                   </div>
 
                   <div class="col-12 text-center mt-4">
