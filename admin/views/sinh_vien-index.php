@@ -1,6 +1,4 @@
 <?php
-require_once "views/Classes/PHPExcel.php";
-require_once "models/excel.php";
 if (isset($_POST['bttn'])) {
     $file = $_FILES['file']['tmp_name'];
     $objReader = PHPExcel_IOFactory::createReaderForFile($file);
@@ -88,7 +86,7 @@ if (isset($_POST['btnExport'])) {
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         <i class="fas fa-plus"></i> Thêm sinh viên
     </button>
-    <form action="index.php?ctrl=sinh_vien" method="post">
+    <form action="exel/exel.php" method="post">
     <!-- Button trigger modal -->
      <button type="submit" name="btnExport" class="btn btn-primary mx-3" >
          Xuất Thành file Exel
