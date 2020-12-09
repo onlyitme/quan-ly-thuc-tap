@@ -53,14 +53,15 @@ if (isset($_POST['btnExport'])) {
                                     ;
         $i++;
     }
-    $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+    
+    $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, $fileType);
     $fileName = 'product_import.xlsx';
     $objWriter->save($fileName);
     header('Content-Disposition: attachment; filename="'. $fileName .'"');
-    header('Content-Type:application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
-    header('Content-Length:'.filesize($fileName));
-    header('Content-Transfer-Encoding:binary');
-    header('Cache-Control:must:-revalidate');
+    header('Content-Type: application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
+    header('Content-Length: ' . filesize($fileName));
+    header('Content-Transfer-Encoding: binary');
+    header('Cache-Control: must-revalidate');
     header('Pragma: no-cache');
     readfile($fileName);
     return;
