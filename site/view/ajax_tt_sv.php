@@ -12,7 +12,6 @@ echo '
                 <div class="resume_item resume_info">
                     <div class="title">
                         <p class="bold">' . $thong_tin_sv['ho_ten'] . '</p>
-                        <p class="regular">' .$nganh['ten_nganh']. '</p>
                     </div>
                     <ul>
                         <li>
