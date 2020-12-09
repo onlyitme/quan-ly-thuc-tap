@@ -84,7 +84,7 @@
                             <label for="">Giới tính&ast; :</label>
                             <input type="radio" class="ml-3" id="male" name="gioi_tinh" value="1" checked> Nam
                             <input type="radio" class="ml-3" id="male" name="gioi_tinh" value="0"> Nữ
-                            <input type="radio" class="ml-3" id="" name="gioi_tinh" value=""> Giới tính thứ 3
+                            <!-- <input type="radio" class="ml-3" id="" name="gioi_tinh" value=""> Giới tính thứ 3 -->
                         </div>
                         <div class="form-group col-md-6">
                             <label for="">Ngày sinh&ast; : </label>

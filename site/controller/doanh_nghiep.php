@@ -248,6 +248,9 @@ switch ($act) {
         sua_tt_dt($tt_dt['an_hien'], $tt_dt['id_dt']);
         break;
         exit();
+    case 'thongbao':
+        $view_dn = "view/dn_thongbao.php";
+        break;
 }
 $view = "view/layout_dn.php";
 require_once "view/layout.php";

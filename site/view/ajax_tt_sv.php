@@ -1,17 +1,32 @@
 <?php
 if ($thong_tin['trang_thai'] != '3') $phe_duyet = '
-<a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
-<a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>';
+<div class="resume_item1 resume_about1 border-top-0">
+<div class="title">
+<h5 class="text-gray font-weight-bold border-bottom pb-3">' . $dangtuyen['tieu_de'] . '</h5>
+<p class="text-gray">
+    <span class="font-weight-bold ">Nguyện vọng</span> 
+    <span >
+    ' . $thong_tin['nguyen_vong'] . '
+    </span>
+</p>
+</div>  
+<div class="pt-3 text-right">
+    <span class="mr-3 text-gray font-italic">Duyệt đơn ứng tuyển: </span>
+    <a class="btn btn-outline-success " href="index.php?ctrl=doanh_nghiep&act=pheduyet&id_phieu=' . $_POST['id_phieu'] . '" id="nutpheduyet"><i class="fas fa-check-circle    "></i> Phê duyệt</a>
+    <a class="btn btn-outline-danger " href="index.php?ctrl=doanh_nghiep&act=tuchoi&id_phieu=' . $_POST['id_phieu'] . '" id="nuttuchoi"><i class="fas fa-window-close    "></i> Từ chối </a>
+</div>
+</div>';
 
 echo '  
         <div class="resume_left">
             <div class="resume_profile">
-                <img src="https://th.bing.com/th/id/OIP.VOE2H2F5pU4nAHDX-l3tyQHaI4?pid=Api&rs=1" alt="profile_pic">
+                <img  src="../uploads/'.$thong_tin_sv['anh'].'" onerror=this.src="view/images/student.png" alt="profile_pic">
             </div>
             <div class="resume_content">
                 <div class="resume_item resume_info">
                     <div class="title">
                         <p class="bold">' . $thong_tin_sv['ho_ten'] . '</p>
+                        <p class="regular">' .$nganh['ten_nganh']. '</p>
                     </div>
                     <ul>
                         <li>
@@ -134,19 +149,7 @@ echo '
             </div>
         </div>
         <div class="resume_right">
-            <div class="resume_item1 resume_about1 border-top-0">
-                <div class="title">
-                    <h5 class="text-gray font-weight-bold border-bottom pb-3">' . $dangtuyen['tieu_de'] . '</h5>
-                    <p class="text-gray">
-                        <span class="font-weight-bold ">Nguyện vọng</span> 
-                        <span >
-                        ' . $thong_tin['nguyen_vong'] . '
-                        </span>
-                    </p>
-                </div>  <div class="pt-3 text-right">
-                <span class="mr-3 text-gray font-italic">Duyệt đơn ứng tuyển: </span>
-                ' . $phe_duyet . '
-            </div> </div>
+               ' . $phe_duyet . '
             <div class="resume_item resume_about">
                 <div class="title">
                     <p class="bold">Mục tiêu nghề nghiệp</p>

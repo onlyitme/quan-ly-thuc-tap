@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 08, 2020 lúc 05:54 PM
--- Phiên bản máy phục vụ: 10.4.14-MariaDB
--- Phiên bản PHP: 7.4.10
+-- Thời gian đã tạo: Th12 09, 2020 lúc 03:26 PM
+-- Phiên bản máy phục vụ: 10.4.16-MariaDB
+-- Phiên bản PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,7 +67,7 @@ INSERT INTO `dang_tuyen` (`id_dt`, `tieu_de`, `mo_ta`, `yeu_cau`, `quyen_loi`, `
 (35, 'Tuyển nhân viên SEO website, tên miền, hosting', '- Công việc chủ yếu Check mail, trả lời khách hàng, kiểm tra sản phẩm, giới thiệu cho khách hàng vế chất lượng - hoạt động của sản phẩm.\r\n- Có thể đi công tác trong nước và nước ngoài…)\r\nCông việc trao đổi cụ thể khi phỏng vấn.', '- Tốt nghiệp Cao đẳng Dược trở lên hoặc các chuyên ngành kinh tế, quản trị kinh doanh.\r\n- Giao tiếp tốt.\r\n- Vi tính văn phòng: Excel, word\r\n- Thái độ: Chăm chỉ, tỉ mỉ, chủ động trong công việc.\r\n- Ưu tiên ứng viên có kinh nghiệm Telesale, sales admin.', '- Hưởng thu nhập hấp dẫn >8 triệu.\r\n- Môi trường làm việc ngành Dược trẻ trung, chuyên nghiệp.\r\n- Được làm việc tại Top Công ty có Nhà máy sản xuất Dược Phẩm hiện đại bậc nhất Việt Nam.', 20, 0, '2021-04-29', 0, 0, 100, 214, 6, 0, 0, 0, 0, 0, 0, 0, 0, 16, 21, 1),
 (40, 'Tuyển nhân Viên chăm sóc làm mặt.', '- Thực hiện các yêu cầu phát triển mới/ chỉnh sửa các phần mềm của công ty.\r\n- Cùng khảo sát, phân tích và viết các phần mềm theo nhu cầu của các phòng ban trong công ty.\r\n- Tiếp nhận chuyển giao, đào tạo công nghệ từ các đối tác', '- Có khả năng lập trình với một trong các ngôn ngữ như : Visual Fox, Visual Basic, ASP.NET, C#, SQL server.\r\n- Trình độ cao đẳng trở lên', '- Chế độ đầy đủ theo luật LĐ Việt Nam.\r\n- Được tham gia đào tạo, bồi dưỡng, các khóa học về kỹ năng và nghiệp vụ\r\n- Môi trường trẻ trung, năng động và thân thiện\r\n- Mức lương hưởng năng lực', 7, 0, '2020-12-12', 0, 0, 123, 321, 4, 0, 0, 0, 0, 0, 0, 0, 0, 21, 25, 1),
 (41, 'Tuyển nhân viên SEO website, tên miền, hosting', '	\r\n- Gọi điện chăm sóc nhà thuốc.\r\n- Chốt đơn hàng qua điện thoại.\r\n- Tổng hợp số liệu bán ra của hệ thống nhà thuốc tại miền Nam.\r\n- Gửi chương trình bán hàng cho các nhà thuốc hàng tháng theo từng khu vực.\r\n- Cung cấp các hồ sơ sản phẩm cho nhà thuốc.\r\n- Tiếp nhận và giải quyết khiếu nại của nhà thuốc.\r\n- Phụ trách hỗ trợ đơn hàng online tại Miền Nam.', '- Tốt nghiệp Cao đẳng Dược trở lên hoặc các chuyên ngành kinh tế, quản trị kinh doanh.\r\n- Giao tiếp tốt.\r\n- Vi tính văn phòng: Excel, word\r\n- Thái độ: Chăm chỉ, tỉ mỉ, chủ động trong công việc.\r\n- Ưu tiên ứng viên có kinh nghiệm Telesale, sales admin.', '- Hưởng thu nhập hấp dẫn >8 triệu.\r\n- Môi trường làm việc ngành Dược trẻ trung, chuyên nghiệp.\r\n- Được làm việc tại Top Công ty có Nhà máy sản xuất Dược Phẩm hiện đại bậc nhất Việt Nam.', 15, 1, '2021-03-12', 0, 0, 375, 754, 5, 0, 0, 0, 0, 0, 0, 0, 0, 17, 21, 1),
-(42, 'Tuyển nhân Viên Thiết Kế 2D Animation (Chế Độ Tốt)', '- Dựng phim và diễn hoạt animation như trong video.\r\n- Thực hiện Animation dựa trên các ý tưởng đề xuất và có sẵn.', '- Khả năng thực hiện animation bằng bất kỳ phần mềm nào, miễn là đẹp và chất lượng.\r\n- Kỹ năng tư duy chuyển động tốt.\r\n- Sử dụng tốt phần mềm MOHO\r\n- Ưu tiên ứng viên có kinh nghiệm làm game animator.\r\n- Yêu thích chơi game.', '- Lương từ 8 -15 triệu : Lương Cơ Bản + Thưởng doanh thu, thu nhập cao theo năng lực\r\n- Được xét tăng lương 6 tháng/1 lần.\r\n- Thưởng theo năng lực.\r\n- Lương tháng thứ 13\r\n- Được nghỉ các ngày quốc lễ có lương.\r\n- Môi trường năng động, thân thiện, dễ dàng phát triển khả năng sáng tạo của bản thân.', 6, 0, '2020-12-19', 0, 0, 538, 695, 6, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1),
+(42, 'Tuyển nhân Viên Thiết Kế 2D Animation (Chế Độ Tốt)', '- Dựng phim và diễn hoạt animation như trong video.\r\n- Thực hiện Animation dựa trên các ý tưởng đề xuất và có sẵn.', '- Khả năng thực hiện animation bằng bất kỳ phần mềm nào, miễn là đẹp và chất lượng.\r\n- Kỹ năng tư duy chuyển động tốt.\r\n- Sử dụng tốt phần mềm MOHO\r\n- Ưu tiên ứng viên có kinh nghiệm làm game animator.\r\n- Yêu thích chơi game.', '- Lương từ 8 -15 triệu : Lương Cơ Bản + Thưởng doanh thu, thu nhập cao theo năng lực\r\n- Được xét tăng lương 6 tháng/1 lần.\r\n- Thưởng theo năng lực.\r\n- Lương tháng thứ 13\r\n- Được nghỉ các ngày quốc lễ có lương.\r\n- Môi trường năng động, thân thiện, dễ dàng phát triển khả năng sáng tạo của bản thân.', 6, 2, '2020-12-19', 0, 0, 538, 695, 6, 0, 0, 1, 1, 1, 1, 0, 1, 14, 21, 1),
 (43, 'Nhân Viên Kinh Doanh Thu Nhập 15 Triệu-25 Triệu / Tháng (Đi Làm Ngay)', '+ Lập và chủ động triển khai kế hoạch bán hàng hàng ngày, tuần, tháng, quý\r\n+ Công việc chính: xác định danh mục khách hàng, lên kế hoạch giới thiệu sản phẩm & dịch vụ của công ty, tổ chức demo + hướng dẫn sử dụng và giải đáp các thắc mắc phản hồi của khách hàng, ghi nhận yêu cầu, báo giá, đàm phán, thương lượng, chốt đơn hàng, theo dõi tiến độ đơn hàng, hỗ trợ giao hàng + hoàn tất thanh toán và thanh lý hợp đồng\r\n+ Chịu trách nhiệm triển khai và hoàn tất các chỉ tiêu kinh doanh theo chiến lược của công ty (sẽ trao đổi chi tiết khi phỏng vấn)\r\n+ Phối hợp tổ chức & triển khai các hoạt động phát triển thị trường, phát triển khách hàng mới + khách hàng tiềm năng\r\n+ Phối hợp & triển khai các chương trình chăm sóc khách hàng, chương trình khuyến mãi\r\n+ Báo cáo kết quả công việc thường xuyên hàng tuần với TPKD.\r\n+ Mọi chi tiết sẽ được trao đổi trong buổi phỏng vấn', '	\r\nTốt nghiệp Cao đẳng/ Đại học ngành nghề thuộc lĩnh vực Kinh tế, Kỹ Thuật Điện & Điện Tử, Cơ khí, Tự động hóa\r\n• Tối thiểu 02 năm kinh nghiệm ở vị trí nhân viên kinh doanh\r\n• Yêu thích việc kinh doanh, kỹ năng tìm kiếm + mở rộng quan hệ khách hàng, xây dựng và phát triển cơ hội bán hàng\r\n• Kỹ năng giao tiếp, đàm phán, tác phong chuyên nghiệp, năng động.\r\n* Ưu tiên ứng viên có kinh nghiệm về một trong những dòng sản phẩm thương hiệu như bên dưới là một trong những ưu thế cho việc tuyển dụng:\r\n+ Hiểu biết về thiết bị lưu Điện dự phòng (UPS) của các hãng như: APC-Schneider, Santak, Eaton, Socomec, Emerson…\r\n+ Hiểu biết về thiết bị đo lường Cơ khí: MITUTOYO, Accretech (Tokyo Seimitsu), Carl Zeiss, Hexagon\r\n+ Hiểu biết về máy móc, công cụ dụng cụ như: Milwaukee,Bosch, Makita, DeWalt, Stanley', '+ Lương cơ bản + thưởng doanh số. Thu nhập bình quân từ 10 triệu-25 triệu/ tháng.\r\n+ Được hưởng các chế độ thưởng theo doanh thu.\r\n+ Được làm việc trong một môi trường năng động, tác phong chuyên nghiệp.\r\n+ Được đào tạo nâng cao nghiệp vụ thường xuyên.\r\n+ Được cấp đồng phục, hỗ trợ đầy đủ phương tiện, quyền lợi khi đi công tác, gặp gỡ đối tác, khách hàng.\r\n+ Được hưởng chế độ nghĩ mát hàng năm, đầy đủ các quyền lợi BHXH, BHYT, BHTN… theo luật lao động hiện hành.\r\n+ Ngày nghỉ và chính sách lao động: Theo quy định của nhà nước.\r\n+ Thời gian làm việc: Thứ 2 đến thứ 6, thứ 7 làm việc luân phiên tuần nghỉ tuần làm.', 5, 0, '2020-12-10', 0, 0, 0, 101, 5, 0, 0, 0, 0, 0, 0, 0, 0, 18, 25, 1),
 (53, 'tuyển thiết kế logo', '<p>ngồi kh&ocirc;ng đếm tiền</p>\r\n<div id=\"eJOY__extension_root\" class=\"eJOY__extension_root_class\" style=\"all: unset;\"></div>', '<p>biết tiếng người</p>\r\n<div id=\"eJOY__extension_root\" class=\"eJOY__extension_root_class\" style=\"all: unset;\"></div>', '<p>lương c&oacute; thể &acirc;m</p>', 20, 0, '2020-12-11', NULL, 0, 0, 2000, 5, 0, 0, 1, 1, 1, 1, 1, 1, 13, 22, 0),
 (54, 'Giảng viên cơ hữu Du lịch - Nhà hàng - Khách sạn', 'MÔ TẢ CÔNG VIỆC\r\n\r\n1. Giảng dạy các môn học ngành Du lịch - Nhà hàng - Khách sạn;\r\n\r\n2. Giảng dạy thực hành, xây dựng kế hoạch, nội dung, chương trình đào tạo, giáo trình, bài giảng, kiểm tra đánh giá kết quả học tập, rèn luyện của sinh viên;\r\n\r\n3. Tổ chức và tham gia các hoạt động nghiên cứu khoa học;\r\n\r\n4. Hướng dẫn sinh viên nghiên cứu khoa học, thực tập chuyên ngành;\r\n\r\n5. Thực hiện tuyển sinh, hướng dẫn sinh viên thực hành, kiến tập, thực tập và tham gia các hoạt động ngoại khóa của trường;\r\n\r\n6. Tham gia việc biên soạn, hiệu chỉnh, cập nhật các bài giảng của ngành;\r\n\r\n7. Sinh hoạt học thuật;\r\n\r\n8. Các công việc khác theo sự phân công của Khoa.', '1.    Tốt nghiệp đại học, thạc sĩ các ngành Quản trị Du lịch, Quản trị Khách Sạn, Nhà Hàng\r\n\r\n2.    Có kinh nghiệm giảng dạy đại học và có kinh nghiệm làm việc lâu năm (ở vị trí ứng tuyển) tại các Nhà hàng, Khách sạn.\r\n\r\n3.    Có chứng chỉ nghiệp vụ sư phạm, có khả năng sử dụng Tiếng Anh tốt;\r\n\r\n4.    Có phẩm chất đạo đức chuẩn mực, không nói giọng địa phương;\r\n\r\n5.    Chứng chỉ nghiệp vụ sư phạm dành cho giảng viên giảng dạy đại học, cao đẳng;\r\n\r\n6.    Chứng chỉ ứng dụng công nghệ thông tin cơ bản hoặc tương đương;\r\n\r\n7.    Chứng chỉ ngoại ngữ bậc 3 (theo khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam) hoặc tương đương;', 'Bảo hiểm\r\nDu Lịch\r\nThưởng\r\nChăm sóc sức khỏe', 1, 0, '2020-12-09', NULL, 0, 0, 500, 5, 0, 0, 0, 0, 0, 0, 0, 0, 22, 30, 1),
@@ -161,7 +161,12 @@ INSERT INTO `ho_so_sv` (`id_ho_so`, `id_sv`, `tieu_de`, `trinh_do`, `noi_lam_vie
 (18, 86, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
 (19, 87, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
 (20, 88, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
-(21, 89, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL);
+(21, 89, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
+(22, 90, 'Hồ sơ thực tập', 0, 0, 'ákdkád', 'ád', 'ád', 'ád', 1, 2, 3, 2, '', 3, 2, 1, 3, '0', '2020-12-07'),
+(23, 91, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
+(24, 92, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
+(25, 93, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL),
+(26, 94, NULL, NULL, 0, NULL, NULL, NULL, NULL, 1, 1, 1, 1, NULL, 1, 1, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -250,7 +255,12 @@ INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt
 (13, 47, '0000-00-00', 'c', 42, 14, 3, NULL, 2, 'th này ngon nè', NULL),
 (15, 46, '2020-12-09', 'ĐÂSDAS', 42, 14, 3, '2020-12-06 03:11:50', 1, 'ngu như con bò', NULL),
 (16, 83, '2020-12-04', '', 53, 13, 3, '2020-12-04 03:21:23', NULL, NULL, NULL),
-(17, 45, '2020-12-06', 'abc', 60, 14, 1, '2020-12-07 01:22:22', 0, NULL, NULL);
+(17, 45, '2020-12-06', 'abc', 60, 14, 4, NULL, 0, NULL, NULL),
+(18, 90, '2020-12-07', 'Thích đi làm ở chỗ này', 59, 15, 4, NULL, 0, NULL, NULL),
+(19, 90, '2020-12-07', 'áđâsd', 60, 14, 4, NULL, 0, NULL, NULL),
+(20, 90, '2020-12-07', 'áđâsd', 42, 14, 3, '2020-12-07 10:20:53', 2, 'ádấd', NULL),
+(21, 45, '2020-12-07', 'áđâsđâsd', 59, 15, 4, NULL, 0, NULL, NULL),
+(22, 45, '2020-12-07', 'áđâsđá', 42, 14, 3, '2020-12-07 18:08:29', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -294,16 +304,21 @@ CREATE TABLE `sinh_vien` (
 --
 
 INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi_tinh`, `ngay_sinh`, `anh`, `sdt`, `dia_chi`, `trang_thai`) VALUES
-(45, 39, 'ps11111', 21, 'Nguyễn Ngọc Bảo', 1, '1995-04-30', 'avt-sv/45.jpg', '', 'Phường 26, Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam', 0),
+(45, 39, 'ps11111', 21, 'Nguyễn Ngọc Bảo', 1, '1997-09-25', 'avt-sv/45.png', '0123456789', 'Phường 26, Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam', 1),
 (46, 40, 'ps11112', 21, 'Phan Tấn Khải', 1, '1979-08-13', 'avt2.PNG', '0812749365', '395 Kinh Dương Vương, An Lạc, Bình Tân, Thành phố Hồ Chí Minh, Việt Nam', 1),
 (47, 41, 'ps11744', 21, 'Phạm Ngọc Hưng', 0, '1995-11-17', 'ps11744-man_dem.png', '0335884626', '201B Nguyễn Chí Thanh, Phường 12, Quận 5, Thành phố Hồ Chí Minh, Việt Nam', 1),
-(83, 105, 'ps11111', NULL, 'cao văn quá', 1, '2001-03-17', NULL, '0335884626', 'vô gia cư', 0),
-(84, 106, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
-(85, 107, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
-(86, 108, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
-(87, 109, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
-(88, 110, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
-(89, 111, NULL, NULL, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0);
+(83, 105, 'ps11111', 21, 'cao văn quá', 1, '2001-03-17', NULL, '0335884626', 'vô gia cư', 0),
+(84, 106, NULL, 30, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(85, 107, NULL, 28, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(86, 108, NULL, 24, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(87, 109, NULL, 31, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(88, 110, NULL, 31, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(89, 111, NULL, 35, 'Sinh viên', NULL, NULL, NULL, NULL, NULL, 0),
+(90, 113, 'ps11344', 28, 'Phan Văn Phán', 1, '1995-01-01', NULL, '', 'tphcm', 1),
+(91, 114, 'ps14215', 23, 'Nguyễn Văn D', NULL, NULL, NULL, NULL, NULL, 0),
+(92, 115, 'ps11447', 31, 'Lê Văn Được', NULL, NULL, NULL, NULL, NULL, 0),
+(93, 116, 'ps13524', 41, 'Nguyễn Hồ Khải Hoàng', NULL, NULL, NULL, NULL, NULL, 0),
+(94, 117, 'ps12453', 35, 'Bảo Kun', NULL, NULL, NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -312,13 +327,13 @@ INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi
 --
 
 CREATE TABLE `thong_bao` (
-  `id` int(11) NOT NULL,
-  `noi_dung` varchar(500) NOT NULL,
-  `id_nguoi_gui` int(11) NOT NULL,
-  `id_nguoi_nhan` int(11) NOT NULL,
-  `trang_thai` tinyint(1) NOT NULL,
-  `ngay_tao` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id_tb` int(11) NOT NULL,
+  `noi_dung` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `trang_thai` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 - chưa xem\r\n1 - đã xem',
+  `thoi_gian` datetime DEFAULT NULL,
+  `id_ng_gui` int(11) DEFAULT NULL COMMENT 'sử dụng id_user',
+  `id_ng_nhan` int(11) DEFAULT NULL COMMENT 'sử dụng id_user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -341,10 +356,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) VALUES
 (1, 'admin', 'admin', NULL, 2, 0),
-(39, 'bao@fpt.edu.vn', '123456', 'bao@fpt.edu.vn', 0, 1),
+(39, 'bao@fpt.edu.vn', 'sinhvien', 'bao@fpt.edu.vn', 0, 1),
 (40, 'khai@fpt.edu.vn', 'sinhvien', 'khai@fpt.edu.vn', 0, 0),
 (41, 'hung@fpt.edu.vn', 'sinhvien', 'hung@fpt.edu.vn', 0, 0),
-(44, 'doanhnghiep1@gmail.com', '2', 'doanhnghiep1@gmail.com', 1, 0),
+(44, 'doanhnghiep1@gmail.com', 'doanhnghiep', 'doanhnghiep1@gmail.com', 1, 0),
 (49, 'b', 'z', NULL, 1, 0),
 (51, 'd', 'z', NULL, 1, 0),
 (52, 'e', 'z', NULL, 1, 0),
@@ -360,7 +375,12 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) 
 (108, 'sinhvien4', '1', NULL, 0, 0),
 (109, 'sinhvien5', '1', NULL, 0, 0),
 (110, 'sinhvien6', '1', NULL, 0, 0),
-(111, 'sinhvien7', '1', NULL, 0, 0);
+(111, 'sinhvien7', '1', NULL, 0, 0),
+(113, 'hungaaa@gmail.com', '123a', 'hungaaa@gmail.com', 0, 1),
+(114, 'd@gmail.com', '123a', 'd@gmail.com', 0, 0),
+(115, 'dc@gmail.com', '123a', 'dc@gmail.com', 0, 0),
+(116, 'hoang@gmail.com', '123a', 'hoang@gmail.com', 0, 0),
+(117, 'thiaan@gmail.com', '123a', 'thiaan@gmail.com', 0, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -426,12 +446,6 @@ ALTER TABLE `sinh_vien`
   ADD KEY `id_user1` (`id_user`);
 
 --
--- Chỉ mục cho bảng `thong_bao`
---
-ALTER TABLE `thong_bao`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
@@ -457,7 +471,7 @@ ALTER TABLE `doanh_nghiep`
 -- AUTO_INCREMENT cho bảng `ho_so_sv`
 --
 ALTER TABLE `ho_so_sv`
-  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `nganh`
@@ -475,7 +489,7 @@ ALTER TABLE `nhom_nganh`
 -- AUTO_INCREMENT cho bảng `phieu_dk_in`
 --
 ALTER TABLE `phieu_dk_in`
-  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `phieu_dk_out`
@@ -487,13 +501,13 @@ ALTER TABLE `phieu_dk_out`
 -- AUTO_INCREMENT cho bảng `sinh_vien`
 --
 ALTER TABLE `sinh_vien`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

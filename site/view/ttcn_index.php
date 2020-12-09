@@ -105,7 +105,8 @@
                             <div class="input-group-prepend h-ttcn-input">
                                 <div class="input-group-text">Vị trí thực tập:</div>
                             </div>
-                            <input type="text" class="form-control" id="" readonly="readonly" value="<?php if ($ttsv['trang_thai'] == 0) echo 'Chưa có nơi thực tập' ?>">
+                            <!-- <input type="text" class="form-control" id="" readonly="readonly" value="<?php if ($ttsv['trang_thai'] == 0) echo 'Chưa có nơi thực tập' ?>"> -->
+                            <input type="text" class="form-control" id="" readonly="readonly" value="Thực tập sinh">
                         </div>
 
 

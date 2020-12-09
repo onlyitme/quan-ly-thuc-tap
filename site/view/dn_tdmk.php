@@ -16,19 +16,20 @@
                     <input id="file-upload" type="file" />
                 </div>
             </div>
-        </div>
-        <div class="h-tt-left-text">
-            <label>Loại tài khoản: <a href="#" class="text-primary">Doanh nghiệp</a> </label>
-            <label>Mã tài khoản: <span class="text-secondary">#328465</span> </label>
-            <br>
-            <label>Ngày tạo: <span class="text-secondary">20/11/2020</span></label>
-            <!-- <span class="h-social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-reddit-square"></i></a>
+            <div class="h-tt-left-text">
+                <label>Loại tài khoản: <a href="#" class="text-primary">Doanh nghiệp</a> </label>
+                <label>Mã tài khoản: <span class="text-secondary">#328465</span> </label>
+                <br>
+                <label>Ngày tạo: <span class="text-secondary">20/11/2020</span></label>
+                <!-- <span class="h-social">
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-reddit-square"></i></a>
                         <a href="#"><i class="fab fa-twitter-square"></i></a>
                         <a href="#"><i class="fab fa-github-square"></i></a>
                     </span> -->
+            </div>       
         </div>
+       
     </div>
 </div>
 <form method="post" action="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=doimk_">
