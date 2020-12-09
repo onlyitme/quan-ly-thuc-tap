@@ -17,13 +17,17 @@ if (isset($_POST['bttn'])) {
         $pass = $sheetData[$row]['B'];
         $ho_ten = $sheetData[$row]['C'];
         $mssv = $sheetData[$row]['D'];
+        $id_nganh =$sheetData[$row]['E'];
         $email = $user;
         $chuc_vu = 0;
 
         addNewUserE($user, $pass, $email, $chuc_vu);
         $user_full = seach_id_user($user);
         $id_user = $user_full['id_user'];
-        addNewSinhvienforexecl($id_user, $ho_ten, $mssv);
+        
+        $id_nganh=tim_id_nganh($id_nganh);
+        $id_nganh= $id_nganh['id_nganh'];
+        addNewSinhvienforexecl($id_user, $ho_ten, $mssv,$id_nganh);
         $sv_full = seach_id_sv($id_user);
         $id_sv = $sv_full['id_sv'];
         addNewhosoforexecl($id_sv);
