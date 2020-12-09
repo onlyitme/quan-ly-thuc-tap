@@ -1,17 +1,13 @@
 <?php
 require_once "views/Classes/PHPExcel.php";
 require_once "models/excel.php";
-
 if (isset($_POST['bttn'])) {
     $file = $_FILES['file']['tmp_name'];
     $objReader = PHPExcel_IOFactory::createReaderForFile($file);
     $objReader -> setLoadSheetsOnly('Sheet1');
-
     $objExcel = $objReader->load($file);
     $sheetData = $objExcel->getActiveSheet()->toArray('null', true, true, true);
-
     $highRow = $objExcel->setActiveSheetIndex()->getHighestRow();
-
     for ($row = 2; $row <= $highRow; $row++) {
         $user = $sheetData[$row]['A'];
         $pass = $sheetData[$row]['B'];
@@ -19,7 +15,6 @@ if (isset($_POST['bttn'])) {
         $mssv = $sheetData[$row]['D'];
         $email = $user;
         $chuc_vu = 0;
-
         addNewUserE($user, $pass, $email, $chuc_vu);
         $user_full = seach_id_user($user);
         $id_user = $user_full['id_user'];
@@ -30,7 +25,6 @@ if (isset($_POST['bttn'])) {
     }
     echo "<script type='text/javascript'>alert('đã thêm thành công');</script>";
 }
-
 if (isset($_POST['btnExport'])) {
     $fileType = 'Excel2007';
     $objPHPExcel = PHPExcel_IOFactory::load("product_import.xlsx");
@@ -57,11 +51,9 @@ if (isset($_POST['btnExport'])) {
                                     ;
         $i++;
     }
-    
     $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
     $fileName = 'product_import.xlsx';
     $objWriter->save($fileName);
-    
     header('Content-Disposition: attachment; filename="'. $fileName .'"');
     header('Content-Type:application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
     header('Content-Length:'.filesize($fileName));
@@ -71,7 +63,6 @@ if (isset($_POST['btnExport'])) {
     readfile($fileName);
     return;
 }
-
 ?>
 <div class="row">
     <div class="alert alert-primary w-100 p-3" role="alert">
@@ -85,16 +76,11 @@ if (isset($_POST['btnExport'])) {
     </div>
 </div>
 <div class="mb-3">
-
 <div class="row mx-1    ">
-
-
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
         <i class="fas fa-plus    "></i> File Exel
     </button>
- 
-
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         <i class="fas fa-plus"></i> Thêm sinh viên
     </button>
@@ -104,15 +90,8 @@ if (isset($_POST['btnExport'])) {
          Xuất Thành file Exel
     </button>
 </form>
-
 </div>
-  
-    
-   
-
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
-
-
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -127,10 +106,7 @@ if (isset($_POST['btnExport'])) {
                     <p>Mẫu file exel</h1>
                         <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
                         <form method="POST" class=" shadow rounded mt-5" action="index.php?ctrl=sinh_vien" enctype="multipart/form-data">
-
                             <input type="file" name="file">
-
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
@@ -140,7 +116,6 @@ if (isset($_POST['btnExport'])) {
             </div>
         </div>
     </div>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -210,11 +185,6 @@ if (isset($_POST['btnExport'])) {
                                     <input type="radio" id="gioitinh1" name="gioi_tinh" class="custom-control-input">
                                     <label class="custom-control-label" for="gioitinh1"> Nữ</label>
                                 </div>
-
-
-
-
-
                                 <!-- <label for="">Giới tính:</label><br>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gioi_tinh" id="gioi_tinh1"
@@ -259,9 +229,7 @@ if (isset($_POST['btnExport'])) {
             </div>
         </div>
     </div>
-
     <!-- dropdown  -->
-
 </div>
 <div class="alert alert-dark mb-0 border-bottom-0" role="alert">
     <div class="d-flex justify-content-between">
@@ -369,7 +337,6 @@ if (isset($_POST['btnExport'])) {
         </tr>
     <?php } ?>
 </table>
-
 <script>
     $("#checkall").change(function() {
         $(".checkitem").prop("checked", $(this).prop("checked"))

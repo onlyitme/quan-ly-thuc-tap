@@ -1,5 +1,5 @@
-
     <?php
+    ob_start();
     require_once "models/sinh_vien.php";
     require_once "models/excel.php"; //nạp model để có các hàm tương tác db
     $act = "index"; //chức năng mặc định
