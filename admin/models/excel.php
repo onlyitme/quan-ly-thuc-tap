@@ -25,4 +25,12 @@
     values('$id_sv')";
         execute($sql);
     }
+function  xuat_sv(){
+    $sql="SELECT ho_ten,ten_nganh,ten_dn,ket_qua FROM sinh_vien inner join nganh on sinh_vien.id_nganh=nganh.id_nganh
+     inner join phieu_dk_in on sinh_vien.id_sv=phieu_dk_in.id_sv
+     inner join doanh_nghiep on phieu_dk_in.id_dn=doanh_nghiep.id_dn
+     where phieu_dk_in.trang_thai=3
+     ";
+    return query($sql);
+}
     ?>

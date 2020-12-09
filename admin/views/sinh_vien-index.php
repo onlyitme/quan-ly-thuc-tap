@@ -5,7 +5,7 @@ require_once "models/excel.php";
 if (isset($_POST['bttn'])) {
     $file = $_FILES['file']['tmp_name'];
     $objReader = PHPExcel_IOFactory::createReaderForFile($file);
-    $objReader->setLoadSheetsOnly('Sheet1');
+    $objReader -> setLoadSheetsOnly('Sheet1');
 
     $objExcel = $objReader->load($file);
     $sheetData = $objExcel->getActiveSheet()->toArray('null', true, true, true);
@@ -30,6 +30,48 @@ if (isset($_POST['bttn'])) {
     }
     echo "<script type='text/javascript'>alert('đã thêm thành công');</script>";
 }
+
+if (isset($_POST['btnExport'])) {
+    $fileType = 'Excel2007';
+    $objPHPExcel = PHPExcel_IOFactory::load("product_import.xlsx");
+    $array_data =  xuat_sv();
+    
+    // Thiết lập tên các cột dữ liệu
+    $objPHPExcel->setActiveSheetIndex(0)
+                                ->setCellValue('A1', "STT")
+                                ->setCellValue('B1', "họ tên")
+                                ->setCellValue('C1', "Chuyên Ngành")
+                                ->setCellValue('D1', "Doanh Nghiệp")
+                                ->setCellValue('E1', "Kết quả");
+    
+    // Lặp qua các dòng dữ liệu trong mảng $array_data và tiến hành ghi dữ liệu vào file excel
+    $i = 2;
+    foreach ($array_data as $value) {
+        $k=$i-1;
+        $objPHPExcel->setActiveSheetIndex(0)
+                                    ->setCellValue("A$i", "$k")
+                                    ->setCellValue("B$i", $value['ho_ten'])
+                                    ->setCellValue("C$i", $value['ten_nganh'])
+                                    ->setCellValue("D$i", $value['ten_dn'])
+                                    ->setCellValue("E$i", $value['ket_qua'])
+                                    ;
+        $i++;
+    }
+    
+    $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+    $fileName = 'product_import.xlsx';
+    $objWriter->save($fileName);
+    
+    header('Content-Disposition: attachment; filename="'. $fileName .'"');
+    header('Content-Type:application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
+    header('Content-Length:'.filesize($fileName));
+    header('Content-Transfer-Encoding:binary');
+    header('Cache-Control:must:-revalidate');
+    header('Pragma: no-cache');
+    readfile($fileName);
+    return;
+}
+
 ?>
 <div class="row">
     <div class="alert alert-primary w-100 p-3" role="alert">
@@ -44,15 +86,29 @@ if (isset($_POST['bttn'])) {
 </div>
 <div class="mb-3">
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
+<div class="row mx-1    ">
+
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
         <i class="fas fa-plus    "></i> File Exel
     </button>
+ 
+
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
         <i class="fas fa-plus"></i> Thêm sinh viên
     </button>
+    <form action="index.php?ctrl=sinh_vien" method="post">
     <!-- Button trigger modal -->
-    <br>
+     <button type="submit" name="btnExport" class="btn btn-primary mx-3" >
+         Xuất Thành file Exel
+    </button>
+</form>
+
+</div>
+  
+    
+   
 
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
 
