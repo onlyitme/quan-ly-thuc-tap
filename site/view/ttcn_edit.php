@@ -37,9 +37,9 @@
                                 <label class="sr-only" for=""></label>
                                 <div class="input-group mr-sm-2">
                                     <div class="input-group-prepend h-tttk-input">
-                                        <div class="col-form-label">Mật khẩu:</div>
+                                        <label class="col-form-label">Chuyên Ngành:</label>
                                     </div>
-                                    <input type="password" class="form-control col-md-3 border-0" readonly id="" value="<?= $tttk['pass'] ?>">
+                                    <input type="text" class="form-control col-md-3 border-0" readonly id="" value="<?php $nganh=checknganhbyid($ttsv['id_nganh']); echo $nganh['ten_nganh']; ?>">
                                 </div>
 
                                 <label class="sr-only" for=""></label>

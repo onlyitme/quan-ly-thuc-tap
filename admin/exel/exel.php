@@ -60,6 +60,32 @@ if (isset($_POST['btnExport'])) {
     header('Cache-Control:must:-revalidate');
     header('Pragma: no-cache');
     readfile($fileName);
-    return;
+   
+
+    $fileType = 'Excel2007';
+    $objPHPExcel = PHPExcel_IOFactory::load("product_import.xlsx");
+     $array_data = xuat_sv();
+    
+    // Thiết lập tên các cột dữ liệu
+    $objPHPExcel->setActiveSheetIndex(0)
+                                ->setCellValue('A1', "")
+                                ->setCellValue('B1', "")
+                                ->setCellValue('C1', "")
+                                ->setCellValue('D1', "")
+                                ->setCellValue('E1', "");
+    $i = 2;
+    foreach ($array_data as $value) {
+        $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue("A$i", "")
+                    ->setCellValue("B$i", "")
+                    ->setCellValue("C$i", "")
+                    ->setCellValue("D$i", "")
+                    ->setCellValue("E$i", "");
+                
+        $i++;
+    }
+    $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+    $fileName = 'product_import.xlsx';
+    $objWriter->save($fileName);
 }
 ?>
