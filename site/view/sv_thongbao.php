@@ -1,4 +1,4 @@
-<div class="h-big-box-thongbao mt-3">
+<div class="h-big-box-thongbao shadow p-3 rounded">
     <div class="h-box-thongbao float-left">
         <h2 class="text-dark">Thông báo mới nhất <i class="far fa-comment-dots"></i></h2>
 

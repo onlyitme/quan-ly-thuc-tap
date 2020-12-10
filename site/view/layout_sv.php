@@ -3,7 +3,7 @@
         <div class="col-3 px-3">
             <div class="sinhvien-menu shadow py-3 rounded">
                 <ul class="h-sidebar-navigation mt-0 px-3 pb-3 ">
-                    <li  class="h-header rounded">HỒ SƠ CỦA BẠN</li>
+                    <li class="h-header rounded">HỒ SƠ CỦA BẠN</li>
                     <li>
                         <a href="index.php?ctrl=sinh_vien">
                             <i class="far fa-user"></i>
@@ -22,7 +22,7 @@
                             Đổi mật khẩu
                         </a>
                     </li>
-                    <li  class="h-header rounded">VIỆC LÀM &amp; HỖ TRỢ</li>
+                    <li class="h-header rounded">VIỆC LÀM &amp; HỖ TRỢ</li>
                     <li>
                         <a href="index.php?ctrl=sinh_vien&act=danh_sach_don">
                             <i class="far fa-clipboard-list    "></i>
@@ -42,16 +42,16 @@
                         </a>
                     </li>
                     <li>
+                        <a href="?ctrl=sinh_vien&act=sv_thongbao">
+                            <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
+                        </a>
+                    </li>
+                    <li>
                         <a href="?ctrl=home&act=logout">
                             <i class="far fa-sign-out-alt "></i>
                             Đăng xuất
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="<?=SITE_URL?>/?ctrl=home&act=logout">
-                            <i class="far fa-sign-out-alt" aria-hidden="true"></i> Đăng xuất
-                        </a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -62,6 +62,3 @@
 
     </div>
 </div>
-
-
-        
