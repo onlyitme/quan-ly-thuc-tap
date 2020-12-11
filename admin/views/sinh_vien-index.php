@@ -2,7 +2,7 @@
 if (isset($_POST['bttn'])) {
     $file = $_FILES['file']['tmp_name'];
     $objReader = PHPExcel_IOFactory::createReaderForFile($file);
-    $objReader -> setLoadSheetsOnly('Sheet1');
+    $objReader->setLoadSheetsOnly('Sheet1');
     $objExcel = $objReader->load($file);
     $sheetData = $objExcel->getActiveSheet()->toArray('null', true, true, true);
     $highRow = $objExcel->setActiveSheetIndex()->getHighestRow();
@@ -11,16 +11,16 @@ if (isset($_POST['bttn'])) {
         $pass = $sheetData[$row]['B'];
         $ho_ten = $sheetData[$row]['C'];
         $mssv = $sheetData[$row]['D'];
-        $id_nganh =$sheetData[$row]['E'];
+        $id_nganh = $sheetData[$row]['E'];
         $email = $user;
         $chuc_vu = 0;
         addNewUserE($user, $pass, $email, $chuc_vu);
         $user_full = seach_id_user($user);
         $id_user = $user_full['id_user'];
-        
-        $id_nganh=tim_id_nganh($id_nganh);
-        $id_nganh= $id_nganh['id_nganh'];
-        addNewSinhvienforexecl($id_user, $ho_ten, $mssv,$id_nganh);
+
+        $id_nganh = tim_id_nganh($id_nganh);
+        $id_nganh = $id_nganh['id_nganh'];
+        addNewSinhvienforexecl($id_user, $ho_ten, $mssv, $id_nganh);
         $sv_full = seach_id_sv($id_user);
         $id_sv = $sv_full['id_sv'];
         addNewhosoforexecl($id_sv);
@@ -31,33 +31,32 @@ if (isset($_POST['btnExport'])) {
     $fileType = 'Excel2007';
     $objPHPExcel = PHPExcel_IOFactory::load("product_import.xlsx");
     $array_data =  xuat_sv();
-    
+
     // Thiết lập tên các cột dữ liệu
     $objPHPExcel->setActiveSheetIndex(0)
-                                ->setCellValue('A1', "STT")
-                                ->setCellValue('B1', "họ tên")
-                                ->setCellValue('C1', "Chuyên Ngành")
-                                ->setCellValue('D1', "Doanh Nghiệp")
-                                ->setCellValue('E1', "Kết quả");
-    
+        ->setCellValue('A1', "STT")
+        ->setCellValue('B1', "họ tên")
+        ->setCellValue('C1', "Chuyên Ngành")
+        ->setCellValue('D1', "Doanh Nghiệp")
+        ->setCellValue('E1', "Kết quả");
+
     // Lặp qua các dòng dữ liệu trong mảng $array_data và tiến hành ghi dữ liệu vào file excel
     $i = 2;
     foreach ($array_data as $value) {
-        $k=$i-1;
+        $k = $i - 1;
         $objPHPExcel->setActiveSheetIndex(0)
-                                    ->setCellValue("A$i", "$k")
-                                    ->setCellValue("B$i", $value['ho_ten'])
-                                    ->setCellValue("C$i", $value['ten_nganh'])
-                                    ->setCellValue("D$i", $value['ten_dn'])
-                                    ->setCellValue("E$i", $value['ket_qua'])
-                                    ;
+            ->setCellValue("A$i", "$k")
+            ->setCellValue("B$i", $value['ho_ten'])
+            ->setCellValue("C$i", $value['ten_nganh'])
+            ->setCellValue("D$i", $value['ten_dn'])
+            ->setCellValue("E$i", $value['ket_qua']);
         $i++;
     }
-    
+
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, $fileType);
     $fileName = 'product_import.xlsx';
     $objWriter->save($fileName);
-    header('Content-Disposition: attachment; filename="'. $fileName .'"');
+    header('Content-Disposition: attachment; filename="' . $fileName . '"');
     header('Content-Type: application/vnd.openxmlformatsofficedocument.spreadsheetml.sheet');
     header('Content-Length: ' . filesize($fileName));
     header('Content-Transfer-Encoding: binary');
@@ -79,21 +78,21 @@ if (isset($_POST['btnExport'])) {
     </div>
 </div>
 <div class="mb-3">
-<div class="row mx-1    ">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
-        <i class="fas fa-plus    "></i> File Exel
-    </button>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-        <i class="fas fa-plus"></i> Thêm sinh viên
-    </button>
-    <form action="exel/exel.php" method="post">
-    <!-- Button trigger modal -->
-     <button type="submit" name="btnExport" class="btn btn-primary mx-3" >
-         Xuất Thành file Exel
-    </button>
-</form>
-</div>
+    <div class="row mx-1    ">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
+            <i class="fas fa-plus    "></i> File Exel
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            <i class="fas fa-plus"></i> Thêm sinh viên
+        </button>
+        <form action="exel/exel.php" method="post">
+            <!-- Button trigger modal -->
+            <button type="submit" name="btnExport" class="btn btn-primary mx-3">
+                Xuất Thành file Exel
+            </button>
+        </form>
+    </div>
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -303,7 +302,18 @@ if (isset($_POST['btnExport'])) {
 
             </td>
             <td class="py-5">
-                <?= ($row['trang_thai'] == 1) ? "Đang thực tập" : "Chưa thực tập"; ?>
+                <?php $phieu = getUngtuyenByID($row['id_sv']); ?>
+                <?php if (isset($phieu['id_phieu'])) { ?>
+                    <?php if ($phieu['trang_thai'] == 3) { ?>
+                        <?php if (isset($phieu['id_dn'])) { ?>
+                            <?php $dn = getDoanhnghiepByID($phieu['id_dn']); ?>
+                            <b>Đang thực tập</b><br>
+                            <?= $dn['ten_dn'] ?>
+                        <?php } ?>
+                    <?php } ?>
+                <?php } else { ?>
+                    <b>Chưa có nơi thực tập</b>
+                <?php } ?>
             </td>
             <td class="py-5">
                 <?= $row['mssv'] ?>
@@ -339,6 +349,7 @@ if (isset($_POST['btnExport'])) {
             </td>
         </tr>
     <?php } ?>
+
 </table>
 <script>
     $("#checkall").change(function() {

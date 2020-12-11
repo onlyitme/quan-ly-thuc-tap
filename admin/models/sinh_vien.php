@@ -10,6 +10,16 @@
         $sql = "SELECT * from sinh_vien";
         return query($sql);
     }
+    function getAllDoanhnghiep()
+    {
+        $sql = "SELECT * from doanh_nghiep";
+        return query($sql);
+    }
+    function getDoanhnghiepByID($id_dn)
+    {
+        $sql = "SELECT * from doanh_nghiep where id_dn='$id_dn'";
+        return queryOne($sql);
+    }
     function getAllSinhvien_dacott()
     {
         $sql = "SELECT * from sinh_vien WHERE trang_thai='1'";
@@ -34,6 +44,11 @@
     function getSinhvienByID($id_sv)
     {
         $sql = "SELECT * from sinh_vien where id_sv='$id_sv'";
+        return queryOne($sql);
+    }
+    function getUngtuyenByID($id_sv)
+    {
+        $sql = "SELECT * from phieu_dk_in where id_sv='$id_sv'";
         return queryOne($sql);
     }
     function  updateSinhvien($id_sv, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
