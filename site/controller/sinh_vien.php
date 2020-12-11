@@ -95,7 +95,7 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
     case "xac_thuc_sv":
       xacthuc_tt_dt($_POST['id']); 
       $tt_phieu_dk= checkphieudkinbyid($_POST['id']);
-
+      
       $tt_dang_tuyen= checkdangtuyenbyid($tt_phieu_dk['id_dt']);
       $dem =  $tt_dang_tuyen['sl_sv_dk'];
       $dem++;

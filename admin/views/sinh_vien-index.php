@@ -299,7 +299,6 @@ if (isset($_POST['btnExport'])) {
             </td>
             <td class="py-5">
                 <?= $row['sdt'] ?>
-
             </td>
             <td class="py-5">
                 <?php $phieu = getUngtuyenByID($row['id_sv']); ?>
@@ -310,6 +309,8 @@ if (isset($_POST['btnExport'])) {
                             <b>Đang thực tập</b><br>
                             <?= $dn['ten_dn'] ?>
                         <?php } ?>
+                    <?php } else { ?>
+                        <b>Chưa có nơi thực tập</b>
                     <?php } ?>
                 <?php } else { ?>
                     <b>Chưa có nơi thực tập</b>
