@@ -89,7 +89,7 @@ if (isset($_POST['btnExport'])) {
         <form action="exel/exel.php" method="post">
             <!-- Button trigger modal -->
             <button type="submit" name="btnExport" class="btn btn-primary mx-3">
-                Xuất Thành file Exel sv xog tt
+                Xuất Thành file Exel sv có nơi tt
             </button>
         </form>
         <form action="exel/exel.php" method="post">
