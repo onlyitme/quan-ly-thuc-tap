@@ -259,7 +259,7 @@ if (isset($_POST['btnExport'])) {
                         <strong><i class="fas fa-filter    "></i> Lọc </strong>
                     </div>
                     <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien">Tất cả</a></li>
-                    <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=dacott">Đã có nơi
+                    <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=dacott">Đang
                             thực tập</a></li>
                     <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=chuacott">Chưa có
                             nơi thực tập</a></li>
