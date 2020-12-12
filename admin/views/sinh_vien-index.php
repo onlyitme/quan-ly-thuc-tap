@@ -89,9 +89,15 @@ if (isset($_POST['btnExport'])) {
         <form action="exel/exel.php" method="post">
             <!-- Button trigger modal -->
             <button type="submit" name="btnExport" class="btn btn-primary mx-3">
-                Xuất Thành file Exel
+                Xuất Thành file Exel sv xog tt
             </button>
         </form>
+        <form action="exel/exel.php" method="post">
+            <button type="submit" name="btnExport1" class="btn btn-primary mx-3">
+                Xuất Thành file Exel chưa có nơi tt
+            </button>
+        </form>
+       
     </div>
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
     <!-- Modal -->
