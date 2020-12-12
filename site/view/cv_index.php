@@ -65,7 +65,7 @@
                 <i style="color: black;" class="fa fa-pencil ml-2"></i>
                 <span class=" text-gray-75 font400 ml-2 mr-2"> Chỉnh sửa</span>
             </a> -->
-            <a class="fw-lighter" href="index.php?ctrl=sinh_vien&act=cv_edit&trang=1">
+            <a class="fw-lighter" href="index.php?ctrl=sinh_vien&act=cv_edit&trang=2">
                 <button class="btn btn-dark buttoncapnhat "><i class="fa fa-pencil"></i></button>
             </a>
         </div>
@@ -107,7 +107,7 @@
                 <i style="color: black;" class="fa fa-pencil ml-2"></i>
                 <span class=" text-gray-75 font400 ml-2 mr-2"> Chỉnh sửa</span>
             </a> -->
-            <a class="fw-lighter" href="index.php?ctrl=sinh_vien&act=cv_edit&trang=1">
+            <a class="fw-lighter" href="index.php?ctrl=sinh_vien&act=cv_edit&trang=3">
                 <button class="btn btn-dark buttoncapnhat "><i class="fa fa-pencil"></i></button>
             </a>
         </div>
