@@ -26,6 +26,11 @@ function updatematkhau($mat_khau)
     $sql = "UPDATE user SET pass='$mat_khau' where id_user= '$_SESSION[sid]'";
     execute($sql);
 }
+function updateSinhvien_($id_sv)
+{
+    $sql = "UPDATE sinh_vien SET trang_thai='1' where id_sv= '$id_sv'";
+    execute($sql);
+}
 function addNewThongbao_($noi_dung, $thoi_gian, $id_ng_gui, $id_ng_nhan)
 {
     $sql = "INSERT INTO thong_bao (noi_dung,thoi_gian,id_ng_gui,id_ng_nhan) 

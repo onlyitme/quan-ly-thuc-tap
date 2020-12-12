@@ -30,6 +30,11 @@
         $sql = "SELECT * from sinh_vien  WHERE trang_thai='0'";
         return query($sql);
     }
+    function getAllSinhvien_dahoanthanh()
+    {
+        $sql = "SELECT * from sinh_vien  WHERE trang_thai='2'";
+        return query($sql);
+    }
     function addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh)
     {
         $sql = "INSERT INTO sinh_vien (id_user,mssv,id_nganh,ho_ten,gioi_tinh,sdt,trang_thai,anh) 

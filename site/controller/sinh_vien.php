@@ -105,6 +105,7 @@ if (isset($_SESSION['sname']) &&  $_SESSION['schuc_vu'] == 0) {
       $noi_dung = "Sinh viên $ten đã chấp nhận làm nhân viên của bạn ";
       addNewThongbao_($noi_dung, $thoi_gian, $id_ng_gui,$id_ng_nhan);
       them_sl_sv_dk($dem, $id_dt);
+      updateSinhvien_($sv['id_sv']);
       capnhaptrangthaisv();
       huy_dk_dt();
       exit();

@@ -257,6 +257,7 @@ if (isset($_POST['btnExport'])) {
                             thực tập</a></li>
                     <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=chuacott">Chưa có
                             nơi thực tập</a></li>
+                    <li><a class="dropdown-item text-light" href="<?= ADMIN_URL ?>/?ctrl=sinh_vien&act=dahoanthanh">Đã hoàn thành thực tập</a></li>
                 </ul>
             </div>
         </div>
@@ -302,6 +303,19 @@ if (isset($_POST['btnExport'])) {
             </td>
             <td class="py-5">
                 <?php $phieu = getUngtuyenByID($row['id_sv']); ?>
+                <?php if ($row['trang_thai'] == 0) { ?>
+                    <b>Chưa có nơi thực tập</b>
+                <?php } elseif ($row['trang_thai'] == 1) { ?>
+                    <b>Đang thực tập</b><br>
+                    <?php $dn = getDoanhnghiepByID($phieu['id_dn']); ?>
+                    <?= $dn['ten_dn'] ?>
+                <?php } else { ?>
+                    <b>Đã hoàn thành thực tập</b><br>
+                    <?php $dn = getDoanhnghiepByID($phieu['id_dn']); ?>
+                    <?= $dn['ten_dn'] ?>
+                <?php } ?>
+
+                <!-- <?php $phieu = getUngtuyenByID($row['id_sv']); ?>
                 <?php if (isset($phieu['id_phieu'])) { ?>
                     <?php if ($phieu['trang_thai'] == 3) { ?>
                         <?php if (isset($phieu['id_dn'])) { ?>
@@ -314,7 +328,7 @@ if (isset($_POST['btnExport'])) {
                     <?php } ?>
                 <?php } else { ?>
                     <b>Chưa có nơi thực tập</b>
-                <?php } ?>
+                <?php } ?> -->
             </td>
             <td class="py-5">
                 <?= $row['mssv'] ?>

@@ -10,27 +10,28 @@
         case "index":
             /* Chức năng hiện trang chủ
           1. nạp view hiện trên trang chủ */
-          if(isset($_POST['arr'])){
-            var_dump($_POST['arr']);
-            foreach($_POST['arr'] as $id_user){
-                deleteUser($id_user);
+            if (isset($_POST['arr'])) {
+                var_dump($_POST['arr']);
+                foreach ($_POST['arr'] as $id_user) {
+                    deleteUser($id_user);
+                }
             }
-        }
             $dm = getAllSinhvien();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
         case "dacott":
-            /* Chức năng hiện trang chủ
-              1. nạp view hiện trên trang chủ */
             $dm = getAllSinhvien_dacott();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
         case "chuacott":
-            /* Chức năng hiện trang chủ
-                  1. nạp view hiện trên trang chủ */
             $dm = getAllSinhvien_chuacott();
+            $view = "views/sinh_vien-index.php";
+            require_once "views/layout.php";
+            break;
+        case "dahoanthanh":
+            $dm = getAllSinhvien_dahoanthanh();
             $view = "views/sinh_vien-index.php";
             require_once "views/layout.php";
             break;
@@ -84,7 +85,7 @@
             move_uploaded_file($_FILES["anh"]["tmp_name"], "images/$anh");
             addNewSinhvien($id_user, $mssv, $id_nganh, $ho_ten, $gioi_tinh, $sdt, $trang_thai, $anh);
             $sv_full = seach_id_sv($id_user);
-            $id_sv=$sv_full['id_sv'];
+            $id_sv = $sv_full['id_sv'];
             addNewhosoforexecl($id_sv);
             $thongbao = "Thêm sinh viên thành công";
             $view = "views/thongbao.php";
