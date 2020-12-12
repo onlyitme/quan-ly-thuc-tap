@@ -161,6 +161,7 @@ switch ($act) {
         $id_phieu = $_GET["id_phieu"];
         settype($id_phieu, "int");
         $thoi_gian_duyet = date('Y-m-d H:i:s');
+        $sv = getUngtuyenByID($id_phieu);
         updatePhieu($id_phieu, $thoi_gian_duyet);
         $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
         $id_ng_gui = $dn['id_dn'];
@@ -171,6 +172,13 @@ switch ($act) {
         $noi_dung = "Doanh nghiệp $ten_dn đã chấp nhận đơn xin thực tập của bạn ";
         addNewThongbao($noi_dung, $thoi_gian, $id_ng_gui, $id_ng_nhan);
         $id_user = $_SESSION['sid'];
+        $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
+        $id_ng_gui=$dn['id_dn'];
+        $id_ng_nhan = $sv['id_sv'];
+        $thoi_gian=date('Y-m-d H:i:s');
+        $ten_dn=$dn['ten_dn'];
+        $noi_dung="Đơn xin thực tập của bạn đã được $ten_dn chấp nhận ";
+        addNewThongbao($noi_dung, $thoi_gian,$id_ng_gui, $id_ng_nhan);
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";
         break;
@@ -230,9 +238,10 @@ switch ($act) {
         $ket_qua = $_POST['h-danhgia'];
         $danh_gia = $_POST['danh_gia'];
         $id_phieu = $_GET['id_phieu'];
-
         danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu);
         $id_user = $_SESSION['sid'];
+        $ut=getUngtuyenByID($id_phieu);
+        updateSinhvienTT($ut['id_sv'],$ket_qua);
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_qlns.php";
         break;
