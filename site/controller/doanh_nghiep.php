@@ -162,6 +162,14 @@ switch ($act) {
         settype($id_phieu, "int");
         $thoi_gian_duyet = date('Y-m-d H:i:s');
         updatePhieu($id_phieu, $thoi_gian_duyet);
+        $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
+        $id_ng_gui = $dn['id_dn'];
+        $ut=getUngtuyenByID($id_phieu);
+        $id_ng_nhan =$ut['id_sv'];
+        $thoi_gian = date('Y-m-d H:i:s');
+        $ten_dn = $dn['ten_dn'];
+        $noi_dung = "Doanh nghiệp $ten_dn đã chấp nhận đơn xin thực tập của bạn ";
+        addNewThongbao($noi_dung, $thoi_gian, $id_ng_gui, $id_ng_nhan);
         $id_user = $_SESSION['sid'];
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_dshs.php";
@@ -249,6 +257,7 @@ switch ($act) {
         break;
         exit();
     case 'thongbao':
+        $ds = getAllThongbao_($_SESSION['sid_dn']);
         $view_dn = "view/dn_thongbao.php";
         break;
 }

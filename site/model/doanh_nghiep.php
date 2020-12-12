@@ -5,6 +5,16 @@
         $sql = "SELECT * from user";
         return query($sql);
     }
+    function getSinhvienByID($id_sv)
+    {
+        $sql = "SELECT * from sinh_vien where id_sv='$id_sv'";
+        return queryOne($sql);
+    }
+    function getUngtuyenByID($id_phieu)
+    {
+        $sql = "SELECT * from phieu_dk_in where id_phieu='$id_phieu'";
+        return queryOne($sql);
+    }
     function getAllDangtuyen()
     {
         $sql = "SELECT * from dang_tuyen";
@@ -15,9 +25,15 @@
         $sql = "SELECT * from nganh";
         return query($sql);
     }
+
     function getAllSinhvien()
     {
         $sql = "SELECT * from sinh_vien";
+        return query($sql);
+    }
+    function getAllThongbao_($id_ng_nhan)
+    {
+        $sql = "SELECT * from thong_bao WHERE id_ng_nhan='$id_ng_nhan'";
         return query($sql);
     }
     function getAllSinhvien_()
@@ -67,6 +83,12 @@
         values('$user','$pass','$email','$chuc_vu')";
         execute($sql);
     }
+    function addNewThongbao($noi_dung, $thoi_gian, $id_ng_gui, $id_ng_nhan)
+    {
+        $sql = "INSERT INTO thong_bao (noi_dung,thoi_gian,id_ng_gui,id_ng_nhan) 
+        values('$noi_dung','$thoi_gian',' $id_ng_gui','$id_ng_nhan')";
+        execute($sql);
+    }
     function getDoanhnghiepByID($id_dn)
     {
         $sql = "SELECT * from doanh_nghiep where id_dn='$id_dn'";
@@ -87,6 +109,16 @@
     {
         try {
             $sql = "UPDATE phieu_dk_in SET trang_thai='1',thoi_gian_duyet='$thoi_gian_duyet' WHERE id_phieu='$id_phieu'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function updateSinhvienTT($id_sv,$ket_qua)
+    {
+        try {
+            $sql = "UPDATE sinh_vien SET trang_thai='$ket_qua' WHERE id_sv='$id_sv'";
             execute($sql);
         } catch (Exception  $e) {
             print_r($e->errorInfo);
