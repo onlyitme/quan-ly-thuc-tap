@@ -175,6 +175,9 @@ if(isset( $_SESSION['sname'])&&  $_SESSION['schuc_vu'] == 0){
     case 'sv_thongbao':
         $view_sv = "view/sv_thongbao.php";
     break;
+    case 'sv_vlut':
+        $view_sv = "view/sv_vlut.php";
+    break;
   }
   $view="view/layout_sv.php";
   require_once "view/layout.php";

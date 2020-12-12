@@ -1,6 +1,6 @@
 <div class="h-big-box-thongbao shadow p-3 rounded">
     <div class="h-box-thongbao float-left">
-        <h2 class="text-warning ">Thông báo mới nhất <i class="far fa-comment-dots"></i></h2>
+        <h3 class="text-warning text-uppercase">Thông báo mới nhất <i class="far fa-comment-dots"></i></h3>
 
         
         <!-- box chưa xem  -->

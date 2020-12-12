@@ -36,7 +36,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="index.php?ctrl=sinh_vien&act=sv_vlut">
                             <i class="far fa-file-powerpoint    "></i>
                             Việc làm ứng tuyển
                         </a>
