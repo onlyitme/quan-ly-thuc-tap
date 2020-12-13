@@ -2010,10 +2010,9 @@
         margin: 0 auto;
         background: #fff;
     }
-    
-    #sinhvien .h-ttcn-center .input-group-text {
-        /* background: #fff; */
-    }
+    /* #sinhvien .h-ttcn-center .input-group-text {
+        background: #fff;
+    } */
     
     #sinhvien .h-box-ttsv,
     #sinhvien .h-ttcn .form-control[readonly] {
@@ -2164,10 +2163,10 @@
     }
     
     #doanhnghiep .h-big-box-thongbao::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
+        border-radius: 10px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.8);
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     }
     
     #doanhnghiep .h-big-box-thongbao::-webkit-scrollbar-thumb:window-inactive {
@@ -2226,10 +2225,9 @@
     }
     
     #sinhvien .h-big-box-thongbao::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 10px;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.8);
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
     }
     
     #sinhvien .h-big-box-thongbao::-webkit-scrollbar-thumb:window-inactive {

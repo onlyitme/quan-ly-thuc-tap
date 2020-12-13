@@ -177,6 +177,9 @@ if (isset($_SESSION['sname']) &&  $_SESSION['schuc_vu'] == 0) {
       $thongtincv = thongtincv();
       $view_sv = "view/cv_index.php";
       break;
+    case 'sv_vlut':
+      $view_sv = "view/sv_vlut.php";
+      break;
     case 'sv_thongbao':
       $ds = getAllThongbao($_SESSION['sid_sv']);
       $view_sv = "view/sv_thongbao.php";
