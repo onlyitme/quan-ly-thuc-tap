@@ -10,6 +10,11 @@
         $sql = "SELECT * from sinh_vien where id_sv='$id_sv'";
         return queryOne($sql);
     }
+    function getUserByID($id_user)
+    {
+        $sql = "SELECT * from user where id_user='$id_user'";
+        return queryOne($sql);
+    }
     function getUngtuyenByID($id_phieu)
     {
         $sql = "SELECT * from phieu_dk_in where id_phieu='$id_phieu'";
@@ -115,7 +120,7 @@
             exit();
         }
     }
-    function updateSinhvienTT($id_sv,$ket_qua)
+    function updateSinhvienTT($id_sv, $ket_qua)
     {
         try {
             $sql = "UPDATE sinh_vien SET trang_thai='$ket_qua' WHERE id_sv='$id_sv'";

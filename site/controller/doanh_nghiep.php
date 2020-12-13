@@ -165,8 +165,8 @@ switch ($act) {
         updatePhieu($id_phieu, $thoi_gian_duyet);
         $dn = getDoanhnghiepByID($_SESSION['sid_dn']);
         $id_ng_gui = $dn['id_dn'];
-        $ut=getUngtuyenByID($id_phieu);
-        $id_ng_nhan =$ut['id_sv'];
+        $ut = getUngtuyenByID($id_phieu);
+        $id_ng_nhan = $ut['id_sv'];
         $thoi_gian = date('Y-m-d H:i:s');
         $ten_dn = $dn['ten_dn'];
         $noi_dung = "Doanh nghiệp $ten_dn đã chấp nhận đơn xin thực tập của bạn ";
@@ -232,9 +232,48 @@ switch ($act) {
         $danh_gia = $_POST['danh_gia'];
         $id_phieu = $_GET['id_phieu'];
         danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu);
+        $ut = getUngtuyenByID($id_phieu);
+        $id_sv = $ut['id_sv'];
+        $sv = getSinhvienByID($id_sv);
+        $ten_sv = $sv['ho_ten'];
+        $id_user = $sv['id_user'];
+        $us = getUserByID($id_user);
+        $email = $us['email'];
+        if ($ket_qua == 2) {
+            $thong_bao = "đã thực tập đạt";
+        } else {
+            $thong_bao = "đã thực tập chưa đạt";
+        }
+        // Gửi mail kích hoạt tài khoản
+        require "PHPMailer-master/src/PHPMailer.php";
+        require "PHPMailer-master/src/SMTP.php";
+        $mail = new PHPMailer\PHPMailer\PHPMailer(true);  //true: enables exceptions
+        try {
+            $mail->SMTPDebug = 2;  // Enable verbose debug output
+            $mail->isSMTP();
+            $mail->CharSet  = "utf-8";
+            $mail->Host = 'smtp.gmail.com';  //SMTP servers
+            $mail->SMTPAuth = true; // Enable authentication
+            $mail->Username = 'khaiphan2222@gmail.com';  // SMTP username
+            $mail->Password = 'Khai261093';   // SMTP password
+            $mail->SMTPSecure = 'ssl';  // encryption TLS/SSL 
+            $mail->Port = 465;  // port to connect to                
+            $mail->setFrom('khaiphan2222@gmail.com', 'khải');
+            $mail->addAddress($email, $ten_sv); //mail và tên người nhận       
+            $mail->isHTML(true);  // Set email format to HTML
+            $mail->Subject = 'Đánh giá thực tập';
+            $linkKH = "<a href='" . $_SERVER['HTTP_HOST'] . SITE_URL .
+                "/?act=kichhoat&id=%d&rd=%s'>Nhắp vào đây</a>";
+            $linKH = sprintf($ten_sv);
+            $mail->Body = "<h4>Đánh giá thực tập</h4><br>Chào bạn $linKH kết quả thực tập của bạn là " . $thong_bao;
+            $mail->send();
+            echo "gửi thành công";
+        } catch (Exception $e) {
+            echo 'Mail không gửi được. Lỗi: ', $mail->ErrorInfo;
+        }
         $id_user = $_SESSION['sid'];
-        $ut=getUngtuyenByID($id_phieu);
-        updateSinhvienTT($ut['id_sv'],$ket_qua);
+        $ut = getUngtuyenByID($id_phieu);
+        updateSinhvienTT($ut['id_sv'], $ket_qua);
         $ds = getAllDoanhnghiepID($id_user);
         $view_dn = "view/dn_qlns.php";
         break;
