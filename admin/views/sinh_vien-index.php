@@ -78,7 +78,7 @@ if (isset($_POST['btnExport'])) {
     </div>
 </div>
 <div class="mb-3">
-    <div class="row mx-1    ">
+    
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-success px-3" data-toggle="modal" data-target="#modelId">
             <i class="fas fa-plus    "></i> File Exel
@@ -86,19 +86,8 @@ if (isset($_POST['btnExport'])) {
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
             <i class="fas fa-plus"></i> Thêm sinh viên
         </button>
-        <form action="exel/exel.php" method="post">
-            <!-- Button trigger modal -->
-            <button type="submit" name="btnExport" class="btn btn-primary mx-3">
-                Xuất Thành file Exel sv có nơi tt
-            </button>
-        </form>
-        <form action="exel/exel.php" method="post">
-            <button type="submit" name="btnExport1" class="btn btn-primary mx-3">
-                Xuất Thành file Exel chưa có nơi tt
-            </button>
-        </form>
-       
-    </div>
+</br>
+    
     <input id="xoaall" type="submit" name="xoaall" class="btn btn-danger d-inline-block mt-3" value="Xóa Mục Đã Chọn">
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -251,6 +240,23 @@ if (isset($_POST['btnExport'])) {
                     </div>
                 </div>
             </form>
+            <form action="exel/exel.php" method="post">
+      
+            <button type="submit" name="btnExport<?php 
+            if(isset($_GET['act'])){
+       if($_GET['act']=='chuacott'){
+           echo '1';
+       }elseif($_GET['act']=='dahoanthanh'){
+        echo '3';
+    }
+    elseif($_GET['act']=='dacott'){
+        echo '2';
+    }}else echo'0';
+    
+    ?>" class="btn btn-primary mx-3">
+                Xuất Thành file Exel 
+            </button>
+        </form>
             <div class="dropdown ml-3">
                 <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown"><i class="fas fa-filter    "></i>
                     <span class="caret"></span></button>
