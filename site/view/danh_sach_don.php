@@ -1,13 +1,10 @@
 <div class="border rounded shadow-sm p-3">
-    <div class="alert " role="alert">
-        <h3 class="">DANH SÁCH ĐƠN XIN
-            THỰC TẬP</h3>
-    </div>
+        <h3 class="">DANH SÁCH ĐƠN XIN THỰC TẬP</h3>
     <?php foreach ($phieu_dk_all as $row) {
         $thong_tin_dt = checkdangtuyenbyid($row['id_dt']);
         $thong_tin_dn = checkdoanhnghiepbyid($thong_tin_dt['id_dn']);
     ?>
-        <div class="media col-sm-12 shadow sv-12 NdmH" style="min">
+        <div class="media col-sm-12 shadow sv-12 NdmH">
             <div class="opac"></div>
             <div style="margin-right: 6px;" class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ">
                 <div class="bg-ds mt-3">

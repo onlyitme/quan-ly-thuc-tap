@@ -185,7 +185,7 @@
                                     </div>
                                     <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                                         <p>
-                                            <select style="padding: 6px 0px; width: 36%;" name="ngon_ngu_khac" ><option selected value="0" <?php if($thongtincv['ngon_ngu_khac']==0) echo "selected";?>>Không có</option><option value="1" <?php if($thongtincv['ngon_ngu_khac']==1) echo "selected";?>>Tiếng Trung</option><option value="2" <?php if($thongtincv['ngon_ngu_khac']==2) echo "selected";?>>Tiếng Nhật</option><option value="3"  <?php if($thongtincv['ngon_ngu_khac']==3) echo "selected";?>>Tiếng Do Thái</option><option value="4"  <?php if($thongtincv['ngon_ngu_khac']==4) echo "selected";?>>Pháp</option><option value="5" <?php if($thongtincv['ngon_ngu_khac']==5) echo "selected";?>>Ngôn ngữ khác</option></select>
+                                            <select style="padding: 6px 0px; width: 36%;" name="ngon_ngu_khac" ><option selected value="0" <?php if($thongtincv['ngon_ngu_khac']==0) echo "selected";?>>Không có</option><option value="1" <?php if($thongtincv['ngon_ngu_khac']==1) echo "selected";?>>Tiếng Trung</option><option value="2" <?php if($thongtincv['ngon_ngu_khac']==2) echo "selected";?>>Tiếng Nhật</option><option value="3"  <?php if($thongtincv['ngon_ngu_khac']==3) echo "selected";?>>Tiếng Đức</option><option value="4"  <?php if($thongtincv['ngon_ngu_khac']==4) echo "selected";?>>Tiếng Pháp</option><option value="5" <?php if($thongtincv['ngon_ngu_khac']==5) echo "selected";?>>Ngôn ngữ khác</option></select>
                                         </p> 
                                     </div>
                                 </div>   

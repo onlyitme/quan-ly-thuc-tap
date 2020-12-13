@@ -1,6 +1,6 @@
 <div class="h-big-box-thongbao shadow p-3 rounded">
     <div class="h-box-thongbao float-left">
-        <h2 class="text-warning ">Thông báo mới nhất <i class="far fa-comment-dots"></i></h2>
+        <h2 class="text-uppercase">Thông báo mới nhất <i class="far fa-comment-dots"></i></h2>
         <?php foreach ($ds as $row) { ?>
             <!-- box chưa xem  -->
             <div class="h-box-tb-con__chuaxem col-12 shadow rounded py-3 mt-3">
