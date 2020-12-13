@@ -249,7 +249,7 @@ switch ($act) {
         require "PHPMailer-master/src/SMTP.php";
         $mail = new PHPMailer\PHPMailer\PHPMailer(true);  //true: enables exceptions
         try {
-            $mail->SMTPDebug = 2;  // Enable verbose debug output
+            $mail->SMTPDebug = 0;  // Enable verbose debug output
             $mail->isSMTP();
             $mail->CharSet  = "utf-8";
             $mail->Host = 'smtp.gmail.com';  //SMTP servers
@@ -267,9 +267,8 @@ switch ($act) {
             $linKH = sprintf($ten_sv);
             $mail->Body = "<h4>Đánh giá thực tập</h4><br>Chào bạn $linKH kết quả thực tập của bạn là " . $thong_bao;
             $mail->send();
-            echo "gửi thành công";
         } catch (Exception $e) {
-            echo 'Mail không gửi được. Lỗi: ', $mail->ErrorInfo;
+            $mail->ErrorInfo;
         }
         $id_user = $_SESSION['sid'];
         $ut = getUngtuyenByID($id_phieu);

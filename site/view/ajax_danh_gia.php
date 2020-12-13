@@ -13,7 +13,7 @@
                 <label for="recipient-name" class="col-form-label">
                     <i class="far fa-trophy-alt"></i> Đánh giá:
                     <span class="text-success px-2">
-                        <input type="radio" name="h-danhgia" id="h-dat" value="2"> Đạt <i class="fa fa-check"></i>
+                        <input type="radio" name="h-danhgia" id="h-dat" value="2" checked> Đạt <i class="fa fa-check"></i>
                     </span>
                     <span class=text-danger>
                         <input type="radio" name="h-danhgia" id="h-chuadat" value="3"> Chưa đạt <i class="fas fa-close"></i>
