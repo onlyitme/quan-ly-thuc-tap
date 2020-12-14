@@ -49,6 +49,9 @@
       </div>
   </div>
   <p class="text-secondary m-1"> &ast;Sinh viên đang thực tập tại công ty&ast;</p>
+  <form action="exel/exel.php">
+  <button type="submit">Xuất file excel</button>
+  </form>
   <div class=" h-big-box mt-4">
       <div class="h-box1">
           <table class="table table-hover table-striped">

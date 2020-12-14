@@ -48,6 +48,7 @@
             </div>
             <div class="h-bv-right-button">
                 <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=home&act=thongtindt&id_dt=<?= $row['id_dt'] ?>">Xem chi tiết</a></button>
+                <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlns&id_dt=<?= $row['id_dt'] ?>">Xem Sv thực tập</a></button>
                 <button class="btn btn-danger"> <a class="text-light text-decoration-none"
                         href="?ctrl=doanh_nghiep&act=delete_dt&id_dt=<?= $row['id_dt'] ?>"
                         onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>

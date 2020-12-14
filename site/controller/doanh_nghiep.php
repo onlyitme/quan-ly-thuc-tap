@@ -296,6 +296,9 @@ switch ($act) {
         sua_tt_dt($tt_dt['an_hien'], $tt_dt['id_dt']);
         break;
         exit();
+    case 'xuat_excel_sv':
+        
+        break;
     case 'thongbao':
         $ds = getAllThongbao_($_SESSION['sid_dn']);
         $view_dn = "view/dn_thongbao.php";
