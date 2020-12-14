@@ -245,11 +245,11 @@ switch ($act) {
             $thong_bao = "đã thực tập chưa đạt";
         }
         // Gửi mail kích hoạt tài khoản
-        require "PHPMailer-master/src/PHPMailer.php";
-        require "PHPMailer-master/src/SMTP.php";
+        require "../admin/controllers/PHPMailer-master/src/PHPMailer.php";
+        require "../admin/controllers/PHPMailer-master/src/SMTP.php";
         $mail = new PHPMailer\PHPMailer\PHPMailer(true);  //true: enables exceptions
         try {
-            $mail->SMTPDebug = 0;  // Enable verbose debug output
+            $mail->SMTPDebug = 0;  // Enable verbose debug output show code
             $mail->isSMTP();
             $mail->CharSet  = "utf-8";
             $mail->Host = 'smtp.gmail.com';  //SMTP servers
@@ -297,9 +297,16 @@ switch ($act) {
         break;
         exit();
     case 'xuat_excel_sv':
-        
+
         break;
     case 'thongbao':
+        $ds = getAllThongbao_($_SESSION['sid_dn']);
+        $view_dn = "view/dn_thongbao.php";
+        break;
+    case 'thongbao_update':
+        $id_tb = $_GET["id_tb"];
+        settype($id_tb, "int");
+        updateThongbao($id_tb);
         $ds = getAllThongbao_($_SESSION['sid_dn']);
         $view_dn = "view/dn_thongbao.php";
         break;

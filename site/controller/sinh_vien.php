@@ -103,7 +103,7 @@ if (isset($_SESSION['sname']) &&  $_SESSION['schuc_vu'] == 0) {
       $thoi_gian = date('Y-m-d H:i:s');
       $ten = $sv['ho_ten'];
       $noi_dung = "Sinh viên $ten đã chấp nhận làm nhân viên của bạn ";
-      addNewThongbao_($noi_dung, $thoi_gian, $id_ng_gui,$id_ng_nhan);
+      addNewThongbao_($noi_dung, $thoi_gian, $id_ng_gui, $id_ng_nhan);
       them_sl_sv_dk($dem, $id_dt);
       updateSinhvien_($sv['id_sv']);
       capnhaptrangthaisv();
@@ -181,6 +181,13 @@ if (isset($_SESSION['sname']) &&  $_SESSION['schuc_vu'] == 0) {
       $view_sv = "view/sv_vlut.php";
       break;
     case 'sv_thongbao':
+      $ds = getAllThongbao($_SESSION['sid_sv']);
+      $view_sv = "view/sv_thongbao.php";
+      break;
+    case 'thongbao_update':
+      $id_tb = $_GET["id_tb"];
+      settype($id_tb, "int");
+      updateThongbao_($id_tb);
       $ds = getAllThongbao($_SESSION['sid_sv']);
       $view_sv = "view/sv_thongbao.php";
       break;

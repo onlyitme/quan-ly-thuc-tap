@@ -48,7 +48,11 @@
                     </li>
                     <li>
                         <a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=thongbao">
-                            <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
+                            <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo 
+                            <?php $soluong=demThongbao($_SESSION['sid_dn']);?> 
+                           <?php if($soluong>0){?>
+                              <span class="badge badge-danger"><?=$soluong?></span>
+                           <?php } ?>
                         </a>
                     </li>
                     <!-- <li>

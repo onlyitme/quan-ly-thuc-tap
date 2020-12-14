@@ -38,8 +38,26 @@
     }
     function getAllThongbao_($id_ng_nhan)
     {
-        $sql = "SELECT * from thong_bao WHERE id_ng_nhan='$id_ng_nhan'";
+        $sql = "SELECT * from thong_bao WHERE id_ng_nhan='$id_ng_nhan' ORDER BY thoi_gian DESC ";
         return query($sql);
+    }
+    function updateThongbao($id_tb)
+    {
+        try {
+            $sql = "UPDATE thong_bao SET trang_thai='1' WHERE id_tb='$id_tb'";
+            execute($sql);
+        } catch (Exception  $e) {
+            print_r($e->errorInfo);
+            exit();
+        }
+    }
+    function demThongbao($id_ng_nhan)
+    {
+        $sql = "SELECT count(*) as sodong FROM thong_bao WHERE id_ng_nhan='$id_ng_nhan' AND trang_thai='0'";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
     }
     function getAllSinhvien_()
     {

@@ -44,6 +44,10 @@
                     <li>
                         <a href="?ctrl=sinh_vien&act=sv_thongbao">
                             <i class="far fa-info-circle" aria-hidden="true"></i> Thông báo
+                            <?php $soluong=demThongbao_($_SESSION['sid_sv']);?> 
+                           <?php if($soluong>0){?>
+                              <span class="badge badge-danger"><?=$soluong?></span>
+                           <?php } ?>
                         </a>
                     </li>
                     <li>
