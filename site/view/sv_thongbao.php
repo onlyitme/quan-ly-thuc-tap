@@ -4,12 +4,12 @@
         <?php foreach ($ds as $row) { ?>
             <?php if ($row['trang_thai'] == 0) { ?>
                 <!-- box chưa xem  -->
-                <div class="h-box-tb-con mt-3">
-                    <a href="<?= SITE_URL ?>/?ctrl=sinh_vien&act=thongbao_update&id_tb=<?= $row['id_tb'] ?>">
+                <a href="<?= SITE_URL ?>/?ctrl=sinh_vien&act=thongbao_update&id_tb=<?= $row['id_tb'] ?>">
+                    <div class="h-box-tb-con__chuaxem col-12 shadow rounded py-3 mt-3">
                         <h5 class="h-tb-title text-uppercase float-left mr-2">
-                            <?= $row['noi_dung'] ?>
+                                <?= $row['noi_dung'] ?>
                         </h5>
-                        <p class="text-info text-right"><i class="fas fa-check-circle"></i>
+                        <p class="text-success text-right"><i class="fas fa-circle shadow-sm"></i>
                         </p>
                         <div class="text-box-tb float-left text-secondary">
                             <span class="mr-2"><i class="far fa-user"></i><?php $dn = getDoanhnghiepByID_($row['id_ng_gui']); ?>
@@ -23,16 +23,15 @@
                                     Số điện thoại: <?= $dn['sdt'] ?>
                                 </a></p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             <?php } else { ?>
                 <!-- box đã xem -->
-                <div class="h-box-tb-con__chuaxem col-12 shadow rounded py-3 mt-3">
-                    <h5 class="h-tb-title text-uppercase float-left mr-2"><a href="">
-                            <?= $row['noi_dung'] ?>
-                        </a>
+                <div class="h-box-tb-con mt-3">
+                    <h5 class="h-tb-title text-uppercase float-left mr-2">
+                        <?= $row['noi_dung'] ?>
                     </h5>
-                    <p class="text-success text-right"><i class="fas fa-circle shadow-sm"></i>
+                    <p class="text-info text-right"><i class="fas fa-check-circle"></i>
                     </p>
                     <div class="text-box-tb float-left text-secondary">
                         <span class="mr-2"><i class="far fa-user"></i><?php $dn = getDoanhnghiepByID_($row['id_ng_gui']); ?>
