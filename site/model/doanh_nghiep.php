@@ -300,4 +300,18 @@
             execute($sql);
         }
     }
+    function demAll_slsv(){
+        $sql = "SELECT count(*) as sodong FROM phieu_dk_in  WHERE trang_thai='3' AND id_dn = $_SESSION[sid_dn]";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
+    function demAll_dtdn(){
+        $sql = "SELECT count(*) as sodong FROM dang_tuyen  WHERE id_dn = $_SESSION[sid_dn]";
+        $kq = query($sql);
+        $row = $kq->fetch();
+        $rowcount = $row['sodong'];
+        return $rowcount;
+    }
     ?>

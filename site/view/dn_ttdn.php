@@ -67,7 +67,7 @@
                                             <h5 class="text-dark mt-0 d-inline"><a href="index.php?act=thongtindt&id_dt=<?= $t['id_dt'] ?>"> <?= $t['tieu_de'] ?></a></h5>
                                         </a>
                                         <p><i class="fas fa-calendar-alt "></i>
-                                            Hạn chót: 25/9/1997
+                                            Hạn chót: <?php echo date('d/m/yy', strtotime($t['thoi_gian'])) ?>
                                     </div>
                                 </div>
                             </button>

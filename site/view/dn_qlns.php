@@ -24,7 +24,7 @@
       <div class="col-lg-8">
           <h2 class="font-weight-600 mb-0">Quản lý nhân sự</h2>
           <span class="text-secondary px-1"><i class="far fa-users"></i>
-              299
+              <?php echo demAll_slsv()?>
           </span>
       </div>
       <div class="col-lg-4">
