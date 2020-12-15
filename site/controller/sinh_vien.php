@@ -86,6 +86,9 @@ if (isset($_SESSION['sname']) &&  $_SESSION['schuc_vu'] == 0) {
 
       break;
     case "danh_sach_don":
+      $id_tb = $_GET["id_tb"];
+      settype($id_tb, "int");
+      updateThongbao_($id_tb);
       $phieu_dk_all = thongtindkallbyid();
       $view_sv = "view/danh_sach_don.php";
       break;

@@ -4,11 +4,12 @@
         <?php foreach ($ds as $row) { ?>
             <?php if ($row['trang_thai'] == 0) { ?>
                 <!-- box chưa xem  -->
-                <a href="<?= SITE_URL ?>/?ctrl=sinh_vien&act=thongbao_update&id_tb=<?= $row['id_tb'] ?>">
-                    <div class="h-box-tb-con__chuaxem col-12 shadow rounded py-3 mt-3">
-                        <h5 class="h-tb-title text-uppercase float-left mr-2">
-                                <?= $row['noi_dung'] ?>
-                        </h5>
+
+                <div class="h-box-tb-con__chuaxem col-12 shadow rounded py-3 mt-3">
+                    <h5 class="h-tb-title text-uppercase float-left mr-2">
+                        <a href="<?= SITE_URL ?>/?ctrl=sinh_vien&act=danh_sach_don&id_tb=<?= $row['id_tb'] ?>"><?= $row['noi_dung'] ?></a>
+                    </h5>
+                    <a href="<?= SITE_URL ?>/?ctrl=sinh_vien&act=thongbao_update&id_tb=<?= $row['id_tb'] ?>">
                         <p class="text-success text-right"><i class="fas fa-circle shadow-sm"></i>
                         </p>
                         <div class="text-box-tb float-left text-secondary">
@@ -23,8 +24,9 @@
                                     Số điện thoại: <?= $dn['sdt'] ?>
                                 </a></p>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+
             <?php } else { ?>
                 <!-- box đã xem -->
                 <div class="h-box-tb-con mt-3">
