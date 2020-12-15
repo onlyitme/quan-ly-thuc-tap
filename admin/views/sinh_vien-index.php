@@ -326,21 +326,7 @@ if (isset($_POST['btnExport'])) {
                     <?php $dn = getDoanhnghiepByID($phieu['id_dn']); ?>
                     <?= $dn['ten_dn'] ?>
                 <?php } ?>
-
-                <!-- <?php $phieu = getUngtuyenByID($row['id_sv']); ?>
-                <?php if (isset($phieu['id_phieu'])) { ?>
-                    <?php if ($phieu['trang_thai'] == 3) { ?>
-                        <?php if (isset($phieu['id_dn'])) { ?>
-                            <?php $dn = getDoanhnghiepByID($phieu['id_dn']); ?>
-                            <b>Đang thực tập</b><br>
-                            <?= $dn['ten_dn'] ?>
-                        <?php } ?>
-                    <?php } else { ?>
-                        <b>Chưa có nơi thực tập</b>
-                    <?php } ?>
-                <?php } else { ?>
-                    <b>Chưa có nơi thực tập</b>
-                <?php } ?> -->
+                
             </td>
             <td class="py-5">
                 <?= $row['mssv'] ?>

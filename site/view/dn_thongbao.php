@@ -26,7 +26,6 @@
                 </div>
             <?php } else { ?>
                 <div class="h-box-tb-con mt-3">
-
                     <h5 class="h-tb-title text-uppercase float-left mr-2">
                         <?= $row['noi_dung'] ?>
                     </h5>
