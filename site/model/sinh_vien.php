@@ -123,9 +123,14 @@ function them_sl_sv_dk($dem, $id)
     $sql = "UPDATE dang_tuyen SET sl_sv_dk='$dem' where id_dt= '$id' ";
     execute($sql);
 }
+function getViecLamUngTuyen(){
+    $sql = "SELECT * from phieu_dk_in where id_sv='$_SESSION[sid_sv]' and trang_thai=3";
+    return queryOne($sql);
+}
 //baokun
 function update_avtsv($anh)
 {
     $sql = "UPDATE sinh_vien SET anh='$anh' where id_user = '$_SESSION[sid]'";
     execute($sql);
 }
+
