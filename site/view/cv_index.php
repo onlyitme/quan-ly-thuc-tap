@@ -117,7 +117,7 @@
         <div class="col-sm-1">
             <p> &nbsp; </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso ml-4">
             <p>+ MS word :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -128,7 +128,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ MS Excel :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -139,7 +139,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Power Point :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -150,7 +150,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Outlook :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -161,7 +161,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ App khác :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -172,19 +172,19 @@
 
         <div class="row"></div>
 
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 ml-4 mt-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4 mt-4">
             <h5><strong>Ngoại ngữ </strong> </h5>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
             <p> &nbsp; </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p><strong>Thông thạo</strong></p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
             <p> <strong>Tiếng Anh</strong> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Nghe :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -195,7 +195,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Nói :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -206,7 +206,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Đọc :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -217,7 +217,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p>+ Viết :</p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
@@ -228,7 +228,7 @@
                 else echo "Chưa xác định";
                 ?> </p>
         </div>
-        <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 taohoso  ml-4">
+        <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 taohoso  ml-4">
             <p><strong>Ngôn ngữ khác:</strong></p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">

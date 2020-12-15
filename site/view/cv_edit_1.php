@@ -55,14 +55,12 @@
 
     </div>
 
-    </div>
     <div class="col-12 text-center mt-2 mb-3">
-        <button  class="btn btn-outline-dark mr-2"> <a href="?ctrl=sinh_vien&act=cv_index">Hủy</a>  </button>
+        <button class="btn btn-outline-dark mr-2"><a href="?ctrl=sinh_vien&act=cv_index" class="text-dark"> Hủy </a></button>
         <a href="file:///C:/Users/ASUS/Documents/GitHub/quan-ly-thuc-tap/site/view/sv3-qlhoso.html">
             <button class="btn buttoncapnhat " type="submit">
                 Lưu hồ sơ
             </button>
         </a>
-
     </div>
 </form>

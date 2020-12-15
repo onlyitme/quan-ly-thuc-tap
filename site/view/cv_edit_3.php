@@ -7,12 +7,7 @@
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
                 <h6><span class="fw-500">Tin học văn phòng</span></h6>
             </div>
-            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
-                &nbsp;
-            </div>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-                &nbsp;
-            </div>
+
             <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 taohoso text-center">
                 <div class="row mb-1">
                     <div class="col-2 ml-3 mr-1 py-2">&nbsp;</div>
@@ -98,7 +93,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ml-4">
-            <h6><span class="fw-500 col-form-label ">Ngoại ngữ &lpar; Anh văn &rpar;</span></h6>
+                <h6><span class="fw-500 col-form-label ">Ngoại ngữ &lpar; Anh văn &rpar;</span></h6>
 
             </div>
 
@@ -198,12 +193,11 @@
     </div>
 
     <div class="col-12 text-center mt-2 mb-3">
+        <button class="btn btn-outline-dark mr-2"><a href="?ctrl=sinh_vien&act=cv_index" class="text-dark"> Hủy </a></button>
         <a href="file:///C:/Users/ASUS/Documents/GitHub/quan-ly-thuc-tap/site/view/sv3-qlhoso.html">
-        <button  class="btn btn-outline-dark mr-2"> <a href="?ctrl=sinh_vien&act=cv_index">Hủy</a>  </button>
             <button class="btn buttoncapnhat " type="submit">
                 Lưu hồ sơ
             </button>
         </a>
-
     </div>
 </form>
