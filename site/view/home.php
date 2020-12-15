@@ -58,7 +58,7 @@
                                     <i class="fas fa-chevron-circle-right    "></i>
                                     </div> -->
                                     <div class=" col-12 text-center bg-gray border-bottom border-top my-0 p-3">
-                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-2 btn btn-light border btn-inline-block font-weight-bold rounded-lg  shadow  "><span>Load more</span> <i class="fas fa-chevron-circle-down "></i></a>
+                                        <a type="button" href="index.php?act=listjob&id_nganh=<?=$ds_nganh['id_nganh']?>" class="xemthem col-lg-2 btn btn-light border btn-inline-block font-weight-bold rounded-lg  shadow  "><span>Xem thêm</span> <i class="fas fa-chevron-circle-down "></i></a>
                                     </div>
                                     <?php } ?>
                                     <?php  $dem++;}?>
