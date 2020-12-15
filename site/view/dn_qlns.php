@@ -50,6 +50,7 @@
   </div>
   <p class="text-secondary m-1"> &ast;Sinh viên đang thực tập tại công ty&ast;</p>
   <form action="exel/exel.php">
+  <input type="hidden" name="id_dn" value="<?=$_SESSION['sid_dn']?>">
   <button type="submit">Xuất file excel</button>
   </form>
   <div class=" h-big-box mt-4">

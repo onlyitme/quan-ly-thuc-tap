@@ -2022,12 +2022,12 @@
         margin: 0 auto;
         background: #fff;
     }
+
     /* #sinhvien .h-ttcn-center .input-group-text {
         background: #fff;
     } */
-    
-    #sinhvien .h-box-ttsv,
-    #sinhvien .h-ttcn .form-control[readonly] {
+
+    #sinhvien .h-box-ttsv, #sinhvien .h-ttcn .form-control[readonly] {
         background: #fff;
     }
 
@@ -2335,10 +2335,9 @@
     }
 
     #sinhvien .h-vlut-con-left {
-        width: 65%;
-        height: 410px;
+        width: 68%;
+        height: 415px;
         float: left;
-        /* background: rgb(235, 235, 235); */
         background: #fff;
     }
 
@@ -2357,20 +2356,21 @@
     }
 
     #sinhvien .h-nx-text {
-        height: 120px;
-        overflow: hidden;
+        height: 105px !important;
+        overflow-y: hidden;
         text-overflow: ellipsis;
         white-space: wrap;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 7;
+        -webkit-line-clamp: 6;
     }
 
     #sinhvien .h-vlut-nx-con {
         border: 2px solid #ccc;
         border-top: 0;
         padding: 10px;
-        height: 200px;
+        height: 185px;
+        padding-bottom: 5px;
         overflow-y: hidden;
     }
 
@@ -2380,29 +2380,35 @@
 
     #sinhvien .h-vlut-hr {
         width: 30%;
-        margin: 10px auto;
+        margin: 5px auto;
+        border: 1px solid #ced4da;
     }
 
-    #sinhvien .h-vlut-tieude .far, .h-vlut-tieude .fas {
+    #sinhvien .h-vlut-tieude .far, .h-vlut-tieude .fas, .h-vlut-tieude .fa {
         width: 20px;
         text-align: center;
     }
 
     #sinhvien .h-vlut-con-right {
-        width: 33%;
-        height: 410px;
-        margin-left: 2%;
         float: left;
+        width: 30%;
+        height: 415px;
+        margin-left: 2%;
+        position: relative;
     }
 
     #sinhvien .h-border-time {
         width: 100%;
-        text-align: center;
+        border-top: 10px solid #fa8c42;
+        border-bottom: 10px solid #fa8c42;
+        margin: 0 auto;
+        padding: 5px 10px;
+        text-align: left;
     }
 
-    #sinhvien .h-tongtime {
+    #sinhvien .h-border-time .far {
         text-align: center;
-        width: 50px;
+        width: 20px;
     }
 
     #sinhvien .fw-500 {
@@ -2411,4 +2417,25 @@
 
     #sinhvien .bg-cam {
         background: linear-gradient(25deg, #fa4e42 35%, #f19a36 100%);
+    }
+
+    #sinhvien .h-vlut-loader {
+        border: 3px solid #e7e7e7;
+        border-radius: 50%;
+        border-top: 3px solid #17a2b8;
+        width: 25px;
+        height: 25px;
+        animation: spin 2s linear infinite;
+        margin-left: 40px;
+    }
+
+    #sinhvien .h-con-right-hinh {
+        width: 100%;
+        height: 232px;
+        background-image: url('../images/img_vlut.gif') ;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* border: 1px solid #333; */
+        border-radius: 5px;
     }

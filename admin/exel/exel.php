@@ -14,10 +14,11 @@
             }
         }
         function  xuat_sv3(){
-            $sql="SELECT ho_ten,mssv,ten_nganh,ten_dn,ket_qua FROM sinh_vien inner join nganh on sinh_vien.id_nganh=nganh.id_nganh
+            $sql="SELECT ho_ten,mssv,ten_nganh,ten_dn,ket_qua,danh_gia FROM sinh_vien inner join nganh on sinh_vien.id_nganh=nganh.id_nganh
              inner join phieu_dk_in on sinh_vien.id_sv=phieu_dk_in.id_sv
              inner join doanh_nghiep on phieu_dk_in.id_dn=doanh_nghiep.id_dn
-             where sinh_vien.trang_thai=2
+             where sinh_vien.trang_thai=2 and phieu_dk_in.trang_thai=3
+             
              ";
              $conn = getConnection();
              $result = $conn->query($sql);
@@ -44,11 +45,13 @@
             return $result;
         }
         function  xuat_sv0(){
-            $sql="SELECT ho_ten,mssv,email,ten_nganh,ten_dn,ket_qua,danh_gia,sinh_vien.trang_thai FROM sinh_vien 
+            $sql="SELECT ho_ten,mssv,email,ten_nganh,ten_dn,ket_qua,danh_gia,sinh_vien.trang_thai,phieu_dk_in.trang_thai as cc FROM sinh_vien 
             LEFT join nganh on sinh_vien.id_nganh=nganh.id_nganh 
             LEFT join phieu_dk_in on sinh_vien.id_sv=phieu_dk_in.id_sv 
             LEFT join doanh_nghiep on phieu_dk_in.id_dn=doanh_nghiep.id_dn 
-            LEFT join user on sinh_vien.id_user=user.id_user";
+            LEFT join user on sinh_vien.id_user=user.id_user
+             
+            ";
              $conn = getConnection();
              $result = $conn->query($sql);
             return $result;
@@ -63,7 +66,8 @@ if (isset($_POST['btnExport3'])) {
                                 ->setCellValue('B1', "họ tên")
                                 ->setCellValue('C1', "Chuyên Ngành")
                                 ->setCellValue('D1', "Doanh Nghiệp")
-                                ->setCellValue('E1', "Kết quả");
+                                ->setCellValue('E1', "Kết quả")
+                                ->setCellValue('F1', "Đánh giá");
     $i = 2;
     foreach ($array_data as $value) {
         $k= $i-1;
@@ -82,7 +86,8 @@ if (isset($_POST['btnExport3'])) {
                     ->setCellValue("B$i", $value['ho_ten'])
                     ->setCellValue("C$i", $value['ten_nganh'])
                     ->setCellValue("D$i", $value['ten_dn'])
-                    ->setCellValue("E$i", $ket_qua);
+                    ->setCellValue("E$i", $ket_qua)
+                    ->setCellValue("D$i", $value['danh_gia']);
                 
         $i++;
     }
@@ -108,7 +113,8 @@ if (isset($_POST['btnExport3'])) {
                                 ->setCellValue('B1', "")
                                 ->setCellValue('C1', "")
                                 ->setCellValue('D1', "")
-                                ->setCellValue('E1', "");
+                                ->setCellValue('E1', "")
+                                ->setCellValue('F1', "");
     $i = 2;
     foreach ($array_data as $value) {
         $objPHPExcel->setActiveSheetIndex(0)
@@ -116,7 +122,8 @@ if (isset($_POST['btnExport3'])) {
                     ->setCellValue("B$i", "")
                     ->setCellValue("C$i", "")
                     ->setCellValue("D$i", "")
-                    ->setCellValue("E$i", "");
+                    ->setCellValue("E$i", "")
+                    ->setCellValue("F$i", "");
                 
         $i++;
     }
@@ -264,7 +271,18 @@ elseif(isset($_POST['btnExport0'])){
                                 ->setCellValue('H1', "Đánh Giá");
     $i = 2;
     foreach ($array_data as $value) {
+        if ($value['cc']== 4 || $value['cc']== 2 || $value['cc']== 4 ||$value['cc']== 1 ||$value['cc']== '0' ){
+            
+        }else{
         $k= $i-1;
+        if($value['ket_qua']==1){
+            $ket_qua='Rớt';
+        }
+        elseif($value['ket_qua']==2){
+            $ket_qua='Đạt';
+        }else{
+            $ket_qua='';
+        }
         if($value['trang_thai']==1){
             $trang_thai='Đã có nơi thực tập';
         }
@@ -281,10 +299,10 @@ elseif(isset($_POST['btnExport0'])){
                     ->setCellValue("D$i", $value['ten_nganh'])
                     ->setCellValue("E$i", $trang_thai)
                     ->setCellValue("F$i", $value['ten_dn'])
-                    ->setCellValue("G$i", $value['ket_qua'])
+                    ->setCellValue("G$i", $ket_qua)
                     ->setCellValue("H$i", $value['danh_gia']);
                 
-        $i++;
+        $i++;}
     }
     $objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
     $fileName = 'product_import.xlsx';
