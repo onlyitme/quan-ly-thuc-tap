@@ -19,7 +19,7 @@
             inner join nganh on sinh_vien.id_nganh=nganh.id_nganh 
             inner join phieu_dk_in on sinh_vien.id_sv=phieu_dk_in.id_sv 
             inner join user on sinh_vien.id_user=user.id_user 
-            where phieu_dk_in.id_dn= 13 and phieu_dk_in.trang_thai=3
+            where phieu_dk_in.id_dn= $_GET[id_dn] and phieu_dk_in.trang_thai=3
             ";
              $conn = getConnection();
              $result = $conn->query($sql);
