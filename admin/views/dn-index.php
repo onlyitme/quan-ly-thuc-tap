@@ -122,10 +122,10 @@
         </tr>
         <tr>
             <td>Tên doanh nghiệp</td>
-            <td>Số lượng bài đăng</td>
-            <td>Ẩn hiện</td>
+            <td>Bài đăng</td>
+            <td>Sinh viên</td>
             <td>Địa chỉ</td>
-            <td> Số điện thoại</td>
+            <td>Số điện thoại</td>
             <td>Email</td>
         </tr>
     </thead>
@@ -151,18 +151,17 @@
                     foreach ($dt as $t) { ?>
                         <?php if ($t['id_dn'] == $row['id_dn']) { ?>
                             <?php $id_dt = $t['id_dt']; ?>
-                            <?php $soluongsv = demSinhvien($id_dt); ?>
-                            <?php if ($soluongsv > 0) { ?>
-                               
-                            <?php } ?>
+                            <?php $soluongsv = demSinhvien($id_dn); ?>
+                           
                         <?php } ?>
                     <?php } ?>
                     <a href="?ctrl=dang_tuyen&act=theodn&id_dn=<?= $row['id_dn'] ?>"><?= $soluong ?></a>
                 </td>
-                <td class="py-5">
-                    <?= ($row['an_hien'] == 0) ? "Đang hiện" : "Đang ẩn"; ?>
+                <td class="py-5 text-success" style="font-size: 20pt;">
+                             <?=$soluongsv ?>
                 </td>
-                <td class="py-5">
+             
+                <td class="py-5 ">
                     <?= $row['dia_chi'] ?>
                 </td>
                 <td class="py-5">

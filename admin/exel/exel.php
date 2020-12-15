@@ -63,11 +63,11 @@ if (isset($_POST['btnExport3'])) {
      $array_data = xuat_sv3();
     $objPHPExcel->setActiveSheetIndex(0)
                                 ->setCellValue('A1', "STT")
-                                ->setCellValue('B1', "họ tên")
+                                ->setCellValue('B1', "Họ Tên")
                                 ->setCellValue('C1', "Chuyên Ngành")
                                 ->setCellValue('D1', "Doanh Nghiệp")
-                                ->setCellValue('E1', "Kết quả")
-                                ->setCellValue('F1', "Đánh giá");
+                                ->setCellValue('E1', "Kết Quả")
+                                ->setCellValue('F1', "Đánh Giá");
     $i = 2;
     foreach ($array_data as $value) {
         $k= $i-1;
@@ -87,7 +87,7 @@ if (isset($_POST['btnExport3'])) {
                     ->setCellValue("C$i", $value['ten_nganh'])
                     ->setCellValue("D$i", $value['ten_dn'])
                     ->setCellValue("E$i", $ket_qua)
-                    ->setCellValue("D$i", $value['danh_gia']);
+                    ->setCellValue("F$i", $value['danh_gia']);
                 
         $i++;
     }

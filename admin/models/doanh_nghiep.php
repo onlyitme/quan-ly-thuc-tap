@@ -92,9 +92,9 @@
         $rowcount = $row['sodong'];
         return $rowcount;
     }
-    function demSinhvien($id_dt)
+    function demSinhvien($id_dn)
     {
-        $sql = "SELECT count(*) as sodong FROM phieu_dk_in WHERE id_dt='$id_dt' AND trang_thai='1' ";
+        $sql = "SELECT count(*) as sodong FROM phieu_dk_in  WHERE trang_thai='3'  AND ket_qua='0' AND id_dn = '$id_dn'";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
