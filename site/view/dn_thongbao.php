@@ -1,4 +1,4 @@
-<div class="h-big-box-thongbao">
+<div class="h-big-box-thongbao p-3">
     <div class="h-box-thongbao float-left">
         <h2 class="text-dark">Thông báo mới nhất <i class="far fa-comment-dots"></i></h2>
         <?php foreach ($ds as $row) { ?>
