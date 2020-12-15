@@ -231,7 +231,8 @@ switch ($act) {
         $ket_qua = $_POST['h-danhgia'];
         $danh_gia = $_POST['danh_gia'];
         $id_phieu = $_GET['id_phieu'];
-        danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu);
+        $tg_kt=date('Y-m-d H:i:s');
+        danh_gia_tu_dn($ket_qua,$tg_kt,$danh_gia, $id_phieu);
         $ut = getUngtuyenByID($id_phieu);
         $id_sv = $ut['id_sv'];
         $sv = getSinhvienByID($id_sv);

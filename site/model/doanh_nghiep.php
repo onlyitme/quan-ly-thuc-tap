@@ -275,9 +275,9 @@
         $sql = "DELETE FROM dang_tuyen WHERE id_dt='$id_dt'";
         execute($sql);
     }
-    function danh_gia_tu_dn($ket_qua, $danh_gia, $id_phieu)
+    function danh_gia_tu_dn($ket_qua, $tg_kt, $danh_gia, $id_phieu)
     {
-        $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
+        $sql = "UPDATE phieu_dk_in SET ket_qua='$ket_qua',tg_kt='$tg_kt', danh_gia='$danh_gia'  where id_phieu= '$id_phieu'";
         execute($sql);
     }
     function upload_logo($anh)
