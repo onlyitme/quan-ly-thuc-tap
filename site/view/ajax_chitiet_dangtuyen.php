@@ -181,7 +181,7 @@ echo '
                  </div>
                  <div class="d-flex">
                      <p class="w-25"><i class="fab fa-internet-explorer"></i></p>
-                     <p class="col-11"> <a href="">file:///D:/XamPP/htdocs/quan-ly-thuc-tap/site/view/list-job.html</a></p>
+                     <p class="col-11"> <a href="">Đang cập nhật. . .</a></p>
                  </div>
              </div>
          </div>
