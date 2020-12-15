@@ -49,10 +49,10 @@
       </div>
   </div>
   <p class="text-secondary m-1"> &ast;Sinh viên đang thực tập tại công ty&ast;</p>
-  <form action="exel/exel.php">
-  <input type="hidden" name="id_dn" value="<?=$_SESSION['sid_dn']?>">
-  <button type="submit">Xuất file excel</button>
-  </form>
+    <form action="exel/exel.php">
+    <input type="hidden" name="id_dn" value="<?=$_SESSION['sid_dn']?>">
+    <button type="submit" class="btn btn-outline-info px-5">Xuất file excel</button>
+    </form>
   <div class=" h-big-box mt-4">
       <div class="h-box1">
           <table class="table table-hover table-striped">

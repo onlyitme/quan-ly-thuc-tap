@@ -7,7 +7,9 @@
         </span>
     </div>
 </div>
-<?php foreach ($ds as $row) { ?>
+<?php 
+    $ngayhientai = date('Y-m-d'); 
+    foreach ($ds as $row) { ?>
     <div class="h-box-bv">
         <div class="h-box-bv-left">
             <div class="h-bv-left-img">
@@ -25,7 +27,7 @@
                     <span class="text-success"><i class="fas fa-toggle-on"></i>
                         <span>Hoạt động</span>
                     </span>
-                    <i class="far fa-calendar-alt"></i> <span>01/12/2020</span>
+                    <i class="far fa-calendar-alt"></i> <span  <?php if($row['thoi_gian'] <= $ngayhientai) echo('class="text-danger font-weight-bold"'); ?>><?=$row['thoi_gian']?></span>
                     <i class="far fa-eye"></i> <span>299</span>
 
                 </span>
@@ -47,18 +49,22 @@
                 <span class="text-secondary"><i class="fas fa-map-marker-alt"></i> Hồ Chí Minh</span>
             </div>
             <div class="h-bv-right-button">
-                <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=home&act=thongtindt&id_dt=<?= $row['id_dt'] ?>">Xem chi tiết</a></button>
+                <!-- <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=home&act=thongtindt&id_dt=<?= $row['id_dt'] ?>">Xem chi tiết</a></button> -->
                 <button class="btn h-bg-button"><a href="<?= SITE_URL ?>/?ctrl=doanh_nghiep&act=qlns&id_dt=<?= $row['id_dt'] ?>">Xem Sv thực tập</a></button>
                 <button class="btn btn-danger"> <a class="text-light text-decoration-none"
                         href="?ctrl=doanh_nghiep&act=delete_dt&id_dt=<?= $row['id_dt'] ?>"
                         onclick="return confirm('Bạn chắc chắn muốn xóa?');">Xoá đăng tuyển</a></button>
-                <button class="btn btn-outline-warning h-bv-text-lock" onclick="an_hien_dt(<?= $row['id_dt'] ?>)">
+                        <?php 
+                        if($row['thoi_gian'] <= $ngayhientai){ ?>
+                        <button class="btn btn-dark h-bv-text-lock disabled" ><i class="far fa-lock"></i></button>
+                        <?php } else { ?>
+                        <button class="btn btn-outline-warning h-bv-text-lock" onclick="an_hien_dt(<?= $row['id_dt'] ?>)">
                             <?php 
                             if($row['an_hien'] == 0) echo ' <i class="far fa-lock"></i>';
                             else echo ' <i class="fas fa-lock-open"></i>';
                             ?>
-               
-                   </button>
+                        </button>
+                   <?php } ?>
             </div>
         </div>
     </div>
