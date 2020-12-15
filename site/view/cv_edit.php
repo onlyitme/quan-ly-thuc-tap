@@ -1,7 +1,7 @@
 <form action="index.php?ctrl=sinh_vien&act=cv_update" method="POSt">
     <div class="media boder p-3 sv8-12 mb-3">
         <div class="row col-sm-12"
-            style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
+            style="background: #fff; margin:auto;">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
                 <h5 style="font-weight: 700;">THÔNG TIN CHUNG</h5>
             </div>
@@ -65,7 +65,7 @@
     </div>
     <div class="media boder p-3 sv8-12 mt-3 mb-3">
         <div class="row col-sm-12"
-            style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
+            style="background: #fff; margin:auto;">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
                 <h5 style="font-weight: 700;">KĨ NĂNG & SỞ TRƯỜNG</h5>
             </div>
@@ -102,7 +102,7 @@
     </div>
     <div class="media boder p-3 sv8-12 mt-3 mb-3">
         <div class="row col-sm-12"
-            style="background-image: linear-gradient(-25deg, #8a8a8a 0%, #82dcff 100%);margin:auto;">
+            style="background: #fff; margin:auto;">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2">
                 <h5 style="font-weight: 700;">TIN HỌC & NGOẠI NGỮ</h5>
             </div>
@@ -118,13 +118,13 @@
             <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 taohoso text-center">
                 <div class="row mb-1">
                     <div class="col-2 ml-3 mr-1">&nbsp;</div>
-                    <div class="col-2 mr-1" style="background-color: rgb(211, 234, 255);">Kém</div>
-                    <div class="col-2 mr-1" style="background-color: aliceblue;">Trungbình</div>
-                    <div class="col-2 mr-1" style="background-color: rgb(211, 234, 255);">Khá</div>
-                    <div class="col-2 mr-1" style="background-color: aliceblue;">Tốt</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: rgb(248 82 65);">Kém</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: #f38739;">Trungbình</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: rgb(33 149 236);">Khá</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: #0db04b;">Tốt</div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: aliceblue;">
+                    <div class="col-2 ml-3 mr-1 py-2 " style="background-color: aliceblue;">
                         MS word
                     </div>
                     <div class="col-2 mr-1">
@@ -145,7 +145,7 @@
                     </div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: rgb(211, 234, 255);">
+                    <div class="col-2 ml-3 mr-1 py-2 " style="background-color: rgb(211, 234, 255);">
                         MS Excel
                     </div>
                     <div class="col-2 mr-1">
@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: aliceblue;">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: aliceblue;">
                         PowerPoint
                     </div>
                     <div class="col-2 mr-1">
@@ -187,7 +187,7 @@
                     </div>
                 </div>
                 <div class="row mb-4">
-                    <div class="col-2 ml-3 mr-1" style="background-color: rgb(211, 234, 255);">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: rgb(211, 234, 255);">
                         Outlook
                     </div>
                     <div class="col-2 mr-1">
@@ -224,13 +224,13 @@
             <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 taohoso text-center">
                 <div class="row mb-1">
                     <div class="col-2 ml-3 mr-1">&nbsp;</div>
-                    <div class="col-2 mr-1" style="background-color: rgb(211, 234, 255);">Kém</div>
-                    <div class="col-2 mr-1" style="background-color: aliceblue;">Trungbình</div>
-                    <div class="col-2 mr-1" style="background-color: rgb(211, 234, 255);">Khá</div>
-                    <div class="col-2 mr-1" style="background-color: aliceblue;">Tốt</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: rgb(248 82 65);">Kém</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: #f38739;">Trungbình</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: rgb(33 149 236);">Khá</div>
+                    <div class="col-2 mr-1 py-2" style="background-color: #0db04b;">Tốt</div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: aliceblue;">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: aliceblue;">
                         Nghe
                     </div>
                     <div class="col-2 mr-1">
@@ -251,7 +251,7 @@
                     </div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: rgb(211, 234, 255);">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: rgb(211, 234, 255);">
                         Nói
                     </div>
                     <div class="col-2 mr-1">
@@ -272,7 +272,7 @@
                     </div>
                 </div>
                 <div class="row mb-1">
-                    <div class="col-2 ml-3 mr-1" style="background-color: aliceblue;">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: aliceblue;">
                         Đọc
                     </div>
                     <div class="col-2 mr-1">
@@ -293,7 +293,7 @@
                     </div>
                 </div>
                 <div class="row mb-4">
-                    <div class="col-2 ml-3 mr-1" style="background-color: rgb(211, 234, 255);">
+                    <div class="col-2 ml-3 mr-1 py-2" style="background-color: rgb(211, 234, 255);">
                         Viết
                     </div>
                     <div class="col-2 mr-1">
@@ -340,7 +340,7 @@
     <div class="col-12 text-center mt-2 mb-3">
         <a href="file:///C:/Users/ASUS/Documents/GitHub/quan-ly-thuc-tap/site/view/sv3-qlhoso.html">
             <button class="buttoncapnhat ml-4" type="submit">
-                <svg style="color: white;" width="1.3em" height="1.3em" viewBox="0 0 16 16"
+                <!-- <svg style="color: white;" width="1.3em" height="1.3em" viewBox="0 0 16 16"
                     class="bi bi-journal-bookmark mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
@@ -348,7 +348,7 @@
                         d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                     <path fill-rule="evenodd"
                         d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
-                </svg>
+                </svg> -->
                 Lưu hồ sơ
             </button>
         </a>
