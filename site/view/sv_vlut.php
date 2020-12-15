@@ -75,9 +75,12 @@
             </div>
             <div class="row px-2 mt-2 mb-2">
                 <div class="col-6 fw-500 text-dark"><i class="far fa-user-graduate"></i> Kết quả: </div>
-                <label class="col-6 fw-500 text-right text-danger"><?=$kq?></label>
-                <!-- <label class="col-6 fw-500 text-right text-success"> Hoàn thành</label> -->
-                <!-- Nếu trạng thái = 1 (Đã thực tập xong) thì hiển thị kết quả Hoàn thành -->
+                
+
+                <?php if($dt['ket_qua']==1){?> <span class="text-danger"> <?=$kq?> </span>
+                <?php }else{?>
+                    <label class="text-danger"><?=$kq?></label>
+                <?php }?>
 
 
             </div>

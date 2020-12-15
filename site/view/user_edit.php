@@ -27,7 +27,7 @@
                   </div>
 
                   <div class="col-12 text-center mt-4">
-                          <button href="?ctrl=sinh_vien" class="btn btn-outline-dark mr-2"> Hủy </button>
+                          <button  class="btn btn-outline-dark mr-2"> <a href="?ctrl=sinh_vien">Hủy</a>  </button>
                           <button type="submit" class="btn buttoncapnhat"> Cập nhật </button>
                   </div>
               </div>
