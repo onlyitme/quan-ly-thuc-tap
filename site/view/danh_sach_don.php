@@ -128,7 +128,7 @@
                             '</div>' +
                             '</div>' +
                             '<div class="col-12 mt-2" >' +
-                            '<button class="float-right px-4 btn btn-success" onclick="xac_thuc(<?= $row['id_phieu'] ?>)"> chấp nhận </button> </div>'
+                            '<button class="float-right px-4 btn btn-success" onclick="xac_thuc(<?= $row['id_phieu'] ?>)"> Chấp nhận </button> </div>'
                         document.getElementById("kq_trangthai<?= $row['id_dt'] ?>").innerHTML = kq
                         document.getElementById("days<?= $row['id_dt'] ?>").innerText = days
                         document.getElementById("hours<?= $row['id_dt'] ?>").innerText = hours

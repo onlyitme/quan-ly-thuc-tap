@@ -77,12 +77,11 @@
                 <div class="col-6 fw-500 text-dark"><i class="far fa-user-graduate"></i> Kết quả: </div>
                 
 
-                <?php if($dt['ket_qua']==1){?> <span class="text-danger"> <?=$kq?> </span>
+                <?php if($dt['ket_qua']==2){?><label class="col-6 text-center text-success fw-500"><?=$kq?></label>
                 <?php }else{?>
-                    <label class="text-danger"><?=$kq?></label>
+                    
+                    <span class="col-6 text-center text-danger fw-500"> <?=$kq?> </span>
                 <?php }?>
-
-
             </div>
 
             <hr class="h-vlut-hr">

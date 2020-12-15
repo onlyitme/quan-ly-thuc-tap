@@ -45,7 +45,7 @@
                                             <div class="card-body small">
                                                 <h5 class="card-title "><?=$ds_dt['tieu_de']?></h5>
                                                 <a href="" class="card-text text-gray "><?=$thongtindn['ten_dn']?></a>
-                                                <p class="card-text text-gray py-2 font-italic"><?php echo substr($ds_dt['mo_ta'],0,33)?></p>
+                                                <p class="card-text text-gray py-2 font-italic"><?php echo substr($ds_dt['mo_ta'],0,43)?></p>
                                                 <p class="card-text "><i class="fas fa-map-marker-alt"></i> <?=$thongtindn['dia_chi']?></p>
                                                 <p class="card-text text-info  "><i class="fas fa-coins   text-warning    "></i> Mức lương: <?=$ds_dt['luong_khoi_dau']?> ~ <?=$ds_dt['luong_ket_thuc']?></p>
                                                 <p class="card-text  text-tomato"><i class="fas fa-calendar-alt   text-primary "></i> Hạn chót: <?=$ds_dt['thoi_gian']?></p>
