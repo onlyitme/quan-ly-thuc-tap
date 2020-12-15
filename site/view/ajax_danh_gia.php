@@ -16,7 +16,7 @@
                         <input type="radio" name="h-danhgia" id="h-dat" value="2" checked> Đạt <i class="fa fa-check"></i>
                     </span>
                     <span class=text-danger>
-                        <input type="radio" name="h-danhgia" id="h-chuadat" value="3"> Chưa đạt <i class="fas fa-close"></i>
+                        <input type="radio" name="h-danhgia" id="h-chuadat" value="1"> Chưa đạt <i class="fas fa-close"></i>
                     </span>
                 </label>
             </div>

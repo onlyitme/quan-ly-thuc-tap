@@ -42,13 +42,13 @@
     $i = 2;
     foreach ($array_data as $value) {
         $k= $i-1;
-        if($value['ket_qua']==1){
+        if($value['ket_qua']==2){
             $ket_qua='Đạt';
         }
         if($value['ket_qua']==0){
             $ket_qua='Chưa hoàn thành';
         }
-        if($value['ket_qua']==2){
+        if($value['ket_qua']==1){
             $ket_qua='Chưa Đạt';
         }
         $objPHPExcel->setActiveSheetIndex(0)
