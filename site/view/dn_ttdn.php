@@ -56,7 +56,8 @@
                 </div>
                 <?php foreach ($dt as $t) { ?>
                     <?php if ($t['id_dn'] == $doanhnghiep['id_dn']) {
-                        if($t['an_hien']==1){
+                        $ngayhientai = date('Y-m-d'); 
+                        if($t['an_hien']==1 && $t['thoi_gian'] >= $ngayhientai ) {
                         ?>
                         <div class="col-lg-6 p-3">
                             <button type="button" class="list-group-item list-group-item-action px-0">
