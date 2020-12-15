@@ -69,19 +69,19 @@
                 <button class="btn btn-dark buttoncapnhat "><i class="fa fa-pencil"></i></button>
             </a>
         </div>
-        <div class="col-sm-2 ml-4">
+        <div class="col-sm-3 ml-4">
             <p><strong>Kỹ năng :</strong> </p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
             <p><?= $thongtincv['ky_nang_so_truong'] ?> </p>
         </div>
-        <div class="col-sm-2 ml-4">
+        <div class="col-sm-3 ml-4">
             <p><strong>Sở thích :</strong> </p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
             <p><?= $thongtincv['so_thich'] ?></p>
         </div>
-        <div class="col-sm-2 ml-4">
+        <div class="col-sm-3 ml-4">
             <p><strong>Kỹ năng khác :</strong> </p>
         </div>
         <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
