@@ -102,12 +102,12 @@
     }
     function searchDoanhnghiep($ten_dn)
     {
-        $sql = "SELECT * from doanh_nghiep WHERE ten_dn='$ten_dn'";
+        $sql = "SELECT * from doanh_nghiep WHERE ten_dn like '%".$ten_dn."%' ";
         return query($sql);
     }
     function checkDoanhnghiepTonTai($ten_dn)
     {
-        $sql = "SELECT count(*) as sodong FROM doanh_nghiep WHERE ten_dn='$ten_dn'";
+        $sql = "SELECT count(*) as sodong FROM doanh_nghiep WHERE ten_dn like '%".$ten_dn."%' ";
         $kq = query($sql);
         $row = $kq->fetch();
         $rowcount = $row['sodong'];
