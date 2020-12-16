@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 15, 2020 lúc 05:29 PM
+-- Thời gian đã tạo: Th12 16, 2020 lúc 02:17 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -51,7 +51,7 @@ CREATE TABLE `dang_tuyen` (
   `nghi_phep_nam` tinyint(1) DEFAULT 0,
   `id_dn` int(11) NOT NULL,
   `id_nganh` int(11) NOT NULL,
-  `an_hien` tinyint(1) NOT NULL
+  `an_hien` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -159,7 +159,9 @@ INSERT INTO `ho_so_sv` (`id_ho_so`, `id_sv`, `tieu_de`, `trinh_do`, `noi_lam_vie
 (15, 46, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 3, 2, 3, 2, '', 3, 2, 3, 2, '0', '2020-12-15'),
 (22, 90, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 1, 1, 1, 1, '', 1, 1, 1, 1, '0', '2020-12-15'),
 (23, 91, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 2, 2, 2, 2, '', 4, 4, 4, 4, '0', '2020-12-15'),
-(24, 92, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 1, 1, 1, 1, '', 1, 1, 1, 1, '0', '2020-12-15');
+(24, 92, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 1, 1, 1, 1, '', 1, 1, 1, 1, '0', '2020-12-15'),
+(25, 93, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 1, 1, 1, 1, '', 1, 1, 1, 1, '0', '2020-12-16'),
+(26, 94, 'Hồ sơ thực tập', 0, 0, '', '', '', '', 1, 1, 1, 1, '', 1, 1, 1, 1, '0', '2020-12-16');
 
 -- --------------------------------------------------------
 
@@ -253,7 +255,11 @@ INSERT INTO `phieu_dk_in` (`id_phieu`, `id_sv`, `ngay_dk`, `nguyen_vong`, `id_dt
 (26, 46, '2020-12-15', '', 59, 15, 4, NULL, 0, NULL, NULL, NULL),
 (27, 90, '2020-12-15', 'Mong muốn học tập thêm những kiếm thức mới\n', 61, 14, 3, '2020-12-14 23:26:21', 2, 'vượt qua các bài test 1 cách xuất sắc', '2020-12-15', NULL),
 (28, 91, '2020-12-15', 'a', 61, 14, 3, '2020-12-16 23:26:26', 0, NULL, NULL, NULL),
-(29, 92, '2020-12-15', '', 61, 14, 3, '2020-12-15 23:26:33', 0, NULL, NULL, NULL);
+(29, 92, '2020-12-15', '', 61, 14, 3, '2020-12-15 23:26:33', 0, NULL, NULL, NULL),
+(30, 93, '2020-12-16', '', 60, 14, 1, '2020-12-16 00:12:51', 0, NULL, NULL, NULL),
+(31, 93, '2020-12-16', '', 61, 14, 0, NULL, 0, NULL, NULL, NULL),
+(32, 94, '2020-12-16', '', 61, 14, 2, '2020-12-16 00:13:07', 0, NULL, NULL, NULL),
+(33, 94, '2020-12-16', '', 60, 14, 2, NULL, 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -302,7 +308,9 @@ INSERT INTO `sinh_vien` (`id_sv`, `id_user`, `mssv`, `id_nganh`, `ho_ten`, `gioi
 (47, 41, 'ps11744', 21, 'Phạm Ngọc Hưng', 1, '1995-11-17', 'ps11744-man_dem.png', '0335884626', '201B Nguyễn Chí Thanh, Phường 12, Quận 5, Thành phố Hồ Chí Minh, Việt Nam', 2),
 (90, 113, 'ps11113', 21, 'phạm ngọc hùng', 1, '1995-01-01', '', '332115424', '', 0),
 (91, 114, 'ps11548', 40, 'Nguyễn Tấn Tài', 1, '1995-01-01', '', '335884623', '', 1),
-(92, 115, 'ps1112', 26, 'azzzz', 1, '1995-01-01', '', '335884645', '', 1);
+(92, 115, 'ps1112', 26, 'azzzz', 1, '1995-01-01', '', '335884645', '', 1),
+(93, 116, 'ps12356', 21, 'phạm ngọc hưng', 1, '1995-01-01', '', '335884626', '', 0),
+(94, 117, 'ps54356', 41, 'nguyễn ngọc bảo', 1, '1995-01-01', '', '4575548', '', 0);
 
 -- --------------------------------------------------------
 
@@ -331,7 +339,9 @@ INSERT INTO `thong_bao` (`id_tb`, `noi_dung`, `trang_thai`, `thoi_gian`, `id_ng_
 (5, 'Sinh viên Phạm Ngọc Hưng đã chấp nhận làm nhân viên của bạn ', 1, '2020-12-15 11:41:22', 47, 14),
 (6, 'Sinh viên Nguyễn Ngọc Bảo đã chấp nhận làm nhân viên của bạn ', 1, '2020-12-15 11:44:56', 45, 14),
 (7, 'Doanh nghiệp Công ty thiết kế web Vinalink đã chấp nhận đơn xin thực tập của bạn ', 1, '2020-12-15 12:33:23', 14, 46),
-(8, 'Sinh viên Phan Tấn Khải đã chấp nhận làm nhân viên của bạn ', 1, '2020-12-15 12:35:06', 46, 14);
+(8, 'Sinh viên Phan Tấn Khải đã chấp nhận làm nhân viên của bạn ', 1, '2020-12-15 12:35:06', 46, 14),
+(9, 'Doanh nghiệp Công ty thiết kế web Vinalink đã chấp nhận đơn xin thực tập của bạn ', 0, '2020-12-16 00:12:51', 14, 93),
+(10, 'Doanh nghiệp Công ty thiết kế web Vinalink đã chấp nhận đơn xin thực tập của bạn ', 0, '2020-12-16 00:13:07', 14, 94);
 
 -- --------------------------------------------------------
 
@@ -369,7 +379,9 @@ INSERT INTO `user` (`id_user`, `user`, `pass`, `email`, `chuc_vu`, `kich_hoat`) 
 (58, 'doanhnghiep10@gmail.com', 'doanhnghiep', 'doanhnghiep10@gmail.com', 1, 0),
 (113, 'hungngocpham2001@gmail.com', '1', 'hungngocpham2001@gmail.com', 0, 1),
 (114, 'hungngocpham1995@gmail.com', '1', 'hungngocpham1995@gmail.com', 0, 1),
-(115, 'hunggggg@gmail.com', '1', 'hunggggg@gmail.com', 0, 1);
+(115, 'hunggggg@gmail.com', '1', 'hunggggg@gmail.com', 0, 1),
+(116, 'hung1@gmail.com', '1', 'hung1@gmail.com', 0, 1),
+(117, 'hung2@gmail.com', '1', 'hung2@gmail.com', 0, 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -466,7 +478,7 @@ ALTER TABLE `doanh_nghiep`
 -- AUTO_INCREMENT cho bảng `ho_so_sv`
 --
 ALTER TABLE `ho_so_sv`
-  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_ho_so` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `nganh`
@@ -484,7 +496,7 @@ ALTER TABLE `nhom_nganh`
 -- AUTO_INCREMENT cho bảng `phieu_dk_in`
 --
 ALTER TABLE `phieu_dk_in`
-  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_phieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `phieu_dk_out`
@@ -496,19 +508,19 @@ ALTER TABLE `phieu_dk_out`
 -- AUTO_INCREMENT cho bảng `sinh_vien`
 --
 ALTER TABLE `sinh_vien`
-  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id_sv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT cho bảng `thong_bao`
 --
 ALTER TABLE `thong_bao`
-  MODIFY `id_tb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_tb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id_user` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
