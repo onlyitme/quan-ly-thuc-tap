@@ -26,6 +26,7 @@ if (isset($_POST['bttn'])) {
         addNewhosoforexecl($id_sv);
     }
     echo "<script type='text/javascript'>alert('đã thêm thành công');</script>";
+    echo "<script type='text/javascript'>window.location='index.php?ctrl=sinh_vien';</script>";
 }
 if (isset($_POST['btnExport'])) {
     $fileType = 'Excel2007';
@@ -104,7 +105,7 @@ if (isset($_POST['btnExport'])) {
                         <img src="../uploads/Excel.PNG" width="100%" alt="" class="mb-5">
                         <form method="POST" class=" shadow rounded mt-5" action="index.php?ctrl=sinh_vien" enctype="multipart/form-data">
                             <input type="file" name="file">
-                </div>
+                </div>  
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
                     <button type="submit" class="btn btn-success" name="bttn">Thêm</button>
